@@ -1,0 +1,668 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-modules-cdromparameters.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>CD-ROM Module Parameters</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="General Parameters and Modules"
+HREF="ch-modules.html"><LINK
+REL="PREVIOUS"
+TITLE="General Parameters and Modules"
+HREF="ch-modules.html"><LINK
+REL="NEXT"
+TITLE="SCSI parameters"
+HREF="s1-modules-scsi.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-modules.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Appendix A. General Parameters and Modules</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-modules-scsi.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-MODULES-CDROMPARAMETERS"
+>CD-ROM Module Parameters</A
+></H1
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  Not all of the cards that are listed are supported. Please check the
+	  hardware compatibility list on Red Hat's World Wide Web site at <A
+HREF="http://www.redhat.com/support/docs/hardware.html"
+TARGET="_top"
+>http://www.redhat.com/support/docs/hardware.html</A
+>
+	  to make sure your card is supported.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	One of the more commonly used parameters, the
+	<B
+CLASS="COMMAND"
+>hdX=cdrom</B
+> parameter, <I
+CLASS="EMPHASIS"
+>can</I
+> be
+	entered at the boot prompt, as it deals with support for IDE/ATAPI
+	CD-ROMs, which is part of the kernel.
+      </P
+><P
+>	In the tables below, most modules without any parameters listed are
+	either able to auto-probe to find the hardware, or require you to
+	manually change settings in the module source code, and recompile.
+      </P
+><DIV
+CLASS="TABLE"
+><A
+NAME="TB-MODULES-HARDWARE"
+></A
+><P
+><B
+>Table A-1. Hardware Parameters</B
+></P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+CELLSPACING="0"
+CELLPADDING="4"
+CLASS="CALSTABLE"
+><TR
+><TH
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Hardware</TH
+><TH
+WIDTH="20%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Module</TH
+><TH
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Parameters</TH
+></TR
+><TR
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>ATAPI/IDE CD-ROM Drives</TD
+><TD
+WIDTH="20%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>&nbsp;</TD
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>hdX=cdrom</TD
+></TR
+><TR
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Aztech CD268-01A, Orchid CD-3110, 
+		Okano/Wearnes CDD110,
+		Conrad TXC, CyCDROM CR520, 
+		CyCDROM CR540 (non-IDE)</TD
+><TD
+WIDTH="20%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>aztcd.o</TT
+></TD
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>aztcd=io_port</TD
+></TR
+><TR
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Sony CDU 31A or 33A CD-ROM</TD
+><TD
+WIDTH="20%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>cdu31a.o</TT
+></TD
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>cdu31a=io_port,IRQ[,PAS]
+		cdu31a_port=base_addr
+		cdu31a_irq=irq</TD
+></TR
+><TR
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Philips/LMS CDROM drive 206
+		with cm260 host adapter card</TD
+><TD
+WIDTH="20%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>cm206.o</TT
+></TD
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>cm206=io_port,IRQ</TD
+></TR
+><TR
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Goldstar R420 CD-ROM</TD
+><TD
+WIDTH="20%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>gscd.o</TT
+></TD
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>gscd=io_port</TD
+></TR
+><TR
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>ISP16, MAD16, or Mozart sound card 
+		CD-ROM interface (OPTi 82C928 and 
+		OPTi 82C929) with Sanyo/Panasonic, 
+		Sony, or Mitsumi drives</TD
+><TD
+WIDTH="20%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>isp16.o</TT
+></TD
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>isp16=io_port, IRQ, dma,drive_type
+		isp16_cdrom_base=io_port
+		isp16_cdrom_irq=IRQ
+		isp16_cdrom_dma=dma
+		isp16_cdrom_type=drive_type</TD
+></TR
+><TR
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Mitsumi CD-ROM, Standard</TD
+><TD
+WIDTH="20%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>mcd.o</TT
+></TD
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>mcd=io_port,IRQ</TD
+></TR
+><TR
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Mitsumi CD-ROM, Experimental</TD
+><TD
+WIDTH="20%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>mcdx.o</TT
+></TD
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>mcdx=io_port_1, IRQ_1, io_port_n, IRQ_n</TD
+></TR
+><TR
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Optics storage 8000 AT CD-ROM
+		"Dolphin" drive; Lasermate CR328A</TD
+><TD
+WIDTH="20%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>optcd.o</TT
+></TD
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>optcd=io_port</TD
+></TR
+><TR
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>SB Pro 16 compatible</TD
+><TD
+WIDTH="20%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>sbpcd.o</TT
+></TD
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>sbpcd=io_port,sb_pro_Setting</TD
+></TR
+><TR
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Sanyo CDR-H94A</TD
+><TD
+WIDTH="20%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>sjcd.o</TT
+></TD
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>sjcd=io_port
+		sjcd_base=io_port</TD
+></TR
+><TR
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Sony CDU-535 &#38; 531
+		(some Procomm drives)</TD
+><TD
+WIDTH="20%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>sonycd535.o</TT
+></TD
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>sonycd535=io_port</TD
+></TR
+></TABLE
+></DIV
+><P
+>	Here are some examples of these modules in use:
+      </P
+><DIV
+CLASS="TABLE"
+><A
+NAME="TB-MODULES-HARDWAREEXAMPLES"
+></A
+><P
+><B
+>Table A-2. Hardware Parameters Configuration Examples</B
+></P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+CELLSPACING="0"
+CELLPADDING="4"
+CLASS="CALSTABLE"
+><TR
+><TH
+ALIGN="LEFT"
+VALIGN="TOP"
+>Configuration</TH
+><TH
+ALIGN="LEFT"
+VALIGN="TOP"
+>Example</TH
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>ATAPI CD-ROM, jumpered as master on
+		2nd IDE channel</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>hdc=cdrom</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>non-IDE Mitsumi CD-ROM on port 340, IRQ 11</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>mcd=0x340,11</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Three non-IDE Mitsumi CD-ROM drives using the
+		experimental driver, io ports 300, 304, and 320 with
+		IRQs 5, 10 and 11</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>mcdx=0x300,5,0x304,10,0x320,11</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Sony CDU 31 or 33 at port 340, no IRQ</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>cdu31=0x340,0
+	      cdu31_port=0x340 cdu31a_irq=0</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Aztech CD-ROM at port 220</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>aztcd=0x220</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Panasonic-type CD-ROM on a SoundBlaster
+		interface at port 230</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>sbpcd=0x230,1</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Phillips/LMS cm206 and cm260 at IO 340
+		and IRQ 11</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>cm206=0x340,11</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Goldstar R420 at IO 300</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>gscd=0x300</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Mitsumi drive on a MAD16 soundcard at IO Addr 330
+		and IRQ 1, probing DMA</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>isp16=0x330,11,0,Mitsumi</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Sony CDU 531 at IO address 320</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>sonycd535=0x320</TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  Most newer Sound Blaster cards come with IDE interfaces.  For these
+	  cards, you do not need to use <B
+CLASS="COMMAND"
+>sbpcd</B
+> parameters,
+	  only use <B
+CLASS="COMMAND"
+>hdx</B
+> parameters.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-modules.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-modules-scsi.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>General Parameters and Modules</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-modules.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>SCSI parameters</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-modules-cdromparameters.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

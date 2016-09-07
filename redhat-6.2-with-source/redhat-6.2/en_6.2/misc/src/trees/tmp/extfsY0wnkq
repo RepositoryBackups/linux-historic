@@ -1,0 +1,80 @@
+Summary: An HTTP accelerator.
+Name: phhttpd
+Version: 0.1.0
+Release: 4
+Copyright: GPL
+Group: System Environment/Daemons
+Source0: http://people.redhat.com/zab/phhttpd/phhttpd-%{version}.tar.gz
+BuildRoot: /var/tmp/phhttpd-%{version}
+Requires: libxml
+
+%description
+Phhttpd is an HTTP accelerator which serves fast HTTP fetches from a
+local filesystem and passes other requests back to a waiting server.
+Phhttpd features include a lean networking I/O core, an aggressive
+content cache to reduce the amount of processing needed per request,
+and a non-blocking event model which allows a single thread to server
+many connections.  Phhttpd is in development and this version is
+experimental.
+
+%prep
+%setup 
+%build
+make
+# ha ha
+(cd util; gcc -Wall -o phhttpd_ctl phhttpd_ctl.c)
+
+%install
+
+mkdir -p $RPM_BUILD_ROOT/{var/{run,log}/phhttpd,usr/{man/man8,sbin},etc/rc.d/init.d}
+install -m 755 phhttpd $RPM_BUILD_ROOT/usr/sbin/phhttpd
+install -m 755 util/phhttpd_ctl $RPM_BUILD_ROOT/usr/sbin/phhttpd_ctl
+install -m 644 Docs/phhttpd.8 $RPM_BUILD_ROOT/usr/man/man8/phhttpd.8
+install -m 644 Docs/phhttpd_ctl.8 $RPM_BUILD_ROOT/usr/man/man8/phhttpd_ctl.8
+install -m 644 Docs/phhttpd.conf.example $RPM_BUILD_ROOT/etc/phhttpd.conf
+install -m 755 misc/phhttpd.init $RPM_BUILD_ROOT/etc/rc.d/init.d/phhttpd
+chmod 700 $RPM_BUILD_ROOT/var/{log,run}/phhttpd
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(-,root,root)
+%doc Docs/phhttpd.conf.example LICENSE Docs/html
+%dir /var/run/phhttpd 
+%dir /var/log/phhttpd
+/usr/sbin/phhttpd
+/usr/sbin/phhttpd_ctl
+/usr/man/man8/phhttpd.8*
+/usr/man/man8/phhttpd_ctl.8*
+%config /etc/rc.d/init.d/phhttpd
+%config /etc/phhttpd.conf
+
+%changelog
+* Thu Mar 06 2000 Zach Brown <zab@redhat.com>
+- update example config file and comments to
+  reflect curious new libxml behaviour
+
+* Thu Mar 02 2000 Zach Brown <zab@redhat.com>
+- include /var/log...  There's an idea.
+
+e Thu Feb 17 2000 Zach Brown <zab@redhat.com>
+- bugfixes and doc update
+
+* Mon Feb 14 2000 Zach Brown <zab@redhat.com>
+- 0.1.0
+
+* Wed Feb 09 2000 Zach Brown <zab@redhat.com>
+- 0.0.6, fix %configs
+
+* Wed Feb 02 2000 Zach Brown <zab@redhat.com>
+- 0.0.5, depend on libxml
+
+* Tue Feb 01 2000 Zach Brown <zab@redhat.com>
+- make installed files more sensible
+
+* Mon Jan 24 2000 Zach Brown <zab@redhat.com>
+- 0.0.4
+
+* Mon Dec 27 1999 Zach Brown <zab@redhat.com>
+- first cut

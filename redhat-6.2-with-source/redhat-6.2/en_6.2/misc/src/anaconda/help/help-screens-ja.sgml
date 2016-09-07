@@ -1,0 +1,443 @@
+<!DOCTYPE BOOK PUBLIC "-//Davenport//DTD DocBook V3.0//EN" [
+<!--ArborText, Inc., 1988-1999, v.4002-->
+<!ENTITY RHLIG "『Red Hat Linux インストレーションガイド』">
+<!ENTITY RHLGSG "『Red Hat Linux 始める前に』">
+<!ENTITY RHLRGS "『Red Hat Linux リファレンスガイド』">
+<!ENTITY RH "Red Hat">
+<!ENTITY RHL "Red Hat Linux">
+<!ENTITY RHI "Red Hat, Inc.">
+]>
+<book id="book">
+<title>ヘルプ画面</title>
+<chapter id="s1-help-screens-lang">
+<title></title>
+<sect1 id="lang">
+<title>言語の選択</title>
+<para> &RHL; のインストール中に使用する言語を選択します。この言語が、インストール後のシステムの言語としても使用されます。 </para>
+<para> 右側に表示される一覧から、目的の言語を選択してください。 </para>
+</sect1>
+<sect1 id="s1-help-screens-kybd">
+<title>キーボードの設定</title>
+<para> お使いのキーボードの種類を選択します。 </para>
+<para> 目的のキーボードが一覧にない場合は、最も近い<guilabel>一般的なモデル</guilabel> (例：Japanese 106-key)
+を選択します。 </para>
+<para> 次にキーボードのレイアウトを選択します (例：Japanese)。 </para>
+<para> 特殊文字 (&Ntilde;、&Ocirc;、&Ccedil;等) を入力するには、dead keys (コンポーズキーシーケンスとも呼ばれます)
+を使用します。dead keys の使用を必要とする特殊文字を使用したい場合には、<guilabel>「Enable dead keys」</guilabel>を使用します。その他の場合には、<guilabel>
+「Disable dead keys」</guilabel>を使用します。  </para>
+<para> 画面の下部にある空白のテキストフィールドを使用してキーボードの設定をテストしてください。 </para>
+</sect1>
+<sect1 id="s1-help-screens-mouse">
+<title>マウスの選択</title>
+<para> お使いのマウスの種類を選択します。 </para>
+<para> PS/2、BUS、シリアルなどの、マウスの接続の種類も考慮する必要があります。(ヒント:マウスのコネクタの形状が丸い場合はPS/2 または
+BUS マウス、四角い場合はシリアルマウスです。) </para>
+<para> 右側の一つ目の一覧から、お使いのマウスと同じ種類のマウスを探します。同じものが見つからない場合は、互換性のあるマウスを選択してください。互換性のあるマウスが不明な場合は、適当な<guilabel>
+一般的な</guilabel> マウスのタイプを選択してください。 </para>
+<para> シリアルマウスを選択した場合は、接続されているデバイスとポートを指定する画面が表示されます。 </para>
+<para> X Window System は、3-ボタンマウスを活用できるように設計されています。2-ボタンマウスをお使いの場合は、&RHL;では真ん中のボタンのエミュレーションを設定することもできます。 
+</para>
+<para> 2-ボタンマウスをお使いの場合は、<guilabel>「3 ボタンマウスのエミュレーションを設定しますか?」 </guilabel>
+のオプションを選択してください。インストール後には、2つのボタンを同時に押すことにより、真ん中のボタンの動作がサポートされます。 </para>
+</sect1>
+<sect1 id="s1-help-screens-wel">
+<title>Red Hat Linux へようこそ</title>
+<para> Welcome!このインストールの手順については、&RHI; が提供する <citetitle>&RHLIG;</citetitle>
+で詳しく説明しています。このマニュアルをお持ちの場合は、インストール前に通読してください。 </para>
+<para> このマニュアルは HTML 形式および Postscript 形式でも提供されており、Webサイト http://www.redhat.com
+からオンラインで入手できます。HTML 版のマニュアルは &RHL; CD セットにもあります。 </para>
+<para><command>新機能:</command> &RHL; には、「パーティションレス」 インストールという新しいインストール方法があります。システム内に、十分な空き領域を持った
+FAT (DOS/Windows) パーティションがある場合は、ドライブのパーティションを作り直さずに &RHL; をインストールすることができます。このオプションは、現状のシステムに対する影響を最小限にした上で &RHL;
+を試してみたいユーザの場合に最適です。 </para>
+<para> Official &RHL; のボックスセットをお買い求めいただいた場合は、弊社 Web サイト http://www.redhat.com/apps/user/join/
+で登録をお済ませください。 </para>
+<para> 本製品のインストールでは、インストールオプションの選択にマウスを使うことができます。また、<keycap>Tab</keycap> キーおよび<keycap>
+Enter</keycap> キーを使って、画面の項目を選択することができます。 </para>
+<para> 画面を切り換えるには、<guibutton>「次」</guibutton> ボタンまたは<guibutton>「戻る」</guibutton>
+ボタンを使用します。情報を保存して次の画面に進むには、<guibutton>「次」</guibutton> をクリックします。情報を保存せずに前画面に戻るには、<guibutton>
+「戻る」</guibutton> をクリックします。 </para>
+<para> このヘルプ画面を最小化するには、<guibutton>「ヘルプの非表示」</guibutton> ボタンをクリックします。 </para>
+<para> このインストールでは、<guimenu>インストールの準備ができました</guimenu> 画面までであればいつでもキャンセルすることができます。パッケージのインストールを開始してデータをハードドライブに書き込むには、<guibutton>
+「次」</guibutton> ボタンを<guimenu>「インストールの準備ができました」</guimenu>画面上でクリックします。この画面の前まででインストールをキャンセルすれば、システムを問題なくリブートすることができます
+(<keycap>reset</keycap> ボタン、または <keycombo><keycap>Ctrl</keycap><keycap>Alt
+</keycap><keycap>Del</keycap></keycombo>)。 </para>
+</sect1>
+<sect1 id="s1-help-screens-welreconfig">
+<title>Red Hat Linux へようこそ</title>
+<para> 再設定モードに入りました。このモードでは、コンピュータのサイト固有機能を設定することができます。セットアップ情報を変更せずに終了するには、「いいえ」および下の<guibutton>
+「次」</guibutton> ボタンを押します。 </para>
+<para> 本製品の設定では、インストールオプションの選択にマウスを使うことができます。また、<keycap>Tab</keycap> キーおよび<keycap>
+Enter</keycap> キーを使って、画面の項目を選択することができます。 </para>
+<para> 画面を切り換えるには、<guibutton>「次」</guibutton> ボタンまたは<guibutton>「戻る」</guibutton>
+ボタンを使用します。情報を保存して次の画面に進むには、<guibutton>「次」</guibutton> をクリックします。情報を保存せずに前画面に戻るには、<guibutton>
+「戻る」</guibutton> をクリックします。 </para>
+<para> このヘルプ画面を最小化するには、<guibutton>「ヘルプの非表示」</guibutton> ボタンをクリックします。 </para>
+</sect1>
+<sect1 id="s1-help-screens-instpath">
+<title>インストールオプション</title>
+<para> &RHL; のインストール方法 </para>
+<para> フルインストールを行うと、インストールするパーティション上の既存のデータがすべて削除されます。 </para>
+<para> アップグレードの場合は、既存の &RHL; システムデータは保持されます。 </para>
+<para> フルインストールを行なう場合は、インストールクラス（またはタイプ）を選択する必要があります。インストールクラスとして、GNOME ワークステーション、KDE
+ワークステーション、サーバー、または カスタムのいずれかを選択できます。 </para>
+<para> パーティショニングツールの<application>fdisk</application> に慣れている場合には、ここで fdisk
+を選択することもできます。<application>[fdisk]</application> を使用しない場合、インストーラはデフォルトのパーティショニングツールの <application>
+Disk Druid</application> を使用します。以前に <application>fdisk</application>. を使用したことがない場合は、<application>
+Disk Druid</application> を選択した方が良いでしょう。 </para>
+<para> インストールクラスの選択基準が適切かどうかわからない場合は、次の説明をよくお読みください。 </para>
+<para><command>注意:</command> 上記のインストール手段に加えて、既存の FAT (DOS/Windows) パーティションの「中に」に &RHL;
+をインストールすることもできます。<application>Disk Druid</application> パーティショニング画面で DOS パーティションに <command>
+/</command> というラベルを設定すると、この「パーティションレス」インストールが選択されます。この場合、ワークステーションインストールで使用される自動パーティション削除は無効になります。 
+</para>
+<para> ワークステーションインストールでは、インストールする X ウィンドウシステム と、デスクトップマネージャを選択できます。<emphasis>
+ワークステーションインストールを行うと、ハードディスクドライブ上にある Linux 用パーティションはすべて削除されます (またパーティションが設定されていない空きディスク領域もすべて使用されます)。
+</emphasis> 非 Linux パーティションは残されるので、インストール後に &RHL; だけではなく、他のインストール済オペレーティングシステムをブートすることができます。 
+</para>
+<para> サーバーインストールは、コンピュータを Linux ベースのサーバとして使用したい場合や、その他の理由でシステムの構成を大幅には変更したくない、または
+X ウィンドウシステムをインストールしない場合に最適です。<emphasis>サーバーインストールでは、ハードディスクドライブ上の既存のパーティションがすべて削除されます。このクラスのインストールを行う場合は、削除したくないデータがないかどうかをよく確かめてください。
+</emphasis> 他のオペレーティングシステムが使用しているパーティションも削除されます。<emphasis>すべてのドライブが消去されます。注意してください。
+</emphasis></para>
+<para> カスタムインストールを選択した場合のみ、インストールする項目を自由に選択できます。カスタムインストールでは、ディスク領域をどのようにパーティショニングするのかを、<emphasis>
+独自</emphasis> に設定できます。また、システムにインストールするパッケージを自在に選択することができます。さらに、システムの起動時に LILO
+を使うかどうかも指定できます。Linux の使用についてあまり経験がない場合は、カスタムインストールを選択すべきではありません。 </para>
+<para> これらのインストールクラスの詳細については&RHLIG; 、を参照してください。 </para>
+</sect1>
+<sect1 id="s1-help-screens-upgrade">
+<title>システムのアップグレード</title>
+<para> アップグレードを選択した場合は、パッケージのカスタマイズを行うかどうかを決定することもできます。 </para>
+<para> アップグレードの際に追加パッケージを選択しない場合は、<guibutton>「次」</guibutton> をクリックして続行します。 
+</para>
+<para> パッケージをカスタマイズする場合は、<guilabel>「アップグレードするパッケージのカスタマイズ」</guilabel>ボタンを選択し、<guibutton>
+「次」</guibutton>をクリックします。 </para>
+</sect1>
+<sect1 id="s1-help-screens-fdisk">
+<title><application>fdisk</application></title>
+<para> どのドライブにパーティションを作成するかを選択します。ドライブをクリックすると、<application>fdisk</application>
+パーティショニング画面が表示されます。次に<application>fdisk</application> を使用して、選択したドライブ上のパーティションの作成、削除、または修正を行うことができます。 
+</para>
+<para> <application>fdisk</application> を使用したくない場合は、<guibutton>「戻る」</guibutton>をクリックして前画面に戻り、<guimenuitem>
+「fdiskを使用」</guimenuitem>の選択を解除してから<guibutton>「次」</guibutton>を押して作業を続行します。 
+</para>
+<para> <application>fdisk</application> によるドライブのパーティショニングが終了すると、この画面に戻ります。<application>
+fdisk</application> によるパーティショニングを行いたいハードドライブが他にもある場合には、そのドライブを選択します。パーティショニングが終了した場合は、<guibutton>
+「次」</guibutton>をクリックし、<application>Disk Druid</application> を使用してパーティションに対するマウントポイントを割り当てます。 
+</para>
+</sect1>
+<sect1 id="s1-help-screens-fdiskpart">
+<title><application>fdisk</application> によるパーティショニング</title>
+<para> ここでは、<application>fdisk</application> によるドライブのパーティショニングを行うことができます。 
+</para>
+<para> コマンドのヘルプを見る場合は、プロンプトに対して<command>m</command> と入力します。 </para>
+<para> 素早く作業できる以下のコマンドが使用できます。 <itemizedlist>
+<listitem><para><command>n</command> -- 新規パーティションを追加します。 </para>
+</listitem>
+<listitem><para><command>d</command> -- パーティションを削除します。 </para>
+</listitem>
+<listitem><para><command>p</command> -- パーティションテーブルを表示します。 </para>
+</listitem>
+<listitem><para><command>l</command> -- 既存のパーティションタイプの一覧を表示します。 </para>
+</listitem>
+<listitem><para><command>w</command> -- パーティションテーブルをディスクに書き込み、<application>
+fdisk</application> を終了します。 </para>
+</listitem>
+<listitem><para><command>q</command> -- 変更内容を保存せずに終了します。 </para>
+</listitem>
+</itemizedlist></para>
+</sect1>
+<sect1 id="s1-help-screens-wkst">
+<title>パーティション設定を自動的に行う</title>
+<para> パーティションが自動的に設定されることに注意してください。 </para>
+<para> ワークステーションインストールを行うと、データはすべて上書きされます。 </para>
+<para> このインストールクラスでは、<emphasis>すべての</emphasis> ディスクドライブ上の<emphasis>すべての</emphasis>
+既存の Linux パーティション上の<emphasis>すべての</emphasis> データが失われます。 </para>
+<para> これらのデータを保持したい場合は、カスタムインストールを選択して、パーティションの設定を自分で行う必要があります。 </para>
+<para> カスタムインストールを選択するには、<guibutton>「戻る」</guibutton> をクリックします。ワークステーションインストールを続ける場合は、<guibutton>
+「次」</guibutton> をクリックします。 </para>
+</sect1>
+<sect1 id="s1-help-screens-svr">
+<title>パーティション設定を自動的に行う</title>
+<para> パーティションが自動的に設定されることに注意してください。 </para>
+<para> サーバーインストールを行なうと、データはすべて上書きされます。 </para>
+<para> このインストールクラスでは、<emphasis>すべての</emphasis> ディスクドライブ上の<emphasis>すべての</emphasis>
+パーティションの<emphasis>すべての</emphasis> データが失われます。 </para>
+<para> 他のオペレーティングシステムをインストールしていてそのシステムを保持する必要がある場合は、このクラスは選択しないでください。 </para>
+<para> 既存のデータや他の OS を保持しておく場合は、カスタムインストールを選択して、パーティションの設定を自分で行う必要があります。 </para>
+<para> カスタムインストールを選択するには、<guibutton>「戻る」</guibutton> をクリックします。サーバーインストールを続ける場合は、<guibutton>
+「次」</guibutton> をクリックします。 </para>
+</sect1>
+<sect1 id="s1-help-screens-partition">
+<title>パーティション</title>
+<para> &RHL; をインストールするパーティションを選択してください。 </para>
+<para><command>注意:</command> <command>パーティションレスインストール</command>を実行する場合は、既存の
+DOS/Windows パーティションを、<command>/</command> と表される root として定義する必要があります。このインストール方法で使用する
+FAT パーティションをクリックして選択します。パーティションがハイライトされたら、<guilabel>「編集」</guilabel>をクリックして <command>
+/</command> (root) のマウントポイントを割り当てます。割当が終了したら、<guilabel>「Ok」</guilabel>をクリックします。選択内容を確認したら、root
+ファイルシステムとスワップ領域の大きさを決定する必要かあります。 </para>
+<para> 設定の詳細については、&RHLIG; の <emphasis>「パーティションを作成せずにインストールする」</emphasis>の章を参照してください。 
+</para>
+<para> システムにどのようなパーティションが必要かわからない場合は、<citetitle>&RHLIG;</citetitle> または <citetitle>&RHLRGS;</citetitle>
+のパーティションについての説明を参照してください。 </para>
+<para> <application>fdisk</application> によるパーティションの作成を行っている場合は、そのパーティションの<firstterm>
+マウントポイント</firstterm>を決定します。パーティションを選択してから、<guilabel>「編集」</guilabel>ボタンを使用して、マウントポイントを定義します。 
+</para>
+<para> <application>Disk Druid</application> を使用している場合は、一つ以上のディスクパーティションのマウントポイントを決定します。必要なパーティションを追加したり、不要なパーティションを削除します。 
+</para>
+<para> 最初の画面では、既存のパーティションが表示されます。パーティションごとに、以下の 5 つのフィールドが表示されます。 </para>
+<itemizedlist>
+<listitem><para><command>Mount Point:</command> このフィールドには、&RHL; のインストール後（実行時）に、そのパーティションがどこにマウントされるかが表示されます。パーティションが既にあり、[not
+set]  と表示されている場合は、マウントポイントを指定する必要があります。<keycap>編集</keycap>を選択するか、パーティションをダブルクリックすると、設定を変更できます。 
+</para>
+</listitem>
+<listitem><para><command>Device:</command> このフィールドには、パーティションのデバイス名 が表示されます。たとえば、hda2
+はプライマリハードドライブの 2 番目のパーティションを示します。 </para>
+</listitem>
+<listitem><para><command>Requested:</command> <firstterm>この</firstterm>フィールドには、パーティションの容量が表示されます。
+サイズを変更したい場合は、そのパーティションをいったん削除し、<keycap>追加</keycap>を選択して作成し直す必要があります。 </para>
+</listitem>
+<listitem><para><command>Actual:</command> このフィールドには、パーティションが使用する容量が表示されます。 
+</para>
+</listitem>
+<listitem><para><command>Type:</command> このフィールドには、<?Pub Caret>パーティションの種類
+(Linux Native、DOSなど)が表示されます。 </para>
+</listitem>
+</itemizedlist>
+<para> <firstterm>パーティション</firstterm>の画面で設定をしているときに、<firstterm>「要求されたパーティションを作成できません。」
+</firstterm> という赤のメッセージテキストがパーティション名とともに表示される場合があります。未設定のパーティションが存在するというメッセージが表示される主な理由として、そのパーティションの空き領域が少ないことが考えられます。 
+</para>
+<para> この問題を解決するには、十分な空き領域のあるほかのドライブにパーティションを移すか、パーティションのサイズを現在のドライブに適したサイズに変更するか、そのパーティションを削除する必要があります。変更するには、<keycap>
+編集</keycap>を使用するか、パーティションをダブルクリックします。 </para>
+<sect2 id="s2-help-screens-dd">
+<title>システムのパーティション設定</title>
+<para> 真ん中の列のボタンは、パーティション設定に使います。これらのボタンで、パーティションの追加、変更、削除を行うことができます。さらに、変更を確定したり、元に戻してパーティション設定を終了するためのボタンもあります。 
+</para>
+<itemizedlist>
+<listitem><para><command>追加:</command> 「追加」ボタンを使うと、新しいパーティションを作成することができます。このボタンを選択すると、マウントポイント、サイズ、種類などの必要な情報を入力するためのダイアログボックスが表示されます。 
+</para>
+</listitem>
+<listitem><para><command>編集:</command> 「編集」ボタンを使うと、選択されているパーティションのマウントポイントを変更することができます。 
+</para>
+</listitem>
+<listitem><para><command>削除:</command> 「削除」ボタンを使うと、選択されているパーティションを削除することができます。このボタンを選択すると、削除を確認するダイアログボックスが表示されます。 
+</para>
+</listitem>
+<listitem><para><command>リセット:</command> 「リセット」ボタンを使うと、それまでに行ったパーティションの設定がすべて元に戻されます。 
+</para>
+</listitem>
+<listitem><para><command>RAID デバイスの作成:</command> RAID をお使いになったことのある方以外は、<keycap>
+RAID デバイスの作成</keycap>ボタンを使用しないでください。RAID の詳細については、<citetitle>&RHLRGS;</citetitle>
+を参照してください。 </para>
+</listitem>
+</itemizedlist>
+</sect2>
+<sect2 id="s2-help-screens-drive">
+<title>ドライブ情報</title>
+<para> このセクションでは、お使いのコンピュータのディスク構成が表示されます。概要を確認するためのセクションなので、ここで変更を行うことはできません。各行には次のようなのフィールドがあります。 
+</para>
+<itemizedlist>
+<listitem><para><command>Drive:</command> このフィールドには、ハードディスクドライブのデバイス名 (had、hdb
+など)が表示されます。 </para>
+</listitem>
+<listitem><para><command>Geom [C/H/S]:</command> ハードディスクドライブの <firstterm>
+ジオメトリ</firstterm> はシリンダ、ヘッド、およびセクタの数を示します。 </para>
+</listitem>
+<listitem><para><command>Total:</command> このフィールドには、ハードドディスクライブの総容量が表示されます。 
+</para>
+</listitem>
+<listitem><para><command>Free:</command> このフィールドには、ハードドライブの空き領域のサイズが表示されます。 
+</para>
+</listitem>
+<listitem><para><command>Used:</command> このフィールドには、パーティションに割り当てられているハードディスクドライブの領域のサイズがMBとパーセンテージで表示されます。 
+</para>
+</listitem>
+</itemizedlist>
+</sect2>
+</sect1>
+<sect1 id="s1-help-screens-format">
+<title>フォーマットするパーティションの選択</title>
+<para> &RHL; 用にフォーマットしたいパーティションを選択します。 </para>
+<para> 不良ブロックを検出するかどうかを選択します。 </para>
+<para> このオプションを選択すると、ドライブ上の不良ブロックが検出され、そのリストが作成されます。このリストは不良ブロックを避けるための情報として使われ、そのようなブロックにデータの書き込みが行われないようになるので、データの損失を防ぐことができます。 
+</para>
+</sect1>
+<sect1 id="s1-help-screens-lilo">
+<title>LILO 設定画面</title>
+<para> LILO は、コンピュータで &RHL; を起動（ブート）するために使われる Linux ローダーです。 LILO では、Windows
+9<replaceable>x</replaceable> のようなほかのオペレーティングシステムを起動することもできます。この画面で、LILO をインストールするかどうか、どのような設定でインストールするかなどを指定します。 
+</para>
+<para><guibutton>ブートディスクを作成する</guibutton>: マスターブートレコード（MBR）に LILO をインストールしない場合、または
+LILO をインストールしない場合は、ブートディスクを作成しておく必要があります。 </para>
+<para><guibutton>LILO をインストールしない</guibutton>: LILO をドライブ上に書き込みたくない場合は、LILO
+をインストールしなくてもかまいません。2つのハードディスクドライブ上に異なるオペレーティングシステムがインストールされている場合には、LILO よりもブートディスクを使用するほうがよいでしょう。 
+</para>
+<para> LILO をインストールするには、まずインストール先を選びます。システムにインストールされているオペレーティングシステムが &RHL;
+だけの場合は、マスターブートレコード（MBR）へのインストールを選択してください。Win 95/98 などのほかのオペレーティングシステムと同じハードディスクドライブに &RHL;
+を共存させる場合も、LILO を MBR にインストールする必要があります。 </para>
+<para> Windows NT がインストールされているシステムで LILO をインストールする場合は、LILO のインストール先として「ブートパーティションの最初のセクタ」を選択してください。また、ブートディスクも作成しておかないと、Linux
+を起動できなくなります。 </para>
+<para> LILO をインストールしない場合は、&RHL; を起動できるように、ブートディスクを作成してください。 </para>
+<para> お使いのコンピュータが LBR モードでハードディスクドライブにアクセスしない場合は、<guibutton>「リニアモードを使う」</guibutton>の選択を解除してください。 
+</para>
+<para> LILO のブートコマンドにデフォルトのオプションを追加したい場合は、「カーネル パラメータ」フィールドにそれらのオプションを入力します。入力したオプションは、ブート時に
+Linux カーネルに渡されます。 </para>
+<para><guilabel>ブートラベル</guilabel>: 画面下部(<guilabel>「ブートラベル：」</guilabel>の下)にブート可能なすべてのパーティションがブートラベルとともに表示されます。他のオペレーティングシステムが使用するパーティションも含まれます。別パーティションのブートラベルを追加したり、既存のブートラベルを変更したい場合は、パーティションをクリックして選択します。選択したパーティションの上に表示される「ブートラベル:」フィールドで、ブートラベルを変更できます。 
+</para>
+</sect1>
+<sect1 id="s1-help-screens-silo">
+<title>SILO の設定画面</title>
+<para> SILO、（Sparc Improved Loader）、を使用して Red Hat Linux を起動することができます。SunOS
+および Solaris などの他のオペレーティングシステムを起動することもできます。この画面で、SILO をインストールするかどうか、どのような設定でインストールするかなどを指定します。 
+</para>
+<para><guibutton>ブートディスクを作成する</guibutton>: SILO をインストールしない、または安全上の理由から作成したほうが望ましい場合には、ブートディスクを作成する必要があります。フロッピーディスクドライブがない場合にはこのオプションは表示されません。ブート可能なフロッピーディスクドライブを持たない
+SMCC 製 Ultra を使用している場合、このオプションはデフォルトで無効になります。 </para>
+<para><guibutton>SILO をインストールしない</guibutton>: SILO をドライブに書き込みたくない場合には、SILO
+をインストールしなくてもかまいません。たとえば、すでに別のパーティションまたディスク上に SILO がインストールされていて、そこからブートしたいというような場合です。 
+</para>
+<para> SILO をインストールするには、まずインストール先を選びます。システムにインストールされているオペレーティングシステムが Red Hat
+Linux のみの場合は、マスターブートレコード (ディスクの先頭パーティションのブートブロック) へのインストールを選択すればよいはずです。SunOS/Solalis
+などほかのオペレーティングシステムと同じハードディスクドライブに Red Hat Linux を共存させる場合、特に SunOS/Solaris がディスクの先頭パーティション上にある場合には、SILO
+を MBR にインストールしないほうがよいでしょう。 </para>
+<para> SILO をインストールしない場合は、Red Hat Linux をブートできるようにブートディスクを作成してください。 </para>
+<para><guibutton>PROM エイリアスの作成</guibutton>: PROM がサポートされている場合、インストーラは PROM
+エイリアス [linux] を作成できるので、PROM コマンドラインから、[boot linux]コマンドによって、SILO ブートローダをブートすることができます。 
+</para>
+<para><guibutton>デフォルト PROM ブートデバイスの設定</guibutton>: デフォルト設定では PROM オプション [boot-device]
+または [boot-form] が設定されているので、インストーラは確実に PROM に Red Hat Linux をブートさせることができます。 
+</para>
+<para> SILO のブートコマンドにデフォルトのオプションを追加したい場合は、「カーネルパラメータ」フィールドにそれらのオプションを入力します。入力したオプションは、ブート時に
+Linux カーネルに渡されます。 </para>
+<para> ブート可能パーティション -- ブート可能なすべてのパーティションがブートラベルとともに表示されます。他のオペレーティングシステムが使用するパーティションも含まれます。別パーティションのブートラベルを追加したり、既存のブートラベルを変更したい場合は、パーティションをクリックして選択します。選択したパーティションのブートラベルを変更することができます。 
+</para>
+</sect1>
+<sect1 id="s1-help-screens-netconf">
+<title>ネットワークの設定</title>
+<para> ネットワークカードがある場合は、ネットワーク情報を設定することができます。ネットワークカードがない場合は、<guibutton>「次」
+</guibutton> をクリックして、次の画面に進みます。 </para>
+<para> ネットワークカードを選択し、DHCP を使ってネットワークを設定するかどうかを指定します。複数のイーサネットデバイスが接続されている場合は、デバイスごとに設定画面が表示されます。eth0、eth1といったタブで、デバイス画面を切り換えることができます。指定した情報は、各画面ごとに設定されます。<guilabel>
+「ブート時にアクティブにする」</guilabel> を選択しておくと、ネットワークカードはブート時に起動されます。 </para>
+<para> DHCP を使用しないかどうか不明な場合は、ネットワーク管理者に相談してください。 </para>
+<para> DHCP サーバーを使用しない場合は、「IP アドレス」、「ネットマスク」、「ネットワーク」、「ブロードキャスト」 の各アドレスを入力します。これらのアドレスについて不明な部分がある場合は、ネットワーク管理者に相談してください。 
+</para>
+<para> このシステムのホスト名を入力します。入力しない場合、システムは 「ローカルホスト」として設定されます。 </para>
+<para> 最後に、「ゲートウェイ」、「1番目の DNS」、「2番目の DNS」、「3番目の DNS」の各アドレスを入力します。 </para>
+</sect1>
+<sect1 id="s1-help-screens-timezone">
+<title>タイムゾーンの選択</title>
+<para> タイムゾーンの設定は、コンピュータの物理的位置で設定することも、 協定世界時 (UTC) からタイムゾーンのオフセットで指定することもできます。 
+</para>
+<para> 画面の上部には 2 つのタブがあります。最初のタブは、場所を指定する場合に選択します。このオプションのでは、「表示」選択することができます。「表示」では以下の表示を選択できます。[World]、[North
+America]、[South America]、[Pacific Rim]、[Europe]、[Africa]、[Asia]。 </para>
+<para> 表示された地図から、黄色でマークされた都市をクリックすると、選択した都市が赤い <guilabel>X</guilabel> でマークされます。 
+</para>
+<para> 都市の一覧をスクロールして目的のタイムゾーンを選択することも可能です。 </para>
+<para> 2 番目のタブでは、UTC オフセットによってタイムゾーンを指定することができます。表示されるオフセットの一覧から目的のオフセットを選択し、必要に応じて夏時間のオプションも選択します。 
+</para>
+<para> どちらのタブでも、オプションとして<guilabel>「システムクロックでUTCを使用」</guilabel>を選択できます。(UTCは、GMT
+としても知られますが、システムに夏時間の処理を適切に行わせることができます。コンピュータのハードウェアクロックで (ローカル時間ではなく) UTC
+を使用している場合には、これを選択してください。  </para>
+</sect1>
+<sect1 id="s1-help-screens-accts">
+<title>アカウントの設定</title>
+<para> root アカウントのパスワードを入力します。パスワードは 6 文字以上でなければなりません。確認用に 2 番目の入力フィールドに同じパスワードを入力ししてください。2つのパスワードが一致すると、<guibutton>
+「次」</guibutton> ボタンが使用できるようになります。 </para>
+<para> 次にユーザアカウントを作成します。</para>
+<para> まず、ユーザアカウント名を入力します。次に、そのユーザのパスワードを作成し、確認を行います。最後に、作成したユーザのフルネームを入力し、<keycap>
+Enter</keycap> キーを押します。すると、アカウントリストに、作成したアカウント情報が追加されます。 </para>
+<para> 別のユーザアカウントを作成するには、<guibutton>「新規」</guibutton>を選択し、各フィールドに情報を入力します。すべての情報を入力したら、<guibutton>
+「追加」</guibutton>を選択してユーザをアカウントリストに追加します。 </para>
+<para> さらに、作成したユーザーアカウントを、<guibutton>編集</guibutton>したり、不要なアカウントを<guibutton>
+削除</guibutton>するには、アカウントを選択してから<guibutton>「編集」</guibutton>または<guibutton>「削除」
+</guibutton>ボタンを使用します。 </para>
+</sect1>
+<sect1 id="s1-help-screens-authconf">
+<title>認証の設定</title>
+<para> ネットワークパスワードを設定しない場合は、この手順を行う必要はありません。この手順が必要かどうか不明な場合は、システム管理者にご確認ください。 
+</para>
+<para> <firstterm>NIS</firstterm> 認証を設定しない限り、<firstterm>MD5</firstterm> パスワードと<firstterm>
+シャドウ</firstterm>パスワードの両方が選択された状態になります。コンピュータのセキュリティを考えて、両方のパスワードを有効にすることをお勧めします。 
+</para>
+<para><emphasis>MD5 パスワードを有効にする</emphasis> - 普通の 8 文字以下のパスワードではなく、256 文字までの長いパスワードをサポートします。 
+</para>
+<para><emphasis>シャドウパスワードを有効にする</emphasis> - パスワードの安全性を高めるしくみの1つです。すべてのパスワードは、<filename>
+/etc/shadow</filename>の中に保存されます。このファイルは root しか読み取り権限がありません。 </para>
+<para> NIS オプションを設定するには、コンピュータが NIS ネットワークに接続されている必要があります。NIS ネットワークに接続されているかどうかわからない場合は、システム管理者にご確認ください。 
+</para>
+<para><emphasis>NIS を有効にする</emphasis> - 同一 の NIS（Network Information Service）ドメインに所属する複数のコンピュータがパスワードやグループ情報を共有するしくみです。2
+つのオプションがあります。 </para>
+<para><emphasis>NIS ドメイン</emphasis> - このオプションで、コンピュータが所属するドメイン（グループ）を指定します。 
+</para>
+<para><emphasis>NIS サーバー</emphasis> - このオプションで、コンピュータのサーバーとして特定の NIS サーバーを指定できます。このオプションを設定しておくと、LANに
+ブロードキャスト リクエストを送ってホストサーバーを探す必要はありません。 </para>
+</sect1>
+<sect1 id="s1-help-screens-sel-group">
+<title>パッケージグループの選択</title>
+<para> インストールするパッケージグループを選択します。インストールするグループの横のチェックボックスをマークしてください。 </para>
+<para> パッケージを個別に選択したい場合は、画面下部にある <guilabel>「個々のパッケージを選択する」</guilabel> オプションを選択します。 
+</para>
+</sect1>
+<sect1 id="s1-help-screens-sel-indiv">
+<title>個々のパッケージの選択</title>
+<para> 画面の左側に、パッケージグループの一覧が表示されます。この一覧を展開してグループを一つ選択すると、そのグループに属するパッケージの一覧が右側のパネル内に表示されます。 
+</para>
+<para> パッケージを個別に選択するには、パッケージをダブルクリックするか、一度クリックしてハイライトしてから<guilabel>「インストールするパッケージの選択」
+</guilabel>をクリックします。すると、選択したパッケージ上にチェックマークが表示されます。 </para>
+<para> パッケージの詳細を知りたい場合は、そのパッケージをクリックします。パッケージ名、サイズ、詳細な情報が画面下部に表示されます。 </para>
+</sect1>
+<sect1 id="s1-help-screens-depend">
+<title>未解決の依存</title>
+<para> 多くのソフトウェアパッケージは、正しく機能するために他のパッケージまたはライブラリに依存しています。正しく機能するために必要なパッケージがすべてインストールされることを保証するために、&RHL;
+はパッケージがインストールまたは削除されるたびにそれらのパッケージの<firstterm>依存</firstterm>をチェックします。あるパッケージが、未インストールの別パッケージを必要とする場合、未解決の依存が存在することになります。 
+</para>
+<para> 選択した 1 つ以上のパッケージに、未解決の依存が存在します。「依存関係を満たすパッケージをインストールする」 オプションを選択すると、これを解決することができます。 
+</para>
+</sect1>
+<sect1 id="s1-help-screens-monitor">
+<title>X の設定</title>
+<para> ここでインストールプログラムは使用モニタを検出して、マシンの最適な表示設定を決定しようと試みます。モニタを検出できない場合は、このコンピュータに接続されたモデルに最も近いモニタを一覧から選択してください。 
+</para>
+<para> モニタの水平/垂直同期の範囲を入力することもできます。それらの値は、使用モニタのマニュアルに記載されています。これらの値を入力する際には、注意してください。モニタの能力を越える値を入力すると、ディスプレイが壊れる可能性があります。これらのフィールドに数値を入力するのは、マニュアルに記載された値がモニタ一覧の選択肢と一致せず、かつマニュアルから正しい値を見つけたと確信できる場合に限ってください。 
+</para>
+</sect1>
+<sect1 id="s1-help-screens-xconf">
+<title>X の設定</title>
+<para> インストールプログラムはシステムに最適なビデオカードの検出を行いますが、必要であれば別のビデオカードを選択することもできます。 </para>
+<para> ビデオカードを選択したら、ビデオカードに搭載されたビデオメモリの容量を選択します。 </para>
+<para> ハードウェアが設定されたら、その設定をテストすることができます。 </para>
+<para> &RHL; がインストールされた後で、ブート時にグラフィック環境（X）を起動するかどうかの選択も行うことができます。 </para>
+<para> 特定の色数および解像度を設定するには、<guibutton>「X 設定のカスタマイズ」</guibutton>を選択します。 </para>
+<para> X の設定を行わない場合や、インストール後に X の設定を行う場合は、<guibutton>「X の設定を行わない」</guibutton>
+を選択します。 </para>
+</sect1>
+<sect1 id="s1-help-screens-xcustom">
+<title>
+カスタム設定
+</title>
+<para>
+ここで、このシステムの X 設定として適切な解像度選択してください。
+<guibutton>[この設定をテストする]</guibutton> 
+をクリックして、設定を試してください。提示されたテスト結果が
+気に入らない場合は、<guibutton>[No]</guibutton> をクリックして
+他の解像度を選択してください。
+</para>
+</sect1>
+<sect1 id="s1-help-screens-aboutinstall">
+<title> インストールの準備ができました</title>
+<para><command>注意:</command> <guibutton>「次」</guibutton>をクリックすると、&RHL; のインストールを開始します。このプロセスを取り消すことはできません。&RHL;
+をインストールを中止する場合は、ここが最後のポイントとなります。 </para>
+<para> インストールを中断するには、すべての &RHL; メディアを取り除き、<command>Reset</command> ボタンを押すか、<keycombo>
+<keycap>control-</keycap><keycap>Alt-</keycap><keycap>Delete</keycap></keycombo>を使用してコンピュータをリセットしてください。
+</para>
+</sect1>
+<sect1 id="s1-help-screens-installing">
+<title>パッケージのインストール</title>
+<para> システムに &RHL; をインストールするために必要な情報がすべて収集されました。インストールに必要な時間は、インストールするパッケージの数によって異なります。Official &RHL;
+のボックスセットをインストールする場合は、この機会に <citetitle>&RHLGSG;</citetitle> または <citetitle>&RHLRGS;</citetitle>
+に目を通してください。 </para>
+</sect1>
+<sect1 id="s1-help-screens-bootdisk">
+<title>ブートディスクの作成</title>
+<para> フォーマットされた空のディスクをフロッピードライブに挿入し、 <guibutton>「次」</guibutton> をクリックして続行します。 
+</para>
+</sect1>
+</chapter>
+</book>
+<?Pub *0000022609 0>

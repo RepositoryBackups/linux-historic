@@ -1,0 +1,364 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/es/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Particiones</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.52"><LINK
+REL="HOME"
+TITLE="Ayuda para la instalación"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="Crear particiones de forma automático"
+HREF="s1-help-screens-svr.html"><LINK
+REL="NEXT"
+TITLE="Configuración de las  particiones"
+HREF="s1-help-screens-loopback.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-PARTITION"
+>Particiones</A
+></H1
+><P
+>	¿Dóonde quiere instalar Red Hat Linux?
+      </P
+><P
+>	<B
+CLASS="COMMAND"
+>NB:</B
+> 
+         Si está creando una<B
+CLASS="COMMAND"
+>Instalación sin
+	 crear particiones</B
+> tendrá que utilizar
+        una partición existente  DOS/Windows como root
+	(<B
+CLASS="COMMAND"
+>/</B
+>). Seleccione la partición FAT que quiere
+         utilizar durante la instalación.
+	Seleccione <I
+CLASS="GUILABEL"
+>Modifica</I
+> para asignar el destino
+        de montaje <B
+CLASS="COMMAND"
+>/</B
+> (root). Pulse <I
+CLASS="GUILABEL"
+>Ok</I
+>
+        cuando haya terminado. Confirme la selección, tendrá que definir
+	el lugar apropiado de root en el sistema de archivos.
+      </P
+><P
+>        Para mayor información, Vea el capítulo
+	<I
+CLASS="EMPHASIS"
+>Installing Without Partitioning</I
+> en el
+	<I
+CLASS="CITETITLE"
+>Red Hat Linux Installation Guide</I
+>.
+      </P
+><P
+>        Si no sabe como crear particiones en su sistema, consulte
+        l'<I
+CLASS="CITETITLE"
+>Red Hat Linux Installation Guide</I
+> o bien
+	l'<I
+CLASS="CITETITLE"
+>Red Hat Linux Reference Guide</I
+>.
+      </P
+><P
+>        Terminada la fase de creación de particiones en el disco a través
+        <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>,
+	debe definir los <I
+CLASS="FIRSTTERM"
+>destinos de montaje</I
+> para las
+	particiones. Use el botón <I
+CLASS="GUILABEL"
+>Modifique</I
+>,
+        una vez elegida la partición, para definir el destino de montaje.
+      </P
+><P
+>        Si está usando <TT
+CLASS="APPLICATION"
+>Disk Druid</TT
+>,
+         deberá definir los  puntos de montaje para una o más particiones en el disco.
+          Tendrá que crea o cancelar particiones.        
+      </P
+><P
+>        La parte de arriba de la pantalla muestra las particiones existentes. Cada partición
+        tiene cinco campos:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Punto de Montaje:</B
+> este campo indica donde
+            está montada la partición.
+            Si una partición existe, pero es etiquetada como "not set"
+            tendrá que definir el destino de montaje.
+            Puede usar el botón <B
+CLASS="KEYCAP"
+>Modificar</B
+> o
+	    hacer doble click sobre las particiones.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Dispositivo:</B
+>Este campo muestra el nombre del
+	    dispositivo y de la partición (por ejemplo, hda2 representa
+	    la segunda partición sobre el disco duro primario).
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Requested:</B
+> El campo
+              <I
+CLASS="FIRSTTERM"
+>Requested</I
+>
+               muestra cuanto espacio tiene la partición.	    
+              Si quiere definir la dimensión, debe cancelar la
+             partición existente y volver a creerla usando el botón 
+             <B
+CLASS="KEYCAP"
+>Añadir</B
+>.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Actual:</B
+> Este campo muestra el espacio que está
+            utilizando la partición.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Tipo:</B
+> Este campo muestra el tipo de partición
+            (como Linux Native o DOS).
+	  </P
+></LI
+></UL
+><P
+>        
+	Si lee la sección <I
+CLASS="FIRSTTERM"
+>Partitions</I
+>, podrá
+        ver un mensaje
+         <I
+CLASS="FIRSTTERM"
+>Unallocated Requested Partition</I
+>
+	 (scritto in rosso), seguido de una o más particiones.
+	Podría ocurrir que una partición no esté alojada. Normalmente
+	esto es debido a una falta de espacio libre sobre el disco.
+      </P
+><P
+>        Para resolver el problema de una partición no alojada, deberá
+	cambiarla a un disco en el que exista suficiente espacio libre,
+	reorganizarla o eliminarla completamente.
+         Efectue los cambios utilizando el botón
+	 <B
+CLASS="KEYCAP"
+>Modificar</B
+> o bien haciendo un doble click
+	 sobre la partición.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DD"
+>Crear particiones en el sistema</A
+></H2
+><P
+>          las teclas de la fila central controlan las acciones de las herramientas para la
+         creación de particiones en el disco.
+          Puede añadir, modificar, o cancelar las particiones.	  
+          Además,existen botones que puede usar para aceptar los 
+          cambios que ha hecho, o bien para la  
+	  configuración existente en la lista de particiones.
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Añadir:</B
+> Utilice este botón para
+	      añadir una nueva partición. Después de haberlo seleccionado
+	      aparece una casilla para la configuración de una nueva
+	      partición (destino de montaje, dimensión y tipo).
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Modificar:</B
+> Use este pulsador para cambiar
+             el destino de montaje de una partición seleccionada.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Cancelar:</B
+> Use este botón para cancelar
+              una partición. Aparece una casilla que le pide que confirme
+	     esta operación.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Reset:</B
+> Use este botón para eliminar todos
+              los cambios que ha realizado.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Make RAID Device:</B
+> Use el botón
+                <B
+CLASS="KEYCAP"
+>Make RAID Device</B
+> solo si tiene experiencia 
+                  en el uso de la tecnología RAID.
+                  Para mayor información sobre RAID, lea
+                   <I
+CLASS="CITETITLE"
+>Red Hat Linux Reference Guide</I
+>.
+	    </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DRIVE"
+>Drive Summaries</A
+></H2
+><P
+>         Esta sección muestra la configuración del disco en su
+         ordenador y tiene solamente la finalidad de resumir la información.	  
+         Cada línea tiene los siguientes campos:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Drive:</B
+> Este campo muestra los nombres del 
+              dispositivo del disco (como hda o hdb).
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Geom [C/H/S]:</B
+> La 
+	      <I
+CLASS="FIRSTTERM"
+>geometría</I
+> del disco muestra el número 
+             de cilindros, cabezales y sectores.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Total:</B
+> Este campo muestra el espacio 
+               disponible total sobre el disco.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Libre:</B
+> Aquí podrá controlar el espacio
+               que queda disponible en el disco.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Usato:</B
+> Estos campos muestran el espacio
+              del disco duro en el que se alojan las particiones, en Mbyte
+	      y en porcentual
+	    </P
+></LI
+></UL
+></DIV
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/es/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:31 GMT -->
+</HTML
+>

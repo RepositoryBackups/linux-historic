@@ -1,0 +1,1169 @@
+<!DOCTYPE BOOK PUBLIC "-//Davenport//DTD DocBook V3.0//EN" [
+<!ENTITY RH "Red Hat">
+<!ENTITY RHL "Red Hat Linux">
+<!ENTITY RHLRGS "Red Hat Linux Reference Guide">
+<!ENTITY RHLIG "Red Hat Linux Installation Guide">
+<!ENTITY RHLGSG "Red Hat Linux Getting Started Guide">
+<!ENTITY RHI "Red Hat, Inc.">
+]>
+<book id="book">
+<title>Ecrans d'aide de l'installation</title>
+  <chapter id="s1-help-screens-lang">
+    <title></title>
+    <sect1 id="lang">
+      <title>S&eacute;lection de la langue</title>
+      <para>
+	Quelle langue d&eacute;sirez-vous utiliser pour l'installation et
+	 par d&eacute;faut pour le syst&egrave;me &RHL; install&eacute; ?
+      </para>
+      <para>
+	Choisissez une langue dans la liste &agrave; droite.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-kybd">
+      <title>Configuration du clavier</title>
+      <para>
+	Quel type de clavier utilisez-vous ?
+      </para>
+      <para>
+	Si vous ne trouvez pas le mod&egrave;le exact, choisissez 
+	l'entr&eacute;e 
+	<guilabel>g&eacute;n&eacute;rique</guilabel> la plus proche (par 
+	exemple, clavier PC g&eacute;n&eacute;rique 101 touches).
+      </para>
+      <para>
+	S&eacute;lectionnez ensuite le type de disposition du clavier 
+	(par exemple, fran&ccedil;ais standard).
+      </para>
+      <para>
+	Vous pouvez saisir des caract&egrave;res sp&eacute;ciaux (tels que 
+	&Ntilde;, &Ocirc; et &Ccedil;) &agrave; l'aide des &quot;touches 
+	mortes&quot; (&eacute;galement appel&eacute;es combinaisons de 
+	touches). Si vous souhaitez 
+	utiliser des caract&egrave;res sp&eacute;ciaux n&eacute;cessitant 
+	l'utilisation de touches mortes, s&eacute;lectionnez 
+<guilabel>Activer touches mortes</guilabel>. Dans le cas contraire, 
+	s&eacute;lectionnez <guilabel>D&eacute;sactiver touches mortes
+</guilabel>.
+      </para>
+      <para>
+	Utilisez la zone de texte vide en bas de l'&eacute;cran pour tester 
+	votre configuration de clavier.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-mouse">
+      <title>Configuration de la souris</title>
+      <para>
+	Quel type de souris utilisez-vous ?
+      </para>
+      <para>
+	Utilisez-vous une souris PS/2, bus ou s&eacute;rie ? (Conseil : si 
+	le connecteur auquel votre souris est branch&eacute;e est rond, vous 
+	utilisez une souris PS/2 ou bus ; s'il est rectangulaire, il s'agit 
+	d'une souris s&eacute;rie.)
+      </para>
+      <para>
+	Essayez de trouver votre mod&egrave;le dans la liste. Si vous ne 
+	trouvez pas le mod&egrave;le exact, vous pouvez choisir un 
+	mod&egrave;le compatible avec le v&ocirc;tre. Sinon, 
+	s&eacute;lectionnez le type de souris 
+<guilabel>g&eacute;n&eacute;rique</guilabel> appropri&eacute;.
+      </para>
+      <para>
+	Si vous utilisez une souris s&eacute;rie, choisissez le port auquel 
+	elle est connect&eacute;e dans la bo&icirc;te de dialogue suivante.
+      </para>
+      <para>
+	Le syst&egrave;me X Window est con&ccedil;u pour utiliser une souris 
+	&agrave; trois boutons. Si vous utilisez une souris &agrave; deux 
+	boutons, &RHL; peut &eacute;muler le bouton du milieu.
+      </para>
+      <para>
+	Si vous utilisez une souris &agrave; deux boutons, s&eacute;lectionnez 
+	l'option <guilabel>Emulation de souris &agrave; trois boutons
+</guilabel>. Apr&egrave;s l'installation, vous pourrez cliquer sur les 
+	deux boutons en m&ecirc;me temps pour simuler le bouton du milieu.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-wel">
+      <title>Red Hat Linux vous souhaite la bienvenue !</title>
+      <para>
+	Bienvenue ! Ce processus d'installation est pr&eacute;sent&eacute; en 
+	d&eacute;tails dans le 
+	<citetitle>&RHLIG;</citetitle> disponible aupr&egrave;s de &RHI;. 
+	Lisez la totalit&eacute; du guide avant de commencer l'installation.
+      </para>
+      <para>
+	Des versions HTML et PostScript du guide sont disponibles en ligne sur 
+	le site http://www.redhat.com. Il existe &eacute;galement une version 
+	HTML sur le CD-ROM &RHL;.
+      </para>
+      <para>
+	<command>Nouvelle fonctionnalit&eacute; :</command> &RHL; 6.2 
+	b&eacute;n&eacute;ficie d'une nouvelle m&eacute;thode d'installation 
+	appel&eacute;e installation &quot;sans partition&quot;. Si votre 
+	syst&egrave;me comporte une partition FAT (DOS/Windows) avec un espace 
+	disque disponible suffisant, vous pouvez installer &RHL; sans 
+	repartitionner votre disque dur. Cette option pr&eacute;sente un 
+	int&eacute;r&ecirc;t particulier pour les utilisateurs souhaitant 
+	essayer &RHL; sans pour autant interrompre pendant une longue 
+	dur&eacute;e le fonctionnement du syst&egrave;me d&eacute;j&agrave; 
+	install&eacute;.
+      </para>
+      <para>
+	Si vous avez achet&eacute; la bo&icirc;te &RHL; Officiel, n'oubliez 
+	pas d'enregistrer votre produit sur notre site Web (www.redhat.com/now).
+      </para>
+      <para>
+	Tout au long de cette installation, vous pourrez utiliser votre souris 
+	pour s&eacute;lectionner diff&eacute;rentes options. Vous pouvez 
+	naviguer dans l'installation &agrave; l'aide des touches 
+<keycap>Tab</keycap> et <keycap>Entr&eacute;e</keycap>.
+      </para>
+      <para>
+	Utilisez les boutons <guibutton>Suivant</guibutton> et 
+	<guibutton>Pr&eacute;c&eacute;dent</guibutton>
+	 pour naviguer parmi les &eacute;crans. Cliquez sur
+	<guibutton>Suivant</guibutton> pour sauvegarder les informations et 
+	afficher l'&eacute;cran suivant ; cliquez sur 
+	<guibutton>Pr&eacute;c&eacute;dent</guibutton> pour revenir &agrave; 
+	l'&eacute;cran pr&eacute;c&eacute;dent sans sauvegarder les 
+	informations.
+      </para>
+      <para>
+	Pour r&eacute;duire cet &eacute;cran d'aide, cliquez sur le bouton 
+	<guibutton>Masquer l'aide</guibutton>.
+      </para>
+      <para>
+	Vous pouvez annuler cette installation &agrave; tout moment 
+	jusqu'&agrave; l'&eacute;cran 
+	<guimenu>Pr&eacute;paration de l'installation</guimenu>. Une fois que 
+	vous avez cliqu&eacute; sur 
+	<guibutton>Suivant</guibutton> dans l'&eacute;cran 
+	<guimenu>Pr&eacute;paration de l'installation</guimenu>, le 
+	syst&egrave;me lance l'installation des paquetages et commence 
+	&agrave; enregistrer des donn&eacute;es sur votre disque dur. Pour 
+	annuler l'installation avant cet &eacute;cran, vous pouvez 
+	red&eacute;marrer votre ordinateur en toute s&eacute;curit&eacute; 
+	(utilisez le bouton <keycap>reset</keycap>, ou
+	<keycombo>
+	  <keycap>Ctrl</keycap> <keycap>Alt</keycap> <keycap>Suppr</keycap>
+	</keycombo>).
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-welreconfig">
+      <title>Red Hat Linux vous souhaite la bienvenue !</title>
+      <para>
+        Vous entrez maintenant dans le mode de reconfiguration qui va vous 
+	permettre de configurer les caract&eacute;ristiques de votre 
+	ordinateur li&eacute;es au site. Pour quitter sans modifier vos 
+	param&egrave;tres, s&eacute;lectionnez &quot;Non&quot; et appuyez 
+	sur le bouton <guibutton>Suivant</guibutton> ci-dessous.
+      </para>
+      <para>
+        Tout au long de ce processus de configuration, vous pourrez utiliser 
+	votre souris pour s&eacute;lectionner diff&eacute;rentes options. 
+	Vous pouvez &eacute;galement naviguer dans la configuration &agrave; 
+	l'aide des touches <keycap>Tab</keycap> et 
+        <keycap>Entr&eacute;e</keycap>.
+      </para>
+      <para>
+        Utilisez les boutons <guibutton>Suivant</guibutton> et 
+        <guibutton>Pr&eacute;c&eacute;dent</guibutton> pour passer d'un 
+	&eacute;cran &agrave; un autre. Cliquez sur 
+	<guibutton>Suivant</guibutton> pour sauvegarder les informations et 
+	passer &agrave; l'&eacute;cran suivant ; cliquez sur 
+        <guibutton>Pr&eacute;c&eacute;dent</guibutton> pour retourner &agrave; 
+	l'&eacute;cran pr&eacute;c&eacute;dent sans sauvegarder.
+      </para>
+      <para>
+        Pour r&eacute;duire cet &eacute;cran d'aide, cliquez sur le bouton 
+	<guibutton>Masquer l'aide</guibutton>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-instpath">
+      <title>Options d'installation</title>
+      <para>
+	Comment souhaitez-vous installer &RHL; ?
+      </para>
+      <para>
+	Une installation compl&egrave;te d&eacute;truira toutes les 
+	informations pr&eacute;c&eacute;demment sauvegard&eacute;es sur les 
+	partitions s&eacute;lectionn&eacute;es.
+      </para>
+      <para>
+	Une mise &agrave; jour permet de conserver les donn&eacute;es 
+	syst&egrave;me &RHL; existantes.
+      </para>
+      <para>
+	Si vous souhaitez proc&eacute;der &agrave; une installation 
+	compl&egrave;te, vous devez choisir la classe (ou le type) de 
+	l'installation. Les options disponibles sont : Station de travail 
+	GNOME, Station de travail KDE, Serveur ou Personnalis&eacute;e.
+      </para>
+      <para>
+	Si vous avez l'habitude d'utiliser l'outil de partitionnement 
+	<application>fdisk</application> , vous pouvez le s&eacute;lectionner 
+	&agrave; ce niveau. Si vous ne choisissez pas d'utiliser 
+	<application>fdisk</application>, le programme d'installation 
+	utilisera l'outil de partitionnement par d&eacute;faut, 
+	<application>Disk Druid</application>. <application>Nous vous 
+	recommandons d'utiliser Disk Druid</application> si vous ne 
+	connaissez pas <application>fdisk</application>.
+      </para>
+      <para>
+	Si vous ne savez pas quelle classe d'installation utiliser, lisez 
+	attentivement les informations suivantes.
+      </para>
+      <para>
+	<command>Remarque :</command> outre les m&eacute;thodes d'installation 
+	mentionn&eacute;es ci-dessus, l'installation de &RHL; sur une partition 
+	FAT (DOS/Windows) existante est &eacute;galement &agrave; votre 
+	disposition. Cette installation &quot;sans partition&quot; est 
+	s&eacute;lectionn&eacute;e d&egrave;s que vous affectez le label 
+	<command>/</command> &agrave; une partition DOS dans l'&eacute;cran de 
+	partitionnement de <application>Disk Druid</application>. Elle 
+	remplace la suppression automatique de la partition utilis&eacute;e 
+	dans les installations de la classe Station de travail.
+      </para>
+      <para>
+	Les installations de la classe Station de travail permettent 
+	d'installer le syst&egrave;me X Window et le gestionnaire de bureau 
+	de votre choix. 
+	<emphasis>Une installation de cette classe supprime les partitions 
+	li&eacute;es &agrave; Linux sur tous les disques durs install&eacute;s 
+	(et utilise tout l'espace disque non partitionn&eacute;). </emphasis> 
+	Les partitions non li&eacute;es &agrave; Linux ne sont pas 
+	modifi&eacute;es, et vous pourrez d&eacute;marrer d'autres 
+	syst&egrave;mes d'exploitation que &RHL; une fois l'installation 
+	termin&eacute;e.
+      </para>
+      <para>
+	Si vous souhaitez que votre syst&egrave;me fonctionne comme un serveur 
+	Linux et que vous ne voulez pas effectuer une configuration trop 
+	complexe, ni installer le syst&egrave;me X Window, une installation 
+	de la classe Serveur est plus appropri&eacute;e.
+	<emphasis> Elle supprime TOUTES les partitions existantes sur TOUS les 
+	disques durs install&eacute;s ; vous ne devez la s&eacute;lectionner 
+	que si vous &ecirc;tes s&ucirc;r de ne vouloir conserver aucune 
+	donn&eacute;e existante !</emphasis> 
+	Cela inclut TOUTES les partitions utilis&eacute;es par d'autres 
+	syst&egrave;mes d'exploitation. 
+	<emphasis>Le contenu de TOUS les disques va &ecirc;tre effac&eacute;.
+	</emphasis>
+      </para>
+      <para>
+	Seule l'installation personnalis&eacute;e vous offre une 
+	flexibilit&eacute; totale. Une installation personnalis&eacute;e 
+	<emphasis>vous permet de choisir</emphasis> l'espace disque que vous 
+	souhaitez partitionner. Vous avez un contr&ocirc;le total sur les 
+	paquetages qui seront install&eacute;s sur votre syst&egrave;me. Par 
+	ailleurs, vous pouvez &eacute;galement d&eacute;terminer si LILO doit 
+	prendre en charge le d&eacute;marrage de votre syst&egrave;me. Vous ne 
+	devez choisir ce type d'installation que si vous connaissez 
+	d&eacute;j&agrave; bien Linux.
+      </para>
+      <para>
+	Pour plus d'informations sur les diff&eacute;rentes classes 
+	d'installation (Station de travail, Serveur et Personnalis&eacute;e), 
+	reportez-vous au &RHLIG;.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-upgrade">
+      <title>Mise &agrave; jour de votre syst&egrave;me</title>
+      <para>
+	Si vous choisissez de mettre &agrave; jour votre syst&egrave;me, vous 
+	pouvez &eacute;galement d&eacute;cider si vous souhaitez personnaliser 
+	vos paquetages.
+      </para>
+      <para>
+	Si vous ne souhaitez pas s&eacute;lectionner de paquetage 
+	suppl&eacute;mentaire pour la mise &agrave; jour, cliquez sur 
+	<guibutton>Suivant</guibutton> pour continuer.
+      </para>
+      <para>
+	Pour personnaliser vos paquetages, s&eacute;lectionnez le bouton 
+	<guilabel>Choix des paquetages &agrave; mettre &agrave; jour</guilabel>, 
+	puis cliquez sur <guibutton>Suivant</guibutton>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-fdisk">
+      <title><application>fdisk</application></title>
+      <para>
+	S&eacute;lectionnez le disque que vous souhaitez partitionner. 
+	Lorsque vous cliquez sur le lecteur, le syst&egrave;me affiche 
+	l'&eacute;cran de partitionnement de <application>fdisk</application>. 
+	Vous pouvez alors utiliser <application>fdisk</application>
+	 pour cr&eacute;er, supprimer ou modifier des partitions sur le disque 
+	 dur s&eacute;lectionn&eacute;.
+      </para>
+      <para>
+	Si vous ne souhaitez pas utiliser <application>fdisk</application>, 
+	cliquez sur <guibutton>Pr&eacute;c&eacute;dent</guibutton> pour 
+	retourner &agrave; l'&eacute;cran pr&eacute;c&eacute;dent, 
+	d&eacute;s&eacute;lectionnez <guimenuitem>Utiliser fdisk</guimenuitem>, 
+	puis cliquez sur <guibutton>Suivant</guibutton> pour continuer.
+      </para>
+      <para>
+	D&egrave;s que vous avez partitionn&eacute; le disque &agrave; l'aide 
+	de <application>fdisk</application>, le syst&egrave;me affiche 
+	&agrave; nouveau cet &eacute;cran. Si vous voulez partitionner un 
+	autre disque dur &agrave; l'aide de 
+	<application>fdisk</application>, s&eacute;lectionnez-le. Sinon, 
+	cliquez sur <guibutton>Suivant</guibutton> pour affecter des points 
+	de montage &agrave; vos partitions &agrave; l'aide de 
+	<application>Disk Druid</application>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-fdiskpart">
+      <title>Partitionnement avec <application>fdisk</application></title>
+      <para>
+	A ce niveau, vous pouvez partitionner votre disque &agrave; l'aide de 
+	<application>fdisk</application>.
+      </para>
+      <para>
+	Pour obtenir de l'aide, tapez <command>m</command> &agrave; l'invite : 
+	le syst&egrave;me affichera une liste des commandes.
+      </para>
+      <para>
+	Quelques commandes simples pour vous aider &agrave; commencer :
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>n</command> -- Ajouter une nouvelle partition.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>d</command> -- Supprimer une partition.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>p</command> -- Imprimer la table des partitions.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>l</command> -- Afficher les types de partitions connus.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>	      
+	      <command>w</command> -- Enregistrer la table des partitions sur 
+	      le disque et quitter <application>fdisk</application>.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>q</command> -- Quitter sans sauvegarder les modifications.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-wkst">
+      <title>Partitionnement automatique</title>
+      <para>
+	Etes-vous s&ucirc;r ?
+      </para>
+      <para>
+	Si vous ex&eacute;cutez une installation de la classe Station de 
+	travail, vous perdrez toutes vos donn&eacute;es.
+      </para>
+      <para>
+	Cette classe d'installation supprimera <emphasis>TOUTES</emphasis> les 
+	donn&eacute;es de 
+	<emphasis>TOUTES</emphasis> les partitions Linux sur 
+	<emphasis>TOUS</emphasis> vos disques.
+      </para>
+      <para>
+	Pour conserver les donn&eacute;es se trouvant sur les partitions Linux 
+	existantes, vous devez effectuer la partition manuellement ou 
+	s&eacute;lectionner l'installation personnalis&eacute;e.
+      </para>
+      <para>
+	Utilisez le bouton <guibutton>Pr&eacute;c&eacute;dent</guibutton> pour 
+	s&eacute;lectionner l'installation personnalis&eacute;e ou 
+	<guibutton>Suivant</guibutton> pour continuer l'installation Station 
+	de travail.
+      </para>
+    </sect1>
+      
+      <sect1 id="s1-help-screens-svr">
+      <title>Partitionnement automatique</title>
+      <para>
+	Etes-vous s&ucirc;r ?
+      </para>
+      <para>
+	Si vous ex&eacute;cutez une installation Serveur, vous perdrez toutes 
+	vos donn&eacute;es.
+      </para>
+      <para>
+	Cette classe d'installation supprimera <emphasis>TOUTES</emphasis> les 
+	donn&eacute;es de 
+	<emphasis>TOUTES</emphasis> les partitions sur 
+	<emphasis>TOUS</emphasis> vos disques.
+      </para>
+      <para>
+	Si vous utilisez un autre syst&egrave;me d'exploitation que vous 
+	voulez conserver, ne s&eacute;lectionnez pas cette classe.
+      </para>
+      <para>
+	Pour conserver des donn&eacute;es ou un autre syst&egrave;me 
+	d'exploitation, vous devez effectuer la partition manuellement ou 
+	s&eacute;lectionner l'installation personnalis&eacute;e.
+      </para>
+      <para>
+	Utilisez le bouton <guibutton>Pr&eacute;c&eacute;dent</guibutton> pour 
+	s&eacute;lectionner l'installation personnalis&eacute;e ou 
+	<guibutton>Suivant</guibutton> pour continuer l'installation Serveur.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-partition">
+      <title>Partitions</title>
+      
+      <para>
+	O&ugrave; souhaitez-vous installer &RHL; ?
+      </para>
+      <para>
+	<command>Remarque :</command> si vous effectuez une 
+	<command>installation sans partition</command>, vous devez 
+	d&eacute;finir une partition DOS/Windows existante comme partition 
+	root, indiqu&eacute;e par 
+	<command>/</command>. Cliquez sur la partition FAT que vous souhaitez 
+	s&eacute;lectionner pour cette installation. Lorsque la partition est 
+	en surbrillance, cliquez sur 
+	<guilabel>Modifier</guilabel> pour lui affecter le point de montage 
+	<command>/</command> (root). Cliquez sur <guilabel>Ok</guilabel> 
+	lorsque vous avez termin&eacute;. Une fois que vous avez 
+	confirm&eacute; ce choix, vous devez d&eacute;finir la taille du 
+	syst&egrave;me de fichiers root et de l'espace swap pour votre 
+	syst&egrave;me.
+      </para>
+      <para>
+	Pour des instructions plus d&eacute;taill&eacute;es, reportez-vous 
+	au chapitre 
+	<emphasis>Installation sans partitionnement</emphasis> du 
+	<citetitle>&RHLIG;</citetitle>.
+      </para>
+      <para>
+	Si vous ne savez pas comment partitionner votre syst&egrave;me, 
+	consultez la section consacr&eacute;e au partitionnement dans le 
+	<citetitle>&RHLIG;</citetitle> ou le 
+	<citetitle>&RHLRGS;</citetitle>.
+      </para>
+      <para>
+	Si vous venez de terminer le partitionnement avec 
+	<application>fdisk</application>, vous devez d&eacute;finir des 
+	<firstterm>points de montage</firstterm> pour vos partitions. 
+	D&egrave;s que vous avez choisi une partition, utilisez le bouton 
+	<guilabel>Modifier</guilabel> pour d&eacute;finir le point de montage 
+	appropri&eacute;.
+      </para>
+      <para>
+	Si vous utilisez <application>Disk Druid</application>, vous devez 
+	d&eacute;finir des points de montage pour une ou plusieurs partitions. 
+	En m&ecirc;me temps, vous pouvez &eacute;galement cr&eacute;er et/ou 
+	supprimer des partitions.
+      </para>
+      <para>
+	L'&eacute;cran sup&eacute;rieur indique les partitions existantes. 
+	Chaque partition comporte cinq champs :
+      </para>
+      
+      <itemizedlist>
+	<listitem>
+	  <para>
+	    <command>Point de montage :</command> ce champ indique o&ugrave; 
+	    la partition est mont&eacute;e lorsque &RHL; est install&eacute; 
+	    et en fonctionnement. Si une partition existe mais n'est pas 
+	    d&eacute;finie, vous devez indiquer son point de montage. Vous 
+	    pouvez utiliser le bouton <keycap>Modifier</keycap> ou cliquer 
+	    deux fois sur la partition.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>P&eacute;riph&eacute;rique :</command> ce champ affiche 
+	    le nom du p&eacute;riph&eacute;rique de la partition (par exemple, 
+	    hda2 repr&eacute;sente la seconde partition sur votre disque dur 
+	    principal).
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Demand&eacute; :</command> le champ 
+	    <firstterm>Demand&eacute;</firstterm>
+	      indique la taille de la partition. Pour red&eacute;finir cette 
+	      taille, vous devez supprimer la partition en cours et la 
+	      recr&eacute;er &agrave; l'aide du bouton <keycap>Ajouter</keycap>.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Actuel :</command> ce champ indique l'espace 
+	    occup&eacute; par la partition.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Type :</command> ce champ indique le type de la 
+	    partition (tel que Linux Native ou DOS).
+	  </para>
+	</listitem>
+      </itemizedlist>
+      
+      <para>
+	Lorsque vous vous d&eacute;placez dans la section 
+	<firstterm>Partitions</firstterm>, le message 
+	<firstterm>Partition demand&eacute;e non allou&eacute;e </firstterm>
+	 peut appara&icirc;tre (texte en rouge), suivi par une ou plusieurs 
+	 partitions. La raison d'une partition non allou&eacute;e est 
+	 g&eacute;n&eacute;ralement le manque d'espace disque disponible.
+      </para>
+      <para>
+	Pour r&eacute;soudre ce probl&egrave;me, vous devez d&eacute;placer 
+	la partition vers un autre disque disposant d'un espace libre 
+	suffisant, r&eacute;duire la partition afin qu'elle tienne sur le 
+	disque actuel, ou supprimer compl&egrave;tement la partition. Pour 
+	effectuer des modifications, utilisez le bouton 
+	<keycap>Modifier</keycap> ou cliquez deux fois sur la partition.
+      </para>
+	
+      <sect2 id="s2-help-screens-dd">
+	<title>Partitionnement de votre syst&egrave;me</title>
+	<para>
+	  La ligne centrale de boutons permet de contr&ocirc;ler les 
+	  op&eacute;rations de l'outil de partitionnement. Vous pouvez ainsi 
+	  ajouter, modifier et supprimer des partitions &agrave; ce niveau. 
+	  De plus, certains boutons permettent d'accepter les modifications 
+	  effectu&eacute;es ou de r&eacute;initialiser les param&egrave;tres 
+	  et de quitter l'outil de partitionnement.
+	</para>
+	
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>Ajouter :</command> utilisez ce bouton pour cr&eacute;er 
+	      une nouvelle partition. Le syst&egrave;me affiche alors une 
+	      bo&icirc;te de dialogue contenant les champs &agrave; renseigner 
+	      (tels que le point de montage, la taille et le type).
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Modifier :</command> utilisez ce bouton pour modifier 
+	      le point de montage de la partition s&eacute;lectionn&eacute;e.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Supprimer :</command> utilisez ce bouton pour supprimer 
+	      une partition. Le syst&egrave;me affiche une bo&icirc;te de 
+	      dialogue vous demandant de confirmer la suppression.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>RAZ :</command> utilisez ce bouton pour annuler les 
+	      modifications effectu&eacute;es.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Cr&eacute;er le p&eacute;riph&eacute;rique RAID :</command> 
+	      appuyez sur le bouton <keycap>Cr&eacute;er le 
+	      p&eacute;riph&eacute;rique RAID </keycap> UNIQUEMENT si vous 
+	      avez d&eacute;j&agrave; utilis&eacute; RAID. Pour en savoir plus 
+	      sur RAID, reportez-vous au <citetitle>&RHLRGS;</citetitle>.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
+	
+      <sect2 id="s2-help-screens-drive">
+	<title>R&eacute;sum&eacute;s disque</title>
+	<para>
+	  Cette section indique la configuration du disque de votre ordinateur. 
+	  Son but est uniquement informatif. Chaque ligne comprend les champs 
+	  suivants :
+	</para>
+	
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>Disque :</command> ce champ indique le nom du disque 
+	      dur (par exemple, hda ou hdb).
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Geom [C/H/S] :</command> la 
+	      <firstterm>g&eacute;om&eacute;trie</firstterm> du disque dur 
+	      indique le nombre de cylindres, de t&ecirc;tes et de secteurs.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Total :</command> ce champ indique l'espace total 
+	      disponible sur le disque dur.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Libre :</command> ce champ indique l'espace libre 
+	      restant sur le disque dur.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Utilis&eacute; :</command> ces champs affichent la 
+	      r&eacute;partition actuelle des partitions sur le disque dur en 
+	      m&eacute;ga-octets et en pourcentage.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
+    </sect1>
+
+    <sect1 id="s1-help-screens-loopback">
+      <title>Configuration des systèmes de fichiers</title>
+      <para>
+        Tout d'abord, choisissez la taille pour la partition racine 
+	si vous ne désirez pas utiliser la valeur par défaut. La
+	taille par défaut est la moitié de l'espace disponible.
+      </para>
+      <para>
+        La taille par défaut du swap est de 32 méga-octets, mais vous
+	pouvez l'augmenter si cela est nécessaire.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-format">
+      <title>Choix des partitions &agrave; formater</title>
+      <para>
+	S&eacute;lectionnez les partitions &agrave; formater pour &RHL;.
+      </para>
+      <para>
+	Voulez-vous v&eacute;rifier les blocs d&eacute;fectueux ?
+      </para>
+      <para>
+	Une v&eacute;rification des blocs d&eacute;fectueux peut aider 
+	&agrave; pr&eacute;venir toute perte de donn&eacute;es. Dans ce cas, 
+	le syst&egrave;me recherche les blocs d&eacute;fectueux sur le disque 
+	et les regroupe dans une liste pour &eacute;viter que des 
+	donn&eacute;es ne soient enregistr&eacute;es &agrave; leur emplacement.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-lilo">
+      <title>Configuration de LILO</title> 
+      <para>
+	Vous pouvez utiliser LILO (LInux LOader), le chargeur de 
+	d&eacute;marrage Linux, pour lancer &RHL; sur votre ordinateur. Ce 
+	chargeur peut &eacute;galement d&eacute;marrer d'autres syst&egrave;mes 
+	d'exploitation, dont Windows 9<replaceable>x</replaceable>. Dans cette 
+	section, vous pouvez configurer LILO si vous le souhaitez.
+      </para>
+      <para>
+	<guibutton>Cr&eacute;ation d'une disquette d'amor&ccedil;age</guibutton> : 
+	vous devez cr&eacute;er une disquette d'amor&ccedil;age si vous 
+	n'installez pas LILO sur le bloc de d&eacute;marrage ma&icirc;tre (MBR) 
+	ou si vous ne l'installez pas du tout.
+      </para>
+      <para>
+	<guibutton>Ne pas installer LILO</guibutton> : vous pouvez 
+	&eacute;viter LILO si vous ne voulez pas le copier sur votre disque. 
+	Si vous poss&eacute;dez deux disques durs avec un syst&egrave;me 
+	d'exploitation diff&eacute;rent sur chacun d'eux, vous pouvez 
+	pr&eacute;f&eacute;rer utiliser une disquette d'amor&ccedil;age 
+	plut&ocirc;t que LILO.
+      </para>
+      <para>
+	Pour installer LILO, s&eacute;lectionnez l'emplacement 
+	appropri&eacute;. Si votre ordinateur n'utilise que &RHL;, 
+	choisissez le bloc de d&eacute;marrage ma&icirc;tre (MBR). Pour 
+	les syst&egrave;mes utilisant Win95/98 et &RHL; sur un seul disque 
+	dur, il est &eacute;galement pr&eacute;f&eacute;rable d'installer 
+	LILO sur le bloc de d&eacute;marrage ma&icirc;tre (MBR).
+      </para>
+      <para>
+	Si vous utilisez Windows NT (et si vous voulez installer LILO) vous 
+	devez installer LILO sur le premier secteur de la partition de 
+	d&eacute;marrage. N'oubliez pas de cr&eacute;er une disquette 
+	d'amor&ccedil;age, sinon vous ne pourrez pas d&eacute;marrer avec Linux.
+      </para>
+      <para>
+	Si vous ne souhaitez <emphasis>pas</emphasis> installer LILO, 
+	cr&eacute;ez une disquette d'amor&ccedil;age afin de pouvoir 
+	d&eacute;marrer &RHL;.
+      </para>
+      <para>
+	Si votre ordinateur n'acc&egrave;de pas &agrave; un disque dur en mode 
+	lin&eacute;aire, d&eacute;s&eacute;lectionnez 
+	<guibutton>Utiliser le mode lin&eacute;aire</guibutton>.
+      </para>
+      <para>
+	Pour ajouter des options par d&eacute;faut &agrave; la commande de 
+	d&eacute;marrage LILO, entrez-les dans le champ des param&egrave;tres 
+	du noyau. Les options saisies seront transmises au noyau Linux 
+	&agrave; chaque d&eacute;marrage.
+      </para>
+      <para>
+	<guilabel>Label de boot</guilabel> : chaque partition amor&ccedil;able 
+	est r&eacute;pertori&eacute;e et identifi&eacute;e (dans la zone du 
+	<guilabel>label de boot</guilabel> en bas de l'&eacute;cran), y 
+	compris les partitions utilis&eacute;es par d'autres syst&egrave;mes 
+	d'exploitation. Pour ajouter des labels de boot pour d'autres 
+	partitions (ou modifier ceux existants), cliquez sur la partition 
+	pour la s&eacute;lectionner. Vous pouvez ensuite changer le label de 
+	boot dans le champ appropri&eacute;.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-silo">
+      <title>Configuration de SILO</title>
+      <para>
+        Vous pouvez aussi utiliser SILO (Sparc Improved LOader) pour lancer 
+	&RHL; sur votre ordinateur. Il permet &eacute;galement de lancer 
+	d'autres syst&egrave;mes d'exploitation, tels que SunOS et Solaris. 
+	A ce niveau, le syst&egrave;me vous demande comment vous souhaitez 
+	configurer SILO.
+      </para>
+      <para>
+      <guibutton>Cr&eacute;ation d'une disquette d'amor&ccedil;age</guibutton> : 
+        vous devez cr&eacute;er une disquette d'amor&ccedil;age si vous 
+        n'installez pas SILO ou pour garantir la s&eacute;curit&eacute; de 
+	votre syst&egrave;me. Si vous ne disposez pas de lecteur de disquettes, 
+	cette option ne sera pas accessible ; si vous utilisez une station de 
+	travail Ultra de Sun Microsystems (ne comportant 
+	g&eacute;n&eacute;ralement pas de lecteur de disquettes 
+	amor&ccedil;able), cette option sera d&eacute;sactiv&eacute;e par 
+	d&eacute;faut.
+      </para>
+      <para>
+        <guibutton>Ne pas installer SILO</guibutton> : vous pouvez 
+	&eacute;viter SILO si vous ne voulez pas le copier sur votre disque, 
+	par exemple, si SILO est d&eacute;j&agrave; install&eacute; sur une 
+	autre partition ou sur un autre disque que vous souhaitez utiliser 
+	pour d&eacute;marrer votre syst&egrave;me.
+      </para>
+      <para>
+        Pour installer SILO, s&eacute;lectionnez l'emplacement 
+	appropri&eacute;. Si votre ordinateur n'utilise que Red Hat Linux, 
+	choisissez le bloc de d&eacute;marrage ma&icirc;tre (MBR) (bloc de 
+	d&eacute;marrage de la premi&egrave;re partition du disque). Pour les 
+	ordinateurs utilisant SunOS/Solaris et Red Hat Linux sur un seul 
+	disque dur, il est pr&eacute;f&eacute;rable de ne pas installer SILO 
+	sur le bloc de d&eacute;marrage ma&icirc;tre (MBR), en particulier 
+	si SunOS/Solaris se trouve sur la premi&egrave;re partition du disque.
+      </para>
+      <para>
+        Si vous ne souhaitez pas installer SILO, cr&eacute;ez une disquette 
+	d'amor&ccedil;age afin de pouvoir d&eacute;marrer Red Hat Linux.
+      </para>
+      <para>
+        <guibutton>Cr&eacute;ez un alias de PROM </guibutton> : le programme 
+	d'installation peut cr&eacute;er un alias de PROM &quot;linux&quot; 
+	si le PROM le permet, afin que vous puissiez d&eacute;marrer dans le 
+	chargeur de d&eacute;marrage SILO &agrave; partir de la ligne de 
+	commande du PROM en entrant &quot;boot linux&quot;.
+      </para>
+      <para>
+        <guibutton>D&eacute;finissez un p&eacute;riph&eacute;rique de 
+	d&eacute;marrage de PROM par d&eacute;faut</guibutton> : le programme 
+	d'installation va s'assurer que le PROM ne va pas d&eacute;marrer par 
+	d&eacute;faut dans le programme d'installation de Red Hat Linux en 
+	d&eacute;finissant l'option PROM &quot;boot-device&quot; ou 
+	&quot;boot-from&quot;.
+      </para>
+      <para>
+       Si vous souhaitez ajouter des options par d&eacute;faut &agrave; la 
+       commande de d&eacute;marrage de SILO, entrez-les dans le champ des 
+       param&egrave;tres du noyau. Les options saisies seront transmises au 
+       noyau Linux &agrave; chaque d&eacute;marrage.
+      </para>
+      <para>
+       Partitions amor&ccedil;ables -- Chaque partition amor&ccedil;able est 
+       r&eacute;pertori&eacute;e et identifi&eacute;e, y compris les partitions 
+       utilis&eacute;es par d'autres syst&egrave;mes d'exploitation. Pour 
+       ajouter des labels de boot pour d'autres partitions (ou modifier ceux 
+       existants), cliquez sur la partition pour la s&eacute;lectionner. Vous 
+       pouvez ensuite changer le label.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-netconf">
+      <title>Configuration du r&eacute;seau</title>
+      <para>
+	Si vous poss&eacute;dez une carte r&eacute;seau, vous pouvez configurer 
+	les informations r&eacute;seau. Sinon, cliquez sur 
+	<guibutton>Suivant</guibutton>.
+      </para>
+      <para>
+	S&eacute;lectionnez votre carte r&eacute;seau et choisissez si vous 
+	souhaitez utiliser DHCP pour la configuration. Si vous avez plusieurs 
+	cartes Ethernet, chaque p&eacute;riph&eacute;rique disposera de son 
+	propre &eacute;cran de configuration. Vous pouvez passer d'un 
+	&eacute;cran &agrave; un autre, par exemple eth0 et eth1 ; les 
+	informations fournies sont sp&eacute;cifiques &agrave; chaque 
+	&eacute;cran. Si vous s&eacute;lectionnez 
+	<guilabel>Activation au d&eacute;marrage</guilabel>, 
+	votre interface r&eacute;seau sera lanc&eacute;e au d&eacute;marrage.
+      </para>
+      <para>
+	Si vous ne disposez pas d'un acc&egrave;s client DHCP ou si vous ne 
+	savez pas exactement &agrave; quoi ces donn&eacute;es font 
+	r&eacute;f&eacute;rence, contactez votre administrateur r&eacute;seau.
+      </para>
+      <para>
+	Entrez ensuite l'adresse IP ainsi que le masque r&eacute;seau, le 
+	r&eacute;seau et les adresses de diffusion. Si vous ne connaissez pas 
+	exactement certaines de ces donn&eacute;es, contactez votre 
+	administrateur r&eacute;seau.
+      </para>
+      <para>
+	Entrez un nom d'h&ocirc;te pour votre syst&egrave;me. Si vous ne le 
+	faites pas, votre syst&egrave;me est identifi&eacute; en tant 
+	qu'&quot;h&ocirc;te local&quot;.
+      </para>
+      <para>
+	Sp&eacute;cifiez ensuite les donn&eacute;es pour la passerelle, 
+	le DNS primaire, le DNS secondaire et le DNS tertiaire.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-timezone">
+      <title>S&eacute;lection du fuseau horaire</title>
+      <para>
+	Pour d&eacute;finir le fuseau horaire, vous pouvez s&eacute;lectionner 
+	l'emplacement physique de votre ordinateur ou utiliser la coordination 
+	UTC (temps universel).
+      </para>
+      <para>
+	La partie sup&eacute;rieure de l'&eacute;cran comporte deux onglets. 
+	Le premier onglet vous permet d'effectuer une configuration par 
+	localisation. Vous pouvez ainsi s&eacute;lectionner la zone 
+	g&eacute;ographique appropri&eacute;e. Lorsque vous choisissez 
+	<guimenuitem>Affichage</guimenuitem>, le syst&egrave;me vous propose 
+	les options suivantes : Monde, Am&eacute;rique du Nord, 
+	Am&eacute;rique du Sud, Pacifique, Europe, Afrique et Asie.
+      </para>
+      <para>
+	Sur la carte interactive, vous pouvez cliquer sur l'une des villes 
+	indiqu&eacute;es par les points jaunes ; un <guilabel>X</guilabel> 
+	rouge appara&icirc;t alors &agrave; l'endroit s&eacute;lectionn&eacute;.
+      </para>
+      <para>
+	Vous pouvez &eacute;galement faire d&eacute;filer la liste 
+	affich&eacute;e pour choisir le fuseau horaire appropri&eacute;.
+      </para>
+      <para>
+	Le second onglet vous permet d'utiliser la coordination UTC. A ce 
+	niveau, vous trouverez une liste permettant de s&eacute;lectionner 
+	les d&eacute;calages, ainsi qu'une option pour l'utilisation de 
+	l'heure d'&eacute;t&eacute;.
+      </para>
+      <para>
+	Les deux onglets vous offrent la possibilit&eacute; d'activer l'option 
+	<guilabel>L'horloge syst&egrave;me utilise l'&eacute;chelle 
+	UTC</guilabel>. L'&eacute;chelle UTC, &eacute;galement 
+	appel&eacute;e GMT, permettra &agrave; votre syst&egrave;me 
+	d'utiliser correctement l'heure d'&eacute;t&eacute;. 
+	S&eacute;lectionnez-la si votre syst&egrave;me utilise 
+	le temps universel UTC (plut&ocirc;t que votre fuseau horaire local).
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-accts">
+      <title>Configuration du compte</title>
+      <para>
+	Entrez un mot de passe pour le compte root. Celui-ci doit comprendre 
+	au moins six caract&egrave;res. Confirmez le mot de passe en le 
+	saisissant &agrave; nouveau dans le second champ. Le bouton 
+	<guibutton>&quot;Suivant&quot;</guibutton> est activ&eacute; 
+	d&egrave;s que les deux champs concordent.
+      </para>
+      <para>
+	Cr&eacute;ez maintenant un compte utilisateur.
+      </para
+      <para>
+	Entrez un nom pour le compte utilisateur. Cr&eacute;ez ensuite un mot 
+	de passe correspondant et confirmez-le. Sp&eacute;cifiez enfin le nom 
+	complet du compte et appuyez sur <keycap>Entr&eacute;e</keycap>. Les 
+	informations relatives &agrave; votre compte sont alors 
+	int&eacute;gr&eacute;es dans la liste des comptes.
+      </para>
+      <para>
+	Pour cr&eacute;er un autre utilisateur, s&eacute;lectionnez 
+	<guibutton>Nouveau</guibutton> puis renseignez les champs 
+	appropri&eacute;s. Une fois les donn&eacute;es saisies, appuyez sur 
+	le bouton <guibutton>Ajouter</guibutton> pour int&eacute;grer le 
+	nouvel utilisateur dans la liste.
+      </para>
+      <para>
+	Vous pouvez &eacute;galement <guibutton>modifier</guibutton> les 
+	comptes utilisateur cr&eacute;&eacute;s ou <guibutton>supprimer
+	</guibutton> un compte inutile. Pour cela, s&eacute;lectionnez le 
+	compte concern&eacute; et appuyez sur le bouton 
+	<guibutton>Modifier</guibutton> ou <guibutton>Supprimer</guibutton>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-authconf">
+      <title>Configuration de l'authentification</title>
+      <para>
+	Si vous ne souhaitez pas d&eacute;finir de mot de passe r&eacute;seau, 
+	vous pouvez ignorer cette section. Si vous n'&ecirc;tes pas s&ucirc;r 
+	de la d&eacute;cision &agrave; prendre, contactez votre administrateur 
+	syst&egrave;me.
+      </para>
+      <para>
+	A moins que vous ne d&eacute;finissiez un mot de passe 
+	<firstterm>NIS</firstterm>, vous pouvez noter que les mots de passe 
+	<firstterm>MD5</firstterm> et 
+	<firstterm>masqu&eacute;s</firstterm> sont s&eacute;lectionn&eacute;s. 
+	Nous vous recommandons d'utiliser ces deux types de mots de passe pour 
+	assurer une s&eacute;curit&eacute; optimale de votre syst&egrave;me.
+      </para>
+      <para>
+	<emphasis>Activer les mots de passe MD5</emphasis> - Cette option vous 
+	permet d'utiliser un mot de passe long (jusqu'&agrave; 
+	256 caract&egrave;res) au lieu des huit caract&egrave;res (ou moins) 
+	habituels.
+      </para>
+      <para>
+	<emphasis>Activer les mots de passe masqu&eacute;s</emphasis> - Cette 
+	option fournit une m&eacute;thode tr&egrave;s s&eacute;curis&eacute;e 
+	de m&eacute;morisation des mots de passe. Tous les mots de passe sont 
+	enregistr&eacute;s dans le fichier 
+	<filename>/etc/shadow</filename> que vous ne pouvez lire que si vous 
+	&ecirc;tes connect&eacute; en tant que root.
+      </para>
+      <para>
+	Pour configurer l'option NIS, vous devez &ecirc;tre connect&eacute; 
+	&agrave; un r&eacute;seau NIS. En cas de doute, contactez votre 
+	administrateur syst&egrave;me.
+      </para>
+      <para>
+	<emphasis>Activer NIS</emphasis> - Cette option vous permet d'utiliser 
+	un groupe d'ordinateurs dans le m&ecirc;me domaine NIS avec un mot de 
+	passe et un fichier de groupe communs. Vous disposez de deux options 
+	&agrave; ce niveau :
+      </para>
+      <para>
+	<emphasis>Domaine NIS</emphasis> - Cette option vous permet de 
+	pr&eacute;ciser le domaine ou groupe d'ordinateurs auquel votre 
+	syst&egrave;me appartient.
+      </para>
+      <para>
+	<emphasis>Serveur NIS</emphasis> - Cette option indique que votre 
+	ordinateur doit utiliser un serveur NIS particulier plut&ocirc;t que 
+	de diffuser un message sur le r&eacute;seau local demandant &agrave; 
+	tout serveur disponible de prendre en charge votre syst&egrave;me.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-sel-group">
+      <title>S&eacute;lection de groupes de paquetages</title>
+      <para>
+	Choisissez les groupes de paquetages &agrave; installer. Cliquez sur 
+	la case &agrave; cocher situ&eacute;e &agrave; c&ocirc;t&eacute; du 
+	groupe de paquetages &agrave; s&eacute;lectionner.
+      </para>
+      
+      <para>
+	Pour s&eacute;lectionner des paquetages individuellement, cochez la 
+	case <guilabel>S&eacute;lection individuelle des paquetages</guilabel> 
+	en bas de l'&eacute;cran.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-sel-indiv">
+      <title>S&eacute;lection individuelle des paquetages</title>
+      <para>
+	La partie gauche de l'&eacute;cran pr&eacute;sente une liste des 
+	groupes de paquetages. Lorsque vous d&eacute;veloppez cette liste et 
+	choisissez un groupe, le syst&egrave;me affiche dans le panneau droit 
+	la liste des paquetages de ce groupe.
+      </para>
+      <para>
+	Pour s&eacute;lectionner un paquetage en particulier, cliquez deux 
+	fois sur le paquetage concern&eacute; ou cliquez une seule fois pour 
+	le mettre en surbrillance, puis cliquez sur 
+	<guilabel>S&eacute;lection des paquetages &agrave; installer</guilabel>. 
+	Une coche appara&icirc;t alors sur tous les paquetages 
+	s&eacute;lectionn&eacute;s.
+      </para>
+      <para>
+	Pour plus d'informations sur un paquetage sp&eacute;cifique, cliquez 
+	sur celui-ci. Les donn&eacute;es correspondantes apparaissent alors 
+	en bas de l'&eacute;cran, notamment le nom et la taille du paquetage.
+      </para>
+    </sect1>
+      
+      <sect1 id="s1-help-screens-depend">
+      <title>D&eacute;pendances non r&eacute;solues</title>
+      <para>
+	Pour fonctionner correctement, un grand nombre de paquetages 
+	d&eacute;pendent d'autres paquetages ou biblioth&egrave;ques. Pour 
+	s'assurer que votre syst&egrave;me dispose bien de tous les paquetages 
+	appropri&eacute;s, &RHL; contr&ocirc;le ces 
+	<firstterm>d&eacute;pendances</firstterm> &agrave; chaque fois que 
+	vous installez ou supprimez un paquetage. Si un paquetage a besoin 
+	d'un autre paquetage qui n'a pas &eacute;t&eacute; install&eacute;, 
+	le syst&egrave;me d&eacute;tecte des d&eacute;pendances non 
+	r&eacute;solues.
+      </para>
+      <para>
+	Un ou plusieurs des paquetages que vous avez 
+	s&eacute;lectionn&eacute;s pr&eacute;sentent des d&eacute;pendances 
+	non r&eacute;solues. Vous pouvez r&eacute;soudre ce probl&egrave;me 
+	en s&eacute;lectionnant 
+	<guilabel>Installation des paquetages pour satisfaire les 
+	d&eacute;pendances</guilabel>.
+      </para>
+    </sect1>
+    
+    <sect1 id="s1-help-screens-monitor">
+      <title>Configuration X</title>
+      <para>
+	Le programme d'installation va maintenant tester votre &eacute;cran 
+	pour d&eacute;terminer les param&egrave;tres d'affichage les plus 
+	adapt&eacute;s &agrave; votre ordinateur. Si le programme ne parvient 
+	pas &agrave; d&eacute;terminer l'&eacute;cran que vous utilisez, 
+	choisissez dans la liste l'&eacute;cran le plus proche de celui que 
+	vous utilisez.
+      </para>
+      <para>
+        Vous pouvez &eacute;galement entrer les fr&eacute;quences horizontale 
+	et verticale de votre &eacute;cran. Vous pouvez trouver ces valeurs 
+	dans la documentation de votre mat&eacute;riel. Veillez &agrave; 
+	entrer les valeurs appropri&eacute;es ; si vous entrez des valeurs 
+	d&eacute;passant les capacit&eacute;s de votre mat&eacute;riel, vous 
+	risquez d'endommager votre &eacute;cran. N'entrez des valeurs dans 
+	ces champs que si les valeurs de votre manuel ne correspondent pas 
+	&agrave; celles de la liste des &eacute;crans et si vous &ecirc;tes 
+	certain que les valeurs figurant dans votre documentation sont correctes.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-xconf">
+      <title>Configuration X</title>
+      <para>
+	Le programme d'installation va maintenant tester votre syst&egrave;me 
+	pour d&eacute;terminer la carte vid&eacute;o que vous utilisez ; vous 
+	pouvez choisir une autre carte vid&eacute;o si n&eacute;cessaire.
+      </para>
+      <para>
+	Une fois que vous avez s&eacute;lectionn&eacute; votre carte 
+	vid&eacute;o, choisissez la quantit&eacute; de m&eacute;moire 
+	vid&eacute;o appropri&eacute;e.
+      </para>
+      <para>
+	Une fois le mat&eacute;riel param&eacute;tr&eacute;, vous pouvez 
+	tester la configuration d&eacute;finie.
+      </para>
+      <para>
+	Vous pouvez &eacute;galement choisir si vous souhaitez d&eacute;marrer 
+	votre syst&egrave;me avec un environnement graphique une fois &RHL; 
+	install&eacute;.
+      </para>
+      <para>
+	Appuyez sur le bouton 
+	<guibutton>Personnaliser la configuration X</guibutton> pour 
+	d&eacute;finir les param&egrave;tres sp&eacute;cifiques aux couleurs 
+	et la r&eacute;solution.
+      </para>
+      <para>
+	Vous pouvez par ailleurs s&eacute;lectionner 
+	<guibutton>Ignorer la configuration X</guibutton> si vous 
+	pr&eacute;f&eacute;rez configurer le syst&egrave;me X Window 
+	apr&egrave;s l'installation ou ne pas le configurer du tout.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-xcustom">
+      <title>Configuration personnalisée </title>
+      <para>
+        Choisissez maintenant la résolution pour votre configuration
+        X.  Cliquez sur <guibutton>Tester cette
+        configuration</guibutton> pour faire un test
+        d&rsquo;affichage.  Si le résultat ne vous convient pas,
+        cliquez sur <guibutton>Non</guibutton> pour sélectionner une
+        autre résolution.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-aboutinstall">
+      <title> D&eacute;but de l'installation</title>
+      <para>
+	<command>Attention :</command> si vous cliquez sur 
+	<guibutton>Suivant</guibutton>, &RHL; sera enregistr&eacute; sur votre 
+	disque dur. Il n'est pas possible d'annuler ce processus ; si vous 
+	avez d&eacute;cid&eacute; de ne pas installer &RHL;, il s'agit du 
+	dernier &eacute;cran vous permettant d'annuler le processus 
+	d'installation.
+      </para>
+      <para>
+	Pour quitter cette installation, retirez les disquettes et CD-ROM 
+	&RHL;, puis appuyez sur le bouton <command>reset</command> ou utilisez 
+	les touches 
+	<keycombo>
+	  <keycap>Ctrl-</keycap> <keycap>Alt-</keycap>
+	  <keycap>Suppr.</keycap>
+	</keycombo>
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-installing">
+      <title>Installation des paquetages</title>
+      <para>
+	Nous avons rassembl&eacute; toutes les informations n&eacute;cessaires 
+	&agrave; l'installation de &RHL; sur votre syst&egrave;me. 
+	L'installation peut prendre un certain temps, selon le nombre de 
+	paquetages que vous installez. Si vous disposez d'une bo&icirc;te 
+	&RHL; Officiel, vous pouvez en profiter pour commencer &agrave; 
+	consulter le <citetitle>&RHLGSG;</citetitle> ou le 
+	<citetitle>&RHLRGS;</citetitle>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-bootdisk">
+      <title>Cr&eacute;ation de la disquette d'amor&ccedil;age</title>
+      <para>
+	Ins&eacute;rez une disquette vierge format&eacute;e dans votre lecteur 
+	et cliquez sur 
+	<guibutton>Suivant</guibutton> pour continuer.
+      </para>
+    </sect1>
+  </chapter>
+</book>
+
+
+
+
+  

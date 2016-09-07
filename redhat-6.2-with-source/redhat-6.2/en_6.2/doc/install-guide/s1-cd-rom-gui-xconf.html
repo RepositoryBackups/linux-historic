@@ -1,0 +1,363 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/s1-cd-rom-gui-xconf.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:52:52 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>GUI X Configuration Tool</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Installing Red Hat Linux 6.2"
+HREF="ch-cd-rom-gui.html"><LINK
+REL="PREVIOUS"
+TITLE="Package Group Selection"
+HREF="s1-cd-rom-gui-sel-group.html"><LINK
+REL="NEXT"
+TITLE="Preparing to Install"
+HREF="s1-cd-rom-gui-inst-ready.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Installation Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-cd-rom-gui-sel-group.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 4. Installing Red Hat Linux 6.2</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-cd-rom-gui-inst-ready.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-CD-ROM-GUI-XCONF"
+>GUI X Configuration Tool</A
+></H1
+><P
+>        If you decided to install the X Window System packages, you now have the
+        opportunity to configure an X server for your system.  If you did not
+        choose to install the X Window System packages, skip ahead to
+        <A
+HREF="s1-cd-rom-gui-installing.html"
+>the section called <I
+>Installing Packages</I
+></A
+>.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-CD-ROM-GUI-MONITOR"
+>Configuring Your Monitor</A
+></H2
+><P
+>	  <TT
+CLASS="APPLICATION"
+>Xconfigurator</TT
+>, the X Window System
+	  configuration tool, first presents a list of monitors for you to
+	  choose from. In the list, you can either use the monitor that is
+	  autodetected for you, or choose another monitor.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-CD-ROM-GUI-FIG-MONITOR"
+></A
+><P
+><IMG
+SRC="figs/cd-rom-gui/monitor.gif"></P
+><P
+><B
+>Figure 4-17. Monitor Selection</B
+></P
+></DIV
+><P
+>	  If your monitor does not appear on the list, select the most
+	  appropriate <TT
+CLASS="GUILABEL"
+><B
+>Generic</B
+></TT
+> model available. If you do
+	  select a <TT
+CLASS="GUILABEL"
+><B
+>Generic</B
+></TT
+> monitor,
+	  <TT
+CLASS="APPLICATION"
+>Xconfigurator</TT
+> will suggest horizontal and
+	  vertical sync ranges. These values are generally available in the
+	  documentation which accompanies your monitor, or from your monitor's
+	  vendor or manufacturer; please check your documentation to make sure
+	  these values are set correctly.
+	</P
+><DIV
+CLASS="CAUTION"
+><P
+></P
+><TABLE
+CLASS="CAUTION"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/caution.gif"
+HSPACE="5"
+ALT="Caution"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Caution</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    Do not select a monitor <I
+CLASS="EMPHASIS"
+>similar</I
+> to your monitor
+	    unless you are certain that the monitor you are selecting does not
+	    exceed the capabilities of your monitor.  Doing so may overclock
+	    your monitor and damage or destroy it.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	  Also presented are the horizontal and vertical ranges that
+	  <TT
+CLASS="APPLICATION"
+>Xconfigurator</TT
+> suggests.
+	</P
+><P
+>	  Click <B
+CLASS="GUIBUTTON"
+>Next</B
+> when you have finished configuration
+	  of your monitor.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-CD-ROM-GUI-VIDEO"
+>Video Hardware Configuration</A
+></H2
+><P
+>	  Next, <TT
+CLASS="APPLICATION"
+>Xconfigurator</TT
+> will probe for any
+	  video hardware you have (see <A
+HREF="s1-cd-rom-gui-xconf.html#GR-CD-ROM-GUI-FIG-VIDEOCARD"
+>Figure 4-18</A
+>).  Failing that,
+	  <TT
+CLASS="APPLICATION"
+>Xconfigurator</TT
+> will present a list of video
+	  cards and monitors for you to select from.
+	</P
+><P
+>	  If your video card does not appear on the list,
+	  <I
+CLASS="FIRSTTERM"
+>XFree86</I
+> may not support it.  However, if you
+	  have technical knowledge about your card, you may choose
+	  <TT
+CLASS="GUILABEL"
+><B
+>Unlisted Card</B
+></TT
+> and attempt to configure it by
+	  matching your card's video chipset with one of the available X
+	  servers.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-CD-ROM-GUI-FIG-VIDEOCARD"
+></A
+><P
+><IMG
+SRC="figs/cd-rom-gui/videocard.gif"></P
+><P
+><B
+>Figure 4-18. Videocard Setup</B
+></P
+></DIV
+><P
+>	  Next, <TT
+CLASS="APPLICATION"
+>Xconfigurator</TT
+> prompts you for the
+	  amount of video memory installed on your video card.  If you are not
+	  sure, please consult the documentation accompanying your video card.
+	  You will not damage your video card by choosing more memory than is
+	  available, but the XFree86 server may not start correctly if you do.
+	</P
+><P
+>	  Once your hardware has been determined, you can test the configuration
+	  settings. We recommend that you do test your configuration to make
+	  sure that the resolution and color is what you want to work with.
+	</P
+><P
+>	  If you would like to customize the X configuration, please make sure
+	  the <B
+CLASS="GUIBUTTON"
+>Customize X Configuration</B
+> button is
+	  selected. If you choose to customize, you will be presented with
+	  another screen that lets you select what your resolution should be
+	  (see <A
+HREF="s1-cd-rom-gui-xconf.html#GR-CD-ROM-GUI-FIG-XCUSTOM"
+>Figure 4-19</A
+>). Again, you will have
+	  the option of testing the configuration.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-CD-ROM-GUI-FIG-XCUSTOM"
+></A
+><P
+><IMG
+SRC="figs/cd-rom-gui/xcustom.gif"></P
+><P
+><B
+>Figure 4-19. X Customization</B
+></P
+></DIV
+><P
+>	  You may also choose to <B
+CLASS="GUIBUTTON"
+>Skip X Configuration</B
+> if
+	  you would rather configure X after the install or not at all.
+	</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-cd-rom-gui-sel-group.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-cd-rom-gui-inst-ready.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Package Group Selection</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-cd-rom-gui.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Preparing to Install</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/s1-cd-rom-gui-xconf.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:53:43 GMT -->
+</HTML
+>

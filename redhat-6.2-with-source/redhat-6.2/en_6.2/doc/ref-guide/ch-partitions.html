@@ -1,0 +1,2491 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-partitions.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:58:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>An Introduction to Disk Partitions</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Appendixes"
+HREF="p8268.html"><LINK
+REL="PREVIOUS"
+TITLE="Ethernet parameters"
+HREF="s1-modules-ethernet.html"><LINK
+REL="NEXT"
+TITLE="Driver Disks"
+HREF="ch-driverdisk.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-modules-ethernet.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="ch-driverdisk.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="APPENDIX"
+><H1
+><A
+NAME="CH-PARTITIONS"
+>Appendix B. An Introduction to Disk Partitions</A
+></H1
+><P
+>      Disk partitions are a standard part of the personal computer landscape,
+      and have been for quite some time. However, with so many people purchasing
+      computers featuring preinstalled operating systems, relatively few people
+      understand how partitions work. This chapter attempts to explain how disk
+      partitions work so you'll find your Red Hat Linux installation is as simple as
+      possible.
+  </P
+><P
+>    If you're reasonably comfortable with disk partitions, you could skip ahead
+    to <A
+HREF="ch-partitions.html#S2-PARTITIONS-MAKE-ROOM"
+>the section called <I
+>Making Room For Red Hat Linux</I
+></A
+> for more information on the
+    process of freeing up disk space to prepare for a Red Hat Linux installation.  This
+    section also discusses the partition naming scheme used by Linux systems,
+    sharing disk space with other operating systems, and related topics.
+  </P
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-PARTITIONS-CONCEPTS"
+>Hard Disk Basic Concepts</A
+></H1
+><P
+>       Hard disks perform a very simple function -- they store data and reliably
+       retrieve it on command.
+      </P
+><P
+>        When discussing issues such as disk partitioning, it's important to know
+        a bit about the underlying hardware; unfortunately, it's easy to become
+        bogged down in details. Therefore, let's use a simplified diagram of a
+        disk drive to help us explain what goes on "under the hood."  <A
+HREF="ch-partitions.html#GR-PARTITIONS-UNUSED-DRIVE"
+>Figure B-1</A
+> shows a brand-new, unused disk
+        drive.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PARTITIONS-UNUSED-DRIVE"
+></A
+><P
+><IMG
+SRC="figs/partitions/unused-drive.gif"></P
+><P
+><B
+>Figure B-1. An Unused Disk Drive</B
+></P
+></DIV
+><P
+>        Not much to look at, is it?  But if we're talking about disk drives on a
+        basic level, it will do.  Let's say that we'd like to store some data on
+        this drive.  As things stand now, it won't work.  There's something we
+        need to do first&#8230;
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PARTITIONS-FILESYSTEM"
+>It's Not What You Write, it's How You Write It</A
+></H2
+><P
+>          The old-timers in the audience probably got this one on the first try.
+          We need to <I
+CLASS="FIRSTTERM"
+>format</I
+> the drive.  Formatting
+          (usually known as "making a <I
+CLASS="FIRSTTERM"
+>filesystem</I
+>" in
+          Linux parlance) writes information to the drive, creating order out of
+          the empty space in an unformatted drive.
+        </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PARTITIONS-FORMATTED-DRIVE"
+></A
+><P
+><IMG
+SRC="figs/partitions/formatted-drive.gif"></P
+><P
+><B
+>Figure B-2. Disk Drive with a Filesystem</B
+></P
+></DIV
+><P
+>          As <A
+HREF="ch-partitions.html#GR-PARTITIONS-FORMATTED-DRIVE"
+>Figure B-2</A
+> implies, the order
+          imposed by a filesystem involves some tradeoffs:
+        </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>              A small percentage of the drive's available space is used to store
+              filesystem-related data, and can be considered as overhead.
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              A filesystem splits the remaining space into small,
+              consistently-sized segments. In the Linux world, these segments
+              are known as <I
+CLASS="FIRSTTERM"
+>blocks</I
+>.
+              <A
+NAME="AEN9044"
+HREF="#FTN.AEN9044"
+>[1]</A
+>
+            </P
+></LI
+></UL
+><P
+>          Given that filesystems make things like directories and files
+          possible, these tradeoffs are usually seen as a small price to pay.
+        </P
+><P
+>          It's also worth noting that there is no single, universal filesystem;
+          as <A
+HREF="ch-partitions.html#GR-PARTITIONS-OTHER-FORMATTED-D"
+>Figure B-3</A
+> shows, a disk
+          drive may have one of many different filesystems written on it.  As
+          you might guess, different filesystems tend to be incompatible; that
+          is, an operating system that supports one filesystem (or a handful of
+          related filesystem types) may not support another.  This last
+          statement is not a hard-and-fast rule, however.  For example, Red Hat Linux
+          supports a wide variety of filesystems (including many commonly used
+          by other operating systems), making data interchange easy.
+        </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PARTITIONS-OTHER-FORMATTED-D"
+></A
+><P
+><IMG
+SRC="figs/partitions/other-formatted-drive.gif"></P
+><P
+><B
+>Figure B-3. Disk Drive with a Different Filesystem</B
+></P
+></DIV
+><P
+>          Of course, writing a filesystem to disk is only the beginning.  The
+          goal of this process is to actually <I
+CLASS="EMPHASIS"
+>store</I
+> and
+          <I
+CLASS="EMPHASIS"
+>retrieve</I
+> data.  Let's take a look at our drive
+          after some files have been written to it.
+        </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PARTITIONS-USED-FORMATTED-DR"
+></A
+><P
+><IMG
+SRC="figs/partitions/used-formatted-drive.gif"></P
+><P
+><B
+>Figure B-4. Disk Drive with Data Written to It</B
+></P
+></DIV
+><P
+>          As <A
+HREF="ch-partitions.html#GR-PARTITIONS-USED-FORMATTED-DR"
+>Figure B-4</A
+> shows, 14 of
+          the previously-empty blocks are now holding data.  We cannot determine
+          how many files reside on this drive; it may be as few as one or as
+          many as 14, as all files use at least one block.  Another important
+          point to note is that the used blocks do not have to form a contiguous
+          region; used and unused blocks may be interspersed.  This is known as
+          <I
+CLASS="FIRSTTERM"
+>fragmentation</I
+>.  Fragmentation can play a part
+          when attempting to resize an existing partition.
+        </P
+><P
+>          As with most computer-related technologies, disk drives continued to
+          change over time.  In particular, they changed in one specific way --
+          they got bigger.  Not bigger in size, but bigger in capacity.  And it
+          was this additional capacity that drove a change in the way disk
+          drives were used.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PARTITIONS-PARTITIONING"
+>Partitions -- Turning One Drive Into Many</A
+></H2
+><P
+>          As disk drive capacities soared, some people started wondering if
+          having all that space in one big chunk wasn't such a great idea. This
+          line of thinking was driven by several issues, some philosophical,
+          some technical. On the philosophical side, above a certain size, it
+          seemed that the additional space provided by a larger drive created
+          more clutter. On the technical side, some filesystems were never
+          designed to support larger drives. Or the filesystems
+          <I
+CLASS="EMPHASIS"
+>could</I
+> support larger drives, but the overhead
+          imposed by the filesystem became excessive.
+        </P
+><P
+>          The solution to this problem was to divide disks into
+          <I
+CLASS="FIRSTTERM"
+>partitions</I
+>. Each partition can be accessed as
+          if it was a separate disk. This is done through the addition of a
+          <I
+CLASS="FIRSTTERM"
+>partition table</I
+>.
+        </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>            While the diagrams in this chapter show the partition table as being
+            separate from the actual disk drive, this is not entirely
+            accurate. In reality, the partition table is stored at the very
+            start of the disk, before any filesystem or user data. But for
+            clarity, we'll keep it separate in our diagrams.
+          </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PARTITIONS-UNUSED-PARTITIONE"
+></A
+><P
+><IMG
+SRC="figs/partitions/unused-partitioned-drive.gif"></P
+><P
+><B
+>Figure B-5. Disk Drive with Partition Table</B
+></P
+></DIV
+><P
+>          As <A
+HREF="ch-partitions.html#GR-PARTITIONS-UNUSED-PARTITIONE"
+>Figure B-5</A
+> shows, the
+          partition table is divided into four sections. Each section can hold
+          the information necessary to define a single partition, meaning that
+          the partition table can define no more than four partitions.
+        </P
+><P
+>          Each partition table entry contains several important characteristics
+          of the partition:
+        </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>              The points on the disk where the partition starts and ends;
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              Whether the partition is "active";
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              The partition's type.
+            </P
+></LI
+></UL
+><P
+>          Let's take a closer look at each of these characteristics. The
+          starting and ending points actually define the partition's size and
+          location on the disk. The "active" flag is used by some operating
+          systems' boot loaders. In other words, the operating system in the
+          partition that is marked "active" will be booted.
+        </P
+><P
+>          The partition's type can be a bit confusing. The type is a number that
+          identifies the partition's anticipated usage. If that statement sounds
+          a bit vague, that's because the meaning of the partition type is a bit
+          vague. Some operating systems use the partition type to denote a
+          specific filesystem type, to flag the partition as being associated
+          with a particular operating system, to indicate that the partition
+          contains a bootable operating system, or some combination of the
+          three.
+        </P
+><P
+>          <A
+HREF="ch-partitions.html#TB-PARTITIONS-TYPES"
+>Table B-1</A
+> contains a listing of some
+          popular (and obscure) partition types, along with their numeric
+          values.
+        </P
+><DIV
+CLASS="TABLE"
+><A
+NAME="TB-PARTITIONS-TYPES"
+></A
+><P
+><B
+>Table B-1. Partition Types</B
+></P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+CELLSPACING="0"
+CELLPADDING="4"
+CLASS="CALSTABLE"
+><TR
+><TH
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Partition Type</TH
+><TH
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Value</TH
+><TH
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Partition Type</TH
+><TH
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Value</TH
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Empty</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>00</TD
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Novell Netware 386</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>65</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>DOS 12-bit FAT</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>01</TD
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>PIC/IX</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>75</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>XENIX root</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>02</TD
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Old MINIX</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>80</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>XENIX usr</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>03</TD
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Linux/MINUX</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>81</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>DOS 16-bit &#60;=32M</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>04</TD
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Linux swap</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>82</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Extended</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>05</TD
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Linux native</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>83</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>DOS 16-bit &#62;=32</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>06</TD
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Linux extended</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>85</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>OS/2 HPFS</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>07</TD
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Amoeba</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>93</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>AIX</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>08</TD
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Amoeba BBT</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>94</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>AIX bootable</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>09</TD
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>BSD/386</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>a5</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>OS/2 Boot Manager</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>0a</TD
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>OpenBSD</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>a6</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Win95 FAT32</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>0b</TD
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>NEXTSTEP</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>a7</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Win95 FAT32 (LBA)</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>0c</TD
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>BSDI fs</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>b7</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Win95 FAT16 (LBA)</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>0e</TD
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>BSDI swap</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>b8</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Win95 Extended (LBA)</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>0f</TD
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Syrinx</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>c7</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Venix 80286</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>40</TD
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>CP/M</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>db</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Novell?</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>51</TD
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>DOS access</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>e1</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Microport</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>52</TD
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>DOS R/O</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>e3</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>GNU HURD</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>63</TD
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>DOS secondary</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>f2</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Novell Netware 286</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>64</TD
+><TD
+WIDTH="33%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>BBT</TD
+><TD
+WIDTH="17%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>ff</TD
+></TR
+></TABLE
+></DIV
+><P
+>          Now you might be wondering how all this additional complexity is
+          normally used.  See <A
+HREF="ch-partitions.html#GR-PARTITIONS-DOS-SINGLE-PART"
+>Figure B-6</A
+> for an example.
+        </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PARTITIONS-DOS-SINGLE-PART"
+></A
+><P
+><IMG
+SRC="figs/partitions/dos-single-partition.gif"></P
+><P
+><B
+>Figure B-6. Disk Drive With Single Partition</B
+></P
+></DIV
+><P
+>          That's right -- in many cases there is but a single partition spanning
+          the entire disk, essentially duplicating the pre-partitioned days of
+          yore.  The partition table has only one entry used, and it points to
+          the start of the partition.
+        </P
+><P
+>          We've labeled this partition as being of type "DOS," although as you
+          can see from <A
+HREF="ch-partitions.html#TB-PARTITIONS-TYPES"
+>Table B-1</A
+>, that's a bit
+          simplistic, but adequate for the purposes of this discussion. This is
+          a typical partition layout for most newly purchased computers with
+          some version of Windows pre-installed.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PARTITIONS-OVERVIEW-EXTENDED"
+>Partitions within Partitions -- An Overview of Extended Partitions</A
+></H2
+><P
+>          Of course, in time it became obvious that four partitions would not be
+          enough.  As disk drives continued to grow, it became more and more
+          likely that a person could configure four reasonably-sized partitions
+          and still have disk space left over.  There needed to be some way of
+          creating more partitions.
+        </P
+><P
+>          Enter the extended partition.  As you may have noticed in <A
+HREF="ch-partitions.html#TB-PARTITIONS-TYPES"
+>Table B-1</A
+>, there is an "Extended" partition
+            type; it is this partition type that is at the heart of extended
+            partitions.  Here's how it works.
+        </P
+><P
+>          When a partition is created and its type is set to "Extended," an
+          extended partition table is created. In essence, the extended
+          partition is like a disk drive in its own right -- it has a partition
+          table that points to one or more partitions (now called
+          <I
+CLASS="FIRSTTERM"
+>logical partitions</I
+>, as opposed to the four
+          <I
+CLASS="FIRSTTERM"
+>primary partitions</I
+>) contained entirely within
+          the extended partition itself.  <A
+HREF="ch-partitions.html#GR-PARTITIONS-EXTENDED-PART"
+>Figure B-7</A
+> shows a disk drive with
+          one primary partition, and one extended partition containing two
+          logical partitions (along with some unpartitioned free space).
+        </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PARTITIONS-EXTENDED-PART"
+></A
+><P
+><IMG
+SRC="figs/partitions/extended-partitions.gif"></P
+><P
+><B
+>Figure B-7. Disk Drive With Extended Partition</B
+></P
+></DIV
+><P
+>          As this figure implies, there is a difference between primary and
+          logical partitions -- there can only be four primary partitions, but
+          there is no fixed limit to the number of logical partitions that can
+          exist. (However, in reality it is probably not a good idea to try to
+          define and use more than 12 logical partitions on a single disk
+          drive.)
+        </P
+><P
+>        Now that we've discussed partitions in general, let's see how to use
+        this knowledge to get Red Hat Linux installed.
+      </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PARTITIONS-MAKE-ROOM"
+>Making Room For Red Hat Linux</A
+></H2
+><P
+>          There are three possible scenarios you may face when attempting to
+          repartition your hard disk:
+        </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>              Unpartitioned free space is available.
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              An unused partition is available.
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              Free space in an actively used partition is available.
+            </P
+></LI
+></UL
+><P
+>          Let's look at each scenario in order.
+        </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          Please keep in mind that the following illustrations are simplified in
+          the interest of clarity, and do not reflect the exact partition layout
+          that you will encounter when actually installing Red Hat Linux.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-PARTITIONS-FREE-SPACE"
+>Using Unpartitioned Free Space</A
+></H3
+><P
+>            In this situation, the partitions already defined do not span the
+            entire hard disk, leaving unallocated space that is not part of any
+            defined partition.  <A
+HREF="ch-partitions.html#GR-PARTITIONS-FIG-UNPART-SPACE"
+>Figure B-8</A
+> shows what this
+            might look like.
+          </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PARTITIONS-FIG-UNPART-SPACE"
+></A
+><P
+><IMG
+SRC="figs/partitions/unpart-space.gif"></P
+><P
+><B
+>Figure B-8.               Disk Drive with Unpartitioned Free Space
+            </B
+></P
+></DIV
+><P
+>            If you think about it, an unused hard disk also falls into this
+            category; the only difference is that <I
+CLASS="EMPHASIS"
+>all</I
+> the
+            space is not part of any defined partition.
+          </P
+><P
+>            In any case, you can simply create the necessary partitions from the
+            unused space.  Unfortunately, this scenario, although very simple,
+            is not very likely (unless you've just purchased a new disk just for
+            Red Hat Linux).
+          </P
+><P
+>            Let's move on to a slightly more common situation.
+          </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-PARTITIONS-UNUSED-PART"
+>Using Space From An Unused Partition</A
+></H3
+><P
+>            In this case, maybe you have one or more partitions that you just
+            don't use any longer.  Perhaps you've dabbled with another operating
+            system in the past, and the partition(s) you've dedicated to it
+            never seem to be used anymore.  <A
+HREF="ch-partitions.html#GR-PARTITIONS-UNUSED-PARTITION"
+>Figure B-9</A
+> illustrates
+            such a situation.
+          </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PARTITIONS-UNUSED-PARTITION"
+></A
+><P
+><IMG
+SRC="figs/partitions/unused-partition.gif"></P
+><P
+><B
+>Figure B-9.               Disk Drive With an Unused Partition
+            </B
+></P
+></DIV
+><P
+>            If you find yourself in this situation, you can use the space
+            allocated to the unused partition.  You'll first need to delete the
+            partition, and then create the appropriate Linux partition(s) in its
+            place.  You can either delete the partition using DOS
+            <B
+CLASS="COMMAND"
+>fdisk</B
+>, or you'll be given the opportunity to do
+            so during a custom-class installation.
+          </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-PARTITIONS-ACTIVE-PART"
+>Using Free Space From An Active Partition</A
+></H3
+><P
+>            This is the most common situation.  It is also, unfortunately, the
+            hardest to work with.  The main problem is that, even if you have
+            enough free space, it's presently allocated to a partition that is
+            in use.  If you purchased a computer with pre-installed software,
+            the hard disk most likely has one massive partition holding the
+            operating system and data.
+          </P
+><P
+>            Aside from adding a new hard drive to your system, you have two
+            choices:
+          </P
+><P
+></P
+><DL
+><DT
+>Destructive Repartitioning</DT
+><DD
+><P
+>                  Basically, you delete the single large partition, and create
+                  several smaller ones.  As you might imagine, any data you had
+                  in the original partition is destroyed.  This means that
+                  making a complete backup is necessary.  For your own sake,
+                  make two backups, use verification (if available in your
+                  backup software), and try to read data from your backup
+                  <I
+CLASS="EMPHASIS"
+>before</I
+> you delete the partition.  Note
+                  also that if there was an operating system of some type
+                  installed on that partition, it will need to be reinstalled as
+                  well.
+                </P
+><P
+>                  After creating a smaller partition for your existing software,
+                  you can reinstall any software, restore your data, and
+                  continue with your Red Hat Linux installation. <A
+HREF="ch-partitions.html#GR-PARTITIONS-FIG-DSTRCT-REPRT"
+>Figure B-10</A
+> shows this
+                  being done.
+                </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PARTITIONS-FIG-DSTRCT-REPRT"
+></A
+><P
+><IMG
+SRC="figs/partitions/dstrct-reprt.gif"></P
+><P
+><B
+>Figure B-10. Disk Drive Being Destructively Repartitioned</B
+></P
+></DIV
+><DIV
+CLASS="CAUTION"
+><P
+></P
+><TABLE
+CLASS="CAUTION"
+WIDTH="90%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/caution.gif"
+HSPACE="5"
+ALT="Caution"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>                    As <A
+HREF="ch-partitions.html#GR-PARTITIONS-FIG-DSTRCT-REPRT"
+>Figure B-10</A
+>
+                    shows, any data present in the original partition will be
+                    lost without proper backup!
+                  </P
+></TD
+></TR
+></TABLE
+></DIV
+></DD
+><DT
+>Non-Destructive Repartitioning</DT
+><DD
+><P
+>                  Here, you run a program that does the seemingly impossible: it
+                  makes a big partition smaller without losing any of the files
+                  stored in that partition.  Many people have found this method
+                  to be reliable and trouble-free.  What software should you use
+                  to perform this feat?  There are several disk management
+                  software products on the market; you'll have to do some
+                  research to find the one that is best for your situation.
+                </P
+><P
+>                  While the process of non-destructive repartitioning is rather
+                  straightforward, there are a number of steps involved:
+                </P
+></DD
+></DL
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>                Compress existing data
+              </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>                Resize partition
+              </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>                Create new partition(s)
+              </P
+></LI
+></UL
+><P
+>            Let's take a look at each step in a bit more detail.
+          </P
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-PARTITIONS-COMPRESS-DATA"
+>Compress existing data</A
+></H4
+><P
+>              As <A
+HREF="ch-partitions.html#GR-PARTITIONS-FIG-COMPRESSION"
+>Figure B-11</A
+> shows,
+              the first step is to compress the data in your existing partition.
+              The reason for doing this is to rearrange the data such that it
+              maximizes the available free space at the "end" of the partition.
+            </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PARTITIONS-FIG-COMPRESSION"
+></A
+><P
+><IMG
+SRC="figs/partitions/compression.gif"></P
+><P
+><B
+>Figure B-11. Disk Drive Being Compressed</B
+></P
+></DIV
+><P
+>              This step is crucial; without it, it is possible that the location
+              of your data could prevent the partition from being resized to the
+              extent desired.  Note also that, for one reason or another, some
+              data cannot be moved.  If this is the case (and it restricts the
+              size of your new partition(s)), you may be forced to destructively
+              repartition your disk.
+            </P
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-PARTITIONS-RESIZE"
+>Resize partition</A
+></H4
+><P
+>              <A
+HREF="ch-partitions.html#GR-PARTITIONS-FIG-PART-RESIZE"
+>Figure B-12</A
+> shows the
+              actual resizing process.  While the actual end-product of the
+              resizing operation varies depending on the software used, in most
+              cases the newly freed space is used to create an unformatted
+              partition of the same type as the original partition.
+            </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PARTITIONS-FIG-PART-RESIZE"
+></A
+><P
+><IMG
+SRC="figs/partitions/part-resize.gif"></P
+><P
+><B
+>Figure B-12. Disk Drive with Partition Resized</B
+></P
+></DIV
+><P
+>              It's important to understand what the resizing software you use
+              does with the newly freed space, so that you can take the
+              appropriate steps.  In the case we've illustrated, it would be
+              best to simply delete the new DOS partition, and create the
+              appropriate Linux partition(s).
+            </P
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-PARTITIONS-CREATE-NEW"
+>Create new partition(s)</A
+></H4
+><P
+>              As the previous step implied, it may or may not be necessary to
+              create new partitions.  However, unless your resizing software is
+              Linux-aware, it is likely you'll need to delete the partition that
+              was created during the resizing process. <A
+HREF="ch-partitions.html#GR-PARTITIONS-NONDESTRUCT-FIN"
+>Figure B-13</A
+> shows this
+              being done.
+            </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PARTITIONS-NONDESTRUCT-FIN"
+></A
+><P
+><IMG
+SRC="figs/partitions/nondestruct-fin.gif"></P
+><P
+><B
+>Figure B-13. Disk Drive with Final Partition Configuration</B
+></P
+></DIV
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Intel</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>                The following information is specific to Intel-based computers only.
+              </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>              As a convenience to our customers, we provide the
+              <B
+CLASS="COMMAND"
+>fips</B
+>
+              
+              utility.  This is a freely available program that can resize FAT
+              (File Allocation Table) partitions.  It's included on the
+              Red Hat Linux/Intel CD-ROM in the <TT
+CLASS="FILENAME"
+>dosutils</TT
+> directory.
+            </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>                Many people have successfully used <B
+CLASS="COMMAND"
+>fips</B
+> to
+                repartition their hard drives.  However, because of the nature
+                of the operations carried out by <B
+CLASS="COMMAND"
+>fips</B
+>, and
+                the wide variety of hardware and software configurations under
+                which it must run, Red Hat cannot guarantee that
+                <B
+CLASS="COMMAND"
+>fips</B
+> will work properly on your system.
+                Therefore, no installation support whatsoever is available for
+                <B
+CLASS="COMMAND"
+>fips</B
+>; use it at your own risk.
+              </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>              That said, if you decide to repartition your hard drive with
+              <B
+CLASS="COMMAND"
+>fips</B
+>, it is <I
+CLASS="EMPHASIS"
+>vital</I
+> that you
+              do two things:
+            </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>                  Perform a Backup -- Make two copies of all the important data
+                  on your computer.  These copies should be to removable media
+                  (such as tape or diskettes), and you should make sure they are
+                  readable before proceeding.
+                </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>                  Read the Documentation -- Completely read the
+                  <B
+CLASS="COMMAND"
+>fips</B
+> documentation, located in the
+                  <TT
+CLASS="FILENAME"
+>/dosutils/fipsdocs</TT
+> subdirectory on
+                  Red Hat Linux/Intel CD 1.
+                </P
+></LI
+></UL
+><P
+>              Should you decide to use <B
+CLASS="COMMAND"
+>fips</B
+>, be aware that
+              after <B
+CLASS="COMMAND"
+>fips</B
+> runs you will be left with
+              <I
+CLASS="EMPHASIS"
+>two</I
+> partitions: the one you resized, and the
+              one <B
+CLASS="COMMAND"
+>fips</B
+> created out of the newly freed space.
+              If your goal is to use that space to install Red Hat Linux, you should
+              delete the newly created partition, either by using
+              <B
+CLASS="COMMAND"
+>fdisk</B
+> under your current operating system, or
+              while setting up partitions during a custom-class installation.
+            </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PARTITIONS-PART-NAME"
+>Partition Naming Scheme</A
+></H2
+><P
+>          Linux refers to disk partitions using a combination of letters and
+          numbers which may be confusing, particularly if you're used to the "C
+          drive" way of referring to hard disks and their partitions.  In the
+          DOS/Windows world, here is how partitions are named:
+        </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>              Each partition's type is checked to determine if it can be read by
+              DOS/Windows.
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              If the partition's type is compatible, it is assigned a "drive
+              letter."  The drive letters start with "C".
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              The drive letter can then be used to refer to that partition as
+              well as the filesystem contained on that partition.
+            </P
+></LI
+></UL
+><P
+>          Red Hat Linux uses a naming scheme that is more flexible and conveys more
+          information than the approach used by other operating systems.  The
+          naming scheme is file-based, with filenames in the form:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="FILENAME"
+>/dev/<TT
+CLASS="REPLACEABLE"
+><I
+>xx</I
+></TT
+><TT
+CLASS="REPLACEABLE"
+><I
+>y</I
+></TT
+><TT
+CLASS="REPLACEABLE"
+><I
+>N</I
+></TT
+></TT
+>
+        </PRE
+></TD
+></TR
+></TABLE
+><P
+>          Here's how to decipher the partition naming scheme:
+        </P
+><P
+></P
+><DL
+><DT
+><TT
+CLASS="FILENAME"
+>/dev/</TT
+></DT
+><DD
+><P
+>                This string is the name of the directory in which all device
+                files reside.  Since partitions reside on hard disks, and hard
+                disks are devices, the files representing all possible
+                partitions reside in <TT
+CLASS="FILENAME"
+>/dev/</TT
+>.
+              </P
+></DD
+><DT
+><TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>xx</I
+></TT
+></TT
+></DT
+><DD
+><P
+>                The first two letters of the partition name indicate the type of
+                device on which the partition resides.  You'll normally see
+                either <TT
+CLASS="FILENAME"
+>hd</TT
+> (for IDE disks), or
+                <TT
+CLASS="FILENAME"
+>sd</TT
+> (for SCSI disks).
+              </P
+></DD
+><DT
+><TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>y</I
+></TT
+></TT
+></DT
+><DD
+><P
+>                This letter indicates which device the partition is on.  For
+                example, <TT
+CLASS="FILENAME"
+>/dev/hda</TT
+> (the first IDE hard disk)
+                or <TT
+CLASS="FILENAME"
+>/dev/sdb</TT
+> (the second SCSI disk).
+              </P
+></DD
+><DT
+><TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>N</I
+></TT
+></TT
+></DT
+><DD
+><P
+>                The final number denotes the partition.  The first four (primary
+                or extended) partitions are numbered <TT
+CLASS="FILENAME"
+>1</TT
+>
+                through <TT
+CLASS="FILENAME"
+>4</TT
+>.  Logical partitions start at
+                <TT
+CLASS="FILENAME"
+>5</TT
+>.  E.g., <TT
+CLASS="FILENAME"
+>/dev/hda3</TT
+> is
+                the third primary or extended partition on the first IDE hard
+                disk; <TT
+CLASS="FILENAME"
+>/dev/sdb6</TT
+> is the second logical
+                partition on the second SCSI hard disk.
+              </P
+></DD
+></DL
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>            There is no part of this naming convention that is based on
+            partition type; unlike DOS/Windows, <I
+CLASS="EMPHASIS"
+>all</I
+>
+            partitions can be identified under Red Hat Linux.  Of course, this doesn't
+            mean that Red Hat Linux can access data on every type of partition, but in
+            many cases it is possible to access data on a partition dedicated to
+            another operating system.
+          </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>          Keep this information in mind; it will make things easier to
+          understand when you're setting up the partitions Red Hat Linux requires.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PARTITIONS-OTHER-OS"
+>Disk Partitions and Other Operating Systems</A
+></H2
+><P
+>          If your Red Hat Linux partitions will be sharing a hard disk with partitions
+          used by other operating systems, most of the time you'll have no
+          problems.  However, there are certain combinations of Linux and other
+          operating systems that require extra care.  Information on creating
+          disk partitions compatible with other operating systems is available
+          in several HOWTOs and Mini-HOWTOs, available on the Red Hat Linux CD in the
+          <TT
+CLASS="FILENAME"
+>doc/HOWTO</TT
+> and <TT
+CLASS="FILENAME"
+>doc/HOWTO/mini</TT
+>
+          directories.  In particular, the Mini-HOWTOs whose names start with
+          <TT
+CLASS="FILENAME"
+>Linux+</TT
+> are quite helpful.
+        </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Intel</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>            If Red Hat Linux/Intel will coexist on your machine with OS/2
+            
+            , you must create your disk partitions with the OS/2 partitioning
+            software---otherwise, OS/2 may not recognize the disk partitions.
+            During the installation, do not create any new partitions, but do
+            set the proper partition types for your Linux partitions using the
+            Linux <B
+CLASS="COMMAND"
+>fdisk</B
+>.
+          </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PARTITIONS-MT-POINTS"
+>Disk Partitions and Mount Points</A
+></H2
+><P
+>          One area that many people new to Linux find confusing is the matter of
+          how partitions are used and accessed by the Linux operating system.
+          In DOS/Windows, it is relatively simple: If you have more than one
+          partition, each partition gets a "drive letter."  You then use the
+          drive letter to refer to files and directories on a given partition.
+        </P
+><P
+>          This is entirely different from how Red Hat Linux deals with partitions and,
+          for that matter, with disk storage in general.  The main difference is
+          that each partition is used to form part of the storage necessary to
+          support a single set of files and directories.  This is done by
+          associating a partition with a directory through a process known as
+          <I
+CLASS="FIRSTTERM"
+>mounting</I
+>.  Mounting a partition makes its
+          storage available starting at the specified directory (known as a
+          <I
+CLASS="FIRSTTERM"
+>mount point</I
+>).
+        </P
+><P
+>          For example, if partition <TT
+CLASS="FILENAME"
+>/dev/hda5</TT
+> were mounted
+          on <TT
+CLASS="FILENAME"
+>/usr</TT
+>, that would mean that all files and
+          directories under <TT
+CLASS="FILENAME"
+>/usr</TT
+> would physically reside on
+          <TT
+CLASS="FILENAME"
+>/dev/hda5</TT
+>.  So the file
+          <TT
+CLASS="FILENAME"
+>/usr/doc/FAQ/txt/Linux-FAQ</TT
+> would be stored on
+          <TT
+CLASS="FILENAME"
+>/dev/hda5</TT
+>, while the file
+          <TT
+CLASS="FILENAME"
+>/etc/X11/gdm/Sessions/Gnome</TT
+> would not.
+        </P
+><P
+>          Continuing our example, it is also possible that one or more
+          directories below <TT
+CLASS="FILENAME"
+>/usr</TT
+> would be mount points for
+          other partitions.  For instance, a partition (say,
+          <TT
+CLASS="FILENAME"
+>/dev/hda7</TT
+>) could be mounted on
+          <TT
+CLASS="FILENAME"
+>/usr/local</TT
+>, meaning that, for example,
+          <TT
+CLASS="FILENAME"
+>/usr/local/man/whatis</TT
+> would then reside on
+          <TT
+CLASS="FILENAME"
+>/dev/hda7</TT
+> rather than
+          <TT
+CLASS="FILENAME"
+>/dev/hda5</TT
+>.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PARTITIONS-HOW-MANY"
+>How Many Partitions?</A
+></H2
+><P
+>          At this point in the process of preparing to install Red Hat Linux, you will
+          need to give some consideration to the number and size of the
+          partitions to be used by your new operating system.  The question of
+          "how many partitions" continues to spark debate within the Linux
+          community and, without any end to the debate in sight, it's safe to
+          say that there are probably as many partition layouts as there are
+          people debating the issue.
+        </P
+><P
+>          Keeping this in mind, we recommend that, unless you have a reason for
+          doing otherwise, you should create the following partitions:
+        </P
+><P
+></P
+><UL
+><LI
+><P
+>              A swap partition
+              
+              -- Swap partitions are used to support virtual memory. In other
+	    words, data is written to swap when there is not RAM to hold the
+	    data your system is processing. If your computer has 16 MB of RAM
+	    or less, you <I
+CLASS="EMPHASIS"
+>must</I
+> create a swap partition.
+	    Even if you have more memory, a swap partition is still recommended.
+	    The minimum size of your swap partition should be equal to your
+	    computer's RAM, or 16 MB (whichever is larger).
+            </P
+></LI
+><LI
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="90%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Intel</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>                The following partition is specific to Red Hat Linux/Intel installations.
+              </P
+><P
+>		A <TT
+CLASS="FILENAME"
+>/boot</TT
+> partition
+		
+		-- The partition mounted on <TT
+CLASS="FILENAME"
+>/boot</TT
+> contains
+		the operating system kernel (which allows your system to boot Red Hat Linux),
+		along with a few other files used during the bootstrap process.
+		Due to the limitations of most PC BIOSes, creating a small
+		partition to hold these files is a good idea.  This partition
+		should be no larger than 16MB.
+	      </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="90%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>                Make sure you read <A
+HREF="ch-partitions.html#S2-PARTITIONS-LILO"
+>the section called <I
+>One Last Wrinkle: Using LILO</I
+></A
+> --
+                the information there applies to the <TT
+CLASS="FILENAME"
+>/boot</TT
+>
+                partition!
+              </P
+></TD
+></TR
+></TABLE
+></DIV
+></LI
+><LI
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="90%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Alpha</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>                The following partition is specific to Red Hat Linux/Alpha installations.
+              </P
+><P
+>		A MILO partition
+		
+		-- Alpha owners that will be using MILO to boot their systems
+		should create a 2MB DOS partition where MILO can be copied after
+		the installation is complete.  We recommend using
+		<TT
+CLASS="FILENAME"
+>/dos</TT
+> as the mount point.
+	      </P
+></TD
+></TR
+></TABLE
+></DIV
+></LI
+><LI
+><P
+>              A root partition (/)
+              
+              -- The root partition is where <TT
+CLASS="FILENAME"
+>/</TT
+> (the root
+              directory) resides.  In this partitioning layout, all files
+              (except those stored in <TT
+CLASS="FILENAME"
+>/boot</TT
+>) reside on the
+              root partition.  Because of this, it's in your best interest to
+              maximize the size of your root partition.  A 600MB root partition
+              will permit the equivalent of a workstation-class installation
+              (with <I
+CLASS="EMPHASIS"
+>very</I
+> little free space), while a 1.5GB
+              root partition will let you install every package.
+            </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PARTITIONS-LILO"
+>One Last Wrinkle: Using LILO</A
+></H2
+><P
+>        LILO (the LInux LOader) is the most commonly used method to boot Red Hat Linux
+        on Intel-based systems.  An operating system loader, LILO operates
+        "outside" of any operating system, using only the Basic I/O System (or
+        BIOS) built into the computer hardware itself.  This section describes
+        LILO's interactions with PC BIOSes, and is specific to Intel-compatible
+        computers.
+      </P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-PARTITIONS-LILO-BIOS"
+>BIOS-Related Limitations Impacting LILO</A
+></H3
+><P
+>            LILO is subject to some limitations imposed by the BIOS in most
+            Intel-based computers.  Specifically, most BIOSes can't access more
+            than two hard drives and they can't access any data stored beyond
+            cylinder 1023 of any drive.  Note that some recent BIOSes do not
+            have these limitations, but this is by no means universal.
+          </P
+><P
+>            All the data LILO needs to access at boot time (including the Linux
+            kernel) are located in the <TT
+CLASS="FILENAME"
+>/boot</TT
+> directory.  If
+            you follow the partition layout recommended above, or you are
+            performing a workstation- or server-class install, the
+            <TT
+CLASS="FILENAME"
+>/boot</TT
+> directory will be in a small, separate
+            partition.  Otherwise, it will reside in the root partition.  In
+            either case, the partition in which <TT
+CLASS="FILENAME"
+>/boot</TT
+>
+            resides must conform to the following guidelines if you are going to
+            use LILO to boot your Red Hat Linux system:
+          </P
+><P
+></P
+><DL
+><DT
+>On First Two IDE Drives</DT
+><DD
+><P
+>                  If you have 2 IDE (or EIDE) drives, <TT
+CLASS="FILENAME"
+>/boot</TT
+>
+                  must be located on one of them. Note that this two-drive limit
+                  also includes any IDE CD-ROM drives on your primary IDE
+                  controller. So, if you have one IDE hard drive, and one IDE
+                  CD-ROM on your primary controller, <TT
+CLASS="FILENAME"
+>/boot</TT
+>
+                  must be located on the first hard drive
+                  <I
+CLASS="EMPHASIS"
+>only</I
+>, even if you have other hard drives
+                  on your secondary IDE controller.
+                </P
+></DD
+><DT
+>On First IDE or First SCSI Drive</DT
+><DD
+><P
+>                  If you have one IDE (or EIDE) drive and one or more SCSI
+                  drives, <TT
+CLASS="FILENAME"
+>/boot</TT
+> must be located either on
+                  the IDE drive or the SCSI drive at ID 0.  No other SCSI IDs
+                  will work.
+                </P
+></DD
+><DT
+>On First Two SCSI Drives</DT
+><DD
+><P
+>                  If you have only SCSI hard drives, <TT
+CLASS="FILENAME"
+>/boot</TT
+>
+                  must be located on a drive at ID 0 or ID 1.  No other SCSI IDs
+                  will work.
+                </P
+></DD
+><DT
+>Partition <I
+CLASS="EMPHASIS"
+>Completely</I
+> Below Cylinder 1023</DT
+><DD
+><P
+>                  No matter which of the above configurations apply, the
+                  partition that holds <TT
+CLASS="FILENAME"
+>/boot</TT
+> must be
+                  located entirely below cylinder 1023.  If the partition
+                  holding <TT
+CLASS="FILENAME"
+>/boot</TT
+> straddles cylinder 1023,
+                  you may face a situation where LILO will work initially
+                  (because all the necessary information is below cylinder
+                  1023), but will fail if a new kernel is to be loaded, and that
+                  kernel resides above cylinder 1023.
+                </P
+></DD
+></DL
+><P
+>            As mentioned earlier, it is possible that some of the newer BIOSes
+            may permit LILO to work with configurations that don't meet our
+            guidelines.  Likewise, some of LILO's more esoteric features may be
+            used to get a Linux system started, even if the configuration
+            doesn't meet our guidelines.  However, due to the number of
+            variables involved, Red Hat cannot support such extraordinary efforts.
+          </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>              Disk Druid as well as the workstation- and server-class installs
+              take these BIOS-related limitations into account.
+            </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+><H3
+>Notes</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9044"
+HREF="ch-partitions.html#AEN9044"
+>[1]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>                  Blocks really <I
+CLASS="EMPHASIS"
+>are</I
+> consistently sized,
+                  unlike our illustrations. Keep in mind, also, that an average
+                  disk drive contains thousands of blocks. But for the purposes
+                  of this discussion, please ignore these minor discrepancies.
+                </P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-modules-ethernet.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="ch-driverdisk.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Ethernet parameters</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="p8268.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Driver Disks</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-partitions.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:58:14 GMT -->
+</HTML
+>

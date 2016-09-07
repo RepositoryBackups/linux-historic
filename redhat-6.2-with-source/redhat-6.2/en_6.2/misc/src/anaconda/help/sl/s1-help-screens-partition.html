@@ -1,0 +1,365 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/sl/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Razdelitve</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.49"><LINK
+REL="HOME"
+TITLE="Zasloni s pomoèjo za namestitev"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="Samodejno razdeljevanje diska"
+HREF="s1-help-screens-svr.html"><LINK
+REL="NEXT"
+TITLE="Prikrojitev datoteènega sistema"
+HREF="s1-help-screens-loopback.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-PARTITION"
+>Razdelitve</A
+></H1
+><P
+>	Kam ¾elite namestiti Red Hat Linux?
+      </P
+><P
+>	<B
+CLASS="COMMAND"
+>Prosimo, upo¹tevajte:</B
+> Èe opravljate
+	<B
+CLASS="COMMAND"
+>Namestitev brez razdeljevanja</B
+>, boste morali
+	proglasiti obstojeèo razdelitev za DOS/Windows za korensko
+	razdelitev, prikazano kot existing DOS/Windows partition as
+	root, shown as <B
+CLASS="COMMAND"
+>/</B
+>.  Kliknite na razdelitev
+	FAT, ki bi jo radi izbrali za to namestitev.  Ko postane
+	osvetljena, kliknite <I
+CLASS="GUILABEL"
+>Uredimo</I
+> in ji
+	dodelite toèko priklopa <B
+CLASS="COMMAND"
+>/</B
+> (korensko).
+	Kliknite <I
+CLASS="GUILABEL"
+>V redu</I
+>, ko boste opravili.  Ko
+	boste potrdili to izbiro, boste morali doloèiti primerno
+	kolièino korenskega datoteènega sistema kot izmenjalno
+	podroèje za va¹ sistem.
+      </P
+><P
+>	Za podrobnej¹a navodila morate pogledati v poglavje
+	<I
+CLASS="EMPHASIS"
+>Installing Without Partitioning</I
+> v knjigi
+	<I
+CLASS="CITETITLE"
+>Red Hat Linux Installation Guide</I
+>.
+      </P
+><P
+>	Èe ne veste, kako razdeliti va¹ sistem, prosimo, preberite
+        razdelek o razdeljevanju v knjigah
+        <I
+CLASS="CITETITLE"
+>Red Hat Linux Installation Guide</I
+> ali
+        <I
+CLASS="CITETITLE"
+>Red Hat Linux Reference Guide</I
+>.
+      </P
+><P
+>	Èe ste pravkar konèali razdeljevanje z orodjem
+        <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>, morate doloèiti
+        <I
+CLASS="FIRSTTERM"
+>toèke priklopa</I
+> za va¹e razdelitve.
+        Uporabite gumb <I
+CLASS="GUILABEL"
+>Uredimo</I
+>, èe ste ¾e izbrali
+        razdelitev, da doloèite njeno toèko priklopa.
+      </P
+><P
+>	Èe uporabljate program <TT
+CLASS="APPLICATION"
+>Disk Druid</TT
+>,
+	boste morali doloèiti toèke priklopa za eno ali veè diskovnih
+	razdelitev.  Morda boste takrat morali tudi narediti in/ali
+	odstraniti razdelitve.
+      </P
+><P
+>	Vrhnji zaslon prikazuje obstojeèe razdelitve.  Vsaka
+	razdelitev ima pet polj:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Toèka priklopa:</B
+> To polje ponazarja, kam
+	     bo razdelitev priklopljena, ko bo Red Hat Linux name¹èen in
+	     pognan.  Èe razdelitev obstaja, a je oznaèena kot "ni
+	     nastavljena", boste morali doloèiti njeno toèko priklopa.
+	     Uporabite lahko gumb <B
+CLASS="KEYCAP"
+>Uredimo</B
+> ali dvojni
+	     klik na ime razdelitve.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Naprava:</B
+> To polje prikazuje ime naprave
+            razdelitve (na primer, hda2 ponazarja drugo razdelitev na
+            primarnem trdem disku).
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Zahtevano:</B
+> Polje
+	    <I
+CLASS="FIRSTTERM"
+>Zahtevano</I
+> prikazuje, koliko
+	    prostora ima na voljo razdelitev.  Èe ¾elite spremeniti
+	    njeno velikost, morate pobrisati trenutno razdelitev in jo
+	    ponovno narediti z gumbom <B
+CLASS="KEYCAP"
+>Dodajmo</B
+>.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Dejansko:</B
+> To polje ka¾e, koliko
+	    prostora uporablja razdelitev.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Vrsta:</B
+> To polje prikazuje vrsto
+	    razdelitve (kot domorodna razdelitev Linuxa ali DOS).
+	  </P
+></LI
+></UL
+><P
+>	Ko se pomikate skozi razdelek
+	<I
+CLASS="FIRSTTERM"
+>Razdelitve</I
+>, lahko opazite sporoèilo v
+	rdeèem besedilu <I
+CLASS="FIRSTTERM"
+>Unallocated Requested
+	Partition</I
+> (nedodeljena zahtevana razdelitev), ki
+	mu sledi ena ali veè razdelitev.  Pogost razlog za nedodeljeno
+	razdelitev je pomanjkanje prostega prostora za razdelitev.
+      </P
+><P
+>	Nedodeljeno zahtevano razdelitev lahko odpravite tako, da
+	najprej premaknete vsebino razdelitve na drug pogon, ki ima
+	dovolj prostora, spremenite velikost razdelitve tako, da gre
+	na trenutni pogon, ali popolnoma pobri¹ete razdelitev.
+	Spremembe opravite z uporabo gumba <B
+CLASS="KEYCAP"
+>Uredimo</B
+>
+	ali z dvojnim klikom na razdelitev.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DD"
+>Razdeljevanje diska va¹ega sistema</A
+></H2
+><P
+>	  Srednja vrsta gumbov nadzoruje dejanja razdelitvenega
+          orodja.  Tu lahko dodajate, urejate in odstranjujete
+          razdelitve.  Poleg tega so tu gumbi, ki jih lahko uporabite
+          za sprejetje narejenih sprememb ali za povrnitev prvotnega
+          stanja in izhod iz razdelitvenega orodja.
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Dodajmo:</B
+> Ta gumb uporabite za
+	      dodajanje nove razdelitve.  Ko je ta izbrana, se bo
+	      prikazalo pogovorno okno s polji, ki jih je treba
+	      izpolniti (kot toèka priklopa, velikost in vrsta).
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Uredimo:</B
+> Ta gumb uporabite za
+	      spremembo toèke priklopa trenutno izbrane razdelitve.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Odstranimo:</B
+> Ta gumb uporabite za
+	      odstranitev razdelitve.  Prikazalo se bo pogovorno okno
+	      v katerem boste lahko potrdili ali preklicali
+	      odstranitev.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Povrnitev:</B
+> Ta gumb uporabite za
+	      preklic vseh sprememb, ki ste jih naredili.
+            </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Izdelajmo napravo RAID:</B
+> Gumb
+	      <B
+CLASS="KEYCAP"
+>Izdelajmo napravo RAID</B
+> uporabite LE, èe
+	      imate izku¹nje z uporabo diskovnih polj RAID.  Veè o tem
+	      lahko izveste v knjigi <I
+CLASS="CITETITLE"
+>Red Hat Linux Reference Guide</I
+>.
+	    </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DRIVE"
+>Povzetki vsebine diskov</A
+></H2
+><P
+>	  Ta razdelek prika¾e nastavitev diskov va¹ega raèunalnika.
+          Mi¹ljen je le kot povzetek.  Vsaka vrstica ima naslednja
+          polja:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Pogon:</B
+> To polje prikazuje ime naprave
+	      trdega diska (kot hda ali hdb).
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Geom [C/H/S]:</B
+>
+	      <I
+CLASS="FIRSTTERM"
+>Geometrija</I
+> trdega diska prikazuje
+	      ¹tevilo cilindrov, glav in sektorjev.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Skupno:</B
+> To polje prikazuje skupno
+	      vsoto dostopnega prostora na disku.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Prosto:</B
+> Tu lahko vidite, koliko
+	      prostora na disku je ¹e vedno na voljo.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Porabljeno:</B
+> Ta polja prikazujejo,
+	      koliko prostora na disku je trenutno dodeljenega
+	      razdelitvam, v megabajtih in odstotkovno.
+	    </P
+></LI
+></UL
+></DIV
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/sl/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:38 GMT -->
+</HTML
+>

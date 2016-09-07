@@ -1,0 +1,226 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-install-create-boot.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:00:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Creating a Boot Disk</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Installing Red Hat Linux via Text Mode"
+HREF="ch-install-tm.html"><LINK
+REL="PREVIOUS"
+TITLE="Configuring the X Window System"
+HREF="s1-install-xconf.html"><LINK
+REL="NEXT"
+TITLE="Finishing Up"
+HREF="s1-install-done.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-install-xconf.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 10. Installing Red Hat Linux via Text Mode</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-install-done.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-INSTALL-CREATE-BOOT"
+>Creating a Boot Disk</A
+></H1
+><P
+>	If you're performing a custom-class installation, the
+	  <TT
+CLASS="GUILABEL"
+><B
+>Bootdisk</B
+></TT
+> dialog (see <A
+HREF="s1-install-create-boot.html#FIG-INSTALL-BOOTDISK"
+>Figure 10-47</A
+>) gives you the opportunity to create a
+	  customized boot disk for your Red Hat Linux system.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-BOOTDISK"
+></A
+><P
+><IMG
+SRC="figs/textmode/bootdisk.gif"></P
+><P
+><B
+>Figure 10-47. Creating a Boot Disk</B
+></P
+></DIV
+><P
+>	A boot disk can be handy in these situations:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	    Use It Instead of LILO -- You can use a boot disk instead of LILO.
+	    This is handy if you're trying Red Hat Linux for the first time, and you'd
+	    feel more comfortable if the boot process for your other operating
+	    system is left unchanged.  With a boot disk, going back to your
+	    other operating system is as easy as removing the boot disk and
+	    rebooting.
+	  </P
+></LI
+><LI
+><P
+>	    Use It When Another Operating System Overwrites LILO -- Other
+	    operating systems may not be as flexible as Red Hat Linux when it comes to
+	    supported boot methods.  Quite often, installing or updating another
+	    operating system can cause the master boot record (originally
+	    containing LILO) to be overwritten, making it impossible to boot
+	    your Red Hat Linux installation.  The boot disk can then be used to boot
+	    Red Hat Linux so you can reinstall LILO.
+	  </P
+></LI
+></UL
+><P
+>	Select <B
+CLASS="GUIBUTTON"
+>Yes</B
+> and press <B
+CLASS="KEYCAP"
+>Space</B
+> to
+	create a boot disk.  Next, you'll be prompted to insert a blank,
+	formatted diskette.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-BOOTDISK2"
+></A
+><P
+><IMG
+SRC="figs/textmode/bootdisk2.gif"></P
+><P
+><B
+>Figure 10-48. Boot Disk Dialog</B
+></P
+></DIV
+><P
+>	For instructions on how to create a boot disk after the
+	installation, read the <B
+CLASS="COMMAND"
+>mkbootdisk</B
+> man page.
+	Be sure you create a new boot disk if you make any changes to your
+	kernel.
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-install-xconf.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-install-done.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Configuring the X Window System</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-install-tm.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Finishing Up</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-install-create-boot.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:00:15 GMT -->
+</HTML
+>

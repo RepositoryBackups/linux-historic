@@ -1,0 +1,34 @@
+#!/bin/sh
+
+fontlist=`awk '{ print $4 }' < ../anaconda/lang-table | grep -v "None" | sort -u`
+
+echo $fontlist
+
+rm -rf fonts
+mkdir -p fonts
+
+for n in $fontlist; do
+    echo -n $n
+    map=`grep $n ../anaconda/loader/lang.c | cut -d\" -f8 |
+             grep '[A-Za-z]' | sort -u`
+
+    echo -n " map "
+    echo $map
+
+    if [ -f /usr/lib/kbd/consoletrans/$map.acm.gz ]; then
+	m=/usr/lib/kbd/consoletrans/$map.acm.gz
+    else
+	if [ -f /usr/lib/kbd/consoletrans/$map.acm ]; then
+	    m=/usr/lib/kbd/consoletrans/$map.acm
+	else
+	    m=/usr/lib/kbd/consoletrans/$map
+	fi
+    fi
+
+    consolechars -f /usr/lib/kbd/consolefonts/$n.psf.gz -m $m
+    ./snarffont > fonts/$n
+done
+
+consolechars -d
+
+(cd fonts > /dev/null; ls * | cpio -o -H crc) | gzip -9 > fonts.cgz

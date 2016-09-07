@@ -1,0 +1,421 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/s1-part-less-installation.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:55:17 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Performing a Partitionless Installation</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Installing Without Partitioning"
+HREF="ch-part-less.html"><LINK
+REL="PREVIOUS"
+TITLE="Installing Without Partitioning"
+HREF="ch-part-less.html"><LINK
+REL="NEXT"
+TITLE="Removing Red Hat Linux "
+HREF="ch-uninstall.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Installation Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-part-less.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Appendix B. Installing Without Partitioning</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="ch-uninstall.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-PART-LESS-INSTALLATION"
+>Performing a Partitionless Installation</A
+></H1
+><P
+>      If you have a DOS (FAT) filesystem you must first make sure you have a DOS
+      (FAT) partition with enough free space to dedicate to this installation.
+    </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PART-LESS-SPACE"
+>How Much Space Do I Need?</A
+></H2
+><P
+>	Like a typical installation, you will need to have enough available
+	space in order to install Red Hat Linux on your system.  To give you an idea,
+	below is a list of installation methods and their
+	<I
+CLASS="EMPHASIS"
+>minimum</I
+> space requirements.
+      </P
+><P
+>	For more information about these installation classes, see <A
+HREF="ch-mockup-before-begin.html#S2-MOCKUP-BEFORE-BEGIN-TYPE"
+>the section called <I
+>Step 7 - Which Installation Type is Best For You?</I
+> in Chapter 2</A
+>.
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	    GNOME Workstation - 700MB 
+	  </P
+></LI
+><LI
+><P
+>	    KDE Workstation - 700MB
+	  </P
+></LI
+><LI
+><P
+>	    Server - 1.7GB
+	  </P
+></LI
+><LI
+><P
+>	    Custom (choosing <I
+CLASS="EMPHASIS"
+>Everything</I
+>) - 1.7GB
+	  </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PART-LESS-DD"
+>Using Disk Druid</A
+></H2
+><P
+>	Since you will not be adding partitions or creating new partitions,
+	there is relatively little that you actually need to do with
+	<TT
+CLASS="APPLICATION"
+>Disk Druid</TT
+> (a GUI partitioning tool).
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PART-LESS-FIG-PARTLESS1"
+></A
+><P
+><IMG
+SRC="figs/part-less/partless1.gif"></P
+><P
+><B
+>Figure B-1. Choosing DOS (FAT) Partition to Define as /</B
+></P
+></DIV
+><P
+>	What you should see when <TT
+CLASS="APPLICATION"
+>Disk Druid's</TT
+> main
+	screen appears is a list of your DOS (FAT) partitions (see <A
+HREF="s1-part-less-installation.html#GR-PART-LESS-FIG-PARTLESS1"
+>Figure B-1</A
+>). Choose a DOS (FAT) partition with
+	enough available free space to install your choice of installation
+	classes. Highlight the partition by clicking on it with your mouse or by
+	using the <B
+CLASS="KEYCAP"
+>Tab</B
+>, <B
+CLASS="KEYCAP"
+>Up</B
+> and
+	<B
+CLASS="KEYCAP"
+>Down</B
+> keys.
+      </P
+><P
+>	Once the desired partition is highlighted, choose
+	<TT
+CLASS="GUILABEL"
+><B
+>Edit</B
+></TT
+>. A new window will appear allowing you to name
+	this partition (see <A
+HREF="s1-part-less-installation.html#GR-PART-LESS-FIG-PL-EDIT"
+>Figure B-2</A
+>). In the
+	<B
+CLASS="GUIMENUITEM"
+>mount point</B
+> field, label this partition as
+	<B
+CLASS="COMMAND"
+>/</B
+> (known as root) and click
+	<TT
+CLASS="GUILABEL"
+><B
+>Enter</B
+></TT
+>.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PART-LESS-FIG-PL-EDIT"
+></A
+><P
+><IMG
+SRC="figs/part-less/pl-edit.gif"></P
+><P
+><B
+>Figure B-2. Editing a DOS (FAT) Partition</B
+></P
+></DIV
+><P
+>	A confirmation window (see <A
+HREF="s1-part-less-installation.html#GR-PART-LESS-FIG-PL-WARN"
+>Figure B-3</A
+>)
+	will appear next asking you to confirm that you do want to continue with
+	this installation. It also explains that you cannot have any Linux
+	partitions on your system other than the <B
+CLASS="COMMAND"
+>/</B
+> labeled
+	DOS partition that you have just created. Click <TT
+CLASS="GUILABEL"
+><B
+>Yes</B
+></TT
+>
+	to continue.
+      </P
+><P
+>	Next, you will be able to determine the root filesystem size and the
+	swap size of this <B
+CLASS="COMMAND"
+>/</B
+> partition.
+      </P
+><P
+>	The installation program will determine the maximum size for the root
+	filesystem (<A
+HREF="s1-part-less-installation.html#GR-PART-LESS-FIG-PL-SIZE"
+>Figure B-4</A
+>). You can make the
+	root filesystem anything you would like, as long as it does not exceed
+	the maximum size recommendation.
+      </P
+><P
+>	The size you create for the root filesystem is the
+	amount of disk space available for the entire filesystem (this means
+	that you need to keep in mind the size of the installation class as well
+	as allow you space to write and save data to). 
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PART-LESS-FIG-PL-WARN"
+></A
+><P
+><IMG
+SRC="figs/part-less/pl-warn.gif"></P
+><P
+><B
+>Figure B-3. Confirmation</B
+></P
+></DIV
+><P
+>	Swap space acts like virtual memory. In other words, data is written to
+	a swap partition when there is not enough RAM to store the data your
+	system is processing. The installation program will set swap to 32MB as
+	a default. You can choose to increase the swap size if desired, but
+	there is no need to create a swap space larger than 256MB.
+      </P
+><P
+>	From here, you can continue following the main installation chapter (see
+	<A
+HREF="s1-cd-rom-gui-netconf.html"
+>the section called <I
+>Network Configuration</I
+> in Chapter 4</A
+>) for further installation
+	instructions. The only difference you will see from this point is a screen
+	prompting you to create a boot disk. Once you make the boot disk and
+	follow the other instructions, your installation will be complete.
+      </P
+><P
+>	To access Red Hat Linux, make sure the boot disk that you created during the
+	installation is in your floppy drive. When you reboot your system it
+	will enter into Red Hat Linux rather than your other OS. To access your other
+	OS, remove the boot disk and reboot your system.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PART-LESS-FIG-PL-SIZE"
+></A
+><P
+><IMG
+SRC="figs/part-less/pl-size.gif"></P
+><P
+><B
+>Figure B-4. Configuration of Filesystem</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PART-LESS-REMOVE"
+>How to Remove a Partitionless Installation From Your
+	System</A
+></H2
+><P
+>	To remove this partitionless installation, you will need to delete the
+	following files:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>	  redhat.img
+	  rh-swap.img
+	</PRE
+></TD
+></TR
+></TABLE
+><P
+>        These files can be found in the partition's root directory (known as
+        <TT
+CLASS="FILENAME"
+>\</TT
+> under Dos/Windows.)
+      </P
+><P
+>	Once these files have been removed, Red Hat Linux will no longer boot on your
+	system. Your system will return to its previous state and you will be
+	able to access the space used by Red Hat Linux as you normally would.
+      </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-part-less.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="ch-uninstall.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Installing Without Partitioning</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-part-less.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Removing Red Hat Linux</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/s1-part-less-installation.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:56:08 GMT -->
+</HTML
+>

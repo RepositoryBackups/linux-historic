@@ -1,0 +1,289 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-history-tips.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Tips on Using Command History</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Q  A: Quick Answers to Common Questions"
+HREF="ch-q-and-a.html"><LINK
+REL="PREVIOUS"
+TITLE="Keep ls Output from Scrolling"
+HREF="s1-q-and-a-ls-scrolling.html"><LINK
+REL="NEXT"
+TITLE="Unable to Log In"
+HREF="s1-q-and-a-linux-single.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-ls-scrolling.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 15. Q &#38; A: Quick Answers to Common Questions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-linux-single.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-Q-AND-A-HISTORY-TIPS"
+>Tips on Using Command History</A
+></H1
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-HISTORY-TIPS-Q"
+>Q: Tips and Tricks for <B
+CLASS="COMMAND"
+>history</B
+></A
+></H2
+><P
+>          What are some other ways I can use command history?
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-HISTORY-TIPS-A"
+>A: Using More Command History</A
+></H2
+><P
+>          If you type <B
+CLASS="COMMAND"
+>history</B
+>, you'll see a numbered list
+          flash by, showing you the previous 500 commands you'd used.
+        </P
+><P
+>          You probably don't need to see all of the last 500 commands, so the
+          command <B
+CLASS="COMMAND"
+>history 20</B
+> might be more useful -- where
+          <B
+CLASS="COMMAND"
+>20</B
+> is the previous 20 commands you'd typed. (You
+          can use any number to reveal a specific number of previous commands.)
+        </P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-Q-AND-A-HISTORY-SHORTCUTS"
+>Other Shortcuts</A
+></H3
+><P
+>            Here are other command history shortcuts which may come in handy for
+            you:
+          </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>                "Bang, bang": Typing <B
+CLASS="COMMAND"
+>!!</B
+> (called "bang bang")
+                executes the last command in the history.
+              </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>                "Bang <TT
+CLASS="REPLACEABLE"
+><I
+>number</I
+></TT
+>": Typing
+                <B
+CLASS="COMMAND"
+>!<TT
+CLASS="REPLACEABLE"
+><I
+>number</I
+></TT
+></B
+> (as in
+                <B
+CLASS="COMMAND"
+>!302</B
+>) will execute the command which is
+                numbered 302 in the history file.
+              </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>                "Bang <TT
+CLASS="REPLACEABLE"
+><I
+>string</I
+></TT
+>": Typing
+                <B
+CLASS="COMMAND"
+>!<TT
+CLASS="REPLACEABLE"
+><I
+>string</I
+></TT
+></B
+> (as in
+                <B
+CLASS="COMMAND"
+>!rpm</B
+>) will execute a command with that
+                matching string from the history file.
+              </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>                <B
+CLASS="KEYCAP"
+>Up arrow</B
+> and <B
+CLASS="KEYCAP"
+>down-arrow</B
+>: At
+                the Bash shell prompt, you can simply press the <B
+CLASS="KEYCAP"
+>Up
+                arrow</B
+> to move back through previous commands in your
+                history list (the <B
+CLASS="KEYCAP"
+>Down arrow</B
+> will move you
+                forward through the commands) until you find the command you
+                want. Press <B
+CLASS="KEYCAP"
+>Enter</B
+> to execute the command, just
+                as if you had typed it on the command line.
+              </P
+></LI
+></UL
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-ls-scrolling.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-linux-single.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Keep <B
+CLASS="COMMAND"
+>ls</B
+> Output from Scrolling</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-q-and-a.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Unable to Log In</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-history-tips.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+</HTML
+>

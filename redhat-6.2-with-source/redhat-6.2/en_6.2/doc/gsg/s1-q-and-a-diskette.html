@@ -1,0 +1,412 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-diskette.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Using a Diskette</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Q  A: Quick Answers to Common Questions"
+HREF="ch-q-and-a.html"><LINK
+REL="PREVIOUS"
+TITLE="Q  A: Quick Answers to Common Questions"
+HREF="ch-q-and-a.html"><LINK
+REL="NEXT"
+TITLE="Switching Environments"
+HREF="s1-q-and-a-switching.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-q-and-a.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 15. Q &#38; A: Quick Answers to Common Questions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-switching.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-Q-AND-A-DISKETTE"
+>Using a Diskette</A
+></H1
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-DISKETTE-Q"
+>Q: Working with Diskettes</A
+></H2
+><P
+>          How do I use a diskette with Red Hat Linux?
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-DISKETTE-MTOOLS"
+>A. Using Mtools</A
+></H2
+><P
+>          If you've got an MS-DOS formatted diskette, you can access the files
+          by using the <TT
+CLASS="APPLICATION"
+>mtools</TT
+> utility.
+	</P
+><P
+>	  <TT
+CLASS="APPLICATION"
+>Mtools</TT
+> offers a wide range of options for
+	  working with diskettes, including copying, moving, deleting and
+	  formatting. To read more about <TT
+CLASS="APPLICATION"
+>mtools</TT
+>, open
+	  an Xterm window and type <B
+CLASS="COMMAND"
+>man mtools</B
+> at the prompt.
+        </P
+><P
+>	  For example, to copy a file from an MS-DOS formatted diskette (such as
+	  one from a Windows95 system), use the following syntax at the prompt
+	  in an Xterm window:
+	</P
+><P
+>	  <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>mcopy a:<TT
+CLASS="FILENAME"
+>thisfile.txt</TT
+> <TT
+CLASS="FILENAME"
+>thisfile.txt</TT
+></B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+>
+	</P
+><P
+>	  The file will then be copied from the diskette drive (drive A:) to the
+	  directory you're currently in when you issue the
+	  <B
+CLASS="COMMAND"
+>mcopy</B
+> command. If you're in your /home directory,
+	  then, you'll find <TT
+CLASS="FILENAME"
+>thisfile.txt</TT
+> there.
+	</P
+><P
+>	  If you want to view the contents of an MS-DOS formatted diskette, type
+	  <B
+CLASS="COMMAND"
+>mdir</B
+> at the prompt. By default, you'll be shown the
+	  contents of the diskette in the A: drive.
+	</P
+><P
+>	  To change to a subdirectory on the diskette, type
+	</P
+><P
+>	  <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>mcd a:subdir</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+>
+	</P
+><P
+>	  (The above command assumes <TT
+CLASS="FILENAME"
+>subdir</TT
+> is the name of
+	  the subdirectory you want to access.)
+	</P
+><P
+>	  If you have a diskette which you want to format and use with your
+	  Red Hat Linux system, use the <I
+CLASS="FIRSTTERM"
+>ext2 filesystem</I
+>. For more
+	  on this, read on&#8230;
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-DISKETTE-A"
+>A: The ext2 Filesystem</A
+></H2
+><P
+>          To use a diskette specifically with Red Hat Linux, you'll need to create a
+          <I
+CLASS="FIRSTTERM"
+>Second Extended (ext2) filesystem</I
+> on the
+          disk. The ext2 filesystem is the filesystem used by Red Hat Linux, and is the
+          most commonly used Linux filesystem type.
+        </P
+><P
+>          Once you've created an ext2 filesystem on the diskette, you can
+          manipulate its contents in the same ways that you manipulate
+          directories and files on your hard drive.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-CREATING-FILESYSTEM"
+>Creating an ext2 Filesystem on a Diskette</A
+></H2
+><P
+>          The <B
+CLASS="COMMAND"
+>mke2fs</B
+> command is used to create a Linux ext2
+          filesystem on a device, which may be a disk partition or a
+          diskette. Put your formatted diskette into the drive and issue the
+          following command at a shell in an Xterm window:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>$</TT
+> <B
+CLASS="COMMAND"
+>/sbin/mke2fs /dev/fd0</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>          On Linux systems, <TT
+CLASS="FILENAME"
+>/dev/fd0</TT
+> refers to the first
+          diskette drive, usually your A: drive.
+        </P
+><P
+>          The <B
+CLASS="COMMAND"
+>mke2fs</B
+> utility has a number of options. The
+          <B
+CLASS="COMMAND"
+>-c</B
+> option makes the <B
+CLASS="COMMAND"
+>mke2fs</B
+>
+          command check the device for bad blocks before creating the
+          filesystem. The other options are covered in the
+          <B
+CLASS="COMMAND"
+>mke2fs</B
+> man page.
+        </P
+><P
+>          Once you've created an ext2 filesystem on the diskette, it is ready to
+          be used with your Red Hat Linux system.
+        </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>If you're using KDE</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  Want another quick way to format a floppy for either ext2 or MS-DOS?
+	  If you have KDE, try <TT
+CLASS="APPLICATION"
+>KDE Floppy Formatter</TT
+>,
+	  an easy way to format diskettes. To start the utility, go to
+	  <B
+CLASS="GUIMENU"
+>Main Menu K</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Utilities</B
+>
+	  =&#62; <B
+CLASS="GUIMENUITEM"
+>KFloppy</B
+>.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-q-and-a.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-switching.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Q &#38; A: Quick Answers to Common Questions</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-q-and-a.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Switching Environments</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-diskette.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+</HTML
+>

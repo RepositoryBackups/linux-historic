@@ -1,0 +1,939 @@
+<!DOCTYPE BOOK PUBLIC "-//Davenport//DTD DocBook V3.0//EN" [
+<!ENTITY RH "Red Hat">
+<!ENTITY RHL "Red Hat Linux">
+<!ENTITY RHLRGS "Red Hat Linux Danýþma Kýlavuzu">
+<!ENTITY RHLIG "Red Hat Linux Kurulum Kýlavuzu">
+<!ENTITY RHLGSG "Red Hat Linux Baþlama Kýlavuzu">
+<!ENTITY RHI "Red Hat, Inc.">
+]>
+<book id="book">
+<title>Install Help Screens</title>
+  <chapter id="s1-help-screens-lang">
+    <title></title>
+    <sect1 id="lang">
+      <title>Dil Seçimi</title>
+      <para>
+	Kurulum sýrasýnda ve &RHL; kurulduðundan hangi dili kullanmak 
+      istiyorsunuz?
+      </para>
+      <para>
+	Saðdaki listeden seçin.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-kybd">
+      <title>Klavye Yapýlandýrmasý</title>
+      <para>
+	Hangi tür klavyeye sahipsiniz?
+      </para>
+      <para>
+	Eðer tam olarak bulamýyorsanýz, en yakýn olaný seçin
+	<guilabel>Genel</guilabel> kapsar (Örneðin, 101-tuþ PC cinsi).
+      </para>
+      <para>
+	Sonra klayyenizin diziliþ tipini seçin (Örneðin U.S. Ýngilizce).
+      </para>
+      <para>
+	Özel karakterler girme iþleminde (&Ntilde;, &Ocirc;, ve &Ccedil; gibi)
+	"özel tuþlar" kullanýlýr. (Tuþ sýrasýný düzenleme) 
+	Eðer Özel tuþlarý gerektiren özel kararkterleri kullanmayý istiyorsanýz, <guilabel>Özel Tuþlarý etkinleþtir</guilabel>
+      'ý seçin. Eðer gerek yok ise,<guilabel>Özel Tuþlarý Kullanma</guilabel>'yý seçin.
+      </para>
+      <para>
+	Klavye yapýlandýrmasýnýn denemesi için ekranýn altýndaki boþ alaný kullanýn.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-mouse">
+      <title>Fare Yapýlandýrmasý</title>
+      <para>
+	Ne tür fareye sahipsiniz?
+      </para>
+      <para>
+	Seri yada PS/2 giriþe sahip misiniz? (Bilgi: Eðer baðlantý yuvasý yuvarlak ise PS/2 fare; dikdörtgen ise seri faredir.)
+      </para>
+      <para>
+	Saðdaki ilk kutuda tam olarak bulmayý deneyin. Eðer tam olarak bulamýyorsanýz, sizinki ile uyumlu olaný seçin. Ya da, <guilabel>Genel</guilabel> fare tipini seçin.
+      </para>
+      <para>
+	Eðer seri fareye sahipseniz, gelecek kutuya baðlý olan liman ve aygýtý seçin.
+      </para>
+      <para>
+	X pencere sistemi üç tuþlu fare kullanmak üzere tasarlanmýþtýr . Eðer,
+      iki tuþlu fareniz var ise &RHL; orta fare tuþunu benzeþtirebilir.
+      </para>
+      <para>
+	Eðer iki tuþlu fare sahipseniz, <guilabel>3 tuþlu olarak 
+      kullan</guilabel> seçeneðini seçin. Kurulum sonrasýnda, orta fare tuþunu
+      kullanmak için iki tuþa birden basabilirsiniz .
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-wel">
+      <title>Red Hat Linux'a Hoþgeldiniz</title>
+      <para>
+	Hoþgeldiniz! Bu kurulum sürecinden özetlenenlerin detaylarý
+	<citetitle>&RHLIG;</citetitle>&RHI; mevcuttur. Lütfen kurulama baþlamadan önce tüm kýlavuzlarý okuyun.
+      </para>
+      <para>
+	Kýlavuzun HTML ve Postscripts þekli http://www.redhat.com'da bulunmaktadýr.  HTML kopyasý &RHL; CD'sinde de vardýr.
+      </para>
+      <para>
+	<command>Yeni Özellik:</command> &RHL; 6.2 "bölümlemesiz" kurulum olarak bilinen yeni kurulum yöntemine sahiptir. Eðer yeterli boþ alanýný içeren
+      FAT (Dos/Windows) alanýna sahip ise, &RHL; sabit diskinizde yeniden bölümleme 
+      yapmadan kurabilir. Mevcut sistemlerinde en az bozulma ile &RHL; denemek 
+      isteyen kiþiler için en iyi seçenektir.
+      </para>
+      <para>
+	Eðer Orijinal &RHL; kutusu satýn aldýysanýz, web sitemiz üzerinden kayýt 
+      ettirdiðinizden emin olun. (www.redhat.com/now).
+      </para>
+      <para>
+	Bu kurulum boyunca, farenizi birçok deðiþik seçeneði seçmek için kullanabilirsiniz .
+	<keycap>Tab</keycap> and <keycap>Enter</keycap> tuþlarýný da kullanarak kurulumu
+      yönledirebilirsiniz.
+      </para>
+      <para>
+	<guibutton>Ýleri</guibutton> ve <guibutton>Geri</guibutton>
+	tuþlarýný kullanarak ekranlar arasýnda dolaþabilirsiniz. 
+	<guibutton>Ýleri</guibutton> tuþuna basýp bilgileri kaydedip gelecek ekranlara 
+      gitmek; <guibutton>Geri</guibutton> tuþuna basýp, herhangi bir bilgiyi kaydetmeden
+      önceki ekranlara gitmek mümkündür.
+      </para>
+      <para>
+	Yardým ekranýný küçültmek için, <guibutton>Yardýmý Gizle</guibutton> tuþuna 
+      basýn.
+      </para>
+      <para>
+
+      	<guimenu>Kuruluma Hazýrlanma</guimenu> ekranýna kadar herhangi
+	 bir anda kurulumu iptal edebilirsiniz. <guibutton>Ýleri</guibutton>
+	  bir kere basarak <guimenu>Kuruluma Hazýrlanma</guimenu>,
+	   paketlerin kurulumu baþlayacak ve bilgiler sabit diskinize
+	 yazýlacaktýr. Bu ekrandan önce ,(<keycap>reset</keycap>
+	 düðmesini kullanarak, veya <keycombo>
+	 <keycap>Ctrl</keycap> <keycap>Alt</keycap>
+	 <keycap>Del</keycap>
+	</keycombo>) tuþlarý ile güvenli bir þekilde
+	 sisteminizi yeniden baþlatabilirsiniz.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-welreconfig">
+      <title>Red Hat Linux'a Hoþgeldiniz</title>
+      <para>
+        Bilgisayarýnýz özelliklerini yapýlandýrmasýna izin veren yeniden 
+        yapýlandýrma durumuna girdiniz.  Yapýnýzda 
+        deðiþiklik yapmadan çýkmak için, 'Hayýr' tuþunu seçin,
+        aþaðýdaki <guibutton>Ýleri</guibutton>tuþuna basýn.
+      </para>
+      <para>
+      Bu kurulum boyunca, farenizi birçok deðiþik seçeneði seçmek için 
+      kullanabilirsiniz.<keycap>Tab</keycap> and <keycap>Enter</keycap> 
+      tuþlarýný da kullanarak kurulumu yönledirebilirsiniz.
+      </para>
+      <para>
+      <guibutton>Ýleri</guibutton> ve <guibutton>Geri</guibutton>
+	tuþlarýný kullanarak ekranlar arasýnda dolaþabilirsiniz. 
+	<guibutton>Ýleri</guibutton> tuþuna basýp bilgileri kaydedip gelecek 
+      ekranlara gitmek; <guibutton>Geri</guibutton>tuþuna basýp, herhangi bir 
+      bilgiyi kaydetmeden önceki ekranlara gitmek mümkündür.
+      </para>
+      <para>
+        Yardým ekranýný küçültmek için, <guibutton>Yardýmý Gizle</guibutton> tuþuna basýn.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-instpath">
+      <title>Kurulum Seçenekleri</title>
+      <para>
+	&RHL;'u nasýl kurmak istiyorsunuz?
+      </para>
+      <para>
+      Tam kurulum, seçilmiþ bölümlerdeki önceden kaydedilmiþ tüm bilgileri  
+	silecektir.
+      </para>
+      <para>
+	Güncellemede, &RHL;  varolan sistem bilgilerini koruyacaktýr.
+      </para>
+      <para>
+	Eðer tam kurulum yapmak istiyorsanýz, kurulumun sýnýfýný 
+      (veya tipini) seçmelisiniz. Seçimler: GNOME Ýþ Ýstasyonu, KDE
+	Ýþ Ýstasyonu, Sunucu veya Özel olabilir.
+      </para>
+      <para>
+	Eðer<application>fdisk</application> bölümleme aracýný biliyorsanýz,
+      burada onu seçebilirsiniz.  Eðer <application>fdisk</application>, kullanmayý seçmezseniz, kurucu,disk bölümleme için, <application>Disk Druid</application>'u kullanacaktýr. <application>Disk Druid</application> <application>fdisk</application> ile tecrübesi bulunmayanlar için daha iyi bir seçimdir.
+      </para>
+      <para>
+      Eðer hangi kurulum sýnýfýný seçeceðinizi bilmiyorsanýz takip eden yazýlarý
+      çok dikkatli okuyun.
+      </para>
+      <para>
+	<command>Lütfen dikkat:</command> Aþaðýda belirtilen kurulum yöntemlerine ek olarak &RHL; varolan FAT (DOS/Windows) bölümüne kurulabilir. Bu "bölümlemesiz" kurulum yönteminde <command>/</command> olarak bir DOS bölümü seçilir, <application>Disk Druid</application> bölümleme ekranýnda. Çalýþma Ýstasyonu sýnýfý kurulumlarda otomatik bölüm silme kullanýlarak bilgilerin üstüne yazýlýr.  </para> <para> Çalýþma Ýstasyonu sýnýfý kurulumlar X Pencere Sistemini ve seçtiðiniz Masaüstü yöneticisini sisteme kuracaktýr.  <emphasis>Bir Çalýþma Ýstasyonu sýnýfý kurulum linux ile ilgili tüm bölümleri kaldýrýr. (ve bölümlenmemiþ tüm disk alanýný kullanýr).</emphasis> Bütün linux ile ilgili olayan disk alanlarý dokunulmadan býrakýlýr, ardýndan diðer kurulmuþ iþletim sistemlerini &RHL;'a ek olarak kurulum sonrasýnda kullanabilirsiniz.
+      </para>
+      <para>
+      Eðer sisteminizi Linux tabanlý sunucu olarak kullanmak isterseniz, ve 
+      özel sistem yapýlandýrmasý ve X pencere sistemi kurmak istemezseniz, 
+      bir sunucu-sýnýfý kurulum en uygun çözümdür.
+	<emphasis>Sunucu-sýnýfý kurulum tüm kurulu sabit diskler üzerinde
+      tüm bölümlemeleri kaldýrýr. Bu kurulum sýnýfýný sadece korumak istediðimiz
+      hiç bir þey yoksa seçmelisiniz!</emphasis> Buna diðer iþletim sistemleri 
+      tarafýndan kullanýlan bütün bölümlerde dahildir. <emphasis>Bütün sürücüler
+      silinecektir</emphasis>
+      </para>
+      <para>
+      Yanlýzca özel sýnýf kurulum size tam bir esneklik verir.
+      Bir özel sýnýf kurulum süresince, ne kadar disk alaný ayýracaðýnýz 
+	<emphasis>size</emphasis> baðlýdýr. Sisteminize kurulacak paketleri
+      tam olarak kontrol edebilirsiniz.
+	Sisteminizi çalýþtýrmak için LILO kullanmayý da belirleyebilirsiniz. 
+      Ýyi bir Linux tecrübesine sahip olmadýkça, özel sýnýf kurulum yöntemini
+      seçmemelisiniz.
+      </para>
+      <para>
+      Ýþ Ýstasyonu, Sunucu ve özel sýnýf kurulumlar arasýndaki farklýlýklar
+      ile ilgili daha fazla bilgi için, lütfen &RHLIG;'nu kullanýn.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-upgrade">
+      <title>Sisteminizi Güncelleme</title>
+      <para>
+      Güncellemeyi seçtiyseniz, siz paketlerinizi özelleþtirmeye de karar 
+      verebilirsiniz.
+	</para>
+      <para>
+      Eðer güncelleme için ek paketler seçmek istemiyorsanýz, Devam etmek
+      için <guibutton>Ýleri</guibutton> tuþuna basýn.
+      </para>
+      <para>
+	Paketleriniz özelleþtirmek için, <guilabel>Güncelleme için paketleri 
+      özelleþtir</guilabel> seçin ve sonra <guibutton>Ýleri</guibutton>
+      tuþuna basýn.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-fdisk">
+      <title><application>fdisk</application></title>
+      <para>
+      Bölümlemek istediðiniz sürücüyü seçin. Sürücüye bastýðýnýzda,
+      bölümleme ekraný<application>fdisk</application>ile 
+      sunulacaktýr.
+	Siz <application>fdisk</application>'i seçilen sabit diskte
+      bölümleme yapmak, silmek ve deðiþtirmek için kullanabilirsiniz. 
+	</para>
+      <para>
+      Eðer<application>fdisk</application> 'i kullanmamaya karar verdi iseniz, 
+      <guibutton>Geri</guibutton> tuþuna basarak önceki ekrana dönün,
+      <guimenuitem>fdisk kullan</guimenuitem>'ý seçme, ve devam etmek için
+      <guibutton>Ýleri</guibutton>tuþuna basýn.
+      </para>
+      <para>
+	<application>fdisk</application>'i kullanarak sürücüyü bölümledikten 
+      sonra, bu ekrana geri döneceksiniz.
+      Eðer <application>fdisk</application> kullanarak bölümlemek istediðiniz,
+      baþka bir sabit diskiniz varsa, onu seçin.
+      Ya da <guibutton>Ýeri</guibutton> tuþuna basýn ve <application>Disk Druid</application>'u
+      kullanarak bölümlerinizi baðlama noktalarýna atayýn.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-fdiskpart">
+      <title><application>fdisk</application> ile bölümleme</title>
+      <para>
+      Burada, <application>fdisk</application> ile sürücünüzü bölümleyebilirsiniz.
+      </para>
+      <para>
+	Yardým için, komut satýrýnda <command>m</command>'ye basýn, komutlarýn listesine ulaþýn.
+      </para>
+      <para>
+      Baþlangýç için bazý pratik komutlar:
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>n</command> -- Yeni bir bölüm ekler.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>d</command> -- Bir bölüm siler.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>b
+	      <command>p</command> -- Bölüm listesini gösterir.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>l</command> -- Bilinen bölüm türlerini listeler.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>	      
+	      <command>w</command> -- Bölüm listesini sabit diske yazar ve
+	      <application>fdisk</application>'ten çýkar.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>q</command> -- Herhangi bir deðiþikliði kaydetmeden çýkar.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-wkst">
+      <title>Otomatik bölümleme</title>
+      <para>
+	Emin misiniz?
+      </para>
+      <para>
+      Çalýþma istasyonu kurulumu sýrasýnda bütün bilgileriniz yok olacaktýr.
+      </para>
+      <para>
+      Bu sýnýf kurulum <emphasis>BÜTÜN</emphasis> sabit disklerin
+	<emphasis>BÜTÜN</emphasis> varolan Linux bölümlerindeki
+	<emphasis>BÜTÜN</emphasis> bilgileri silecektir.
+      </para>
+      <para>
+      Eðer Linux bölümlerindeki bilgileri korumak istiyorsanýz, ya el ile
+      bölümlemeyi ya da özel sýnýf kurulum yöntemini seçin.
+      </para>
+      <para>
+	Özel sýnýf kurulum seçmek için <guibutton>Geri</guibutton> tuþunu kullanýn, veya iþ istasyonu sýnýfý kurulumuna devam etmek istiyorsanýz,
+      <guibutton>Ýleri</guibutton>tuþunu seçin.
+      </para>
+    </sect1>
+      
+      <sect1 id="s1-help-screens-svr">
+      <title>Otomatik Bölümleme</title>
+      <para>
+	Emin misiniz?
+      </para>
+      <para>
+      Sunucu kurulumu yapýlýrken tüm bilgiler silinecektir.
+	</para>
+      <para>
+       Bu sýnýf kurulum <emphasis>BÜTÜN</emphasis> sabit disklerin
+	<emphasis>BÜTÜN</emphasis> varolan Linux bölümlerindeki
+	<emphasis>BÜTÜN</emphasis> bilgileri silecektir.
+      </para>
+      <para>
+      Eðer baþka bir ÝS varsa korumak istediðiniz, o zaman bu sýnýf kurulumu 
+      seçmeyin.
+      </para>
+      <para>
+      Eðer korumak istediðiniz bilgi veya diðer bir iþletim sistemi varsa, el ile bölümlemeyi veya özel sýnýf kurulumu seçmelisiniz.
+	</para>
+      <para>
+	Özel sýnýf kurulumu seçmek için <guibutton>Geri</guibutton> tuþunu kullan, veya Sunucu sýnýfý kuruluma devam için <guibutton>Ýleri</guibutton> tuþuna basýn.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-partition">
+      <title>Bölümler</title>
+      
+      <para>
+	&RHL; nereye kurmak istiyorsunuz?
+      </para>
+      <para>
+	<command>Lütfen dikkat:</command><command>Bölümsüz kurulum</command> 
+      yapýyorsanýz, varolan bir DOS/Windows bölümünü root bölümü olarak 
+      tanýmlamanýz gerekecek, bu da <command>/</command> ile gösterilir.
+      Bu kurulum için seçtiðiniz bir FAT bölümününe basýn.
+      Ýþaretlenmiþ olan bölümü <guilabel>Düzenle</guilabel> ile
+      <command>/</command>iþaretiyle root olarak baðlayýn.
+      Bitirdiðiniz zaman <guilabel>Tamam</guilabel>'a basýn.
+      Bu seçimi onayladýðýnýzda, sisteminiz için uygun miktar root
+      dosya sistemi ve swap alaný tanýmlamaya ihtiyacýnýz olacaktýr.   	
+      </para>
+      <para>
+      Daha ayrýntýlý bilgi için, <citetitle>&RHLIG;</citetitle>'deki
+      <emphasis>Bölümlemesiz Kurulum</emphasis> bölümüne baþvurun.
+      </para>
+      <para>
+      Eðer sisteminizde nasýl bölümleme yapýlacaðýný bilmiyorsanýz,
+      lütfen <citetitle>&RHLIG;</citetitle> veya <citetitle>&RHLRGS;</citetitle>
+      'deki bölümleme kýsmýný okuyun.
+      </para>
+      <para>
+	Eðer bölümlemeyi <application>fdisk</application> ile bitirdiyseniz,
+	bölümleriniz için <firstterm>baðlama noktalarý</firstterm>'ný 
+      tanýmlamalýsýnýz. Seçilmiþ bir bölümün baðlama noktasýný tanýmlamak 
+      için <guilabel>Düzenle</guilabel> tuþunu kullan.
+      </para>
+      <para>
+      Eðer <application>Disk Druid</application> kullanýyorsanýz, 
+      bir veya daha fazla disk bölümü için baðlama noktalarý tanýmlamak 
+      zorundasýnýz. Bölümleri silmek ve/veya oluþturmak için de ihtiyacýnýz olacaktýr.
+      </para>
+      <para>
+      Üstteki ekran varolan bölümleri gösterir. Her bölüm beþ alana 
+      sahiptir:
+      </para>
+      
+      <itemizedlist>
+	<listitem>
+	  <para>
+	    <command>Baðlama noktasý:</command> 
+      Bu alan  &RHL; kurulup çalýþtýrýldýðýndaki bölümün baðlanacak 
+      olduðu yeri gösterir.
+      Eðer bir bölüm varsa, fakat etiketleri "düzenlenmemiþ" ise 
+      baðlama noktasý tanýmlamaya gerek duyacaksýnýz.
+      <keycap>Düzenle</keycap> tuþunu kullanabilirsiniz veya 
+	bölümün üstüne iki kere basýn.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Aygýt:</command> Bu alan bölümlerin aygýt 
+      adlarýný gösterir (örneðin hda2 ilk sabit diskinizdeki
+      ikinci bölümü gösterir).
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Ýstenen:</command> <firstterm>Ýstenen</firstterm>
+          alaný bölümün ne kadar alana sahip olduðunu gösterir.
+          Eðer alaný yeniden tanýmlamak isterseniz, mevcut alaný silip 
+          <keycap>Ekle</keycap> tuþuna basarak alaný yeniden oluþturmalýsýnýz.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Kullanýlan:</command>Bu alan bölümün ne kadar alan
+          kullandýðýný gösterir. 
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Tip:</command> Bu alan bölümün tipini gösterir (Linux veya DOS).
+	  </para>
+	</listitem>
+      </itemizedlist>
+      
+      <para>
+	
+
+      <firstterm>Bölümler</firstterm> kýsmýný kaydýrarak, <firstterm>Ayrýlmamýþ
+      Ýstenen Bölüm</firstterm>leri görebilirsiniz(kýrmýzý yazýyla), bir veya
+      daha fazla bölüm takip eder. Ayrýlmamýþ bölüme sahip olmanýn genel
+      bir sebebi bölümler için yeteri kadar boþ alanýn olmamasýdýr.
+      </para>
+      <para>Ayrýlmamýþ istenen bölümleri düzeltmek için, ya bölümü baþka yer olan bir sürücüye taþýmak y ada mevcut sürücüyle uyumlu olacak bir alan büyüklüðüne getirmek, veya bölümü tamamen silmek gerekir.
+	Deðiþikleri yapmak için<keycap>Düzenle</keycap> tuþuna veya bölümün üstüne 
+      iki kez basýn.
+      </para>
+	
+      <sect2 id="s2-help-screens-dd">
+	<title>Sisteminizi Bölümleme</title>
+	<para>
+      Tuþlarýn dizisi  bölümleme aracýnýn hareketlerini kontrol eder.
+      Burada bölümleri ekleyip,silip veya düzeneleyebilirsiniz.
+      Ek olarak, yaptýðýnýz deðiþikleri onaylamak, yeniden yapmak veya 
+      bölümleme aracýndan çýkmak için tuþlarda bulunmaktadýr.
+	</para>
+	
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>Ekle:</command> 
+            Yeni bir bölüm istemi için bunu kullan.
+            Yeni bir seçim yapýldýðý zaman, doldurulmasý gereken bir kutu belirir 
+	      (baðlama noktasý,ölçüsü,tipi gibi ayrýntýlar).
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Düzenle:</command>Mevcut seçilmiþ bir bölümün baðlama noktasýnýn
+            deðiþtirmek için bu tuþu kullan. 
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Sil:</command> Bir bölümü silmek için bu tuþu kullan. 
+            Silmeyi onaylamak için bir kutu belirir.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Yenile:</command> Bu tuþu yapmýþ olduðun deðiþiklikleri 
+            iptal etmek için kullan.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>RAID Aygýtý Oluþtur:</command> Eðer RAID kullanma tecrübesine sahipseniz <keycap>RAID Aygýtý</keycap> tuþunu kullan.
+	      RAID hakkýnda daha fazla bilgi için,lütfen <citetitle>&RHLRGS;</citetitle>'na baþvurun.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
+
+      <sect2 id="s2-help-screens-drive">
+	<title>Drive Summaries</title>
+	<para>
+        Bu bölüm bilgisayarýnýzýn disk yapýlandýrmasý gösterir.
+        Bu sadece özet bir bilgiyi saðlar. Her satýr takip eden alanlarý içerir:
+	</para>
+	
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>Sürücü:</command> Bu alan sabit diskin aygýt adýný gösterir
+	      (hda veya hdb gibi).
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Geom [C/H/S]:</command> Sabit diskin
+	      <firstterm>geometri</firstterm>sini (silindir, kafa ve ve sektör sayýsýný gösterir.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Toplam:</command> Bu alan sabit diskteki mevcut toplam boþ alaný
+	      gösterir.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Boþ:</command> Burada sabit diskte hala mevcut boþ alaný görebilirsin.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Kullanýlan:</command> Bu alanlar mevcut sabit disk boþluðunun ne kadarýnýn
+            megabayt ve yüzde olarak bölümlere ayrýlmýþ olduðunu gösterir.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
+    </sect1>
+
+    <sect1 id="s1-help-screens-loopback">
+      <title>Dosya sistemi Yapýlandýrmasý</title>
+      <para>
+        Ýlk olarak,eðer standart bir deðeri kabul etmek istediðimizi
+        bilirsek, bir kök dosya sistemi ölçü deðeri seçeriz.
+        Belirli kök dosya sistemi mevcut boþ alanýnýn bir kýsmýdýr.  
+      </para>
+      <para>
+        Öntanýmlý takas alaný boþluðu 32 Mb'týr, fakat eðer gerekli ise daha
+        da büyütebilirsiniz. 
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-format">
+      <title>Formatlanacak Bölümleri Seçmek</title>
+      <para>
+      &RHL; için formatlamak istediðiniz bölümleri seçin.
+      </para>
+      <para>
+      Hatalý blok sýnamasý istiyor musunuz?
+      </para>
+      <para>
+      Bozuk alanlarý kontrol etme, sürücü üstündeki hatalý alanlarý bulma ile 
+      kayýp verileri düzeltmeye ve onlarýn üzerinde gelecekte yazýlacak verileri
+      korumaya yardýmcý olabilir.  
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-lilo">
+      <title>LILO Yapýlandýrmasý</title> 
+      <para>
+	LILO, LInux LOader, bilgisayarýnýzda  &RHL;'u baþlatmak için kullanýlýr.
+	Bu ayný zamanda diðer iþletim sistemlerini de baþlatabilir. 
+      Windows 9<replaceable>x</replaceable>gibi. Burada, LILO'yu nasýl 
+      yapýlandýrmak istediðiniz sorulacaktýr.
+      </para>
+      <para>
+	<guibutton>Açýlýþ disketi oluþturma</guibutton>: Eðer MBR üstünde LILO kurmuyorsanýz
+      bir açýlýþ disketi oluþturmalýsýnýz.
+      </para>
+      <para>
+	<guibutton>LILO'yu kurma</guibutton>: Sürücünüze LILO'yu kurmak istemiyorsanýz, LILO kurulumunu atlayabilirsiniz. Eðer herbirinde birbirinden farklý iki farklý iþletim sistemi varsa, LILO yerine açýlýþ disketi kullanabilirsiniz.
+      </para>
+      <para>
+      Eðer sisteminiz sadece
+      Red Hat Linux kullanacak ise  Master Boot Record (Diskin ilk
+      bölümündekli açýlýþ kýsmý) seçilmelidir. Win95/98 ve &RHL; 
+      sistemleri için tek bir sabit disk kullanýlacak ise LILO,
+      yine MBR'ye kurulmalýdýr. 
+      </para>
+      <para>
+Eðer Windows NT varsa (ve LILO kurmak isteniyorsa)açýlýþ bölümünün ilk kýsmýný LILO kurmayý seçmelisiniz. Ayný zamanda, bir açýlýþ disketi oluþturun, aksi halde hiç Linux'a giremeyebilirsiniz. 
+      </para>
+      <para>
+	<emphasis>Herhangi</emphasis> bir sebep yüzünden LILO kurmayý seçmezseniz,
+      lütfen &RHL;'u açmak bir açýlýþ disketi oluþturun.  
+      </para>
+      <para>
+      Lineer modda herhangi bir sabit diske eriþemezseniz, 
+	<guibutton>Lineer modu kullan</guibutton>'ý seçmeyin.
+      </para>
+      <para>
+      LILO açýlýþ komutunu öntanýmlý seçenek olarak eklemek isterseniz,	
+      onlarý çekirdek parametre alanýna giriniz. Girilen herhangi bir seçenek
+      bilgisayar her açýldýðýnda Linux çekirdeðine geçilecektir. 
+      </para>
+      <para>
+	<guilabel>Açýlýþ Etiketi</guilabel>: Her açýlabilir bölüm diðer iþletim 
+      sistemleri tarafýndan kullanýlan bölümlerde dahil olarak ekranýn altýndaki
+      listelemede etiketlenmiþtir.(<guilabel>Açýlýþ Etiketi</guilabel> altýnda)
+      Eðer diðer bölümler için açýlýþ etiketi eklemek istiyorsanýz (veya varolan
+      etiketleri deðiþtirmek), seçtiðiniz bölümün üstünü iþaretleyin. Ýþaretlenen
+      yerin açýlýþ etiketini alanýn üzerinde deðiþtirebilirsiniz.      
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-silo">
+      <title>SILO Yapýlandýrmasý</title>
+      <para>
+        SILO, the Sparc Improved LOader, Red Hat Linux'u  bilgisayarýnýzda 
+        baþlatmak için kullanýlan yazýlýmdýr. SunOS ve Solaris gibi diðer 
+        iþletim sistemlerini de baþlatýr. Burada SILO nasýl yapýlandýrýlacaðý
+        görülecektir. 
+      </para>
+      <para>
+        <guibutton>Açýlýþ disketi oluþturma</guibutton>: Hiç SILO kurmuyorsanýz 
+        güvenlik nedenleri için bir açýlýþ disketi oluþturmalýsýnýz.
+        Eðer disket sürücünüz yok ise bu seçenek görülmez SMCC tarafýndan üretilmiþ 
+        bir Ultra açýlýþ için disket sürücüye sahip deðildir ve bu seçenek öntanýmlý 
+        olarak engellenmiþtir.
+      </para>
+      <para>
+        <guibutton>SILO'yu kurma</guibutton>: SILO'yu sürücünüze yazmak 
+        istemiyorsanýz SILO'yu atlayý seçebilirsiniz. Örneðin, SILO'yu zaten farklý
+        bir bölüme kurmuþsanýz ve oradan açmak istiyorsanýz.
+      </para>
+      <para>
+        SILO'yu kurmak, istediðin yeri seç. Eðer sisteminiz sadece
+        Red Hat Linux kullanacak ise  Master Boot Record (Diskin ilk
+        bölümündekli açýlýþ kýsmý) seçilmelidir. SunOS/Solaris ve Red Hat 
+        Linux sistemleri için tek bir sabit disk kullanýlacak ise SILO,
+        MBR'ye kurulmamalýdýr. Özellikle SunOS/Solaris diskin ilk bölümünde
+        bulunuyor ise.
+      </para>
+      <para>
+        Eðer herhangi bir nedenden dolayý SILO etmez isen, lütfen Red Hat
+        Linux'u açmak için bir açýlýþ disketi yapýn.
+      </para>
+      <para>
+        <guibutton>PROM'a ismi yarat</guibutton>: Eðer PROM destekliyor 
+        ise, kurucu "linux" gibi bir PROM ekadý oluþturabilir, bu þekilde
+        "boot linux" komutu ile PROM komut satýrýndan SILO açýlýþ yükleyici
+        ile baþlatabilirsiniz.
+      </para>
+      <para>
+        <guibutton>Prom açýlýþ aygýtýný Linux'a aktar</guibutton>: 
+     	  Kurucunun, PROM seçeneði olarak belirlenen "boot-from" veya 
+        "boot-device" aracýlýðýyla, Red Hat Linux kurucusu içinden öntanýmlý 
+        þekilde PROM'un açacaðýndan emin olabilirsiniz.
+      </para>
+      <para>
+       Eðer SILO açýlýþ komutunu öntanýmlý seçeneklere eklemeyi istersen, onlarý
+       çekirdek parametre alanýna girin. Girdiðin herhangi bir seçenek her açýlýþta
+       çekirdeðe geçilecektir.
+      </para>
+      <para>
+       Açýlabilen Bölüm -- Her açýlabilen bölüm, diðer iþletim sitemleri tarafýndan 
+       kullanýlan bölümlerde dahil olarak listelenmiþ ve etiketlenmiþtir.
+       Eðer diðer bölümler için açýlýþ etiketi eklemek istiyorsanýz (veya varolan
+       etiketleri deðiþtirmek), seçtiðiniz bölümün üstünü iþaretleyin. Ýþaretlenen
+       yerin açýlýþ etiketini alanýn üzerinde deðiþtirebilirsiniz.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-netconf">
+      <title>Að Yapýlandýrmasý</title>
+      <para>
+	Eðer bir að kartýna varsa, að bilgilerinizi düzenleyebilirsiniz.
+	Yok ise, devam etmek için <guibutton>Ýleri</guibutton> tuþuna basýn.
+      </para>
+      <para>
+      DHCP kullanarak yapýlandýrmak istiyorsan að kartýný seçin.
+      Eðer birden fazla eternet kartýnýz var ise, her aygýt kendine 
+      ait yapýlandýrma ekranýna sahip olacaktýr. Aygýt ekranlarý arasýnda 
+      (eth0 ve eth1 için) dolaþarak; her ekran için özel bilgiler verilecektir.
+      <guilabel>Açýlýþta Etkinleþtir</guilabel>'i seçerseniz, að kartýnýz
+      açýlýþta baþlatýlacaktýr.
+      </para>
+      <para>
+      DHCP istemci eriþimine sahipseniz veya bu bilgi ne demek emin deðilseniz,
+      Að Yöneticinize baþvurun.
+      </para>
+      <para>
+      Bir sonraki giriþ IP Adresi, Að Maskesi, Að ve Yayýn adresleridir. Eðer bunlarýn ne olduðu hakkýnda bir fikriniz yoksa, lütfen Að Yöneticinize baþvurun.
+      </para>
+      <para>
+      Sisteminize bir sunucu-adý girin. Eðer yoksa, sisteminiz bir "localhost"
+      olarak bilinir.
+	</para>
+      <para>
+      Son olarak Að geçidi, Birincil DNS, Ýkincil DNS ve Üçüncül DNS adreslerini
+      girin.	
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-timezone">
+      <title>Zaman Dilimi Seçimi</title>
+      <para>
+      Zaman dilimi olarak bilgisayarýnýzýn fiziksel yerini veya Evrensel
+      Koordinat Zamanýný (UTC olarak bilinen) düzenleyebilirsiniz.
+      </para>
+      <para>
+	Ekranýn üstündeki iki bölüme dikkat. Ýlk bölüm size yeri yapýlandýrma 
+      imkaný sunar. Yerinizi seçin.
+	<guimenuitem>Göster</guimenuitem>'i týklayýn, seçenekleriniz
+	Dünya, Kuzey Amerika, Güney Amerika, Pasifik, Avrupa, Afrika ve Asya'dýr.
+      </para>
+      <para>
+      Etkileþimli haritadan, sarý nokta ve kýrmýzý <guilabel>X</guilabel> 
+      ile bir kent seç ve seçiminiz belirsin. 
+      </para>
+      <para>
+      Kent listesini kaydýrarak isteðiniz zaman bölgesini seçin.
+      </para>
+      <para>
+      Ýkinci bölüm Evrensel Koordinat Zamanýný kullanma imkaný sunar.
+      Burada Günýþýðýndan tasarruf etmek için seçeneklerin listesini
+      bulacaksýnýz. 
+	</para>
+      <para>
+      Her iki bölüm için de <guilabel>Sistem Saati UTC kullanýr</guilabel>
+      seçeneði vardýr. (UTC, GMT diye de bilinir ve günýþýðý-tasarruf zamanýný ayarlar.) 
+      Eðer sistem donaným saatiniz UTC'ye ayarlanmýþsa lütfen bunu seçin.
+      (yerel saat düzenlemesi yerine).
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-accts">
+      <title>Hesap Yapýlandýrmasý</title>
+      <para>
+      Root hesabý için bir parola girin. Parola en azýndan altý karakter
+      uzunluðunda olmalýdýr. Ýkinci giriþ alanýna parolayý bir kez daha 
+      girerek onaylayýn. <guibutton>Ýleri</guibutton> tuþu her iki
+      giriþ alanýda eþit ise etkin hale gelir.
+      </para>
+      <para>
+	Sonra bir kullanýcý hesabý oluþtur.
+      </para
+      <para>
+      Kullanýcý hesap adýný girin. Sonra, kullanýcý hesabý için bir parola
+      girin ve onaylayýn. Son alarak, kullanýcý hesabýnýn tam adýný girin ve
+      <keycap>Giriþ</keycap>'e basýn. Hesap bilgisi hesap listesine eklenecektir.
+      </para>
+      <para>
+      Baþka bir kullanýcý eklemek için,<guibutton>Yeni</guibutton>'yi seçip, 
+      boþ alana bilgiyi girin. Kullanýcý hesabý için bilgi girildiðinde 
+	<guibutton>Ekle</guibutton> tuþu ile hesap listesine kullanýcý 
+      eklenecektir.
+      </para>
+      <para>
+	<guibutton>Düzenle</guibutton> ve <guibutton>Sil</guibutton> tuþlarý ile
+      daha önce oluþturulmuþ hesaplar üstünde deðiþiklik yapmak ve silmek mümkündür.
+	</para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-authconf">
+      <title>Doðrulama Yapýlandýrmasý</title>
+      <para>
+      Að parolalarýný düzenlemeyecekseniz, bu bölümü atlayabilirsiniz.
+      Emin deðilseniz, lütfen sistem yöneticisine yardým için baþvurun.
+      </para>
+      <para>
+	<firstterm>NIS</firstterm> parolasý düzenlemedikçe,
+      <firstterm>MD5</firstterm> ve <firstterm>shadow</firstterm> parolalarý 
+      seçildi þeklinde uyarýlacaksýnýz. Biz makinenizi mümkün olduðu kadar
+      güvenli yapmak için ikisini de kullanmanýzý öneririz.
+      </para>
+      <para>
+	<emphasis>MD5 parolalarý Etkinleþtir</emphasis> - uzun parolalara izin 
+      verir(256 karaktere kadar), tekdüze sekiz veya daha az harf yerine.
+	less.
+      </para>
+      <para>
+	<emphasis>Gölge parolalarý ekinleþtir</emphasis> - parolalarý gizlemek
+      için çok güvenli bir yöntem sunar. Bütün parolalar <filename>/etc/shadow</filename>
+      saklanýr, sadece root tarafýndan okunur.
+      </para>
+      <para>
+      NIS seçeneðini yapýlandýrmak için, mutlaka bir NIS aðýna baðlý olmalýsýnýz.
+      Eðer NIS aðýna baðlý olup olmadýðýnýzdan emin deðilseniz, lütfen sistem 
+      yöneticinize sorunuz.
+      </para>
+      <para>
+	<emphasis>NIS'i etkinleþtir</emphasis> - genel bir parola ve grup dosyasý ile 
+      ayný Að Bilgi Servisindeki bilgisayar gruplarýný çalýþtýrmaya izin verir.
+      Burada iki seçenek vardýr:
+      </para>
+      <para>
+	<emphasis>NIS Domain</emphasis> - bu seçenek sisteminizin ait olduðu
+      bilgisayar grubunu veya domain'ini belirtmeye izin verir.
+      </para>
+      <para>
+	<emphasis>NIS Sunucu</emphasis> - bu seçenek sisteminizi kabul eden
+      herhangi bir mevcut sunucu için bir "yayýn" bildirisini yerel alan aðýna
+      sormadan daha doðru olan belirli NIS sunucu kullanmaya neden olur.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-sel-group">
+      <title>Paket Gruplarýný Seçme</title>
+      <para>
+      Kurmak istediðiniz paket gruplarýný seçin. Paketleri seçmek için 
+      yanýndaki kutuyu iþaretleyin.	
+      </para>
+      <para>
+       Paketleri tek tek seçmek için, <guilabel>Tek tek paket seçimi</guilabel>
+       ekranýn altýndaki kutuyu iþaretlemelisiniz.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-sel-indiv">
+      <title>Tek Tek Paket Seçimi</title>
+      <para>
+      Sol taraftaki ekranda paket gruplarýnýn listesini göstereceksiniz.
+      Bu listeyi büyütmek için bir grup aldýðýn zaman ve grubun içindekilerin 
+      listesini saðdaki panelde görülecektir. 
+      </para>
+      <para>
+      Tek paket seçmek için üstüne iki kere basýn, veya bir kere basýn ve 
+      iþaretleyin onu <guilabel>Kurulum Ýçin Paket Seçimi</guilabel>'ne basýn.
+      Ýþaretleme seçilen paket üzerinde belirecektir.      
+      </para>
+      <para>
+      Belirli paket hakkýnda daha fazla bilgi için, üstünü iþaretleyin. Paket 
+      bilgisi ekranýn altýnda görünür, paket adý ve büyüklüðü ile birlikte.
+      </para>
+    </sect1>
+      
+      <sect1 id="s1-help-screens-depend">
+      <title>Çözülemeyen Paket Baðýmlýlýðý</title>
+      <para>
+      Bir çok yazýlým paketi doðru öalýþmasý için diðer paket veya
+      kütüphanelere baðýmlýdýr. Sisteminizin &RHL; ile doðru çalýþmasý için
+      bütün paketlerin ihtiyaçlarýndan emin ol. Bu paketleri 
+	<firstterm>baðýmlýlýklar</firstterm> ile her seferinde kurarken ve 
+      kaldýrýrken kontrol et. Eðer bir paket diðer bir kurulmamýþ paketi talep 
+      ederse, çözülmemiþ baðýmlýlýklar mevcuttur.
+      </para>
+      <para>
+      Bir veya daha fazla paket çözülmemiþ baðýmlýlýða sahipse,<guilabel>Baðýmlýlýklarýn 
+      Dikkat ederek Paketleri Kur</guilabel>'u seçerek sorunu çözebilirsiniz.
+      </para>
+    </sect1>
+    
+    <sect1 id="s1-help-screens-monitor">
+      <title>X Yapýlandýrmasý</title>
+      <para>
+      Kurulum programý makinenizin en iyi görüntüleme düzenini
+      belirlemek için ekranýnýzý tanýmaya çalýþacaktýr. Eðer ekran
+      tanýnmaz ise listelenen ekranlar içinden bu bilgisayara en uygun
+      olaný iþaretleyin. 
+      </para>
+      <para>
+       Ekranýn yatay ve dikey deðerlerinide girmelisiniz. Bu deðerler
+       ekranýnýzýn belgelerinde bulunabilir. Bu verileri girerken dikkatli 
+       olun; eðer deðerler aygýtýn özelliklerinde uzak ise ekranýnýz 
+       zarar görebilir. Yalnýzca kesin emin olduðunuz belgelerdeki deðerleri
+       girin, ekranýnýz ile uyuþmayan deðerleri degil.  
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-xconf">
+      <title>X Yapýlandýrmasý</title>
+      <para>
+      Kurulum programý sisteminiz için en iyi görüntü kartýný belirlemeyi dener,
+      eðer gerekli ise siz farklý bir görüntü kartýný seçebilirsiniz.
+      </para>
+      <para>
+      Seçilmiþ olan görüntü kartý için, kart üzerindeki RAM miktarýný seçin.
+      </para>
+      <para>
+      Donaným yapýlandýrmasý yapýlmýþsa, düzenlemeyi deneyebilirsiniz.
+      </para>
+      <para>
+      &RHL; kurulduðunda grafik arabirimi ile açýlmasýný isteyip 
+      istemediðinizi seçebilirsiniz.
+      </para>
+      <para>
+	<guibutton>X Yapýlandýrmasýný Özelleþtir</guibutton>tuþunu 
+      seç ve belirli renk ve çözünürlükleri düzenleyin.
+      </para>
+      <para>
+      <guibutton>X yapýlandýrmasýný Atla</guibutton>seçebilirsiniz 
+      eðer sonra yapýlandýrmak veya hiç yapmamak için. 
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-xcustom">
+      <title>
+        Özel Yapýlandýrma
+      </title>
+      <para>
+        X yapýlandýrmanýz için doðru çözünürlüðü seçin.
+        <guibutton>Bu yapýlandýrmayý dene</guibutton> seç ve bunu dene.
+        Deneme sýrýasýndaki beðenmez isen,<guibutton>Hayýr</guibutton>
+        'a basýn ve baþka bir çözünürlük seçin.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-aboutinstall">
+      <title>Kuruluma Baþlanýyor</title>
+      <para>
+	<command>Dikkat:</command><guibutton>Ýleri</guibutton> tuþuna basýnca,
+	&RHL; sabit diskinize yazýlmýþ olacaktýr. Bu süreç geri alýnamaz,
+      &RHL;'u kurmamaya karar verdiyseniz kurulumu sonlandýrmak için
+      bu son noktadýr.
+      </para>
+      <para>
+      Bu kurulumdan çýkmak bütün &RHL;'u ortamdan siler. Bilgisayarýnýzýn 
+	<command>Reset</command> tuþuna basýn veya <keycombo>
+	<keycap>Control-</keycap> <keycap>Alt-</keycap><keycap>Delete</keycap>
+	</keycombo> tuþlarýný kullanarak yeniden baþlatýn.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-installing">
+      <title>Paketler Kuruluyor</title>
+      <para>
+      Sistemimize &RHL; kurmak için gerekli tüm bilgileri topladýk
+      Herþeyi kurmak için kaç paketin kurulacaðýna baðlý olarak vakit 
+      alacaktýr. Orijinal &RHL; kutunuz var ise, içindeki <citetitle>
+      &RHLGSG;</citetitle> veya <citetitle>&RHLRGS;</citetitle> size
+      sisteme daha yakýn olmak için fýrsat verecektir.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-bootdisk">
+      <title>Açýlýþ Disketi Oluþturma</title>
+      <para>
+      Boþ ve biçimlendirilmemiþ disketi, disket sürücüye takýn ve
+	devam etmek için <guibutton>Ýeri</guibutton> tuþuna basýn.
+      </para>
+    </sect1>
+  </chapter>
+</book>
+
+
+
+
+
+  

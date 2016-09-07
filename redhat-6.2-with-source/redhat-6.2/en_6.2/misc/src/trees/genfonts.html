@@ -1,0 +1,41 @@
+#!/bin/sh
+
+maplist=`awk '{ print $4 }' < ../anaconda/lang-table`
+
+rm -rf fonts
+mkdir -p fonts
+
+for map in $maplist; do
+    if [ x"$map" = x"None" ]; then
+        continue
+    fi
+    n=`grep $map ../anaconda/lang-table | awk '{ print $3 }' | \
+       grep '[A-Za-z]' | sort -u`
+
+    echo -n $n
+    echo -n " map "
+    echo $map
+
+    if [ -f /usr/lib/kbd/consoletrans/$map.acm.gz ]; then
+	m=/usr/lib/kbd/consoletrans/$map.acm.gz
+    else
+	if [ -f /usr/lib/kbd/consoletrans/$map.acm ]; then
+	    m=/usr/lib/kbd/consoletrans/$map.acm
+	else
+	    m=/usr/lib/kbd/consoletrans/$map
+	fi
+    fi
+    
+    if [ -f $m ]; then
+        append="-m $m"
+    else
+        append=""
+    fi
+
+    consolechars -f /usr/lib/kbd/consolefonts/$n.psf.gz $append
+    ../anaconda/utils/snarffont > fonts/$map
+done
+
+consolechars -d
+
+(cd fonts > /dev/null; ls * | cpio -o -H crc) | gzip -9 > fonts.cgz

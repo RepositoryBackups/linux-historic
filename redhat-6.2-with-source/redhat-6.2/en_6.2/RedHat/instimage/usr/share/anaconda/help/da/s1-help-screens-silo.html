@@ -1,0 +1,123 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/da/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>SILO-konfiguration</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.52"><LINK
+REL="HOME"
+TITLE="Installations-hjælpeskærme"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="LILO-konfiguration"
+HREF="s1-help-screens-lilo.html"><LINK
+REL="NEXT"
+TITLE="Netværkskonfiguration"
+HREF="s1-help-screens-netconf.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-SILO"
+>SILO-konfiguration</A
+></H1
+><P
+>        SILO (Sparc Improved LOader), den forbedrede Sparc indlæser, er et program som kan bruges
+        til at starte Red Hat Linux på din sparc-komputer. Det kan også
+        starte andre styresystemer, såsom SunOS og Solaris.
+        Her, vil du blive spurge om hvordan (eller om) du ønsker at
+        konfigurere SILO.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Opret opstartsdiskette</B
+>: Du bør oprette
+        en opstartsdiskette hvis du enten ikke installerer SILO eller
+        af sikkerhedsgrunde. Hvis du ikke har et
+        diskettedrev vil denne indstilling være skjult, eller hvis du har en
+        Ultra SMCC som normalt ikke har et diskettedrev der
+        kan læse fra disketter under opstart, vil denne indstilling
+        fra standard være slået fra.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Installér ikke SILO</B
+>: Du kan vælge at udelade
+        SILO hvis du ikke ønsker at skrive SILO til din harddisk,
+        f.eks. hvis du allerede har SILO installeret på en anden
+        partition eller disk og ønsker at starte derfra.
+      </P
+><P
+>        For at installere SILO, vælg hvor du vil installere den. Hvis dit
+        system kun skal bruge Red Hat Linux skal du nok vælge
+        Master Boot Record (opstartsblokken på den første partition på
+        disken). På systemer hvor SunOS/Solaris og Red Hat Linux
+        skal sameksistere på én enkelt harddisk, bør du nok ikke
+        installere SILO i MBR, specialt ikke hvis SunOS/Solaris ligger på
+        den først partition på disken.
+      </P
+><P
+>      Hvis du vælger ikke at installere SILO af <I
+CLASS="EMPHASIS"
+>hvilkensomhelst</I
+> grund,
+	opret venligst en opstartsdiskette så du kan starte op i Red Hat Linux.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Opret PROM alias</B
+>: Installationsprogrammet kan
+        oprette et PROM alias "linux" hvis PROM'en understøtter det, så at
+        du kan starte SILO opstartsindlæseren fra PROM kommandolinien med kommandoen "boot linux".
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Sæt standard PROM opstartsenhed</B
+>:
+        Installationsprogrammet kan sørge for at PROM'en som standard vil starte op i
+        Red Hat Linux installationsprogrammet ved at sætte PROM flaget "boot-device"
+        eller "boot-from".
+      </P
+><P
+>Hvis du ønsker at tilføje standardflag til SILO opstartskommandoen, skriv dem i
+	kerneparametrefeltet.  Alle flag du indtaster her vil blive sendt videre til
+	Linuxkernen hvergang du starter op.
+      </P
+><P
+><I
+CLASS="GUILABEL"
+>Opstartsnavn</I
+>: Hver opstartsbar partition er
+	oplistet og navngivet (under <I
+CLASS="GUILABEL"
+>Opstartsnavn</I
+>
+	-slisten i bunden af skærmen, inklusive partitioner der bruges
+	af andre operativsystemer. Hvis du gerne vil tilføje opstartsnavne for
+	andre partitioner (eller ændre eksisterende opstartsnavne),
+	klik én gang på partitionen for at vælge den. Når den er valgt, kan du
+	ændre opstartsnavnet i feltet ovenover.
+      </P
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/da/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:28 GMT -->
+</HTML
+>

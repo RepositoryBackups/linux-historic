@@ -1,0 +1,277 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/s1-upgrade-packages.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:57:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Selecting Packages to Upgrade</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Upgrading Your Current System"
+HREF="ch-upgrade.html"><LINK
+REL="PREVIOUS"
+TITLE="Customizing Your Upgrade"
+HREF="s1-upgrade-customize.html"><LINK
+REL="NEXT"
+TITLE="Upgrading Packages"
+HREF="s1-upgrade-progress.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Installation Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-upgrade-customize.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 5. Upgrading Your Current System</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-upgrade-progress.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-UPGRADE-PACKAGES"
+>Selecting Packages to Upgrade</A
+></H1
+><P
+>	Here, you are given the opportunity to choose which packages you would
+	like to upgrade (see <A
+HREF="s1-upgrade-packages.html#GR-UPGRADE-FIG-INDI"
+>Figure 5-3</A
+>). 
+      </P
+><P
+>	On the left side of the screen you will see a directory listing of
+	various package groups. When you expand this list (double-click to
+	select it) and double-click on a single directory, the list of
+	packages available for installation will appear on the right.
+      </P
+><P
+>	To select an individual package, double-click on it, or click on it once
+	to highlight it and click on the <B
+CLASS="GUIBUTTON"
+>Select Package For
+	Installation</B
+> button below.  A red check mark will appear on
+	any of the packages you have selected for installation.
+      </P
+><P
+>	To read information about a particular package before choosing it for
+	installation, left-click on it once to highlight it, and the information
+	will appear at the bottom of the screen along with the name and size
+	of the package.
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  Some packages (such as the kernel and certain libraries) are
+	  required for every Red Hat Linux system and are not available to select or
+	  deselect. These <I
+CLASS="FIRSTTERM"
+>base packages</I
+> are selected by
+	  default.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-UPGRADE-FIG-INDI"
+></A
+><P
+><IMG
+SRC="figs/upgrade/indi.gif"></P
+><P
+><B
+>Figure 5-3. Individual Package Selection</B
+></P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-UPGRADE-UNRES-DEPEND"
+>Unresolved Dependencies</A
+></H2
+><P
+>          If any package requires another package which you have not selected to
+          install, the program presents a list of these <I
+CLASS="FIRSTTERM"
+>unresolved
+          dependencies</I
+> and gives you the opportunity to resolve them
+          (see <A
+HREF="s1-upgrade-packages.html#GR-UPGRADE-FIG-UD2"
+>Figure 5-4</A
+>).
+        </P
+><P
+>          The <TT
+CLASS="GUILABEL"
+><B
+>Unresolved Dependencies</B
+></TT
+> screen will only
+          appear if you are missing certain packages that are needed by your
+          customized package selection. Under the list of missing packages,
+          there is an <TT
+CLASS="GUILABEL"
+><B
+>Install packages to satisfy
+          dependencies</B
+></TT
+> check box at the bottom of the screen which is
+          selected by default.  If you leave this checked, the installation
+          program will resolve package dependencies automatically by adding all
+          required packages to the list of selected packages.
+        </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-UPGRADE-FIG-UD2"
+></A
+><P
+><IMG
+SRC="figs/upgrade/ud2.gif"></P
+><P
+><B
+>Figure 5-4. Unresolved Dependencies</B
+></P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-upgrade-customize.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-upgrade-progress.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Customizing Your Upgrade</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-upgrade.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Upgrading Packages</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/s1-upgrade-packages.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:57:12 GMT -->
+</HTML
+>

@@ -1,0 +1,133 @@
+#!/bin/sh
+
+if [ $(stat $0 | awk '/Device/ { print $2 }') = "0,0" ] ; then
+    echo "Don't run $0 over nfs!"
+    exit 1
+fi
+
+PATH=/sbin:$PATH
+export PATH
+
+BASEDIR=boot
+SIZE=1440
+SYSLINUXVER=1.45
+
+MNTPOINT=/tmp/mkimage.mnt-$$
+TMPFILE=/tmp/mkboot.$$
+
+if [ -z $LANGS ]; then
+    LANGS=$(cd boot; find * -type d | grep -v CVS)
+fi
+
+while [ -n "$1" ] ; do
+    case "$1" in
+	"local")
+	    IMAGES="$IMAGES boot"
+	    shift
+	    ;;
+	"network")
+	    IMAGES="$IMAGES bootnet"
+	    shift;
+	    ;;
+	"pcmcia")
+	    IMAGES="$IMAGES pcmcia"
+	    shift;
+	    ;;
+	*)
+	    echo "Useage:" >&2
+	    echo "$0 [-f] [network] [local]" >&2
+	    exit
+	    ;;
+    esac
+done
+
+mkdir -p ../../../images
+
+if [ -z "$IMAGES" ]; then
+    IMAGES="boot bootnet pcmcia"
+fi
+
+for TARGET in $IMAGES; do
+    IMAGE=../../../images/$TARGET.img
+
+    case "$TARGET" in
+	"boot")
+	    ./mkinitrd local -f
+	    ;;
+	"bootnet")
+	    ./mkinitrd network -f
+	    ;;
+	"pcmcia")
+	    ./mkinitrd pcmcia -f
+	    ;;
+    esac
+
+    for LANG in "" $LANGS; do
+
+	rm -f $TMPFILE
+	dd if=/dev/zero bs=1k count=1440 of=$TMPFILE 2> /dev/null
+	gunzip < syslinux-$SYSLINUXVER/img1440k.gz | dd of=$TMPFILE conv=notrunc 2> /dev/null
+
+	# install new syslinux
+	syslinux-$SYSLINUXVER/syslinux $TMPFILE
+
+	mkdir $MNTPOINT
+	mount -o loop -t msdos $TMPFILE $MNTPOINT
+
+	# copy every file that's not a .msg -- don't go into subdirectories
+	(cd $BASEDIR; find . ! -name "*.msg" -maxdepth 1 ! -type d | cpio --quiet -p $MNTPOINT)
+	# now get the messages for this language
+	if [ -z "$LANG" ]; then
+	    LANGDIR="."
+	    LANGTAG=""
+	else
+	    LANGDIR=$LANG
+	    LANGTAG=$(echo $LANGDIR | sed "s/_.*//")
+
+	fi
+	(cd $BASEDIR/$LANGDIR; ls *.msg | cpio --quiet -p $MNTPOINT)
+
+	case "$TARGET" in
+	    "boot")
+		cp initrd-local.img $MNTPOINT/initrd.img
+		cat $BASEDIR/syslinux.cfg | sed 's/initrd.img/initrd.img local/' >\
+		    $MNTPOINT/syslinux.cfg
+		;;
+	    "bootnet")
+		cp initrd-network.img $MNTPOINT/initrd.img
+		cat $BASEDIR/syslinux.cfg | sed 's/initrd.img/initrd.img network/' >\
+		    $MNTPOINT/syslinux.cfg
+		;;
+	    "pcmcia")
+		cp initrd-pcmcia.img $MNTPOINT/initrd.img
+		cat $BASEDIR/syslinux.cfg | sed 's/initrd.img/initrd.img pcmcia/' >\
+		    $MNTPOINT/syslinux.cfg
+		;;
+	esac
+
+
+	if [ -n "$LANG" ]; then
+	    # rewrite the syslinux.cfg file
+	    (cd $MNTPOINT; mv syslinux.cfg syslinux.old; sed "/append/s/\$/ lang=$LANGTAG/" < syslinux.old > syslinux.cfg; rm syslinux.old)
+	fi
+
+	if [ -z "$LANG" ]; then
+	    echo "$TARGET in C"
+	else
+	    echo "$TARGET in $LANG"
+	fi
+
+	df $MNTPOINT | tail +2
+
+	umount $MNTPOINT
+	
+	rm -rf $MNTPOINT 
+
+	DIR=$(echo $IMAGE | sed 's,/[^/]*$,,')
+	if [ $LANGDIR != "." ]; then
+	    mkdir -p ${DIR}/${LANGTAG}
+	fi
+	cp -av $TMPFILE ${DIR}/${LANGTAG}/${TARGET}.img
+	rm -f $TMPFILE
+    done
+done

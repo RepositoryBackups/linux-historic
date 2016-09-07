@@ -1,0 +1,358 @@
+#!/usr/bin/python
+
+import sys, os, signal
+signal.signal(signal.SIGINT, signal.SIG_DFL)
+
+#
+# For anaconda in reconfig mode
+#
+sys.path.append('/usr/lib/anaconda')
+
+# For anaconda in test mode
+if (os.path.exists('rpmmodule')):
+    sys.path.append('rpmmodule')
+    sys.path.append('libfdisk')
+    sys.path.append('balkan')
+    sys.path.append('kudzu')
+    sys.path.append('gnome-map')
+    sys.path.append('isys')
+
+os.environ['HOME'] = '/tmp'
+
+# Python passed my path as argv[0]!
+# if sys.argv[0][-7:] == "syslogd":
+if len(sys.argv) > 1:
+    if sys.argv[1] == "--syslogd":
+        from syslogd import Syslogd
+        root = sys.argv[2]
+        output = sys.argv[3]
+        syslog = Syslogd (root, open (output, "w+"))
+
+import gettext_rh
+import traceback
+import string
+
+import isys
+import iutil
+
+setverPath = None
+
+gettext_rh.bindtextdomain("anaconda", "/usr/share/locale")
+gettext_rh.textdomain("anaconda")
+_ = gettext_rh.gettext
+
+(args, extra) = isys.getopt(sys.argv[1:], 'GTRtdr:fm:', 
+          [ 'gui', 'text', 'reconfig', 'test', 'debug',
+            'method=', 'rootpath=',
+	    'testpath=', 'mountfs', 'traceonly', 'kickstart=',
+            'lang=', 'keymap=', 'kbdtype=', 'module=',
+	    'expert', 'serial' ])
+
+# save because we're about to munge argv
+[execname] = string.split(sys.argv[0], '/')[-1:]
+
+# remove the arguments - gnome_init doesn't understand them
+for arg in sys.argv[1:]:
+    sys.argv.remove (arg)
+sys.argc = 1
+
+#
+# default root to install into if doing a normal install
+#
+rootPath = '/mnt/sysimage'
+
+extraModules = []
+
+# display mode is either 'g' for graphical or 't' for text
+display_mode = 'g'
+forced_display_mode = None
+
+# booleans - value is 0 for false or non-zero for true
+# test           - in test mode?
+# debug          - in debug mode?
+# serial         - install via serial port (?)
+# expert         - in expert mode?
+# traceOnly      - print out loaded modules
+# forceMount     - ? used ?
+# localInstall   - install to chroot
+# reconfigOnly   - allow user to reconfig installed box w/o reinstall
+test = 0
+debug = 0
+serial = 0
+expert = 0
+traceOnly = 0
+forceMount = 0
+localInstall = 0
+reconfigOnly = 0
+
+#
+# x          - xserver info (?)
+# lang       - language to use for install/machine default
+# method     - install method (not used if reconfigOnly is true)
+# keymap     - kbd map
+# kbdtype    - type of keyboard (84 key, 101 key, etc)
+# kickstart  - ?
+# mouseInfo  - type of mouse
+# progmode   - either 'reconfig' or 'install'
+#
+x = None
+lang = None
+method = None
+keymap = None
+kbdtpye = None
+kickstart = None
+mouseInfo = None
+progmode = None
+
+#
+# parse off command line arguments
+#
+for n in args:
+    (str, arg) = n
+
+    if (str == '-G' or str == '--gui'):
+	forced_display_mode = 'g'
+    elif (str == '-T' or str == '--text'):
+	forced_display_mode = 't'
+    elif (str == '-R' or str == '--reconfig'):
+	reconfigOnly = 1
+        progmode = 'reconfig'
+    elif (str == '-t' or str == '--test'):
+	test = 1
+    elif (str == '--module'):
+	(path, subdir, name) = string.split(arg, ":")
+	extraModules.append((path, subdir, name))
+    elif (str == '-m' or str == '--method'):
+	method = arg
+        reconfigOnly = 0
+        progmode = 'install'
+    elif (str == '-d' or str == '--debug'):
+	debug = 1
+    elif (str == '--kickstart'):
+	kickstart = arg
+	forced_display_mode = 't'
+    elif (str == '-r' or str == '--rootpath'):
+	rootPath = arg
+	localInstall = 1
+    elif (str == '--mountfs'):
+	forceMount = 1
+    elif (str == '--traceonly'):
+	traceOnly = 1
+    elif (str == '--expert'):
+	expert = 1
+    elif (str == '--serial'):
+	serial = 1
+    elif (str == '--lang'):
+        lang = arg
+    elif (str == '--keymap'):
+        keymap = arg
+    elif (str == '--kbdtype'):
+        kbdtype = arg
+
+#
+# must specify install or reconfig mode
+#
+if (progmode == None):
+    print "Must specify either --reconfig or --method for program mode"
+    sys.exit(1)
+
+#
+# if not just reconfiguring box, must have install method
+#
+if (not reconfigOnly  and not method):
+    print "no install method specified"
+    sys.exit(1)
+
+if (debug):
+    import pdb
+    pdb.set_trace()
+#
+# don't let a developer reinstall their box unknowingly
+#
+if (not reconfigOnly and not test and not localInstall and os.getpid() > 50):
+    print "you're running me on a live system! that's incredibly stupid."
+    sys.exit(1)
+
+import rpm
+import lilo
+from todo import ToDo
+import isys
+from installclass import DefaultInstall
+from installclass import ReconfigStation
+from kickstart import Kickstart
+
+#
+# override display mode if machine cannot nicely run X
+#
+if (not test):
+    if (iutil.memInstalled() < 30000):
+	forced_display_mode = 't'
+
+#
+# if in reconfig mode set display mode based on inittab default runlevel
+#
+# but always let command line specified mode override defaults
+#
+if (forced_display_mode == None):
+    if (reconfigOnly != 0):
+        if (iutil.getDefaultRunlevel() == '5' and
+            os.access("/etc/X11/XF86Config", os.R_OK)):
+                display_mode = 'g'
+        else:
+                display_mode = 't'
+    else:
+        display_mode = 'g'
+else:
+    display_mode = forced_display_mode
+
+#
+# startup X server is we're not already running under an X session
+#
+if (display_mode == 'g' and not os.environ.has_key('DISPLAY')):
+    import xserver
+    try:
+        if (reconfigOnly == 0):
+            result = xserver.startX ()
+        else:
+            result = xserver.start_existing_X ()
+            
+    except RuntimeError:
+	print "X startup failed, falling back to text mode"
+        display_mode = 't'
+    else:
+        (mouseInfo, x) = (result)
+
+#
+# setup links required by graphical mode if installing and verify display mode
+#
+if (display_mode == 'g'):
+    if not test and not localInstall and not reconfigOnly:
+        for i in ( "imrc", "im_palette.pal", "gtk" ):
+            try:
+                os.symlink ("../mnt/source/RedHat/instimage/etc/" + i, "/etc/" + i)
+            except:
+                pass
+    from gui import InstallInterface
+elif (display_mode == 't'):
+    from text import InstallInterface
+else:
+    sys.exit(1)
+
+if traceOnly:
+    # prints a list of all the modules imported
+    import pdb
+    import image
+    import harddrive
+    import urlinstall
+    import mimetools
+    import mimetypes
+    import syslogd
+    if display_mode == 't':
+        from newtpyfsedit import fsedit        
+    for module in sys.__dict__['modules'].keys ():
+        if module not in [ "__builtin__", "__main__" ]:
+            foo = repr (sys.__dict__['modules'][module])
+            bar = string.split (foo, "'")
+            if len (bar) > 3:
+                print bar[3]
+        
+    sys.exit(0)
+
+# imports after setting up the path
+if not reconfigOnly:
+    if (method[0:5] == "dir:/"):
+        from image import InstallMethod
+        method = InstallMethod(method[5:])
+    elif (method[0:6] == "ftp://" or method[0:7] == "http://"):
+        from urlinstall import InstallMethod
+        method = InstallMethod(method)
+    elif (method[0:5] == "hd://"):
+        method = method[5:]
+        i = string.index(method, '/')
+        dir = method[i:]
+        driveAndType = method[0:i]
+        
+        i = string.index(driveAndType, ":")
+        drive = driveAndType[0:i]
+        type = driveAndType[i + 1:]
+        
+        from harddrive import InstallMethod
+        method = InstallMethod(drive, type, dir)
+    else:
+        print "unknown install method:", method
+        sys.exit(1)
+
+#
+# do some final sanity checking before going off into the great wide wonder
+#
+if reconfigOnly and method != None:
+    print "Conflicting options: cannot reconfig and install simultaneously!\n"
+    sys.exit(1)
+intf = InstallInterface()
+
+# set the default actions
+installPackages = 1
+setupFilesystems = 1
+
+if localInstall:
+    installPackages = 1
+    setupFilesystems = 0
+if test:
+    installPackages = 0
+    setupFilesystems = 0
+if forceMount:
+    setupFilesystems = 1
+
+if kickstart:
+    instClass = Kickstart(kickstart)
+    os.unlink(kickstart)
+elif reconfigOnly:
+    instClass = ReconfigStation(expert)
+else:
+    instClass = DefaultInstall(expert)
+
+if lang:
+    instClass.addToSkipList("language")
+    instClass.setLanguage(lang)
+            
+if keymap:
+    instClass.addToSkipList("keyboard")
+    instClass.setKeyboard(keymap)
+
+if iutil.getArch() == "sparc":
+    import kudzu
+    mice = kudzu.probe (kudzu.CLASS_MOUSE, kudzu.BUS_UNSPEC, kudzu.PROBE_ONE);
+    if mice:
+	(mouseDev, driver, descr) = mice[0]
+	if mouseDev == 'sunmouse':
+	    instClass.addToSkipList("mouse")
+	    instClass.setMouseType("Sun - Mouse", "sunmouse")
+
+if reconfigOnly:
+    installPackages = 0
+    setupFilesystems = 0
+    rootPath = '/'
+    
+try:
+    todo = ToDo(intf, method, rootPath, installSystem = installPackages,
+                setupFilesystems = setupFilesystems, mouse = mouseInfo,
+                instClass = instClass, x = x, expert = expert,
+                serial = serial, reconfigOnly = reconfigOnly, test = test,
+                extraModules = extraModules)
+    intf.run(todo, test = test)
+except:
+    (type, value, tb) = sys.exc_info()
+    from string import joinfields
+    list = traceback.format_exception (type, value, tb)
+    text = joinfields (list, "")
+    rc = intf.exceptionWindow (_("Exception Occurred"), text)
+    intf.__del__ ()
+    if rc:
+        import pdb
+        pdb.post_mortem (tb)
+    os._exit (1)
+
+if not todo.reconfigOnly:
+    todo.fstab.umountFilesystems(rootPath, ignoreErrors = 1)
+
+del intf

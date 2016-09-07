@@ -1,0 +1,1437 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-install-create-part.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:00:15 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Partitioning Your Disk for Red Hat Linux</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Installing Red Hat Linux via Text Mode"
+HREF="ch-install-tm.html"><LINK
+REL="PREVIOUS"
+TITLE="Upgrading or Installing"
+HREF="s1-installorupgrade.html"><LINK
+REL="NEXT"
+TITLE="Installing LILO"
+HREF="s1-install-lilo.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-installorupgrade.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 10. Installing Red Hat Linux via Text Mode</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-install-lilo.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-INSTALL-CREATE-PART"
+>Partitioning Your Disk for Red Hat Linux</A
+></H1
+><P
+>	If you have not yet planned how you will set up your partitions, turn to
+	<A
+HREF="ch-partitions.html"
+>Appendix B</A
+>.  There you'll find an introduction to
+	basic disk partitioning concepts.  As a bare minimum, you'll need an
+	appropriately-sized root partition, and a swap partition of at least 16
+	MB.
+      </P
+><P
+>	<A
+HREF="s1-install-create-part.html#FIG-INSTALL-MAIN-PART"
+>Figure 10-14</A
+> shows the two disk partitioning
+	applications that are available for you to use.
+      </P
+><P
+>	If you will be using <TT
+CLASS="APPLICATION"
+>fdisk</TT
+> to partition your
+	drive, please see <A
+HREF="s1-install-create-part.html#S2-INSTALL-FDISK"
+>the section called <I
+>Using <TT
+CLASS="APPLICATION"
+>fdisk</TT
+></I
+></A
+> for those
+	instructions. If you select <TT
+CLASS="APPLICATION"
+>Disk Druid</TT
+>,
+	continue reading below.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-MAIN-PART"
+></A
+><P
+><IMG
+SRC="figs/textmode/main-part.gif"></P
+><P
+><B
+>Figure 10-14. Disk Setup Dialog</B
+></P
+></DIV
+><P
+>	The following sections describe the layout of
+	<A
+HREF="s1-install-create-part.html#FIG-INSTALL-DDMAIN"
+>Figure 10-15</A
+>
+	and how to use its buttons to set up partitions.  If you're already
+	familiar with Disk Druid, you can partition your disk and skip to <A
+HREF="s1-install-create-part.html#S2-INSTALL-FORMATPARTITIONS"
+>the section called <I
+>Choose Partitions to Format Dialog</I
+></A
+>.
+      </P
+><P
+>	You use the disk partitioning dialogs to tell the installation program
+	where to install Red Hat Linux (<A
+HREF="s1-install-create-part.html#FIG-INSTALL-DDMAIN"
+>Figure 10-15</A
+>).
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-DDMAIN"
+></A
+><P
+><IMG
+SRC="figs/textmode/ddmain.gif"></P
+><P
+><B
+>Figure 10-15. Disk Druid Main Screen</B
+></P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-CDP"
+>The Current Disk Partitions Section</A
+></H2
+><P
+>	  Each line in the <TT
+CLASS="GUILABEL"
+><B
+>Current Disk Partitions</B
+></TT
+> section
+	  represents a disk partition. In this example (<A
+HREF="s1-install-create-part.html#FIG-INSTALL-DDMAIN"
+>Figure 10-15</A
+>), there are Linux existing partitions.
+	</P
+><P
+>	  Note the scroll bar to the right, which indicates that there may be
+	  more partitions than can be displayed at one time.  If you use the
+	  <B
+CLASS="KEYCAP"
+>Up</B
+> and <B
+CLASS="KEYCAP"
+>Down</B
+> arrow keys, you can see
+	  if there are any additional partitions. Each line in this section has
+	  five different fields:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Mount Point</B
+></TT
+> -- Indicates where the partition
+	      will be mounted when Red Hat Linux is installed (such as
+	      <TT
+CLASS="FILENAME"
+>/</TT
+>, <TT
+CLASS="FILENAME"
+>/boot</TT
+>, or
+	      <TT
+CLASS="FILENAME"
+>swap</TT
+>).
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Device</B
+></TT
+> -- Displays specific hard drive and
+	      partition information.
+	      </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Requested</B
+></TT
+> -- Shows the partition's initial
+	      size.
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Actual</B
+></TT
+> -- Shows the partition's current size.
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Type</B
+></TT
+> -- Shows the partition's type.
+	    </P
+></LI
+></UL
+><P
+>	  As you scroll through the <TT
+CLASS="GUILABEL"
+><B
+>Current Disk Partitions</B
+></TT
+>
+	  section, you might see an <B
+CLASS="COMMAND"
+>Unallocated Requested
+	  Partitions</B
+> title bar, followed by one or more partitions.
+	  These are partitions that have been requested but, for one reason or
+	  another, have not been allocated.  A common reason for having an
+	  unallocated partition is a lack of sufficient free space for the
+	  partition.  In any case, the reason the partition remains unallocated
+	  will be displayed after the partition's mount point.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-DRIVE-SUM"
+>The Drive Summaries Section</A
+></H2
+><P
+>	  Each line in the <TT
+CLASS="GUILABEL"
+><B
+>Drive Summaries</B
+></TT
+> section
+	  represents a hard disk on your system.  Each line has the following
+	  fields:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Drive</B
+></TT
+> -- Shows the hard disk's device name.
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Geom [C/H/S]</B
+></TT
+> -- Shows the hard disk's
+	      <I
+CLASS="FIRSTTERM"
+>geometry</I
+>.  The geometry consists of three
+	      numbers representing the number of cylinders, heads and sectors
+	      as reported by the hard disk.
+	    </P
+></LI
+><LI
+><P
+>              <TT
+CLASS="GUILABEL"
+><B
+>Total</B
+></TT
+> -- Shows the total available space on
+                the hard disk.
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Used</B
+></TT
+> -- Shows how much of the hard disk's
+	      space is currently allocated to partitions.
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Free</B
+></TT
+> -- Shows how much of the hard disk's
+	      space is still unallocated.
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Bar Graph</B
+></TT
+> -- Presents a visual representation
+		of the space currently used on the hard disk.  The more pound
+		signs there are between the square braces, the less free space
+		there is.  In <A
+HREF="s1-install-create-part.html#FIG-INSTALL-DDMAIN"
+>Figure 10-15</A
+>, the bar graph
+		shows no free space.
+	    </P
+></LI
+></UL
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    The <TT
+CLASS="GUILABEL"
+><B
+>Drive Summaries</B
+></TT
+> section is displayed only
+	    to indicate your computer's disk configuration.  It is not meant to
+	    be used as a means of specifying the target hard drive for a given
+	    partition.  This is described more completely in <A
+HREF="s1-install-create-part.html#S2-INSTALL-ADD-PART"
+>the section called <I
+>Adding a Partition</I
+></A
+>.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-DD-BUTTONS"
+>Disk Druid's Buttons</A
+></H2
+><P
+>	  These buttons control <TT
+CLASS="APPLICATION"
+>Disk Druid</TT
+>'s actions.
+	  They are used to add and delete partitions, and to change partition
+	  attributes.  In addition, there are buttons that are used to accept
+	  the changes you've made, or to exit <TT
+CLASS="APPLICATION"
+>Disk
+	  Druid</TT
+> entirely.  Let's take a look at each button in
+	  order.
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>              <B
+CLASS="GUIBUTTON"
+>Add</B
+> -- Request a new partition.  Selecting
+		this button causes a dialog box to appear containing fields that
+		must be filled in.
+	    </P
+></LI
+><LI
+><P
+>              <B
+CLASS="GUIBUTTON"
+>Edit</B
+> -- Modify the mount point of the
+	      partition currently highlighted in the <TT
+CLASS="GUILABEL"
+><B
+>Current Disk
+		Partitions</B
+></TT
+> section.  Selecting this button will cause a
+	      dialog box to appear allowing you to change the name of the mount
+	      point.
+	    </P
+></LI
+><LI
+><P
+>              <B
+CLASS="GUIBUTTON"
+>Delete</B
+> -- Delete the partition currently
+	      highlighted in the <TT
+CLASS="GUILABEL"
+><B
+>Current Disk Partitions</B
+></TT
+>
+	      section.  Selecting this button will cause a dialog box to
+	      appear asking you to confirm the deletion.
+	    </P
+></LI
+><LI
+><P
+>              <B
+CLASS="GUIBUTTON"
+>OK</B
+> -- Confirm that changes made to your
+	      system's partitions to be written to disk.  You will be asked to
+	      confirm the changes before <TT
+CLASS="APPLICATION"
+>Disk Druid</TT
+>
+	      rewrites your hard disk partition table(s).  In addition, any
+	      mount points you've defined are passed to the installation
+	      program, and will eventually be used by your Red Hat Linux system to
+	      define the filesystem layout.
+	    </P
+></LI
+><LI
+><P
+>              <B
+CLASS="GUIBUTTON"
+>Back</B
+> -- Abort without saving any changes
+	      you've made.  When this button is selected, the installation
+	      program will take you back to the previous screen, so you can
+	      start over.
+	    </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-FXN-KEYS"
+>Handy Function Keys</A
+></H2
+><P
+>	  Use the <B
+CLASS="KEYCAP"
+>F5</B
+> (Reset) function key to discard all
+	  changes you may have made while in <TT
+CLASS="APPLICATION"
+>Disk
+	  Druid</TT
+>, and return the list of partitions to those read
+	  from the partition table(s) on your hard disk(s).  When selected,
+	  you'll be asked to confirm whether you want to discard the
+	  changes. Note that any mount points you've specified will be lost, and
+	  will need to be reentered.
+	</P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    You will need to dedicate at least one partition to Red Hat Linux, and
+	    optionally more.  This is discussed more completely in <A
+HREF="ch-partitions.html#S2-PARTITIONS-HOW-MANY"
+>the section called <I
+>How Many Partitions?</I
+> in Appendix B</A
+>.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-ADD-PART"
+>Adding a Partition</A
+></H2
+><P
+>	  To add a new partition, select the <B
+CLASS="GUIBUTTON"
+>Add</B
+> button
+	  and press <B
+CLASS="KEYCAP"
+>Space</B
+> or <B
+CLASS="KEYCAP"
+>Enter</B
+>. The
+	  <TT
+CLASS="GUILABEL"
+><B
+>Edit New Partition</B
+></TT
+> dialog (<A
+HREF="s1-install-create-part.html#FIG-INSTALL-DD-ADD"
+>Figure 10-16</A
+>) appears.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-DD-ADD"
+></A
+><P
+><IMG
+SRC="figs/textmode/dd-add.gif"></P
+><P
+><B
+>Figure 10-16. Edit New Partition Dialog</B
+></P
+></DIV
+><P
+>	  The screen contains the following fields:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>              <TT
+CLASS="GUILABEL"
+><B
+>Mount Point</B
+></TT
+> -- Highlight this field and enter
+	      the partition's mount point.  For example, if this partition
+	      should be the root partition, enter <TT
+CLASS="FILENAME"
+>/</TT
+>; enter
+	      <TT
+CLASS="FILENAME"
+>/usr</TT
+> for the <TT
+CLASS="FILENAME"
+>/usr</TT
+>
+	      partition, and so on.
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Size (Megs)</B
+></TT
+> -- In this field, enter the size
+	      (in megabytes) of the partition.  Note that this field starts with
+	      a "1" in it, meaning that unless you change it, you'll end up with
+	      a 1 MB partition.  Delete it using the <B
+CLASS="KEYCAP"
+>Backspace</B
+>
+	      key, and enter the desired partition size.
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Grow to fill disk?</B
+></TT
+> -- This check box
+	      indicates whether the size you entered in the previous field is to
+	      be considered the partition's exact size, or its minimum size.
+	      Press <B
+CLASS="KEYCAP"
+>Space</B
+> to select this option.  When selected,
+	      the partition will grow to fill all available space on the hard
+	      disk.  In this case, the partition's size will expand and contract
+	      as other partitions are modified. If you make more than one
+	      partition growable, the partitions will compete for the available
+	      free space on the disk.
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Type</B
+></TT
+> -- This field contains a list of
+	      different partition types.  Select the appropriate partition type
+	      by using the <B
+CLASS="KEYCAP"
+>Up</B
+> and
+	      <B
+CLASS="KEYCAP"
+>Down</B
+> arrow keys.
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Allowable Drives</B
+></TT
+> -- This field contains a
+	      list of the hard disks installed on your system, with a check box
+	      for each.  If a hard disk's box is checked, then this partition
+	      may be created on that hard disk. By using different check box
+	      settings, you can direct <TT
+CLASS="APPLICATION"
+>Disk Druid</TT
+> to
+	      place partitions as you see fit, or let <TT
+CLASS="APPLICATION"
+>Disk
+	      Druid</TT
+> decide where partitions should go.
+	    </P
+></LI
+><LI
+><P
+>              <B
+CLASS="GUIBUTTON"
+>OK</B
+> -- Select this button and press
+              <B
+CLASS="KEYCAP"
+>Space</B
+> when you are satisfied with the partition's
+              settings, and wish to create it.
+	    </P
+></LI
+><LI
+><P
+>              <B
+CLASS="GUIBUTTON"
+>Cancel</B
+> -- Select this button and press
+              <B
+CLASS="KEYCAP"
+>Space</B
+> when you don't want to create the
+              partition.
+	    </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-ADD-PROB"
+>Problems When Adding a Partition</A
+></H2
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    If you are having problems adding a partition, turn to <A
+HREF="ch-partitions.html"
+>Appendix B</A
+>, <I
+CLASS="CITETITLE"
+>An Introduction to Disk
+	    Partitions</I
+>, to find a solution.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	  If you attempt to add a partition and <TT
+CLASS="APPLICATION"
+>Disk
+	  Druid</TT
+> can't carry out your request, you'll see a dialog
+	  box listing any partitions that are currently unallocated, along with
+	  the reason they could not be allocated, as in <A
+HREF="s1-install-create-part.html#FIG-INSTALL-UNALLOCATED"
+>Figure 10-17</A
+>. Select the
+	  <B
+CLASS="GUIBUTTON"
+>OK</B
+> button, and press <B
+CLASS="KEYCAP"
+>Space</B
+> to
+	  continue.  Note that the unallocated partition(s) are also displayed
+	  on <TT
+CLASS="APPLICATION"
+>Disk Druid's</TT
+> main screen (though you may
+	  have to scroll the <TT
+CLASS="GUILABEL"
+><B
+>Current Disk Partitions</B
+></TT
+>
+	  section to see them).
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-UNALLOCATED"
+></A
+><P
+><IMG
+SRC="figs/textmode/unallocated.gif"></P
+><P
+><B
+>Figure 10-17. Unallocated Partitions Dialog</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-EDIT"
+>Editing a Partition</A
+></H2
+><P
+>	  To change a partition's mount point, highlight the partition in the
+	  <TT
+CLASS="GUILABEL"
+><B
+>Current Disk Partitions</B
+></TT
+> section, select the
+	  <B
+CLASS="GUIBUTTON"
+>Edit</B
+> button, and press <B
+CLASS="KEYCAP"
+>Space</B
+>.
+	  The <TT
+CLASS="GUILABEL"
+><B
+>Edit Partition</B
+></TT
+> dialog is similar to the one
+	  shown in <A
+HREF="s1-install-create-part.html#FIG-INSTALL-DD-ADD"
+>Figure 10-16</A
+>. The difference here is
+	  that all fields except the mount point are read-only. To modify any
+	  other value, delete the partition and add it again with the new
+	  values.
+
+	  <DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-DD-EDIT"
+></A
+><P
+><IMG
+SRC="figs/textmode/dd-edit.gif"></P
+><P
+><B
+>Figure 10-18. Edit Partition Dialog</B
+></P
+></DIV
+>
+	  
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-DEL-PART"
+>Deleting a Partition</A
+></H2
+><P
+>	  To delete a partition, highlight the partition in the
+	  <TT
+CLASS="GUILABEL"
+><B
+>Current Disk Partitions</B
+></TT
+> section, select the
+	  <B
+CLASS="GUIBUTTON"
+>Delete</B
+> button, and press
+	  <B
+CLASS="KEYCAP"
+>Space</B
+>.  You will be asked to confirm the deletion.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-FINISHED"
+>When You're Finished</A
+></H2
+><P
+>	  Once you've configured your partitions and entered your mount points,
+	  you screen should look something like <A
+HREF="s1-install-create-part.html#FIG-INSTALL-DD-DONE"
+>Figure 10-19</A
+>.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-DD-DONE"
+></A
+><P
+><IMG
+SRC="figs/textmode/dd-done.gif"></P
+><P
+><B
+>Figure 10-19. Current Disk Partitions Dialog</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-FORMATPARTITIONS"
+>Choose Partitions to Format Dialog</A
+></H2
+><P
+>	  Next, select which partitions you want to format (<A
+HREF="s1-install-create-part.html#FIG-INSTALL-FORMAT"
+>Figure 10-20</A
+>). You must format all newly created
+          partitions and other partitions that contain old data (assuming they
+          don't contain data you wish to keep).
+        </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-FORMAT"
+></A
+><P
+><IMG
+SRC="figs/textmode/format.gif"></P
+><P
+><B
+>Figure 10-20. Choose Partitions to Format</B
+></P
+></DIV
+><DIV
+CLASS="CAUTION"
+><P
+></P
+><TABLE
+CLASS="CAUTION"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/caution.gif"
+HSPACE="5"
+ALT="Caution"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Caution</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>            If partitions such as <TT
+CLASS="FILENAME"
+>/home</TT
+> or
+            <TT
+CLASS="FILENAME"
+>/usr/local</TT
+> already exist and contain data you
+            wish to keep, do not select these for formatting.
+          </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>          When you have selected the partitions to format, press
+          <B
+CLASS="KEYCAP"
+>Space</B
+>.  If you wish to check for bad blocks while
+          formatting each filesystem (recommended for those with older disk drives),
+          select <TT
+CLASS="GUILABEL"
+><B
+>Check for bad blocks during format</B
+></TT
+>.
+          Select <B
+CLASS="GUIBUTTON"
+>OK</B
+>, and press <B
+CLASS="KEYCAP"
+>Space</B
+>.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-FDISK"
+>Using <TT
+CLASS="APPLICATION"
+>fdisk</TT
+></A
+></H2
+><P
+>	  If you chose a custom-class installation, you also chose which disk
+	  partitioning application to use. This section only applies if you
+	  opted to use <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>.
+	</P
+><P
+>	  Once you've selected <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>, you'll be
+	  presented with the <TT
+CLASS="GUILABEL"
+><B
+>Partition Disks</B
+></TT
+> dialog box
+	  (<A
+HREF="s1-install-create-part.html#FIG-INSTALL-FDISK-SEL"
+>Figure 10-21</A
+>).  In this box is a list of
+	  every disk on your computer.
+	</P
+><P
+>	  Using <B
+CLASS="KEYCAP"
+>Tab</B
+>, and the <B
+CLASS="KEYCAP"
+>Up</B
+> and
+	  <B
+CLASS="KEYCAP"
+>Down</B
+> arrow keys, highlight the disk you'd like to
+	  partition, select <B
+CLASS="GUIBUTTON"
+>Edit</B
+>, and press
+	  <B
+CLASS="KEYCAP"
+>Space</B
+>.
+	</P
+><P
+>	  You will then enter <TT
+CLASS="APPLICATION"
+>fdisk</TT
+> and can partition
+	  the disk you selected.  Repeat this process for each disk you want to
+	  partition. When you're finished, select <B
+CLASS="GUIBUTTON"
+>Done</B
+>.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-FDISK-SEL"
+></A
+><P
+><IMG
+SRC="figs/textmode/fdisk-sel.gif"></P
+><P
+><B
+>Figure 10-21. Disk Setup Dialog</B
+></P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-INSTALL-FDCMDS"
+>An Overview of <TT
+CLASS="APPLICATION"
+>fdisk</TT
+></A
+></H3
+><P
+>	    <TT
+CLASS="APPLICATION"
+>fdisk</TT
+> includes online help which is terse but
+	    useful.  Here are a few tips:
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		The command for help is <B
+CLASS="COMMAND"
+>m</B
+>.
+	      </P
+></LI
+><LI
+><P
+>		To list the current partition table, use the
+		<B
+CLASS="COMMAND"
+>p</B
+> command (see <A
+HREF="s1-install-create-part.html#FIG-INSTALL-FD2"
+>Figure 10-22</A
+>).
+	      </P
+></LI
+><LI
+><P
+>		To add a new partition, use <B
+CLASS="COMMAND"
+>n</B
+>.
+	      </P
+></LI
+><LI
+><P
+>		Linux <TT
+CLASS="APPLICATION"
+>fdisk</TT
+> creates partitions of type
+		<I
+CLASS="FIRSTTERM"
+>Linux native</I
+> by default. When you create
+		a swap partition, don't forget to change it to type
+		<I
+CLASS="FIRSTTERM"
+>Linux swap</I
+> using the <B
+CLASS="COMMAND"
+>t</B
+>
+		command.  The value for the <I
+CLASS="FIRSTTERM"
+>Linux swap</I
+>
+		type is <TT
+CLASS="FILENAME"
+>82</TT
+>.  For other partition types, use
+		the <B
+CLASS="COMMAND"
+>l</B
+> command to see a list of partition
+		types and values.
+	      </P
+></LI
+><LI
+><P
+>		Linux allows up to four (4) partitions on one disk. If you wish
+		to create more than that, one (and only one) of the four may be
+		an <I
+CLASS="FIRSTTERM"
+>extended</I
+> partition, which acts as a
+		container for one or more <I
+CLASS="FIRSTTERM"
+>logical</I
+>
+		partitions.  Since it acts as a container, the extended
+		partition must be at least as large as the total size of all the
+		logical partitions it is to contain.
+	      </P
+></LI
+><LI
+><P
+>		It's a good idea to write down which partitions (e.g.,
+		<TT
+CLASS="FILENAME"
+>/dev/hda2</TT
+>) are meant for which filesystems
+		(e.g., <TT
+CLASS="FILENAME"
+>/usr</TT
+>) as you create each one.
+	      </P
+></LI
+></UL
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>              None of the changes you make take effect until you save them and
+              exit <TT
+CLASS="APPLICATION"
+>fdisk</TT
+> using the <B
+CLASS="COMMAND"
+>w</B
+>
+              command.  You can quit <TT
+CLASS="APPLICATION"
+>fdisk</TT
+> at any time
+              without saving changes by using the <B
+CLASS="COMMAND"
+>q</B
+> command.
+            </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-FD2"
+></A
+><P
+><IMG
+SRC="figs/textmode/inst-fd-pcmd.gif"></P
+><P
+><B
+>Figure 10-22. Sample Output from <TT
+CLASS="APPLICATION"
+>fdisk</TT
+></B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-INSTALL-PART-TAB"
+>Changing the Partition Table</A
+></H3
+><P
+>	    When you are finished partitioning your disks, press
+	    <B
+CLASS="GUIBUTTON"
+>Done</B
+>; you may see a message indicating that
+	    the installation program needs to reboot.  This is a normal
+	    occurrence after changing a disk's partition data; it usually
+	    happens if you created, changed or deleted any extended
+	    partitions. After you press <B
+CLASS="GUIBUTTON"
+>OK</B
+>, your machine
+	    will reboot and the installation will begin again. Repeat the same
+	    installation steps you performed earlier until you reach the
+	    <TT
+CLASS="GUILABEL"
+><B
+>Partition Disks</B
+></TT
+> dialog; then simply choose
+	    <B
+CLASS="GUIBUTTON"
+>Done</B
+>.
+	  </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-installorupgrade.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-install-lilo.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Upgrading or Installing</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-install-tm.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Installing LILO</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-install-create-part.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:01:25 GMT -->
+</HTML
+>

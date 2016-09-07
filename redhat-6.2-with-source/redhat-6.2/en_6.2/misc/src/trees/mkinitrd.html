@@ -1,0 +1,75 @@
+#!/bin/sh
+
+PATH=/sbin:$PATH
+export PATH
+
+BASEDIR=initrd
+SIZE=2000
+
+while [ -n "$1" ] ; do
+    case "$1" in
+	"local" | "network" | "pcmcia")
+	    IMAGES="$IMAGES $1"
+	    INCLUDELOADER="loader-$1"
+	    shift;
+	    ;;
+	-f)
+	    FORCE=-f
+	    shift;
+	    ;;
+	*)
+	    echo "Useage:" >&2
+	    echo "$0 [-f] [network] [local] [pcmcia]" >&2
+	    exit
+	    ;;
+    esac
+done
+
+if [ -z "$IMAGES" ]; then
+    IMAGES="local network pcmcia"
+fi
+
+
+MNTPOINT=/tmp/mkimage.mnt-$$
+
+for TARGET in $IMAGES; do
+
+    IMAGE=initrd-$TARGET.img
+
+    if [ "$FORCE" != "-f" ]; then
+	if [ -f $IMAGE ]; then
+	    echo "$IMAGE already exists." >&2
+	    continue;
+	fi
+    fi
+
+    rm -f /tmp/$IMAGE
+    dd if=/dev/zero of=/tmp/$IMAGE bs=1k count=$SIZE 2> /dev/null
+    echo y | mke2fs -i 8096 -q /tmp/$IMAGE $SIZE > /dev/null 2>/dev/null
+
+    mkdir -p $MNTPOINT
+
+    mount -o loop -t ext2 /tmp/$IMAGE $MNTPOINT
+
+    (cd $BASEDIR; find . | grep -v "loader-" | cpio --quiet -p $MNTPOINT)
+    (cd $BASEDIR; find . -name $INCLUDELOADER | cpio --quiet -p $MNTPOINT)
+    (cd $TARGET; find . | cpio --quiet -pud $MNTPOINT)
+
+    (cd $MNTPOINT/sbin; [ loader* != "loader" ] && mv loader* loader)
+
+    df $MNTPOINT | tail +2
+
+    umount $MNTPOINT
+    mv -f /tmp/$IMAGE .
+    mv $IMAGE $IMAGE.nogz
+    gzip -9 < $IMAGE.nogz > $IMAGE
+
+    rm -rf $MNTPOINT 
+
+    size=`cat $IMAGE | wc -c`
+    filler=`expr 1474560 - $size`
+
+    if [ $TARGET = "local" ]; then
+	cp $IMAGE ../../../dosutils/autoboot/initrd.img
+    fi
+done

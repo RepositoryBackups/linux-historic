@@ -1,0 +1,49 @@
+<!---
+	An example config file.  Check out Docs/html for more info.
+-->
+
+<phhttpd>
+
+<!---	 configurable things that apply to the whole instance of the server -->
+<global>
+	<tunnel file="/var/run/phhttpd/tunnel.socket" mode="0600" />
+	<control file="/var/run/phhttpd/control.socket" mode="0600" />
+	<mime file="/etc/mime.types" />
+	<maxfds num="5000" />
+</global>
+
+<!--- The logging section defines some global logging bits.
+	it is _always_ parsed first, regardless of its place
+	in the config file. -->
+
+<logging>
+	<!--- define a template for virtuals to use -->
+	<template name="logtemplate">
+		<route source="access" type="file" file="/var/log/phhttpd/access.log" mode="0660" />
+		<route source="referer" type="file" file="/var/log/phhttpd/referer.log" mode="0660" />
+		<route source="agent" type="file" file="/var/log/phhttpd/agent.log" mode="0660" />
+	</template>
+</logging>
+
+<!--- now the real fun bits.  -->
+
+<virtual docroot="/home/httpd/html">
+
+	<!--- these are the names, ala Host: header, it will
+		answer to.  You'll almost certainly want to change
+		this to serve requests from other hosts. -->
+	<name>localhost</name>
+
+	<listen v4="*" port="80"/>
+	<!--- wether or not we should do content-md5 headers for
+		the data.  Its neat, and if you have enough cache
+		entries and slowly changing content the cost is
+		minimal -->
+	<md5 />
+	<logs>
+		<!--- use the template we defined -->
+		<applytemplate name="logtemplate" />
+	</logs>
+</virtual>
+
+</phhttpd>

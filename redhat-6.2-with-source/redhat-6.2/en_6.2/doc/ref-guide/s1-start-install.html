@@ -1,0 +1,410 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-start-install.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Starting the Installation Program</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Installing Red Hat Linux via Text Mode"
+HREF="ch-install-tm.html"><LINK
+REL="PREVIOUS"
+TITLE="Installing Red Hat Linux via Text Mode"
+HREF="ch-install-tm.html"><LINK
+REL="NEXT"
+TITLE="Choosing a Language"
+HREF="s1-install-choose-lang.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-install-tm.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 10. Installing Red Hat Linux via Text Mode</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-install-choose-lang.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-START-INSTALL"
+>Starting the Installation Program</A
+></H1
+><P
+>	There are several ways to start the installation. You can: 
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	    insert the diskette included in your boxed set (or a PCMCIA boot or
+	    network boot disk that you've created) into the primary diskette
+	    drive and reboot your computer
+	  </P
+></LI
+><LI
+><P
+>	   insert the Red Hat Linux CD into the drive and reboot, if your computer can
+	   boot from the CD-ROM drive
+	  </P
+></LI
+><LI
+><P
+>            boot MS-DOS, and start a program in the
+	    <TT
+CLASS="FILENAME"
+>dosutils</TT
+> directory of the Red Hat Linux CD-ROM named
+	    <TT
+CLASS="FILENAME"
+>autoboot.bat</TT
+> (this will work from DOS only;
+	    it will not work from a DOS window started from Windows)
+	  </P
+></LI
+></UL
+><P
+>	While the installation program loads, messages will scroll on your
+	screen. When the installation program has loaded, this prompt appears:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>	<TT
+CLASS="PROMPT"
+>boot:</TT
+>  
+      </PRE
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-HELPSCREENS"
+>Displaying Online Help</A
+></H2
+><P
+>	  Once the installation program is loaded into memory, you can obtain
+          information about the installation process and options by pressing
+          <B
+CLASS="KEYCAP"
+>F1</B
+> through <B
+CLASS="KEYCAP"
+>F6</B
+>. For example, press
+          <B
+CLASS="KEYCAP"
+>F2</B
+> to see general information about the online help
+          screens.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-OPTIONS"
+>Text Mode Boot Options</A
+></H2
+><P
+>	  If you press <B
+CLASS="KEYCAP"
+>Enter</B
+> at the <TT
+CLASS="PROMPT"
+>boot</TT
+>
+	  prompt, or if you take no action within the first minute after the
+	  <TT
+CLASS="PROMPT"
+>boot</TT
+> prompt appears, the graphical installation
+	  program, as explained in the <I
+CLASS="CITETITLE"
+>Official Red Hat Linux Installation Guide</I
+>,
+	  starts. Pressing one of the help screen function keys as described
+	  above disables this autostart feature.
+	</P
+><P
+>	  To start the text mode installation program explained here, before
+	  pressing <B
+CLASS="KEYCAP"
+>Enter</B
+>, type:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>	  <TT
+CLASS="PROMPT"
+>boot:</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>text</B
+></TT
+>
+	</PRE
+></TD
+></TR
+></TABLE
+><P
+>	  If the installation program does not properly detect your hardware, you may
+	  need to restart the installation in "expert" mode. To start an expert
+	  mode installation, type:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>	  <TT
+CLASS="PROMPT"
+>boot:</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>text expert</B
+></TT
+>
+	</PRE
+></TD
+></TR
+></TABLE
+><P
+>	  Expert mode disables most hardware probing, and gives you the option
+	  of entering options for the drivers loaded during the installation.
+	</P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    The initial boot messages will not contain any references to SCSI or
+	    network cards.  This is normal; these devices are supported by
+	    modules that are loaded during the installation process.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	  Note that the command to start a serial installation has changed. If you
+	  must perform the installation in serial mode, type:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>	  <TT
+CLASS="PROMPT"
+>boot:</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>linux console=<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;device&#62;</I
+></TT
+></B
+></TT
+>
+	</PRE
+></TD
+></TR
+></TABLE
+><P
+>	  Where <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;device&#62;</I
+></TT
+> should be the device
+	  you are using (such as ttyS0 or ttyS1).
+	</P
+><P
+>	  Other options that may be entered with the boot command include
+	  passing options to the kernel.
+	  For example, to instruct the kernel to use all the RAM in a 128 MB
+	  system, enter:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>	  <TT
+CLASS="PROMPT"
+>boot:</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>linux mem=128M</B
+></TT
+>
+	</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-install-tm.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-install-choose-lang.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Installing Red Hat Linux via Text Mode</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-install-tm.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Choosing a Language</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-start-install.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

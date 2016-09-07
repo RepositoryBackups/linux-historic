@@ -1,0 +1,27 @@
+#!/bin/sh
+
+if [ -z "$1" -o -n "$2" ]; then
+	echo "usage: mkdd <directory>"
+	exit 1
+fi
+
+if [ ! -d $1 ]; then
+	echo "usage: mkdd <directory>"
+	exit 1
+fi
+
+size=$(expr 20 + $(du -sk $1 | awk '{print $1}'))
+if [ $size -lt 57 ]; then
+    size=64
+fi
+
+dd if=/dev/zero of=/tmp/$1.img bs=1k count=$size
+echo y | mke2fs /tmp/$1.img 
+mkdir -p /tmp/mkdd.$$
+mount -o loop /tmp/$1.img /tmp/mkdd.$$
+(cd $1; tar cSpf - .) | (cd /tmp/mkdd.$$; tar xSpf -)
+umount /tmp/mkdd.$$
+rm -rf /tmp/mkdd.$$
+
+cp /tmp/$1.img ../../../images/drivers/
+rm /tmp/$1.img

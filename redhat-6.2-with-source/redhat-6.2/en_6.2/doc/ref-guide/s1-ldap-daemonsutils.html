@@ -1,0 +1,222 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-ldap-daemonsutils.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>OpenLDAP Daemons and Utilities</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Lightweight Directory Access Protocol (LDAP)"
+HREF="ch-ldap.html"><LINK
+REL="PREVIOUS"
+TITLE="OpenLDAP Files"
+HREF="s1-ldap-files.html"><LINK
+REL="NEXT"
+TITLE="Modules for Adding Extra Functionality to LDAP"
+HREF="s1-ldap-extrafunctionality.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-ldap-files.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 8. Lightweight Directory Access Protocol (LDAP)</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-ldap-extrafunctionality.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-LDAP-DAEMONSUTILS"
+><TT
+CLASS="APPLICATION"
+>OpenLDAP</TT
+> Daemons and Utilities</A
+></H1
+><P
+>	The <TT
+CLASS="APPLICATION"
+>OpenLDAP</TT
+> package includes two daemons:
+	<B
+CLASS="COMMAND"
+>slapd</B
+> and
+	<B
+CLASS="COMMAND"
+>slurpd</B
+>. The <B
+CLASS="COMMAND"
+>slapd</B
+> daemon
+	is the stand-alone LDAP daemon, which you'll need to run to support
+	LDAP.
+      </P
+><P
+>	The <B
+CLASS="COMMAND"
+>slurpd</B
+> daemon controls the replication of LDAP
+	directories over a network. <B
+CLASS="COMMAND"
+>Slurpd</B
+> sends changes from
+	the master LDAP directory to slave LDAP directories. You won't need to
+	run <B
+CLASS="COMMAND"
+>slurpd</B
+> unless you have more than one LDAP server
+	on your network. If you have two or more LDAP servers, you'll need to
+	run <B
+CLASS="COMMAND"
+>slurpd</B
+> to keep the LDAP directories in sync.
+      </P
+><P
+>	<TT
+CLASS="APPLICATION"
+>OpenLDAP</TT
+> also includes some utilities for
+	adding, modifying and deleting entries in an LDAP directory. The
+	<B
+CLASS="COMMAND"
+>ldapmodify</B
+> tool is used to modify entries in an LDAP
+	database. The <B
+CLASS="COMMAND"
+>ldapadd</B
+> utility is used to add entries
+	to your directory (<B
+CLASS="COMMAND"
+>ldapadd</B
+> is actually a hard link to
+	<B
+CLASS="COMMAND"
+>ldapmodify -a</B
+>). <B
+CLASS="COMMAND"
+>Ldapsearch</B
+> is used
+	to search for entries and <B
+CLASS="COMMAND"
+>ldapdelete</B
+> is used to
+	delete entries. The <B
+CLASS="COMMAND"
+>ldif2ldbm</B
+> tool converts an LDIF
+	file into an LDBM back-end database.
+      </P
+><P
+>	See their man pages for more information on all of these utilities.
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-ldap-files.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-ldap-extrafunctionality.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><TT
+CLASS="APPLICATION"
+>OpenLDAP</TT
+> Files</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-ldap.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Modules for Adding Extra Functionality to LDAP</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-ldap-daemonsutils.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

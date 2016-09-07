@@ -1,0 +1,120 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/sl/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:42 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Nastavitev zagonskega nalagalnika SILO</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.49"><LINK
+REL="HOME"
+TITLE="Zasloni s pomoèjo za namestitev"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="Prikrojitev nalagalnika LILO"
+HREF="s1-help-screens-lilo.html"><LINK
+REL="NEXT"
+TITLE="Nastavitev omre¾ja"
+HREF="s1-help-screens-netconf.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-SILO"
+>Nastavitev zagonskega nalagalnika SILO</A
+></H1
+><P
+>        SILO (izbolj¹ani nalagalnik za Sparc, ang. Sparc Improved
+        LOader), je programje, ki ga lahko uporabite za zagon Red Hat
+        Linuxa na va¹em raèunalniku.  Za¾ene lahko tudi druge
+        operacijske sisteme, kot sta SunOS in Solaris.  Tukaj boste
+        povpra¹ani kako (èe sploh) bi radi prikrojili SILO.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Izdelajmo zagonsko disketo</B
+>: Zagonsko
+        disketo bi morali narediti, èe sploh ne name¹èate SILA, ali pa
+        iz varnostnih razlogov.  Èe nimate disketne enote, bo ta
+        mo¾nost skrita, èe pa imate raèunalnik SMCC Ultra, ki navadno
+        nima disketne enote, s katere bi se dalo zagnati sistem, bo ta
+        mo¾nost privzeto onemogoèena.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Ne namestimo SILA</B
+>: Èe ne ¾elite, da se
+        SILO zapi¹e v va¹ disk, lahko preskoèite njegovo namestitev.
+        To je npr. uporabno, èe imate SILO ¾e name¹èen na neki drugi
+        razdelitvi ali disku in ga ¾elite poganjati od tam.
+      </P
+><P
+>        Èe bi radi namestili nalagalnik SILO, izberite mesto, kamor bi
+        ga radi namestili.  Èe bo va¹ sistem uporabljal le Red Hat
+        Linux, bi verjetno morali izbrati glavni zagonski zapis
+        (zagonski blok prve razdelitve na disku, ang. Master Boot
+        Record, MBR).  Na sistemih, kjer bosta v enem samem disku
+        shranjena SunOS/Solaris in Red Hat Linux, verjetno ne bi smeli
+        shraniti SILA v MBR, posebej, èe je SunOS/Solaris na prvi
+        razdelitvi diska.
+      </P
+><P
+>	Èe se odloèite, da zaradi <I
+CLASS="EMPHASIS"
+>kateregakoli</I
+>
+	razloga ne boste namestili nalagalnika SILO, prosimo,
+	izdelajte zagonsko disketo, s katero boste lahko zaganjali Red
+	Hat Linux.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Izdelajmo vzdevek PROM</B
+>: Namestitveni
+        program lahko izdela vzdevek PROM "linux", èe to PROM podpira,
+        tako da lahko za¾enete zagonski nalagalnik SILO z ukazom v
+        vrstici PROM-a "boot linux".
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Nastavimo privzeto zagonsko napravo
+        PROM</B
+>: Namestitveni program lahko zagotovi, da bo
+        PROM privzeto zaganjal Red Hat Linux, tako da namesti izbiro
+        "boot-device" ali "boot-from" v PROM-u.
+      </P
+><P
+>       Èe ¾elite dodati privzete izbire za zagonski ukaz SILA, jih
+       vnesite v polje s parametri jedra.  Vse izbire, ki jih boste
+       napisali v tem polju, bodo ob vsakem njegovem zagonu
+       posredovane jedru sistema Linux.
+      </P
+><P
+>       Zaganjalna razdelitev -- Vsaka zaganjalna razdelitev je na¹teta
+       in oznaèena, vkljuèno z razdelitvami, ki jih uporabljajo drugi
+       operacijski sistemi.  Èe bi radi dodali zagonske oznake za
+       druge razdelitve (ali spremenili obstojeèe zagonske oznake),
+       enkrat kliknite na razdelitev, da jo s tem izberete.  Ko je
+       razdelitev izbrana, lahko spremenite zagonsko oznako.
+      </P
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/sl/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:42 GMT -->
+</HTML
+>

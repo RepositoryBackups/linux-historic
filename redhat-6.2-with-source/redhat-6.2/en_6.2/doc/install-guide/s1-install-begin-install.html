@@ -1,0 +1,470 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/s1-install-begin-install.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:53:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Beginning the Installation</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Starting the Installation"
+HREF="ch-install.html"><LINK
+REL="PREVIOUS"
+TITLE="Selecting an Installation Method"
+HREF="s1-install-sel-method.html"><LINK
+REL="NEXT"
+TITLE="Language Selection"
+HREF="s1-install-choose-lang.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Installation Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-install-sel-method.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 3. Starting the Installation</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-install-choose-lang.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-INSTALL-BEGIN-INSTALL"
+>Beginning the Installation</A
+></H1
+><P
+>        If you are planning to install via CD-ROM using the graphical
+	interface, please read on.
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  If you'd rather perform a text mode installation, reboot your system
+	  and at the <TT
+CLASS="PROMPT"
+>boot:</TT
+> prompt, type
+	  <TT
+CLASS="USERINPUT"
+><B
+>text</B
+></TT
+>. Refer to the
+	  <I
+CLASS="CITETITLE"
+>Official Red Hat Linux Reference Guide</I
+> for further instructions.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-CD-INST"
+>Installing from CD-ROM</A
+></H2
+><P
+>          To install Red Hat Linux from CD-ROM, choose "CD-ROM" and select
+          <B
+CLASS="GUIBUTTON"
+>OK</B
+>. When prompted, insert the Red Hat Linux CD into
+          your CD-ROM drive (if you did not boot from the CD-ROM). Once done,
+          select <B
+CLASS="GUIBUTTON"
+>OK</B
+>, and press <B
+CLASS="KEYCAP"
+>Enter</B
+>.
+	</P
+><P
+>          The installation program will then probe your system and attempt to
+          identify your CD-ROM drive. It will start by looking for an IDE (also
+          known as ATAPI) CD-ROM drive. If found, you will continue to the next
+          stage of the installation process (see <A
+HREF="s1-install-choose-lang.html"
+>the section called <I
+>Language Selection</I
+></A
+>).
+	</P
+><P
+>	  If a drive is not detected, you'll be asked what type of CD-ROM drive you
+          have. Choose from the following types:
+        </P
+><P
+></P
+><DL
+><DT
+>SCSI</DT
+><DD
+><P
+>                
+                Select this if your CD-ROM drive is attached to a supported SCSI
+                adapter; the installation program will then ask you to choose a
+                SCSI driver.  Choose the driver that most closely resembles your
+                adapter.  You may specify options for the driver if necessary;
+                however, most drivers will detect your SCSI adapter
+                automatically.
+              </P
+></DD
+><DT
+>Other</DT
+><DD
+><P
+>                
+                
+                If your CD-ROM drive is neither an IDE nor a SCSI, it's an
+                "other."  Sound cards with proprietary CD-ROM interfaces are
+                good examples of this CD-ROM type.  The installation program
+                presents a list of drivers for supported CD-ROM drives -- choose
+                a driver and, if necessary, specify any driver options.
+              </P
+></DD
+></DL
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Tip</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>&#13;            
+
+            
+	    
+            
+	    
+            
+	
+            
+	    
+            A partial list of optional parameters for CD-ROM drives can be found
+            in the <I
+CLASS="CITETITLE"
+>Official Red Hat Linux Reference Guide</I
+>, in the <I
+CLASS="CITETITLE"
+>General
+            Parameters and Modules</I
+> appendix.  
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-INSTALL-UNREC-IDE"
+>What If the IDE CD-ROM Was Not Found?</A
+></H3
+><P
+>	    
+	    
+	    If the installation program fails to find your IDE (ATAPI) CD-ROM
+	    (it asks you what type of CD-ROM drive you have), restart the
+	    installation, and at the <TT
+CLASS="PROMPT"
+>boot:</TT
+> prompt enter
+	    <TT
+CLASS="USERINPUT"
+><B
+>linux hd<TT
+CLASS="REPLACEABLE"
+><I
+>X</I
+></TT
+>=cdrom</B
+></TT
+>.
+	    Replace the <TT
+CLASS="USERINPUT"
+><B
+><TT
+CLASS="REPLACEABLE"
+><I
+>X</I
+></TT
+></B
+></TT
+> with
+	    one of the following letters, depending on the interface the unit is
+	    connected to, and whether it is configured as master or slave:
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		<B
+CLASS="COMMAND"
+>a</B
+> - First IDE controller, master
+	      </P
+></LI
+><LI
+><P
+>		<B
+CLASS="COMMAND"
+>b</B
+> - First IDE controller, slave
+	      </P
+></LI
+><LI
+><P
+>		<B
+CLASS="COMMAND"
+>c</B
+> - Second IDE controller, master
+	      </P
+></LI
+><LI
+><P
+>		<B
+CLASS="COMMAND"
+>d</B
+> - Second IDE controller, slave
+	      </P
+></LI
+></UL
+><P
+>	    (If you have a third and/or fourth controller, simply continue
+	    assigning letters in alphabetical order, going from controller to
+	    controller, and master to slave.)
+	  </P
+><P
+>	    Once identified, you will be asked to insert the Red Hat Linux CD into your
+	    CD-ROM drive.  Select <TT
+CLASS="GUILABEL"
+><B
+>OK</B
+></TT
+> when you have done so.
+	    After a short delay, the next dialog box will appear.
+	  </P
+><P
+>	    After booting, the installation program begins by displaying the
+	    language screen. 
+	  </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	      If you wish to abort the installation process at this time, simply
+	      reboot your machine then eject the boot diskette or CD-ROM.  You
+	      can safely cancel the installation at any point before the
+	      <TT
+CLASS="GUILABEL"
+><B
+>About to Install</B
+></TT
+> screen, see <A
+HREF="s1-cd-rom-gui-inst-ready.html"
+>the section called <I
+>Preparing to Install</I
+> in Chapter 4</A
+>.
+
+	      
+	      
+	      
+	    </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-install-sel-method.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-install-choose-lang.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Selecting an Installation Method</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-install.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Language Selection</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/s1-install-begin-install.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:53:43 GMT -->
+</HTML
+>

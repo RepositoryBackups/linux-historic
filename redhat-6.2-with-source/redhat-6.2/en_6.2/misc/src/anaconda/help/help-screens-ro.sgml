@@ -1,0 +1,1044 @@
+<!DOCTYPE BOOK PUBLIC "-//Davenport//DTD DocBook V3.0//EN" [
+<!ENTITY RH "Red Hat">
+<!ENTITY RHL "Red Hat Linux">
+<!ENTITY RHLRGS "Ghidul de Referinþe Red Hat Linux">
+<!ENTITY RHLIG "Ghidul de Instalare Red Hat Linux">
+<!ENTITY RHLGSG "Ghidul de Utilizare Red Hat Linux">
+<!ENTITY RHI "Red Hat, Inc.">
+]>
+<book id="book">
+<title>Instrucþiuni de instalare</title>
+  <chapter id="s1-help-screens-lang">
+    <title></title>
+    <sect1 id="lang">
+      <title>Selecþie Limbã de Instalare</title>
+      <para>
+	Ce limbã doriþi sã folosiþi în timpul instalãrii pentru Red Hat Linux?
+	Limba selectatã va deveni limba oficialã pe sistem dupã terminarea
+	instalãrii &RHL;.
+      </para>
+      <para>
+	Selectaþi din lista din dreapta.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-kybd">
+      <title>Configurare Tastaurã</title>
+      <para>
+	Ce tip de tastaurã aveþi?
+      </para>
+      <para>
+	Dacã nu gãsiþi modelul exact, aletgeþi-l pe cel mai apropiat
+	<guilabel>Generic</guilabel> (de exemplu Generic 101-key PC).
+      </para>
+      <para>
+	Apoi alegeþi module de aranjare a tastelor pentru aceastã
+	tastaurã (de exemplu, U.S. English)
+      </para>
+      <para>
+	Introducerea Caracterelor speciale (ca de exemplu &Ntilde;, 
+	&Ocirc;, and &Ccedil;) este facutã cu ajutorul tastelor din 
+	setul extins (de asemenea cunoscute ca ºi compose key sequences).
+	Dacã doriþi sã folosiþi aceste caractere extinse care necesitã 
+	setul extins de taste, selectaþi <guilabel>Activare taste 
+	din setul extins X Windows</guilabel>. Dacã nu, selectaþi
+	<guilabel>Dezactivare taste din setul extins X Windows</guilabel>.
+      </para>
+      <para>
+	Folosiþi câmpul de editare pentru a testa setãrile pentru tastaturã.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-mouse">
+      <title>Configurare Mouse</title>
+      <para>
+	Ce tip de mouse aveþi?
+      </para>
+      <para>
+	Aveþi un mouse de tip PS/2, Bus sau serial? (Sugestie: Dacã pentru
+      conectorul de la mouse se cupleazã într-un socket rotund, atunci aveþi
+      un mouse de tip PS/2 sau Bus. Dacã este dreptunghiular, este un mouse
+      serial.)
+     </para>
+     <para>
+	Încercaþi sã gasiþi modelul exact in lista din dreapta. Dacã modelul
+	exact nu poate fi gãsit, selectaþi unul care este compatibil cu
+	modelul pe care îl aveþi. Altfel, selectaþi modelul <guilabel>Generic</guilabel>
+	care descrie clasa mouse-ului dumneavoastrã.
+      </para>
+      <para>
+	Dacã aveþi un mouse serial, selectaþi portul la care este conectat
+	din lista urmãtoare.
+      </para>
+      <para>
+	Sistemul X Windows este conceput sã foloseascã un mouse cu trei
+	butoane. Dacã aveþi un mouse cu numai douã butoane, &RHL; poate
+	emula butonul din mijloc prin apãsarea simultanã a celor douã 
+	butoane.
+      </para>
+      <para>
+	Dacã aveþi un mouse cu douã butoane, selectaþi opþiunea 
+	<guilabel>Emulare 3 butoane</guilabel>. Dupã instalare, apãsarea
+	ambelelor butoane în acelaºi moment funcþioneazã ca ºi al treilea
+	buton.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-wel">
+      <title>Bine aþi venit în Red Hat Linux</title>
+      <para>
+	Bun gãsit! Aceastã procedurã de instalare este descrisã în detaliu
+	în <citetitle>&RHLIG;</citetitle> disponibil de la &RHI;. 
+	Vã rugãm sã citiþi întregul manual înainte de începerea acestui
+	proces de instalare.
+      </para>
+      <para>
+	Versiuni în HTML ºi Postscript sânt disponibile pe Internet de la
+	adresa http://www.redhat.com. 
+	De asemenea existã o copie în HTML în setul de CD-uri care au venit
+	cu &RHL;.
+      </para>
+      <para>
+	<command>O facilitate nouã:</command> &RHL; 6.2 are o nouã procedurã
+	de instalare care nu necesitã partiþionarea hard discului. Dacã
+	acest calculator are o partiþie de tip FAT (DOS/Windows) cu
+	suficient spaþiu liber, puteþi instala &RHL; fãrã a repartiþiona
+	discul. Aceastã facilitate este recomandatã celor care vor sã
+	încerce &RHL; dar doresc sã pãstreze modificãrile configuraþiei
+	existente a sistemului la un minumum.
+      </para>
+      <para>
+	Dacã aþi cumãparat sistemul Official &RHL;, va rugãm sã vã
+	înregistraþi produsul la adresa de Internet www.redhat.com/now.
+      </para>
+      <para>
+	În timpul acestei instalãri veþi putea folosi mouse-ul pentru a
+	selecta dintre opþiunile diferite. De asemenea puteþi naviga în
+	aceastã instalare folosind tasta <keycap>Tab</keycap> ºi tasta
+	<keycap>Enter</keycap>.
+      </para>
+      <para>
+	Folosiþi <guibutton>Înainte</guibutton> ºi <guibutton>Înapoi</guibutton>
+	pentru a vã muta înainte ºi înapoi în tipul instalãrii.
+	Selectaþi <guibutton>Înainte</guibutton> pentru a salva informaþiile ºi
+	a trece la ecranul urmãtor; selectaþi <guibutton>Înapoi</guibutton>
+	pentru a vã deplasa la ecranul anterior fãrã a salva nici o
+	selecþie.
+      </para>
+      <para>
+	Pentru a ascunde acest ecran de ajutor, selectaþi butonul 
+	<guibutton>Ascunde Detalii</guibutton>.
+      </para>
+      <para>
+	Puteþi sã opriþi acest process de instalare în orice moment pânã la
+	ecranul <guimenu>Pregãtire pentru Instalare</guimenu>. Odatã ce aþi
+	selectat <guibutton>Înainte</guibutton> la ecranul 
+	<guimenu>Pregãtire pentru Instalare</guimenu> va începe instalarea
+	pachetelor ºi datele vor fi scrise pe hard disc. Pentru a opri
+	procesul de instalare înaintea acestui ecran puteþi sã resetaþi
+	calculatorul (folosiþi butonul de <keycap>reset</keycap> sau
+	combinaþia <keycombo>
+	<keycap>Ctrl</keycap>
+	<keycap>Alt</keycap>
+	<keycap>Del</keycap>
+	</keycombo>).
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-welreconfig">
+      <title>Bine aþi venit în Red Hat Linux</title>
+      <para>
+	Aþi selectat modul de reconfigurare, care vã permite sã
+	configuraþi parametri specifici calculatorului dvs. Pentru a merge
+	mai departe fãrã nici o modificare, selectaþi 'Nu' ºi apãsaþi
+	butonul <guibutton>Înainte</guibutton>.
+      </para>
+      <para>
+	Pe durata acestei configurãri, puteþi utiliza mouse-ul pentru a
+	alege diferite opþiuni. De asemenea puteþi alege opþiuni de
+	configurare utilizând tastele <keycap>Tab</keycap> ºi
+	<keycap>Enter</keycap>.
+      </para>
+      <para>
+	Folosiþi butoanele <guibutton>Înainte</guibutton> ºi
+	<guibutton>Înapoi</guibutton> pentru a naviga între ecrane.
+	Apãsaþi <guibutton>Înainte</guibutton> pentru a salva
+	informaþiile ºi a continua cu ecranul urmãtor; apãsaþi
+	<guibutton>Înapoi</guibutton> pentru a selecta ecranul anterior
+	fãrã a salva nici o informaþie.
+      </para>
+      <para>
+	Pentru a minimiza acest ecran de ajutor, apãsaþi butonul
+	<guibutton>Hide Help</guibutton>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-instpath">
+      <title>Opþiuni de Instalare</title>
+      <para>
+	Cum doriþi sã instalaþi &RHL;?
+      </para>
+      <para>
+	O instalare completã va distruge orice informaþie salvatã
+	anterior in partiþiile selectate.
+      </para>
+      <para>
+	O operaþiune de upgrade va pãstra sistemul de fiºiere RHL;.
+      </para>
+      <para>
+	Dacã doriþi sã efectuaþi o instalare completã, va trebui sã
+	alegeþi clasa (sau tipul) de instalare. Puteþi alege între GNOME
+	Workstation, KDE Workstation, Server sau Custom.
+      </para>
+      <para>
+	Dacã aveþi experienþã in folosirea aplicaþiei de partiþionare
+	<application>fdisk</application>, o puteþi selecta în acest
+	moment. Dacã nu doriþi sã utilizaþi
+	<application>fdisk</application>, programul de instalare va utiliza
+	programul implicit de partiþionare, <application>Disk
+	Druid</application>. <application>Disk Druid</application> este o
+	alegere bunã dacã nu aveþi experienþã cu
+	<application>fdisk</application>.
+      </para>
+      <para>
+	Dacã nu ºtiþi pentru ce clasã de instalare sã optaþi, citiþi
+	cu atenþie în continuare.
+      </para>
+      <para>
+	<command>Atenþie:</command> Pe lângã metodele de instalare
+	menþionate mai jos, &RHL; poate fi de asemenea instalat pe
+	partiþie FAT (DOS/Windows) existentã. Acest tip de instalare
+	"fãrã partiþionare" este selectatã în momentul în care
+	marcaþi o partiþie DOS ca <command>/</command> în cadrul
+	aplicaþiei de partiþionare <application>Disk Druid</application>
+	ºi anuleazã ºtergerea automatã a partiþiilor din cadrul
+	instalãrilor tip workstation.
+      </para>
+      <para>
+	Instalarea tip workstation va instala sistemul X Window ºi
+	managerul pentru desktop pe care-l doriþi. <emphasis>Instalarea tip
+	workstation ºterge toate partiþiile tip Linux de pe toate
+	hard-disk-urile instalate (ºi utilizeazã întreg spaþiul liber de
+	pe disc nepartiþionat).</emphasis> Toate partiþiile non-Linux
+	rãmân nemodificate ºi veþi putea boot-a ºi celelalte sisteme de
+	operare instalate, pe lânga &RHL;, dupã instalare.
+      </para>
+      <para>
+	Dacã doriþi ca sistemul dvs. sã funcþioneze ca un server Linux,
+	dar nu doriþi sã-l configuraþi prea mult sau sã instalaþi
+	sistemul X Window, o instalare tip server este cea mai potrivitã. 
+	<emphasis>O instalare tip server ºterge TOATE partiþiile existente
+	de pe TOATE hard-disk-urile instalate, aºa încât alegeþi acest
+	tip de instalare numai dacã sinteþi sigur cã nu mai doriþi sã
+	salvaþi ceva de pe aceste partiþii!</emphasis> Este vorba de TOATE
+	partiþiile folosite ºi de alte sisteme de operare. <emphasis>Toate
+	hard-disk-urile vor fi ºterse -- nu glumim!</emphasis>
+      </para>
+      <para>
+	Numai o instalare tip custom vã oferã o flexibilitate completã. 
+	La o instalare tip custom, depinde de
+	<emphasis>dumneavoastrã</emphasis> cât spaþiu pe disc va fi
+	partiþionat. Aveþi controlul complet in ceea ce priveºte
+	pachetele de programe care vor fi instalate pe sistemul dvs. De
+	asemenea dumneavoastrã puteþi decide dacã veþi folosi LILO
+	pentru a boot-a sistemul dvs. În cazul în care nu aveþi
+	experienþã în Linux, este bine sã evitaþi o instalare tip
+	custom.
+      </para>
+      <para>
+	Pentru mai multe amãnunte referitoare la diferenþele între
+	instalãri tip workstation, server ºi custom, vã rugãm sã
+	consultaþi &RHLIG;.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-upgrade">
+      <title>Upgradarea Sistemului Dvs.</title>
+      <para>
+	În momentul în care aþi ales operaþia de upgrade, puteþi, de
+	asemenea, decide dacã doriþi sã alegeþi pachetele de programe.
+      </para>
+      <para>
+	Dacã nu doriþi sã selectaþi pachete suplimentare pentru upgrade,
+	selectaþi <guibutton>Înainte</guibutton> pentru a continua.
+      </para>
+      <para>
+	Pentru a alege pachetele, selectaþi butonul <guilabel>Alegeþi
+	pachetele pentru upgrade</guilabel> ºi apoi selectaþi
+	<guibutton>Înainte</guibutton>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-fdisk">
+      <title><application>fdisk</application></title>
+      <para>
+	Selectaþi ce hard-disk doriþi sã partiþionaþi. În momentul
+	selecþiei, va fi lansatã aplicaþia <application>fdisk</application>.
+	Cu ajutorul <application>fdisk</application> puteþi crea, ºterge
+	sau modifica partiþii de pe hard-disk-ul selectat.
+      </para>
+      <para>
+	Dacã doriþi sã nu folosiþi <application>fdisk</application>,
+	selectaþi <guibutton>Înapoi</guibutton> pentru a vã întoarce la
+	ecranul anterior, deselectaþi <guimenuitem>Folosiþi
+	fdisk</guimenuitem> ºi selectaþi <guibutton>Înainte</guibutton>
+	pentru a continua.
+      </para>
+      <para>
+	În momentul în care aþi partiþionat hard-disk-ul cu
+	<application>fdisk</application>, vã veþi intoarce la acest ecran. 
+	Dacã aveþi un alt hard-disk pe care doriþi sã-l partiþionaþi
+	cu <application>fdisk</application>, trebuie sã-l selectaþi. 
+	Altfel, selectaþi <guibutton>Înainte</guibutton> pentru a asigna
+	puncte de montare partiþiilor dvs. folosind <application>Disk
+	Druid</application>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-fdiskpart">
+      <title>Partitionare cu <application>fdisk</application></title>
+      <para>
+	Aici puteþi partiþiona hard-disk-ul dvs. cu
+	<application>fdisk</application>.
+      </para>
+      <para>
+	Pentru ajutor, tastaþi <command>m</command> pentru o listã de
+	comenzi.
+      </para>
+      <para>
+	Câteva comenzi de bazã:
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>n</command> -- Adaugã o nouã partiþie.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>d</command> -- ªterge o partiþie.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>p</command> -- Afiºeazã tabela de partiþii.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>l</command> -- Listeazã tipurile de partiþii cunoscute.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>w</command> -- Scrie tabela de partiþii pe disc ºi
+	      pãrãseºte <application>fdisk</application>.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>q</command> -- Ieºire fãrã a salva nici o schimbare.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-wkst">
+      <title>Partiþionare Automatã</title>
+      <para>
+	Sânteþi sigur?
+      </para>
+      <para>
+	Veþi pierde informaþii prin efectuarea unei instalãri tip workstation.
+      </para>
+      <para>
+	Acest tip de instalare va ºterge <emphasis>TOATE</emphasis>
+	informaþiile de pe <emphasis>TOATE</emphasis> partiþiile Linux
+	existente pe <emphasis>TOATE</emphasis> hard-disk-urile.
+      </para>
+      <para>
+	Dacã doriþi sã pãstraþi datele pe partiþiile Linux existente, va
+	trebui sã alegeþi o partiþionare manualã sau o instalare tip custom.
+      </para>
+      <para>
+	Folosiþi butonul <guibutton>Înapoi</guibutton> pentru a alege o
+	instalare tip custom, sau alegeþi butonul <guibutton>Înainte</guibutton> 
+	dacã doriþi sã realizaþi o instalare tip workstation.
+      </para>
+    </sect1>
+      
+      <sect1 id="s1-help-screens-svr">
+      <title>Partiþionare Automatã</title>
+      <para>
+	Sânteþi sigur?
+      </para>
+      <para>
+        Veþi pierde informaþii prin efectuarea unei instalãri tip server.
+      </para>
+      <para>
+        Acest tip de instalare va ºterge <emphasis>TOATE</emphasis>
+	informaþiile de pe <emphasis>TOATE</emphasis> partiþiile existente
+	pe <emphasis>TOATE</emphasis> hard-disk-urile.
+      </para>
+      <para>
+	Daca aveþi instalat un alt sistem de operare pe care doriþi sã-l
+	pãstraþi, nu alegeþi acest tip de instalare.
+      </para>
+      <para>
+	Dacã doriþi sã pãstraþi informaþiile sau un alt sistem de operare,
+	va trebui sã alegeþi o partiþionare manualã sau o instalare tip
+	custom.
+      </para>
+      <para>
+        Folosiþi butonul <guibutton>Înapoi</guibutton> pentru a alege o
+        instalare tip custom, sau alegeþi butonul <guibutton>Înainte</guibutton>
+        dacã doriþi sã realizaþi o instalare tip server.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-partition">
+      <title>Partiþionare hard discuri</title>      
+      <para>
+	Unde doriþi sã instalaþi &RHL;?
+      </para>
+      <para>
+	<command>Atenþie:</command> Dacã doriþi sã realizaþi o
+	<command>Instalare fãrã partiþionare</command> trebuie sã
+	definiþi o partiþie DOS/Windows existentã ca rãdacinã, notatã
+	<command>/</command>. Selectaþi partiþia de tip FAT pe care o
+	doriþi pentru aceastã instalare. Dupa ce a fost marcatã,
+	selectaþi <guilabel>Editare</guilabel> pentru a-i asigna punctul de
+	montare <command>/</command> (rãdãcina). Selectaþi
+	<guilabel>Ok</guilabel> cind aþi terminat. În momentul în care
+	aþi confirmat aceasta opþiune, trebuie sã specificaþi
+	dimensiunea potrivitã pentru sistemul de fiºiere al rãdãcinii
+	ºi spaþiul tip swap pentru sistemul dvs.
+      </para>
+      <para>
+	Dacã doriþi detalii, consultaþi capitolul <emphasis>Installing
+	Without Partitioning</emphasis> din <citetitle>&RHLIG;</citetitle>.
+      </para>
+      <para>
+	Dacã nu ºtiþi cum sã partiþionaþi sistemul dvs., vã rugãm
+	sã citiþi secþiunea despre partiþionare din
+	<citetitle>&RHLIG;</citetitle> sau din
+	<citetitle>&RHLRGS;</citetitle>.
+      </para>
+      <para>
+	Dacã aþi efectuat partiþionarea cu <application>fdisk</application>,
+	trebuie sã definiþi <firstterm>puncte de montare</firstterm> pentru
+	partiþiile dvs. Folosiþi butonul <guilabel>Editare</guilabel>, când
+	aþi ales o partiþie, pentru a-i defini punctul de montare.
+      </para>
+      <para>
+	Dacã utilizaþi <application>Disk Druid</application>, trebuie sã
+	definiþi puncte de montare pentru una sau mai multe partiþii. De
+	asemenea, puteþi crea ºi/sau ºterge partiþii în acest moment.
+      </para>
+      <para>
+	În partea superioarã a ecranului sânt afiºate partiþiile
+	existente. Fiecare partiþie conþine cinci câmpuri: 
+      </para>
+      
+      <itemizedlist>
+	<listitem>
+	  <para>
+	    <command>Mount Point:</command> Acest câmp indicã unde va fi
+	    montatã partiþia când &RHL; este instalat ºi ruleazã. Dacã
+	    o partiþie existã, dar este marcatã ca "not set" trebuie
+	    sã-i specificaþi un punct de montare. Puteþi utiliza butonul
+	    <keycap>Editare</keycap> sau dublu-click pe partiþie.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Device:</command> Acest câmp afiºeazã numele
+	    device-ului pentru partiþia respectivã (de exemplu, hda2
+	    reprezintã a doua partiþie de pe hard-disk-ul primar).
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Requested:</command> Câmpul
+	    <firstterm>Requested</firstterm> aratã dimensiunea partiþiei.
+	    Dacã doriþi sa o redimensionaþi, trebuie sa o ºtergeþi si
+	    sã o recreaþi folosind butonul <keycap>Adaugã</keycap>.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Actual:</command> Acest câmp aratã cât spaþiu este
+	    utilizat de cãtre partiþie.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Type:</command> Acest câmp aratã tipul partiþiei (de
+	    exemplu Linux Native sau DOS).
+	  </para>
+	</listitem>
+      </itemizedlist>
+      
+      <para>
+	Pe mãsurã ce parcurgeþi secþiunea <firstterm>Partitions</firstterm>,
+	puteþi vedea un mesaj de tipul <firstterm>Unallocated Requested
+	Partition</firstterm> (colorat in roºu), urmat de una sau mai multe
+	partiþii. O cauzã a existenþei unei partiþii nealocate este
+	lipsa de spaþiu pentru partiþie.
+      </para>
+      <para>
+	Pentru a reface o partiþie nealocatã, trebuie sã mutaþi
+	partiþia pe un alt hard-disk care sã aibã spaþiu necesar, sau
+	sã redimensionþi partiþia pentru a putea fi alocatã pe
+	hard-disk-ul curent, sau sã o ºtergeþi în întregime. Realizaþi
+	aceste modificãri utilizând butonul <keycap>Editare</keycap> sau
+	prin dublu-click pe partiþie.
+      </para>
+	
+      <sect2 id="s2-help-screens-dd">
+	<title>Partiþionarea sistemului dvs.</title>
+	<para>
+	  Rândul central de butoane permite operaþiuni pentru
+	  partiþionare. Puteþi adãuga, edita sau ºterge partiþii. În
+	  plus, existã butoane pe care le puteþi utiliza pentru a accepta
+	  sau anula modificãrile pe care le-aþi fãcut sau pentru a ieºi
+	  din programul de partiþionare.
+	</para>
+	
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>Adaugã:</command> Folosiþi acest buton când doriþi
+	      sã creaþi o nouã partiþie. În momentul selecþiei, este
+	      afiºatã o cutie de dialog ce conþine câmpurile care
+	      trebuie completate (de exemplu punctul de montare, dimensiunea
+	      ºi tipul).
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Editare:</command> Folosiþi acest buton pentru a
+	      schimba punctul de montare al partiþiei curente selectate.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>ªterge:</command> Folosiþi acest buton pentru a
+	      ºterge o partiþie. O cutie de dialog va apare cerându-vã
+	      sa confirmaþi ºtergerea.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Reset:</command> Folosiþi acest buton pentru a anula
+	      schimbãrile fãcute anterior.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Make RAID Device:</command> Folosiþi butonul
+	      <keycap>Make RAID Device</keycap> NUMAI dacã aveþi
+	      experienþã in utilizarea RAID. Pentru a învãþa mai multe
+	      despre RAID, consultaþi <citetitle>&RHLRGS;</citetitle>.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
+
+      <sect2 id="s2-help-screens-drive">
+	<title>Structura Hard-Disk</title>
+	<para>
+	  Aceastã secþiune afiºeazã configuraþia hard-disk-urilor
+	  sistemului. Fiecare linie conþine urmãtoarele câmpuri:
+	</para>
+	
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>Drive:</command> Acest câmp afiºeazã numele
+	      device-ului (ex. hda sau hdb).
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+ 	    <para>
+	      <command>Geom [C/H/S]:</command> <firstterm>Geometria</firstterm>
+	      hard-disk-ului afiºeazã numãrul de cilindri, capete ºi
+	      sectoare.  </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Total:</command> Acest câmp aratã spaþiul total de
+	      pe hard-disk.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Free:</command> Aici gãsiþi cât spaþiu pe
+	      hard-disk este nefolosit.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Used:</command> Aceste câmpuri aratã cât spaþiu
+	      de pe hard-disk este în mod curent alocat partiþiilor, în
+	      megaocteþi ºi în procente.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
+    </sect1>
+
+    <sect1 id="s1-help-screens-loopback">
+      <title>Configurarea Sistemului de Fiºiere</title>
+      <para>
+	Mai întâi, alegeþi o valoare pentru dimensiunea sistemului de
+	fiºiere al rãdãcinii, dacã nu doriþi sã acceptaþi valoarea
+	implicitã. În mod normal aceastã dimensiune reprezintã jumãtate
+	din spaþiul liber de pe hard-disk.
+      </para>
+      <para>
+	Implicit spaþiul de swap este de 32 megaocteþi, dar îl puteþi
+	mãri dacã doriþi.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-format">
+      <title>Alegeþi partiþiile pentru formatare</title>
+      <para>
+	Alegeþi partiþiile pe care doriþi sã le formataþi pentru &RHL;.
+      </para>
+      <para>
+	Doriþi verificare pentru blocuri defecte?
+      </para>
+      <para>
+	Verificarea pentru blocuri defecte poate preveni pierderea de date
+	prin gãsirea blocurilor defecte si crearea unei liste pentru a
+	preveni scrierea datelor in acele blocuri in viitor.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-lilo">
+      <title>Configurarea LILO</title> 
+      <para>
+	LILO (LInux LOader) este un program care poate fi utilizat pentru a
+	porni &RHL; pe calculatorul dvs. De asemenea poate starta ºi alte
+	sisteme de operare, ca de pildã Windows 9<replaceable>x</replaceable>.
+	Aici veþi fi întrebaþi cum (sau dacã) doriþi sã configurþi
+	LILO.
+      </para>
+      <para>
+	<guibutton>Creazã dischetã de boot</guibutton>: Trebuie sã
+	creaþi o dischetã de boot dacã nu instalaþi LILO pe MBR sau nu
+	instalaþi LILO deloc.
+      </para>
+      <para>
+	<guibutton>Nu instala LILO</guibutton>: Puteþi renunþa la LILO
+	dacã nu doriþi sã scrieþi LILO pe hard-disk-ul dvs. Dacã aveþi
+	douã hard-disk-uri cu sisteme de operare diferite pe fiecare
+	hard-disk, puteþi opta sa utilizaþi o dischetã de boot în loc de
+	LILO.
+      </para>
+      <para>
+	Pentru a instala LILO, selectaþi unde doriþi sã-l instalaþi. 
+	Dacã sistemul dvs. conþine numai &RHL; alegeþi Master Boot Record
+	(MBR). De asemenea, pentru sisteme care conþin pe un singur
+	hard-disk atât Win95/98 cât ºi &RHL; trebuie sã instalaþi LILO
+	pe MBR.
+      </para>
+      <para>
+	Dacã aveþi instalat Windows NT (ºi doriþi sã instalaþi LILO)
+	va trebui sã alegeþi sã instalaþi LILO pe primul sector al
+	partiþiei de boot. De asemenea, trebuie sã creaþi o dischetã de
+	boot pentru a putea boot-a sistemul în Linux.
+      </para>
+      <para>
+	Dacã optaþi sã nu instalaþi LILO <emphasis>indiferent</emphasis>
+	de motiv, vã rugãm sã creaþi o dischetã de boot pentru a putea
+	boot-a &RHL;.
+      </para>
+      <para>
+	Dacã calculatorul dvs. nu acceseazã hard-disk-ul in modul liniar,
+	deselectaþi <guibutton>Utilizare mod liniar</guibutton>. 
+      </para>
+      <para>
+	Dacã doriþi sã adãugaþi opþiuni implicite pentru comanda LILO,
+	introduceþi-le în câmpul parametrilor de nucleu. Opþiunile pe
+	care le introduceþi vor fi transmise nucleului Linux la fiecare
+	boot-are.
+      </para>
+      <para>
+	<guilabel>Eticheta de Boot</guilabel>: Fiecare partiþie boot-abilã
+	este listatã ºi etichetatã (sub <guilabel>Eticheta de
+	Boot</guilabel>), incluzând ºi partiþiile folosite de alte
+	sisteme de operare. Dacã doriþi sã adãugaþi etichete de boot
+	pentru alte partiþii (sau sã schimbaþi etichetele de boot
+	existente), selectaþi partiþia respectivã. O datã selectatã,
+	puteþi schimba eticheta de boot în câmpul de deasupra.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-silo">
+      <title>Configurarea SILO</title>
+      <para>
+        SILO (Sparc Improved LOader) este un program care poate fi folosit
+        pentru a porni Red Hat Linux pe calculatorul dvs. SILO poate porni
+        alte sisteme de operare, de exemplu SunOS ºi Solaris. Aici veþi fi
+        întrebat cum (sau dacã) doriþi sã configuraþi SILO.
+      </para>
+      <para>
+        <guibutton>Creare disc de boot</guibutton>: Dacã nu instalaþi SILO deloc,
+        sau dacã o doriþi din motive de securitate, veþi crea un disc de boot.
+        Dacã nu aveþi o dischetã, aceastã opþiune va fi ascunsã; dacã aveti
+        un sistem Ultra fabricat de SMCC, care în mod normal nu are dischete de pe
+        care sã poatã fi boot-at, aceastã opþiune va fi implicit inactivã.
+      </para>
+      <para>
+        <guibutton>Fãrã instalare SILO</guibutton>: Puteþi renunþa la SILO dacã
+        nu doriþi SILO pe discul dvs., de exemplu dacã SILO este deja instalat
+        pe o altã partiþie sau disc ºi doriþi ca boot-area sã se realizeze de
+        acolo.
+      </para>
+      <para>
+        Pentru a instala SILO, alegeþi unde doriþi sa îl instalaþi. Dacã 
+        sistemul va folosi doar Red Hat Linux, ar trebui sã alegeþi opþiunea
+        Master Boot Record (blocul de boot de pe prima partiþie de pe disc).
+        Pentru sisteme unde SunOS/Solaris ºi Red Hat Linux vor fi instalate pe
+        acelaºi disc, nu este indicat sã instalaþi SILO în MBR, mai ales dacã
+        SunOS/Solaris este pe prima partiþie a discului.
+      </para>
+      <para>
+        Dacã, dintr-un motiv oarecare, alegeþi sã nu instalaþi SILO, trebuie
+        sã faceþi un disc de boot, pentru a putea incãrca Red Hat Linux.
+      </para>
+      <para>
+        <guibutton>Creare alias în PROM</guibutton>: The installer can
+        create a PROM alias "linux" if the PROM supports it, so that
+        you can boot into the SILO boot loader from the PROM command
+        line by the command "boot linux".
+      </para>
+      <para>
+        <guibutton>Set default PROM boot device</guibutton>: Programul
+        de instalare poate sã seteze PROM-ul pentru ca Red Hat Linux
+        sã fie implicit încãrcat, prin alegerea opþiunii "boot-device"
+        sau "boot-from".
+      </para>
+      <para>
+       Dacã doriþi sã adãugaþi opþiuni implicite la comanda de 
+       încãrcare SILO, acestea pot si specificate în câmpul parametrilor
+       kernelului. Orice opþiune completatã va fi transmisã kernelului
+       Linux de fiecare datã când acesta se incarcã.
+      </para>
+      <para>
+       Partiþie Boot-abilã --  Fiecare partiþie boot-abilã este listatã ºi
+       etichetatã, inclusiv partiþiile folosite de alte sisteme de operare.
+       Dacã doriþi sã adãugaþi ethichete pentru alte partiþii (sau sã
+       schimbaþi etichetele de boot actuale), selectaþi printr-un click
+       partiþia. Odatã selectatã, puteþi schimba eticheta de boot.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-netconf">
+      <title>Configurarea reþelei</title>
+      <para>
+        Dacã aveþi o placã de reþea, puteþi stabili configurãrile
+        de reþea. Altfel, alegeþi <guibutton>Înainte</guibutton> pentru a
+        continua.
+      </para>
+      <para>
+        Alegeþi placa de reþea ºi specificaþi dacã doriþi sã fie
+        configuratã folosind DHCP. Dacã aveþi mai multe plãci de reþea,
+        fiecare va avea propriul ecran de configurare. În orice moment, puteþi
+        sã alternaþi între ecranele de configurare (de exemplu, eth0 ºi eth1);
+        setãrile fãcute vor fi specifice fiecãrui ecran. Dacã alegeþi
+        <guilabel>Activare la boot</guilabel>, placa de reþea va fi activatã la
+        iniþializarea sistemului.
+      </para>
+      <para>
+        Dacã nu aveþi acces la reþea ca ºi client DHCP, sau nu sunteþi sigur
+        asupra acestei informaþii, puteþi contacta administratorul de reþea.
+      </para>
+      <para>
+        Completaþi apoi, dacã este necesar, adresa IP, masca si adresa de reþea, 
+        ºi adresa de broadcast. Dacã nu sunteþi sigur asupra acestor date, puteþi
+        contacta administratorul de reþea.
+      </para>
+      <para>
+        Specificaþi numele pentru sistemul dvs. Dacã nu aveþi, sistemul va fi
+        denumit "localhost".
+      </para>
+      <para>
+        În final, completaþi adresa de gateway, serverele DNS primar, secundar
+        ºi terþiar.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-timezone">
+      <title>Alegerea zonei de timp</title>
+      <para>
+        Puteþi sã configuraþi zona selectând locaþia fizicã a calculatorului,
+        sau specificând diferenþa faþã de ora universalã (Universal
+        Coordinated Time - UTC).
+      </para>
+      <para>
+        Primul din cele douã secþiuni din partea superioarã a ecranului vã oferã
+        posibilitatea de a configura zona în funcþie de locaþie. Prin selectarea
+        opþiunii <guimenuitem>Aratã</guimenuitem> puteþi alege o zonã a globului, 
+        dintre: Întreaga lume, America de Nord, America de Sud, Zona pacificã, Europa,
+        Africa sau Asia.  
+      </para>
+      <para>
+        Din harta interactivã, puteþi alege un anumit oraº, indicat prin puncte
+        galbene; în acest moment, un <guilabel>X</guilabel> roºu va marca alegerea
+        dvs.
+      </para>
+      <para>
+        Puteþi, de asemenea, sã parcurgeþi lista oraºelor ºi sã alegeþi zona de timp
+        doritã.
+      </para>
+      <para>
+        A doua secþiune vã oferã posibilitatea de a folosi diferenþa de timp
+        faþã de UTC (Universal Time Clock). Aici puteþi gãsi o listã a diferenþelor
+        din care puteþi alege, ca ºi posibilitatea setãrii modului de stabilire a orei
+        de varã.
+      </para>
+      <para>
+        Pentru ambele secþiuni, existã posibilitatea selectãrii opþiunii
+        <guilabel>Ceasul sistem foloseºte UTC</guilabel>. (UTC, cunoscut ºi ca
+        GMT - Greenwich Mean Time, permite sistemului sã stabileascã corect
+        schimbarea orei de varã). Alegeþi aceastã opþiune dacã ceasul hardware
+        al calculatorului este setat cu ora UTC ºi nu cu ora localã.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-accts">
+      <title>Configurare Conturi Utilizator</title>
+      <para>
+        Introduceþi o parolã pentru contul de root. Parola trebuie sã fie de cel
+        puþin ºase caractere lungime. Confirmaþi parola în al doilea câmp. Butonul
+        <guibutton>Înainte</guibutton> se va activa în momentul în care cele douã parole
+        introduse sunt identice.
+      </para>
+      <para>
+        Creaþi apoi un cont pentru un utilizator.
+      </para
+      <para>
+        Introduceþi numele contului. Apoi, creati o parola pentru acest cont si confirmati
+        introducerea ei. In final, completaþi numele întreg al contului ºi selectaþi
+        <keycap>Acceptã</keycap>. Informaþia despre cont va fi adãugatã la lista conturilor.
+      </para>
+      <para>
+        Pentru a adãuga un alt utilizator, alegeþi <guibutton>Nou</guibutton> ºi
+        completaþi informaþiile cerute. Odatã ce informaþia a fost introdusã pentru
+        acest cont, alegeþi butonul <guibutton>Adaugã</guibutton> pentru a adãuga
+        contul la lista conturilor.
+      </para>
+      <para>
+        Puteþi, de asemenea, folosi butonul <guibutton>Editare</guibutton> pentru a edita
+        informatiile despre conturile utilizatorilor creati, sau puteþi sã folosiþi
+        butonul <guibutton>ªterge</guibutton> pentru a ºterge un cont. Pentru aceasta,
+        selectaþi printr-un click contul din listã ºi apoi apãsaþi butonul dorit.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-authconf">
+      <title>Configurare Metode de Autentificare</title>
+      <para>
+        Puteþi sã ignoraþi aceastã secþiune dacã nu veþi seta parole
+        pentru reþea. Dacã nu sunteþi sigur, contactaþi administratorul de
+        sistem.
+      </para>
+      <para>
+        În cazul în care nu aþi ales opþiunea <firstterm>NIS</firstterm>,
+        ambele opþiuni de parole <firstterm>MD5</firstterm> ºi 
+        <firstterm>shadow</firstterm> sunt selectate. Vã recomandãm sã le folosiþi
+        pe amândoua pentru ca sistemul sã fie cât mai sigur posibil.
+      </para>
+      <para>
+	<emphasis>Activeazã cryptarea MD5</emphasis> - vã permite folosirea de parole
+        lungi - maximum 256 de caractere, în loc de maxim 8 caractere.
+      </para>
+      <para>
+	<emphasis>Activeazã shadow passwords</emphasis> - vã permite securizarea stocãrii
+        parolelor pe sistem. Parolele vor fi scrise în fisierul <filename>/etc/shadow</filename>,
+        care va putea fi citit doar de root.
+      </para>
+      <para>
+        Pentru a configura opþiunea NIS, trebuie sã fiþi conectat la o reþea NIS. Dacã nu
+        sunteþi sigur dacã sunteþi conectat la o reþea NIS, puteþi contacta administratorul
+        de sistem.
+      </para>
+      <para>
+	<emphasis>Activeazã NIS</emphasis> - vã permite sã utilizaþi un grup de sisteme în acelasi
+        domeniu NIS (Network Information Service), folosind parole identice pe toate maºinile.
+        Aveþi posibilitatea sã alegeþi doua opþiuni:
+      </para>
+      <para>
+	<emphasis>Domeniu NIS</emphasis> - aceastã opþiune vã permite sã specificaþi grupul NIS
+        la care sistemul dvs. va apartine.
+      </para>
+      <para>
+	<emphasis>Server NIS</emphasis> - aceastã optiune vã permite sã conectaþi calculatorul
+        dvs. la un anume server NIS, în loc sã folosiþi distribuirea (broadcasting-ul) unui mesaj
+        în reþeaua localã pentru a determina serverele disponibile.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-sel-group">
+      <title>Selectare Grupuri de Pachete</title>
+      <para>
+        Alegeþi grupurile de pachete pe care doriþi sã le instalaþi. Pentru a alege un grup
+        de pachete, selectaþi cu un click butonul alãturat grupului.
+      </para>
+      
+      <para>
+        Pentru a alege în mod individual pachetele, trebuie sã selectaþi butonul
+        <guilabel>Selectare Individualã a Pachetelor de Programe</guilabel>, aflat în partea inferioarã a ecranului.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-sel-indiv">
+      <title>Selectare Individualã a Pachetelor de Programe</title>
+      <para>
+        În partea stângã a ecranului puteþi observa o listã a grupurilor de
+        pachete. Prin alegerea unuia din grupurile din lista, pachetele disponibile
+        în cadrul acelui grup vor apãrea în panoul din partea dreaptã.
+      </para>
+      <para>
+        Pentru a alege un anumit pachet, selectaþi-l prin dublu click, sau cu un singur
+        click urmat de opþiunea <guilabel>Selectare Pachet pentru Instalare</guilabel>.
+        Pachetele alese vor fi marcate.
+      </para>
+      <para>
+        Pentru informaþii suplimentare despre un pachet, selectaþi-l cu un click. Informaþiile
+        vor apãrea în partea inferioarã a ecranului, împreunã cu numele pachetului ºi 
+        dimensiunea.
+      </para>
+    </sect1>
+      
+      <sect1 id="s1-help-screens-depend">
+      <title>Dependinþe Nerezolvate</title>
+      <para>
+        Multe pachete software depind de alte pachete sau de biblioteci de funcþii pentru
+        a funcþiona corect. Pentru a vã asigura cã sistemul are toate pachetele necesare
+        pentru a funcþiona corect, &RHL; verificã <firstterm>dependenþele</firstterm>
+        fiecãrui pachet de fiecare datã când il instalaþi sau îl dezinstalaþi. Dacã
+        un pachet necesitã un alt pachet care nu a fost instalat, o dependenþa nerezolvatã existã.
+      </para>
+      <para>
+        Unul sau mai multe pachete pe care le-aþi ales are dependenþe nerezolvate. Puteþi
+        rezolva aceste dependenþe alegând <guilabel>Instaleazã pachetele necesare satisfacerii dependinþelor</guilabel>
+      </para>
+    </sect1>
+    
+    <sect1 id="s1-help-screens-monitor">
+      <title>Configuraþie sistem X Windows</title>
+      <para>
+        Programul de instalare va încerca acum sã detecteze monitorul pe care îl
+        aveþi, pentru a determina setãrile optime pentru maºina dvs. Dacã
+        monitorul nu poate fi detectat, alegeþi din listã un monitor de tip cât 
+        mai apropiat de cel pe care il aveþi pe sistemul dvs.
+      </para>
+      <para>
+        Puteþi, de asemenea, sã specificaþi frecvenþele de sincronizare 
+        orizontalã ºi verticalã. Aceste valori pot fi gãsite în documentaþia
+        pentru monitorul dvs. Procedaþi cu atenþie la introducerea acestor
+        valori; dacã sunt în afara posibilitãtilor echipamentului dvs., puteþi
+        sã defectaþi monitorul. Introduceþi doar numere în aceste câmpuri
+        dacã valoarea din manual nu poate fi gãsitã în lista de monitoare, ºi
+        sunteþi sigur de corectitudinea valorilor din documentaþie.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-xconf">
+      <title>Configuraþie sistem X Windows</title>
+      <para>
+        Programul de instalare va determina placa video din sistemul dvs., dar
+        puteþi alege ºi o altã placã video, dacã este nevoie.
+      </para>
+      <para>
+        Odatã aleasã placa video, alegeþi dimensiunea memoriei video prezente
+        pe placa video.
+      </para>
+      <para>
+        Dupã ce configuraþia hardware a fost stabilitã, puteþi verifica alegerea
+        dvs.
+      </para>
+      <para>
+        Puteþi sã alegeþi, de asemenea, dacã doriþi sã iniþializaþi sistemul
+        în mod grafic, odata ce &RHL; este instalat.
+      </para>
+      <para>
+        Selectaþi butonul <guibutton>Modificã configuraþia X Windows</guibutton> pentru
+        a seta culorile ºi rezoluþia.
+      </para>
+      <para>
+        Puteti, de asemenea, sã alegeþi butonul <guibutton>Fãrã configurare sistem X Windows</guibutton>
+        dacã preferaþi sã configuraþi X dupã instalare, sau nu doriþi X. 
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-xcustom">
+      <title>
+        Personalizare sistem
+      </title>
+      <para>
+        Alegeþi acum rezoluþia corectã pentru configurarea X.
+        Alegeþi <guibutton>Test this configuration</guibutton> pentru a
+        verifica configuraþia. Dacã nu sunteþi de acord cu configuraþia 
+        obþinutã, selectaþi prin click butonul <guibutton>Nu</guibutton>
+        pentru a alege altã rezoluþie.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-aboutinstall">
+      <title>Gata de Instalare</title>
+      <para>
+        <command>Atentie:</command> Odatã selectat butonul <guibutton>Înainte</guibutton>,
+        &RHL; va fi instalat pe hard disc. Nu se poate reveni asupra acestui proces;
+        dacã v-aþi hotãrât sã nu instalaþi &RHL;, acesta este ultimul moment
+        în care puteþi sã abandonaþi procesul de instalare.
+      </para>
+      <para>
+        Pentru a abaondona instalarea, îndepãrtaþi sursa de instalare &RHL; ºi
+        apãsaþi butonul <command>Reset</command> al calculatorului, sau folosiþi
+        combinaþia de taste <keycombo>
+          <keycap>Control-</keycap>
+          <keycap>Alt-</keycap>
+          <keycap>Delete</keycap>
+	</keycombo>
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-installing">
+      <title>Installing Packages</title>
+      <para>
+        Toate informaþiile necesare instalãrii &RHL; pe sistemul dvs. 
+        au fost colectate. Instalarea poate dura un timp, în funcþie de
+        numãrul de pachete care trebuie instalate. Dacã aveþi un pachet 
+        oficial &RHL;, puteþi sã vã familiarizaþi în acest moment cu 
+        <citetitle>&RHLGSG;</citetitle> sau cu <citetitle>&RHLRGS;</citetitle>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-bootdisk">
+      <title>Creare disc de încãrcare</title>
+      <para>
+        Introduceþi o dischetã formatatã în unitatea floppy, ºi apãsaþi
+	<guibutton>Înainte</guibutton> pentru a continua.
+      </para>
+    </sect1>
+  </chapter>
+</book>
+

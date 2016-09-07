@@ -1,0 +1,494 @@
+Red Hat Linux 6.2 Release notes
+-------------------------------
+
+    This document describes features that are new to Red Hat Linux 6.2, but
+may not have been available prior to our documentation being finalized.
+
+
+Installation-related Enhancements
+---------------------------------
+
+    The Red Hat Linux 6.2 installation program includes a number of new
+features.  For more information, please refer to the Official Red Hat Linux
+Installation Guide.
+
+
+System-Related New Features
+---------------------------	
+
+    There are many new features to Red Hat Linux 6.2 that are not part of
+the installation process. Some new features are tools or applications that
+you can use, others are new versions of the kernel or desktop
+environments. This list will provide a little more information about what
+to expect from Red Hat Linux 6.2 once you are actually using the OS itself.
+
+
+    Network services split into client, server packages -- The following
+    network services have been split into client and server packages:
+
+            o telnet
+
+            o finger
+
+            o talk
+
+            o rsh
+
+            o rusers
+
+            o rwall
+
+            o tftp
+
+    For example, on the Intel-compatible platform telnet is now packaged in
+two RPMs:
+
+                          telnet-0.16-6.i386.rpm
+
+                       telnet-server-0.16-6.i386.rpm
+
+    rpmdb-redhat package included -- The rpmdb-redhat package contains an
+    RPM database of a complete Red Hat Linux 6.2 install.  This makes it
+    easy to determine dependencies. For example, if you wanted to find out
+    which package in Red Hat Linux 6.2 provides the library libldap.so.1,
+    you could issue the following command:
+
+       # rpm -q --redhatprovides libldap.so.1
+       openldap-1.2.9-5
+
+    To list all the packages that require kerberos libraries, you can do
+    this:
+ 
+      # rpm -q --redhatrequires libkrb5.so.2
+       cvs-1.10.7-7
+       fetchmail-5.3.1-1
+       gnome-kerberos-0.2-1
+       imap-4.7-5
+       krb5-devel-1.1.1-9
+       krb5-libs-1.1.1-9
+       krb5-server-1.1.1-9
+       krb5-workstation-1.1.1-9
+       krbafs-1.0-3
+       krbafs-utils-1.0-3
+       mutt-1.0.1i-6
+       pam_krb5-1-7
+       pine-4.21-8
+
+    Software RAID and the Pentium III -- Software RAID on Red Hat Linux 6.2
+    features enhanced performance for RAID level 5 on Pentium III-based
+    systems.
+
+    sysctl now controls system settings -- In Red Hat Linux 6.2, kernel
+    options such as IPv4 forwarding and enabling and disabling of the
+    "magic sysrq" keys is done via the sysctl program, as opposed to being
+    controlled by the contents of files in /etc/sysconfig. The sysctl
+    settings are stored in /etc/sysctl.conf, and are loaded at each boot by
+    the command:
+
+                        sysctl -p /etc/sysctl.conf
+
+    Here is a sample /etc/sysctl.conf:
+
+# Disables IPv4 packet forwarding
+net.ipv4.ip_forward = 0
+# Enables source route verification
+# This drops packets that come in over interfaces they shouldn't;
+# (for example, a machine on an external net claiming to be one on your
+# local network)
+net.ipv4.conf.all.rp_filter = 1
+# Disables automatic defragmentation
+# Automatic defragmentation is needed for masquerading and Linux
+# Virtual Server use; it is not needed otherwise.
+net.ipv4.ip_always_defrag = 0
+# Disables the magic-sysrq key
+kernel.sysrq = 0
+# Disables stop-a on the sparc
+kernel.stop-a = 0
+
+    Many other kernel tunable parameters can be set; to see the full list,
+    run sysctl -a, or look in the directory:
+
+                   /usr/doc/kernel-doc-<version>/sysctl.
+
+    (Where <version> is the current kernel version.  Red Hat Linux 6.2
+    initially ships with kernel version 2.2.14.)
+
+    Please Note
+    -----------
+
+    If you are upgrading your Red Hat Linux system to Red Hat Linux 6.2,
+    any changes you have made to files in /etc/sysconfig will be migrated
+    to /etc/sysctl.conf.  You should confirm this by reviewing the file.
+
+    Linux 2.2.14 kernel -- Red Hat Linux 6.2 includes the latest stable
+    version of the 2.2.x Linux kernel.
+
+    ident service now run as daemon -- The ident service is now run as a
+    stand-alone service (called "identd"), and is controlled by settings in
+    the /etc/identd.conf file.
+
+    Workstation-class installation now more secure -- Workstation-class
+    installations no longer install the inetd "super server."  This means
+    that the following network-related services will not be available if
+    you perform a workstation-class installation:
+
+        o ftp
+
+        o telnet
+
+        o shell
+
+        o login
+
+        o talk
+
+        o finger
+
+    If you require the above network-related services, you should consider
+	an installation type other than workstation-class.
+
+    XFree86 version 3.3.6 -- Red Hat Linux 6.2 contains the latest version
+    of XFree86 (version 3.3.6 which supports many new drivers).
+
+    Services no longer run by default -- To permit a more fine-tuned system
+    configuration, Red Hat Linux 6.2 no longer runs the following services
+    by default:
+
+        o The automount daemon amd (in the am-utils RPM)
+
+        o The bind name server
+
+        o The dhcpd DHCP server
+
+        o The inn news server
+
+        o The knfsd NFS server
+
+        o The samba CIFS server used to support Windows-based file and
+          print services
+
+    To enable these services, either use chkconfig --level 35
+    <service-name> on, or edit the list of services to start with the
+    ntsysv or tksysv utilities.
+
+    Mesa graphics library now included -- The Mesa 3-D graphics library
+    (version 3.2) is now included.  Mesa is compatible with the OpenGL
+    graphics API.
+
+    Sawmill window manager now included -- The sawmill window manager is
+    now included in Red Hat Linux 6.2.  Based on a Lisp-like language,
+    sawmill is extensible, and GNOME-aware.
+
+    Man pages now compressed -- All man pages are now compressed (using
+    gzip) to save disk space.
+
+    Starting programs at X startup -- By placing scripts in
+    /etc/X11/xinitrc/xinitrc.d, it is now possible to automatically start
+    programs whenever X starts.
+
+    Fonts recognized automatically -- X fonts that have been added to your
+    Red Hat Linux 6.2 system will now be recognized automatically, when the
+    font server starts.  This can be done during an X session by issuing
+    the following command as root:
+
+                       /etc/rc.d/init.d/xfs restart
+
+
+    Piranha updated -- The Piranha clustering technology has been updated
+    with the following new features:
+
+        o web based GUI config
+        o 2-node service failover support
+        o generic service monitoring/loadblancing
+        o tunneling and direct routing support for IPVS
+
+    Beowulf added -- The Beowulf "do-it-yourself supercomputer" technology
+    has been added to Red Hat Linux 6.2.  This includes the following
+    packages:
+
+        o PVM 3.4.3 (Parallel Virtual Machine)
+        o LAM 6.3.1 (MPI library environment)
+        o make-pvm (PVM aware version of GNU make)
+
+    (Please note that mpich-1.2.0 is now part of PowerTools for Red Hat
+    Linux 6.2.)
+
+    Large-memory configurations supported -- Red Hat Linux 6.2 will now
+    autodetect physical memory, and will use up to 4GB without user
+    intervention.
+
+    ISDN configuration utility added -- The isdn-config package has been
+    added to Red Hat Linux 6.2.  It may be launched either via the KDE 2.0
+    control center, or by issuing the isdn-config command.
+
+    Encryption-related changes -- Due to relaxation of U.S. encryption
+    laws, encryption-related changes have been made to the following
+    packages:
+
+        o Kerberos authentication has been added to mutt, pine, fetchmail,
+          cvs, and imap.  In addition, the following kerberos-aware
+          versions of the following clients have been added:
+
+          o  rlogin
+          o  shell (rsh)
+          o  telnet
+          o  ftp 
+
+          (These clients are installed as part of the krb5-workstation
+          package.  Access to them can be controlled either by installing
+          or removing this package, or by changing the users' PATH such
+          that /usr/kerberos/bin is either present or absent.  Note that
+          the krb-workstation package adds a file to /etc/profile.d that
+          prepends /usr/kerberos/bin/ to PATH, so that the kerberos-aware
+          clients are used by default.
+
+          Likewise, access to kerberos-aware servers can be controlled by
+          configuring /etc/inetd.conf to point to the servers in
+          /usr/kerberos/sbin, and to include additional flags appropriate
+          to the services provided by the kerberos-aware servers.)
+
+        o GNOME-based Kerberos configuration tools added -- The
+          gnome-kerberos package includes the gkadmin and krb5
+          configuration tools.  gkadmin is a Kerberos V5 database
+          administration program, while krb5 is used to let clients log on
+          to kerberos realms, and can also be used to change kerberos
+          passwords.
+
+        o The GNU Privacy Guard (GnuPG) is now included in all editions of
+          Red Hat Linux 6.2.
+
+        o For those platforms that support it, Netscape Communicator built
+          with 128-bit encryption is included in Red Hat Linux 6.2.
+
+Miscellaneous New Features
+--------------------------	
+
+    These new features defy categorization:
+
+    Bug buddy bug reporting tool added -- The bug buddy bug reporting tool
+    has been added to Red Hat Linux 6.2.  Bug buddy makes it easier to
+    report bugs related to the GNOME graphical environment.
+
+    Packages moved to PowerTools -- The following packages have been moved
+    from the Red Hat Linux operating system CD to the PowerTools CD:
+
+        o The dosemu DOS emulator
+
+        o Version 1 of the fvwm window manager
+
+        o The aKtion and xanim movie viewers
+
+        o The mxp fractal generator
+
+        o The xwpick window grabber
+
+        o The xearth eye candy application
+
+    (PLEASE NOTE: PowerTools for Red Hat Linux 6.2 may not be shipped with
+    every Red Hat Linux-related product.)
+
+    vim editor enhanced -- vim can now do syntax colorization and
+    programming language-based autoindenting. If you want the old behavior,
+    create a .vimrc, edit /usr/share/vim/vim56/macros/vimrc (system-wide),
+    or invoke it as /bin/vi.  Due to the default PATH, root gets /bin/vi by
+    default when invoking vi; if you want to enable the new features for
+    root, either invoke it as vim or do alias vi=vim
+
+    anacron added -- The anacron scheduler is similar to cron, in that it
+    schedules the execution of commands.  However, it is optimized for use
+    on systems that are not necessarily running 24 hours a day.
+
+    Changes to termcap and terminfo entries -- The termcap and terminfo
+    entries have been changed to make the actions of the following keys
+    more consistent:
+
+        o Backspace
+
+        o Delete
+
+        o Home
+
+        o End
+
+    Changes may be made by editing your .inputrc file.
+
+    DocBook support -- Red Hat Linux 6.2 includes support for editing and
+    processing SGML documents written to use the DocBook DTD.
+
+    Support for display of double-byte, other languages -- The Netscape web
+    browser has been configured to correctly display web pages containing
+    Japanese, Chinese, and Korean content.  In addition, Netscape has been
+    configured to support French, Spanish, and German.
+
+    New documentation CD-ROM -- Red Hat Linux 6.2 boxed sets now include a
+    documentation CD-ROM.  The CD-ROM can be used in two ways:
+
+        o To install RPM-packaged documentation on your Red Hat Linux
+          system.
+
+        o To read the documentation directly from the CD-ROM.  For more
+          information, please see the README on the documentation CD-ROM.
+
+    Colorized ls command -- The ls command is now colorized by default.  To
+    turn off this feature, add the command unalias ls in your .bashrc file,
+    or (to disable color on a system-wide basis) delete the colorls.* files
+    in /etc/profile.d/.
+
+
+
+    Deprecated features and packages -- The following features and packages
+    are deprecated, and may not be supported or included in future releases
+    of Red Hat Linux:
+
+        o The AnotherLevel environment
+
+        o The wmconfig dynamic window manager configuration tool
+
+        o The svgalib graphics library
+
+        o The Red Hat Linux version 5.2 compatibility development
+          environment
+
+        o The mars-nwe NetWare server emulator
+
+        o The BSD lpr printing system
+
+        o The libc5 compatibility runtime libraries
+
+        o Version 1.x of the Qt library
+
+        o The libjpeg6a Red Hat Linux 5.x compatibility library
+
+        o The iBCS program compatibility technology
+
+Packages new to Red Hat Linux 6.2
+---------------------------------
+
+    The following packages have been added to Red Hat Linux 6.2.  For more
+    information on these packages, use RPM (after the package has been
+    installed) to print a brief description of the package, and to find any
+    documentation included with each package:
+
+                          rpm -qid <package>
+
+    Where <package> is one of the following:
+
+        o bug-buddy-0.7
+        o cdparanoia-alpha9.6
+        o gpgp-0.4
+        o joystick-1.2.15
+        o librep-0.10
+        o memprof-0.3.0
+        o pnm2ppa-0.8.9pre1
+        o rep-gtk-0.8
+        o rpmlint-0.8
+        o stylesheets-0.13rh
+
+Packages new to PowerTools for Red Hat Linux 6.2
+------------------------------------------------
+
+    The following packages have been added to PowerTools for Red Hat Linux
+    6.2.  (PLEASE NOTE: PowerTools for Red Hat Linux 6.2 may not be
+    shipped with every Red Hat Linux-related product.)  For more
+    information on these packages, use RPM (after the package has been
+    installed) to print a brief description of the package, and to find any
+    documentation included with each package:
+
+                          rpm -qid <package>
+
+    Where <package> is one of the following:
+
+        o C-Kermit-7.0.196
+        o InDependence-1.0
+        o Maelstrom-3.0.1
+        o PyKDE-0.10
+        o PyQt-0.10.1
+        o R-Devore5-0.1.R3
+        o R-NISTnls-0.9.R3
+        o R-RmSQL-0.2.R1
+        o R-gss-0.4.R1
+        o R-leaps-2.0
+        o R-mda-0.2.R3
+        o R-multilm-0.1.R3
+        o R-nlme-3.1.R2
+        o R-rmeta-1.0
+        o R-sgeostat-1.0.R9
+        o R-stataread-2.0
+        o R-wavethresh-2.2.R3
+        o SDL-1.0.4
+        o SNNS-4.2
+        o Squishdot-0.3.2
+        o TinyTable-B2
+        o WebMaker-0.8.5
+        o ZZplayer-0.2
+        o a2ps-i18n-0.1
+        o abiword-0.7.8
+        o afio-2.4.5
+        o aktion-0.3.6
+        o alien-6.53
+        o apcd-0.5
+        o armadillo-0.3.10
+        o asp2php-0.70a
+        o aspell-.28.2.1
+        o auctex-9.10g
+        o bibview-2.2
+        o blockade-1.00
+        o bm2font-3.0
+        o calamaris-2.27
+        o cvsmapfs-1.3
+        o eMusic-DR0.9
+        o exim-3.13
+        o fpc-0.99.12b
+        o fpc-extra-0.99.12b
+        o fpc-units-0.99.12b
+        o freeamp-2.0.0
+        o ftnchek-2.10.1
+        o fvwm-1.24r
+        o fwconfig-1.4
+        o gcal-2.40
+        o glxMesa-3.2-0.3.src.rpm
+        o gnokii-0.3.1
+        o isdnbutton-2.5
+        o jpilot-0.95
+        o kimon-1.1
+        o kisdnload-0.9.1
+        o ksnuffle-0.3
+        o ktalk-0.2.7
+        o ktranslator-0.6.1
+        o lavaps-1.9
+        o lftp-2.1.5
+        o lha-1.00
+        o libsafe-1.1
+        o licq-data-1.5
+        o links-0.82
+        o linux_logo-3.02
+        o mpich-1.2.0
+        o mrtg-2.8.11
+        o mxp-1.0
+        o nasm-0.98
+        o netatalk-1.4b2+asun2.1.3
+        o nmap-2.3BETA10
+        o ntop-1.1
+        o perl-Mon-0.7
+        o perl-Net-Telnet-3.01
+        o perl-libnet-1.0607
+        o postfix-19991231_pl02
+        o powertweak-0.1.7
+        o prc-tools-0.5.0
+        o qtarch-2.0
+        o rhisdn-0.2
+        o sart-0.6a1
+        o sip-0.10.1
+        o smpeg-0.3.1
+        o swatch-3.0b4
+        o thttpd-2.10
+        o tkdesk-1.2
+        o vacation-1.2.0
+        o wv-0.5.43
+        o xearth-1.1
+        o xengine-1.10
+        o xfce-3.2.3
+        o xkeycaps-2.45
+        o xmmsskins-1.0
+        o xmris-4.0.5
+        o xwpick-2.20

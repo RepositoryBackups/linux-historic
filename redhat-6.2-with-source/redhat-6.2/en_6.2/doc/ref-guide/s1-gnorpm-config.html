@@ -1,0 +1,661 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-gnorpm-config.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:59:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Configuration</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Gnome-RPM"
+HREF="ch-gnorpm.html"><LINK
+REL="PREVIOUS"
+TITLE="Installing New Packages"
+HREF="s1-gnorpm-installing.html"><LINK
+REL="NEXT"
+TITLE="Package Manipulation"
+HREF="s1-gnorpm-manipulation.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-gnorpm-installing.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 7. Gnome-RPM</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-gnorpm-manipulation.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-GNORPM-CONFIG"
+>Configuration</A
+></H1
+><P
+>        <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> offers a wide selection of choices
+        for installing and uninstalling packages, documentation and other
+        features. You can customize <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> through
+        the <B
+CLASS="GUIMENUITEM"
+>Preferences</B
+> dialog, which you can access
+        from <B
+CLASS="GUIMENU"
+>Operations</B
+> =&#62;
+        <SPAN
+CLASS="GUISUBMENU"
+>Preferences</SPAN
+> on the menu. To make selections in
+        the many of the <B
+CLASS="GUIMENUITEM"
+>Preferences</B
+> dialogs, select
+        the check boxes next to the options.
+      </P
+><P
+>        Under the <TT
+CLASS="GUILABEL"
+><B
+>Behavior</B
+></TT
+> tab, you'll find a number of
+        options for configuring the way <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>
+        installs, uninstalls and upgrades packages.  The Behavior tab is split
+        into five sections: Install, Upgrade, Other, Database and
+        Architecture. Note that by default these boxes are not checked (see
+        <A
+HREF="s1-gnorpm-config.html#GR-GNORPM-GNOBEHAVIOR"
+>Figure 7-5</A
+>).
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-GNORPM-GNOBEHAVIOR"
+></A
+><P
+><IMG
+SRC="figs/gnorpm/gnobehavior.gif"></P
+><P
+><B
+>Figure 7-5. Behavior Tab in Preferences</B
+></P
+></DIV
+><P
+>        Under <TT
+CLASS="GUILABEL"
+><B
+>Install Options</B
+></TT
+>, you have the following
+        choices:
+      </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="GUIBUTTON"
+>No dependency checks</B
+> - When selected, this
+            will install or upgrade a package without checking for other types
+            of files on which the program may be dependent in order to
+            work. However, unless you know what you're doing we strongly suggest
+            you not use this option as some packages may depend on other
+            packages for files, libraries or programs to function correctly.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="GUIBUTTON"
+>No reordering</B
+> - This option is useful if RPM
+            is unable to change the installation order of some packages to
+            satisfy dependencies.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="GUIBUTTON"
+>Don't run scripts</B
+> - Pre- and post-install
+            scripts are sequences of commands that are sometimes included in
+            packages to assist with installation. This check box is similar to
+            the <B
+CLASS="COMMAND"
+>--noscripts</B
+> option when installing from the
+            shell prompt.
+          </P
+></LI
+></UL
+><P
+>        Under <TT
+CLASS="GUILABEL"
+><B
+>Upgrade Options</B
+></TT
+>, you can select the
+        following:
+      </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="GUIBUTTON"
+>Allow replacement of packages</B
+> - Replaces a
+            package with a new copy of itself. Similar to the
+            <B
+CLASS="COMMAND"
+>--replacepkgs</B
+> option from the shell prompt. This
+            option can be useful if an already-installed package has become
+            damaged or may require other repair to function correctly.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="GUIBUTTON"
+>Allow replacement of files -</B
+> Allows the
+            replacement of files which are owned by another package. The shell
+            prompt equivalent for this RPM option is
+            <B
+CLASS="COMMAND"
+>--replacefiles</B
+>. This option can sometimes be
+            useful when there are two packages with the same file name but
+            different contents.
+
+	  </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="GUIBUTTON"
+>Allow upgrade to old version</B
+> - Like the shell
+            prompt RPM option equivalent <B
+CLASS="COMMAND"
+>--oldpackage</B
+>, this
+            option allows you to "upgrade" to an earlier package. It can
+            sometimes be useful if the latest version of a package doesn't
+            function correctly for your system.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="GUIBUTTON"
+>Keep packages made obsolete</B
+> - Prevents
+            packages listed in an Obsoletes header from being removed.
+          </P
+></LI
+></UL
+><P
+>        In <B
+CLASS="GUIBUTTON"
+>Other Options</B
+>, you can select:
+      </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="GUIBUTTON"
+>Don't install documentation</B
+> - Like
+            <B
+CLASS="COMMAND"
+>--excludedocs</B
+>, this option can save on disk space
+            by excluding documentation such as man pages or other information
+            related to the package.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="GUIBUTTON"
+>Install all files</B
+> - Installs all files in the
+            package.
+          </P
+></LI
+></UL
+><P
+>        The choices available in <TT
+CLASS="GUILABEL"
+><B
+>Database Options</B
+></TT
+> and
+        <TT
+CLASS="GUILABEL"
+><B
+>Architecture Options</B
+></TT
+> allow you to decide, among
+        other things, whether you want to perform a "test" installation (which
+        will check for file conflicts without actually performing an install),
+        or whether you want to exclude packages for other operating systems or
+        system architectures.
+      </P
+><P
+>        In the <TT
+CLASS="GUILABEL"
+><B
+>Package Listing</B
+></TT
+> tab, you'll find a choice of
+        displays for your packages: either <B
+CLASS="GUIBUTTON"
+>View as icons</B
+>,
+        which will be graphically-based, or <B
+CLASS="GUIBUTTON"
+>View as list</B
+>,
+        which is not graphical but can provide more information about the
+        packages.
+      </P
+><P
+>        In <TT
+CLASS="GUILABEL"
+><B
+>Install Window,</B
+></TT
+>, you can specify the path
+        through which <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> can find new RPMs on
+        your system. Refer to <A
+HREF="s1-gnorpm-config.html#GR-GNORPM-GNOINSTALL"
+>Figure 7-6</A
+> for an
+        example of this dialog. If you're using your Red Hat Linux CD-ROM, this path
+        will probably be
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="FILENAME"
+>/mnt/cdrom/RedHat/RPMS</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        or a similar path which had been set as the default path for
+        <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>. If you download new RPMs from the
+        Internet or want to install RPMs via a NFS-mounted CD-ROM this path will
+        be different for you.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-GNORPM-GNOINSTALL"
+></A
+><P
+><IMG
+SRC="figs/gnorpm/gnoinstall.gif"></P
+><P
+><B
+>Figure 7-6. Install Window</B
+></P
+></DIV
+><P
+>        To change this path, type the full path to the RPMs you'd like to work
+        with. Choosing the <B
+CLASS="GUIBUTTON"
+>Apply</B
+> or
+        <B
+CLASS="GUIBUTTON"
+>OK</B
+> buttons will save this path, making it the
+        default path for future sessions. You can also determine the default
+        path by selecting the <TT
+CLASS="GUILABEL"
+><B
+>Browse&#8230;</B
+></TT
+> button, and
+        visually navigating through the <TT
+CLASS="GUILABEL"
+><B
+>RPMPath</B
+></TT
+> window.
+      </P
+><P
+>        After changing install path and closing the dialog box, you can use the
+        <B
+CLASS="GUIBUTTON"
+>Install</B
+> button to view the packages available in
+        your new location.
+      </P
+><P
+>        (If the path for your RPMs doesn't match the default path in your
+        preferences, you'll be presented with a browser window, which will allow
+        you to select the correct path for your new RPMs.)
+      </P
+><P
+>        Under <TT
+CLASS="GUILABEL"
+><B
+>Package Colors,</B
+></TT
+> you'll find color coding for
+        packages. The default setting for older packages is gray; for current
+        packages, the color is green; for newer packages than those installed,
+        the color is blue. These color values can be customized to suit your
+        needs.
+      </P
+><P
+>        The <TT
+CLASS="GUILABEL"
+><B
+>RPM Directories,</B
+></TT
+> contains a listing of default
+        locations where <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> will search for
+        packages.
+      </P
+><P
+>        In <TT
+CLASS="GUILABEL"
+><B
+>Network,</B
+></TT
+> you have the ability to specify proxies
+        for use with HTTP and FTP transfers, as well as user and password names
+        (see <A
+HREF="s1-gnorpm-config.html#GR-GNORPM-GNONETWORK"
+>Figure 7-7</A
+>). Note, however, that the
+        password will not be stored securely.
+      </P
+><P
+>        In the <TT
+CLASS="GUILABEL"
+><B
+>Cache expire</B
+></TT
+> window, you can set the length
+        of time before data from the <TT
+CLASS="APPLICATION"
+>rpmfind</TT
+> database
+        is considered out of date.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-GNORPM-GNONETWORK"
+></A
+><P
+><IMG
+SRC="figs/gnorpm/gnonetwork.gif"></P
+><P
+><B
+>Figure 7-7. Network Settings</B
+></P
+></DIV
+><P
+>        In <TT
+CLASS="GUILABEL"
+><B
+>Rpmfind</B
+></TT
+> and <TT
+CLASS="GUILABEL"
+><B
+>Distributions</B
+></TT
+>,
+        you'll find settings and options which correspond to the <TT
+CLASS="GUILABEL"
+><B
+>Web
+        find</B
+></TT
+> feature.
+      </P
+><P
+>        The <TT
+CLASS="APPLICATION"
+>Rpmfind</TT
+> system was devised by Daniel
+        Veillard, and allows the user to search the Internet for packages by
+        name, summary, architecture and more (see <A
+HREF="s1-gnorpm-config.html#GR-GNORPM-RPMFIND"
+>Figure 7-8</A
+>). The user is then given the option of
+        downloading and installing the most appropriate packages for their
+        system. To learn more about <TT
+CLASS="APPLICATION"
+>Rpmfind</TT
+>, go to
+        <A
+HREF="http://rpmfind.net/"
+TARGET="_top"
+>http://rpmfind.net/</A
+>.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-GNORPM-RPMFIND"
+></A
+><P
+><IMG
+SRC="figs/gnorpm/rpmfind.gif"></P
+><P
+><B
+>Figure 7-8. The Rpmfind Window</B
+></P
+></DIV
+><P
+>        The <TT
+CLASS="GUILABEL"
+><B
+>Metadata server</B
+></TT
+> sets the server to be used for
+        searches. The <TT
+CLASS="GUILABEL"
+><B
+>Download dir:</B
+></TT
+> entry allows you to
+        specify where you want the files to be placed.
+      </P
+><P
+>        You can also specify the vendor, distribution name and whether to find
+        sources and/or the latest files.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-GNORPM-GNODIST"
+></A
+><P
+><IMG
+SRC="figs/gnorpm/gnodist.gif"></P
+><P
+><B
+>Figure 7-9. Distribution Settings in Preferences</B
+></P
+></DIV
+><P
+>        In <TT
+CLASS="GUILABEL"
+><B
+>Distribution Settings</B
+></TT
+>, you can set the options
+        for choosing the most appropriate package out of the selections
+        <TT
+CLASS="APPLICATION"
+>Rpmfind</TT
+> returns, as well as which mirror you
+        would like to use. The higher the rating you indicate for your selection
+        (as shown in <A
+HREF="s1-gnorpm-config.html#GR-GNORPM-GNODIST"
+>Figure 7-9</A
+>) the higher the priority
+        it will receive; the lower rating, such as "-1," will specify that
+        packages not be recommended.
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-gnorpm-installing.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-gnorpm-manipulation.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Installing New Packages</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-gnorpm.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Package Manipulation</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-gnorpm-config.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:59:29 GMT -->
+</HTML
+>

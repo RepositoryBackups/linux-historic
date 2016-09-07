@@ -1,0 +1,1027 @@
+<!DOCTYPE BOOK PUBLIC "-//Davenport//DTD DocBook V3.0//EN" [
+<!ENTITY RH "Red Hat">
+<!ENTITY RHL "Red Hat Linux">
+<!ENTITY RHLRGS "Red Hat Linux Reference Guide">
+<!ENTITY RHLIG "Red Hat Linux Installation Guide">
+<!ENTITY RHLGSG "Red Hat Linux Getting Started Guide">
+<!ENTITY RHI "Red Hat, Inc.">
+]>
+<book id="book">
+<title>Hjelp under installasjonen</title>
+  <chapter id="s1-help-screens-lang">
+    <title></title>
+    <sect1 id="lang">
+      <title>Språkvalg</title>
+      <para>
+	Hvilket språk ønsker du under installasjonen og som standard for 
+	systemet når &RHL; er installert?
+      </para>      
+      <para>
+	Velg fra listen til høyre.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-kybd">
+      <title>Tastaturvalg</title>
+      <para>
+	Hvilken type tastatur har du?
+      </para>
+      <para>
+	Hvis du ikke kan finne
+ ditt tastatur, er det best å velge et 
+	<guilabel>vanlig</guilabel>
+ tilsvarende (for eksempel, 
+	Vanlig 101-tasters PC-tastatur).
+      </para>
+      <para>
+	Velg så tastaturutformingen du ønsker (for eksempel
+	Norwegian).
+      </para>
+      <para>
+	Inntasting av spesielle tegn (slik som &Ntilde;, &Ocirc; og &Ccedil;)
+	gjøres ved å bruke "døde taster" (også kjent som sammensatte taste
+	sekvenser). Hvis du ønsker å bruke spesielle tegn som krever bruk av
+	"døde taster", velger du <guilabel>Enable Dead Keys</guilabel>. Hvis
+	ikke velger du <guilabel>Disable Dead Keys</guilabel>.
+      </para>
+      <para>
+        Bruk det tomme feltet nederst til å prøve ut konfigurasjonen av
+	tastaturet.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-mouse">
+      <title>Konfigurasjon av mus</title>
+      <para>
+	Hvilken type mus har du?
+      </para>
+      <para>
+	Har du en PS/2, Bus eller seriell mus? (Tips: Hvis kontakten på
+	musen din er rund har du en PS/2 eller en Bus mus; hvis den er
+	rektangulær, er det en seriell mus.)
+      </para>
+      <para>
+	Prøv å finne en passende modell i boksen til høyre. Hvis du ikke
+	kan finne dette, kan du forsøke en som er kompatibel med din.
+	Ellers velger du <guilabel>Vanlig</guilabel>.
+      </para>
+      <para> 
+        Hvis du har en seriell mus, må du velge hvilken enhet og port den
+	er koblet til i neste boks.
+      </para>
+      <para>
+	X Window System er laget for å gjøre full bruk av en tre-knappers
+	mus. Hvis du har en to-knappers mus, kan &RHL; emulere den midterste
+	musknappen.
+      </para>
+      <para>
+	Hvis du har en to-knappers mus, velg <guilabel>Emulér 3
+	knapper</guilabel>. Når den er konfigurert, vil klikk med begge
+	knappene samtidig fungere som klikk med den midterste knappen.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-wel">
+      <title>Velkommen til Red Hat Linux</title>
+      <para>
+	Velkommen! Denne installasjonsprosessen er beskrevet i detalj i 
+	<citetitle>&RHLIG;</citetitle> som er tilgjengelig fra &RHI;. 
+	Vennligst les gjennom hele håndboken før du begynner installasjonen. 
+      </para>
+      <para>
+	HTML og PostScript kopier av håndboken finnes på nettet på:
+        http://www.redhat.com. Det finnes også en HTML kopi på &RHL; CD'en.
+      </para>
+      <para>
+        <command>Ny funksjon:</command> &RHL; 6.2 har en ny installasjons-
+	metode kalt "partisjonsløs" installasjon. Hvis ditt system har en
+	FAT (DOS/Windows) partisjon med tilstrekkelig ledig plass, kan du
+	installere &RHL; uten å repartisjonere din harddisk. Dette valget
+	passer best for dem som ønsker å prøve &RHL; med minimal innvirkning
+	på det eksisterende systemet.
+      </para>
+      <para>
+	Hvis du har kjøpt en kopi av den Offisielle &RHL; husk å registrere
+	ditt produkt på vårt websted (http://www.redhat.com/now).
+      </para>
+      <para>
+	Gjennom denne installasjonen, vil du kunne bruke musen til å gjøre
+	forskjellige insallasjonsionsvalg. Du kan også navigere deg gjennom
+	installasjonen ved bruk av <keycap>Tab</keycap> og <keycap>Linjeskift</keycap>
+	tastene.
+      </para>
+      <para>
+        Bruk <guibutton>Neste</guibutton> og <guibutton>Tilbake</guibutton>
+	knappene for å navigere gjennom disse skjemene. Klikk
+	<guibutton>Neste</guibutton> for å lagre informasjonen og fortsette til
+	neste skjerm; klikk <guibutton>Tilbake</guibutton> for å bevege deg
+	til forrige skjerm uten å lagre noen informasjon.
+      </para>
+      <para>
+	For å minimere denne hjelpteksten, klikk på <guibutton>Skjul 
+	hjelp</guibutton>
+ knappen.
+      </para>
+      <para>
+	Du kan avbryte installasjonen når som helst før skjermen <guimenu>Forbereder 
+	installasjon</guimenu>. Når du klikker <guimenu>Neste</guimenu>
+	knappen fra <guimenu>Forbereder installasjon</guimenu> skjermen, vil 
+	pakkeinstallasjonen begynne og installasjonsprogrammet vil skrive data 
+	til harddisken din. For å avbryte før denne skjermen
+ kan du trygt starte 
+	maskinen på nytt (bruk <keycap>reset</keycap> knappen,
+ eller 
+	<keycombo><keycap>Ctrl</keycap> <keycap>Alt</keycap> <keycap>Del</keycap>
+	</keycombo>).
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-welreconfig">
+      <title>Velkommen til Red Hat Linux</title>
+      <para>
+        Du har kommet til rekonfigurasjonsmodus, som lar deg
+	konfigurere spesielle funksjoner for din maskin. For å avslutte
+	uten å endre oppsettet velg 'Nei' og trykk <guibutton>Neste</guibutton>
+	knappen under.
+      </para>
+      <para>
+	Gjennom denne installasjonen, vil du kunne bruke musen til å gjøre
+	forskjellige insallasjonsionsvalg. Du kan også navigere deg gjennom
+	installasjonen ved bruk av <keycap>Tab</keycap> og <keycap>Linjeskift</keycap>
+	tastene.
+      </para>
+      <para>
+        Bruk <guibutton>Neste</guibutton> og <guibutton>Tilbake</guibutton>
+	knappene for å navigere gjennom disse skjemene. Klikk
+	<guibutton>Neste</guibutton> for å lagre informasjonen og fortsette til
+	neste skjerm; klikk <guibutton>Tilbake</guibutton> for å bevege deg
+	til forrige skjerm uten å lagre noen informasjon.
+      </para>
+      <para>
+	For å minimere denne hjelpteksten, klikk på <guibutton>Skjul hjelp</guibutton>
+	knappen.
+      </para>
+    </sect1>
+        
+    <sect1 id="s1-help-screens-instpath">
+      <title>Installasjonsalternativer</title>
+      <para>
+	Hvordan vil du installere &RHL;?
+      </para>
+      <para>
+	En full installasjon vil ødelegge all tidligere lagret 
+	informasjon på partisjonene du velger å installere på.
+      </para>
+      <para>
+	En oppgradering vil bevare eksisterende &RHL; systemdata.
+      </para>
+      <para>
+	Hvis du ønsker å utføre en full installasjon må du velge type
+	installasjon. Alternativene er: GNOME Arbeidsstasjon KDE arbeidsstasjon,
+	 tjener eller egendefinert.
+      </para>
+      <para>
+        Hvis du er kjent med <application>fdisk</application> partisjonerings-
+	verktøyet, kan du velge å bruke det her. Hvis du ikke velger å bruke
+	<application>fdisk</application>, vil installasjonsprogrammet bruke
+	standardvalget, <application>Disk Druid</application>.
+	<application>Disk Druid</application> er et bedre valg hvis du ikke
+	har erfaring med <application>fdisk</application> fra før.
+      </para>
+      <para>
+	Hvis du ikke vet hvilken type installasjon du ønsker, vær snill å lese
+	følgende meget nøye.  
+      </para>
+      <para>
+        <command>Merk:</command> I tillegg til installasjonstypene beskrevet
+	under, kan &RHL; også installeres "innen" en eksisterende FAT (DOS/
+	Windows) partisjon. Denne "partisjonsløse" installasjonsmetoden velges
+	hvis du markerer en DOS partisjon som <command>/</command> i
+	<application>Disk Druid</application> partisjoneringsskjermen. Dette
+	overstyrer den automatiske slettingen av partisjoner under
+	installasjonene av arbeidsstasjon-klassen.
+      </para>
+      <para>
+	Arbeidsstasjon installasjoner vil installere X Window Systemet og skrive-
+	bordsprogrammer etter ditt valg. <emphasis>En arbeidsstasjon installasjon
+	fjerner alle Linux relaterte partisjoner på alle installerte harddisker
+	(og bruker all ledig upartisjonert diskplass).</emphasis> Alle partisjoner
+	som ikke er Linux relaterte vil ikke bli rørt, og du vil kunne starte
+	andre installerte operativsystemer, i tillegg til &RHL;, etter
+	installasjonen.
+      </para>
+      <para>
+	Hvis du ønsker at systemet ditt skal fungere som en Linux basert tjener,
+	og du ikke ønsker å gjøre store endringer i systemkonfigurasjonen, er
+	tjener installasjonen den mest passende.  <emphasis>En tjener-type
+	installasjon fjerner ALLE eksisterende partisjoner på ALLE harddisker,
+	så velg denne typen installasjon bare hvis du er sikker på at du ikke
+	har noe du vil bevare!</emphasis> Dette inkluderer ALLE partisjoner i
+	bruk av andre operativsystemer. <emphasis>ALLE stasjoner vil bli
+	slettet -- vi spøker ikke!</emphasis>
+      </para>
+      <para>
+	Kun den egendefinerte installasjonen gir deg full frihet. Under
+	egendefinert installasjon er det opp til <emphasis>deg</emphasis> å
+	bestemme hvordan diskplassen skal partisjoneres. Du har fullstendig
+	kontroll over hvilke pakker som skal installeres  på ditt system.
+	Du kan også bestemme om du ønsker å bruke LILO til å starte systemet.
+	Hvis du ikke har erfaring med Linux bør du ikke velge egendefinert
+	installasjon.
+      </para>
+      <para>
+	For mer informasjon angående forskjellen mellom egendefinert-,
+	arbeidsstasjon-, og tjener installasjoner, vennligst se &RHLIG;.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-upgrade">
+      <title>Oppgradering av systemet</title>
+      <para>
+	Når du har valgt å oppgradere, kan du også bestemme om du ønsker å
+	spesifisere hvilke pakker som skal oppgraderes.
+      </para>
+      <para>
+        Hvis du ikke ønsker å velge tilleggspakker for oppgradering, klikk
+	<guibutton>Neste</guibutton> for å fortsette.
+      </para>
+      <para>
+        For å spesifisere pakker, velg <guibutton>Spesifiser pakker som skal
+	oppgraderes</guibutton> knappen og klikk <guibutton>Neste</guibutton>
+	knappen for å fortsette.
+      </para>
+    </sect1>
+    
+    <sect1 id="s1-help-screens-fdisk">
+      <title><application>fdisk</application></title>
+      <para>
+        Velg hvilken stasjon du skal partisjonere. Når du klikker på stasjonen
+	vil du få opp <application>fdisk</application> partisjoneringsskjermen.
+	Du kan da bruke <application>fdisk</application> til å opprette, slette
+	eller endre partisjoner på den valgte harddisken.
+      </para>
+      <para>
+        Når du har partisjonert stasjonen med <application>fdisk</application>,
+	vil du komme tilbake til denne skjermen. Hvis du har flere harddisker
+	du vil partisjonere med <application>fdisk</application>, velg den.
+	Ellers klikker du <guibutton>Neste</guibutton> for å tilordne
+	monteringspunkter til dine partisjoner ved å bruke <application>Disk
+	Druid</application>
+      </para>
+    </sect1>
+    
+    <sect1 id="s1-help-screens-fdiskpart">
+      <title>Partisjonering med <application>fdisk</application></title>
+      <para>
+        Her kan du partisjonere din stasjon med 
+	<application>fdisk</application>
+      </para>
+      <para>
+        For hjelp, tast <command>m</command> for å få en liste med kommandoer.
+      </para>
+      <para>
+	Noen kjappe kommandoer for å få deg i gang:
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>n</command> -- Legger til en ny partisjon.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>d</command> -- Sletter en partisjon.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>p</command> -- Skriver ut partisjonstabellen.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>l</command> -- Gir en liste over kjente partisjonstyper.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>	      
+	      <command>w</command> -- Skriver partisjonstabellen til disk og
+	      avslutter <application>fdisk</application>.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>q</command> -- Avslutter uten å lagre noen endringer.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
+    </sect1>
+        	
+    <sect1 id="s1-help-screens-wkst">
+      <title>Automatisk partisjonering</title>
+      <para>
+	Er du sikker?
+      </para>
+      <para>
+	Du vil miste alle data ved å utføre en arbeidsstasjonsinstallasjon.
+      </para>
+      <para>
+	Denne typen installasjon vil fjerne <emphasis>ALLE</emphasis> data 
+	på <emphasis>ALLE</emphasis> eksisterende Linux partisjoner på
+	<emphasis>ALLE</emphasis> harddisker.
+      </para>
+      <para>
+	Hvis du ønsker å bevare data på eksisterende Linux partisjoner bør du
+	velge å partisjonere manuelt eller velge en egendefinert installasjon.
+      </para>
+      <para>
+	Bruk <guibutton>Tilbake</guibutton> knappen for å velge egendefinert
+	installasjon, eller velg <guibutton>Neste</guibutton> hvis du ønsker å 
+	fortsette med en arbeidsstasjon installasjon.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-svr">
+      <title>Automatisk partisjonering</title>
+      <para>
+	Er du sikker?
+      </para>
+      <para>
+	Du vil miste data ved å utføre en tjener installasjon.
+      </para>
+      <para>
+	Denne typen installasjon vil fjerne <emphasis>ALLE</emphasis> data på
+	<emphasis>ALLE</emphasis> partisjoner på <emphasis>ALLE</emphasis>
+	harddisker.
+      </para>
+      <para>
+	Hvis du har et annet OS eller data du ønsker å behvare, ikke velg denne
+	installasjonstypen.
+      </para>
+      <para>
+	Hvis du ønsker å bevare data eller et annet OS, bør du velge å 
+	partisjonere manuelt eller velge en egendefinert installasjon.
+      </para>
+      <para>
+	Bruk <guibutton>Tilbake</guibutton> knappen for å velge en egendefinert
+	installasjon, eller velg <guibutton>Neste</guibutton> hvis du ønsker å
+	fortsette med en tjener installasjon.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-partition">
+      <title>Partisjoner</title>
+
+      <para>
+	Hvor ønsker du å installere &RHL;?
+      </para>
+      <para>
+        <command>Merk:</command> Hvis du utfører en <command>Partisjonsløs
+	installasjon</command> må du spesifisere en eksisterende DOS/Windows
+	partisjon som rot, vist som <command>/</command>. Klikk på FAT
+	partisjonen du ønsker å bruke for installasjone. Når den er merket,
+	klikk <guilabel>Rediger</guilabel> for å tilordne den <command>/</command>
+	(rot) som monteringspunkt. Klikk <guilabel>Ok</guilabel> når du er ferdig.
+	Når du har bekreftet dette valget, vil du måtte oppgi en passende størrelse
+	på rot-filsystemet og swap området for systemet.
+      </para>
+      <para>
+        For mer detaljert informasjon må du slå opp i kapittelet
+	<emphasis>Installasjon uten partisjonering</emphasis> i
+	<citetitle>&RHLIG;</citetitle>
+      </para>
+      <para>
+	Hvis du ikke vet hvordan du skal partisjonere ditt system, vær vennlig
+	å lese delen om partisjonering i <citetitle>&RHLIG;</citetitle> eller 
+	<citetitle>&RHLRGS;</citetitle>.
+      </para>
+      <para>
+        Hvis du akkurat har avsluttet partisjonering med <application>
+	fdisk</application>, må du definere <firstterm>monteringspunkter
+	</firstterm> for dine partisjoner. Bruk <guilabel>Rediger</guilabel>
+	knappen, når du har valgt en partisjon, for å definere dens
+	monteringspunkt.
+      </para>
+      <para>
+	Hvis du bruker <application>Disk Druid</application> må du definere 
+	monteringspunkter for en eller flere diskpartisjoner. Du kan også 
+	opprette og/eller slette partisjoner nå.
+      </para>
+      <para>
+	Den øverste skjermen viser eksisterende partisjoner. Hver partisjon har
+	fem felt:
+      </para>
+      
+      <itemizedlist>
+	<listitem>
+	  <para>
+	    <command>Monteringspunkt:</command> Dette feltet indikerer hvor 
+	    partisjonen vil monteres når &RHL; er installert og kjører. Hvis 
+	    en partisjon eksisterer, men har status "ikke satt", må du definere
+	    partisjonens monteringspunkt. Du kan bruke <keycap>Redigér</keycap> 
+	    knappen eller dobbelt-klikk på partisjonen.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Enhet:</command> Dette feltet viser partisjonens 
+	    enhetsnavn (for eksempel, hda2 representerer den andre partisjonen 
+	    på din primære harddisk).
+	  </para>
+	</listitem>
+      
+	<listitem>
+	  <para>
+	    <command>Forespurt:</command> <firstterm>Forespurt</firstterm> 
+	    feltet viser hvor mye plass partisjonen har. Hvis du ønsker å 
+	    redefinere størrelsen må du slette den aktive partisjonen og 
+	    opprette den på nytt ved å bruke <keycap>Legg til</keycap> knappen.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Faktisk:</command> Dette feltet viser hvor mye plass
+	      partisjonen faktisk bruker.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Type:</command> Dette feltet viser partisjonens type (slik 
+	    som Linux Native eller DOS.
+	  </para>
+	</listitem>
+      </itemizedlist>
+      
+      <para>
+	Når du blar gjennom <firstterm>Partisjoner</firstterm> seksjonen, kan
+	du se en <firstterm>Uallokert forespurt partisjon</firstterm> melding
+	(i rød tekst), fulgt av en eller flere partisjoner. En vanlig grunn
+	til at det finnes uallokerte partisjoner er mangel på tilstrekkelig
+	plass for partisjonen.  
+      </para>
+      <para>
+	For å rette opp en uallokert forespurt partisjon må du enten flytte
+	partisjonen til en annen disk som har nok tilgjengelig plass, endre
+	størrelsen så den passer på aktiv disk, eller slette partisjonen
+	helt. Gjør endringer ved å bruke <keycap>Redigér</keycap> knappen eller
+	ved å dobbeltklikke på partisjonen.
+      </para>
+      
+      <sect2 id="s2-help-screens-dd">
+        <title>Partisjonering av systemet</title>
+	<para>
+	  Den midterste raden med knapper kontrollerer partisjoneringsverktøyets
+	  handlinger. Du kan legge til, redigere og slette partisjoner her. I
+	  tillegg er det knapper du kan bruke for å akseptere endringene du har
+	  gjort, eller for å nullstille endringene og avslutte partisjonerings-
+	  verktøyet.
+	</para>
+	
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>Legg til:</command> Bruk denne knappen for å be om en ny 
+	      partisjon.  En dialogboks vil komme til syne som viser felter som
+	      må fylles ut (slik som monteringspunkt størrelse og type).
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Redigér:</command> Bruk denne knappen for å endre 
+	      monteringspunkt for en valgt partisjon.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Slett:</command> Bruk denne knappen for å slette en 
+	      partisjon. En dialogboks som vil be deg bekrefte valget, vil 
+	      komme til syne.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Nullstill:</command> Bruk denne knappen for å forkaste
+	      alle endringer du har gjort.
+	    </para>
+	  </listitem>
+
+	  <listitem>
+	    <para>
+	      <command>Opprett RAID-enhet:</command> Bruk <keycap>Lag RAID
+	      enhet</keycap>  knappen KUN hvis du har erfaring med bruk av 
+	      RAID. For å lære mer om RAID, vennligst se i 
+	      <citetitle>&RHLRGS;</citetitle>.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
+
+      
+      <sect2 id="s2-help-screens-drive">
+	<title>Disksammendrag</title>
+	<para>
+	  Denne seksjonen viser diskkonfigurasjonen for din datamaskin. Den
+	  er bare ment som et sammendrag. Hver linje har følgende felt:
+	</para>
+    
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>Disk:</command> Dette feltet viser harddiskens 
+	      enhetsnavn (slik som hda eller hdb).
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Geom [C/H/S]:</command> Harddiskens 
+	      <firstterm>geometri</firstterm> viser antallet sylindre, 
+	      hoder og sektorer.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Total:</command> Dette feltet viser total tilgjengelig 
+	      plass på harddisken.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Ledig:</command> Her vil du se hvor mye av harddiskens 
+	      plass som fremdeles er tilgjengelig.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Brukt:</command> Disse feltene viser hvor mye av 
+	      harddiskens plass som er allokert til partisjoner, i megabyte 
+	      og prosentandel.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
+    </sect1>
+
+    <sect1 id="s1-help-screens-loopback">
+      <title>Filsystem konfigurasjon</title>
+      <para>
+        Først, velg en størrelse for rot-filsystemet, hvis du ikke vil
+	akseptere standardverdien. Rot-filsystemets standardstørrelse er
+	halvparten av den tilgjengelige plassen.
+      </para>
+      <para>
+        Swap-området er 32 megabytes som standard, men du kan velge et
+	større område hvis du ønsker dette.
+      </para>
+    </sect1>
+    
+    <sect1 id="s1-help-screens-format">
+      <title>Velg partisjoner som skal formateres</title>
+      <para>
+	Velg partisjonene du ønsker at skal formateres for &RHL;.
+      </para>
+      <para>
+	Vil du sjekke etter dårlige blokker?
+      </para>
+      <para>
+	Sjekk etter dårlige blokker kan forhindre datatap ved å
+	finne de dårlige blokkene på en disk og lage en liste over
+	dem for å forhindre at data skrives til dem i fremtiden.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-lilo">
+
+      <title>LILO konfigurasjon</title> 
+      <para>
+	LILO, eller LInux LOader, er programvaren som kan brukes til å starte &RHL;
+	på din maskin. Det kan også starte dine andre operativsystemer slik som
+	Windows 9<replaceable>x</replaceable>. Her vil du bli spurt hvordan 
+	(eller om) du ønsker å konfigurere LILO.
+      </para>
+      <para>
+	<guibutton>Opprett oppstartsdiskett</guibutton>: Du bør opprette en 
+	oppstartsdiskett hvis du ikke installerer LILO på MBR eller hvis du 
+	ikke installerer LILO i det hele tatt.
+      </para>
+      <para>
+	<guibutton>Ikke installér LILO</guibutton>: Du kan velge å hoppe over LILO
+	hvis du ikke ønsker å plassere LILO på din disk. Hvis du har to harddisker
+	med forskjellige OS på hver av dem, kan du foretrekke å bruke en oppstarts-
+	diskett i stedet for LILO.
+      </para>
+      <para>
+	For å installere LILO må du velge hvor du vil installere det. Hvis ditt
+	system skal bruke &RHL; ekslusivt, bør du velge Master Boot Record (MBR).
+	For systemer hvor Win95/98 og &RHL; skal befinne seg på en enkelt harddisk,
+	bør du også installere LILO på MBR.
+      </para>
+      <para>
+	Hvis du har Windows NT (og du ønsker å installere LILO) bør du velge
+	å installere LILO på den første sektoren på oppstartspartisjonen. Husk
+	også å lage en oppstartsdiskett, ellers vil du ikke kunne starte opp 
+	Linux.
+      </para>
+      <para>
+	Hvis du ønsker ikke å installere LILO <emphasis>i det hele tatt
+	</emphasis>, må du huske
+ å lage en oppstartsdiskett slik at du kan 
+	starte &RHL;.
+      </para>
+      <para>
+	Hvis din datamaskin ikke aksesserer harddisker i lineær modus, velger
+	du bort <guibutton>Bruk lineær modus</guibutton>. 
+      </para>
+      <para>
+	Hvis du ønsker å legge til standard oppstartsflagg for LILO 
+	kommandolinjen skriver du dem i kjerneparameterfeltet. Alle flagg du 
+	skriver inn vil bli videreformidlet til kjernen hver gang den starter 
+	opp.
+      </para>
+      <para>
+	<guilabel>Oppstartsetikett</guilabel> Enhver oppstartbar partisjon 
+	listes opp og merkes,
+ dette inkluderer partisjoner i bruk av andre 
+	operativsystemer. Hvis du 
+ønsker å legge til etiketter for andre 
+	partisjoner (eller endre eksisterende
+ oppstartsetiketter), klikk en 
+	gang på partisjonen og velg den. Når den er
+ valgt, kan du endre 
+	etiketten i feltet over.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-silo">
+      <title>SILO konfigurasjon</title>
+      <para>
+	SILO, eller Sparc Improved LOader, er programvaren som kan brukes til
+	å starte Red Hat Linux på din maskin. Den kan også starte andre
+	operativsystemer, slik som SunOS og Solaris. Her vil du bli spurt hvordan
+	(eller om) du ønsker å konfigurere SILO.
+      </para>
+      <para>
+        <guibutton>Opprett oppstartsdiskett</guibutton>: Du bør opprette en
+        oppstartsdiskett hvis du ikke installerer SILO i det hele tatt eller
+        hvis du ønsker det av hensyn til sikkerhet. Hvis du ikke har en diskett-
+	stasjon vil dette valget bli skjult, hvis du har en Ultra laget av SMCC,
+        som vanligvis ikke har oppstartbare diskettstasjoner, vil dette valget
+        bli satt til slått av.
+      </para>
+      <para>
+        <guibutton>Ikke installér SILO</guibutton>: Du kan velge å hoppe
+        over SILO hvis du ikke ønsker å ha SILO på din disk,
+        f.eks. hvis du har SILO installert på en annen partisjon eller disk
+        allerede og ønsker å starte opp derfra.
+      </para>
+      <para>
+	For å installere SILO velger du først hvor du ønsker å installere den. 
+	Hvis systemet skal bruke Red Hat Linux eksklusivt kan du med stor 
+	sikkerhet
+ velge Master Boot Record (Oppstartsblokken på den første 
+	partisjonen på
+ disken). For systemer hvor SunOS/Solaris og Red Hat 
+	Linux skal
+ sameksistere på en enkelt harddisk, bør du sannsynligvis ikke 
+	installere SILO på MBR, spesielt ikke hvis SunOS/Solaris er på
+	den første partisjonen på disken.
+      </para>
+      <para>
+	Hvis du velger å ikke installere SILO i det hele tat, vennligst husk å
+	lage en oppstartsdiskett slik at du kan starte Red Hat Linux.
+      </para>
+      <para>
+        <guibutton>Opprett PROM-alias</guibutton>: Installasjonsprogrammet kan
+        opprette et PROM-alias, "linux", hvis PROMen støtter dette, slik at 
+        du kan starte opp SILO oppstartslasteren fra PROM-kommandolinjen med
+        kommandoen "boot linux".
+      </para>
+      <para>
+        <guibutton>Sett standard PROM-oppstartsenhet</guibutton>: Installasjons-
+        programmet kan sørge for at PROMen vil starte opp installasjonsprogrammet
+        for Red Hat Linux ved å sette PROM-flagget "boot-device"
+        eller "boot-from".
+      </para>
+      <para>
+	Hvis du ønsker å legge til standardflagg til SILO kommandolinjen, skriv
+	dem i feltet kjerneparametere. Alle flagg du skriver inn vil bli
+	videreformidlet til kjernen hver gang den starter opp.
+      </para>
+      <para>
+	Oppstartbar partisjon -- Enhver oppstartbar partisjon listes opp og merkes,
+	dette inkluderer partisjoner i bruk av andre operativsystemer. Hvis du 
+	ønsker å legge til etiketter for andre partisjoner (eller endre eksisterende
+	oppstartsetiketter), klikk en gang på partisjonen og velg den. Når den er
+	valgt, kan du endre etiketten.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-netconf">
+      <title>Nettverkskonfigurasjon</title>
+      <para>
+	Hvis du har et nettverkskort, kan du legge inn informasjon for nettverks-
+	komponentene. Ellers, klikk <guibutton>Neste</guibutton> for å fortsette.
+      </para>
+      <para>
+	Velg ditt nettverkskort og spesifiser om du vil konfigurere ved bruk av
+	DHCP. Hvis du har flere ethernet enheter, vil hver enhet ha sin egen
+	konfigurasjonsskjerm. Du kan bytte mellom enhetsskjermer,
+ (for eksempel
+	eth0 og eth1); informasjonen du oppgir vil bli spesifikk
+ for hver skjerm. 
+	Hvis du velger <guilabel>Aktivér ved oppstart</guilabel>, vil ditt 
+	nettverkskort bli aktivert når du starter opp.
+      </para>
+      <para>
+	Hvis du ikke har tilgang til DHCP eller er usikker på hva denne 
+	informasjonen er, vennligst kontakt din nettverksadministrator.
+      </para>
+      <para>
+	Etter dette oppgir du IP-adressen, nettverksmasken, nettverksadressen, 
+	og kringkastingsadressen. Hvis du er usikker på noen av disse, kontakt din
+	nettverksadministrator.
+      </para>
+      <para>
+	Skriv inn et vertsnavn for ditt system. Hvis du ikke gjør dette vil det
+	få navnet "localhost".
+      </para>
+      <para>
+	Til slutt, skriv inn IP-adressen til gateway, primær DNS, sekundær DNS 
+	og tertiær DNS. 
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-timezone">
+      <title>Valg av tidssone</title>
+      <para>
+	Du kan sette tidssonen enten ved å velge din datamaskins fysiske lokasjon
+	eller ved avstand i tid fra Universal Coordinated Time (også kjent som UTC).
+      </para>
+      <para>
+	Legg merke til de to fanene øverst på skjermen. Den første gir deg
+	muligheten til å konfigurere for sted. Med dette valget kan du velge
+	din visning. Valgene for visning er som følger: Verden, Nord Amerika,
+	Sør-Amerika, Stillehavskysten, Europa, Afrika, og Asia. 
+      </para>
+      <para>
+	I det interaktive kartet kan du klikke på en bestemt by, som indikert
+	av de gule prikkene. En rød <guilabel>X</guilabel> vil komme til syne 
+	ved ditt valg. 
+      </para>
+      <para>
+	Du kan også bla gjennom en liste over byer og velge din ønskede tidssone.
+      </para>
+      <para>
+	Den andre fanen gir deg muligheten til å bruke Universal Coordinated Time
+	(UTC) avstand.  Her vil du få en liste over avstander å velge fra, i
+	tillegg til et valg for Daylight Savings Time. 
+      </para>
+      <para>
+	For begge faner er det mulig å velge <guilabel>Systemklokken
+	bruker UTC</guilabel>. Vennligs velg denne hvis systemklokken er
+	 
+satt til UTC (i stedet for å være satt til lokal tid).
+      </para>
+    </sect1>
+   
+    <sect1 id="s1-help-screens-accts">
+      <title>Kontokonfigurasjon</title>
+      <para>
+	Oppgi passord for root. Passordet må være minst seks tegn
+	langt. Bekreft passordet ved å skrive det på nytt i det andre feltet. 
+	<guibutton>Neste</guibutton> knappen 
+vil aktiveres når begge feltene er
+	like.
+      </para>
+      <para>
+	Opprett så en brukerkonto.
+      </para>
+      <para>
+	Skriv inn et kontonavn. Opprett så et passord for denne brukerkontoen
+	og bekreft det. Til slutt skriver du inn det fulle navnet til brukeren
+	av denne kontoen og trykker <keycap>Enter</keycap>. Din kontoinformasjon
+	vil da bli lagt til i brukerkontolisten.
+      </para>
+      <para>
+	For å legge til enda en bruker, bruk <guibutton>Ny</guibutton> og legg inn
+	informasjonen i de blanke feltene. Når informasjonen er skrevet inn for
+	denne brukerkontoen, velg <guibutton>Legg til</guibutton> knappen for legge
+	brukeren inn i kontolisten.
+      </para>
+      <para>
+	Du kan også bruke <guibutton>Redigér</guibutton> til å endre brukerkontoene
+	du har laget eller <guibutton>Slett</guibutton> knappen for å slette en
+	konto du ikke lenger ønsker, ved å merke en konto bruke <guibutton>Redigér
+	</guibutton> eller <guibutton>Slett</guibutton> knappene.
+      </para>
+    </sect1>
+  
+    <sect1 id="s1-help-screens-authconf">
+      <title>Konfigurasjon av autentisering</title>
+      <para>
+	Du kan hoppe over denne delen hvis du ikke skal sette opp nettverks-
+	passord. Hvis du er usikker, vær vennlig og spør din administrator om
+	hjelp.
+      </para>
+      <para>
+	Hvis du ikke skal sette opp <firstterm>NIS</firstterm> passord, vil
+	du legge merke til at både <firstterm>MD5</firstterm> passord og
+	<firstterm>shadow</firstterm> er valgt. Vi anbefaler at du bruker begge
+	for å gjøre maskinen så sikker som mulig.
+      </para>
+      <para>
+	<emphasis>Bruk MD5 Passord</emphasis> - tillater bruk av lange passord (opp
+	til 256 tegn), i stedet for åtte eller mindre, som er standard.
+      </para>
+      <para>
+	<emphasis>Bruk skyggepassord</emphasis> - gir deg en meget sikker metode 
+	for
+ oppbevaring av passordene. Filen <filename>/etc/passwd</filename> 
+	erstattes av <filename>/etc/shadow</filename> som kun kan leses av 
+root.
+      </para>
+      <para>
+	For å konfigurere NIS valget må du være koblet på et NIS nettverk. Hvis
+	du er usikker på om du er koblet til et NIS-nettverk, vennligst 
+	spør din systemadministrator.
+      </para>
+      <para>
+	<emphasis>Bruk NIS</emphasis> - lar deg kjøre en gruppe av datamaskiner
+	i samme Network Information Service domene med en felles passord- og
+	gruppefil. Det er to alternativer p velge mellom:
+      </para>
+      <para>
+	<emphasis>NIS-domene</emphasis> - dette valget lar deg spesifisere hvilket
+	domene eller hvilken gruppe av maskiner ditt system vil tilhøre.
+      </para>
+      <para>
+	<emphasis>NIS-tjener</emphasis> - dette valget bestemmer at din maskin
+	skal bruke en spesifikk NIS-tjener, i stedet for å "kringkaste" en melding
+	til lokalnettet hvor den spør etter tilgjengelige systemer som kan være 
+	vert for din maskin.
+      </para>
+    </sect1>
+    
+    <sect1 id="s1-help-screens-sel-group">
+      <title>Valg av pakkegrupper</title>
+      <para>
+	Velg de pakkegruppene du ønsker å installere. For å velge en pakkegruppe
+	klikker du på avkrysningsboksen ved siden av pakken.
+      </para>
+
+      <para>
+	For å velge pakker individuelt må du krysse av for 
+	<guilabel>Velg individuelle pakker</guilabel> i boksen nederst på
+	skjermen.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-sel-indiv">
+      <title>Valg av individuelle pakker</title>
+      <para>
+	På venstre siden av skjermen vil du se en liste over pakkegruppene.
+	Når du utvider denne listen og velger en katalog, vil listen over 
+	pakker tilgjengelig for installasjoon komme til syne i panelet til høyre.
+      </para>
+      <para>
+	For å velge en individuell pakke, dobbeltklikk på den eller klikk på
+	en en gang for å merke den, og klikk så på <guilabel>Velg pakke for
+	installasjon</guilabel>. Et kryss vil komme til syne ved alle pakkene
+	du har valgt.
+      </para>
+      <para>
+	For å lese informasjon om en pakke før du installere den, merk den, så
+	vil pakkeinformasjonen bli synlig nederst på skjermen, sammen med
+	navnet og størrelsen på pakken.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-depend">
+      <title>Uløste avhengigheter</title>
+      <para>
+	Mange programvarepakker er avhengige av andre pakker eller biblioteker
+	for å fungere korrekt. For å forsikre deg om at systemet har alle 
+	pakkene det trenger for å fungere, sjekker &RHL; disse pakke-
+	<firstterm>avhengighetene</firstterm> hver gang du installerer eller
+	fjerner programvarepakker. Hvis en pakke er avhengig av en annen pakke
+	som ikke er installert vil det oppstå uløste avhengigheter.
+      </para>
+      <para>
+	En eller flere pakker du har valgt har uløste avhengigheter. Du kan løse
+	disse ved å velge 
+<guilabel>Installér pakker for å tilfredstille 
+	avhengigheter</guilabel>.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-monitor">
+      <title>X-konfigurasjon</title>
+      <para>
+	Installasjonsprogrammet vil nå søke etter din skjerm for å bestemme 
+	maskinens beste skjerminnstillinger. Hvis programmet ikke klarer å finne
+	skjermen, velger du den skjermen som passer best fra listen over 
+	skjermer.
+      </para>
+      <para>
+        Du kan også skrive inn horisontalt og vertikalt syknkroniserings-
+	område for skjermen din. Disse verdiene kan du finne i manualen
+	til skjermen. Vær forsiktig når du oppgir disse verdiene; hvis du
+	oppgir verdier som er utenfor skjermens funksjonsområde, kan du
+	skade skjermen. Oppgi verdier her kun hvis verdiene i manualen 
+	ikke passer til noen av valgene i skjermlisten, og du er sikker på
+	at du har de korrekte verdiene fra dokumentasjonen.
+      </para>
+    </sect1>
+     
+    <sect1 id="s1-help-screens-xconf">
+      <title>X-konfigurasjon</title>
+      <para>
+	Selv om installasjonsprogrammet søker etter ditt skjermkort
+	for å finne det beste skjermkortet for din maskin, kan du
+	velge et annet kort hvis det skulle være nødvendig.
+      </para>
+      <para>
+	Når du har valgt ditt skjermkort velger du hvor mye RAM
+	skjermkortet har.
+      </para>
+      <para>
+        Etter at maskinvaren er ferdig innstilt, kan du teste oppsettet.
+      </para>
+      <para>
+	Du kan også velge om du vil gå direkte til det grafiske grensesnittet
+	etter oppstart når &RHL; er installert.
+      </para>
+      <para>
+        Velg <guibutton>Tilpass X-konfigurasjon</guibutton> for å velge
+	spesielle farger og innstillinger for oppløsning.
+      </para>
+      <para>
+	Du kan også velge <guibutton>Hopp over konfigurasjon av X</guibutton> 
+	hvis du heller vil konfigurere X etter installasjonen eller ikke ønsker
+	det i det hele tatt.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-xcustom">
+      <title>
+        Egendefinert konfigurasjon
+      </title>
+      <para>
+        Nå kan du velge den korrekte oppløsningen for din X-konfigurasjon.
+	Klikk <guibutton>Test denne konfigurasjonen</guibutton> for å prøve
+	ut denne konfigurasjonen. Hvis du ikke liker det du ser under testing,
+	klikker du <guibutton>Nei</guibutton> for å velge en anne oppløsning.
+      </para>
+    </sect1>
+    
+    <sect1 id="s1-help-screens-aboutinstall">
+      <title>I ferd med å installere</title>
+      <para>
+	<command>Advarsel:</command> Når du klikker <guibutton>Neste</guibutton>
+	vil &RHL; bli skrevet til din harddisk. Denne prosessen kan ikke omgjøres,
+	så hvis du har bestemt deg for ikke å installere &RHL;, er dette siste
+	mulighet for å avbryte installasjonen.
+      </para>
+      <para>
+        For å avbryte denne installasjonen, fjerner du alle &RHL; medier, og 
+	trykker
+ på maskinens <command>Reset</command> knapp, eller start på 
+	nytt ved
+ å bruke <keycombo> <keycap>Control-</keycap> <keycap>Alt-
+	</keycap>
+<keycap>Delete</keycap></keycombo>
+      </para>
+    </sect1>
+    		  
+    <sect1 id="s1-help-screens-installing">
+      <title>Installasjon av pakker</title>
+      <para>
+	Vi har samlet all nødvendig informasjon for å installere &RHL; på
+	ditt system. Det vil ta noe tid å installere alt, avhengig av hvor
+	mange pakker som skal installeres. Hvis du har det offisielle &RHL;
+	"boxed set", er dette en bra tid å bli kjent med <citetitle>&RHLGSG;
+	</citetitle> eller <citetitle>&RHLRGS;</citetitle>
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-bootdisk">
+      <title>Oppstartsdiskett</title>
+      <para>
+	Sett inn en tom, formatert diskett i diskettstasjonen, og klikk
+	<guibutton>Neste</guibutton> for å fortsette.
+      </para>
+    </sect1>
+  </chapter>
+</book>
+
+
+

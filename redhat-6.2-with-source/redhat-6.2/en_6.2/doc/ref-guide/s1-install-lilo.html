@@ -1,0 +1,635 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-install-lilo.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:01:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Installing LILO</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Installing Red Hat Linux via Text Mode"
+HREF="ch-install-tm.html"><LINK
+REL="PREVIOUS"
+TITLE="Partitioning Your Disk for Red Hat Linux"
+HREF="s1-install-create-part.html"><LINK
+REL="NEXT"
+TITLE="Naming Your Computer"
+HREF="s1-install-hostname.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-install-create-part.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 10. Installing Red Hat Linux via Text Mode</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-install-hostname.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-INSTALL-LILO"
+>Installing LILO</A
+></H1
+><P
+>        The <B
+CLASS="COMMAND"
+>LI</B
+>nux <B
+CLASS="COMMAND"
+>LO</B
+>ader
+	(<TT
+CLASS="APPLICATION"
+>LILO</TT
+>) lets you specify at boot time whether
+	to start Linux or another operating system. (If you are performing a
+	workstation- or server-class installation, LILO is configured
+	automatically in the Master Boot Record [MBR].)  If you are performing a
+	custom-class installation, the <TT
+CLASS="GUILABEL"
+><B
+>LILO Installation</B
+></TT
+>
+	dialogs let you indicate how or whether to install LILO.
+      </P
+><P
+>        The <TT
+CLASS="GUILABEL"
+><B
+>Choosing LILO in LILO Configuration Dialog</B
+></TT
+> dialog (<A
+HREF="s1-install-lilo.html#FIG-INSTALL-LILO-CONF"
+>Figure 10-23</A
+>) lets you add default options to the
+	LILO boot command or choose to not install LILO at all. Any options you
+	enter will be passed to the Linux kernel at boot time.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-LILO-CONF"
+></A
+><P
+><IMG
+SRC="figs/textmode/lilo-conf.gif"></P
+><P
+><B
+>Figure 10-23. Choosing LILO in LILO Configuration Dialog</B
+></P
+></DIV
+><P
+>	In <A
+HREF="ch-before-you-begin.html#S2-BEFORE-YOU-BEGIN-HARDWARE"
+>the section called <I
+>Basic Hardware Configuration</I
+> in Chapter 9</A
+>, you were asked to
+	review your computer's BIOS settings. In reviewing the BIOS settings, if
+	you determined your system does not access a hard drive in linear mode,
+	deselect this option. <TT
+CLASS="GUILABEL"
+><B
+>Use linear mode</B
+></TT
+> is selected
+	by default. Select <B
+CLASS="GUIBUTTON"
+>OK</B
+> and press
+	<B
+CLASS="KEYCAP"
+>Space</B
+> to continue.
+      </P
+><P
+>	If you do not wish to install LILO, press
+	<B
+CLASS="GUIBUTTON"
+>Skip</B
+>.
+      </P
+><DIV
+CLASS="WARNING"
+><P
+></P
+><TABLE
+CLASS="WARNING"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/warning.gif"
+HSPACE="5"
+ALT="Warning"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Warning</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          If you choose <B
+CLASS="GUIBUTTON"
+>Skip</B
+>, you will not be able to
+          boot your Red Hat Linux system directly, and will need to use another boot
+          method (such as a boot disk).  Use this option only if you are sure
+          you have another way of booting your Red Hat Linux system!
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-NOLILO"
+>Alternatives to LILO</A
+></H2
+><P
+>	  If you do not wish to use LILO to boot your Red Hat Linux system, there are a
+	  few alternatives:
+	</P
+><P
+></P
+><DL
+><DT
+>Boot Disk</DT
+><DD
+><P
+>		You can use the boot disk created by the installation program
+		(if you elected to create one).
+	      </P
+></DD
+><DT
+><TT
+CLASS="APPLICATION"
+>LOADLIN</TT
+></DT
+><DD
+><P
+>		
+                
+		
+                
+		
+                <TT
+CLASS="APPLICATION"
+>LOADLIN</TT
+> can load Linux from MS-DOS;
+		unfortunately, it requires a copy of the Linux kernel (and an
+		initial RAM disk, if you have a SCSI adapter) to be available on
+		an MS-DOS partition.  The only way to accomplish this is to boot
+		your Red Hat Linux system using some other method (e.g., from LILO on a
+		diskette) and then copy the kernel to an MS-DOS partition.
+		<TT
+CLASS="APPLICATION"
+>LOADLIN</TT
+> is available from <A
+HREF="ftp://metalab.unc.edu/pub/Linux/system/boot/dualboot/"
+TARGET="_top"
+>		ftp://metalab.unc.edu/pub/Linux/system/boot/dualboot/</A
+>
+		and associated mirror sites.
+	      </P
+></DD
+><DT
+><TT
+CLASS="APPLICATION"
+>SYSLINUX</TT
+></DT
+><DD
+><P
+>&#13;                
+		
+		
+		
+                <TT
+CLASS="APPLICATION"
+>SYSLINUX</TT
+> is an MS-DOS program very
+		similar to <TT
+CLASS="APPLICATION"
+>LOADLIN</TT
+>; it is also
+		available from <A
+HREF="ftp://metalab.unc.edu/pub/Linux/system/boot/loaders/"
+TARGET="_top"
+>		ftp://metalab.unc.edu/pub/Linux/system/boot/loaders/</A
+> and
+		associated mirror sites.
+		
+	      </P
+></DD
+><DT
+>Commercial Bootloaders</DT
+><DD
+><P
+>&#13;                
+		
+		
+		
+                Some commercial bootloaders are able to boot Linux.  However,
+		these products still require LILO to be installed in your Linux
+		boot partition).
+	      </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-LILO-CONFIG"
+>LILO Configuration</A
+></H2
+><P
+>	  Choose where you want to install LILO (<A
+HREF="s1-install-lilo.html#FIG-INSTALL-LILO-BOOT"
+>Figure 10-24</A
+>).
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-LILO-BOOT"
+></A
+><P
+><IMG
+SRC="figs/textmode/lilo-boot.gif"></P
+><P
+><B
+>Figure 10-24. Installing LILO in LILO Configuration Dialog</B
+></P
+></DIV
+><P
+>	  You may install LILO in one of two places:
+	</P
+><DIV
+CLASS="WARNING"
+><P
+></P
+><TABLE
+CLASS="WARNING"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/warning.gif"
+HSPACE="5"
+ALT="Warning"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    To create a dual-boot environment on a system that currently has NT,
+	    you must install LILO on the first sector of the root partition, not
+	    the MBR.  Please be sure to create a boot disk. In a case such as
+	    this, you will either need to use the boot disk, or configure the NT
+	    system loader to boot LILO from the first sector of the root
+	    partition. Be sure to check out <A
+HREF="http://www.linuxdoc.org/HOWTO/mini/Linux+NT-Loader.html"
+TARGET="_top"
+>	    http://www.linuxdoc.org/HOWTO/mini/Linux+NT-Loader.html</A
+> for
+	    more information on setting up LILO and NT.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+></P
+><DL
+><DT
+>The Master Boot Record (MBR)</DT
+><DD
+><P
+>		
+		The recommended place to install LILO, unless the MBR already
+		starts another OS loader, such System Commander or OS/2's Boot
+		Manager. The MBR is a special area on your hard drive that is
+		automatically loaded by your computer's BIOS, and is the
+		earliest point at which LILO can take control of the boot
+		process. If you install LILO in the MBR, when your machine
+		boots, LILO will present a
+		<TT
+CLASS="COMPUTEROUTPUT"
+>boot:</TT
+> prompt. You can then boot
+		Red Hat Linux or any other operating system you configure LILO to boot.
+	      </P
+></DD
+><DT
+>The first sector of your boot partition</DT
+><DD
+><P
+>		Recommended if you are already using another boot loader on your
+		system (such as OS/2's Boot Manager).  In this case, your other
+		boot loader will take control first.  You can then configure
+		that boot loader to start LILO (which will then boot Red Hat Linux).
+	      </P
+></DD
+></DL
+><P
+>	  Select the location where you wish to install LILO and press
+	  <B
+CLASS="GUIBUTTON"
+>OK</B
+>.
+	</P
+><P
+>	  Finally the installation program lets you set the default operating
+	  system and specify boot labels, as in <A
+HREF="s1-install-lilo.html#FIG-INSTALL-LILO-BOOTLABEL"
+>Figure 10-25</A
+>.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-LILO-BOOTLABEL"
+></A
+><P
+><IMG
+SRC="figs/textmode/lilo-bootlabel.gif"></P
+><P
+><B
+>Figure 10-25. Selecting Bootable Partitions in LILO Configuration
+	  Dialog</B
+></P
+></DIV
+><P
+>	  Every partition that is bootable is listed, including partitions used
+	  by other operating systems.  The <TT
+CLASS="GUILABEL"
+><B
+>Boot label</B
+></TT
+>
+	  column will be filled in with the word <B
+CLASS="COMMAND"
+>linux</B
+> on the
+	  partition holding your Red Hat Linux system's root filesystem. Other
+	  partitions may also have boot labels (such as a <B
+CLASS="COMMAND"
+>dos</B
+>
+	  boot label for Windows 95/98 partitions).
+	</P
+><P
+>	  To add a boot label for a partition (or change an existing boot label),
+	  use the arrow keys to highlight the desired partition.  Then use the
+	  <B
+CLASS="KEYCAP"
+>Tab</B
+> key to select the <B
+CLASS="GUIBUTTON"
+>Edit</B
+>
+	  button, and press <B
+CLASS="KEYCAP"
+>Space</B
+>.  You'll then see a small
+	  dialog box permitting you to enter/modify the partition's boot label.
+	  Press <B
+CLASS="GUIBUTTON"
+>OK</B
+> when done.
+	</P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Tip</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    The contents of the <TT
+CLASS="GUILABEL"
+><B
+>Boot label</B
+></TT
+> column show what
+	    you will need to enter at LILO's <TT
+CLASS="PROMPT"
+>boot:</TT
+> prompt in
+	    order to boot the desired operating system. Should you forget the
+	    boot labels defined on your system, press <B
+CLASS="KEYCAP"
+>Tab</B
+> at
+	    LILO's <TT
+CLASS="PROMPT"
+>Boot:</TT
+> prompt to display a list of defined
+	    boot labels.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	  There is also a column labeled <TT
+CLASS="GUILABEL"
+><B
+>Default</B
+></TT
+>. Only one
+	  partition will contain an asterisk under that column.  The partition
+	  marked as the default will be the partition LILO will boot if there is
+	  no user input during the boot process.  Initially the root partition
+	  for your Red Hat Linux installation will be selected as the default.  If you'd
+	  like to change this, use the arrow keys to highlight the partition
+	  you'd like to make the default, and press <B
+CLASS="KEYCAP"
+>F2</B
+>.  The
+	  asterisk will move to the selected partition.  When you've finished,
+	  select <B
+CLASS="GUIBUTTON"
+>OK</B
+>, and press <B
+CLASS="KEYCAP"
+>Space</B
+>.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-SMP-LILO"
+>SMP Motherboards and LILO</A
+></H2
+><P
+>	  If the installer detects a symmetric multi-processor motherboard on
+	  your system, it will automatically create two
+	  <TT
+CLASS="FILENAME"
+>lilo.conf</TT
+> entries:
+	  <TT
+CLASS="COMPUTEROUTPUT"
+>linux</TT
+>, the default, boots the system
+	  in SMP mode and <TT
+CLASS="COMPUTEROUTPUT"
+>linux-up</TT
+> boots the
+	  system in uni-processor mode.
+	</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-install-create-part.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-install-hostname.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Partitioning Your Disk for Red Hat Linux</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-install-tm.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Naming Your Computer</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-install-lilo.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:02:21 GMT -->
+</HTML
+>

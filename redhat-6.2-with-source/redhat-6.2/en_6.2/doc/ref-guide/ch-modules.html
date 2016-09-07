@@ -1,0 +1,232 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-modules.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:58:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>General Parameters and Modules</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Appendixes"
+HREF="p8268.html"><LINK
+REL="PREVIOUS"
+TITLE="Appendixes"
+HREF="p8268.html"><LINK
+REL="NEXT"
+TITLE="CD-ROM Module Parameters"
+HREF="s1-modules-cdromparameters.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="p8268.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-modules-cdromparameters.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="APPENDIX"
+><H1
+><A
+NAME="CH-MODULES"
+>Appendix A. General Parameters and Modules</A
+></H1
+><P
+>      This appendix is provided to illustrate <I
+CLASS="EMPHASIS"
+>some</I
+> of the
+      possible parameters that may be needed by certain drivers.  It should be
+      noted that, in most cases, these additional parameters are unnecessary.
+      Also included is a list of network hardware and the associated modules
+      required by that hardware.
+    </P
+><P
+>      Please keep in mind that if a device you are attempting to use requires
+      one of these parameters, and support for that device is
+      <I
+CLASS="EMPHASIS"
+>not</I
+> compiled into the kernel, the traditional method
+      of adding the parameter to the LILO boot command will not work.  Drivers
+      loaded as modules require that these parameters are specified when the
+      module is loaded.  The Red Hat Linux installation program gives you the option to
+      specify module parameters when a driver is loaded.
+    </P
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-MODULE-DRIVERS"
+>A Note About Kernel Drivers</A
+></H1
+><P
+>	During installation of Red Hat Linux, there are some limits placed on the
+	filesystems and other drivers supported by the kernel.  However, after
+	installation there is support for all filesystems available under Linux.
+	At install time the modularized kernel has support for (E)IDE devices,
+	(including ATAPI CD-ROM drives), SCSI adapters, and network cards.
+	Additionally, all mice, SLIP, CSLIP, PPP, PLIP, FPU emulation, console
+	selection, ELF, SysV IPC, IP forwarding, firewalling and accounting,
+	reverse ARP, QIC tape and parallel printers, are supported.
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  Because Red Hat Linux supports installation on many different types
+	  of hardware, many drivers (including those for SCSI
+	  
+	  adapters, network cards, and many CD-ROMs) are not built into the
+	  Linux kernel used during installation; rather, they are available as
+	  <I
+CLASS="FIRSTTERM"
+>modules</I
+> and loaded as you need them during the
+	  installation process.  If necessary, you will have the chance to
+	  specify options for these modules at the time they are loaded, and in
+	  fact these drivers will ignore any options you specify for them at the
+	  <TT
+CLASS="PROMPT"
+>boot:</TT
+> prompt.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	After the installation is complete you may want to rebuild a kernel that
+	includes support for your specific hardware configuration.  See <A
+HREF="s1-sysadmin-build-kernel.html"
+>the section called <I
+>Building a Custom Kernel</I
+> in Chapter 2</A
+> for information on building a
+	customized kernel.  Note that, in most cases, a custom-built kernel is
+	not necessary.
+      </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="p8268.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-modules-cdromparameters.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Appendixes</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="p8268.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>CD-ROM Module Parameters</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-modules.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:58:05 GMT -->
+</HTML
+>

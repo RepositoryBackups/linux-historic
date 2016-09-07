@@ -1,0 +1,2445 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-kickstart2-commands.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Kickstart Commands</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Kickstart Installations"
+HREF="ch-kickstart2.html"><LINK
+REL="PREVIOUS"
+TITLE="The Kickstart File"
+HREF="s1-kickstart2-file.html"><LINK
+REL="NEXT"
+TITLE="Index"
+HREF="i11049.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-kickstart2-file.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Appendix F. Kickstart Installations</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="i11049.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-KICKSTART2-COMMANDS"
+>Kickstart Commands</A
+></H1
+><P
+>      The following commands can be placed in a kickstart file.
+    </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-AUTH"
+><B
+CLASS="COMMAND"
+>auth</B
+> -- Authentication Options</A
+></H2
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>auth</B
+> (required)</DT
+><DD
+><P
+>	      Sets up the authentication options for the system. It's similar
+	      to the <B
+CLASS="COMMAND"
+>authconfig</B
+> command that can be run after
+	      the install. By default, passwords are normally encrypted and are
+	      not shadowed.
+	      <P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>--enablemd5</B
+></DT
+><DD
+><P
+>		      Use md5 encryption for user passwords.
+		    </P
+></DD
+><DT
+><B
+CLASS="COMMAND"
+>--enablenis</B
+></DT
+><DD
+><P
+>		      Turns on NIS support. By default,
+		      <B
+CLASS="COMMAND"
+>--enablenis</B
+> uses whatever domain it
+		      finds on the network. A domain should almost always be set
+		      by hand (via <B
+CLASS="COMMAND"
+>--nisdomain</B
+>).
+		    </P
+></DD
+><DT
+><B
+CLASS="COMMAND"
+>--nisdomain</B
+></DT
+><DD
+><P
+>		      NIS domain name to use for NIS services.
+		    </P
+></DD
+><DT
+><B
+CLASS="COMMAND"
+>--nisserver</B
+></DT
+><DD
+><P
+>		      Server to use for NIS services (broadcasts by default).
+		    </P
+></DD
+><DT
+><B
+CLASS="COMMAND"
+>--useshadow</B
+></DT
+><DD
+><P
+>		      Use shadow passwords.
+		    </P
+></DD
+></DL
+>
+	    </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-CLEARPART"
+><B
+CLASS="COMMAND"
+>clearpart</B
+> -- Removing partitions based on
+	partition type</A
+></H2
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>clearpart</B
+> (optional)</DT
+><DD
+><P
+>	      Removes partitions from the system, prior to creation of new
+	      partitions. By default, no partitions are removed.
+	      <P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+> --linux</B
+></DT
+><DD
+><P
+>		      Erases Linux (type 0x82, 0x83, and 0xfd [RAID]) partitions
+		    </P
+></DD
+><DT
+><B
+CLASS="COMMAND"
+>--all</B
+></DT
+><DD
+><P
+>		      Erases all partitions from the system.
+		    </P
+></DD
+></DL
+>
+	    </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-DEVICE"
+>device <B
+CLASS="COMMAND"
+>--opts</B
+></A
+></H2
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>device</B
+> (optional)</DT
+><DD
+><P
+>	      On most PCI systems, the installation program will autoprobe for
+	      Ethernet and SCSI cards properly. On older systems, and some PCI
+	      systems, kickstart needs a hint to find the proper devices,
+	      however. The device command tells
+	      <TT
+CLASS="APPLICATION"
+>Anaconda</TT
+> to install extra modules. It
+	      is of the form:
+	    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>device <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;type&#62;</I
+></TT
+> <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;moduleName&#62;</I
+></TT
+> --opts <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;options&#62;</I
+></TT
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+> <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;type&#62;</I
+></TT
+> should be one of
+	      "scsi" or "eth", and <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;moduleName&#62;</I
+></TT
+>
+	      is the name of the kernel module which should be installed.
+	      <P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>--opts</B
+></DT
+><DD
+><P
+>		      Options to pass to the kernel module. Note that multiple
+		      options may be passed if put in quotes. For example:
+		    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>--opts "aic152x=0x340 io=11"
+		    </PRE
+></TD
+></TR
+></TABLE
+></DD
+></DL
+>
+	    </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-DRIVERDISK"
+>driver disk</A
+></H2
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>driverdisk</B
+> (optional)</DT
+><DD
+><P
+>	      During kickstart, driver disks can be used by copying the contents
+	      of a driver disk to the root directory of a partition on the
+	      system's hard drive and using the <B
+CLASS="COMMAND"
+>driverdisk</B
+>
+	      command to tell the installation program where to look for it.
+	    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>driverdisk <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;partition&#62;</I
+></TT
+> [--type <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;fstype&#62;</I
+></TT
+>]
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>	      <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;partition&#62;</I
+></TT
+> is the partition
+	      containing the driver disk.
+	    </P
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>--type</B
+></DT
+><DD
+><P
+>		    Filesystem type (for example, VFAT or ext2).
+		  </P
+></DD
+></DL
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-INSTALL"
+><B
+CLASS="COMMAND"
+>install</B
+></A
+></H2
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>install</B
+> (optional)</DT
+><DD
+><P
+>	      Tells the system to install a fresh system rather than upgrade
+	      an existing system. This is the default mode.
+	    </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-INSTALLMETH"
+>Installation methods</A
+></H2
+><P
+>	You must use one of the these three commands to specify what type of
+	kickstart is being done:
+      </P
+><P
+></P
+><DL
+><DT
+>NFS</DT
+><DD
+><P
+>	      Install from the NFS server specified.
+	      <P
+></P
+><UL
+><LI
+><P
+>		    --server <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;server&#62;</I
+></TT
+>
+		  </P
+><P
+>		    Server from which to install (hostname or IP).
+		  </P
+></LI
+><LI
+><P
+>		    --dir <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;dir&#62;</I
+></TT
+> 
+		  </P
+><P
+>		    Directory containing the Red Hat installation tree.
+		  </P
+></LI
+></UL
+>
+	    </P
+><P
+>	      For example:
+	    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>nfs --server <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;server&#62;</I
+></TT
+> --dir <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;dir&#62;</I
+></TT
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+></DD
+><DT
+>CD-ROM</DT
+><DD
+><P
+>	      Install from the first CD-ROM drive on the system.
+	    </P
+><P
+>	      For example:
+	    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>cdrom
+	    </PRE
+></TD
+></TR
+></TABLE
+></DD
+><DT
+>hard drive</DT
+><DD
+><P
+>	      Install from a Red Hat installation tree on a local drive, which
+	      must be either VFAT or ext2.
+	      <P
+></P
+><UL
+><LI
+><P
+>		    --partition <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;partition&#62;</I
+></TT
+>
+		  </P
+><P
+>		    Partition to install from (such as, sdb2).
+		  </P
+></LI
+><LI
+><P
+>		    --dir <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;dir&#62;</I
+></TT
+>
+		  </P
+><P
+>		    Directory containing the Red Hat installation tree.
+		  </P
+></LI
+></UL
+>
+	    </P
+><P
+>	      For example:
+	    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>harddrive --partition <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;partition&#62;</I
+></TT
+> --dir <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;dir&#62;</I
+></TT
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-KEYBOARD"
+><B
+CLASS="COMMAND"
+>keyboard</B
+></A
+></H2
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>keyboard</B
+> (required)</DT
+><DD
+><P
+>	      Sets system keyboard type. Here's the list of available keyboards
+	      on i386 and Alpha machines:
+	    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>azerty, be-latin1, be2-latin1, fr-latin0, fr-latin1, fr-pc, fr,
+wangbe, ANSI-dvorak, dvorak-l, dvorak-r, dvorak, pc-dvorak-latin1,	      
+tr_f-latin5, trf, bg, cf, cz-lat2-prog, cz-lat2, defkeymap,
+defkeymap_V1.0, dk-latin1, dk. emacs, emacs2, es, fi-latin1, fi,
+gr-pc, gr, hebrew, hu101, is-latin1, it-ibm, it, it2, jp106,
+la-latin1, lt, lt.l4, nl, no-latin1, no, pc110, pl, pt-latin1,
+pt-old, ro, ru-cp1251, ru-ms, ru-yawerty, ru, ru1, ru2, ru_win,
+se-latin1, sk-prog-qwerty, sk-prog, sk-qwerty, tr_q-latin5, tralt,
+trf, trq, ua, uk, us, croat, cz-us-qwertz, de-latin1-nodeadkeys,
+de-latin1, de, fr_CH-latin1, fr_CH, hu, sg-latin1-lk450,
+sg-latin1, sg, sk-prog-qwertz, sk-qwertz, slovene
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>	      Here's the list for SPARC machines:
+	    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>sun-pl-altgraph, sun-pl, sundvorak, sunkeymap, sunt4-es,
+sunt4-no-latin1, sunt5-cz-us, sunt5-de-latin1, sunt5-es,
+sunt5-fi-latin1, sunt5-fr-latin1, sunt5-ru, sunt5-uk, sunt5-us-cz
+	    </PRE
+></TD
+></TR
+></TABLE
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-LANG"
+><B
+CLASS="COMMAND"
+>language</B
+></A
+></H2
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>lang</B
+> (required)
+	    
+	    </DT
+><DD
+><P
+>	      Sets the default language for the installed system.  The language
+	      you specify will be used during the installation as well as to
+	      configure any language-specific aspect of the installed system.
+	      For example, to set the language to English, the kickstart file
+	      should contain the following line:
+	    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>lang en_US
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>	      Valid languages codes are:
+	    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>cs_CZ, en_US, fr_FR, de_DE, hu_HU, is_IS, id_ID, it_IT,
+ja_JP.ujis, no_NO, pl_PL, ro_RO, sk_SK, sl_SI, es_MX,
+ru_RU.KOI8-R, uk_UA
+	    </PRE
+></TD
+></TR
+></TABLE
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-LILO"
+><B
+CLASS="COMMAND"
+>lilo</B
+></A
+></H2
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>lilo</B
+> (required)</DT
+><DD
+><P
+>	      Specifies how the boot loader should be installed on the
+	      system. 
+	      By default, LILO installs on the MBR of the first disk, and
+	      installs a dual-boot system if a DOS partition is found (the
+	      DOS/Windows system will boot if the user types
+	      <TT
+CLASS="USERINPUT"
+><B
+>dos</B
+></TT
+> at the
+	      <TT
+CLASS="COMPUTEROUTPUT"
+>LILO:</TT
+> prompt).
+	      <P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>--append</B
+>
+		    <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;params&#62;</I
+></TT
+></DT
+><DD
+><P
+>		      Specifies kernel parameters.
+		    </P
+></DD
+><DT
+><B
+CLASS="COMMAND"
+>--linear</B
+></DT
+><DD
+><P
+>		      Use the <B
+CLASS="COMMAND"
+>linear</B
+> LILO option; this is
+		      only for backwards compatibility (and linear is now used by
+		      default).
+		    </P
+></DD
+><DT
+><B
+CLASS="COMMAND"
+>--location</B
+></DT
+><DD
+><P
+>		      Specifies where the LILO boot record is written. Valid
+		      values are <TT
+CLASS="USERINPUT"
+><B
+>mbr</B
+></TT
+> (default),
+		      <TT
+CLASS="USERINPUT"
+><B
+>partition</B
+></TT
+> (installs the boot loader
+		      on the first sector of the partition containing the
+		      kernel), or none, which prevents any bootloader from being
+		      installed.
+		    </P
+></DD
+></DL
+>
+	    </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-LILOCHECK"
+><B
+CLASS="COMMAND"
+>lilocheck</B
+></A
+></H2
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>lilocheck</B
+> (optional)</DT
+><DD
+><P
+>	      If this is present, the installation program checks for LILO on
+	      the MBR of the first hard drive, and reboots the system if it is
+	      found -- No installation is done in this case. This can prevent
+	      the kickstart from reinstalling an already installed system.
+	    </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-MOUSE"
+><B
+CLASS="COMMAND"
+>mouse</B
+></A
+></H2
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>mouse</B
+> (required)</DT
+><DD
+><P
+>	      Configures the mouse for the system, both in GUI and text
+	      modes. Options are:
+	      <P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>--device</B
+> <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;dev&#62;</I
+></TT
+></DT
+><DD
+><P
+>		      Device the mouse is on (such as --device ttyS0)
+		    </P
+></DD
+><DT
+><B
+CLASS="COMMAND"
+>--emulthree</B
+></DT
+><DD
+><P
+>		      If present, the X Window System uses simultaneous
+		      left+right mouse buttons to emulate the middle button
+		      (should be used on two button mice).
+		      </P
+><P
+>		      After options, the mouse type may be specified as one of
+		      the following:
+		    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>alpsps/2, ascii, asciips/2, atibm, generic, generic3,
+genericps/2, generic3ps/2, geniusnm, geniusnmps/2,
+geniusnsps/2, thinking, thinkingps/2, logitech,
+logitechcc, logibm, logimman, logimmanps/2, logimman+,
+logimman+ps/2, microsoft, msnew, msintelli, msintellips/2,
+msbm, mousesystems, mmseries, mmhittab, sun, none
+		    </PRE
+></TD
+></TR
+></TABLE
+><P
+>		      If the mouse command is given without any arguments, or it
+		      is omitted, the installation program will attempt to autodetect the
+		      mouse (which works for most modern mice).
+		    </P
+></DD
+></DL
+>
+	    </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-NETWORK"
+><B
+CLASS="COMMAND"
+>network</B
+></A
+></H2
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>network</B
+> (optional)</DT
+><DD
+><P
+>	      Configures network information for the system. If it is not given,
+	      and the kickstart installation does not require networking (in other
+	      words, it's not installed over NFS), networking is not configured
+	      for the system. If the installation does require networking,
+	      <TT
+CLASS="APPLICATION"
+>Anaconda</TT
+> assumes that the install
+	      should be done over eth0 via a dynamic IP address (BOOTP/DHCP),
+	      and configures the final, installed system to dynamically determine its IP
+	      address. The network command configures the networking information
+	      for the installation for network kickstarts as well as for the
+	      final, installed system.
+	      <P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>--bootproto</B
+></DT
+><DD
+><P
+>		      One of <TT
+CLASS="USERINPUT"
+><B
+>dhcp</B
+></TT
+>,
+		      <TT
+CLASS="USERINPUT"
+><B
+>bootp</B
+></TT
+>, or
+		      <TT
+CLASS="USERINPUT"
+><B
+>static</B
+></TT
+> (defaults to DHCP, and
+		      <TT
+CLASS="USERINPUT"
+><B
+>dhcp</B
+></TT
+> and
+		      <TT
+CLASS="USERINPUT"
+><B
+>bootp</B
+></TT
+> are treated the same).  Must
+		      be <TT
+CLASS="USERINPUT"
+><B
+>static</B
+></TT
+> for static IP information
+		      to be used.
+		    </P
+></DD
+><DT
+><B
+CLASS="COMMAND"
+>--ip</B
+></DT
+><DD
+><P
+>		      IP address for machine to be installed.
+		    </P
+></DD
+><DT
+><B
+CLASS="COMMAND"
+>--gateway</B
+></DT
+><DD
+><P
+>		      Default gateway as an IP address.
+		    </P
+></DD
+><DT
+><B
+CLASS="COMMAND"
+>--nameserver</B
+></DT
+><DD
+><P
+>		      Primary name server, as an IP address.
+		    </P
+></DD
+><DT
+><B
+CLASS="COMMAND"
+>--netmask</B
+></DT
+><DD
+><P
+>		      Netmask for the installed system
+		    </P
+></DD
+></DL
+>
+	    </P
+><P
+>	      There are three different methods of network configuration:
+	    </P
+><P
+></P
+><UL
+><LI
+><P
+>		  DHCP
+		</P
+></LI
+><LI
+><P
+>		  BOOTP
+		</P
+></LI
+><LI
+><P
+>		  static
+		</P
+></LI
+></UL
+><P
+>	      The DHCP method uses a DHCP server system to obtain its networking
+	      configuration.  As you might guess, the BOOTP method is similar,
+	      requiring a BOOTP server to supply the networking configuration.
+	    </P
+><P
+>	      The static method requires that you enter all the required
+	      networking information in the kickstart file.  As the name
+	      implies, this information is static, and will be used during the
+	      installation, and after the installation as well.
+	    </P
+><P
+>	      To direct a system to use DHCP to obtain its networking
+	      configuration, use the following line:
+	    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>network --bootproto dhcp
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>	      To direct a machine to use BOOTP to obtain its networking
+	      configuration, use the following line in the kickstart file:
+	    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>network --bootproto bootp
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>	      The line for static networking is more complex, as you must
+	      include all network configuration information on one line.  You'll
+	      need to specify:
+	    </P
+><P
+></P
+><UL
+><LI
+><P
+>		  IP address
+		</P
+></LI
+><LI
+><P
+>		  netmask
+		</P
+></LI
+><LI
+><P
+>		  gateway IP address
+		</P
+></LI
+><LI
+><P
+>		  name server IP address
+		</P
+></LI
+></UL
+><P
+>	      Here's an example static line:
+	    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>network --bootproto static 
+--ip 10.0.2.15
+--netmask 255.255.255.0 
+--gateway 10.0.2.254
+--nameserver 10.0.2.1
+	    </PRE
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="90%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>		The entire <B
+CLASS="COMMAND"
+>network</B
+> configuration
+		<I
+CLASS="EMPHASIS"
+>must</I
+> appear on one line!  We've wrapped it
+		here to make it easier to read.
+	      </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	      There are two restrictions you must keep in mind should you use
+	      the static method:
+	    </P
+><P
+></P
+><UL
+><LI
+><P
+>		  All static networking configuration information must be
+		  specified on <I
+CLASS="EMPHASIS"
+>one</I
+> line; you cannot wrap
+		  lines using a backslash, for example.
+		</P
+></LI
+><LI
+><P
+>		  You can only specify one name server here.  However, you can
+		  use the kickstart file's <B
+CLASS="COMMAND"
+>%post</B
+> section
+		  (described in <A
+HREF="s1-kickstart2-commands.html#S2-KICKSTART2-POSTINSTALLCONFIG"
+>the section called <I
+><B
+CLASS="COMMAND"
+>%post</B
+> -- Post-Installation Configuration
+	Section</I
+></A
+>) to add more
+		  name servers, if needed.
+		</P
+></LI
+></UL
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-PARTITION"
+><B
+CLASS="COMMAND"
+>partition</B
+></A
+></H2
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>part</B
+> (required for installs, ignored for
+	    upgrades)</DT
+><DD
+><P
+>	      Create a partition on the system. Partition requests are of the
+	      form:
+	    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>	      
+part <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;mntpoint&#62;</I
+></TT
+> --size	<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;size&#62;</I
+></TT
+> [--grow] [--onpart <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;partc&#62;</I
+></TT
+>] [--ondisk <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;disk&#62;</I
+></TT
+>]
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>	      The <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;mntpoint&#62;</I
+></TT
+> is where the partition
+	      will be mounted, and must be of one of the following forms:
+	      <P
+></P
+><DL
+><DT
+>/<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;mntpoint&#62;</I
+></TT
+></DT
+><DD
+><P
+>		      (i.e. <TT
+CLASS="USERINPUT"
+><B
+>/</B
+></TT
+>,
+		      <TT
+CLASS="USERINPUT"
+><B
+>/usr</B
+></TT
+>, <TT
+CLASS="USERINPUT"
+><B
+>/home</B
+></TT
+>)
+		    </P
+></DD
+><DT
+>swap</DT
+><DD
+><P
+>		      The partition will be used as swap space.
+		    </P
+></DD
+><DT
+>raid.<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;id&#62;</I
+></TT
+></DT
+><DD
+><P
+>		      The partition will be used for software RAID (see the
+		      <B
+CLASS="COMMAND"
+>raid</B
+> command later).
+		    </P
+></DD
+><DT
+>--size <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;size&#62;</I
+></TT
+></DT
+><DD
+><P
+>		      Sets the minimum size for the partition
+		    </P
+></DD
+><DT
+>--grow</DT
+><DD
+><P
+>		      Tells the partition to grow to fill available space (if
+		      any).
+		    </P
+></DD
+><DT
+>--onpart <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;part&#62;</I
+></TT
+></DT
+><DD
+><P
+>		      Tells the installation program to put the partition on the
+		      <I
+CLASS="EMPHASIS"
+>already existing</I
+> device
+		      <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;part&#62;</I
+></TT
+>. For example,
+		      <B
+CLASS="COMMAND"
+>partition /home --onpart hda1</B
+> will put
+		      <TT
+CLASS="FILENAME"
+>/home</TT
+> on
+		      <TT
+CLASS="FILENAME"
+>/dev/hda1</TT
+>, which must already exist.
+		    </P
+></DD
+><DT
+>--ondisk <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;disk&#62;</I
+></TT
+></DT
+><DD
+><P
+>		      Forces the partition to be created on a particular disk.
+		      For example, <B
+CLASS="COMMAND"
+>--ondisk sdb</B
+> will put the
+		      partition on the second disk on the system.
+		    </P
+></DD
+></DL
+>
+	    </P
+><P
+>	      All partitions created will be formatted as part of the
+	      installation process.
+	    </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-RAID"
+><B
+CLASS="COMMAND"
+>raid</B
+></A
+></H2
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>raid</B
+> (optional)</DT
+><DD
+><P
+>	      Assembles a software RAID device. This command is of the form:
+	    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>raid <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;mntpoint&#62;</I
+></TT
+> --level <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;level&#62;</I
+></TT
+> --device <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;mddevice&#62;</I
+></TT
+><TT
+CLASS="REPLACEABLE"
+><I
+>&#60;partitions*&#62;</I
+></TT
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>	      The <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;mntpoint&#62;</I
+></TT
+> is the location to
+	      mount the RAID filesystem. If it is <TT
+CLASS="FILENAME"
+>/</TT
+>, the
+	      RAID level must be 1 unless a boot partition
+	      (<TT
+CLASS="FILENAME"
+>/boot</TT
+>) is present in which the
+	      <TT
+CLASS="FILENAME"
+>/boot</TT
+> partition has to be level 1 and the
+	      root (<TT
+CLASS="FILENAME"
+>/</TT
+>) partition can be any of the
+	      available types. The
+	      <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;partitions*&#62;</I
+></TT
+> (which denotes that
+	      multiple partitions can be listed) lists the RAID identifiers to
+	      add to the RAID array.
+	      <P
+></P
+><DL
+><DT
+>--level <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;level&#62;</I
+></TT
+></DT
+><DD
+><P
+>		      RAID level to use (0, 1, or 5).
+		    </P
+></DD
+><DT
+>--device <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;mddevice&#62;</I
+></TT
+></DT
+><DD
+><P
+>		      Name of the RAID device to use (such as md0 or m1).  RAID
+		      devices range from md0 to md7, and each may only be used
+		      once.
+		    </P
+></DD
+></DL
+>
+	    </P
+><P
+>	      Here's an example of how to create a RAID level 1 partition for
+	      <TT
+CLASS="FILENAME"
+>/</TT
+>, and a RAID level 5 for
+	      <TT
+CLASS="FILENAME"
+>/usr</TT
+>, assuming there are three SCSI disks on
+	      the system. It also creates three swap partitions, one on each
+	      drive.
+	    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>part raid.01 --size 60 --ondisk sda
+part raid.02 --size 60 --ondisk sdb
+part raid.03 --size 60 --ondisk sdc
+	    </PRE
+></TD
+></TR
+></TABLE
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>part swap --size 128 --ondisk sda part swap --size 128 --ondisk
+sdb part swap --size 128 --ondisk sdc
+	    </PRE
+></TD
+></TR
+></TABLE
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>part raid.11 --size 1 --grow --ondisk sda part raid.12 --size 1
+--grow --ondisk sdb part raid.13 --size 1 --grow --ondisk sdc
+	    </PRE
+></TD
+></TR
+></TABLE
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>raid / --level 1 --device md0 raid.01 raid.02 raid.03 raid /usr
+--level 5 --device md1 raid.11 raid.12 raid.13
+	    </PRE
+></TD
+></TR
+></TABLE
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-REBOOT"
+><B
+CLASS="COMMAND"
+>reboot</B
+></A
+></H2
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>reboot</B
+> (optional)</DT
+><DD
+><P
+>	      Reboot after the installation is complete (no arguments). Normally,
+	      kickstart displays a message and waits for the user to press a key
+	      before rebooting.
+	    </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART-ROOTPW"
+><B
+CLASS="COMMAND"
+>rootpw</B
+></A
+></H2
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>rootpw</B
+> (required)</DT
+><DD
+><P
+>	      usage: rootpw [--iscrypted]
+	      <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;password&#62;</I
+></TT
+>
+	    </P
+><P
+>	      Set the system's root password to the
+	      <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;password&#62;</I
+></TT
+> argument.
+	      <P
+></P
+><DL
+><DT
+>--iscrypted</DT
+><DD
+><P
+>		      If this is present, the password argument is assumed to
+		      already be encrypted.
+		    </P
+></DD
+></DL
+>
+	    </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-SKIPX"
+><B
+CLASS="COMMAND"
+>skipx</B
+></A
+></H2
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>skipx</B
+> (optional)</DT
+><DD
+><P
+>	      If present, X is not configured on the installed system.
+	    </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-TIMEZONE"
+><B
+CLASS="COMMAND"
+>timezone</B
+></A
+></H2
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>timezone</B
+> (required)</DT
+><DD
+><P
+>	      timezone [--utc] <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;timezone&#62;</I
+></TT
+>
+	    </P
+><P
+>	      Sets the system time zone to
+		<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;timezone&#62;</I
+></TT
+> which may be any of
+	      the time zones listed in "timeconfig".
+	      <P
+></P
+><DL
+><DT
+>--utc</DT
+><DD
+><P
+>		      If present, the system assumes the hardware clock is set
+		      to UTC (Greenwich Mean) time.
+		    </P
+></DD
+></DL
+>
+	    </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-UPGRADE"
+><B
+CLASS="COMMAND"
+>upgrade</B
+></A
+></H2
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>upgrade</B
+> (optional)</DT
+><DD
+><P
+>	      Tells the system to upgrade an existing system rather than
+	      install a fresh system.
+	    </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-XCONFIG"
+><B
+CLASS="COMMAND"
+>xconfig</B
+></A
+></H2
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>xconfig</B
+> (optional)</DT
+><DD
+><P
+>	      Configures the X Window System. If this option is not given,
+	      the user will need to configure X manually during the
+	      installation, if X was installed; this option should not be used if X is
+	      not installed on the final system.
+	      <P
+></P
+><DL
+><DT
+>--noprobe</DT
+><DD
+><P
+>		      Don't probe the monitor.
+		    </P
+></DD
+><DT
+>--card <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;card&#62;</I
+></TT
+></DT
+><DD
+><P
+>		      Use card <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;card&#62;</I
+></TT
+>; this
+		      card name should be from the list of cards in
+		      <TT
+CLASS="APPLICATION"
+>Xconfigurator</TT
+>. If this argument
+		      is not provided, <TT
+CLASS="APPLICATION"
+>Anaconda</TT
+> will
+		      probe the PCI bus for the card.
+		    </P
+></DD
+><DT
+>--monitor <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;mon&#62;</I
+></TT
+></DT
+><DD
+><P
+>		      Use monitor <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;mon&#62;</I
+></TT
+>; this
+		      monitor name should be from the list of monitors in
+		      <TT
+CLASS="APPLICATION"
+>Xconfigurator</TT
+>.  This is ignored
+		      if <TT
+CLASS="USERINPUT"
+><B
+>--hsync</B
+></TT
+> or
+		      <TT
+CLASS="USERINPUT"
+><B
+>--vsync</B
+></TT
+> is provided; if no monitor
+		      information is provided, the monitor is probed via
+		      plug-and-play.
+		    </P
+></DD
+><DT
+>--hsync <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;sync&#62;</I
+></TT
+></DT
+><DD
+><P
+>		      Specifies the horizontal sync frequency of the monitor.
+		    </P
+></DD
+><DT
+>--vsync <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;sync&#62;</I
+></TT
+></DT
+><DD
+><P
+> 
+		      Specifies the vertical sync frequency of the
+		      monitor.
+		    </P
+></DD
+><DT
+>--startxonboot</DT
+><DD
+><P
+> 
+		      Use a graphical login (runlevel 5) for the
+		      installed system.
+		    </P
+></DD
+></DL
+>
+	    </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-ZEROMBR"
+><B
+CLASS="COMMAND"
+>zerombr</B
+> -- Partition table
+	initialization</A
+></H2
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>zerombr</B
+> (optional)</DT
+><DD
+><P
+>	      If "zerombr" is specified, and "yes" is its sole argument, any
+	      invalid partition tables found on disks are initialized. This
+	      will destroy all of the contents of disks with invalid partition
+	      tables. This command should be used as:
+	    </P
+><P
+>	      <B
+CLASS="COMMAND"
+>zerombr yes</B
+>
+	    </P
+><P
+>	      No other format is effective.
+	    </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-PACKAGESELECTION"
+><B
+CLASS="COMMAND"
+>%packages</B
+> -- Package Selection</A
+></H2
+><P
+>	Use the <B
+CLASS="COMMAND"
+>%packages</B
+> command to begin a kickstart file
+	section that lists the packages you'd like to install (this is for
+	installations only, as package selection during upgrades is not
+	supported).
+      </P
+><P
+>	Packages can be specified by component or by individual package name.
+	The installation program defines several components that group together
+	related packages.  See the <TT
+CLASS="FILENAME"
+>RedHat/base/comps</TT
+> file
+	on any Red Hat Linux CD-ROM for a list of components.  The components are
+	defined by the lines that begin with a number followed by a space, and
+	then the component name.  Each package in that component is then listed,
+	line-by-line.  Individual packages lack the leading number found in
+	front of component lines.
+      </P
+><P
+>	Additionally, there are three other types of lines in the
+	<TT
+CLASS="FILENAME"
+>comps</TT
+> file you may run across:
+      </P
+><P
+></P
+><DL
+><DT
+>Architecture specific (alpha:, i386:, and sparc64:)</DT
+><DD
+><P
+>	      If a package name begins with an architecture type, you only need
+	      to type in the package name, not the architecture name. For
+	      example:
+	    </P
+><P
+>	      For <TT
+CLASS="FILENAME"
+>i386: netscape-common</TT
+> you only need to
+	      use the <TT
+CLASS="FILENAME"
+>netscape-common</TT
+> part for that
+	      specific package to be installed.
+	    </P
+></DD
+><DT
+>Lines beginning with <TT
+CLASS="FILENAME"
+>?</TT
+></DT
+><DD
+><P
+>	      Lines that begin with a <TT
+CLASS="FILENAME"
+>?</TT
+>, are specific to
+	      the installation program. You do not have to do anything with
+	      these type of lines.
+	    </P
+></DD
+><DT
+>Lines beginning with <TT
+CLASS="FILENAME"
+>--hide</TT
+></DT
+><DD
+><P
+>	      If a package name begins with <TT
+CLASS="FILENAME"
+>--hide</TT
+>, you
+	      only need to type in the package name, minus the
+	      <TT
+CLASS="FILENAME"
+>--hide</TT
+>. For example:
+	      </P
+><P
+>	      For <TT
+CLASS="FILENAME"
+>--hide KDE Workstation</TT
+> you only need to
+	      use the <TT
+CLASS="FILENAME"
+>KDE Workstation</TT
+> part for that
+	      specific package to be installed.
+	    </P
+></DD
+></DL
+><P
+>	In most cases, it's only necessary to list the desired components and
+	not individual packages.  Note that the <B
+CLASS="COMMAND"
+>Base</B
+>
+	component is always selected by default, so it's not necessary to
+	specify it in the <B
+CLASS="COMMAND"
+>%packages</B
+> section.
+      </P
+><P
+>	Here's an example <B
+CLASS="COMMAND"
+>%packages</B
+> selection:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>%packages
+@ Networked Workstation
+@ C Development
+@ Web Server
+@ X Window System
+bsd-games
+      </PRE
+></TD
+></TR
+></TABLE
+><P
+>	As you can see, components are specified, one to a line, starting with
+	an <B
+CLASS="COMMAND"
+>@</B
+> symbol, a space, and then the full component
+	name as given in the <TT
+CLASS="FILENAME"
+>comps</TT
+> file.  Specify
+	individual packages with no additional characters (the
+	<TT
+CLASS="FILENAME"
+>bsd-games</TT
+> line in the example above is an
+	individual package).
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  You can also direct the kickstart installation to use the workstation-
+	  and server-class installations.  To do this, simply add
+	  <I
+CLASS="EMPHASIS"
+>one</I
+> of the following lines to the
+	  <B
+CLASS="COMMAND"
+>%packages</B
+> section:
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>	@ Gnome Workstation
+	@ KDE Workstation
+	@ Server
+      </PRE
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-POSTINSTALLCONFIG"
+><B
+CLASS="COMMAND"
+>%post</B
+> -- Post-Installation Configuration
+	Section</A
+></H2
+><P
+>	You have the option of adding commands to run on the system once the
+	installation is complete.  This section must be at the end of the
+	kickstart file and must start with the <B
+CLASS="COMMAND"
+>%post</B
+> command.
+	Note, you can access the network in the <B
+CLASS="COMMAND"
+>%post</B
+>
+	section; however, <I
+CLASS="FIRSTTERM"
+>name service</I
+> has not been
+	configured at this point, so only IP addresses will work.  Here's an
+	example <B
+CLASS="COMMAND"
+>%post</B
+> section:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>%post
+	
+# add comment to /etc/motd
+echo "Kickstart-installed Red Hat Linux `/bin/date`" &#62; /etc/motd
+	
+# add another nameserver
+echo "nameserver 10.10.0.2" &#62;&#62; /etc/resolv.conf
+      </PRE
+></TD
+></TR
+></TABLE
+><P
+>	This section creates a message-of-the-day file containing the date the
+	kickstart installation took place, and gets around the
+	<B
+CLASS="COMMAND"
+>network</B
+> command's "one name server only" limitation by
+	adding another name server to <TT
+CLASS="FILENAME"
+>/etc/resolv.conf</TT
+>.
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  Note that the post-install script is run in a chroot'ed environment;
+	  therefore performing tasks such as copying scripts or RPMs from the
+	  installation media will not work.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+></P
+><DL
+><DT
+>--nochroot</DT
+><DD
+><P
+>	      Allows you to specify commands that you would like to run outside
+	      of the chroot'ed environment.
+	    </P
+></DD
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-kickstart2-file.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="i11049.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>The Kickstart File</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-kickstart2.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Index</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-kickstart2-commands.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

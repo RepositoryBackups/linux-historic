@@ -1,0 +1,698 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-sound.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Configuring a Sound Card</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Q  A: Quick Answers to Common Questions"
+HREF="ch-q-and-a.html"><LINK
+REL="PREVIOUS"
+TITLE="Using All Available RAM"
+HREF="s1-q-and-a-memory.html"><LINK
+REL="NEXT"
+TITLE="Removing Red Hat Linux"
+HREF="s1-q-and-a-removing.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-memory.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 15. Q &#38; A: Quick Answers to Common Questions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-removing.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-Q-AND-A-SOUND"
+>Configuring a Sound Card</A
+></H1
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-SOUND-Q"
+>Q: How do I configure my sound card?</A
+></H2
+><P
+>          I can't get any system sounds, and I can't hear my audio CDs. How do I
+          set up my sound card?
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-SOUND-A"
+>A: Use <I
+CLASS="FIRSTTERM"
+>sndconfig</I
+></A
+></H2
+><P
+>          A tool called <B
+CLASS="COMMAND"
+>sndconfig</B
+> can help you configure
+          your sound card.
+        </P
+><P
+>	  To use <B
+CLASS="COMMAND"
+>sndconfig</B
+>, you must log in as root.
+	</P
+><P
+>	  Once you're root, open an Xterm and type <B
+CLASS="COMMAND"
+>sndconfig</B
+>
+	  at the prompt. This tool will help you configure your card for your
+	  Red Hat Linux system. To navigate through the <B
+CLASS="GUIBUTTON"
+>Yes</B
+>,
+	  <B
+CLASS="GUIBUTTON"
+>No</B
+> or <B
+CLASS="GUIBUTTON"
+>Cancel</B
+> buttons on
+	  the screens, just use your <B
+CLASS="KEYCAP"
+>Tab</B
+> and
+	  <B
+CLASS="KEYCAP"
+>Enter</B
+> keys.
+	</P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Is it supported?</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>While many sound cards are
+	  supported for Red Hat Linux, not all are completely compatible -- or
+	  compatible at all. If you're having trouble configuring your sound
+	  card, check the Hardware Compatibility List at Red Hat's website to
+	  see if your card is supported. You'll find the list at <A
+HREF="http://www.redhat.com/hardware/"
+TARGET="_top"
+>http://www.redhat.com/hardware</A
+>.</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	  With <B
+CLASS="COMMAND"
+>sndconfig</B
+>, you can probe your system
+	  for any cards. If the utility detects a plug and play sound card, it
+	  will automatically try to configure the correct settings by playing
+	  sound samples. If you can hear the samples, just
+	  select <B
+CLASS="GUIBUTTON"
+>Ok</B
+> when you're instructed and you're all
+	  set.
+	</P
+><P
+>	  If the probe doesn't find any cards, you'll be
+	  presented with a list from which you can pick your card. Use the up
+	  and down arrow keys to scroll through the list. If your card is
+	  listed, highlight it, then press <B
+CLASS="KEYCAP"
+>Enter</B
+> (or
+	  <B
+CLASS="KEYCAP"
+>Tab</B
+> to the <B
+CLASS="GUIBUTTON"
+>Ok</B
+> button and press
+	  <B
+CLASS="KEYCAP"
+>Enter</B
+>).
+	</P
+><P
+> Your next task will be to select the correct <I
+CLASS="FIRSTTERM"
+>I/O
+	  port</I
+>, <I
+CLASS="FIRSTTERM"
+>IRQ</I
+> and
+	  <I
+CLASS="FIRSTTERM"
+>DMA</I
+> settings. These settings depend on the
+	  jumper settings of the sound card. You can find information about
+	  these settings in your sound card documentation. If you share your
+	  machine with Windows, you can also find your sound card's settings in
+	  the <TT
+CLASS="GUILABEL"
+><B
+>Device Manager</B
+></TT
+> tab in the
+	  <TT
+CLASS="GUILABEL"
+><B
+>System</B
+></TT
+> section of your <TT
+CLASS="GUILABEL"
+><B
+>Control
+	  Panel</B
+></TT
+>.
+	</P
+><P
+>	Once you've selected the right settings for your card, you'll be
+	  presented with sound samples. If you hear the samples, select
+	  <B
+CLASS="GUIBUTTON"
+>OK</B
+>.
+	</P
+><P
+> 
+	You're done. After your card is configured, you'll return to the shell
+	  prompt. Just type <B
+CLASS="COMMAND"
+>exit</B
+> to close the window, then
+	log out of root and log back into your user account.
+	</P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-Q-AND-A-SOUND-A-ISAPNP"
+>If <B
+CLASS="COMMAND"
+>sndconfig</B
+> doesn't work</A
+></H3
+><P
+>	  
+	    When sndconfig doesn't work -- the sample doesn't play and you still
+	    don't have audio sounds -- there are alternatives, although they're
+	    not quite as simple as <B
+CLASS="COMMAND"
+>sndconfig</B
+>.
+	  </P
+><DIV
+CLASS="CAUTION"
+><P
+></P
+><TABLE
+CLASS="CAUTION"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/caution.gif"
+HSPACE="5"
+ALT="Caution"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Be careful!</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	      The following instructions are not recommended for complete
+	    novices. 
+	    </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	    First, you will need to know the values for your sound card. If you
+	    share you machine with Windows, you can find your settings in the
+	    <TT
+CLASS="GUILABEL"
+><B
+>Device Manager</B
+></TT
+> tab in the
+	    <TT
+CLASS="GUILABEL"
+><B
+>System</B
+></TT
+> section of your <TT
+CLASS="GUILABEL"
+><B
+>Control
+	    Panel</B
+></TT
+>. Under Linux, you must also check the following
+	    files to make certain that you don't have any devices using the
+	    sound card's resources:
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		  <TT
+CLASS="FILENAME"
+>/proc/pci</TT
+>
+		</P
+></LI
+><LI
+><P
+>		  <TT
+CLASS="FILENAME"
+>/proc/interrupts</TT
+>
+		</P
+></LI
+><LI
+><P
+>		  <TT
+CLASS="FILENAME"
+>/proc/ioports</TT
+>
+		</P
+></LI
+><LI
+><P
+>		  <TT
+CLASS="FILENAME"
+>/proc/dma</TT
+>
+		</P
+></LI
+></UL
+><P
+>	    If yours is not a plug and play card, you can manually edit your
+	    <TT
+CLASS="FILENAME"
+>/etc/conf.modules</TT
+> file to include the sound
+	    card module that it should use, for example:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>alias sound sb
+alias midi opl3
+options opl3 io=0x388
+options sb io=0x220 irq=7 dma=0,1 mpu_io=0x300
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>	    If you do have a plug and play card, the configuration is more
+	    complex, and may not work for all cards.
+	  </P
+><P
+>	    If you have already run <B
+CLASS="COMMAND"
+>sndconfig</B
+>, you should
+	    have the file <TT
+CLASS="FILENAME"
+>/etc/isapnp.conf</TT
+>.  When
+	    <B
+CLASS="COMMAND"
+>sndconfig</B
+> was run, the <TT
+CLASS="APPLICATION"
+>isapnp
+	    tools</TT
+> created this template file.  This file can be
+	    hand edited a text editor, such as <TT
+CLASS="APPLICATION"
+>pico</TT
+>.
+	  </P
+><P
+>	    To become a little more familiar with the breakdown of this file,
+	    take a look at the man page for it by typing:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>man isapnp.conf</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>	    There is also a great reference at the
+	    <TT
+CLASS="APPLICATION"
+>isapnptools</TT
+> homepage at <A
+HREF="http://www.roestock.demon.co.uk/isapnptools/"
+TARGET="_top"
+>http://www.roestock.demon.co.uk/isapnptools/</A
+>
+	  </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Using <B
+CLASS="COMMAND"
+>sndconfig</B
+></B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	      If you haven't run <B
+CLASS="COMMAND"
+>sndconfig</B
+>, issue the command
+	      (as root): <B
+CLASS="COMMAND"
+>/sbin/pnpdump &#62; /etc/isapnp.conf</B
+> to
+	      create the file <TT
+CLASS="FILENAME"
+>isapnp.conf</TT
+>, which you can
+	      edit.
+	    </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	    When you have created the file
+	    <TT
+CLASS="FILENAME"
+>/etc/isapnp.conf</TT
+>, open it with
+	    <TT
+CLASS="APPLICATION"
+>Pico</TT
+> by typing <B
+CLASS="COMMAND"
+>pico
+	    /etc/isapnp.conf</B
+> (note that you don't have to actually be
+	    in <TT
+CLASS="FILENAME"
+>/etc</TT
+> to edit the file).
+	  </P
+><P
+>	    For a little help in the layout of this file, the man page is an
+	    excellent guide to keep at hand for this.  Each device will have a
+	    section that starts with about 4 lines that gives information on
+	    what the device is:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+># Card 1: (serial identifier 6d ff ff ff ff f0 00 8c 0e)
+# Vendor Id CTL00f0, No Serial Number (-1), checksum 0x6D.
+# Version 1.0, Vendor version 1.0
+# ANSI string --&#62;Creative ViBRA16X PnP&#60;--
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>	    Look for the section containing the sound card device.  The lines in
+	    this section that you need to pay attention to are the lines within
+	    parentheses. These are the lines that need to be adjusted for your
+	    card's resources.
+	  </P
+><P
+>	    You make adjustments by <I
+CLASS="FIRSTTERM"
+>commenting</I
+> or
+	    <I
+CLASS="FIRSTTERM"
+>uncommenting</I
+> the beginning of the line,
+	    indicating that you want to use the resource specified on that
+	    line. (When you uncomment, you're making that line visible for use
+	    in the file; when you comment, it's invisible, for all intents and
+	    purposes.) Uncommenting is performed by removing the hash mark
+	    (<TT
+CLASS="COMPUTEROUTPUT"
+>#</TT
+>); to comment, just replace the
+	    hash mark. Once you have finished making these changes, look for the
+	    line towards the end of the file that says:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>&#13;# (ACT Y)
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>	    Remove the "<TT
+CLASS="COMPUTEROUTPUT"
+>#</TT
+>," save the changes,
+	    and exit from <TT
+CLASS="APPLICATION"
+>Pico</TT
+>.
+	  </P
+><P
+>	    After setting up the new configuration file, and saving it, you need to
+	    activate it. Just type:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>isapnp isapnp.conf
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>	    This will reinitialize the card with your newly changed values.  If
+	    the values that you select the first time don't work, you can edit
+	    the file until you find values that don't conflict.  Remember to
+	    activate the changes each time that you edit this file.
+	  </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-memory.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-removing.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Using All Available RAM</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-q-and-a.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Removing Red Hat Linux</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-sound.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+</HTML
+>

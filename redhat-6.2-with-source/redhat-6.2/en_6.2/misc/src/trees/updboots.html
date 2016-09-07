@@ -1,0 +1,105 @@
+#!/bin/sh
+
+export PATH=/sbin:$PATH
+q=--quiet
+
+KERNELROOT=/tmp/updboot.kernel-$$
+
+LIBS=""
+
+SBIN='../anaconda/loader/init 
+      ../anaconda/loader/loader-network 
+      ../anaconda/loader/loader-local 
+      ../anaconda/loader/loader-pcmcia'
+
+rm -rf initrd
+mkdir -p initrd/dev
+mkdir -p initrd/etc
+mkdir -p initrd/sbin
+
+cat > initrd/etc/passwd << EOF
+root::0:0:root:/:/bin/bash
+EOF
+
+# FIXME
+cp -a keymaps/keymaps.gz initrd/etc
+cp -a fonts.cgz initrd/etc
+cp -a ../anaconda/loader/loader.tr initrd/etc
+cp -a ../anaconda/lang-table initrd/etc
+
+mkdir -p initrd/etc/terminfo/l
+cp /usr/share/terminfo/l/linux initrd/etc/terminfo/l/linux
+
+for n in $SBIN; do
+    file=`eval echo $n`
+    strip $file
+    cp -f $file initrd/sbin
+done
+
+ln -s loader initrd/sbin/insmod
+ln -s loader initrd/sbin/rmmod
+ln -s loader initrd/sbin/modprobe
+
+ln -s /usr/bin/sh initrd/sbin/sh
+
+#mkdir -p initrd/usr/lib/rpm
+#rm -f initrd/usr/lib/rpm/rpmrc
+#cp -ar /usr/lib/rpm/rpmrc initrd/usr/lib/rpm/rpmrc
+
+ln -sf /sbin/init initrd/linuxrc
+
+rm -f initrd/etc/mtab
+ln -sf /proc/mounts initrd/etc/mtab
+
+mknod initrd/dev/console c 5 1
+chmod 600 initrd/dev/console
+
+mknod initrd/dev/ttyS0 c 4 64
+chmod 600 initrd/dev/ttyS0
+mknod initrd/dev/ttyS1 c 4 65
+chmod 600 initrd/dev/ttyS1
+mknod initrd/dev/ttyS2 c 4 66
+chmod 600 initrd/dev/ttyS2
+mknod initrd/dev/ttyS3 c 4 67
+chmod 600 initrd/dev/ttyS3
+mknod initrd/dev/psaux c 10 1
+chmod 644 initrd/dev/psaux
+
+mknod initrd/dev/null c 1 3
+chmod 666 initrd/dev/null
+
+mknod initrd/dev/zero c 1 5
+chmod 666 initrd/dev/zero
+
+# mkraid needs this
+mknod initrd/dev/md0 b 9 0
+chmod 644 initrd/dev/zero
+
+mknod initrd/dev/mem c 1 1
+chmod 600 initrd/dev/mem
+
+mknod initrd/dev/ram b 1 1
+chmod 640 initrd/dev/ram
+
+mknod initrd/dev/ptmx c 5 2
+chmod 666 initrd/dev/ptmx
+
+mkdir initrd/dev/pts
+
+for TTY in 0 1 2 3 4 5 6 7; do
+    mknod initrd/dev/tty$TTY c 4 $TTY
+    chmod 600 initrd/dev/tty$TTY
+    chown root:tty initrd/dev/tty$TTY
+done
+
+mkdir -p initrd/proc
+mkdir -p initrd/tmp
+mkdir -p initrd/lost+found
+ln -s sbin initrd/bin
+
+cat > initrd/.profile << EOF
+PATH=/bin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/mnt/sbin:/mnt/usr/sbin:/mnt/bin:/mnt/usr/bin
+export PATH
+EOF
+
+rm -rf $KERNELROOT

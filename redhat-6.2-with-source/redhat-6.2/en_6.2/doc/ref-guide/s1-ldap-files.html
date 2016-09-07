@@ -1,0 +1,356 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-ldap-files.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>OpenLDAP Files</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Lightweight Directory Access Protocol (LDAP)"
+HREF="ch-ldap.html"><LINK
+REL="PREVIOUS"
+TITLE="LDAP Terminology"
+HREF="s1-ldap-terminology.html"><LINK
+REL="NEXT"
+TITLE="OpenLDAP Daemons and Utilities"
+HREF="s1-ldap-daemonsutils.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-ldap-terminology.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 8. Lightweight Directory Access Protocol (LDAP)</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-ldap-daemonsutils.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-LDAP-FILES"
+><TT
+CLASS="APPLICATION"
+>OpenLDAP</TT
+> Files</A
+></H1
+><P
+>	OpenLDAP configuration files are installed into the
+	<TT
+CLASS="FILENAME"
+>/etc/openldap</TT
+> directory. If you do an
+	<B
+CLASS="COMMAND"
+>ls</B
+> on <TT
+CLASS="FILENAME"
+>/etc/openldap</TT
+>, you'll see
+	something like:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>$</TT
+> <B
+CLASS="COMMAND"
+>ls</B
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>ldap.conf        ldapsearchprefs.conf  slapd.at.conf  slapd.oc.conf
+ldapfilter.conf  ldaptemplates.conf    slapd.conf</TT
+>
+<TT
+CLASS="PROMPT"
+>$</TT
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	The files you should know about are <TT
+CLASS="FILENAME"
+>slapd.conf</TT
+>,
+	<TT
+CLASS="FILENAME"
+>slapd.at.conf</TT
+> and
+	<TT
+CLASS="FILENAME"
+>slapd.oc.conf</TT
+>. The <TT
+CLASS="FILENAME"
+>slapd.conf</TT
+>
+	file contains configuration information for the
+	<B
+CLASS="COMMAND"
+>slapd</B
+> daemon and for all of the database
+	back-ends.  You will need to make some changes to
+	<TT
+CLASS="FILENAME"
+>slapd.conf</TT
+> before you start the
+	<B
+CLASS="COMMAND"
+>slapd</B
+> daemon.
+      </P
+><P
+>	The <TT
+CLASS="FILENAME"
+>slapd.at.conf</TT
+> file holds <I
+CLASS="FIRSTTERM"
+>attribute
+	syntax definitions</I
+> for the LDAP directory. Attribute syntax
+	definitions describe the type of information that the attribute
+	provides. You have five choices:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	    bin -- binary information
+	  </P
+></LI
+><LI
+><P
+>	    ces -- case exact string (a string whose case matters)
+	  </P
+></LI
+><LI
+><P
+>	    cis -- case ignore string (a string whose case doesn't matter)
+	  </P
+></LI
+><LI
+><P
+>	    tel -- a telephone number (blank spaces and hyphens are ignored)
+	  </P
+></LI
+><LI
+><P
+>	    dn -- the distinguished name
+	  </P
+></LI
+></UL
+><P
+>	For example, here are attribute syntax definitions from a typical
+	<TT
+CLASS="FILENAME"
+>slapd.at.conf</TT
+>:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>attribute       photo                                   bin
+attribute       personalsignature                       bin
+attribute       jpegphoto                               bin
+attribute       audio                                   bin
+attribute       labeledurl                              ces
+attribute       ref                                     ces
+attribute       userpassword                            ces
+attribute       telephonenumber                         tel</TT
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	Certain LDAP-enabled applications may require that you edit the
+	<TT
+CLASS="FILENAME"
+>slapd.at.conf</TT
+> file, usually to add particular
+	attribute syntax definitions.
+      </P
+><P
+>	The <TT
+CLASS="FILENAME"
+>slapd.oc.conf</TT
+> file includes the
+	<I
+CLASS="FIRSTTERM"
+>objectclass definitions</I
+> for an LDAP
+	directory. The objectclass definitions state which attributes are
+	required and which attributes are optional for particular objectclasses.
+      </P
+><P
+>	The following excerpt from a typical <TT
+CLASS="FILENAME"
+>slapd.oc.conf</TT
+>
+	file contains the objectclass definitions for the top, alias, and
+	referral objectclasses:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>objectclass top
+        requires
+                objectClass
+
+objectclass alias
+        requires
+                aliasedObjectName,
+                objectClass
+
+objectclass referral
+        requires
+                ref,
+                objectClass</TT
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	You may need to edit the objectclass definitions in your
+	<TT
+CLASS="FILENAME"
+>slapd.oc.conf</TT
+>, depending upon how you're going to
+	use your LDAP directory.  For example, if you're creating an LDAP
+	directory of employees for use in your organization, you'll probably
+	have specific required attributes for certain objectclasses that might
+	not be used outside the organization (e.g., an employee ID number
+	internal to your organization might be a required attribute for an
+	objectclass of "person").
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-ldap-terminology.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-ldap-daemonsutils.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>LDAP Terminology</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-ldap.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><TT
+CLASS="APPLICATION"
+>OpenLDAP</TT
+> Daemons and Utilities</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-ldap-files.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

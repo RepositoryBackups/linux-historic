@@ -1,0 +1,491 @@
+#!/bin/bash
+
+ORIGDIR=`pwd`
+
+if [ -z "$1" -o ! -d "$1" ]; then
+	echo "$0: updates instimage from a Red Hat RPMS directory"
+	echo "usage: $0 <dir>"
+	exit 1
+fi
+
+ARCH=`uname -m | sed -e 's/i.86/i386/'`
+
+if [ "$ARCH" = sparc64 ]; then
+	exec sparc32 $0 $*
+fi
+
+HOMEDIR=`pwd`
+echo HOMEDIR $HOMEDIR
+
+# remove all non unused python files
+pythondeps() {
+        DIR=$1
+
+	mkdir -p $DIR/proc
+	mount -t proc /proc $DIR/proc
+        if [ $ARCH = "sparc" ]; then
+	    mkdir $DIR/dev
+	    mknod $DIR/dev/openprom c 10 139
+	fi
+	(chroot $DIR /usr/bin/anaconda -m dir://mnt/source --test --text --traceonly; \
+	cd $DIR; find usr/lib/python* usr/lib/anaconda -type f | sed 's,^,/,' ) | \
+        sort | uniq -u | sed s,^,./, | while read fn; do
+  	    [ ! -d $DIR/$fn ] && rm $DIR/$fn
+  	done
+	umount $DIR/proc
+	rmdir $DIR/proc
+	rm -rf $DIR/dev
+}
+
+SRC=$1/RedHat/RPMS
+
+mkdir -p ../trees/hdimage
+cd ../trees/hdimage
+DEST=$PWD
+cd -
+
+mkdir -p ../../../RedHat/instimage
+cd ../../../RedHat/instimage
+DESTGR=$PWD
+cd -
+
+echo "DEST is $DEST"
+echo "DESTGR is $DESTGR"
+
+PACKAGES="glibc-2 ldconfig setup e2fsprogs-1 XFree86-libs XFree86-SVGA
+          XFree86-S3 XFree86-S3V XFree86-Mach32 XFree86-Mach64
+          XFree86-FBDev XFree86-I128 XFree86-3DLabs XFree86-VGA16
+          XFree86-Sun XFree86-TGA XFree86-75dpi-fonts
+          XFree86-100dpi-fonts XFree86-ISO8859-2 XFree86-ISO8859-9
+          XFree86-cyrillic-fonts XFree86-3.  xpm-3 glib- gtk+-
+          gnome-libs python-1 newt imlib-1 libpng libtiff libjpeg-
+          libtermcap-2 zlib rpm rpm-devel rpm-python ash- bash- pygtk-
+          pygnome- util-linux procps esound-0 audiofile-0
+          kernel-pcmcia-cs Xconfigurator raidtools- locale-ja open-
+          cpio- tar- fileutils- net-tools- grep- sed- mt-st- gzip-
+          iputils- traceroute- sh-utils- textutils- pine- less- rsh-
+          ncurses- popt mtools- ftp- readline- mount- modutils-
+          specspo"
+
+KEEPFILE=/tmp/keepfile.$$
+cat > $KEEPFILE <<EOF
+sbin/ldconfig
+sbin/clock
+sbin/hwclock
+sbin/mkfs.ext2
+sbin/mke2fs
+sbin/mkswap
+sbin/probe
+sbin/fdisk
+sbin/mkraid
+etc/nsswitch.conf
+lib/ld-*
+lib/libc*
+lib/libm*
+lib/libcrypt*
+lib/libdl*
+lib/libdb.so.2
+lib/libdb1*
+lib/libnsl*
+lib/libnss_files*
+lib/libnss_dns*
+lib/libpthread*
+lib/libresolv*
+usr/lib/libpopt*
+etc/group
+etc/passwd
+etc/protocols
+etc/services
+usr/bin/python*
+usr/lib/python*
+usr/lib/libnewt*
+lib/libtermcap*
+usr/lib/libz.*
+usr/lib/rpm/rpmpopt
+usr/lib/rpm/macros
+usr/lib/rpm/rpmrc
+usr/lib/librpm.so*
+bin/ash
+bin/mkfs*
+bin/fdisk*
+sbin/badblocks
+lib/libcom_err*
+lib/libe2p*
+lib/libext2fs*
+lib/libss*
+lib/libuuid*
+usr/X11R6/lib/X11/Cards
+usr/X11R6/share/Xconfigurator/MonitorsDB
+EOF
+
+KEEPFILEGR=/tmp/keepfilegr.$$
+cp $KEEPFILE $KEEPFILEGR
+cat >> $KEEPFILEGR <<EOF
+bin/bash
+bin/cat
+bin/chmod
+bin/cp
+bin/cpio
+bin/dd
+bin/df
+bin/du
+bin/grep
+bin/gunzip
+bin/gzip
+bin/ln
+bin/ls
+bin/mkdir
+bin/mt
+bin/mv
+bin/ping
+bin/ps
+bin/rm
+bin/sed
+bin/sync
+bin/tar
+bin/touch
+bin/umount
+bin/zcat
+sbin/e2fsck
+sbin/fsck
+sbin/fsck.ext2
+sbin/ifconfig
+sbin/modprobe
+sbin/depmod
+sbin/lsmod
+sbin/insmod
+sbin/rmmod
+sbin/route
+lib/libproc*
+lib/libutil*
+lib/libnss_dns*
+bin/rpm
+usr/lib/rpm/rpmpopt
+etc/im_palette.pal
+etc/imrc
+usr/lib/libesd*
+usr/lib/libaudio*
+usr/lib/libImlib*
+usr/lib/gdkimlib*
+usr/lib/libimlib-pnm*
+usr/lib/libimlib-xpm*
+usr/lib/libimlib-png*
+usr/lib/libncurses*
+usr/lib/libpng*
+usr/lib/libtiff*
+usr/lib/libjpeg*
+usr/lib/libzvt*
+usr/sbin/gnome-pty-helper
+usr/X11R6/lib/libICE*
+usr/X11R6/lib/libSM*
+usr/X11R6/lib/libX11*
+usr/X11R6/lib/libXi*
+usr/X11R6/lib/libXext*
+usr/X11R6/bin/setxkbmap
+usr/X11R6/bin/XF86_3DLabs
+usr/X11R6/bin/XF86_I128
+usr/X11R6/bin/XF86_FBDev
+usr/X11R6/bin/XF86_Mach32
+usr/X11R6/bin/XF86_Mach64
+usr/X11R6/bin/XF86_SVGA
+usr/X11R6/bin/XF86_S3
+usr/X11R6/bin/XF86_S3V
+usr/X11R6/bin/XF86_VGA16
+usr/X11R6/bin/XF86_TGA
+usr/X11R6/bin/XsunMono
+usr/X11R6/bin/Xsun
+usr/X11R6/bin/Xsun24
+usr/X11R6/bin/Xtest
+usr/X11R6/lib/X11/fonts/75dpi/cour*
+usr/X11R6/lib/X11/fonts/75dpi/helv*
+usr/X11R6/lib/X11/fonts/75dpi/tim*
+usr/X11R6/lib/X11/fonts/75dpi/fonts*
+usr/X11R6/lib/X11/fonts/misc/6x*
+usr/X11R6/lib/X11/fonts/misc/7x*
+usr/X11R6/lib/X11/fonts/misc/8x*
+usr/X11R6/lib/X11/fonts/misc/9x*
+usr/X11R6/lib/X11/fonts/misc/12x*
+usr/X11R6/lib/X11/fonts/misc/jis*
+usr/X11R6/lib/X11/fonts/misc/k14*
+usr/X11R6/lib/X11/fonts/misc/fonts*
+usr/X11R6/lib/X11/fonts/misc/cursor*
+usr/X11R6/lib/X11/fonts/misc/olcursor*
+usr/X11R6/lib/X11/fonts/cyrillic/*
+usr/X11R6/lib/X11/xserver/SecurityPolicy
+usr/share/fonts/ISO8859-2/75dpi/cour*
+usr/share/fonts/ISO8859-2/75dpi/helv*
+usr/share/fonts/ISO8859-2/75dpi/tim*
+usr/share/fonts/ISO8859-2/75dpi/fonts*
+usr/share/fonts/ISO8859-2/misc/6x*
+usr/share/fonts/ISO8859-2/misc/9x*
+usr/share/fonts/ISO8859-2/misc/fonts*
+usr/share/fonts/ISO8859-9/75dpi/tr*cour*
+usr/share/fonts/ISO8859-9/75dpi/tr*helv*
+usr/share/fonts/ISO8859-9/75dpi/tr*tim*
+usr/share/fonts/ISO8859-9/75dpi/fonts*
+usr/share/fonts/ISO8859-9/misc/tr*6x*
+usr/share/fonts/ISO8859-9/misc/tr*9x*
+usr/share/fonts/ISO8859-9/misc/fonts*
+usr/X11R6/lib/X11/locale/*
+usr/X11R6/lib/X11/xkb/*
+usr/X11R6/lib/X11/rgb*
+usr/X11R6/lib/X11/XKeysymDB
+usr/X11R6/lib/libXpm*
+usr/lib/libglib*
+usr/lib/libthread*
+etc/gtk/gtkrc*
+usr/lib/gconv/*
+usr/lib/libgtk*
+usr/lib/libgdk*
+usr/lib/libart*
+usr/lib/libgnome*
+usr/lib/libgmodule*
+usr/lib/libgthread*
+usr/lib/libgnomesupport*
+usr/lib/libgnomeui*
+usr/lib/libgnorba*
+usr/lib/libgnorbagtk*
+usr/lib/libgtkxmhtml*
+usr/lib/libreadline*
+usr/share/pixmaps/gnome-default-dlg.png
+usr/share/pixmaps/gnome-error.png
+usr/share/pixmaps/gnome-info.png
+usr/share/pixmaps/gnome-question.png
+usr/share/pixmaps/gnome-warning.png
+usr/share/pixmaps/no.xpm
+usr/share/pixmaps/yes.xpm
+usr/share/terminfo/l/linux
+usr/share/zoneinfo/zone.tab
+usr/share/locale/*
+usr/bin/chattr*
+usr/bin/lsattr*
+usr/bin/ftp
+usr/bin/head
+usr/bin/less
+usr/bin/mattrib
+usr/bin/mbadblocks
+usr/bin/mcd
+usr/bin/mcopy
+usr/bin/mdel
+usr/bin/mdeltree
+usr/bin/mdir
+usr/bin/mdu
+usr/bin/mformat
+usr/bin/minfo
+usr/bin/mlabel
+usr/bin/mmd
+usr/bin/mmount
+usr/bin/mpartition
+usr/bin/mrd
+usr/bin/mread
+usr/bin/mmove
+usr/bin/mren
+usr/bin/mshowfat
+usr/bin/mtools
+usr/bin/mtype
+usr/bin/mwrite
+usr/bin/mzip
+usr/bin/open
+usr/bin/pico
+usr/bin/rcp
+usr/bin/rlogin
+usr/bin/rsh
+usr/bin/tail
+usr/bin/tac
+usr/bin/uniq
+usr/sbin/chroot
+usr/sbin/traceroute
+EOF
+
+TIMEZONES="
+usr/share/zoneinfo/US
+usr/share/zoneinfo/Europe
+usr/share/zoneinfo/Japan
+"
+
+# sparc needs 100dpi fonts as well, otherwise
+# things look ugly
+
+if [ $ARCH = sparc ]; then
+    cat >> $KEEPFILEGR <<-EOF
+usr/X11R6/lib/X11/fonts/100dpi/cour*
+usr/X11R6/lib/X11/fonts/100dpi/helv*
+usr/X11R6/lib/X11/fonts/100dpi/tim*
+usr/X11R6/lib/X11/fonts/100dpi/fonts*
+usr/share/fonts/ISO8859-2/100dpi/cour*
+usr/share/fonts/ISO8859-2/100dpi/helv*
+usr/share/fonts/ISO8859-2/100dpi/tim*
+usr/share/fonts/ISO8859-2/100dpi/fonts*
+EOF
+fi
+
+for I in $PACKAGES; do
+    for J in `ls $SRC/$I* 2> /dev/null`; do
+	if [ "$I" != "rpm-devel" ]; then
+            if ! echo $J | egrep "(devel|sparcv9)" > /dev/null; then
+	        RPMS="$RPMS $J"
+            fi
+        else
+                RPMS="$RPMS $J"
+	fi
+    done
+done
+
+rm -rf $DEST; mkdir -p $DEST/usr/sbin
+rm -rf $DESTGR; mkdir -p $DESTGR/usr/sbin
+
+for n in $RPMS; do 
+    echo "expanding $n"
+    if [ $(rpm -qp --qf '%{NAME}' $n) = "glibc" ] ; then
+	GLIBC=$n
+    fi 
+    rpm2cpio $n | (cd $DEST; cpio -E $KEEPFILE --quiet -iumd)
+    rpm2cpio $n | (cd $DESTGR; cpio -E $KEEPFILEGR --quiet -iumd)
+done
+
+echo "retrieving timezones"
+TZDIR=/tmp/glibc-timezone-$$
+mkdir -p $TZDIR/usr/share/zoneinfo
+rpm2cpio $GLIBC | (cd $TZDIR; cpio --quiet -iumd usr/share/zoneinfo usr/share/zoneinfo/*)
+(cd $TZDIR; tar cSpf - $TIMEZONES) | (cd $DEST; tar xSpf -)
+(cd $TZDIR; tar cSpf - $TIMEZONES) | (cd $DESTGR; tar xSpf -)
+rm -rf $TZDIR
+
+# XXX kludge, fix me
+rm -f $DEST/usr/lib/python1.5/site-packages/rpmmodule.so
+rm -f $DESTGR/usr/lib/python1.5/site-packages/rpmmodule.so
+
+if [ $ARCH = sparc ]; then
+    rm -f $DESTGR/usr/X11R6/bin/XF86_VGA16
+fi
+
+for I in $DESTGR/usr/X11R6/lib/X11/fonts/* $DESTGR/usr/share/fonts/ISO8859-2/* $DESTGR/usr/share/fonts/ISO8859-9/*; do
+    mkfontdir $I
+done
+
+rm -f $KEEPFILE $KEEPFILEGR
+
+make install-hd DESTDIR=$DEST > /dev/null
+rm -rf $DEST/usr/share/locale
+make install DESTDIR=$DESTGR > /dev/null
+
+for p in $DESTGR $DEST; do
+	rm -f $p/usr/lib/anaconda/lang-table
+	ln -s ../lib/anaconda/raidstart-stub $p/usr/bin/raidstart
+	ln -s ../lib/anaconda/raidstop-stub $p/usr/bin/raidstop
+
+	find $p -type d | xargs chmod 755
+
+	if [ -f $p/bin/bash ]; then
+	    rm -f $p/bin/ash
+	    ln -s bash $p/bin/sh
+	else
+	    ln -s ash $p/bin/sh
+	fi
+
+	(cd $p/bin; find) | (cd $p/bin; cpio --quiet -pdmu $p/usr/bin)
+	(cd $p/sbin; find) | (cd $p/sbin; cpio --quiet -pdmu $p/usr/sbin)
+	rm -rf $p/bin
+	rm -rf $p/sbin
+
+	rm -rf $p/boot $p/home $p/root $p/tmp
+
+	# Must create ld.so.conf, because ldconfig does not cache
+	# dirs specified on the command line.
+	touch $p/etc/ld.so.conf
+	[ -d $p/usr/X11R6/lib ] && echo /usr/X11R6/lib > $p/etc/ld.so.conf
+	(cd $p; chroot $p usr/sbin/ldconfig )
+	rm -f $p/usr/sbin/ldconfig $p/etc/ld.so.conf
+
+	for l in `find $p -exec file {} \; | sed -n 's/^\([^:]*\):.*ELF.*$/\1/p'`; do
+	    strip $l -R .comment -R .note `objdump -h $l | \
+		sed -n 's/^.*\(\.gnu\.warning\.[^ ]*\) .*$/-R \1/p'`
+	done
+	find $p -name "*.a" | xargs rm -rf
+
+	(cd /usr/share/zoneinfo; find . -type f -or -type l | 
+		grep '^./[A-Z]' | sort | sed 's/^..//' | 
+		gzip -9) > $p/usr/lib/timezones.gz
+
+	if [ -d $p/usr/share/locale ]; then
+	    for i in `find $p/usr/share/locale -name anaconda.mo`; do
+		gzip -9 $i
+		mv -f $i.gz $i
+	    done
+	fi
+done
+
+# always use passive mode for ftp installs
+cd $DEST/usr/lib/python1.5
+patch -p0 <<EOF
+--- ./urllib.py.pasv	Sun Sep 26 16:45:24 1999
++++ ./urllib.py	Sun Sep 26 16:47:56 1999
+@@ -563,6 +563,7 @@
+         self.ftp = ftplib.FTP()
+         self.ftp.connect(self.host, self.port)
+         self.ftp.login(self.user, self.passwd)
++	self.ftp.set_pasv (1)
+         for dir in self.dirs:
+             self.ftp.cwd(dir)
+     def retrfile(self, file, type):
+
+EOF
+
+pythondeps $DEST
+
+for p in $DEST $DESTGR; do
+	find $p -name "*.py" | while read fn; do
+	    if [ -f ${fn}c ]; then
+		rm -f ${fn}c
+	    fi
+	    if [ -f ${fn}o ]; then
+		rm -f ${fn}o
+	    fi
+	    if [ $p = $DEST ]; then
+		ln -sf /dev/null ${fn}c
+	    fi
+	done
+done
+
+# Xserver needs a place to put the compiled xkb maps.
+rm -rf $DESTGR/usr/X11R6/lib/X11/xkb/compiled
+ln -s /tmp $DESTGR/usr/X11R6/lib/X11/xkb/compiled
+
+# this is only for the minimal second stage
+
+	cd $DEST/usr/lib
+	find python1.5 | cpio --quiet -H crc -o | gzip -9 > python1.5.cgz
+	rm -rf python1.5
+
+	find anaconda | cpio --quiet -H crc -o | gzip -9 > anaconda.cgz
+	rm -rf anaconda
+
+	ls libnewt* libslang* | cpio --quiet -H crc -o | 
+		gzip -9 > slang-newt.cgz
+	rm -f libnewt* libslang*
+
+	cd $DEST/usr/bin
+	echo python1.5 | cpio --quiet -H crc -o | gzip -9 > python1.5.cgz
+	rm -f python python1.5
+	ln -s python1.5 python
+	mv anaconda anaconda.real
+
+	cd $DEST/lib
+	ls    libcom* libcrypt* libdl* libe2p* libext2* libm* libnss* libnsl* \
+	      libpthread* libss* libtermcap* libuuid* \
+			| cpio --quiet -H crc -o | gzip -9 > libs.cgz
+	rm -f libcom* libcrypt* libdl* libe2p* libext2* libm* libnss* libnsl* \
+	      libpthread* libss* libtermcap* libuuid*
+
+	cd $DEST/usr
+	find X11R6 | cpio --quiet -H crc -o | gzip -9 > X11R6.cgz
+	rm -rf X11R6
+
+	cd $DEST/usr/sbin
+	ls [a-r]* | cpio --quiet -H crc -o | gzip -9 > sbin.cgz
+	rm -f [a-r]*
+
+	cp -a $HOMEDIR/anaconda-stub $DEST/usr/bin/anaconda
+
+cd $ORIGDIR
+utils/checkcards.py $DESTGR/usr/share/kudzu/pcitable $DESTGR/usr/X11R6/lib/X11/Cards

@@ -1,0 +1,523 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-windows.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:33 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Accessing a Windows Partition</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Q  A: Quick Answers to Common Questions"
+HREF="ch-q-and-a.html"><LINK
+REL="PREVIOUS"
+TITLE="Starting Applications"
+HREF="s1-q-and-a-starting.html"><LINK
+REL="NEXT"
+TITLE="Find Some Commands Fast"
+HREF="s1-q-and-a-history.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-starting.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 15. Q &#38; A: Quick Answers to Common Questions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-history.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-Q-AND-A-WINDOWS"
+>Accessing a Windows Partition</A
+></H1
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-WINDOWS-Q"
+>Q: How Do I Access My Windows Partition?</A
+></H2
+><P
+>          I've got a dual-boot system with Red Hat Linux and Windows 98. Is there a way
+          I can gain access to my Windows partition while I'm running Linux?
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-WINDOWS-A"
+>A: Two Ways to Access Windows Partition.</A
+></H2
+><P
+>          You can gain access to another partition on your system -- for
+          example, a Windows partition -- in a couple ways.
+	</P
+><P
+>	  First, let's assume that your Windows partition is on your first IDE
+	  hard drive, in the first partition
+	  (<TT
+CLASS="FILENAME"
+>/dev/hda1</TT
+>).
+	</P
+><P
+>          Open an Xterm window. If you're in your user account,
+          <B
+CLASS="COMMAND"
+>su</B
+> to root by typing
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="USERINPUT"
+><B
+>su</B
+></TT
+>
+<TT
+CLASS="PROMPT"
+>Password:</TT
+><TT
+CLASS="USERINPUT"
+><B
+><TT
+CLASS="REPLACEABLE"
+><I
+>yourrootpassword</I
+></TT
+></B
+></TT
+>
+	      </PRE
+></TD
+></TR
+></TABLE
+><P
+>          Now, create a <I
+CLASS="FIRSTTERM"
+>mount point</I
+> to hold the data of
+          your Windows partition, by typing
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="USERINPUT"
+><B
+>mkdir /mnt/vfat</B
+></TT
+>
+	      </PRE
+></TD
+></TR
+></TABLE
+><P
+>To access the partition, as root in an Xterm, type the following:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>mount -t vfat /dev/hda1 /mnt/vfat</B
+>
+	      </PRE
+></TD
+></TR
+></TABLE
+><P
+>          Another method of mounting a Windows partition is by entering the
+          correct fields in the file <TT
+CLASS="FILENAME"
+>/etc/fstab</TT
+>. One of the
+          easiest ways to enter these fields is through
+          <TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+>.
+        </P
+><P
+>          Open an Xterm window. If you're in your user account,
+          <B
+CLASS="COMMAND"
+>su</B
+> to root, following the above example.
+	</P
+><P
+>          Now, create a mount point for your Windows partition, by typing
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="USERINPUT"
+><B
+>mkdir /mnt/vfat</B
+></TT
+>
+	      </PRE
+></TD
+></TR
+></TABLE
+><P
+>          Next, while you're still root, start
+          <TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+> by typing
+          <B
+CLASS="COMMAND"
+>linuxconf</B
+> at the prompt.
+        </P
+><P
+>          Scroll down in the "tree view," or left panel of
+          <TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+>, to the entry marked
+          <B
+CLASS="GUIMENUITEM"
+>File Systems</B
+>, and click on the
+          <B
+CLASS="GUIICON"
+>+</B
+> to expand the tree.
+        </P
+><P
+>          Now, click on the entry <B
+CLASS="GUIMENUITEM"
+>Access local
+            drive</B
+>. In the right panel, you'll see a list of the
+            currently mounted filesystems. (Your new mount point isn't there
+            because you haven't added it yet. That's coming up&#8230;)
+        </P
+><P
+>          Click on the <B
+CLASS="GUIBUTTON"
+>Add</B
+> button. A tab, marked
+          <TT
+CLASS="GUILABEL"
+><B
+>Volume specification</B
+></TT
+> will appear. In the first
+          tabbed entry, called <TT
+CLASS="GUILABEL"
+><B
+>Base</B
+></TT
+>, you'll be presented
+          with a series of boxes to fill out, either by typing or by selecting
+          from a drop-down list. Here's what the boxes represent:
+        </P
+><BLOCKQUOTE
+><P
+>            <TT
+CLASS="GUILABEL"
+><B
+>Partition</B
+></TT
+>: The physical location of your
+            Windows partition (for example, <TT
+CLASS="FILENAME"
+>/dev/hda1</TT
+> for
+            the first partition on the first hard drive);
+	      </P
+><P
+>            <TT
+CLASS="GUILABEL"
+><B
+>Type</B
+></TT
+>: The filesystem type. A Windows 98
+            partition, for example, would be <TT
+CLASS="FILENAME"
+>vfat</TT
+>;
+	      </P
+><P
+>            <TT
+CLASS="GUILABEL"
+><B
+>Mount point</B
+></TT
+>: The name of the mount point you'd
+            chosen earlier (for example <TT
+CLASS="FILENAME"
+>/mnt/vfat</TT
+>).
+	      </P
+></BLOCKQUOTE
+><P
+>          There are a few other options, as well, from various tabbed windows;
+          these concern setting permissions for allowing users to access the
+          partition, choosing whether to <I
+CLASS="EMPHASIS"
+>prevent</I
+> the
+          partition from being mounted at boot time, and other choices. Some
+          options to pay particular attention to include:
+        </P
+><BLOCKQUOTE
+><P
+>            <TT
+CLASS="GUILABEL"
+><B
+>Dos options</B
+></TT
+>: Both <TT
+CLASS="GUILABEL"
+><B
+>default user
+            id</B
+></TT
+> and <TT
+CLASS="GUILABEL"
+><B
+>default group id</B
+></TT
+> should be
+            set to your user account if you want to be able to access while
+            you're logged in as user (rather than having to
+            <B
+CLASS="COMMAND"
+>su</B
+> to root, which is the default mode);
+            <TT
+CLASS="GUILABEL"
+><B
+>translation mode</B
+></TT
+> should be set to
+            <TT
+CLASS="GUILABEL"
+><B
+>auto</B
+></TT
+> for most purposes, rather than specify
+            either <TT
+CLASS="GUILABEL"
+><B
+>text</B
+></TT
+> or <TT
+CLASS="GUILABEL"
+><B
+>binary</B
+></TT
+>;
+            <TT
+CLASS="GUILABEL"
+><B
+>default permission</B
+></TT
+> specifies whether those with
+            access to the partition can read, write to and/or execute files and
+            directories on the partition. You might select a setting of
+            <TT
+CLASS="USERINPUT"
+><B
+>755</B
+></TT
+>, which allows read, write and execute for
+            the user, and read and execute permissions to the group and others.
+	      </P
+><P
+>            <TT
+CLASS="GUILABEL"
+><B
+>Options</B
+></TT
+>: Unless you specify not to mount the
+            partition when you boot your system (<TT
+CLASS="GUILABEL"
+><B
+>Not mount at boot
+            time</B
+></TT
+>), it isn't necessary to select the <TT
+CLASS="GUILABEL"
+><B
+>User
+            mountable</B
+></TT
+> option in this tab.
+	      </P
+></BLOCKQUOTE
+><P
+>          Make your selections -- if you become stuck, choose the
+          <B
+CLASS="GUIBUTTON"
+>Help</B
+> button for additional pointers.
+        </P
+><P
+>          When you're finished, select the <B
+CLASS="GUIBUTTON"
+>Mount</B
+> button
+          to check your new partition. You should see verification that the
+          partition has been successfully mounted.
+        </P
+><P
+>          Now, click on the <B
+CLASS="GUIBUTTON"
+>Accept</B
+> button. Your new
+          filesystem will be added to <TT
+CLASS="FILENAME"
+>/etc/fstab</TT
+>.
+        </P
+><P
+>          To access the partition now, type <B
+CLASS="COMMAND"
+>cd /mnt/vfat</B
+>, and
+          to navigate through Windows 98's "long filename" directories, surround
+          the directory in quotation marks, as in <B
+CLASS="COMMAND"
+>ls "Program
+          Files"</B
+>.
+        </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-starting.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-history.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Starting Applications</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-q-and-a.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Find Some Commands Fast</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-windows.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:33 GMT -->
+</HTML
+>

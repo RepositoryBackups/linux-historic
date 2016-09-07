@@ -1,0 +1,74 @@
+Name: anaconda
+Version: @@VERSION@@
+Release: 1
+Copyright: GPL
+Summary: The Red Hat Linux installer.
+Group: Applications/System
+Source: anaconda-%{PACKAGE_VERSION}.tar.gz
+Obsoletes: anaconda-reconfig
+Prereq: chkconfig
+Requires: rpm-python
+
+BuildRoot: /var/tmp/anaconda-%{PACKAGE_VERSION}
+
+%description
+The anaconda package contains the Red Hat Linux installer.
+
+%prep
+
+%setup -q
+
+%build
+make RPM_OPT_FLAGS="$RPM_OPT_FLAGS"
+
+%install
+rm -rf $RPM_BUILD_ROOT
+make RECFGDESTDIR=$RPM_BUILD_ROOT install-reconfig
+#strip $RPM_BUILD_ROOT/usr/sbin/ddcprobe
+
+strip $RPM_BUILD_ROOT/usr/lib/anaconda/*.so
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%post
+chkconfig --add reconfig
+
+%preun
+if [ $1 = 0 ]; then
+	chkconfig --del reconfig
+fi
+
+%files
+%defattr(-,root,root)
+%doc COPYING
+/usr/sbin/anaconda
+#/usr/sbin/ddcprobe
+/usr/share/anaconda/*
+/usr/share/locale/*/*/*
+/usr/lib/anaconda/*
+
+%config /etc/rc.d/init.d/reconfig
+
+%define date    %(echo `LC_ALL="C" date +"%a %b %d %Y"`)
+
+%changelog
+* %{date} Cristian Gafton <gafton@redhat.com>
+- built new version from CVS
+
+* Thu Feb 03 2000 Michael Fulbright <drmike@redhat.com>
+- strip files
+- add lang-table to file list
+
+* Wed Jan 05 2000 Michael Fulbright <drmike@redhat.com>
+- added requirement for rpm-python
+
+* Mon Dec 06 1999 Michael Fulbright <drmike@redhat.com>
+- rename to 'anaconda' instead of 'anaconda-reconfig'
+
+* Fri Dec 03 1999 Michael Fulbright <drmike@redhat.com>
+- remove ddcprobe since we don't do X configuration in reconfig now
+
+* Tue Nov 30 1999 Michael Fulbright <drmike@redhat.com>
+- first try at packaging reconfiguration tool
+

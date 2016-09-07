@@ -1,0 +1,372 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-sysadmin-sendmail.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Sendmail</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="System Administration"
+HREF="ch-sysadmin.html"><LINK
+REL="PREVIOUS"
+TITLE="Building a Custom Kernel"
+HREF="s1-sysadmin-build-kernel.html"><LINK
+REL="NEXT"
+TITLE="Controlling Access to Services"
+HREF="s1-sysadmin-access.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-sysadmin-build-kernel.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 2. System Administration</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-sysadmin-access.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-SYSADMIN-SENDMAIL"
+>Sendmail</A
+></H1
+><P
+>        A default <TT
+CLASS="FILENAME"
+>sendmail.cf</TT
+> file will be installed in
+        <TT
+CLASS="FILENAME"
+>/etc</TT
+>.  The default configuration should work for
+        most SMTP-only sites (Simple Mail Transfer Protocol) .  It will
+        <I
+CLASS="EMPHASIS"
+>not</I
+> work for UUCP (Unix to UNIX Copy Protocol)
+        sites; you will need to generate a new <TT
+CLASS="FILENAME"
+>sendmail.cf</TT
+>
+        if you must use UUCP mail transfers.
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  Although SMTP servers are supported automatically,
+	  <I
+CLASS="FIRSTTERM"
+>IMAP</I
+> (Internet Message Access Protocol) servers
+	  are not. If your ISP uses an IMAP server rather than an SMTP sever,
+	  you must install the IMAP package.  Without it, your system won't know
+	  how to pass information to the IMAP server or retrieve your mail.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>        To generate a new <TT
+CLASS="FILENAME"
+>sendmail.cf</TT
+>, you will need to
+        install <TT
+CLASS="FILENAME"
+>m4</TT
+> and the <TT
+CLASS="FILENAME"
+>sendmail</TT
+>
+        source package.  Read the <TT
+CLASS="FILENAME"
+>README</TT
+> file in the
+        <TT
+CLASS="APPLICATION"
+>sendmail</TT
+> sources for more details on creating
+        <TT
+CLASS="APPLICATION"
+>sendmail</TT
+> configuration files.  Also, O'Reilly
+        &#38; Associates publishes a good <TT
+CLASS="APPLICATION"
+>sendmail</TT
+>
+        reference entitled <I
+CLASS="CITETITLE"
+>sendmail</I
+>, by Bryan Costales.
+      </P
+><P
+>        One common <TT
+CLASS="APPLICATION"
+>sendmail</TT
+> configuration is to have
+        a single machine act as a mail gateway for all the machines on your
+        network.  For instance, at Red Hat we have a machine
+        <TT
+CLASS="FILENAME"
+>mail.redhat.com</TT
+> that does all our mail.  On that
+        machine we simply need to add the names of machines for which
+        mail.redhat.com will handle mail to
+        <TT
+CLASS="FILENAME"
+>/etc/sendmail.cw</TT
+>.  Here is an example:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+># sendmail.cw - include all aliases for your machine
+# here.
+torgo.redhat.com
+poodle.redhat.com
+devel.redhat.com</TT
+>
+      </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Then on the other machines, <TT
+CLASS="FILENAME"
+>torgo</TT
+>,
+        <TT
+CLASS="FILENAME"
+>poodle</TT
+>, and <TT
+CLASS="FILENAME"
+>devel</TT
+>, we need to
+        edit <TT
+CLASS="FILENAME"
+>/etc/sendmail.cf</TT
+> to "masquerade" as
+        <TT
+CLASS="FILENAME"
+>mail.redhat.com</TT
+> when sending mail, and to forward
+        any local mail processing to <TT
+CLASS="FILENAME"
+>redhat.com</TT
+>.  Find the
+        <B
+CLASS="COMMAND"
+>DH</B
+> and <B
+CLASS="COMMAND"
+>DM</B
+> lines in
+        <TT
+CLASS="FILENAME"
+>/etc/sendmail.cf</TT
+> and edit them as such:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+># who I send unqualified names to
+# (null means deliver locally)
+DRmail.redhat.com
+      
+# who gets all local email traffic 
+DHmail.redhat.com
+      
+# who I masquerade as (null for no masquerading)
+DMredhat.com</TT
+>
+      </PRE
+></TD
+></TR
+></TABLE
+><P
+>        With this type of configuration, all mail sent will appear as if it were
+        sent from <TT
+CLASS="FILENAME"
+>redhat.com</TT
+>, and any mail sent to
+        <TT
+CLASS="FILENAME"
+>torgo.redhat.com</TT
+> or the other hosts will be
+        delivered to <TT
+CLASS="FILENAME"
+>mail.redhat.com</TT
+>.
+      </P
+><P
+>        Please be aware that if you configure your system to masquerade as
+        another any e-mail sent from your system to your system will be sent to
+        the machine you are masquerading as.  For example, in the above
+        illustration, log files that are periodically sent to
+        <TT
+CLASS="EMAIL"
+>&#60;<A
+HREF="mailto:root@poodle.redhat.com"
+>root@poodle.redhat.com</A
+>&#62;</TT
+> by the <B
+CLASS="COMMAND"
+>cron</B
+>
+        daemon would be sent to <TT
+CLASS="EMAIL"
+>&#60;<A
+HREF="mailto:root@mail.redhat.com"
+>root@mail.redhat.com</A
+>&#62;</TT
+>.
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-sysadmin-build-kernel.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-sysadmin-access.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Building a Custom Kernel</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-sysadmin.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Controlling Access to Services</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-sysadmin-sendmail.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

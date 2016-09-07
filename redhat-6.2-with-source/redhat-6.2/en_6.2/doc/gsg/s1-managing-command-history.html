@@ -1,0 +1,461 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-managing-command-history.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Command History and Tab Completion</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Working with Files and Directories"
+HREF="ch-shellmanage.html"><LINK
+REL="PREVIOUS"
+TITLE="Locating Files and Directories"
+HREF="s1-managing-locating.html"><LINK
+REL="NEXT"
+TITLE="Identifying and Working with File Types"
+HREF="s1-managing-file-types.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-managing-locating.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 14. Working with Files and Directories</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-managing-file-types.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-MANAGING-COMMAND-HISTORY"
+>Command History and Tab Completion</A
+></H1
+><P
+>        It doesn't take long before the thought of typing the same command over
+        and over becomes unappealing, at best.
+      </P
+><P
+>        Linux users don't feel any differently about that, either. In Linux,
+        since you can string together commands at the shell prompt, one minor
+        typo in a couple lines of a command could mean that all that typing was
+        in vain.
+      </P
+><P
+>        So there's a solution: It's called <I
+CLASS="FIRSTTERM"
+>command-line
+          history</I
+>. By scrolling with the up and down arrow keys, we
+          can find plenty of our previously typed commands -- including the ones
+          with typos.
+      </P
+><P
+>        Let's try it by taking a look again at
+        <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+>. The first time, however, at the shell
+        prompt, we'll type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cat sneakrs.txt</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Nothing happens, of course, because there is no
+        <TT
+CLASS="FILENAME"
+>sneakrs.txt</TT
+> file. No problem. We'll just use the
+        up-arrow key to bring back the command, then use the left-arrow key to
+        get to the point where we missed the "e." Insert the letter and press
+        <B
+CLASS="KEYCAP"
+>Enter</B
+> again.
+      </P
+><P
+>        Voila! We now see the contents of <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+>.
+      </P
+><P
+>        By default up to 500 commands can be stored in the
+        <TT
+CLASS="APPLICATION"
+>bash</TT
+> command-line history file.
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Looking at the environment variable</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          By typing the <B
+CLASS="COMMAND"
+>env</B
+> command at a shell prompt, we can
+          see the environment variable that controls the size of the
+          command-line history. The line which reads,
+          <TT
+CLASS="COMPUTEROUTPUT"
+>HISTFILESIZE=500</TT
+> shows the number of
+          commands that <TT
+CLASS="APPLICATION"
+>bash</TT
+> will store.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>        The command-line history is actually kept in a file, called
+        <TT
+CLASS="FILENAME"
+>.bash_history</TT
+> in our login directory. We can read
+        it in a number of ways: by using <TT
+CLASS="APPLICATION"
+>pico</TT
+>,
+        <B
+CLASS="COMMAND"
+>cat</B
+>, <B
+CLASS="COMMAND"
+>less</B
+>,
+        <B
+CLASS="COMMAND"
+>more</B
+>, and others.
+      </P
+><P
+>        Be prepared, though: the file can be pretty long.
+      </P
+><P
+>        Let's read it with <B
+CLASS="COMMAND"
+>more</B
+>:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>more .bash_history</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        To move forward a screen, press <B
+CLASS="KEYCAP"
+>Space</B
+>; to move back a
+        screen, press <B
+CLASS="KEYCAP"
+>B</B
+>; to quit, press <B
+CLASS="KEYCAP"
+>Q</B
+>.
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Locating a previously used command</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          Want to find a command in your history file without having to keep
+          hitting the arrow keys or page through the history file? Use
+          <B
+CLASS="COMMAND"
+>grep</B
+>, a powerful search utility. Here's how you can
+          quickly find a previously used command: Let's say you're searching for
+          the command that was something like <B
+CLASS="COMMAND"
+>cat
+          sneak</B
+>-something. You've used the command and think it might
+          be in your history file. At the shell prompt, then, type
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>history | grep sneak</B
+>
+        </PRE
+></TD
+></TR
+></TABLE
+><P
+>          In addition to the command you've just typed, you'll see your
+          sought-after command, as well, because <B
+CLASS="COMMAND"
+>grep</B
+>
+          searched through your history file for every instance in which the
+          word "sneak" appeared. You can learn more about
+          <B
+CLASS="COMMAND"
+>grep</B
+> later in this chapter, when we discuss tools
+          which can help you read files.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>        Another time-saving tool is known as <I
+CLASS="FIRSTTERM"
+>command
+        completion</I
+>. If you type part of a file, command or pathname
+        then press the <B
+CLASS="KEYCAP"
+>Tab</B
+> key, <TT
+CLASS="APPLICATION"
+>bash</TT
+>
+        will present you with either the remaining portion of a the file/path,
+        or a beep.  If you get a beep, just press <B
+CLASS="KEYCAP"
+>Tab</B
+> again to
+        obtain a list of the files/paths that match what's been typed so far.
+      </P
+><P
+>        For example, if you forget the command <B
+CLASS="COMMAND"
+>updatedb</B
+>, but
+        remember a portion of the command, you can <B
+CLASS="COMMAND"
+>su</B
+> to
+        root, then at the shell prompt, type <B
+CLASS="COMMAND"
+>up</B
+>, press the
+        <B
+CLASS="KEYCAP"
+>Tab</B
+> key twice and you'll see a list of possible
+        completions, including <B
+CLASS="COMMAND"
+>updatedb</B
+> and
+        <B
+CLASS="COMMAND"
+>uptime</B
+>. By adding the letter "d" to
+        <B
+CLASS="COMMAND"
+>up</B
+> and pressing <B
+CLASS="KEYCAP"
+>Tab</B
+> again, your
+        command is completed for you.
+      </P
+><P
+>        So even if the machine is turned off at the end of the day, it's not too
+        hard to update the <B
+CLASS="COMMAND"
+>slocate</B
+> database: The chances are
+        good that the command will be stored in the command-line history or can
+        be completed with command completion (as long as you remember the start
+        of the pathname for the command).
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-managing-locating.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-managing-file-types.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Locating Files and Directories</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-shellmanage.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Identifying and Working with File Types</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-managing-command-history.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:01 GMT -->
+</HTML
+>

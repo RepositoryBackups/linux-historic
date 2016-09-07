@@ -1,0 +1,996 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-sysadmin-build-kernel.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Building a Custom Kernel</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="System Administration"
+HREF="ch-sysadmin.html"><LINK
+REL="PREVIOUS"
+TITLE="Shadow Utilities"
+HREF="s1-sysadmin-shadow-util.html"><LINK
+REL="NEXT"
+TITLE="Sendmail"
+HREF="s1-sysadmin-sendmail.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-sysadmin-shadow-util.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 2. System Administration</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-sysadmin-sendmail.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-SYSADMIN-BUILD-KERNEL"
+>Building a Custom Kernel</A
+></H1
+><P
+>        Many people new to Linux often ask, "why should I build my own kernel?"
+        Given the advances that have been made in the use of kernel modules, the
+        most accurate response to that question is, "unless you know why you
+        need to build your own kernel, you probably don't."  So unless you have
+        a specific reason to build a customized kernel (or you're just the
+        curious sort), you may skip ahead to <A
+HREF="s1-sysadmin-sendmail.html"
+>the section called <I
+>Sendmail</I
+></A
+>.
+      </P
+><P
+>	In the past, you would need to recompile the kernel if you added new
+	hardware on your system. The kernel was, in other words,
+	<I
+CLASS="FIRSTTERM"
+>static</I
+>. Improvements in the Linux
+	2.0.<TT
+CLASS="REPLACEABLE"
+><I
+>x</I
+></TT
+> kernels allowed for much of the drivers
+	for hardware to be <I
+CLASS="FIRSTTERM"
+>modularized</I
+> into components
+	that could only be inserted on demand. However, there were major
+	problems with having multiple kernels on your system that had been
+	compiled for different advancements (a good case being SMP versus UP
+	kernels). Further advancements with the modularization of the Linux
+	2.2.x kernel have allowed for multiple kernels to more easily
+	co-exist (though <I
+CLASS="EMPHASIS"
+>not</I
+> share modules).
+      </P
+><P
+>	For information on handling kernel modules see <A
+HREF="s1-sysconfig-control-panel.html#S2-SYSCONFIG-KERNEL"
+>the section called <I
+>Loading Kernel Modules</I
+> in Chapter 3</A
+>.  Most of the changes are hidden except
+	when recompiling a customized kernel for your system.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-MOD-KERNEL"
+>Building a modularized kernel</A
+></H2
+><P
+>          These instructions enable you to take advantage of the power and
+          flexibility available through kernel modularization.  If you do not
+          wish to take advantage of modularization, please see <A
+HREF="s1-sysadmin-build-kernel.html#S2-SYSADMIN-MONO-KERNEL"
+>the section called <I
+>Building a monolithic kernel</I
+></A
+> for an explanation of the different
+          aspects of building and installing a monolithic kernel.  It's assumed
+          that you've already installed the <TT
+CLASS="FILENAME"
+>kernel-headers</TT
+>
+          and <TT
+CLASS="FILENAME"
+>kernel-source</TT
+> packages and that you issue all
+          commands from the <TT
+CLASS="FILENAME"
+>/usr/src/linux</TT
+> directory.
+        </P
+><P
+>	  The most important step is to make sure that you have a working
+	  emergency boot disk in case you make a mistake below. If you didn't
+	  make a boot disk during the installation, use the
+	  <B
+CLASS="COMMAND"
+>mkbootdisk</B
+> command to make one. The standard
+	  command is similar to <B
+CLASS="COMMAND"
+>mkbootdisk --device /dev/fd0
+	  2.2.x</B
+>. Once done, test the boot disk to make sure that
+	  it will boot the system.
+	</P
+><P
+>          It is important to begin a kernel build with the source tree in a
+          known condition.  Therefore, it is recommended that you begin with the
+          command <B
+CLASS="COMMAND"
+>make mrproper</B
+>.  This will remove any
+          configuration files along with the remains of any previous builds that
+          may be scattered around the source tree.  Now you must create a
+          configuration file that will determine which components to include in
+          your new kernel. Available methods for kernel configuration are listed
+          below:
+        </P
+><P
+></P
+><UL
+><LI
+><P
+>              <B
+CLASS="COMMAND"
+>make config</B
+> -- An interactive text program.
+              Components are presented and you answer with
+              <TT
+CLASS="USERINPUT"
+><B
+>Y</B
+></TT
+> (yes), <TT
+CLASS="USERINPUT"
+><B
+>N</B
+></TT
+> (no), or
+              <TT
+CLASS="USERINPUT"
+><B
+>M</B
+></TT
+> (module).
+            </P
+></LI
+><LI
+><P
+>              <B
+CLASS="COMMAND"
+>make menuconfig</B
+> -- A graphical, menu driven
+              program.  Components are presented in a menu of categories, you
+              select the desired components in the same manner used in the Red Hat Linux
+              installation program.  Toggle the tag corresponding to the item
+              you want included; <B
+CLASS="GUIBUTTON"
+>Y</B
+> (yes),
+              <B
+CLASS="GUIBUTTON"
+>N</B
+> (no), or <B
+CLASS="GUIBUTTON"
+>M</B
+>
+              (module).
+            </P
+></LI
+><LI
+><P
+>              <B
+CLASS="COMMAND"
+>make xconfig</B
+> -- An X Window System program.
+              Components are listed in different levels of menus, and are
+              selected using a mouse.  Again, select <B
+CLASS="GUIBUTTON"
+>Y</B
+>
+              (yes), <B
+CLASS="GUIBUTTON"
+>N</B
+> (no), or <B
+CLASS="GUIBUTTON"
+>M</B
+>
+              (module).
+            </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>make oldconfig</B
+> -- This is a non-interactive
+	      script that will set up your Makefile to be the default
+	      settings. If you're using the Red Hat patched kernel, it will
+	      set up the configuration to be that of the kernel that is shipped
+	      for your box. This is useful in setting up your kernel to known
+	      working defaults and then turning off features that you don't
+	      want.
+	    </P
+></LI
+></UL
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>            In order to use <B
+CLASS="COMMAND"
+>kmod</B
+> (see <A
+HREF="s1-sysconfig-control-panel.html#S2-SYSCONFIG-KERNEL"
+>the section called <I
+>Loading Kernel Modules</I
+> in Chapter 3</A
+> for details) and kernel modules you
+            must answer <TT
+CLASS="USERINPUT"
+><B
+>Yes</B
+></TT
+> to <TT
+CLASS="COMPUTEROUTPUT"
+>kmod
+            support</TT
+> and <TT
+CLASS="COMPUTEROUTPUT"
+>module version
+            (CONFIG_MODVERSIONS) support</TT
+> in the configuration.
+          </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>          If you wish to build a kernel with a configuration file
+          (<TT
+CLASS="FILENAME"
+>/usr/src/linux/.config</TT
+> -- this file is created
+          once one of the above methods has been performed) that you have
+          already created with one of the above methods, you can omit the
+          <B
+CLASS="COMMAND"
+>make mrproper</B
+> and <B
+CLASS="COMMAND"
+>make config</B
+>
+          commands and use the command <B
+CLASS="COMMAND"
+>make dep</B
+> followed by
+          <B
+CLASS="COMMAND"
+>make clean</B
+> to prepare the source tree for the
+          build.
+        </P
+><P
+>	  The next step in making a modularized kernel is to simply edit
+	  <TT
+CLASS="FILENAME"
+>/usr/src/linux/Makefile</TT
+> and compile the source
+	  code components into a working program that your machine can use to
+	  boot.  The method described here is the easiest to recover from in the
+	  event of a mishap.  If you are interested in other possibilities,
+	  details can be found in the Kernel-HOWTO or in the
+	  <TT
+CLASS="FILENAME"
+>Makefile</TT
+> in <TT
+CLASS="FILENAME"
+>/usr/src/linux</TT
+>
+	  on your Linux system.
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      Edit the <TT
+CLASS="FILENAME"
+>Makefile</TT
+> and change the line:
+	      <B
+CLASS="COMMAND"
+>EXTRAVERSION =</B
+> to match a "unique" name (such
+	      as adding your initials to the end of the string, as in
+	      <B
+CLASS="COMMAND"
+>EXTRAVERSION = -2.5.0sjs</B
+>). This will allow you
+	      to have the old working kernel and the new kernel on your system
+	      at the same time.
+	    </P
+></LI
+><LI
+><P
+>              Build the kernel with <B
+CLASS="COMMAND"
+>make bzImage</B
+>.
+            </P
+></LI
+><LI
+><P
+>              Build any modules you configured with <B
+CLASS="COMMAND"
+>make
+              modules</B
+>.
+            </P
+></LI
+><LI
+><P
+>	      Install the new modules (even if you didn't build any) with
+	      <B
+CLASS="COMMAND"
+>make modules_install</B
+>. This will install the
+	      kernel modules into the filepath
+	      <TT
+CLASS="FILENAME"
+>/lib/modules/</TT
+> using the path name that was
+	      specified in the <TT
+CLASS="FILENAME"
+>Makefile</TT
+>. Our example would
+	      be <TT
+CLASS="FILENAME"
+>/lib/modules/2.2.15-2.5.0sjs/</TT
+>.
+	    </P
+></LI
+></UL
+><P
+>          If you have a SCSI adapter and made your SCSI driver modular, build a
+          new <TT
+CLASS="FILENAME"
+>initrd</TT
+> image (see <A
+HREF="s1-sysadmin-build-kernel.html#S2-SYSADMIN-INITRD"
+>the section called <I
+>Making an initrd image</I
+></A
+>; note that there are few practical
+          reasons to make the SCSI driver modular in a custom kernel).  Unless
+          you have a specific reason to create an <TT
+CLASS="FILENAME"
+>initrd</TT
+>
+	  image, do not create one and do not add it to <TT
+CLASS="FILENAME"
+>lilo.conf</TT
+>.
+        </P
+><P
+>          In order to provide a redundant boot source to protect from a possible
+          error in a new kernel you should keep the original kernel available.
+          Adding a kernel to the LILO menu is as simple as renaming the original
+          kernel in <TT
+CLASS="FILENAME"
+>/boot</TT
+>, copying the new kernel to
+          <TT
+CLASS="FILENAME"
+>/boot</TT
+>, adding a few lines in
+          <TT
+CLASS="FILENAME"
+>/etc/lilo.conf</TT
+> and running
+          <B
+CLASS="COMMAND"
+>/sbin/lilo</B
+>.  Here is an example of the default
+          <TT
+CLASS="FILENAME"
+>/etc/lilo.conf</TT
+> file shipped with Red Hat Linux:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>boot=/dev/hda
+map=/boot/map
+install=/boot/boot.b
+prompt
+timeout=50
+default=linux
+
+linear
+
+image=/boot/vmlinuz-2.2.15-2.5.0
+     label=linux
+     initrd=/boot/initrd-2.2.15-2.5.0.img
+     read-only 	      
+     root=/dev/hda8
+
+other=/dev/hda1
+        label=dos</TT
+>
+	</PRE
+></TD
+></TR
+></TABLE
+><P
+>          Now you must update <TT
+CLASS="FILENAME"
+>/etc/lilo.conf</TT
+>. If you built
+          a new <TT
+CLASS="FILENAME"
+>initrd</TT
+> image you must tell LILO to use it.
+          In this example of <TT
+CLASS="FILENAME"
+>/etc/lilo.conf</TT
+> we have added
+          four lines in the middle of the file to indicate another kernel to
+          boot from.  We have renamed <TT
+CLASS="FILENAME"
+>/boot/vmlinuz</TT
+> to
+          <TT
+CLASS="FILENAME"
+>/boot/vmlinuz.old</TT
+> and changed its label to
+          <TT
+CLASS="FILENAME"
+>old</TT
+>. We have also added an
+          <TT
+CLASS="FILENAME"
+>initrd</TT
+> line for the new kernel:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>boot=/dev/hda
+map=/boot/map
+install=/boot/boot.b
+prompt
+timeout=50
+default=linux
+
+linear
+
+image=/boot/vmlinuz-2.2.15-2.5.0
+     label=linux
+     initrd=/boot/initrd-2.2.15-2.5.0.img
+     read-only
+     root=/dev/hda8
+
+image=/boot/vmlinuz-2.2.15-2.5.0sjs
+        label=test
+        initrd=/boot/initrd-2.2.15-2.5.0sjs.img
+        read-only
+        root=/dev/hda8
+
+other=/dev/hda1
+        label=dos</TT
+>
+	</PRE
+></TD
+></TR
+></TABLE
+><P
+>          Now when the system boots and you press <B
+CLASS="KEYCAP"
+>Tab</B
+> at the
+          LILO <TT
+CLASS="PROMPT"
+>boot:</TT
+> prompt, available choices will be shown;
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>LILO boot:</TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>linux  test  dos</TT
+>
+        </PRE
+></TD
+></TR
+></TABLE
+><P
+>	  To boot the old kernel (<TT
+CLASS="USERINPUT"
+><B
+>linux</B
+></TT
+>) simply press
+	  <B
+CLASS="KEYCAP"
+>Enter</B
+>, or wait for LILO to time out.  If you want to
+	  boot the new kernel (<TT
+CLASS="USERINPUT"
+><B
+>test</B
+></TT
+>), type
+	  <TT
+CLASS="USERINPUT"
+><B
+>test</B
+></TT
+> and press <B
+CLASS="KEYCAP"
+>Enter</B
+>.
+        </P
+><P
+>          Here is a summary of the steps:
+        </P
+><P
+></P
+><UL
+><LI
+><P
+>	      Copy the resulting compiled kernel into your
+	      <TT
+CLASS="FILENAME"
+>/boot</TT
+> directory using the name that resulted
+	      from your earlier changes to the
+	      <TT
+CLASS="FILENAME"
+>Makefile</TT
+>. Here is an example:
+	    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cp -p</B
+>
+<TT
+CLASS="FILENAME"
+>/usr/src/linux/arch/i386/boot/bzImage</TT
+>
+<TT
+CLASS="FILENAME"
+>/boot/vmlinuz-2.2.15-2.5.0sjs</TT
+>
+	      </PRE
+></TD
+></TR
+></TABLE
+></LI
+><LI
+><P
+>	      Edit <TT
+CLASS="FILENAME"
+>/etc/lilo.conf</TT
+>.
+	    </P
+></LI
+><LI
+><P
+>	      Make a new initial ramdisk, <TT
+CLASS="FILENAME"
+>initrd</TT
+>
+	      image (see <A
+HREF="s1-sysadmin-build-kernel.html#S2-SYSADMIN-INITRD"
+>the section called <I
+>Making an initrd image</I
+></A
+>) if needed.
+	    </P
+></LI
+><LI
+><P
+>	      Run <B
+CLASS="COMMAND"
+>/sbin/lilo</B
+>. You can add a
+	      <B
+CLASS="COMMAND"
+>-v</B
+> flag to <B
+CLASS="COMMAND"
+>lilo</B
+> to get more
+	      verbose reporting if you think there might be a problem.
+	    </P
+></LI
+></UL
+><P
+>	  You can begin testing your new kernel by rebooting your computer and
+	  watching the messages to ensure your hardware is detected properly.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-INITRD"
+>Making an initrd image</A
+></H2
+><P
+>          An <TT
+CLASS="FILENAME"
+>initrd</TT
+> image is needed for loading your SCSI
+          module at boot time. If you do not need an <TT
+CLASS="FILENAME"
+>initrd</TT
+>
+          image, do not make one and do not edit <TT
+CLASS="FILENAME"
+>lilo.conf</TT
+>
+          to include this image.
+	</P
+><P
+>	  The shell script <B
+CLASS="COMMAND"
+>/sbin/mkinitrd</B
+> can build a proper
+          <TT
+CLASS="FILENAME"
+>initrd</TT
+> image for your machine if the following
+          conditions are met:
+        </P
+><P
+></P
+><UL
+><LI
+><P
+>              The loopback block device is available.
+            </P
+></LI
+><LI
+><P
+>              The <TT
+CLASS="FILENAME"
+>/etc/conf.modules</TT
+> file has a line for
+              your SCSI adapter; for example:
+          
+              <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>alias scsi_hostadapter BusLogic</TT
+>
+              </PRE
+></TD
+></TR
+></TABLE
+>
+            </P
+></LI
+></UL
+><P
+>          To build the new <TT
+CLASS="FILENAME"
+>initrd</TT
+> image, run
+          <B
+CLASS="COMMAND"
+>/sbin/mkinitrd</B
+> with parameters such as this:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>/sbin/mkinitrd /boot/newinitrd-image 2.2.15</B
+>
+	</PRE
+></TD
+></TR
+></TABLE
+><P
+>          Where <TT
+CLASS="FILENAME"
+>/boot/newinitrd-image</TT
+> is the file to use
+          for your new image, and <TT
+CLASS="FILENAME"
+>2.2.15</TT
+> is the kernel
+          whose modules (from <TT
+CLASS="FILENAME"
+>/lib/modules</TT
+>) should be used
+          in the <TT
+CLASS="FILENAME"
+>initrd</TT
+> image (not necessarily the same as
+          the version number of the currently running kernel).
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-MONO-KERNEL"
+>Building a monolithic kernel</A
+></H2
+><P
+>          To build a monolithic kernel you follow the same steps as building a
+          modularized kernel with a few exceptions.
+        </P
+><P
+></P
+><UL
+><LI
+><P
+>              When configuring the kernel only answer <TT
+CLASS="USERINPUT"
+><B
+>Yes</B
+></TT
+>
+              and <TT
+CLASS="USERINPUT"
+><B
+>No</B
+></TT
+> to the questions (don't make
+              anything modular). Also, you should answer
+              <TT
+CLASS="USERINPUT"
+><B
+>No</B
+></TT
+> to <TT
+CLASS="COMPUTEROUTPUT"
+>kmod
+              support</TT
+> and <TT
+CLASS="COMPUTEROUTPUT"
+>module version
+              (CONFIG_MODVERSIONS) support</TT
+> in the
+              configuration.
+            </P
+></LI
+><LI
+><P
+>              Omit the steps: 
+
+              <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>make modules</B
+>
+<B
+CLASS="COMMAND"
+>make modules_install</B
+>
+              </PRE
+></TD
+></TR
+></TABLE
+>
+            </P
+></LI
+><LI
+><P
+>	      Edit <TT
+CLASS="FILENAME"
+>lilo.conf</TT
+> and add the line
+	      <B
+CLASS="COMMAND"
+>append=nomodules</B
+>.
+            </P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-sysadmin-shadow-util.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-sysadmin-sendmail.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Shadow Utilities</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-sysadmin.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Sendmail</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-sysadmin-build-kernel.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

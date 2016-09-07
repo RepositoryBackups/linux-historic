@@ -1,0 +1,322 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-rpmlite-installing.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Installing New Packages</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Using Gnome-RPM and RPM"
+HREF="ch-rpmlite.html"><LINK
+REL="PREVIOUS"
+TITLE="Using Gnome-RPM"
+HREF="s1-rpmlite-gnorpm.html"><LINK
+REL="NEXT"
+TITLE="Basic Configuration"
+HREF="s1-gnorpm-config.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-rpmlite-gnorpm.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 10. Using Gnome-RPM and RPM</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-gnorpm-config.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-RPMLITE-INSTALLING"
+>Installing New Packages</A
+></H1
+><P
+>	You can install new packages by choosing the
+      <TT
+CLASS="GUILABEL"
+><B
+>Install</B
+></TT
+> button from the toolbar.
+      </P
+><P
+>	<TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> provides you with a choice of
+	package views (as shown in <A
+HREF="s1-rpmlite-installing.html#GR-RPMLITE-INSTALLFILTER"
+>Figure 10-3</A
+>). You can
+	<I
+CLASS="FIRSTTERM"
+>filter</I
+> your views for
+      </P
+><P
+>   <P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    All packages
+	  </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	      All but installed packages
+	  </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	      Only uninstalled packages
+	  </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	      Only newer packages
+	  </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	      Uninstalled or newer packages
+	  </P
+></LI
+></UL
+>
+      </P
+><P
+>      You can switch the display of packages by using the drop-down bar at the
+      top of the window.
+    </P
+><P
+>	  <DIV
+CLASS="FIGURE"
+><A
+NAME="GR-RPMLITE-INSTALLFILTER"
+></A
+><P
+><IMG
+SRC="figs/rpmlite/installfilter.gif"></P
+><P
+><B
+>Figure 10-3. The Install Window </B
+></P
+></DIV
+>
+	</P
+><P
+>&#13;	Choose the <B
+CLASS="GUIBUTTON"
+>Add</B
+> button. By default, if your CD-ROM
+	is mounted with a Red Hat Linux CD, <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>
+	will search in <TT
+CLASS="FILENAME"
+>/mnt/cdrom/RedHat/RPMS</TT
+> for new
+	packages. (You can find this default option in the <B
+CLASS="GUIMENU"
+>Install
+	Window</B
+> tab of the <B
+CLASS="GUIMENU"
+>Preferences</B
+> dialog. See
+	<A
+HREF="s1-gnorpm-config.html"
+>the section called <I
+>Basic Configuration</I
+></A
+> for more information on this feature.)
+      </P
+><P
+>	If no packages are available in the default path, you'll be presented
+	with an <B
+CLASS="GUIMENU"
+>Add Packages</B
+> window from which you can select
+	the appropriate location of your new package.
+      </P
+><P
+>	To choose a package, double-click on it with your mouse, or add a check
+	in the checkbox next to the package, then click on the
+	<B
+CLASS="GUIBUTTON"
+>Add</B
+> button.
+      </P
+><P
+>	Within this <B
+CLASS="GUIMENU"
+>Install</B
+> window, you have the option
+	of installing or upgrading packages: If the package has not been
+	installed on your system, you'll find an <B
+CLASS="GUIBUTTON"
+>Install</B
+>
+	button at the bottom of the window.
+      </P
+><P
+>	If the package already exists on your system and you're querying a newer
+	release, the <B
+CLASS="GUIMENU"
+>Package Info</B
+> window provides an
+	<B
+CLASS="GUIBUTTON"
+>Upgrade</B
+> button, which will perform an upgrade to
+	newer releases.
+      </P
+><P
+>	You can also "drag and drop" packages from the GNOME <TT
+CLASS="APPLICATION"
+>File
+	  Manager</TT
+> and place them into the
+	  <B
+CLASS="GUIMENU"
+>Install</B
+> window. To accomplish this, open the
+	  <TT
+CLASS="APPLICATION"
+>File Manager</TT
+> (<B
+CLASS="GUIMENU"
+>GNOME
+	  Panel</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>File Manager</B
+>). Locate
+	  the directory in which your packages can be found, left-click once on
+	  the package name and "drag" the file by keeping your finger pressed on
+	  the mouse button, releasing the pressure (and the package) once you're
+	  over the <B
+CLASS="GUIMENU"
+>Install</B
+> window.
+      </P
+><P
+>	You'll see a progress indicator when your package is being installed.
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-rpmlite-gnorpm.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-gnorpm-config.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Using <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-rpmlite.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Basic Configuration</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-rpmlite-installing.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:41 GMT -->
+</HTML
+>

@@ -1,0 +1,348 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/da/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Partitioner</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.52"><LINK
+REL="HOME"
+TITLE="Installations-hjælpeskærme"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="Automatisk partitionering"
+HREF="s1-help-screens-svr.html"><LINK
+REL="NEXT"
+TITLE="Filsystemskonfiguration"
+HREF="s1-help-screens-loopback.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-PARTITION"
+>Partitioner</A
+></H1
+><P
+>	Hvor vil du installere Red Hat Linux?
+      </P
+><P
+>	<B
+CLASS="COMMAND"
+>Bemærk:</B
+> Hvis du laver en
+	<B
+CLASS="COMMAND"
+>partitionsløs installation</B
+> skal du angive
+	eksisterende DOS/Windows partition som roden, vist som
+	<B
+CLASS="COMMAND"
+>/</B
+>. Klik på den FAT partition som du ønsker at vælge for
+denne installation. Når den er markeret, klik på
+<I
+CLASS="GUILABEL"
+>Redigér</I
+> for at tildele den monteringspunktet
+<B
+CLASS="COMMAND"
+>/</B
+> (roden). Klik på <I
+CLASS="GUILABEL"
+>Ok</I
+> når du er
+færdig. Når du har bekræftet valget, bliver du nødt til også at definere
+hvor stor rod- og swapfilsystemet hverisær skal være for dit system.
+      </P
+><P
+>	For mere detaljerede instruktioner læs kapitlet <I
+CLASS="EMPHASIS"
+>Installing
+	Without Partitioning </I
+> i <I
+CLASS="CITETITLE"
+>Red Hat Linux Installationsguide</I
+>.
+      </P
+><P
+>      	Hvis du er usikker på, hvordan du partitionerer systemet, læs afsnittet
+      	om partitionering i <I
+CLASS="CITETITLE"
+>Red Hat Linux Installationsguide</I
+> eller <I
+CLASS="CITETITLE"
+>Red Hat Linux Referenceguide</I
+>.
+      </P
+><P
+>Hvis du har afsluttet partitioneringen med <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>,
+skal du definere <I
+CLASS="FIRSTTERM"
+>monteringspunkter</I
+> for dine partitationer.
+Når du har valgt en partition, kan du definere monteringspunktet med
+	<I
+CLASS="GUILABEL"
+>Redigér</I
+> knappen.
+      </P
+><P
+>      
+      	Dersom du bruger <TT
+CLASS="APPLICATION"
+>Diskdruiden</TT
+> skal du selv 
+      	definere monteringspunkter for én eller flere partitioner. Ligeledes
+      	kan det være nødvendigt at oprette og/eller slette partitioner på dette 
+      	tidspunkt i processen.
+      	</P
+><P
+>      	Øverst på skærmen ser du de eksisterende partitioner. Hver af dem har fem
+      	felter:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	<B
+CLASS="COMMAND"
+>Monteringspunkt:</B
+>. Dette felt viser hvor partitionen
+	monteres når Red Hat Linux er installeret og kører. Skulle en partition 
+	være defineret  men markeret som "not set", skal du definere dens 
+	monteringspunkt. Brug <B
+CLASS="KEYCAP"
+>Redigér</B
+> eller dobbelklik
+	på partitionen.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Enhed:</B
+> Dette felt viser partitionens
+	    enhedsnavn (for eksempel hedder den anden partition på
+	    din første harddisk hda2).
+	  </P
+></LI
+><LI
+><P
+><B
+CLASS="COMMAND"
+>Påkrævet:</B
+> Feltet <I
+CLASS="FIRSTTERM"
+>Påkrævet</I
+>
+        viser hvor meget plads hver partition har. Skulle du ønske at 
+        redefinere størrelsen, skal du slette den eksisterende partition og genskabe	
+        den ved brug af <B
+CLASS="KEYCAP"
+>Tilføj</B
+> knappen.
+	  </P
+></LI
+><LI
+><P
+><B
+CLASS="COMMAND"
+>Reel størrelse:</B
+> Dette felt viser hvor meget plads
+			partitionen optager. 
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Type:</B
+> Dette felt viser hvilken type partition der 
+          er tale om (som f.eks.
+	    Linux Native eller DOS).
+	  </P
+></LI
+></UL
+><P
+>      Når du ruller ned gennem feltet <I
+CLASS="FIRSTTERM"
+>Partitioner</I
+>
+      møder du muligvis en meddelelse om <I
+CLASS="FIRSTTERM"
+>Utildelt ønsket partition
+      </I
+> (rød skrift) efterfulgt af en eller flere partitioner. Det skyldes
+      typisk at der ikke er nok plads til partitionen.
+      </P
+><P
+>	For at reparere en utildelt ønsket partition, skal du enten flytte
+	partitonen til et andet drev som har tilstrækkelig med ledig plads,
+	ændre størrelsen på partitionen så den passer til det nuværende drev
+	eller slette partitionen helt. Lav ændringer ved at klikke på 
+	<B
+CLASS="KEYCAP"
+>Redigér</B
+> knappen eller dobbeltklikke på partitionen.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DD"
+>Partitionér dit system</A
+></H2
+><P
+>	  Den midterste linie knapper kontrollerer partitioneringsværktøjets funktioner.
+	  Du kan tilføje, redigere og slette partitioner her. Derudover er der knapper
+	  du kan bruge til at gennemføre de ændringer du har lavet eller fortryde ændringerne og
+	  afslutte partitioneringsværktøjet.
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Tilføj:</B
+> Brug denne knap til at ønske en ny
+	      partition.  Hvis valgt, vil en dialogboks komme frem med alle
+	      de felter der skal udfyldes (som f.eks. monteringspunkt, størrelse og
+	      type).
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Redigér:</B
+> Brug denne knap til at ændre monteringspunktet
+	      for den valgte partition.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Fjern:</B
+> Brug denne knap til at slette en
+	      partition. En dialogboks vil dukke op og bede dig om at bekræfte slettelsen.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Nulstil:</B
+> Brug denne knap til at annullere alle de ændringer, du har lavet.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Opret RAID-enhed:</B
+> Brug KUN <B
+CLASS="KEYCAP"
+>Opret RAID-enhed</B
+> hvis du har erfaring med
+	      RAID. For at lære mere om RAID, læs venligst
+	      <I
+CLASS="CITETITLE"
+>Red Hat Linux Referenceguide</I
+>.
+	    </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DRIVE"
+>Drevresumé</A
+></H2
+><P
+>	  Denne sektion viser din komputers diskkonfiguration. Det er kun
+	  beregnet på at være et kortfattet resumé. Hver linie har de følgende felter:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Drev:</B
+> Dette felt viser harddiskens
+	      enhedsnavn (som f.eks. hda eller hdb).
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Geom [C/H/S]:</B
+> Harddiskens
+	      <I
+CLASS="FIRSTTERM"
+>geometri</I
+> viser antallet af cylindere,
+	      hoveder og sektorer.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Total:</B
+> Dette felt viser den totale mængde
+	      ledige plads på harddisken.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Ledigt:</B
+> Her kan du se hvor meget af harddiskens plads der endnu er ledigt.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Brugt:</B
+> Disse felter viser hvor meget af
+	      harddiskens plads der lige nu er tildelt partitioner, i megabyte
+	      og procent.
+	    </P
+></LI
+></UL
+></DIV
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/da/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:23 GMT -->
+</HTML
+>

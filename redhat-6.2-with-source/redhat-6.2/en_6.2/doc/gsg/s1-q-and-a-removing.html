@@ -1,0 +1,313 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-removing.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Removing Red Hat Linux</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Q  A: Quick Answers to Common Questions"
+HREF="ch-q-and-a.html"><LINK
+REL="PREVIOUS"
+TITLE="Configuring a Sound Card"
+HREF="s1-q-and-a-sound.html"><LINK
+REL="NEXT"
+TITLE="Changing Login from Console to X at Startup"
+HREF="s1-q-and-a-runlevels.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-sound.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 15. Q &#38; A: Quick Answers to Common Questions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-runlevels.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-Q-AND-A-REMOVING"
+>Removing Red Hat Linux</A
+></H1
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-REMOVING-Q"
+>Q: Removing Red Hat Linux</A
+></H2
+><P
+>          How do I remove Red Hat Linux from my computer?
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-REMOVING-A"
+>A. Remove LILO</A
+></H2
+><P
+>          To remove Red Hat Linux, you'll need to remove the LILO information from your
+          Master Boot Record (MBR).
+	</P
+><P
+>	  There are several methods to removing LILO from the MBR. Inside of
+	  Linux, you can replace the MBR with an earlier, saved version of the
+	  MBR using the following command:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>/sbin/lilo -u</B
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	  In DOS, NT and Windows 95, you can use
+	  <TT
+CLASS="APPLICATION"
+>fdisk</TT
+> to create a new MBR with the
+	  "undocumented" flag <B
+CLASS="COMMAND"
+>/mbr</B
+>. This will
+	  <I
+CLASS="EMPHASIS"
+>only</I
+> rewrite the MBR to boot the primary DOS
+	  partition. The command should look like:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>fdisk /mbr</B
+></PRE
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-Q-AND-A-REMOVING-EXPERT"
+>Removing partitions</A
+></H3
+><P
+>	    If you want to remove Linux from a hard drive, and you attempted to
+	    use the default DOS <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>, you will
+	    experience the "Partitions exist but they don't exist" problem. The
+	    best way to remove non-DOS partitions is with a tool that
+	    understands partitions <I
+CLASS="EMPHASIS"
+>other than</I
+> DOS.
+	  </P
+><P
+>	    You can perform this with your Red Hat Linux installation floppy by typing
+	    <TT
+CLASS="USERINPUT"
+><B
+>linux expert</B
+></TT
+> at the <TT
+CLASS="PROMPT"
+>boot:</TT
+>
+	    prompt, such as:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>boot:</TT
+><TT
+CLASS="USERINPUT"
+><B
+>linux expert</B
+></TT
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	    Select the option to install, rather than upgrade and, when you get
+	    to the partitioning section, choose
+	    <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>. In
+	    <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>, type <B
+CLASS="COMMAND"
+>p</B
+> to print
+	    out your partition numbers; then remove the Linux partitions with
+	    the <B
+CLASS="COMMAND"
+>d</B
+> command. When you're satisfied with the
+	    changes you've made, you can quit with a <B
+CLASS="COMMAND"
+>w</B
+>, and
+	    your changes will be saved to disk. If you've deleted too much, type
+	    <B
+CLASS="COMMAND"
+>q</B
+> to quit without changes.
+	  </P
+><P
+>	    When your partitions have been removed, you can reboot with
+	    <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>Alt</B
+>-<B
+CLASS="KEYCAP"
+>Del</B
+>
+	    rather than continue with the installation.
+	  </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-sound.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-runlevels.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Configuring a Sound Card</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-q-and-a.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Changing Login from Console to X at Startup</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-removing.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+</HTML
+>

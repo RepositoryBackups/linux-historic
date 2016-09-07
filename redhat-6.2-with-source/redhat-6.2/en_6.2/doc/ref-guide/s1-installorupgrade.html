@@ -1,0 +1,602 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-installorupgrade.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:04:57 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Upgrading or Installing</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Installing Red Hat Linux via Text Mode"
+HREF="ch-install-tm.html"><LINK
+REL="PREVIOUS"
+TITLE="Welcome"
+HREF="s1-install-welcome.html"><LINK
+REL="NEXT"
+TITLE="Partitioning Your Disk for Red Hat Linux"
+HREF="s1-install-create-part.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-install-welcome.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 10. Installing Red Hat Linux via Text Mode</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-install-create-part.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-INSTALLORUPGRADE"
+>Upgrading or Installing</A
+></H1
+><P
+>	The <TT
+CLASS="GUILABEL"
+><B
+>Installation Type</B
+></TT
+> dialog (<A
+HREF="s1-installorupgrade.html#FIG-INSTALL-INST-TYPE"
+>Figure 10-11</A
+>) presents you with five choices,
+	described below.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-INST-TYPE"
+></A
+><P
+><IMG
+SRC="figs/textmode/inst-type.gif"></P
+><P
+><B
+>Figure 10-11. Installation Type Dialog</B
+></P
+></DIV
+><P
+></P
+><UL
+><LI
+><P
+>            <TT
+CLASS="GUILABEL"
+><B
+>Install GNOME Workstation</B
+></TT
+> -- Install on a
+	    system that will be used primarily as a workstation.  Load the GNOME
+	    GUI and configure the system to start GNOME when the system
+	    boots. The installation program deletes all data in any existing
+	    Linux partitions, decides how to partition the disk for the new
+	    version, and chooses which software packages to load.
+	    <DIV
+CLASS="WARNING"
+><P
+></P
+><TABLE
+CLASS="WARNING"
+WIDTH="90%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/warning.gif"
+HSPACE="5"
+ALT="Warning"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Warning</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>		Do not choose this method if you're sharing a disk with Windows
+		NT; if you do, you will be unable to boot Windows NT. LILO will
+		write over NT's boot loader and you will be unable to boot
+		NT. You must perform a custom-class installation and configure
+		LILO so that it is not installed on the Master Boot Record
+		(MBR).
+	      </P
+><P
+>		To create a dual-boot environment on a system that currently has
+		NT, you must install LILO on the first sector of the root
+		partition, not the MBR.  Please be sure to create a boot
+		disk. In a case such as this, you will either need to use the
+		boot disk, or configure the NT system loader to boot LILO from
+		the first sector of the root partition. Be sure to check out
+		<A
+HREF="http://www.linuxdoc.org/HOWTO/mini/Linux+NT-Loader.html"
+TARGET="_top"
+>		  http://www.linuxdoc.org/HOWTO/mini/Linux+NT-Loader.html</A
+> for
+		more information on setting up LILO and NT.
+	      </P
+></TD
+></TR
+></TABLE
+></DIV
+>
+	  </P
+></LI
+><LI
+><P
+>            <TT
+CLASS="GUILABEL"
+><B
+>Install KDE Workstation</B
+></TT
+> -- Install on a system
+	    that will be used primarily as a workstation.  Load the KDE GUI and
+	    configure the system to start KDE when the system boots. The
+	    installation program deletes all data in any existing Linux
+	    partitions, decides how to partition the disk for the new version,
+	    and chooses which software packages to load.
+	     <DIV
+CLASS="WARNING"
+><P
+></P
+><TABLE
+CLASS="WARNING"
+WIDTH="90%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/warning.gif"
+HSPACE="5"
+ALT="Warning"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Warning</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>		Do not choose this method if you're sharing a disk with Windows
+		NT; if you do, you will be unable to boot Windows NT. LILO will
+		write over NT's boot loader and you will be unable to boot
+		NT. You must perform a custom-class installation and configure
+		LILO so that it is not installed on the Master Boot Record
+		(MBR).
+	      </P
+><P
+>		To create a dual-boot environment on a system that currently has
+		NT, you must install LILO on the first sector of the root
+		partition, not the MBR.  Please be sure to create a boot
+		disk. In a case such as this, you will either need to use the
+		boot disk, or configure the NT system loader to boot LILO from
+		the first sector of the root partition. Be sure to check out
+		<A
+HREF="http://www.linuxdoc.org/HOWTO/mini/Linux+NT-Loader.html"
+TARGET="_top"
+>		  http://www.linuxdoc.org/HOWTO/mini/Linux+NT-Loader.html</A
+>
+		  for more information on setting up LILO and NT.
+	      </P
+></TD
+></TR
+></TABLE
+></DIV
+>
+	  </P
+></LI
+><LI
+><P
+>            <TT
+CLASS="GUILABEL"
+><B
+>Install Server System</B
+></TT
+> -- Install on a system
+	    that will be used primarily as a server.  The X Window System is not
+	    configured and no GUI starts when the system boots. The Installation
+	    program deletes <I
+CLASS="EMPHASIS"
+>all</I
+> data in
+	    <I
+CLASS="EMPHASIS"
+>all</I
+> existing partitions of any kind, decides
+	    how to partition the disk for the new version, and chooses which
+	    software packages to load.
+	  </P
+></LI
+><LI
+><P
+>            <TT
+CLASS="GUILABEL"
+><B
+>Install Custom System</B
+></TT
+> -- Perform a custom
+	    installation. You make all decisions regarding disk partitioning and
+	    initialization, which software packages to install, and how to
+	    configure the X Window System and the user interface.
+	  </P
+></LI
+><LI
+><P
+>            <TT
+CLASS="GUILABEL"
+><B
+>Upgrade Existing System</B
+></TT
+> -- Upgrade an earlier
+	    version of Red Hat Linux (2.0 or later) without deleting any existing
+	    data. The installation program updates the modular 2.2.x kernel
+	    and all currently installed software packages.
+	  </P
+></LI
+></UL
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-UPGRADE"
+>Upgrading</A
+></H2
+><P
+>	  If you choose to upgrade and the installation program detects more
+	  than one installed Linux version on the system, you'll be asked which
+	  version to upgrade. After you indicate this, or if there's only one
+	  installed Linux version on the system, the installation program probes
+	  your existing system to determine which software packages require
+	  updating and presents the <TT
+CLASS="GUILABEL"
+><B
+>Customize Packages to
+	  Upgrade</B
+></TT
+> dialog (<A
+HREF="s1-installorupgrade.html#FIG-INSTALL-UPGRADE"
+>Figure 10-12</A
+>).
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-UPGRADE"
+></A
+><P
+><IMG
+SRC="figs/textmode/upgrade.gif"></P
+><P
+><B
+>Figure 10-12. Customize Packages to Upgrade Dialog</B
+></P
+></DIV
+><P
+>          If you answer <B
+CLASS="GUIBUTTON"
+>No</B
+>, the installation program starts
+	  upgrading existing packages.
+	</P
+><P
+>	  Answer <B
+CLASS="GUIBUTTON"
+>Yes</B
+> if you want to add to or remove
+	  items from the list of individual packages to be upgraded. The package
+	  selection dialog is seen in <A
+HREF="s1-install-packages.html#S2-INSTALL-PACKAGESINGLE"
+>the section called <I
+>Selecting Individual Packages</I
+></A
+>.
+	  The upgrade starts when you finish making your changes.
+	</P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    Some upgraded packages may require that other packages are also
+	    installed for proper operation.  The upgrade procedure takes care of
+	    these <I
+CLASS="FIRSTTERM"
+>dependencies</I
+>, but in doing so it may
+	    need to install additional packages which are not on your existing
+	    system.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	  The upgrade process preserves existing configuration files by renaming
+	  them using a <TT
+CLASS="FILENAME"
+>.rpmsave</TT
+> extension (e.g.,
+	  <TT
+CLASS="FILENAME"
+>sendmail.cf.rpmsave</TT
+>) and leaves a log telling
+	  what actions it took in <TT
+CLASS="FILENAME"
+>/tmp/upgrade.log</TT
+>. As
+	  software evolves, configuration file formats can change, so you should
+	  carefully compare your original configuration files to the new files
+	  before integrating your changes.
+	</P
+><P
+>	  The next dialog you'll see is <A
+HREF="s1-install-pkgloadstart.html#FIG-INSTALL-PROGRESS"
+>Figure 10-40</A
+>. This dialog remains on the screen
+	    until the upgrade is complete.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-FULL"
+>Installing</A
+></H2
+><P
+>	  If you choose a workstation- or server-class installation, <A
+HREF="s1-installorupgrade.html#FIG-INSTALL-AUTOPART"
+>Figure 10-13</A
+> appears.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-AUTOPART"
+></A
+><P
+><IMG
+SRC="figs/textmode/autopart.gif"></P
+><P
+><B
+>Figure 10-13. Automatic Partitioning Dialog</B
+></P
+></DIV
+><P
+>          If you select <TT
+CLASS="GUILABEL"
+><B
+>Continue</B
+></TT
+> and press
+	  <B
+CLASS="GUIBUTTON"
+>OK</B
+>, the installation program partitions your disk
+	  and decides which software packages to install. Next, you'll see the
+	  <TT
+CLASS="GUILABEL"
+><B
+>Hostname</B
+></TT
+> dialog explained in <A
+HREF="s1-install-hostname.html"
+>the section called <I
+>Naming Your Computer</I
+></A
+>.
+	</P
+><P
+>          If you select <TT
+CLASS="GUILABEL"
+><B
+>Manually partition</B
+></TT
+> or choose to
+	  perform a custom-class installation, <TT
+CLASS="APPLICATION"
+>Disk
+	  Druid</TT
+> will begin. The disk partitioning dialogs
+	  described in the next section will appear, showing you any current
+	  partitions on your system. It is up to you to indicate the partitions
+	  and mount points to be used for installation of this version of Red Hat Linux.
+	</P
+><DIV
+CLASS="CAUTION"
+><P
+></P
+><TABLE
+CLASS="CAUTION"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/caution.gif"
+HSPACE="5"
+ALT="Caution"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Caution</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>            Installing Red Hat Linux over another installation of Linux (including
+            Red Hat Linux) does <I
+CLASS="EMPHASIS"
+>not</I
+> preserve any information (files
+            or data) from the prior installation.  Make sure you save any
+            important files! If you are worried about saving the current data on
+            your existing Red Hat Linux system (without making a backup on your own), you
+            should consider performing an upgrade instead.
+          </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-install-welcome.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-install-create-part.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Welcome</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-install-tm.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Partitioning Your Disk for Red Hat Linux</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-installorupgrade.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

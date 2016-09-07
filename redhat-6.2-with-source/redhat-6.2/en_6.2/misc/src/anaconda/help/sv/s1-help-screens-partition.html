@@ -1,0 +1,361 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/sv/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Partitioner</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.49"><LINK
+REL="HOME"
+TITLE="Installationshjälpskärmar"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="Automatisk partitionering"
+HREF="s1-help-screens-svr.html"><LINK
+REL="NEXT"
+TITLE="Filsystemskonfiguration"
+HREF="s1-help-screens-loopback.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-PARTITION"
+>Partitioner</A
+></H1
+><P
+>	Var vill du installera Red Hat Linux?
+      </P
+><P
+>	<B
+CLASS="COMMAND"
+>Observera:</B
+> Om du genomför en
+	<B
+CLASS="COMMAND"
+>partitionslös installation</B
+> måste du ange
+	en existerande DOS/Windows-partition som rot, visad som
+	<B
+CLASS="COMMAND"
+>/</B
+>. Klicka på den FAT-partition som du
+	vill välja för denna installation. När den väl är
+	markerad klickar du på <I
+CLASS="GUILABEL"
+>Redigera</I
+> för att
+	tilldela den monteringspunkten <B
+CLASS="COMMAND"
+>/</B
+> (rot). Klicka på
+	<I
+CLASS="GUILABEL"
+>Ok</I
+> när du är färdig. När du väl
+	har bekräftat detta val måste du ange lämplig storlek på
+	rotfilsystem och växlingsutrymme (swap) för ditt system. 
+      </P
+><P
+>	För mera detaljerade instruktioner hänvisas du till
+	kapitlet
+	"<I
+CLASS="EMPHASIS"
+>Installing Without Partitioning</I
+>" i
+	<I
+CLASS="CITETITLE"
+>Red Hat Linux Installation Guide</I
+>.
+      </P
+><P
+>	Om du inte vet hur du ska partitionera ditt system bör du läsa
+	avsnittet om partitionering i <I
+CLASS="CITETITLE"
+>Red Hat Linux Installation Guide</I
+> eller
+	<I
+CLASS="CITETITLE"
+>Red Hat Linux Reference Guide</I
+>.
+      </P
+><P
+>	Om du just avslutade partitionering med
+	<TT
+CLASS="APPLICATION"
+>fdisk</TT
+> måste du ange
+	<I
+CLASS="FIRSTTERM"
+>monteringspunkter</I
+> för dina partitioner.
+	Använd knappen <I
+CLASS="GUILABEL"
+>Redigera</I
+>, när du har valt
+	en partition, för att ange dess monteringspunkt.
+       </P
+><P
+>	Om du använder <TT
+CLASS="APPLICATION"
+>Disk Druid</TT
+> måste du
+	ange monteringspunkter för en eller flera partitioner.
+	Eventuellt behöver du också skapa och/eller radera partitioner
+	nu.
+      </P
+><P
+>	Den översta skärmen visar dina existerande partitioner. Varje
+	partition har fem fält:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Monteringspunkt:</B
+> Detta fält visar var
+	    partitionen kommer att vara monterad när Red Hat Linux väl är
+	    installerat och kör. Om en partition existerar men är
+	    märkt som "inte angiven" måste du ange dess
+	    monteringspunkt. Du kan använda knappen
+	    <B
+CLASS="KEYCAP"
+>Redigera</B
+> eller dubbelklicka på
+	    partitionen.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Enhet:</B
+> Detta fält visar namnet på partitionens
+	    enhet (exempelvis innebär hda2 den andra partitionen på
+	    din primära hårddisk).
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Begärt:</B
+> Fältet <I
+CLASS="FIRSTTERM"
+>Begärt</I
+>
+	    visar hur mycket utrymme partitionen har. Om du vill omdefiniera
+	    storleken måste du radera partitionen och skapa den på
+	    nytt med hjälp av knappen <B
+CLASS="KEYCAP"
+>Lägg till</B
+>.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Verkligt:</B
+> Detta fält visar hur mycket utrymme
+	    partitionen använder.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Typ:</B
+> Detta fält visar partitionstypen
+	    (exempelvis "Linux Native" eller DOS).
+	  </P
+></LI
+></UL
+><P
+>	När du bläddrar igenom sektionen om <I
+CLASS="FIRSTTERM"
+>partitioner</I
+>
+	kan du komma att se ett meddelande om
+	<I
+CLASS="FIRSTTERM"
+>Oallokerade begärda partitioner</I
+>
+	(skrivet i röd text), följt av en eller flera partitioner.
+	En vanlig anledning till att man har en oallokerad partition är att
+	det inte finns tillräckligt med ledigt utrymme för partitionen.
+      </P
+><P
+>	För att åtgärda en oallokerad begärd partition måste
+	du antingen flytta partitionen till en annan hårddisk med tillräckligt
+	ledigt utrymme, ändra storleken på partitionen så att den passar
+	på den nuvarande hårddisken, eller ta bort partitionen helt. Gör
+	ändringar genom att använda <B
+CLASS="KEYCAP"
+>Redigera</B
+>-knappen
+	eller genom att dubbelklicka på partitionen.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DD"
+>Partitionera ditt system</A
+></H2
+><P
+>	  Raden med knappar i mitten styr partitioneringsverktygets
+	  åtgärder. Du kan lägga till, redigera och ta bort partitioner här.
+	  Dessutom finns det knappar som låter dig bekräfta de ändringar du
+	  har gjort, eller återställa och avsluta partitioneringsverktyget.
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Lägg till:</B
+> Använd denna knapp för att
+	      begära en ny partition. När denna knapp väljs kommer
+	      en dialogruta fram som innehåller fält som måste fyllas i
+	      (exempelvis monteringspunkt, storlek och typ).
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Redigera:</B
+> Använd denna knapp för att
+	      ändra monteringspunkten för den valda partitionen.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Ta bort:</B
+> Använd denna knapp för att
+	      ta bort en partition. En dialogruta kommer att dyka upp
+	      som ber dig bekräfta raderingen.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>återställ:</B
+> Använd denna knapp för att
+	      ångra alla ändringar du har gjort.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Skapa RAID-enhet:</B
+> Använd knappen
+	      <B
+CLASS="KEYCAP"
+>Skapa RAID-enhet</B
+> ENDAST om du har
+	      erfarenhet av RAID. För att lära dig mer om RAID, se
+	      <I
+CLASS="CITETITLE"
+>Red Hat Linux Reference Guide</I
+>.
+	    </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DRIVE"
+>Hårddisköversikt</A
+></H2
+><P
+>	  Denna sektion visar din dators hårddiskkonfiguration. Den
+	  är endast avsedd som en summering. Varje rad har följande
+	  fält:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Hårddisk:</B
+> Detta fält visar hårddiskens
+	      enhetsnamn (exempelvis hda eller hdb).
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Geom [C/H/S]:</B
+> Hårddiskens
+	      <I
+CLASS="FIRSTTERM"
+>geometri</I
+> visar antalet cylindrar,
+	      huvuden och sektorer.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Totalt:</B
+> Detta fält visar det totala
+	      tillgängliga utrymmet på hårddisken.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Ledigt:</B
+> Här ser du hur mycket av
+	      hårddiskens utrymme som fortfarande är ledigt.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Använt:</B
+> Dessa fält visar hur mycket
+	      (i procent och megabyte) av hårddiskens utrymme som för
+	      närvarande är allokerat till partitioner.
+	    </P
+></LI
+></UL
+></DIV
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/sv/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:39 GMT -->
+</HTML
+>

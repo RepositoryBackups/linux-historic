@@ -1,0 +1,82 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/zh/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>SILO 配置</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.49"><LINK
+REL="HOME"
+TITLE="安装帮助屏幕"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="LILO 配置"
+HREF="s1-help-screens-lilo.html"><LINK
+REL="NEXT"
+TITLE="网络配置"
+HREF="s1-help-screens-netconf.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-SILO"
+>SILO 配置</A
+></H1
+><P
+>	SILO（Sparc 改进版装载程序）是可用于在计算机上启动 Red Hat Linux 的软件。它还可用于启动其它操作系统，例如 SunOS 和 Solaris。系统将在此处询问您如何（或是否）配置 SILO。
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>创建引导盘</B
+>：如果您根本不安装 SILO，或者是出于安全考虑，则应该创建一张引导盘。如果您未使用软盘，系统将隐藏此选项；如果您使用 SMCC 生产的 Ultra 机型（通常不能使用可引导的软盘），则此选项将缺省设置为已禁用。
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>不安装 SILO</B
+>：如果您不想将 SILO 写入驱动器，例如您已在其它分区或磁盘上安装 SILO 并希望通过它们引导系统，则可以选择跳过 SILO。
+      </P
+><P
+>	要安装 SILO，请为其选择安装位置。如果系统仅使用 Red Hat Linux，则应该选择主引导记录（磁盘第一个分区的引导块）。对于 SunOS/Solaris 和 Red Hat Linux 驻留在同一个硬盘驱动器中的系统（特别是 SunOS/Solaris 驻留在磁盘的第一个分区时），则不应在 
+MBR 上安装 SILO。
+      </P
+><P
+>	如果您出于某种原因而选择不安装 SILO，请创建一张引导盘以便引导 Red Hat Linux。
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>创建 PROM 别名</B
+>：如果 PROM 支持，则安装程序可以创建 PROM 别名 "linux"，以便您键入 "boot linux" 命令即可通过 PROM 命令行引导至 SILO 引导装载程序。
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>设置缺省 PROM 引导设备</B
+>：通过设置 PROM 选项 "boot-device" 或 "boot-from"，安装程序可以确保 PROM 在缺省情况下引导至 Red Hat Linux 安装程序。
+      </P
+><P
+>	如果您希望在 SILO 引导命令中添加缺省选项，请在 “kernel parameters” 字段中输入这些选项。每次引导时，您输入的任何选项均将传递至 Linux 内核。
+      </P
+><P
+>	可引导分区 -- 列出并标记每个可引导分区，包括其它操作系统使用的分区。如果您要为其它分区添加引导标记（或更改现有的引导标记），请单击以选择此分区。一旦选定了分区，您就可以更改引导标记。
+      </P
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/zh/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:50 GMT -->
+</HTML
+>

@@ -1,0 +1,1073 @@
+<!DOCTYPE BOOK PUBLIC "-//Davenport//DTD DocBook V3.0//EN" [
+<!ENTITY RH "Red Hat">
+<!ENTITY RHL "Red Hat Linux">
+<!ENTITY RHLRGS "Red Hat Linux Reference Guide">
+<!ENTITY RHLIG "Red Hat Linux Installation Guide">
+<!ENTITY RHLGSG "Red Hat Linux Getting Started Guide">
+<!ENTITY RHI "Red Hat, Inc.">
+]>
+<book id="book">
+<title>Installationshj&auml;lpsk&auml;rmar</title>
+  <chapter id="s1-help-screens-lang">
+    <title></title>
+    <sect1 id="lang">
+      <title>Spr&aring;kval</title>
+      <para>
+	Vilket spr&aring;k vill du anv&auml;nda under installationen och som
+        systemets standardspr&aring;k n&auml;r &RHL; v&auml;l &auml;r installerat?
+      </para>
+      <para>
+	V&auml;lj ur listan till h&ouml;ger.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-kybd">
+      <title>Tangentbordskonfiguration</title>
+      <para>
+	Vilken typ av tangentbord har du?
+      </para>
+      <para>
+	Om du inte kan hitta exakt r&auml;tt modell, v&auml;lj den
+        <guilabel>Generic</guilabel>-modell som &auml;r mest lik (exempelvis
+        Generic 101-key PC).
+      </para>
+      <para>
+	V&auml;lj sedan r&auml;tt tangentbordslayout f&ouml;r ditt tangentbord
+        (exempelvis Swedish).
+      </para>
+      <para>
+	Att skriva in specialtecken (som exempelvis &Ntilde;, &Ocirc; och
+	&Ccedil;) g&ouml;rs med hj&auml;lp av "stumma tangenter"
+	(&auml;ven k&auml;nt som sammansatta tangentsekvenser). Om du vill
+	anv&auml;nda specialtecken som best&aring;r av stumma tangenter
+	v&auml;ljer du <guilabel>Aktivera stumma tangenter</guilabel>. Om inte
+	v&auml;ljer du <guilabel>Deaktivera stumma tangenter</guilabel>.
+      </para>
+      <para>
+	Anv&auml;nd den tomma textrutan nederst p&aring; sk&auml;rmen f&ouml;r att
+	testa din tangentbordskonfiguration.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-mouse">
+      <title>Muskonfiguration</title>
+      <para>
+	Vilken typ av mus har du?
+      </para>
+      <para>
+	Har du en PS/2-mus, en bussmus eller en seriell mus?  (Tips: Om kontakten
+	som din mus g&aring;r till &auml;r rund har du en PS/2-mus eller bussmus;
+	om den &auml;r rektangul&auml;r &auml;r det en seriell mus.)
+      </para>
+      <para>
+	F&ouml;rs&ouml;k att hitta exakt r&auml;tt modell i f&ouml;rsta rutan till
+	h&ouml;ger. Om du inte kan hitta exakt r&auml;tt modell, v&auml;lj
+	n&aring;gon modell som &auml;r kompatibel med din. G&aring;r inte heller
+	det b&ouml;r du v&auml;lja l&auml;mplig
+	<guilabel>Generic</guilabel>-mustyp.
+      </para>
+      <para>
+	Om du har en seriell mus v&auml;ljer du den enhet och port den &auml;r
+	kopplad till i n&auml;sta ruta.
+      </para>
+      <para>
+	X-Windowsystemet &auml;r konstruerat f&ouml;r att kunna anv&auml;ndas av en
+	treknappars mus. Om du har en tv&aring;knappars mus kan &RHL; emulera
+	den mittersta musknappen.
+      </para>
+      <para>
+	V&auml;lj <guilabel>Emulera 3 knappar</guilabel> om du har en
+	tv&aring;knappars mus. Efter installationen kan du anv&auml;nda ett klick
+	med b&aring;da musknappar samtidigt som en ers&auml;ttning f&ouml;r
+	mittenknappen.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-wel">
+      <title>V&auml;lkommen till Red Hat Linux</title>
+      <para>
+	V&auml;lkommen! Denna installation &auml;r beskriven i detalj i
+	<citetitle>&RHLIG;</citetitle> fr&aring;n &RHI;. V&auml;nligen l&auml;s
+	igenom hela denna innan du b&ouml;rjar med installationen.
+      </para>
+      <para>
+	HTML- och Postscriptversioner av manualen finns online p&aring;
+	http://www.redhat.com. Det finns &auml;ven en HTML-kopia p&auml; de
+	CD-skivor som medf&ouml;ljer &RHL;.
+      </para>
+      <para>
+	<command>Ny funktion:</command> &RHL; 6.2 har en ny installationsmetod;
+	en s&aring; kallad "partitionsl&ouml;s" installation. Om ditt system har en
+	FAT-partition (DOS/Windows) med tillr&auml;ckligt mycket ledigt utrymme
+	kan du installera &RHL; utan att partitionera om din h&aring;rddisk.
+	Detta alternativ l&auml;mpar sig b&auml;st f&ouml;r personer som vill
+	prova &RHL; utan att p&aring;verka sina nuvarande system mer &auml;n
+	absolut n&ouml;dv&auml;ndigt.
+      </para>
+      <para>
+	Om du har k&ouml;pt det officiella &RHL;-paketet b&ouml;r du
+	f&ouml;rs&auml;kra dig om att du registrerar din produkt p&aring; v&aring;r
+	webbsida (www.redhat.com/now).
+      </para>
+      <para>
+	Under denna installation kommer du att kunna anv&auml;nda din mus f&ouml;r
+	att v&auml;lja olika alternativ. Du kan ocks&aring; navigera i
+	installationsprogrammet genom att anv&auml;nda tangenterna
+	<keycap>Tab</keycap> och <keycap>Enter</keycap>.
+      </para>
+      <para>
+	Anv&auml;nd knapparna <guibutton>N&auml;sta</guibutton> och
+	<guibutton>Tillbaka</guibutton> f&ouml;r att navigera mellan de
+	olika sk&auml;rmarna. Klicka p&aring; <guibutton>N&auml;sta</guibutton> f&ouml;r
+	att spara informationen och forts&auml;tta till n&auml;sta sk&auml;rm;
+	klicka p&aring; <guibutton>Tillbaka</guibutton> f&ouml;r att g&aring; till den
+	f&ouml;reg&aring;ende sk&auml;rmen utan att spara n&aring;gon information.
+      </para>
+      <para>
+	F&ouml;r att f&ouml;rminska denna hj&auml;lpsk&auml;rm klickar du p&aring;
+	knappen <guibutton>G&ouml;m hj&auml;lp</guibutton>.
+      </para>
+      <para>
+	Du kan avbryta denna installation n&auml;r som helst &auml;nda fram till
+	<guimenu>F&ouml;rbereder installation</guimenu>-sk&auml;rmen. N&auml;r du
+	v&auml;l har klickat p&aring; <guibutton>N&auml;sta</guibutton> i
+	<guimenu>F&auml;rbereder installation</guimenu> kommer installationen av
+	paket att p&aring;b&ouml;rjas och data kommer att skrivas till din
+	h&aring;rddisk. F&ouml;r att avbryta innan denna sk&auml;rm kommer fram kan
+	du lugnt starta om ditt system (anv&auml;nd <keycap>reset</keycap>-knappen eller
+	<keycombo>
+	  <keycap>Ctrl</keycap> <keycap>Alt</keycap> <keycap>Del</keycap>
+	</keycombo>).
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-welreconfig">
+      <title>V&auml;lkommen till Red Hat Linux</title>
+      <para>
+        Du har kommit in i omkonfigurationsl&auml;get, som kommer att l&aring;ta dig
+	g&ouml;ra lokala inst&auml;llningar av din dator. F&ouml;r att avsluta utan
+	att &auml;ndra dina inst&auml;llningar v&auml;ljer du "Nej" och trycker
+	p&aring; knappen <guibutton>N&auml;sta</guibutton> nedan.
+      </para>
+      <para>
+   	Under denna konfiguration kommer du att kunna anv&auml;nda din mus f&ouml;r
+	att v&auml;lja olika alternativ. Du kan ocks&aring; navigera i
+	programmet genom att anv&auml;nda tangenterna
+	<keycap>Tab</keycap> och <keycap>Enter</keycap>.     
+      </para>
+      <para>
+        Anv&auml;nd knapparna <guibutton>N&auml;sta</guibutton> och
+	<guibutton>Tillbaka</guibutton> f&ouml;r att navigera mellan de
+	olika sk&auml;rmarna. Klicka p&aring; <guibutton>N&auml;sta</guibutton> f&ouml;r
+	att spara informationen och forts&auml;tta till n&auml;sta sk&auml;rm;
+	klicka p&aring; <guibutton>Tillbaka</guibutton> f&ouml;r att g&aring; till den
+	f&ouml;reg&aring;ende sk&auml;rmen utan att spara n&aring;gon information.
+      </para>
+      <para>
+        F&ouml;r att f&ouml;rminska denna hj&auml;lpsk&auml;rm klickar du p&aring;
+	knappen <guibutton>G&ouml;m hj&auml;lp</guibutton>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-instpath">
+      <title>Installationsalternativ</title>
+      <para>
+	Hur vill du installera &RHL;?
+      </para>
+      <para>
+	En full installation kommer att f&ouml;rst&ouml;ra all tidigare sparad
+	information p&aring; de valda partitionerna.
+      </para>
+      <para>
+	En uppgradering kommer att bevara existerande &RHL;-systemdata.
+      </para>
+      <para>
+	Om du vill genomf&ouml;ra en full installation m&aring;ste du v&auml;lja
+	typen av installation. Alternativen &auml;r: GNOME-arbetsstation,
+	KDE-arbetsstation, Server eller Anpassat system.
+      </para>
+      <para>
+	Om du &auml;r bekant med partitioneringsverktyget
+	<application>fdisk</application> kan du v&auml;lja det h&auml;r. Om du
+	inte v&auml;ljer att anv&auml;nda <application>fdisk</application> kommer
+	installationsprogrammet att anv&auml;nda partitioneringsverktyget
+	<application>Disk Druid</application> som standard.
+	<application>Disk Druid</application> &auml;r ett b&auml;ttre val om du
+	inte har tidigare erfarenhet av <application>fdisk</application>.
+      </para>
+      <para>
+	Om du inte vet vilken typ av installation du vill genomf&ouml;ra b&ouml;r
+	du l&auml;sa igenom det f&ouml;ljande noggrant.
+      </para>
+      <para>
+	<command>Observera:</command> F&ouml;rutom nedanst&aring;ende
+	installationsmetoder kan &RHL; &auml;ven installeras "inuti" en redan
+	existerande FAT-partition (DOS/Windows). Denna "partitionsl&ouml;sa"
+	installationsmetod v&auml;ljs n&auml;r du ger en DOS-partition namnet
+	<command>/</command> i <application>Disk Druid</application>s
+	partitioneringssk&auml;rm. Detta upph&auml;ver den automatiska
+	raderingen av partitioner som anv&auml;nds vid
+	arbetsstationsinstallationer.
+      </para>
+      <para>
+	Arbetsstationsinstallationer kommer att installera X Window-systemet
+	och den skrivbordsmilj&ouml; som du &ouml;nskar. <emphasis>En
+	arbetsstationsinstallation tar bort alla Linux-relaterade partitioner
+	p&aring; alla installerade h&aring;rddiskar (och anv&auml;nder allt
+	ledigt opartitionerat diskutrymme).</emphasis> Alla partitioner som
+	inte &auml;r Linux-relaterade kommer att l&auml;mnas or&ouml;rda och
+	du kommer att kunna starta andra installerade operativsystem, f&ouml;rutom
+	&RHL;, efter installationen.
+      </para>
+      <para>
+	Om du vill att ditt system ska fungera som en Linux-baserad server, och
+	om du inte vill anpassa din systemkonfiguration alltf&ouml;r mycket eller
+	installera X Window-systemet, &auml;r en serverinstallation b&auml;st
+	l&auml;mpad. 
+	<emphasis>En serverinstallation tar bort ALLA existerande partitioner
+	p&aring; ALLA installerade h&aring;rddiskar, s&aring; v&auml;lj endast
+	denna installationsmetod om du &auml;r s&auml;ker p&aring; att du inte har
+	n&aring;gonting sparat som du vill ha kvar!</emphasis> Detta inkluderar
+	ALLA partitioner som anv&auml;nds av andra operativsystem.
+	<emphasis>ALLA h&aring;rddiskar kommer att raderas - vi skojar
+	inte!</emphasis>
+      </para>
+      <para>
+	Endast den anpassade installationen ger dig full flexibilitet. Under
+	en anpassad installation &auml;r det upp till <emphasis>dig</emphasis>
+	hur diskutrymmet ska partitioneras. Du har fullst&auml;ndig kontroll
+	&ouml;ver de paket som kommer att installeras p&aring; ditt system. Du
+	kan ocks&aring; v&auml;lja om du vill anv&auml;nda LILO f&ouml;r att boota ditt
+	system. Du b&ouml;r inte v&auml;lja anpassad installation om du inte har
+	tidigare Linux-erfarenhet.
+      </para>
+      <para>
+	F&ouml;r mer information om skillnaderna mellan
+	arbetsstationsinstallationer, serverinstallation och anpassad installation
+	b&ouml;r du l&auml;sa i &RHLIG;.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-upgrade">
+      <title>Uppgradering av ditt system</title>
+      <para>
+	N&auml;r du v&auml;l har valt att uppgradera kan du ocks&aring; v&auml;lja om
+	du vill anpassa valet av paket.
+      </para>
+      <para>
+	Om du inte vill v&auml;lja ytterligare paket som skall uppgraderas
+	klickar du p&aring; <guibutton>N&auml;sta</guibutton> f&ouml;r att forts&auml;tta.
+      </para>
+      <para>
+	F&ouml;r att anpassa valet av paket v&auml;ljer du knappen
+	<guilabel>V&auml;lj paket som skall uppgraderas</guilabel> och
+	klickar p&aring; <guibutton>N&auml;sta</guibutton>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-fdisk">
+      <title><application>fdisk</application></title>
+      <para>
+	V&auml;lj den h&aring;rddisk som du vill partitionera. N&auml;r du klickar
+	p&aring; h&aring;rddisken kommer <application>fdisk</application>s
+	partitioneringssk&auml;rm att visas. Du kan sedan anv&auml;nda
+	<application>fdisk</application> f&ouml;r att skapa, radera eller
+	modifiera partitioner p&aring; den valda h&aring;rddisken.
+      </para>
+      <para>
+	Om du best&auml;mmer dig f&ouml;r att du inte vill anv&auml;nda
+	<application>fdisk</application> klickar du p&aring;
+	<guibutton>Tillbaka</guibutton> f&ouml;r att &aring;terv&auml;nda
+	till den f&ouml;reg&aring;ende sk&auml;rmen, avmarkerar alternativet
+	<guimenuitem>Anv&auml;nd fdisk</guimenuitem> och klickar p&aring;
+	<guibutton>N&auml;sta</guibutton> f&ouml;r att forts&auml;tta.
+      </para>
+      <para>
+	N&auml;r du v&auml;l har partitionerat h&aring;rddisken med 
+	<application>fdisk</application> kommer du att
+	&aring;terv&auml;nda till denna sk&auml;rm. Om du har en annan
+	h&aring;rddisk som du vill partitionera med
+	<application>fdisk</application> v&auml;ljer du denna.
+	Klicka annars p&aring; <guibutton>N&auml;sta</guibutton>
+	f&ouml;r att tilldela dina partitioner monteringspunkter
+	med <application>Disk Druid</application>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-fdiskpart">
+      <title>Partitionering med <application>fdisk</application></title>
+      <para>
+	H&auml;r kan du partitionera din h&aring;rddisk med
+	<application>fdisk</application>.
+      </para>
+      <para>
+	Om du vill ha hj&auml;lp skriver du <command>m</command> vid
+	prompten f&ouml;r att f&aring; en lista med kommandon.
+      </para>
+      <para>
+	N&aring;gra snabba kommandon till att b&ouml;rja med:
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>n</command> -- L&auml;gger till en ny partition.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>d</command> -- Raderar en partition.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>p</command> -- Skriver ut partitionstabellen.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>l</command> -- Visar k&auml;nda partitionstyper.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>	      
+	      <command>w</command> -- Skriver partitionstabellen till h&aring;rdddisken
+	      och avslutar <application>fdisk</application>.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>q</command> -- Avslutar utan att spara n&aring;gra &auml;ndringar.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-wkst">
+      <title>Automatisk partitionering</title>
+      <para>
+	&Auml;r du s&auml;ker?
+      </para>
+      <para>
+	Du kommer att f&ouml;rlora data om du genomf&ouml;r en
+	arbetsstationsinstallation.
+      </para>
+      <para>
+	Denna typ av installation kommer att radera <emphasis>ALL</emphasis> data
+	p&aring; <emphasis>ALLA</emphasis> existerande Linux-partitioner p&aring;
+	<emphasis>ALLA</emphasis> h&aring;rddiskar.
+      </para>
+      <para>
+	Om du vill bevara data p&aring; existerande Linux-partitioner b&ouml;r du
+	v&auml;lja att partitionera manuellt eller v&auml;lja en anpassad
+	installation.
+      </para>
+      <para>
+	Anv&auml;nd knappen <guibutton>Tillbaka</guibutton> f&ouml;r att v&auml;lja en
+	anpassad installation, eller v&auml;lj <guibutton>N&auml;sta</guibutton> om du vill
+	forts&auml;tta med en arbetsstationsinstallation.
+      </para>
+    </sect1>
+      
+      <sect1 id="s1-help-screens-svr">
+      <title>Automatisk partitionering</title>
+      <para>
+	&Auml;r du s&auml;ker?
+      </para>
+      <para>
+	Du kommer att f&ouml;rlora data om du genomf&ouml;r en
+	serverinstallation.
+      </para>
+      <para>
+	Denna typ av installation kommer att radera <emphasis>ALLA</emphasis> data
+	p&aring; <emphasis>ALLA</emphasis> partitioner p&aring; <emphasis>ALLA</emphasis>
+	h&aring;rddiskar.
+      </para>
+      <para>
+	Om du har ett annat operativsystem som du vill ha kvar ska du inte
+	v&auml;lja denna installationstyp.
+      </para>
+      <para>
+	Om du vill bevara data eller ett annat operativsystem b&ouml;r du
+	v&auml;lja att partitionera manuellt eller v&auml;lja en anpassad
+	installation.
+      </para>
+      <para>
+	Anv&auml;nd knappen <guibutton>Tillbaka</guibutton> f&ouml;r att v&auml;lja en
+	anpassad installation, eller v&auml;lj <guibutton>N&auml;sta</guibutton> om du vill
+	forts&auml;tta med en serverinstallation.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-partition">
+      <title>Partitioner</title>
+      
+      <para>
+	Var vill du installera &RHL;?
+      </para>
+      <para>
+	<command>Observera:</command> Om du genomf&ouml;r en
+	<command>partitionsl&ouml;s installation</command> m&aring;ste du ange
+	en existerande DOS/Windows-partition som rot, visad som
+	<command>/</command>. Klicka p&aring; den FAT-partition som du
+	vill v&auml;lja f&ouml;r denna installation. N&auml;r den v&auml;l &auml;r
+	markerad klickar du p&aring; <guilabel>Redigera</guilabel> f&ouml;r att
+	tilldela den monteringspunkten <command>/</command> (rot). Klicka p&aring;
+	<guilabel>Ok</guilabel> n&auml;r du &auml;r f&auml;rdig. N&auml;r du v&auml;l
+	har bekr&auml;ftat detta val m&aring;ste du ange l&auml;mplig storlek p&aring;
+	rotfilsystem och v&auml;xlingsutrymme (swap) f&ouml;r ditt system. 
+      </para>
+      <para>
+	F&ouml;r mera detaljerade instruktioner h&auml;nvisas du till
+	kapitlet
+	"<emphasis>Installing Without Partitioning</emphasis>" i
+	<citetitle>&RHLIG;</citetitle>.
+      </para>
+      <para>
+	Om du inte vet hur du ska partitionera ditt system b&ouml;r du l&auml;sa
+	avsnittet om partitionering i <citetitle>&RHLIG;</citetitle> eller
+	<citetitle>&RHLRGS;</citetitle>.
+      </para>
+      <para>
+	Om du just avslutade partitionering med
+	<application>fdisk</application> m&aring;ste du ange
+	<firstterm>monteringspunkter</firstterm> f&ouml;r dina partitioner.
+	Anv&auml;nd knappen <guilabel>Redigera</guilabel>, n&auml;r du har valt
+	en partition, f&ouml;r att ange dess monteringspunkt.
+       </para>
+      <para>
+	Om du anv&auml;nder <application>Disk Druid</application> m&aring;ste du
+	ange monteringspunkter f&ouml;r en eller flera partitioner.
+	Eventuellt beh&ouml;ver du ocks&aring; skapa och/eller radera partitioner
+	nu.
+      </para>
+      <para>
+	Den &ouml;versta sk&auml;rmen visar dina existerande partitioner. Varje
+	partition har fem f&auml;lt:
+      </para>
+      
+      <itemizedlist>
+	<listitem>
+	  <para>
+	    <command>Monteringspunkt:</command> Detta f&auml;lt visar var
+	    partitionen kommer att vara monterad n&auml;r &RHL; v&auml;l &auml;r
+	    installerat och k&ouml;r. Om en partition existerar men &auml;r
+	    m&auml;rkt som "inte angiven" m&aring;ste du ange dess
+	    monteringspunkt. Du kan anv&auml;nda knappen
+	    <keycap>Redigera</keycap> eller dubbelklicka p&aring;
+	    partitionen.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Enhet:</command> Detta f&auml;lt visar namnet p&aring; partitionens
+	    enhet (exempelvis inneb&auml;r hda2 den andra partitionen p&aring;
+	    din prim&auml;ra h&aring;rddisk).
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Beg&auml;rt:</command> F&auml;ltet <firstterm>Beg&auml;rt</firstterm>
+	    visar hur mycket utrymme partitionen har. Om du vill omdefiniera
+	    storleken m&aring;ste du radera partitionen och skapa den p&aring;
+	    nytt med hj&auml;lp av knappen <keycap>L&auml;gg till</keycap>.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Verkligt:</command> Detta f&auml;lt visar hur mycket utrymme
+	    partitionen anv&auml;nder.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Typ:</command> Detta f&auml;lt visar partitionstypen
+	    (exempelvis "Linux Native" eller DOS).
+	  </para>
+	</listitem>
+      </itemizedlist>
+      
+      <para>
+	N&auml;r du bl&auml;ddrar igenom sektionen om <firstterm>partitioner</firstterm>
+	kan du komma att se ett meddelande om
+	<firstterm>Oallokerade beg&auml;rda partitioner</firstterm>
+	(skrivet i r&ouml;d text), f&ouml;ljt av en eller flera partitioner.
+	En vanlig anledning till att man har en oallokerad partition &auml;r att
+	det inte finns tillr&auml;ckligt med ledigt utrymme f&ouml;r partitionen.
+      </para>
+      <para>
+	F&ouml;r att &aring;tg&auml;rda en oallokerad beg&auml;rd partition m&aring;ste
+	du antingen flytta partitionen till en annan h&aring;rddisk med tillr&auml;ckligt
+	ledigt utrymme, &auml;ndra storleken p&aring; partitionen s&aring; att den passar
+	p&aring; den nuvarande h&aring;rddisken, eller ta bort partitionen helt. G&ouml;r
+	&auml;ndringar genom att anv&auml;nda <keycap>Redigera</keycap>-knappen
+	eller genom att dubbelklicka p&aring; partitionen.
+      </para>
+	
+      <sect2 id="s2-help-screens-dd">
+	<title>Partitionera ditt system</title>
+	<para>
+	  Raden med knappar i mitten styr partitioneringsverktygets
+	  &aring;tg&auml;rder. Du kan l&auml;gga till, redigera och ta bort partitioner h&auml;r.
+	  Dessutom finns det knappar som l&aring;ter dig bekr&auml;fta de &auml;ndringar du
+	  har gjort, eller &aring;terst&auml;lla och avsluta partitioneringsverktyget.
+	</para>
+	
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>L&auml;gg till:</command> Anv&auml;nd denna knapp f&ouml;r att
+	      beg&auml;ra en ny partition. N&auml;r denna knapp v&auml;ljs kommer
+	      en dialogruta fram som inneh&aring;ller f&auml;lt som m&aring;ste fyllas i
+	      (exempelvis monteringspunkt, storlek och typ).
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Redigera:</command> Anv&auml;nd denna knapp f&ouml;r att
+	      &auml;ndra monteringspunkten f&ouml;r den valda partitionen.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Ta bort:</command> Anv&auml;nd denna knapp f&ouml;r att
+	      ta bort en partition. En dialogruta kommer att dyka upp
+	      som ber dig bekr&auml;fta raderingen.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>&aring;terst&auml;ll:</command> Anv&auml;nd denna knapp f&ouml;r att
+	      &aring;ngra alla &auml;ndringar du har gjort.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Skapa RAID-enhet:</command> Anv&auml;nd knappen
+	      <keycap>Skapa RAID-enhet</keycap> ENDAST om du har
+	      erfarenhet av RAID. F&ouml;r att l&auml;ra dig mer om RAID, se
+	      <citetitle>&RHLRGS;</citetitle>.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
+
+      <sect2 id="s2-help-screens-drive">
+	<title>H&aring;rddisk&ouml;versikt</title>
+	<para>
+	  Denna sektion visar din dators h&aring;rddiskkonfiguration. Den
+	  &auml;r endast avsedd som en summering. Varje rad har f&ouml;ljande
+	  f&auml;lt:
+	</para>
+	
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>H&aring;rddisk:</command> Detta f&auml;lt visar h&aring;rddiskens
+	      enhetsnamn (exempelvis hda eller hdb).
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Geom [C/H/S]:</command> H&aring;rddiskens
+	      <firstterm>geometri</firstterm> visar antalet cylindrar,
+	      huvuden och sektorer.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Totalt:</command> Detta f&auml;lt visar det totala
+	      tillg&auml;ngliga utrymmet p&aring; h&aring;rddisken.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Ledigt:</command> H&auml;r ser du hur mycket av
+	      h&aring;rddiskens utrymme som fortfarande &auml;r ledigt.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Anv&auml;nt:</command> Dessa f&auml;lt visar hur mycket
+	      (i procent och megabyte) av h&aring;rddiskens utrymme som f&ouml;r
+	      n&auml;rvarande &auml;r allokerat till partitioner.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
+    </sect1>
+
+    <sect1 id="s1-help-screens-loopback">
+      <title>Filsystemskonfiguration</title>
+      <para>
+        V&auml;lj f&ouml;rst rotfilsystemets storlek om du inte vill
+	anv&auml;nda standardv&auml;rdet. Rotfilsystemets standardv&auml;rde
+	&auml;r h&auml;lften av det tillg&auml;ngliga lediga utrymmet.
+      </para>
+      <para>
+        V&auml;xlingsutrymmets (swapens) standardv&auml;rde &auml;r 32 megabyte,
+	men du kan g&ouml;ra det st&ouml;rre om du beh&ouml;ver.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-format">
+      <title>V&auml;lj partitioner som skall formateras</title>
+      <para>
+	V&auml;lj de partitioner som du vill formatera f&ouml;r &RHL;.
+      </para>
+      <para>
+	Vill du s&ouml;ka efter skadade block?
+      </para>
+      <para>
+	S&ouml;kning efter skadade block kan f&ouml;rhindra f&ouml;rlust av
+	data p&aring; en enhet genom att hitta skadade block, och
+	sammanst&auml;lla en lista &ouml;ver dem, f&ouml;r att f&ouml;rhindra att
+	data skrivs till dem i framtiden.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-lilo">
+      <title>LILO-konfiguration</title> 
+      <para>
+	LILO (LInux LOader) &auml;r mjukvara som kan anv&auml;ndas f&ouml;r att starta &RHL;
+	p&aring; din dator. Det kan ocks&aring; starta andra operativsystem, som
+	exempelvis Windows 9<replaceable>x</replaceable>. H&auml;r kommer du
+	att efterfr&aring;gas hur (eller om) du vill konfigurera LILO.
+      </para>
+      <para>
+	<guibutton>Skapa bootdiskett</guibutton>: Du b&ouml;r skapa en bootdiskett
+	om du inte installerar LILO p&aring; MBR eller om du inte alls installerar
+	LILO.
+      </para>
+      <para>
+	<guibutton>Installera inte LILO</guibutton>: Du kan v&auml;lja att hoppa
+	&ouml;ver lilo om du inte vill skriva LILO till din h&aring;rddisk. Om du har
+	tv&aring; h&aring;rddiskar med olika operativsystem p&aring; varje h&aring;rddisk kanske
+	du f&ouml;redrar att anv&auml;nda en bootdiskett ist&auml;llet f&ouml;r LILO.
+      </para>
+      <para>
+	F&ouml;r att installera LILO v&auml;ljer du var du vill installera det. Om ditt
+	system endast kommer att anv&auml;nda &RHL; b&ouml;r du v&auml;lja huvudbootposten
+	(MBR). F&ouml;r system d&auml;r b&aring;de Win95/98 och &RHL; kommer att finnas p&aring;
+	samma h&aring;rddisk b&ouml;r du ocks&aring; installera LILO p&aring; MBR.
+      </para>
+      <para>
+	Om du har Windows NT (och du vill installera LILO) b&ouml;r du v&auml;lja att
+	installera LILO p&aring; bootpartitionens f&ouml;rsta sektor. F&ouml;rs&auml;kra
+	dig ocks&aring; om att du skapar en bootdiskett, annars kommer du inte att kunna
+	starta Linux.
+      </para>
+      <para>
+	Om du v&auml;ljer att inte installera LILO av <emphasis>n&aring;gon</emphasis>
+	anledning b&ouml;r du skapa en bootdiskett s&aring; att du kan boota till
+	&RHL;.
+      </para>
+      <para>
+	Om din dator inte l&auml;ser eller skriver till h&aring;rddisken i linj&auml;rt
+	l&auml;ge b&ouml;r du avmarkera alternativet
+	<guibutton>Anv&auml;nd linj&auml;rt l&auml;ge</guibutton>.
+      </para>
+      <para>
+	Om du vill l&auml;gga in standardalternativ till LILO-bootkommandot
+	skriver du in dem i f&auml;ltet parametrar till k&auml;rnan. Eventuella
+	alternativ som du anger kommer att skickas till Linuxk&auml;rnan
+	varje g&aring;ng den bootar.
+      </para>
+      <para>
+	<guilabel>Bootetikett</guilabel>: Varje bootbar partition,
+	inklusive partitioner som anv&auml;nds av andra operativsystem, visas
+	och har en etikett i f&auml;ltet <guilabel>Bootetikett</guilabel>
+	nederst p&aring; sk&auml;rmen. Om du vill l&auml;gga till bootetiketter f&ouml;r
+	andra partitioner (eller &auml;ndra existerande bootetiketter)
+	klickar du f&ouml;rst p&aring; partitionen f&ouml;r att v&auml;lja ut den. N&auml;r
+	den v&auml;l &auml;r vald kan du &auml;ndra bootetiketten i f&auml;ltet
+	ovanf&ouml;r.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-silo">
+      <title>SILO-konfiguration</title>
+      <para>
+        SILO (Sparc Improved LOader) &auml;r mjukvara som kan anv&auml;ndas
+	f&ouml;r att starta Red Hat Linux p&aring; din dator. Det kan ocks&aring;
+	starta andra operativsystem, som exempelvis SunOS eller
+	Solaris. H&auml;r kommer du att efterfr&aring;gas hur (eller om) du
+	vill konfigurera SILO.
+      </para>
+      <para>
+        <guibutton>Skapa bootdiskett</guibutton>: Du b&ouml;r skapa en
+	bootdiskett om du inte alls installerar SILO eller om du
+	vill ha det p&aring; grund av s&auml;kerhetssk&auml;l. Om du inte har en
+	diskettstation kommer detta alternativ att vara g&ouml;mt. Om du har
+	en Ultra fr&aring;n SMCC (som vanligtvis inte har bootbara
+	diskettstationer) kommer detta alternativ att som standard
+	vara deaktiverat.
+      </para>
+      <para>
+        <guibutton>Installera inte SILO</guibutton>: Du kan v&auml;lja att
+	hoppa &ouml;ver SILO om du inte vill skriva SILO till din h&aring;rddisk,
+	exempelvis om du redan har SILO installerat p&aring; en annan
+	partition eller h&aring;rddisk och vill boota d&auml;rifr&aring;n.
+      </para>
+      <para>
+        F&ouml;r att installera SILO v&auml;ljer du var du vill installera det.
+	Om ditt system endast kommer att anv&auml;nda Red Hat Linux b&ouml;r du
+	troligen v&auml;lja huvudbootposten (MBR; bootblocket p&aring; f&ouml;rsta
+	partitionen p&aring; h&aring;rddisken). F&ouml;r system d&auml;r b&aring;de
+	SunOS/Solaris och Red Hat Linux kommer att finnas p&aring; en och samma
+	h&aring;rddisk b&ouml;r du troligtvis inte installera SILO p&aring; MBR,
+	s&auml;rskilt om SunOS/Solaris finns p&aring; h&aring;rddiskens f&ouml;rsta
+	partition.
+      </para>
+      <para>
+        Om du v&auml;ljer att inte installera SILO av n&aring;gon anledning b&ouml;r du
+	skapa en bootdiskett s&aring; att du kan boota till Red Hat Linux.
+      </para>
+      <para>
+        <guibutton>Skapa PROM-alias</guibutton>: Installationsprogrammet
+	kan skapa ett "linux"-alias i PROM:et, om PROM:et st&ouml;der detta,
+	s&aring; att du kan boota till SILO fr&aring;n PROM-kommandoraden med
+	kommandot "boot linux".
+      </para>
+      <para>
+        <guibutton>S&auml;tt standard bootenhet i PROM</guibutton>:
+	Installationsprogrammet kan s&auml;kerst&auml;lla att PROM:et som standard
+	kommer att boota till Red Hat Linux installationsprogram, genom
+	att s&auml;tta PROM-alternativet "boot-device" eller "boot-from".
+      </para>
+      <para>
+       Om du vill l&auml;gga till standardalternativ till SILO-bootkommandot
+       skriver du in dem i f&auml;ltet parametrar till k&auml;rnan. Eventuella
+       alternativ som du anger kommer att skickas till Linuxk&auml;rnan varje
+       g&aring;ng den bootar.
+      </para>
+      <para>
+       Bootbar partition -- Varje bootbar partition, inklusive partitioner
+       som anv&auml;nds av andra operativsystem, visas och har en etikett.
+       Om du vill l&auml;gga till bootetiketter f&ouml;r andra partitioner (eller
+       &auml;ndra existerande partitioner) klickar du f&ouml;rst p&aring; partitionen f&ouml;r
+       att v&auml;lja ut den. N&auml;r den v&auml;l &auml;r vald kan du &auml;ndra bootetiketten.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-netconf">
+      <title>N&auml;tverkskonfiguration</title>
+      <para>
+	Om du har ett n&auml;tverkskort kan du ange din n&auml;tverksinformation.
+	Klicka annars p&aring; <guibutton>N&auml;sta</guibutton> f&ouml;r att forts&auml;tta.
+      </para>
+      <para>
+	V&auml;lj ditt n&auml;tverkskort och om du vill anv&auml;nda DHCP f&ouml;r
+	konfigureringen. Om du har flera Ethernet-enheter kommer varje
+	enhet att ha sin egen konfigurationssk&auml;rm. Du kan v&auml;xla mellan
+	sk&auml;rmarna f&ouml;r enheterna, (exempelvis eth0 och eth1);
+	informationen du anger kommer att vara specifik f&ouml;r varje sk&auml;rm.
+	Om du v&auml;ljer <guilabel>Aktivera vid boot</guilabel> kommer ditt
+	n&auml;tverkskort att startas n&auml;r du bootar.
+      </para>
+      <para>
+	Om du inte har DHCP-klientaccess eller &auml;r os&auml;ker p&aring; vad denna
+	information &auml;r b&ouml;r du kontakta din n&auml;tverksadministrat&ouml;r.
+      </para>
+      <para>
+	Efter&aring;t anger du, p&aring; l&auml;mpligt st&auml;lle, IP-adressen, n&auml;tmasken,
+	n&auml;tverket och broadcastadresser. Om du &auml;r os&auml;ker p&aring; n&aring;got av
+	dessa b&ouml;r du kontakta din n&auml;tverksadministrat&ouml;r.
+      </para>
+      <para>
+	Skriv in ett v&auml;rdnamn f&ouml;r ditt system. Om du inte g&ouml;r detta kommer
+	ditt system att heta "localhost".
+      </para>
+      <para>
+	Slutligen anger du adresserna till gateway, prim&auml;r DNS,
+	sekund&auml;r DNS och terti&auml;r DNS.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-timezone">
+      <title>Tidszonsval</title>
+      <para>
+	Du kan ange din tidszon antingen genom att v&auml;lja din dators
+	fysiska position eller din tidzons avst&aring;nd till "Universal
+	Coordinated Time" (UTC).
+      </para>
+      <para>
+	L&auml;gg m&auml;rke till flikarna &ouml;verst p&aring; sk&auml;rmen. Den
+	f&ouml;rsta fliken ger dig m&ouml;jligheten att v&auml;lja baserat p&aring;
+	geografisk position. Med detta alternativ kan du v&auml;lja vad du vill visa.
+	N&auml;r du v&auml;ljer <guimenuitem>Visa</guimenuitem>
+	&auml;r dina alternativ: V&auml;rlden, Nordamerika, Sydamerika, Stilla Havet,
+	Europa, Afrika och Asien.
+      </para>
+      <para>
+	Du kan klicka p&aring; en specifik stad, som markeras med de gula prickarna
+	p&aring; den interaktiva kartan. Ett r&ouml;tt <guilabel>X</guilabel> kommer
+	att dyka upp vid ditt val.
+      </para>
+      <para>
+	Du kan ocks&aring; bl&auml;ddra igenom listan &ouml;ver st&auml;der och
+	v&auml;lja &ouml;nskad tidszon.
+      </para>
+      <para>
+	Den andra fliken erbjuder dig m&ouml;jligheten att anv&auml;nda
+	avst&aring;ndet fr&aring;n "Universal Coordinated Time" (UTC). H&auml;r hittar du
+	en lista &ouml;ver avst&aring;nd som du kan v&auml;lja ifr&aring;n, och &auml;ven
+	alternativet att st&auml;lla in sommartid.
+      </para>
+      <para>
+	P&aring; b&aring;da flikarna finns alternativet att v&auml;lja
+	<guilabel>Systemklockan anv&auml;nder UTC</guilabel>. (UTC, &auml;ven k&auml;nt som
+	GMT, till&aring;ter ditt system att hantera sommartid korrekt). V&auml;lj detta
+	om din dators h&aring;rdvaruklocka &auml;r st&auml;lld p&aring; UTC (ist&auml;llet
+	f&ouml;r att vara st&auml;lld p&aring; lokal tid).
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-accts">
+      <title>Kontokonfiguration</title>
+      <para>
+	Ange ett l&ouml;senord f&ouml;r rootkontot. L&ouml;senordet m&aring;ste vara minst sex
+	tecken l&aring;ngt. Bekr&auml;fta l&ouml;senordet genom att ange det ytterligare en
+	g&aring;ng i det andra f&auml;ltet. Knappen <guibutton>N&auml;sta</guibutton> kommer
+	att aktiveras n&auml;r b&aring;da l&ouml;senorden st&auml;mmer &ouml;verens.
+      </para>
+      <para>
+	Skapa sedan ett anv&auml;ndarkonto.
+      </para
+      <para>
+	Ange ett namn f&ouml;r anv&auml;ndarkontot. Skapa sedan ett l&ouml;senord f&ouml;r det
+	anv&auml;ndarkontot och bekr&auml;fta det. Ange slutligen det fullst&auml;ndiga
+	namnet p&aring; anv&auml;ndaren och tryck p&aring; <keycap>Enter</keycap>. Din
+	kontoinformation kommer att l&auml;ggas till i listan &ouml;ver konton.
+      </para>
+      <para>
+	F&ouml;r att l&auml;gga till ytterligare en anv&auml;ndare v&auml;ljer du
+	<guibutton>Nytt</guibutton> och skriver in informationen i de
+	tomma f&auml;lten. N&auml;r du har angivit informationen f&ouml;r det
+	anv&auml;ndarkontot klickar du p&aring; knappen <guibutton>L&auml;gg till</guibutton>
+	f&ouml;r att l&auml;gga till anv&auml;ndaren i listan &ouml;ver konton.
+      </para>
+      <para>
+	Du kan ocks&aring; <guibutton>Redigera</guibutton> de anv&auml;ndarkonton du har
+	skapat, eller <guibutton>Ta bort</guibutton> ett konto som du inte vill
+	ha, genom att v&auml;lja ett konto och anv&auml;nda knapparna
+	<guibutton>Redigera</guibutton> eller <guibutton>Ta bort</guibutton>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-authconf">
+      <title>Autentiseringskonfiguration</title>
+      <para>
+	Du kan hoppa &ouml;ver detta avsnitt om du inte kommer att anv&auml;nda
+	n&auml;tverksl&ouml;senord. Be din systemadministrat&ouml;r om hj&auml;lp om du &auml;r
+	os&auml;ker.
+      </para>
+      <para>
+	Om du inte t&auml;nker anv&auml;nda <firstterm>NIS</firstterm>-l&ouml;senord kommer
+	du att m&auml;rka att b&aring;de <firstterm>MD5-l&ouml;senord</firstterm> och
+	<firstterm>skuggl&ouml;senord</firstterm> &auml;r valda. Vi rekommenderar
+	att du anv&auml;nder b&aring;da f&ouml;r att g&ouml;ra din maskin s&aring;
+	s&auml;ker som m&ouml;jligt.
+      </para>
+      <para>
+	<emphasis>Aktivera MD5-l&ouml;senord</emphasis> - till&aring;ter att ett l&aring;ngt
+	l&ouml;senord anv&auml;nds (upp till 256 tecken), ist&auml;llet f&ouml;r det vanliga
+	(&aring;tta tecknen eller mindre).
+      </para>
+      <para>
+	<emphasis>Aktivera skuggl&ouml;senord</emphasis> - ger dig en v&auml;ldigt
+	s&auml;ker metod att lagra l&ouml;senord. Alla l&ouml;senord lagras i
+	<filename>/etc/shadow</filename>, som endast kan l&auml;sas av root.
+      </para>
+      <para>
+	F&ouml;r att kunna konfigurera NIS-alternativet m&aring;ste du vara ansluten
+	till ett NIS-n&auml;tverk. Om du &auml;r os&auml;ker p&aring; om du &auml;r ansluten till
+	ett NIS-n&auml;tverk b&ouml;r du kontakta din systemadministrat&ouml;r.
+      </para>
+      <para>
+	<emphasis>Aktivera NIS</emphasis> - till&aring;ter dig att k&ouml;ra en
+	grupp av datorer i samma "Network Information Service"-dom&auml;n med
+	en gemensam l&ouml;senordsfil och en gemensam gruppfil. Det finns tv&aring;
+	alternativ h&auml;r att v&auml;lja ifr&aring;n:
+      </para>
+      <para>
+	<emphasis>NIS-dom&auml;n</emphasis> - detta alternativ till&aring;ter dig
+	att ange vilken dom&auml;n eller grupp av datorer ditt system tillh&ouml;r.
+      </para>
+      <para>
+	<emphasis>NIS-server</emphasis> - detta alternativ f&aring;r din dator
+	att anv&auml;nda en specifik NIS-server, ist&auml;llet f&ouml;r att skicka
+	ett meddelande till alla datorer p&aring; det lokala n&auml;tverket och fr&aring;ga
+	efter en tillg&auml;nglig server som kan vara v&auml;rd &aring;t ditt system
+	(broadcasting).
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-sel-group">
+      <title>V&auml;lja paketgrupper</title>
+      <para>
+	V&auml;lj de paketgrupper som du vill installera. F&ouml;r att v&auml;lja en
+	paketgrupp klickar du p&aring; kryssrutan bredvid.
+      </para>
+      
+      <para>
+	F&ouml;r att v&auml;lja enstaka paket m&aring;ste du klicka i rutan
+	<guilabel>V&auml;lj enstaka paket</guilabel> l&auml;ngst ner p&aring; sk&auml;rmen.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-sel-indiv">
+      <title>V&auml;lja enstaka paket</title>
+      <para>
+	P&aring; den v&auml;nstra sidan av sk&auml;rmen ser du en lista &ouml;ver paketgrupper.
+	N&auml;r du f&auml;ller ut listan och v&auml;ljer en grupp, kommer listan
+	&ouml;ver paket i denna grupp att visas i rutan till h&ouml;ger.
+      </para>
+      <para>
+	F&ouml;r att v&auml;lja ett enstaka paket dubbelklickar du p&aring; det, eller klickar
+	p&aring; det en g&aring;ng f&ouml;r att v&auml;lja det och sedan p&aring;
+	<guilabel>V&auml;lj paket f&ouml;r installation</guilabel>. En bock kommer att
+	dyka upp p&aring; de paket du eventuellt har valt.
+      </para>
+      <para>
+	Vill du ha mer information om ett specifikt paket &auml;r det bara att
+	klicka p&aring; det. Informationen om paketet kommer att dyka upp nederst
+	p&aring; sk&auml;rmen, tillsammans med paketets namn och storlek.
+      </para>
+    </sect1>
+      
+      <sect1 id="s1-help-screens-depend">
+      <title>Ol&ouml;sta paketberoenden</title>
+      <para>
+	M&aring;nga programpaket beh&ouml;ver andra paket eller bibliotek f&ouml;r att fungera
+	korrekt. F&ouml;r att s&auml;kerst&auml;lla att ditt system har alla de paket det
+	beh&ouml;ver f&ouml;r att fungera kollar &RHL; dessa
+	<firstterm>paketberoenden</firstterm> varje g&aring;ng du installerar eller
+	tar bort ett paket. Om ett paket beh&ouml;ver ett annat paket som inte &auml;r
+	installerat finns ett paketberoende.
+      </para>
+      <para>
+	Ett eller flera paket som du har valt har ol&ouml;sta beroenden. Du kan l&ouml;sa
+	detta genom att v&auml;lja <guilabel>Installera paket f&ouml;r att
+	tillfredsst&auml;lla beroenden</guilabel>.
+      </para>
+    </sect1>
+    
+    <sect1 id="s1-help-screens-monitor">
+      <title>X-konfiguration</title>
+      <para>
+	Installationsprogrammet kommer nu att f&ouml;rs&ouml;ka uppt&auml;cka din
+	bildsk&auml;rm f&ouml;r att best&auml;mma de b&auml;sta sk&auml;rminst&auml;llningarna
+	f&ouml;r din maskin. Om din bildsk&auml;rm inte kan uppt&auml;ckas b&ouml;r du
+	v&auml;lja den bildsk&auml;rm ur listan som st&auml;mmer b&auml;st &ouml;verens med
+	bildsk&auml;rmen som &auml;r ansluten till denna dator.
+      </para>
+      <para>
+        Du kan ocks&aring; ange det horisontella och vertikala
+	synkroniseringsintervallet f&ouml;r din bildsk&auml;rm. Dessa v&auml;rden
+	kan hittas i dokumentationen som medf&ouml;ljde din bildsk&auml;rm.
+	Var f&ouml;rsiktig n&auml;r du anger dessa v&auml;rden; om du anger v&auml;rden
+	som &ouml;verstiger din utrustnings kapacitet kan du skada din
+	bildsk&auml;rm.
+	Skriv endast in siffror i dessa f&auml;lt om du &auml;r s&auml;ker p&aring; att
+	v&auml;rdena i din manual inte st&auml;mmer &ouml;verens med valen i
+	listan &ouml;ver bildsk&auml;rmar och du &auml;r s&auml;ker p&aring; att du har de
+	r&auml;tta v&auml;rdena fr&aring;n din dokumentation.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-xconf">
+      <title>X-konfiguration</title>
+      <para>
+	&Auml;ven om installationsprogrammet letar f&ouml;r att hitta det b&auml;sta
+	grafikkortet f&ouml;r ditt system kan du v&auml;lja ett annat
+	grafikkort om s&aring; beh&ouml;vs.
+      </para>
+      <para>
+	N&auml;r du v&auml;l har valt ditt grafikkort v&auml;ljer du m&auml;ngden grafikminne
+	som finns p&aring; ditt kort.
+      </para>
+      <para>
+	N&auml;r din h&aring;rdvarukonfiguration v&auml;l &auml;r angiven kan du testa dina
+	inst&auml;llningar.
+      </para>
+      <para>
+	Du kan ocks&aring; v&auml;lja om du vill boota ditt system till en grafisk
+	milj&ouml; n&auml;r &RHL; v&auml;l &auml;r installerat.
+      </para>
+      <para>
+	V&auml;lj knappen <guibutton>Anpassa X-konfiguration</guibutton> f&ouml;r
+	att v&auml;lja specifika f&auml;rg- och uppl&ouml;sningsinst&auml;llningar.
+      </para>
+      <para>
+	Du kan ocks&aring; v&auml;lja <guibutton>Hoppa &ouml;ver konfiguration av X</guibutton>
+	om du hellre vill konfigurera X efter installationen eller inte alls.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-xcustom">
+      <title>
+        Anpassad konfiguration
+      </title>
+      <para>
+        V&auml;lj nu den korrekta uppl&ouml;sningen f&ouml;r din X-konfiguration.
+	Klicka p&aring; <guibutton>Testa denna konfiguration</guibutton> f&ouml;r
+	att prova denna konfiguration. Om du inte gillar det du f&aring;r
+	se n&auml;r du testar klickar du p&aring; <guibutton>Nej</guibutton>
+	f&ouml;r att v&auml;lja en annan uppl&ouml;sning.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-aboutinstall">
+      <title> Redo att installera</title>
+      <para>
+	<command>Varning:</command> N&auml;r du v&auml;l klickar p&aring;
+	<guibutton>N&auml;sta</guibutton> kommer &RHL; att skrivas till din h&aring;rddisk.
+	Denna process kan inte g&ouml;ras ogjord, s&aring; om du har best&auml;mt dig f&ouml;r att
+	inte installera &RHL; &auml;r detta det sista tillf&auml;llet som du kan avbryta
+	installationen.
+      </para>
+      <para>
+	F&ouml;r att avbryta installationen tar du bort all &RHL;-media och
+	trycker p&aring; din dators <command>Reset</command>-knapp, eller
+	startar om datorn genom att anv&auml;nda
+	<keycombo>
+	  <keycap>Control-</keycap> <keycap>Alt-</keycap>
+	  <keycap>Delete</keycap>
+	</keycombo>
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-installing">
+      <title>Installerar paket</title>
+      <para>
+	Vi har nu samlat all information som beh&ouml;vs f&ouml;r att installera
+	&RHL; p&aring; ditt system. Det kan ta ett tag att bearbeta allt
+	beroende p&aring; hur m&aring;nga paket som m&aring;ste installeras. Om du har
+	ett officiellt &RHL;-paket kan detta vara ett bra tillf&auml;lle
+	att bekanta dig med <citetitle>&RHLGSG;</citetitle> eller
+	<citetitle>&RHLRGS;</citetitle>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-bootdisk">
+      <title>Skapa bootdiskett</title>
+      <para>
+	S&auml;tt in en tom, formaterad diskett i din diskettstation och klicka p&aring;
+	<guibutton>N&auml;sta</guibutton> f&ouml;r att forts&auml;tta.
+      </para>
+    </sect1>
+  </chapter>
+</book>
+

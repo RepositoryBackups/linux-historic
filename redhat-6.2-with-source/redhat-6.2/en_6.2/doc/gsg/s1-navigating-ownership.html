@@ -1,0 +1,1271 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-navigating-ownership.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Ownership and Permissions</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="You Are Here"
+HREF="ch-navigating.html"><LINK
+REL="PREVIOUS"
+TITLE="Stringing Commands Together"
+HREF="s1-navigating-stringing.html"><LINK
+REL="NEXT"
+TITLE="Fun with Numbers in chmod"
+HREF="s1-navigating-chmodnum.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-navigating-stringing.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 13. You Are Here</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-navigating-chmodnum.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-NAVIGATING-OWNERSHIP"
+>Ownership and Permissions</A
+></H1
+><P
+>        Earlier in this chapter, when we tried to <B
+CLASS="COMMAND"
+>cd</B
+> to
+        root's login directory, we received the following friendly message:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>cd /root</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>bash: /root: Permission denied</TT
+>
+<TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        That was one demonstration of Linux's security features. Linux, like
+        UNIX, is a multi-user system, and file permissions are one way the
+        system uses to protect against any type of tampering -- malicious or
+        accidental.
+      </P
+><P
+>        One way to gain entry when we see we're denied permission is to
+        <B
+CLASS="COMMAND"
+>su</B
+> to root, as we learned earlier. That's because
+        whoever knows the root password has complete access.
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>su</B
+></TT
+>
+<TT
+CLASS="PROMPT"
+>Password:</TT
+> <TT
+CLASS="USERINPUT"
+><B
+><TT
+CLASS="REPLACEABLE"
+><I
+>your root password</I
+></TT
+></B
+></TT
+>
+<TT
+CLASS="PROMPT"
+>[root@localhost newuser]#</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>cd /root</B
+></TT
+>
+<TT
+CLASS="PROMPT"
+>[root@localhost /root]#</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        But switching to superuser isn't always convenient -- or smart, since
+        it's so easy to mistakenly mess up important configuration files.
+      </P
+><P
+>        All files and directories are "owned" by the person who created them. We
+        created the file <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+> in our login
+        directory, so <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+> "belongs" to us.
+      </P
+><P
+>        That means, we can specify who's allowed to read the file, write to the
+      file or, if it's an application instead of a text file, who can execute
+      the file.
+      </P
+><P
+>        Reading, writing and executing are the three main settings in
+        permissions.
+      </P
+><P
+>        Since every user on the system is placed into a
+        <I
+CLASS="FIRSTTERM"
+>group</I
+> when that user is created, then we can also
+        specify whether certain groups can read, write to, or execute our file.
+      </P
+><P
+>        Let's take a closer look at <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+> with the
+        <B
+CLASS="COMMAND"
+>ls</B
+> command using the <B
+CLASS="COMMAND"
+>-l</B
+> (long)
+        option (see <A
+HREF="s1-navigating-ownership.html#GR-NAVIGATING-PERMISS1"
+>Figure 13-16</A
+>).
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>ls -l sneakers.txt</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>-rw-rw-r--    1 newuser newuser     150 Mar 19 08:08 sneakers.txt</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        There's quite a bit of detail here. We can see who can read (r) and
+        write to (w) the file, as well as who created the file (newuser) and to
+        which group the owner belongs (newuser).
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Your default group</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          Remember that, by default, your group was the login name you chose.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-NAVIGATING-PERMISS1"
+></A
+><P
+><IMG
+SRC="figs/navigating/permiss1.gif"></P
+><P
+><B
+>Figure 13-16. Permissions for <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+></B
+></P
+></DIV
+><P
+>        Other information to the right of the group includes the file name, date
+        and time of its creation as well as size.
+      </P
+><P
+>        How do all those dashes and letters fit together? It's not as hard to
+        read as it might seem. Let's take a look:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>-rw-rw-r--</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        There are 10 slots in this column. The first slot represents the type of
+        file. The remaining nine slots are actually three sets of permissions
+        for three different categories of users.
+      </P
+><P
+>        Those three sets are: the owner of the file, the group in which the file
+        belongs and "others," meaning users and groups other than the owner of
+        the file (newuser) and those in newuser's group (which is also newuser).
+      </P
+><P
+>        Let's stretch out these file settings a bit:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+> -    (rw-)   (rw-)  (r--)    1 newuser newuser
+ |      |       |      |
+type  owner   group  others
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        The first item, which specifies the file type, can show one of the
+        following:
+      </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <TT
+CLASS="COMPUTEROUTPUT"
+>d</TT
+> -- a directory
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <TT
+CLASS="COMPUTEROUTPUT"
+>-</TT
+> -- a regular file (rather than
+            directory or link)
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <TT
+CLASS="COMPUTEROUTPUT"
+>l</TT
+> -- a symbolic link to another
+            program or file elsewhere on the system
+          </P
+></LI
+></UL
+><P
+>        Beyond the first item, in the following three sets, we'll see one of the
+        following:
+      </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <TT
+CLASS="COMPUTEROUTPUT"
+>r</TT
+> -- file can be read
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <TT
+CLASS="COMPUTEROUTPUT"
+>w</TT
+> -- file can be written to
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <TT
+CLASS="COMPUTEROUTPUT"
+>x</TT
+> -- file can be executed (if it's
+            a program)
+          </P
+></LI
+></UL
+><P
+>        When we see a dash in owner, group or others, it means that particular
+        permission hasn't been granted.
+      </P
+><P
+>        Let's look again at first column of <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+>
+        and identify its permissions. (See <A
+HREF="s1-navigating-ownership.html#GR-NAVIGATING-PERMISS2"
+>Figure 13-17</A
+>)
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>ls -l sneakers.txt</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>-rw-rw-r--    1 newuser newuser     150 Mar 19 08:08 sneakers.txt</TT
+>
+<TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-NAVIGATING-PERMISS2"
+></A
+><P
+><IMG
+SRC="figs/navigating/permiss2.gif"></P
+><P
+><B
+>Figure 13-17. A Closer View of Permissions</B
+></P
+></DIV
+><P
+>        The file's owner, newuser, has permission to read and write to the file;
+        it's not a program, so newuser doesn't have permission to execute it. The
+        group, newuser, has permission to read and write to
+        <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+>, as well. Similar to the program
+        notation for owner <TT
+CLASS="FILENAME"
+>newuser</TT
+>, there's no execute
+        permission for group newuser.
+      </P
+><P
+>        In the last set, we can see that those who aren't either the user newuser
+      or in the group called <TT
+CLASS="FILENAME"
+>newuser</TT
+> can read the file, but
+      can't write to it or execute it.
+      </P
+><P
+>        We can use the <B
+CLASS="COMMAND"
+>chmod</B
+> command to change a file's
+        permissions.
+      </P
+><P
+>        Let's work a bit more on <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+> to change the
+        permissions with the <B
+CLASS="COMMAND"
+>chmod</B
+> command.
+      </P
+><P
+>        The original file looks like this, with its initial permissions
+        settings:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>-rw-rw-r--    1 newuser newuser     150 Mar 19 08:08 sneakers.txt</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        As long as we're the owner of the file -- or we're logged into the root
+        account -- we can change permissions in any combination of settings for
+        the owner, group and others.
+      </P
+><P
+>        Right now, the owner (that's us) and our group (which is newuser) can read
+        and write to the file.
+      </P
+><P
+>        Anyone outside of our group -- for example can only read the file
+        (<TT
+CLASS="COMPUTEROUTPUT"
+>r--</TT
+>).
+      </P
+><DIV
+CLASS="CAUTION"
+><P
+></P
+><TABLE
+CLASS="CAUTION"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/caution.gif"
+HSPACE="5"
+ALT="Caution"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Permissions are necessary</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          Remember that file permissions are a security feature.  Whenever you
+          allow everyone to read, write to and execute files, you may be
+          increasing your risk of tampering. As a rule, then, you should shy
+          away from allowing everyone to read and write to a file.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>        In this case, however, let's say that we want to allow everyone to write
+        to the file, so they can read it, write notes in it and save it. That
+        means we'll have to change the change the "others" section of the file
+        permissions.
+      </P
+><P
+>        Since we're the owner of the file, we don't have to
+        <B
+CLASS="COMMAND"
+>su</B
+> to root to do it. Let's take a look at the file
+        first. At the shell prompt, type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>ls -l sneakers.txt</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        which gives us this file information:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>-rw-rw-r--    1 newuser newuser     150 Mar 19 08:08 sneakers.txt</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Now, type the following:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>chmod o+w sneakers.txt</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        To check our results, we can list the file's details again. Now, the
+        file looks like this:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>-rw-rw-rw-    1 newuser newuser     150 Mar 19 08:08 sneakers.txt</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        There's our result: Now, everyone can read and write to the file (Figure
+        <A
+HREF="s1-navigating-ownership.html#GR-NAVIGATING-PERMISS4"
+>Figure 13-18</A
+>).
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-NAVIGATING-PERMISS4"
+></A
+><P
+><IMG
+SRC="figs/navigating/permiss4.gif"></P
+><P
+><B
+>Figure 13-18.           Changing Permissions for <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+>
+        </B
+></P
+></DIV
+><P
+>        When we typed <B
+CLASS="COMMAND"
+>o+w</B
+>, we were saying, "for others, add
+        write permission to the file <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+>."
+      </P
+><P
+>        If we want to remove all access permission from
+        <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+> (even though it's only a sketchy
+        shopping list), we could use the <B
+CLASS="COMMAND"
+>chmod</B
+> command to
+        take away both the read and write permissions like so:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>chmod go-rw sneakers.txt</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        and the result will look like this:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>-rw-------    1 newuser newuser    150 Mar 19 08:08 sneakers.txt</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        By typing <B
+CLASS="COMMAND"
+>go-rw</B
+>, then, we were saying "for the group
+        and others, remove read and write permission to the file
+        <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+>."
+      </P
+><P
+>        You might think of these settings as a kind of shorthand when you want
+        to change permissions with <B
+CLASS="COMMAND"
+>chmod</B
+>, because all you
+        really have to do is remember a few symbols and letters with the
+        <B
+CLASS="COMMAND"
+>chmod</B
+> command.
+      </P
+><P
+>        Here a list of what the shorthand represents:
+      </P
+><BLOCKQUOTE
+><P
+><B
+>Identities</B
+></P
+><P
+>            <B
+CLASS="COMMAND"
+>u</B
+> -- the user who owns the file (that is, the
+            owner)
+          </P
+><P
+>            <B
+CLASS="COMMAND"
+>g</B
+> -- the group to which the user belongs
+          </P
+><P
+>            <B
+CLASS="COMMAND"
+>o</B
+> -- others (not the owner or the owner's group)
+          </P
+><P
+>            <B
+CLASS="COMMAND"
+>a</B
+> -- everyone (<B
+CLASS="COMMAND"
+>u</B
+>,
+            <B
+CLASS="COMMAND"
+>g</B
+>, and <B
+CLASS="COMMAND"
+>o</B
+>)
+          </P
+></BLOCKQUOTE
+><BLOCKQUOTE
+><P
+><B
+>Permissions</B
+></P
+><P
+>            <B
+CLASS="COMMAND"
+>r</B
+> -- read access
+          </P
+><P
+>            <B
+CLASS="COMMAND"
+>w</B
+> -- write access
+          </P
+><P
+>            <B
+CLASS="COMMAND"
+>x</B
+> -- execute access
+          </P
+></BLOCKQUOTE
+><BLOCKQUOTE
+><P
+><B
+>Actions</B
+></P
+><P
+>            <B
+CLASS="COMMAND"
+>+</B
+> -- adds the permission
+          </P
+><P
+>            <B
+CLASS="COMMAND"
+>-</B
+> -- removes the permission
+          </P
+><P
+>            <B
+CLASS="COMMAND"
+>=</B
+> -- makes it the only permission
+          </P
+></BLOCKQUOTE
+><P
+>        Want to test it out? Let's remove all permission from
+        <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+> -- for everyone.
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>chmod a-rw sneakers.txt</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Now, let's see if we can read the file:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>cat sneakers.txt</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>cat: sneakers.txt: Permission denied</TT
+>
+<TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Guess it worked; even we can't get into the file. But since the file
+        belongs to us, we can always change permission to allow us read and
+        write access. (See <A
+HREF="s1-navigating-ownership.html#GR-NAVIGATING-PERMISS5"
+>Figure 13-19</A
+>)
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>chmod u+rw sneakers.txt</B
+></TT
+>
+<TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>cat sneakers.txt</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>buy some sneakers
+then go to the coffee shop
+then buy some coffee
+bring the coffee home
+take off shoes
+put on sneakers
+make some coffee
+relax!</TT
+>
+<TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-NAVIGATING-PERMISS5"
+></A
+><P
+><IMG
+SRC="figs/navigating/permiss5.gif"></P
+><P
+><B
+>Figure 13-19. Removing and Restoring Permissions</B
+></P
+></DIV
+><P
+>        Here are some common examples of settings that can be used with
+        <B
+CLASS="COMMAND"
+>chmod</B
+>:
+      </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="COMMAND"
+>g+w</B
+> -- adds write access for the group 
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="COMMAND"
+>o-rwx</B
+> -- removes all permissions for others
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="COMMAND"
+>u+x</B
+> -- allows the file owner to execute the file
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="COMMAND"
+>a+rw</B
+> -- allows everyone to read and write to
+            the file
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="COMMAND"
+>ug+r</B
+> -- allows the owner and group to read the
+            file
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="COMMAND"
+>g=rx</B
+> -- lets the group only read and execute (not
+            write)
+          </P
+></LI
+></UL
+><P
+>        By adding the <B
+CLASS="COMMAND"
+>-R</B
+> option, we can change permissions
+        for entire directory trees.
+      </P
+><P
+>        There's a slight twist, however, because we can't really "execute" a
+        directory as we would an application. Instead, when we add or remove
+        execute permission for a directory, we're really allowing (or denying)
+        permission to search through that directory.
+      </P
+><P
+>        To allow everyone read and write access to the
+        <TT
+CLASS="FILENAME"
+>tigger</TT
+> directory in our login directory, we just
+        type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>chmod -R a+rw tigger</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        But&#8230; If we don't allow others to have execute permission to
+        tigger, it doesn't matter who has read or write access, because no one
+        will be able to get into the directory -- unless they know the exact
+        filename they want.
+      </P
+><P
+>        For example, let's type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>chmod a-x tigger</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        to remove execute access to all.
+      </P
+><P
+>        Here's what happens now when we try to <B
+CLASS="COMMAND"
+>cd</B
+> to into
+        <TT
+CLASS="FILENAME"
+>tigger</TT
+>:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>cd tigger</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>bash: tigger: Permission denied</TT
+>
+<TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Let's restore ours and our group's access.
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>chmod ug+x tigger</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Now, if we check our work with <B
+CLASS="COMMAND"
+>ls -dl</B
+> we'll see that
+        only others will be denied access to tigger.
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-navigating-stringing.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-navigating-chmodnum.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Stringing Commands Together</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-navigating.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Fun with Numbers in <B
+CLASS="COMMAND"
+>chmod</B
+></TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-navigating-ownership.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:09 GMT -->
+</HTML
+>

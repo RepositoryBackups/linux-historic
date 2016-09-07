@@ -1,0 +1,328 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2000-02-24 17:45-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"
+
+#: ../hwconf.c:59
+msgid ""
+" <Tab>/<Alt-Tab> between elements   |   <Space> selects  |   <F12> next "
+"screen"
+msgstr ""
+
+#: ../hwconf.c:62
+#, c-format
+msgid ""
+"Hardware Discovery Utility %s                     (C) 2000 Red Hat, Inc."
+msgstr ""
+
+#. OK, let's play Find the RPM!
+#: ../hwconf.c:109
+msgid "RPM Required"
+msgstr ""
+
+#: ../hwconf.c:109
+msgid "CD"
+msgstr ""
+
+#: ../hwconf.c:109
+msgid "Filesystem"
+msgstr ""
+
+#: ../hwconf.c:109 ../hwconf.c:158
+msgid "Cancel"
+msgstr ""
+
+#: ../hwconf.c:110
+#, c-format
+msgid ""
+"The XFree86-%s RPM is needed to use this graphics card.You can install it "
+"from your Red Hat Linux CD-ROM, from another location on the filesytem, or "
+"postpone it until later."
+msgstr ""
+
+#: ../hwconf.c:116
+msgid "Insert CD-ROM"
+msgstr ""
+
+#: ../hwconf.c:116 ../hwconf.c:125 ../hwconf.c:140 ../hwconf.c:158
+#: ../hwconf.c:175 ../hwconf.c:960
+msgid "Ok"
+msgstr ""
+
+#: ../hwconf.c:117
+msgid "Please insert your Red Hat Linux CD-ROM."
+msgstr ""
+
+#: ../hwconf.c:125
+msgid "Mount failed"
+msgstr ""
+
+#: ../hwconf.c:126
+msgid "Could not mount CD-ROM."
+msgstr ""
+
+#: ../hwconf.c:140 ../hwconf.c:175
+msgid "RPM Install Failed"
+msgstr ""
+
+#: ../hwconf.c:141 ../hwconf.c:176
+#, c-format
+msgid "RPM install of XFree86-%s failed."
+msgstr ""
+
+#: ../hwconf.c:150
+msgid "Path:"
+msgstr ""
+
+#: ../hwconf.c:155
+#, c-format
+msgid "Please enter the path where the XFree86-%s RPM can be found:"
+msgstr ""
+
+#: ../hwconf.c:156
+msgid "Enter path to RPM"
+msgstr ""
+
+#: ../hwconf.c:283
+#, c-format
+msgid "linked %s to %s"
+msgstr ""
+
+#: ../hwconf.c:304
+#, c-format
+msgid "unlinked %s (was linked to %s)"
+msgstr ""
+
+#: ../hwconf.c:306
+#, c-format
+msgid "unlinked %s"
+msgstr ""
+
+#: ../hwconf.c:341
+#, c-format
+msgid "ran loadkeys %s"
+msgstr ""
+
+#: ../hwconf.c:435
+msgid "Update /etc/inittab"
+msgstr ""
+
+#: ../hwconf.c:435 ../hwconf.c:568 ../hwconf.c:817
+msgid "Yes"
+msgstr ""
+
+#: ../hwconf.c:435 ../hwconf.c:568 ../hwconf.c:817
+msgid "No"
+msgstr ""
+
+#: ../hwconf.c:436
+msgid ""
+"Your /etc/inittab is not suitable for serial console operation. Would you "
+"like to update it?"
+msgstr ""
+
+#: ../hwconf.c:438
+msgid ""
+"Your /etc/inittab is not suitable for video console operation. Would you "
+"like to update it?"
+msgstr ""
+
+#: ../hwconf.c:568
+msgid "Update /etc/securetty"
+msgstr ""
+
+#: ../hwconf.c:569
+msgid ""
+"Your /etc/securetty does not contain `console' device, which means root "
+"won't be able to log in on console. Would you like to update it?"
+msgstr ""
+
+#: ../hwconf.c:779
+#, c-format
+msgid "Configuring %s"
+msgstr ""
+
+#: ../hwconf.c:780
+msgid "Configuring"
+msgstr ""
+
+#: ../hwconf.c:809 ../hwconf.c:852 ../hwconf.c:873 ../hwconf.c:904
+#, c-format
+msgid "aliased %s as %s"
+msgstr ""
+
+#: ../hwconf.c:817
+msgid "Existing Configuration Detected"
+msgstr ""
+
+#: ../hwconf.c:818
+msgid "Migrate existing network configuration?"
+msgstr ""
+
+#: ../hwconf.c:826
+#, c-format
+msgid "ran netconfig for %s%d"
+msgstr ""
+
+#: ../hwconf.c:884
+#, c-format
+msgid "ran soundconfig for %s"
+msgstr ""
+
+#: ../hwconf.c:929
+#, c-format
+msgid "ran mouseconfig for %s"
+msgstr ""
+
+#: ../hwconf.c:944
+#, c-format
+msgid "ran kbdconfig for `%s'"
+msgstr ""
+
+#: ../hwconf.c:960
+msgid "Run printtool"
+msgstr ""
+
+#: ../hwconf.c:961
+#, c-format
+msgid ""
+"To properly configure your %s, you needto run the 'printtool' command "
+"fromthe X window system"
+msgstr ""
+
+#: ../hwconf.c:987
+#, c-format
+msgid "Unconfiguring %s"
+msgstr ""
+
+#: ../hwconf.c:988
+msgid "Removing Configuration"
+msgstr ""
+
+#: ../hwconf.c:1097 ../hwconf.c:1100 ../hwconf.c:1134
+msgid "Welcome to Kudzu"
+msgstr ""
+
+#: ../hwconf.c:1109
+#, c-format
+msgid ""
+"Welcome to Kudzu, the Red Hat Linux hardware detection and configuration "
+"tool.\n"
+"\n"
+"On the following screens you will be able to configure any new or removed "
+"hardware for your computer.\n"
+"\n"
+"                Press any key to continue.\n"
+"\n"
+"         Normal bootup will continue in %d seconds."
+msgstr ""
+
+#: ../hwconf.c:1118
+msgid ""
+"Welcome to Kudzu, the Red Hat Linux hardware detection and configuration "
+"tool.\n"
+"\n"
+"On the following screens you will be able to configure any new or removed "
+"hardware for your computer.\n"
+"\n"
+"                Press any key to continue."
+msgstr ""
+
+#: ../hwconf.c:1135
+msgid ""
+"Welcome to Kudzu, the Red Hat Linux hardware detection and configuration "
+"tool.\n"
+"\n"
+"\n"
+"\n"
+"                             Timeout exceeded."
+msgstr ""
+
+#: ../hwconf.c:1233
+msgid "Hardware Removed"
+msgstr ""
+
+#: ../hwconf.c:1233
+msgid "Remove Configuration"
+msgstr ""
+
+#: ../hwconf.c:1234
+msgid "Keep Configuration"
+msgstr ""
+
+#: ../hwconf.c:1234 ../hwconf.c:1270
+msgid "Do Nothing"
+msgstr ""
+
+#: ../hwconf.c:1235
+#, c-format
+msgid ""
+"The following hardware has been removed from your system:\n"
+"        %s\n"
+"\n"
+"You can choose to:\n"
+"\n"
+"1) Remove any existing configuration for the device.\n"
+"2) Keep the existing configuration. You will not be prompted again if the "
+"device seems to be missing.\n"
+"3) Do nothing. The configuration will not be removed, but if the device is "
+"found missing on subsequent reboots, you will be prompted again."
+msgstr ""
+
+#: ../hwconf.c:1269
+msgid "Hardware Added"
+msgstr ""
+
+#: ../hwconf.c:1269
+msgid "Configure"
+msgstr ""
+
+#: ../hwconf.c:1270
+msgid "Ignore"
+msgstr ""
+
+#: ../hwconf.c:1271
+#, c-format
+msgid ""
+"The following hardware has been added to your system:\n"
+"        %s\n"
+"\n"
+"You can choose to:\n"
+"\n"
+"1) Configure the device.\n"
+"2) Ignore the device. No configuration will be added, but you will not be "
+"prompted if the device is detected on subsequent reboots.\n"
+"3) Do nothing. No configuration will be added, and the device will show up "
+"as new if it is detected on subsequent reboots."
+msgstr ""
+
+#: ../hwconf.c:1321
+msgid "do configuration that doesn't require user input"
+msgstr ""
+
+#: ../hwconf.c:1325
+msgid "do only 'safe' probes that won't disturb hardware"
+msgstr ""
+
+#: ../hwconf.c:1329
+msgid "set timeout in seconds"
+msgstr ""
+
+#: ../hwconf.c:1332
+msgid "read probed hardware from a file"
+msgstr ""
+
+#: ../hwconf.c:1333
+msgid "file to read hardware info from"
+msgstr ""

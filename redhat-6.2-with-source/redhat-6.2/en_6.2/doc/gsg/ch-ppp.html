@@ -1,0 +1,1841 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/ch-ppp.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:45:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Getting Online</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="The Basics"
+HREF="p169.html"><LINK
+REL="PREVIOUS"
+TITLE="Printing Utilities in KDE and GNOME"
+HREF="s1-printing-utilities.html"><LINK
+REL="NEXT"
+TITLE="Connecting with Kppp"
+HREF="s1-ppp-kppp.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-printing-utilities.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-ppp-kppp.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CH-PPP"
+>Chapter 6. Getting Online</A
+></H1
+><P
+>      Normally, <I
+CLASS="FIRSTTERM"
+>PPP</I
+> accounts are used to dial in to an
+      Internet Service Provider (<I
+CLASS="FIRSTTERM"
+>ISP</I
+>). Using PPP, which
+      stands for <I
+CLASS="FIRSTTERM"
+>Point-to-Point Protocol</I
+>, you connect to
+      a large network (the Internet) through your ISP; your machine becomes a
+      part of that network and you use the resources of
+      the network. 
+      </P
+><P
+>      Both GNOME and KDE offer useful tools for establishing and modifying PPP
+      accounts to ISPs. These utilities remove much of the guesswork in creating
+      an online connection; in many cases, your only requirement is a valid
+      Internet account.
+    </P
+><P
+>      The utilities -- <TT
+CLASS="APPLICATION"
+>RP3</TT
+> for
+      GNOME and <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> for KDE -- can be
+      interchangeable, too. You can use <TT
+CLASS="APPLICATION"
+>RP3</TT
+> to set up
+      and connect in KDE; similarly, you can use <TT
+CLASS="APPLICATION"
+>Kppp</TT
+>
+      if you're using GNOME. 
+    </P
+><P
+>      If you use <TT
+CLASS="APPLICATION"
+>RP3</TT
+> or
+      <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> outside of their respective environments,
+      however, you will lose the ability to <I
+CLASS="FIRSTTERM"
+>dock</I
+> the
+      running applications. That means you won't be able to integrate
+      <TT
+CLASS="APPLICATION"
+>RP3</TT
+> into the KDE <B
+CLASS="GUIMENU"
+>Panel</B
+>, for
+      example -- or <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> in the GNOME
+      <B
+CLASS="GUIMENU"
+>Panel</B
+>. When they're docked on their
+      <B
+CLASS="GUIMENU"
+>Panels</B
+>, both utilities provide information about your
+      connection, such as connection time, speed of the connection and more. You
+      will be able to <I
+CLASS="FIRSTTERM"
+>minimize</I
+> these utilities on the
+      <B
+CLASS="GUIMENU"
+>Panel</B
+>, however.
+    </P
+><P
+>      Note, also, that if you create an account in GNOME with
+      <TT
+CLASS="APPLICATION"
+>RP3</TT
+>, but would rather use
+      <TT
+CLASS="APPLICATION"
+>Kppp</TT
+>, you'll have to set up your account again
+      in that application; in other words, information you enter in one
+      application won't be available to the other application.
+   </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>You must be root</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>Because you'll be making changes to your system, you must be root in
+	order to create a PPP account. If you're in your user account, you'll be
+	asked for your <I
+CLASS="FIRSTTERM"
+>root password</I
+> before proceeding in
+	either <TT
+CLASS="APPLICATION"
+>RP3</TT
+> or <TT
+CLASS="APPLICATION"
+>Kppp</TT
+>.
+      </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	Your own ISP may have specific connection requirements for their service
+	which differ from the instructions in this chapter. Before connecting
+	with either of these tools, check first with your ISP for any specific
+	instructions that they provide, including the following information:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	  The phone number that your machine must dial into at your ISP.
+	</P
+></LI
+><LI
+><P
+>	  Your login name and password for the Internet account.
+	</P
+></LI
+><LI
+><P
+>	  Possible <I
+CLASS="FIRSTTERM"
+>gateway address</I
+>: Some ISPs may require
+	  you to specifically type in the address for the ISP's gateway.
+	</P
+></LI
+><LI
+><P
+>	  <I
+CLASS="FIRSTTERM"
+>DNS entries</I
+>: DNS means <I
+CLASS="FIRSTTERM"
+>Domain Name
+	  Service</I
+>. The DNS tracks <I
+CLASS="FIRSTTERM"
+>IP</I
+>
+	  (Internet Protocol) addresses; each computer connected to the Internet
+	  must have an IP address, which is a unique set of numbers like
+	  <TT
+CLASS="REPLACEABLE"
+><I
+>2xx.2xx.2x.2</I
+></TT
+>. You may receive one or more
+	  DNS entries from your ISP when you sign up. Both
+	  <TT
+CLASS="APPLICATION"
+>RP3</TT
+> and <TT
+CLASS="APPLICATION"
+>Kppp</TT
+>
+	  provide spaces for you to enter these numbers.
+	</P
+></LI
+></UL
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-PPP-STARTING"
+>Using <TT
+CLASS="APPLICATION"
+>RP3</TT
+> to Connect</A
+></H1
+><P
+>      <TT
+CLASS="APPLICATION"
+>RP3</TT
+>, the Red Hat PPP Dialer utility, can make easy
+      work of connecting to the Internet or to some other network devices. You
+      can use <TT
+CLASS="APPLICATION"
+>RP3</TT
+> to connect your modem to a PPP
+      account, and then you can view statistics about the connection, such as
+      the time, speed and cost of the current connection.
+    </P
+><P
+>        You can start <TT
+CLASS="APPLICATION"
+>RP3</TT
+> by going to the GNOME
+      <B
+CLASS="GUIMENU"
+>Main Menu Button</B
+> =&#62; <B
+CLASS="GUIMENU"
+>Panel</B
+> =&#62;
+      <B
+CLASS="GUIMENU"
+>Add applet</B
+> =&#62; <B
+CLASS="GUIMENU"
+>Network</B
+> =&#62;
+      <B
+CLASS="GUIMENUITEM"
+>RH PPP Dialer</B
+> (see <A
+HREF="ch-ppp.html#GR-PPP-RP3APPLET"
+>Figure 6-1</A
+>). The application will then dock
+      into the <B
+CLASS="GUIMENU"
+>Panel</B
+> and remain there until you remove it (by
+	right-clicking on the docked application and selecting <TT
+CLASS="GUILABEL"
+><B
+>Remove
+      from panel</B
+></TT
+>).
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-RP3APPLET"
+></A
+><P
+><IMG
+SRC="figs/ppp/rp3applet.gif"></P
+><P
+><B
+>Figure 6-1. Adding <TT
+CLASS="APPLICATION"
+>RP3</TT
+> to the <B
+CLASS="GUIMENU"
+>Panel</B
+></B
+></P
+></DIV
+><P
+>      Another way to start the application and dock it into the
+	<B
+CLASS="GUIMENU"
+>Panel</B
+> is to right-click on the
+	<B
+CLASS="GUIMENU"
+>Panel</B
+>, then go to <B
+CLASS="GUIMENU"
+>Add applet</B
+> =&#62;
+	<B
+CLASS="GUIMENU"
+>Network</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>RH PPP
+	Dialer</B
+>.
+    </P
+><P
+>	You can also launch <TT
+CLASS="APPLICATION"
+>RP3</TT
+> -- without docking it
+	into the <B
+CLASS="GUIMENU"
+>Panel</B
+> -- from either the <B
+CLASS="GUIMENU"
+>GNOME
+	Panel</B
+> (by going to <B
+CLASS="GUIMENU"
+>Internet</B
+> =&#62;
+	<B
+CLASS="GUIMENUITEM"
+>RH PPP Dialer</B
+>) or from the shell prompt, by
+	typing <B
+CLASS="COMMAND"
+>/usr/bin/rp3</B
+> in an Xterm window.
+      </P
+><P
+>	To see all of your user-controllable network devices, such as modems and
+	Ethernet cards, from the <B
+CLASS="GUIMENU"
+>Main Menu Button</B
+> go to
+	<B
+CLASS="GUIMENU"
+>Internet</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>RH Network
+	Monitor</B
+>. Similar to the two previous methods, the
+	application will appear on the desktop, rather than docking onto the
+	<B
+CLASS="GUIMENU"
+>Panel</B
+>.
+      </P
+><P
+>	<TT
+CLASS="APPLICATION"
+>RP3</TT
+>'s <B
+CLASS="GUIMENU"
+>Dialup Configuration
+      Tool</B
+> dialog (see <A
+HREF="ch-ppp.html#GR-PPP-RP3DIALUP"
+>Figure 6-2</A
+>) allows you
+      to easily configure your system for an Internet connection, helping you to
+      locate your modem, enter the account information and connect.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-RP3DIALUP"
+></A
+><P
+><IMG
+SRC="figs/ppp/rp3dialup.gif"></P
+><P
+><B
+>Figure 6-2. Finding the <B
+CLASS="GUIMENUITEM"
+>Dialup Configuration Tool</B
+> on
+          the Menu</B
+></P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PPP-CREATING"
+>Creating a New Internet Account</A
+></H2
+><P
+> To create a new PPP account, start
+	<TT
+CLASS="APPLICATION"
+>RP3</TT
+>. Go to <B
+CLASS="GUIMENU"
+>Main Menu
+	Button</B
+> =&#62; <B
+CLASS="GUIMENU"
+>Internet</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Dialup
+	Configuration Tool</B
+>. 
+      </P
+><P
+>	  Next, type your root password when you're prompted and click the
+	  <B
+CLASS="GUIBUTTON"
+>OK</B
+> button to continue to the opening screen for
+	  the <TT
+CLASS="GUILABEL"
+><B
+>Add New Internet Connection</B
+></TT
+> tool.
+	</P
+><P
+>	If you don't already have devices configured, you'll see the
+	<TT
+CLASS="GUILABEL"
+><B
+>Add New Internet Connection</B
+></TT
+> dialog (see <A
+HREF="ch-ppp.html#GR-PPP-RP3NEW1"
+>Figure 6-3</A
+>).
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-RP3NEW1"
+></A
+><P
+><IMG
+SRC="figs/ppp/rp3new1.gif"></P
+><P
+><B
+>Figure 6-3. The <TT
+CLASS="GUILABEL"
+><B
+>Add New Internet Connection</B
+></TT
+> dialog</B
+></P
+></DIV
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>If devices are detected</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  If there are devices detected, such as an Ethernet card, you can
+	  simply choose a listed device so that the application is running on
+	  the <B
+CLASS="GUIMENU"
+>Panel</B
+> or the desktop, as in. Once the application is running,
+	  right-click on the application to open the options menu and select
+	  <B
+CLASS="GUIMENUITEM"
+>Configure PPP</B
+>.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	  To proceed, select the <B
+CLASS="GUIBUTTON"
+>Next</B
+> button; to quit the 
+	  utility without making any changes or additions, use the
+	  <B
+CLASS="GUIBUTTON"
+>Cancel</B
+> button. You can cancel without saving
+	  changes at any time during the process. You can also return to a
+	  previously completed screen by using the <B
+CLASS="GUIBUTTON"
+>Back</B
+>
+	  button.
+	</P
+><P
+>	  Your next task is to configure a modem. <TT
+CLASS="APPLICATION"
+>RP3</TT
+>
+	  will try to automatically detect a modem on your system (as in <A
+HREF="ch-ppp.html#GR-PPP-RP3SEARCH"
+>Figure 6-4</A
+>).
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-RP3SEARCH"
+></A
+><P
+><IMG
+SRC="figs/ppp/rp3search.gif"></P
+><P
+><B
+>Figure 6-4. Searching for a Modem</B
+></P
+></DIV
+><P
+>	  If your modem isn't detected during the search, you'll receive a
+	  message stating that it couldn't be found.
+      </P
+><P
+>	You can still enter details about your modem's location, speed and other
+	information, in the <TT
+CLASS="GUILABEL"
+><B
+>Edit Modem Properties</B
+></TT
+> dialog,
+	as in <A
+HREF="ch-ppp.html#GR-PPP-RP3NEW3"
+>Figure 6-5</A
+>. This dialog will appear if no
+	modems were detected on your system. Refer to your modem manufacturer's
+	documentation for specifics to enter here.
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>What are <I
+CLASS="FIRSTTERM"
+>Winmodems</I
+>?</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>If your
+	machine uses a modem which relies on software drivers for some of its
+	functionality, you've probably got a "Winmodem." Because they depend on
+	Windows-based software to operate correctly, these types of modems don't
+	function in Linux. To find out more about this subject, go to <A
+HREF="http://www.o2.net/~gromitkc/winmodem.html"
+TARGET="_top"
+>http://www.o2.net/~gromitkc/winmodem.html</A
+></P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-RP3NEW3"
+></A
+><P
+><IMG
+SRC="figs/ppp/rp3new3.gif"></P
+><P
+><B
+>Figure 6-5. The <TT
+CLASS="GUILABEL"
+><B
+>Edit Modem Properties</B
+></TT
+> Dialog</B
+></P
+></DIV
+><P
+>	  In the <TT
+CLASS="GUILABEL"
+><B
+>Edit Modem Properties</B
+></TT
+> dialog, you can
+	  specify the location of your modem, its baud rate, your preference
+	  regarding the speaker volume during a call and whether to use Touch
+	  Tone dialing.
+	</P
+><P
+>	  Although <TT
+CLASS="APPLICATION"
+>RP3</TT
+> attempts to detect the correct
+	  port, you can adjust the settings here.
+	</P
+><P
+>	  If you know that your modem is attached to <TT
+CLASS="FILENAME"
+>COM2</TT
+>
+	  under Windows, for example, its location in Linux will be
+	  <TT
+CLASS="FILENAME"
+>/dev/ttyS1</TT
+>. Here is a comparison of serial line
+	  names in MS-DOS (and Windows) and Linux:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>		<TT
+CLASS="FILENAME"
+>COM1</TT
+> = <TT
+CLASS="FILENAME"
+>/dev/ttyS0</TT
+>
+	</P
+></LI
+><LI
+><P
+>		<TT
+CLASS="FILENAME"
+>COM2</TT
+> = <TT
+CLASS="FILENAME"
+>/dev/ttyS1</TT
+>
+	</P
+></LI
+><LI
+><P
+>		<TT
+CLASS="FILENAME"
+>COM3</TT
+> = <TT
+CLASS="FILENAME"
+>/dev/ttyS2</TT
+>
+	</P
+></LI
+><LI
+><P
+>		<TT
+CLASS="FILENAME"
+>COM4</TT
+> = <TT
+CLASS="FILENAME"
+>/dev/ttyS3</TT
+>
+	</P
+></LI
+></UL
+><P
+>	  Using the drop-down list in the <TT
+CLASS="GUILABEL"
+><B
+>Modem Device</B
+></TT
+> box,
+	  enter the port to which your modem is connected. Then, in
+	  <TT
+CLASS="GUILABEL"
+><B
+>Baud Rate</B
+></TT
+>, enter the fastest recommended speed
+	  for your modem. Due to most modems' data compression capabilities,
+	  select a baud rate that is faster than the modem's advertised speed (a
+	  typical 56k device, for example, would have a baud rate of 115200).
+	</P
+><P
+>	  You can also select your volume and dialing preferences in this
+	  dialog. Dragging the bar to <TT
+CLASS="GUILABEL"
+><B
+>Loud</B
+></TT
+> in the
+	  <TT
+CLASS="GUILABEL"
+><B
+>Modem Volume</B
+></TT
+> entry will let you hear everything
+	  that goes on during a connection -- from dialtone to the connection
+	  negotiation. Note, however, that some modems will allow only a sound
+	  on/sound off configuration, rather than gradations of volume. 
+	</P
+><P
+>	  The <B
+CLASS="GUIBUTTON"
+>Use touch tone dialing</B
+> button, when
+	  selected, will dial using touch tone; when deselected, you'll dial
+	  using pulse.
+	</P
+><P
+>	  Check <TT
+CLASS="GUILABEL"
+><B
+>Make this modem the default modem</B
+></TT
+> to
+	  use your current modem settings each time you run
+	  <TT
+CLASS="APPLICATION"
+>RP3</TT
+>.
+	</P
+><P
+>	  You can also rescan your system for modem information by selecting the
+	  <B
+CLASS="GUIBUTTON"
+>Auto Configure</B
+> button, then choose to keep the
+	  settings it finds.
+	</P
+><P
+>	  Once you're satisfied with your settings, click on
+	  <B
+CLASS="GUIBUTTON"
+>Next</B
+> to proceed to the following screen.
+	</P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Tip</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>Even if your modem is automatically detected,
+	  you can adjust the modem's settings by choosing to <B
+CLASS="GUIBUTTON"
+>Manually
+	  create a modem</B
+> after <TT
+CLASS="APPLICATION"
+>RP3</TT
+>
+	  detects your device. Your choices, such as location of modem, baud
+	  rate and volume, will be identical to those you'd find if the modem
+	  had not been detected.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	  In the <TT
+CLASS="GUILABEL"
+><B
+>Phone number and name</B
+></TT
+> dialog (see <A
+HREF="ch-ppp.html#GR-PPP-RP3NEW4"
+>Figure 6-6</A
+>), you should enter both the name you would
+	  like to give your account and the telephone number of your
+	  ISP. Usually, it isn't necessary to provide the prefix or area code
+	  for your ISP.
+	</P
+><P
+>	  If you must dial a "9" to reach an outside line, enter this number in
+	  the <TT
+CLASS="GUILABEL"
+><B
+>Prefix</B
+></TT
+> field. To disable call waiting, type
+	  <TT
+CLASS="USERINPUT"
+><B
+>*70</B
+></TT
+> in this field.
+	</P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>To learn about other options</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  <TT
+CLASS="APPLICATION"
+>RP3</TT
+> uses an application called
+	  <TT
+CLASS="APPLICATION"
+>Wvdial</TT
+> for some of its functions, such as
+	  dialing and authentication with the PPP server. To learn about other
+	  dialing options which might be available, type <B
+CLASS="COMMAND"
+>man
+	  wvdial</B
+> in an Xterm window. (Use the <B
+CLASS="KEYCAP"
+>Space</B
+>
+	  bar to move forward through this document a "page" at a time; use the
+	  <B
+CLASS="KEYCAP"
+>B</B
+> key to move back, and use the <B
+CLASS="KEYCAP"
+>Q</B
+>
+	  key to quit.)
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-RP3NEW4"
+></A
+><P
+><IMG
+SRC="figs/ppp/rp3new4.gif"></P
+><P
+><B
+>Figure 6-6. Adding a Name and Phone Number</B
+></P
+></DIV
+><P
+>	  The dialog which follows, <TT
+CLASS="GUILABEL"
+><B
+>User name and password</B
+></TT
+>,
+	  asks you to provide the name you use to sign on to your ISP, as well
+	  as your login password for the service. Your password will appear as a
+	  series of asterisks (see <A
+HREF="ch-ppp.html#GR-PPP-RP3PASS"
+>Figure 6-7</A
+>).
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-RP3PASS"
+></A
+><P
+><IMG
+SRC="figs/ppp/rp3pass.gif"></P
+><P
+><B
+>Figure 6-7. Specifying a User Name and Password</B
+></P
+></DIV
+><P
+>	  In the <TT
+CLASS="GUILABEL"
+><B
+>Other Options</B
+></TT
+> dialog, you can choose a
+	  pre-selected ISP or a <TT
+CLASS="GUILABEL"
+><B
+>Generic Account</B
+></TT
+> if your ISP
+	  isn't listed. If your ISP is listed, you should select the appropriate
+	  entry, due to variations in connection protocols which require
+	  specific network negotiations between your system and your ISP's.
+	</P
+><P
+>	  You can check your information in the <TT
+CLASS="GUILABEL"
+><B
+>Create the
+	  account</B
+></TT
+> dialog which follows (see <A
+HREF="ch-ppp.html#GR-PPP-RP3NEW7"
+>Figure 6-8</A
+>).
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-RP3NEW7"
+></A
+><P
+><IMG
+SRC="figs/ppp/rp3new7.gif"></P
+><P
+><B
+>Figure 6-8. Checking Your Entries</B
+></P
+></DIV
+><P
+>	  If you're satisfied with your entries, click
+	  <B
+CLASS="GUIBUTTON"
+>Finish</B
+> to create the account; if you want to
+	  modify the information, select the <B
+CLASS="GUIBUTTON"
+>Back</B
+> button
+	  to go to a previous screen.
+	</P
+><P
+>	  The configuration tool modifies multiple files. The main files which
+	  are affected are
+	  <TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/ifcfg-ppp*</TT
+> and
+	  <TT
+CLASS="FILENAME"
+>/etc/wvdial.conf</TT
+>. If you find it necessary to
+	  modify an existing entry, however, you can edit that entry with
+	  <TT
+CLASS="APPLICATION"
+>RP3</TT
+>, rather than hand-edit a file. See <A
+HREF="ch-ppp.html#S2-PPP-CUSTOMIZING"
+>the section called <I
+>Customizing and Configuring</I
+></A
+> for more information on customizing the settings.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PPP-CONNECTING"
+>Connecting and Disconnecting</A
+></H2
+><P
+>	  Once you have configured your PPP account, start
+	  <TT
+CLASS="APPLICATION"
+>RP3</TT
+> (right-click on the
+	  <B
+CLASS="GUIMENU"
+>Panel</B
+> =&#62; <B
+CLASS="GUIMENU"
+>Add applet</B
+> =&#62;
+	  <B
+CLASS="GUIMENU"
+>Network</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>RH PPP
+	  Dialer</B
+>).
+	</P
+><P
+>	  When the application starts, you'll be asked to select which interface
+	  you want to activate; choose the name of the PPP service you
+	  created.
+      </P
+><P
+>	  To begin your online session, left-click on the monitor and, in the
+	  dialog which asks whether you want to start the interface, select
+	  <B
+CLASS="GUIBUTTON"
+>Yes</B
+>. (You can also right-click on the monitor,
+	  then drag your cursor to the <TT
+CLASS="GUILABEL"
+><B
+>Connect to...</B
+></TT
+> entry
+	  showing your ISP account name.)
+	</P
+><P
+>	  Similar to the procedure for connecting, you can disconnect from your
+	  session by left-clicking on the monitor, then choosing
+	  <B
+CLASS="GUIBUTTON"
+>Yes</B
+> to stop the interface. (Also, you can use
+	  the <TT
+CLASS="GUILABEL"
+><B
+>Disconnect from...</B
+></TT
+> entry by right-clicking on
+	  the monitor.)
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PPP-MONITOR"
+>Working with the <TT
+CLASS="APPLICATION"
+>RP3</TT
+> Monitor</A
+></H2
+><P
+>	  When the <TT
+CLASS="APPLICATION"
+>RP3</TT
+> monitor is docked on the
+	  <B
+CLASS="GUIMENU"
+>Panel</B
+>, it will look like <A
+HREF="ch-ppp.html#GR-PPP-RP3PANEL"
+>Figure 6-9</A
+>.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-RP3PANEL"
+></A
+><P
+><IMG
+SRC="figs/ppp/rp3panel.gif"></P
+><P
+><B
+>Figure 6-9. The <TT
+CLASS="APPLICATION"
+>RP3</TT
+> Monitor Docked (Second Icon From Left)</B
+></P
+></DIV
+><P
+>	  During the time you're connected, the <TT
+CLASS="APPLICATION"
+>RP3</TT
+>
+	monitor will display two bar graphs showing connection activity: the top
+	graph will show data transmitted, and the bottom graph will show data
+	received (see <A
+HREF="ch-ppp.html#GR-PPP-RP3MONITOR"
+>Figure 6-10</A
+>).
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-RP3MONITOR"
+></A
+><P
+><IMG
+SRC="figs/ppp/rp3monitor.gif"></P
+><P
+><B
+>Figure 6-10. The <TT
+CLASS="APPLICATION"
+>RP3</TT
+> Monitor</B
+></P
+></DIV
+><P
+>	  Beneath the graphs, you'll find text entries which will display the
+	  bytes received per second and either your total connection time or the
+	  total cost of your current session (if you've specified this option
+	  when you configured the account). 
+     </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PPP-CUSTOMIZING"
+>Customizing and Configuring</A
+></H2
+><P
+>	<TT
+CLASS="APPLICATION"
+>RP3</TT
+> makes easy work of setting up an Internet
+	account, but you may still find you've got a little tweaking to do
+	before you're up and running.
+      </P
+><P
+>	By default, when <TT
+CLASS="APPLICATION"
+>RP3</TT
+> connects to your ISP, it
+	starts <TT
+CLASS="APPLICATION"
+>pppd</TT
+>. What is
+	<TT
+CLASS="APPLICATION"
+>pppd</TT
+>? It means <I
+CLASS="FIRSTTERM"
+>Point-to-Point
+	Protocol daemon</I
+>; briefly, it helps your machine to "shake
+	hands" with your ISP.
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>To learn more about <TT
+CLASS="APPLICATION"
+>pppd</TT
+></B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>You can learn more about <TT
+CLASS="APPLICATION"
+>pppd</TT
+> by
+	  reading its man page. At the shell prompt, type <B
+CLASS="COMMAND"
+>man
+	  pppd</B
+>.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	You can customize and configure account information by
+	right-clicking on the <TT
+CLASS="APPLICATION"
+>RP3</TT
+> monitor and
+	selecting the <TT
+CLASS="GUILABEL"
+><B
+>Configure PPP</B
+></TT
+> entry.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-RP3ACCOUNTS"
+></A
+><P
+><IMG
+SRC="figs/ppp/rp3accounts.gif"></P
+><P
+><B
+>Figure 6-11. The <TT
+CLASS="GUILABEL"
+><B
+>Internet Connections</B
+></TT
+> Dialog</B
+></P
+></DIV
+><P
+>	In the <TT
+CLASS="GUILABEL"
+><B
+>Internet Connections</B
+></TT
+> dialog which appears,
+	you can add a new account, delete an account and modify current account
+	configuration. You can also <I
+CLASS="FIRSTTERM"
+>debug</I
+> the account,
+	meaning that you can test your settings to see if there are any
+	problems.
+      </P
+><P
+>	Selecting the <B
+CLASS="GUIBUTTON"
+>Add</B
+> button will begin the
+	<TT
+CLASS="APPLICATION"
+>Configure PPP</TT
+> tool, allowing you to enter new
+	account information.
+      </P
+><P
+>	If you choose to modify details in a current account, select the
+	<B
+CLASS="GUIBUTTON"
+>Edit</B
+> button. When the <TT
+CLASS="GUILABEL"
+><B
+>Edit Internet
+	Connection</B
+></TT
+> dialog opens, you can
+	change account details in the <TT
+CLASS="GUILABEL"
+><B
+>Account Info</B
+></TT
+>
+	tab. Among the fields you can modify are your login name, your password,
+	and your ISP's telephone number.
+      </P
+><P
+>	If your ISP provided you with <I
+CLASS="FIRSTTERM"
+>DNS numbers</I
+>, which
+	may be necessary for a successful connection, you can enter them in the
+	<TT
+CLASS="GUILABEL"
+><B
+>Advanced</B
+></TT
+> tab of this dialog (see <A
+HREF="ch-ppp.html#GR-PPP-RP3ADVANCE"
+>Figure 6-12</A
+> for an example).
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-RP3ADVANCE"
+></A
+><P
+><IMG
+SRC="figs/ppp/rp3advance.gif"></P
+><P
+><B
+>Figure 6-12. The <TT
+CLASS="GUILABEL"
+><B
+>Advanced</B
+></TT
+> Settings Dialog</B
+></P
+></DIV
+><P
+>	Among other options in the <TT
+CLASS="GUILABEL"
+><B
+>Advanced</B
+></TT
+> tab, you can
+	select whether you want people who have user accounts on your system to
+	be able to connect and disconnect. You can also choose whether you want
+	to start your connection when your machine starts (<TT
+CLASS="GUILABEL"
+><B
+>Begin
+	connection when computer is turned on</B
+></TT
+>).
+      </P
+><P
+>	The option <TT
+CLASS="GUILABEL"
+><B
+>Let PPP do all authentication</B
+></TT
+> will cause
+	<TT
+CLASS="APPLICATION"
+>pppd</TT
+> to start immediately upon a successful
+	connection. Learn more about this a little later, in <A
+HREF="ch-ppp.html#S2-PPP-TROUBLESHOOTING"
+>the section called <I
+>Troubleshooting</I
+></A
+>.
+      </P
+><P
+>	In the <TT
+CLASS="GUILABEL"
+><B
+>Modems</B
+></TT
+> tab of the <TT
+CLASS="GUILABEL"
+><B
+>Internet
+	Connections</B
+></TT
+> dialog, you can specify the location of your
+	modem (such as <TT
+CLASS="FILENAME"
+>/dev/ttyS1</TT
+>). You can either type in
+	the information, or click on the <B
+CLASS="GUIBUTTON"
+>Find Modem...</B
+>
+	button, which will attempt to automatically detect your modem.
+      </P
+><P
+>	You can determine how you want to view some details about your
+	connection status. To change the default settings, right-click on the
+	application while it's running and, in the menu which appears,
+	left-click once on <TT
+CLASS="GUILABEL"
+><B
+>Properties</B
+></TT
+>.
+      </P
+><P
+>	In the <TT
+CLASS="GUILABEL"
+><B
+>Properties</B
+></TT
+> dialog (see <A
+HREF="ch-ppp.html#GR-PPP-RP3PROPS"
+>Figure 6-13</A
+>), you'll find the following entries:
+     </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-RP3PROPS"
+></A
+><P
+><IMG
+SRC="figs/ppp/rp3props.gif"></P
+><P
+><B
+>Figure 6-13. The <TT
+CLASS="GUILABEL"
+><B
+>Properties</B
+></TT
+> Dialog</B
+></P
+></DIV
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    <TT
+CLASS="GUILABEL"
+><B
+>Connection name:</B
+></TT
+> Allows you to switch between
+	    network connections that you have previously configured.
+	  </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    <TT
+CLASS="GUILABEL"
+><B
+>Count:</B
+></TT
+> Allows you to specify whether you want
+	    to view your time online or the costs of your online session.
+	  </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    <B
+CLASS="GUIBUTTON"
+>Confirm starting connection</B
+>: Confirms your
+	    intention to start a connection.
+	  </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    <B
+CLASS="GUIBUTTON"
+>Confirm stopping connection</B
+>: Confirms your
+	    intention to stop a connection.
+	  </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    <TT
+CLASS="GUILABEL"
+><B
+>Cost per:</B
+></TT
+> If you pay for Internet access by the
+	    hour, minute or second, you can specify the cost for your access
+	    here. When you're connected, your connection costs will then be
+	    reflected on the <TT
+CLASS="APPLICATION"
+>RP3</TT
+> monitor.
+	  </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PPP-TROUBLESHOOTING"
+>Troubleshooting</A
+></H2
+><P
+>	Sometimes, things may not go as well as you'd hoped when you're trying
+	to establish a connection. That's when <I
+CLASS="FIRSTTERM"
+>debugging</I
+>
+	can come in handy. Briefly, debugging allows you to see a little of
+	what's going on behind the curtain when you're trying to connect.
+      </P
+><P
+>	To start, launch <TT
+CLASS="APPLICATION"
+>RP3</TT
+> and open the
+	<TT
+CLASS="GUILABEL"
+><B
+>Accounts</B
+></TT
+> tab in the <TT
+CLASS="GUILABEL"
+><B
+>Internet
+	Connections</B
+></TT
+> dialog. Now, highlight the account you want to
+	debug, and select the <B
+CLASS="GUIBUTTON"
+>Debug</B
+> button in the options
+	to the right.
+      </P
+><P
+>	Once you choose to debug the account, you'll see a window similar to
+	<A
+HREF="ch-ppp.html#GR-PPP-RP3DEBUG"
+>Figure 6-14</A
+>, showing you the commands which are
+	used to initialize your modem, connect to your ISP and perform a login
+	to your Internet account.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-RP3DEBUG"
+></A
+><P
+><IMG
+SRC="figs/ppp/rp3debug.gif"></P
+><P
+><B
+>Figure 6-14. Debugging an Account</B
+></P
+></DIV
+><P
+>	The lines may slip by too quickly for you to catch anything
+	unusual. Not to worry: You can scroll through the window to study the
+	information and, for easier review, you can choose the <B
+CLASS="GUIBUTTON"
+>Save
+	Log</B
+> button to save the contents of the window as a text
+	file, which you can print or open in an editor or word processor.
+      </P
+><P
+>	You may find, for example, that you can connect to your ISP, but you're
+	not correctly logging in. Check first to make certain that you entered
+	the correct user name and password for your account.
+	</P
+><P
+>	  It's also possible that the <TT
+CLASS="APPLICATION"
+>pppd</TT
+> is
+	starting too early, before you have a chance to log in with your name
+	and password. In this case, you <I
+CLASS="EMPHASIS"
+>appear</I
+> to be
+	successfully connected, yet when you try to view a Web page with
+	<TT
+CLASS="APPLICATION"
+>Netscape</TT
+>, you're met with error messages.
+      </P
+><P
+>	If this is the case, stop debugging the connection by selecting
+	<B
+CLASS="GUIBUTTON"
+>Close</B
+> or <B
+CLASS="GUIBUTTON"
+>Cancel</B
+>, then
+	return to the <B
+CLASS="GUIBUTTON"
+>Edit</B
+> feature in the
+	<TT
+CLASS="GUILABEL"
+><B
+>Accounts</B
+></TT
+> tab.
+      </P
+><P
+>	In the <TT
+CLASS="GUILABEL"
+><B
+>Edit Internet Connection</B
+></TT
+> dialog, select the
+	<TT
+CLASS="GUILABEL"
+><B
+>Advanced</B
+></TT
+> tab and deselect the option <TT
+CLASS="GUILABEL"
+><B
+>Let
+	PPP do all authentication</B
+></TT
+>. (By default, this option isn't
+	selected when you create an account.) If everything else looks correct,
+	choose <B
+CLASS="GUIBUTTON"
+>OK</B
+> to return to the
+	<TT
+CLASS="GUILABEL"
+><B
+>Accounts</B
+></TT
+> tab.
+      </P
+><P
+>	Now, debug the connection again. You might find that your login
+	procedure goes a little more smoothly, since
+	<TT
+CLASS="APPLICATION"
+>pppd</TT
+> isn't started immediately, but rather
+	waits until your login name and password are sent to your ISP.
+      </P
+><P
+>	Working with the debug feature can help you whittle down whatever
+	problem might be hindering you from a working connection. When you're
+	finally successful, close the window to stop debugging. Since the debug
+	option is only used to diagnose your setup, it won't maintain your
+	connection to your ISP.
+      </P
+><P
+>	When you've successfully configured your connection, start the interface
+	as described in the beginning of this section.
+      </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-printing-utilities.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-ppp-kppp.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Printing Utilities in KDE and GNOME</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="p169.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Connecting with <TT
+CLASS="APPLICATION"
+>Kppp</TT
+></TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/ch-ppp.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:45:19 GMT -->
+</HTML
+>

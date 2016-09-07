@@ -1,0 +1,38 @@
+#!/bin/sh
+
+PATH=/sbin:$PATH
+export PATH
+
+BASEDIR=hdimage
+SIZE=4096
+
+MNTPOINT=/tmp/mkimage.mnt-$$
+
+for image in hdstg2 netstg2; do
+    IMAGE=../../../RedHat/base/${image}.img
+    IMAGENOGZ=/tmp/`basename $IMAGE`.nogz
+
+    rm -f $IMAGENOGZ
+    rm -f $IMAGE
+    dd if=/dev/zero of=$IMAGENOGZ bs=1k count=$SIZE
+    mke2fs -i 8096 -q $IMAGENOGZ $SIZE <<EOF
+y
+EOF
+
+    mkdir -p $MNTPOINT
+
+    mount -o loop -t ext2 $IMAGENOGZ $MNTPOINT
+
+    (cd $BASEDIR; tar cSpf - . ) | (cd $MNTPOINT; tar xSpf -)
+    mkdir $MNTPOINT/modules
+    cp $image/modules/* $MNTPOINT/modules
+
+    df $MNTPOINT
+
+    umount $MNTPOINT
+    echo -n "gzipping image..."
+    gzip -9 < $IMAGENOGZ > $IMAGE
+    echo " done."
+
+    rm -rf $MNTPOINT $IMAGENOGZ
+done

@@ -1,0 +1,360 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-quitting-prompt.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Shutting Down at the Shell Prompt</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Logging Out and Shutting Down"
+HREF="ch-quitting.html"><LINK
+REL="PREVIOUS"
+TITLE="Quitting from KDE"
+HREF="s1-quitting-kde.html"><LINK
+REL="NEXT"
+TITLE="Setting Up Your Printer"
+HREF="ch-printing.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-quitting-kde.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 4. Logging Out and Shutting Down</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="ch-printing.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-QUITTING-PROMPT"
+>Shutting Down at the Shell Prompt</A
+></H1
+><P
+>	Like the <B
+CLASS="GUIMENUITEM"
+>Run program</B
+> option in GNOME, you can
+	use the <B
+CLASS="COMMAND"
+>shutdown</B
+> command to halt or restart your
+	system from the shell prompt in an Xterm window. Whether you're working
+	in GNOME, KDE or the <I
+CLASS="FIRSTTERM"
+>console mode</I
+>
+	(non-graphical), you can shut down or restart your system from the shell
+	prompt.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-QUITTING-INPUTBOX"
+></A
+><P
+><IMG
+SRC="figs/quitting/inputbox.gif"></P
+><P
+><B
+>Figure 4-4. The Password Dialog</B
+></P
+></DIV
+><P
+>	To halt or restart your system from the shell prompt:
+    </P
+><P
+></P
+><UL
+><LI
+><P
+>	      Open an Xterm window -- From the <B
+CLASS="GUIMENU"
+>Panel</B
+>, click
+	      on the <TT
+CLASS="GUILABEL"
+><B
+>Terminal Emulation</B
+></TT
+> or
+	      <TT
+CLASS="GUILABEL"
+><B
+>Console</B
+></TT
+> launcher.
+	  </P
+></LI
+><LI
+><P
+>	      At the shell prompt, type <B
+CLASS="COMMAND"
+>shutdown -r now</B
+>
+	      or <B
+CLASS="COMMAND"
+>shutdown -h now</B
+> and enter your user
+	      account password in the dialog box which appears (see <A
+HREF="s1-quitting-prompt.html#GR-QUITTING-INPUTBOX"
+>Figure 4-4</A
+>). The
+	      <B
+CLASS="COMMAND"
+>-h</B
+> means <I
+CLASS="WORDASWORD"
+>halt</I
+> and
+	      will shut down the system; the <B
+CLASS="COMMAND"
+>-r</B
+> means
+	      <I
+CLASS="WORDASWORD"
+>reboot</I
+> and will restart the system.
+	  </P
+></LI
+><LI
+><P
+>	      In console mode, type <B
+CLASS="COMMAND"
+>shutdown -r now</B
+>
+	      or <B
+CLASS="COMMAND"
+>shutdown -h now</B
+> and enter your user
+	      account password after the <TT
+CLASS="PROMPT"
+>Password</TT
+> prompt.
+	  </P
+></LI
+></UL
+><P
+>	Make certain that you've saved your work before halting or restarting
+	your system from the shell prompt. Running applications will be closed
+	and you won't have the option of saving your work or your session.
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>"Killing" an X session</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	If you're having difficulty quitting your X session -- for example, if
+      you get no response when you click on the <TT
+CLASS="GUILABEL"
+><B
+>Log out</B
+></TT
+>
+      button in KDE -- you can swiftly <I
+CLASS="FIRSTTERM"
+>kill</I
+> the X session
+      and return to the login screen by pressing the <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>Alt</B
+>-<B
+CLASS="KEYCAP"
+>Backspace</B
+> keys. This procedure should be used only as a last resort,
+      however. <I
+CLASS="EMPHASIS"
+>Make sure you close your running applications and save
+      your work before logging out this way!</I
+>
+      </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>More about shutting down</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>You can specify the delay
+      between when you issue the <B
+CLASS="COMMAND"
+>shutdown</B
+> command and its
+      execution. Replace the word <I
+CLASS="WORDASWORD"
+>now</I
+> with a
+      "+" and a number; for example <B
+CLASS="COMMAND"
+>shutdown -h +5</B
+> will
+      shutdown and halt the system after five minutes pass.
+      </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-quitting-kde.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="ch-printing.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Quitting from KDE</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-quitting.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Setting Up Your Printer</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-quitting-prompt.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:37 GMT -->
+</HTML
+>

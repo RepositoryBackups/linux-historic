@@ -1,0 +1,351 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-basics-man-pages.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:45:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>A Good "Man" Is Easy to Find</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Shell Prompt Basics"
+HREF="ch-basics.html"><LINK
+REL="PREVIOUS"
+TITLE="Pulling Yourself Up by the Boot"
+HREF="s1-basics-bootdisk.html"><LINK
+REL="NEXT"
+TITLE="You Are Here"
+HREF="ch-navigating.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-basics-bootdisk.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 12. Shell Prompt Basics</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="ch-navigating.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-BASICS-MAN-PAGES"
+>A Good "Man" Is Easy to Find</A
+></H1
+><P
+>	As you investigate your new system, you're bound to have questions about
+	commands and system services. One of the easiest ways to find out about
+	how to use many commands or some applications is through the
+	<B
+CLASS="COMMAND"
+>man</B
+> command.
+      </P
+><P
+>	The word <B
+CLASS="COMMAND"
+>man</B
+> stands for "manual," a series of online
+	"pages" which can tell you the purpose of many commands. In a highly
+	condensed format, man pages provide a summary of a command's purpose,
+	the options available and the syntax which is used to issue the command.
+      </P
+><P
+>	If you count yourself among the "newbies" to Linux, you might not find
+	man pages as useful as someone who's more accustomed to their terse
+	delivery of information. But man pages can help steer you toward the
+	proper way to use commands on your system. Even at this point, you can
+	gain insight into your system by familiarizing yourself with the man
+	pages. You'll certainly want to know how to use them eventually.
+      </P
+><P
+>	There are several ways to view the man pages in a graphical
+	presentation:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	    from the GNOME help browser (see <A
+HREF="s1-gnome60-help.html"
+>the section called <I
+>Finding Help</I
+> in Chapter 2</A
+>)
+	  </P
+></LI
+><LI
+><P
+>	    from the KDE help browser ( see <A
+HREF="s1-kde60-help.html"
+>the section called <I
+>Finding Help</I
+> in Chapter 3</A
+>)
+	  </P
+></LI
+><LI
+><P
+>	    from an application called <TT
+CLASS="APPLICATION"
+>xman</TT
+> at the
+	    shell prompt
+	  </P
+></LI
+></UL
+><P
+>	Often, you can quickly access a man page from the shell prompt by
+	typing:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>man <TT
+CLASS="REPLACEABLE"
+><I
+>pagename</I
+></TT
+></B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>	To scroll forward through the document, press
+	<B
+CLASS="KEYCAP"
+>Space</B
+>; to scroll back, press <B
+CLASS="KEYCAP"
+>B</B
+>. To
+	quit the document, press <B
+CLASS="KEYCAP"
+>Q</B
+>.
+      </P
+><P
+>	<DIV
+CLASS="FIGURE"
+><A
+NAME="GR-BASICS-MAN"
+></A
+><P
+><IMG
+SRC="figs/basics/man.gif"></P
+><P
+><B
+>Figure 12-2. Reading a Man Page at the Shell Prompt</B
+></P
+></DIV
+>
+      </P
+><P
+>	Of course, like any good help system, the man command has its own man
+	page. At the prompt, type
+      </P
+><P
+>	  <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>man man</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+>
+      </P
+><P
+>	to display the manual page (as shown in <A
+HREF="s1-basics-man-pages.html#GR-BASICS-MAN"
+>Figure 12-2</A
+>).
+      </P
+><P
+>	If you want to print:
+      </P
+><P
+>	Sometimes, just viewing the man page on the screen isn't enough; you may
+	want to have a printed copy in front of you. Although you could send the
+	page to a printer, because of certain text formatting in the man pages,
+	you could end up with a document filled with "garbage," symbols which
+	didn't translate from your screen to the printer.
+      </P
+><P
+>	Before you print, then, you may have to "strip" the formatting from the
+	page, which you can do with the <B
+CLASS="COMMAND"
+>col</B
+> command. (As you
+	might guess, there's a man page for <B
+CLASS="COMMAND"
+>col</B
+>, also.)
+      </P
+><P
+>	For example, to print a man page for the <B
+CLASS="COMMAND"
+>man</B
+>, type:
+      </P
+><P
+>	  <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>man man | col -b | lpr</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+>
+      </P
+><P
+>	In detail, the above command "sends" the output of the manual page entry
+	through the <B
+CLASS="COMMAND"
+>col</B
+> filter, which helps format the output for
+	the printer. Then, the output from <B
+CLASS="COMMAND"
+>col</B
+> is sent to the
+	printer. This is called <I
+CLASS="FIRSTTERM"
+>piping</I
+>, and you can learn
+	more about it in <A
+HREF="ch-navigating.html"
+>Chapter 13</A
+>.
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-basics-bootdisk.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="ch-navigating.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Pulling Yourself Up by the Boot</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-basics.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>You Are Here</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-basics-man-pages.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:45:50 GMT -->
+</HTML
+>

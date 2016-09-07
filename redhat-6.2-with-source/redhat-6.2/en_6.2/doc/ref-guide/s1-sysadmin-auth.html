@@ -1,0 +1,759 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-sysadmin-auth.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>User Authentication with PAM</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="System Administration"
+HREF="ch-sysadmin.html"><LINK
+REL="PREVIOUS"
+TITLE="The floppy Group"
+HREF="s1-sysadmin-floppy.html"><LINK
+REL="NEXT"
+TITLE="Shadow Utilities"
+HREF="s1-sysadmin-shadow-util.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-sysadmin-floppy.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 2. System Administration</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-sysadmin-shadow-util.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-SYSADMIN-AUTH"
+>User Authentication with PAM</A
+></H1
+><P
+>        Programs which give users access to privileges of any sort need to be
+        able to authenticate the users.  When you log into a system, you provide
+        your name and password, and the login process uses those to authenticate
+        the login -- to verify that you are who you say you are.  Forms of
+        authentication other than passwords are possible, and it is possible for
+        the passwords to be stored in different ways.
+      </P
+><P
+>        <I
+CLASS="FIRSTTERM"
+>PAM</I
+>, which stands for <I
+CLASS="FIRSTTERM"
+>Pluggable
+        Authentication Modules</I
+>, is a way of allowing the system
+        administrator to set authentication policy without having to recompile
+        authentication programs.  With PAM, you control how the modules are
+        plugged into the programs by editing a configuration file.
+      </P
+><P
+>        Most Red Hat Linux users will never need to touch this configuration file.  When
+        you use RPM to install programs that require authentication, they
+        automatically make the changes that are needed to do normal password
+        authentication.  However, you may want to customize your configuration,
+        in which case you must understand the configuration file.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-PAM-MOD"
+>PAM Modules</A
+></H2
+><P
+>          There are four types of modules defined by the PAM standard.
+	  <P
+></P
+><UL
+><LI
+><P
+>		<TT
+CLASS="FILENAME"
+>auth</TT
+> modules provide the actual
+		authentication, perhaps asking for and checking a password, and
+		they set "credentials" such as group membership or kerberos
+		"tickets."
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="FILENAME"
+>account</TT
+> modules check to make sure that the
+		authentication is allowed (the account has not expired, the user
+		is allowed to log in at this time of day, and so on).
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="FILENAME"
+>password</TT
+> modules are used to set passwords.
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="FILENAME"
+>session</TT
+> modules are used once a user has
+		been authenticated to allow them to use their account, perhaps
+		mounting the user's home directory or making their mailbox
+		available.
+	      </P
+></LI
+></UL
+>
+        </P
+><P
+>          These modules may be <I
+CLASS="EMPHASIS"
+>stacked</I
+>, so that multiple
+          modules are used.  For instance, <TT
+CLASS="FILENAME"
+>rlogin</TT
+> normally
+          makes use of at least two authentication methods: if
+          <TT
+CLASS="FILENAME"
+>rhosts</TT
+> authentication succeeds, it is sufficient
+          to allow the connection; if it fails, then standard password
+          authentication is done.
+        </P
+><P
+>          New modules can be added at any time, and PAM-aware applications can
+          then be made to use them.  For instance, if you have a
+          one-time-password calculator system, and you can write a module to
+          support it (documentation on writing modules is included with the
+          system in <TT
+CLASS="FILENAME"
+>/usr/doc/pam*</TT
+>), PAM-aware programs can
+          use the new module and work with the new one-time-password calculators
+          without being recompiled or otherwise modified in any way.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-SERVICES"
+>Services</A
+></H2
+><P
+>          Each program using PAM defines its own "service" name.  The
+          <TT
+CLASS="APPLICATION"
+>login</TT
+> program defines the service type
+          <TT
+CLASS="FILENAME"
+>login</TT
+>, <TT
+CLASS="APPLICATION"
+>ftpd</TT
+> defines
+          the service type <TT
+CLASS="FILENAME"
+>ftp</TT
+>, and so on.  In general, the
+          service type is the name of the program used to
+          <I
+CLASS="EMPHASIS"
+>access</I
+> the service, not (if there is a
+          difference) the program used to <I
+CLASS="EMPHASIS"
+>provide</I
+> the
+          service.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-CONFIG-FILES"
+>The Configuration Files</A
+></H2
+><P
+>          The directory <TT
+CLASS="FILENAME"
+>/etc/pam.d</TT
+> is used to configure all
+          PAM applications.  (This used to be <TT
+CLASS="FILENAME"
+>/etc/pam.conf</TT
+>
+          in earlier PAM versions; while the <TT
+CLASS="FILENAME"
+>pam.conf</TT
+> file
+          is still read if no <TT
+CLASS="FILENAME"
+>/etc/pam.d/</TT
+> entry is found,
+          its use is deprecated.) Each application (really, each
+          <I
+CLASS="EMPHASIS"
+>service</I
+>) has its own file.  A file looks like
+          this:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>#%PAM-1.0
+auth      required  /lib/security/pam_securetty.so
+auth      required  /lib/security/pam_pwdb.so shadow nullok
+auth      required  /lib/security/pam_nologin.so
+account   required  /lib/security/pam_pwdb.so
+password  required  /lib/security/pam_cracklib.so
+password  required  /lib/security/pam_pwdb.so shadow nullok use_authtok
+session   required  /lib/security/pam_pwdb.so</TT
+>
+        </PRE
+></TD
+></TR
+></TABLE
+><P
+>          The first line is a comment.  (Any line that starts with a
+          <SPAN
+CLASS="TOKEN"
+>#</SPAN
+> character is a comment.)  Lines two through four
+          stack up three modules to use for login authorization.  Line two makes
+          sure that <I
+CLASS="EMPHASIS"
+>if</I
+> the user is trying to log in as
+          root, the tty on which they are logging in is listed in the
+          <TT
+CLASS="FILENAME"
+>/etc/securetty</TT
+> file <I
+CLASS="EMPHASIS"
+>if</I
+> that
+          file exists.  Line three causes the user to be asked for a password
+          and the password checked.  Line four checks to see if the file
+          <TT
+CLASS="FILENAME"
+>/etc/nologin</TT
+> exists, and if it does, displays the
+          contents of the file, and if the user is not root, does not let him or
+          her log in.
+        </P
+><P
+>          Note that all three modules are checked, <I
+CLASS="EMPHASIS"
+>even if the first
+          module fails</I
+>.  This is a security decision -- it is
+          designed to prevent the user from knowing why their authentication was
+          disallowed, because knowing why it was disallowed might allow them to
+          break the authentication more easily.  You can change this behavior by
+          changing <I
+CLASS="WORDASWORD"
+>required</I
+> to
+          <I
+CLASS="WORDASWORD"
+>requisite</I
+>; if any
+          <I
+CLASS="WORDASWORD"
+>requisite</I
+> module returns failure, PAM fails
+          immediately without calling any other modules.
+        </P
+><P
+>          The fifth line causes any necessary accounting to be done.  For
+          example, if shadow passwords have been enabled, the
+          <TT
+CLASS="FILENAME"
+>pam_pwdb.so</TT
+> module will check to see if the
+          account has expired, or if the user has not changed his or her
+          password and the grace period for changing the password has expired.
+        </P
+><P
+>          The sixth line subjects a newly changed password to a series of tests
+          to ensure that it cannot, for example, be easily determined by a
+          dictionary-based password cracking program.
+        </P
+><P
+>          The seventh line (which may be wrapped) specifies that if the
+          <TT
+CLASS="APPLICATION"
+>login</TT
+> program changes the user's password,
+          it should use the <TT
+CLASS="FILENAME"
+>pam_pwdb.so</TT
+> module to do so.
+          (It will do so only if an <TT
+CLASS="FILENAME"
+>auth</TT
+> module has
+          determined that the password needs to be changed --- for example, if a shadow
+          password has expired.)
+        </P
+><P
+>          The eighth and final line specifies that the
+          <TT
+CLASS="FILENAME"
+>pam_pwdb.so</TT
+> module should be used to manage the
+          session.  Currently, that module doesn't do anything; it could be
+          replaced (or supplemented by stacking) by any necessary module.
+        </P
+><P
+>          Note that the order of the lines within each file matters.  While it
+          doesn't really matter much in which order
+          <I
+CLASS="WORDASWORD"
+>required</I
+> modules are called, there are other
+          <I
+CLASS="EMPHASIS"
+>control flags</I
+> available.  While
+          <I
+CLASS="WORDASWORD"
+>optional</I
+> is rarely used, and never used by
+          default on a Red Hat Linux system, <I
+CLASS="WORDASWORD"
+>sufficient</I
+> and
+          <I
+CLASS="WORDASWORD"
+>requisite</I
+> cause order to become important.
+        </P
+><P
+>          Let's look at the <TT
+CLASS="FILENAME"
+>auth</TT
+> configuration for
+          <TT
+CLASS="FILENAME"
+>rlogin</TT
+>:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>auth  required    /lib/security/pam_securetty.so
+auth  sufficient  /lib/security/pam_rhosts_auth.so
+auth  required    /lib/security/pam_pwdb.so shadow nullok
+auth  required    /lib/security/pam_nologin.so</TT
+>
+        </PRE
+></TD
+></TR
+></TABLE
+><P
+>          That looks <I
+CLASS="EMPHASIS"
+>almost</I
+> like the
+          <TT
+CLASS="FILENAME"
+>login</TT
+> entry, but there's an extra line specifying
+          an extra module, and the modules are specified in a different order.
+        </P
+><P
+>          First, <TT
+CLASS="FILENAME"
+>pam_securetty.so</TT
+> keeps root logins from
+          happening on insecure terminals.  This effectively disallows all root
+          <TT
+CLASS="FILENAME"
+>rlogin</TT
+> attempts.  If you wish to allow them (in
+          which case we recommend that you not be Internet-connected or be
+          behind a good firewall), you can simply remove that line.
+        </P
+><P
+>          Second, if <TT
+CLASS="FILENAME"
+>pam_rhosts_auth.so</TT
+> authenticates the
+          user, PAM immediately returns success to <TT
+CLASS="FILENAME"
+>rlogin</TT
+>
+          without any password checking.  If
+          <TT
+CLASS="FILENAME"
+>pam_rhosts_auth.so</TT
+> fails to authenticate the
+          user, that failed authentication is ignored.
+        </P
+><P
+>          Third, if <TT
+CLASS="FILENAME"
+>pam_rhosts_auth.so</TT
+> has failed to
+          authenticate the user, the <TT
+CLASS="FILENAME"
+>pam_pwdb.so</TT
+> module
+          performs normal password authentication.
+        </P
+><P
+>          Finally <TT
+CLASS="FILENAME"
+>pam_nologin.so</TT
+> checks
+          <TT
+CLASS="FILENAME"
+>/etc/nologin</TT
+>, as specified above.
+        </P
+><P
+>          Note that if you do not want to prompt for a password if the
+          <TT
+CLASS="APPLICATION"
+>securetty</TT
+> check fails, you can change the
+          <TT
+CLASS="FILENAME"
+>pam_securetty.so</TT
+> module from
+          <I
+CLASS="WORDASWORD"
+>required</I
+> to
+          <I
+CLASS="WORDASWORD"
+>requisite</I
+>.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-SHADOW"
+>Shadow Passwords</A
+></H2
+><P
+>          The <TT
+CLASS="FILENAME"
+>pam_pwdb.so</TT
+> module will automatically detect
+          that you are using shadow passwords and make all necessary
+          adjustments.  Please refer to <A
+HREF="s1-sysadmin-shadow-util.html"
+>the section called <I
+>Shadow Utilities</I
+></A
+>
+          for more information.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-REXEC"
+><TT
+CLASS="APPLICATION"
+>Rexec</TT
+> and PAM</A
+></H2
+><P
+>          For security reasons, <TT
+CLASS="APPLICATION"
+>rexec</TT
+> is not enabled
+          in Red Hat Linux 6.2.  Should you wish to enable it, you will need to
+          comment out one line in the file
+          <TT
+CLASS="FILENAME"
+>/etc/pam.d/rexec</TT
+>.  Here is a sample of the file
+          (note that your file may differ slightly):
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>#%PAM-1.0
+auth       required     /lib/security/pam_pwdb.so shadow nullok
+auth       required     /lib/security/pam_nologin.so
+account    required     /lib/security/pam_pwdb.so</TT
+>
+        </PRE
+></TD
+></TR
+></TABLE
+><P
+>          To enable <TT
+CLASS="APPLICATION"
+>rexec</TT
+>, the line referring to the
+          <TT
+CLASS="FILENAME"
+>pam_nologin.so</TT
+> module must be commented out:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>#%PAM-1.0
+auth       required     /lib/security/pam_pwdb.so shadow nullok
+#auth      required     /lib/security/pam_nologin.so
+account    required     /lib/security/pam_pwdb.so</TT
+>
+        </PRE
+></TD
+></TR
+></TABLE
+><P
+>          After this file is modified, <TT
+CLASS="APPLICATION"
+>rexec</TT
+> will be
+          enabled.
+        </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>            If your <TT
+CLASS="FILENAME"
+>/etc/pam.d/rexec</TT
+> file contains a line
+            referring to the <TT
+CLASS="FILENAME"
+>pam_securetty.so</TT
+> module, you
+            will not be able to <TT
+CLASS="FILENAME"
+>rexec</TT
+> as root.  To do so,
+            you must also comment out the line referring to the
+            <TT
+CLASS="FILENAME"
+>pam_securetty.so</TT
+> module.
+          </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSADMIN-MORE-INFO"
+>More Information</A
+></H3
+><P
+>            This is just an introduction to PAM.  More information is included
+            in the <TT
+CLASS="FILENAME"
+>/usr/doc/pam*</TT
+> directory, including a
+            <I
+CLASS="CITETITLE"
+>System Administrators' Guide</I
+>, a
+            <I
+CLASS="CITETITLE"
+>Module Writers' Manual</I
+>, an
+            <I
+CLASS="CITETITLE"
+>Application Developers' Manual</I
+>, and the PAM
+            standard, DCE-RFC 86.0. 
+          </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-sysadmin-floppy.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-sysadmin-shadow-util.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>The <TT
+CLASS="FILENAME"
+>floppy</TT
+> Group</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-sysadmin.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Shadow Utilities</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-sysadmin-auth.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

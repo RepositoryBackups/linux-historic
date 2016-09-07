@@ -1,0 +1,315 @@
+Notes on the libfdisk library (as of June 18, 1997)
+---------------------------------------------------
+
+Contents
+--------
+
+  (1)     Background Information on Partitioning
+  (2)     Libfdisk Programming Notes
+
+
+
+
+
+
+
+
+Section 1  - Background Information on Partitioning
+---------------------------------------------------
+
+
+   Hard drives are normally partitioned which each serve a different
+function (root, /usr, /tmp, /var, etc).  There are some basic facts
+one needs to be aware of before writing software to manipulate these
+partitions.
+
+ Some quick terminology:
+
+
+       Geometry  - describes the logical layout of data on a hard drive,
+                   in terms of cylinders, heads, and sectors.
+
+       Cylinder  - fundamental unit to control size of a partition
+
+       Head      - there are several heads per cylinder
+
+       Sector    - basic component of a hard drive, made of 512 bytes
+
+       Partition - subcomponent of a hard drive, composed of a
+                   whole number of cylinders.
+
+       Partition Table - A partition table can hold 4 partition definitions
+
+       Master Boot Record (MBR) - The first partition table on a drive
+                   occurs are sector 1, head 0, cylinder 0, the first
+                   sector on the disk. It contains a boot loader as well.
+
+       Primary Partition - the 4 partitions in the MBR are the primary
+                   partitions.
+
+       Extended Partition - To get past the limitation of 4 primary
+                   partitions, and extended partition is created. 
+                   It can contains an unlimited number of logical
+                   partitions.
+
+       Logical Partition - Just like a normal partition, except it is
+                   located in an extended partition.
+
+
+ Some basic rules/facts:
+
+  Partitions are defined by a partition table, which consists of the
+    last 66 bytes of a sector. The first part of the sector can possibly
+    contain a boot loader. The MBR always contains a boot loader, normally
+    created by LILO. The partition table in the MBR defines the 4
+    primary partitions. These are numbered '1' through '4'.
+
+  A partition table entry looks like (in libfdisk the type is RawPartition)
+
+     struct RawPartition {
+          unsigned char active;
+          unsigned char start_head;
+          unsigned char start_sec;
+          unsigned char start_cyl;
+          unsigned char type;
+          unsigned char end_head;
+          unsigned char end_sec;
+          unsigned char end_cyl;
+          unsigned int  start;
+          unsigned int  size;
+        };
+
+  The fields are:
+
+    active       - if 0x80, DOS will boot from this partition. 0 otherwise.
+    start_head   -\ 
+    start_sec    -|---- Define start of partition
+    start_cyl    -/
+    end_head     -\ 
+    end_sec      -|---- Define end of partition
+    end_cyl      -/
+    start        - 'linear' sector of start of partition
+    size         - partition size in sectors
+
+
+  Of note - The start cylinder is actually 10 bits, two of which are
+            stored in the up 2 bits of the sector. So the range of
+            values for each component is
+
+             1 <= sector   <= 63
+             0 <= heads    <= 255
+             0 <= cylinder <= 1023
+
+  Note that sectors start with 1, not zero. This is historical.
+
+  Note also that IDE drives can only accept a head up to 63, so this
+    limits the range of heads you can send to the drive.
+
+  One of the primary partitions can of type 5, which means it is an
+    extended partition.  This is like a normal primary partition,
+    except at the start of it is a partition table. This table defines
+    how the space WITHIN the expended partition is partitioned. It
+    can contain another extended partition, etc etc. These extended
+    partitions form a linked list. The non-extended partitions within
+    extended partitions are called 'logical' partition. They are numbered
+    suequentially in the linked list starting from '5'.
+
+  To understand this, here is the example output from the command 'fdisk -l':
+
+     Disk /dev/hdb: 64 heads, 63 sectors, 620 cylinders
+     Units = cylinders of 4032 * 512 bytes
+
+        Device Boot   Begin    Start      End   Blocks   Id  System
+     /dev/hdb1            1        1       51   102784+  83  Linux native
+     /dev/hdb2           52       52       84    66528   82  Linux swap
+     /dev/hdb3           85       85      620  1080576    5  Extended
+     /dev/hdb5           85       85      288   411232+  83  Linux native
+     /dev/hdb6          289      289      542   512032+  83  Linux native
+     /dev/hdb7          543      543      620   157216+  83  Linux native
+
+  This disk has a geometry of 64 heads, 63 sectors, 620 cylinders. Partitions
+    are defined in terms of cylinders, which are 64 heads/cyl * 63 sect/head,
+    or 4032 sectors each. There are 3 primary partitions, one of which is
+    an extended partition. There are 3 logical partitions as well.
+
+  Graphically, the disks looks like:
+
+      [PT = Partition Table, MBR = Master Boot Record]
+
+   Sector #        
+            ----------------------------------
+         0  |MBR                           PT|  
+            |--------------------------------|  
+            |                                |  
+            ~                                ~  
+            |                                |  
+        63  |--------------------------------|  /dev/hdb1
+            |                                |  
+            | Primary partition, type 83     |  
+            |                                |  
+            ~                                ~
+            ~                                ~  
+            |                                |  
+    205632  |--------------------------------|  /dev/hdb2
+            |                                |  
+            | Primary partition, type 82     |  
+            |                                |  
+            ~                                ~  
+            ~                                ~  
+            |                                |  
+    338688  |--------------------------------|  /dev/hdb3 -------------
+            |                              PT|                       ^
+            |--------------------------------|                       |
+            ~                                ~                       |
+            |                                |                       |
+    338751  |--------------------------------|  /dev/hdb5            |
+            |                                |                       |
+            | Logical partition, type 83     |                       |
+            |                                |                       |
+            ~                                ~                       |
+            ~                                ~                       |
+            |                                |                       |
+   1161216  |--------------------------------|           ---------   |
+            |                             PT |                  ^    E
+            |--------------------------------|                  |    x
+            ~                                ~                  |    t
+            |                                |                  |    e
+   1161279  |--------------------------------|  /dev/hdb6       |    n
+            |                                |                  E    d
+            | Logical partition, type 83     |                  x    e
+            |                                |                  t    d
+            ~                                ~                  e    |
+            ~                                ~                  n    |
+            |                                |                  d    |
+            |                                |                  e    |
+   2185344  |--------------------------------|            ---   d    |
+            |                             PT |             ^    |    |
+            |--------------------------------|             |    |    |
+            ~                                ~             E    |    |
+            |                                |             x    |    |
+   2185407  |--------------------------------|  /dev/hdb7  t    |    |
+            |                                |             e    |    |
+            | Logical partition, type 83     |             n    |    |
+            ~                                ~             d    |    |
+            ~                                ~             e    |    |
+            |                                |             d    |    |
+            |                                |             |    |    |
+            |                                |             V    V    V
+end of disk |--------------------------------|            -------------
+
+
+  Note that the three extended partitions are nested within each other.
+
+
+---------- End of Section 1------------------------
+
+
+Section 2 - Libfdisk Programming Notes
+---------------------------------------------------
+  
+  Data Types (libfdisk.h):
+  -------------------------
+
+   These are mostly internal use only:
+      RawPartition       -  exact representation of entry in partition table
+      RawPartitionTable  -  4 RawPartition's
+
+   These apps usually use:
+      Partition              - abstracted representation of a partition. Apps 
+                               should normally use this, not RawPartition
+      PartitionTable         - Holds 4 Partition's plus other data
+      ExtendedPartitionTable - Holds contents of an extended partiton
+      HardDrive              - completely describes hard drive
+
+  Functions:
+  ----------
+   In general, these routines return 0 on success. A value < 0 means
+     a serious error occurred and errno has the error. Values > 0
+     mean an libfdisk error occurred, like you passed a logical
+     partition number < 5. There should be a standard list of these
+     errors, but this does not exist yet. Read the function to see
+     how it is done.
+
+  Raw low level i/o (rawio.[ch])
+  -----------------------------------
+
+  These routines should not generally be used by an application, with
+    these exceptions:
+
+   fdiskOpenDevice(char *name, HardDrive **hd)
+   fdiskCloseDevice(HardDrive *hd)
+
+      These open a device and create a HardDrive structure describing it.
+      This HardDrive structure will be used by the programmer for practically
+      all other function calls in libfdisk. fdiskOpenDevice MUST be called
+      before you can do anything else!
+
+  Other functions are:
+   
+   fdiskSectorToCHS() - convert absolute sector num to cyl/head/sector
+
+   fdiskReadPartitionTable  () -|
+   fdiskWritePartitionTable () -+-- read/write a RawPartitionTable to disk
+
+   fdiskReadMBR () -|
+   fdiskWriteBR () -+-- read/write the MBR RawPartitionTable to disk
+
+   fdiskSetAttrPrimary() - set various attributes of a primary partition
+
+   fdiskRemovePrimary()  - remove primary partition from disk
+
+  Extended Partition Ops (extended.[ch])
+  -------------------------------------------
+
+  These routines manipulate extended partitions. The primary partitions
+    are defined in a statically allocated structure in the HardDrive 
+    data type, whereas extended partitions form a linked list rooted at
+    the HardDrive data type. These routines should not generally be
+    called by an application.
+
+   fdiskIsExtended() - returns 1 if partition type is extended, 0 otherwise
+ 
+   fdiskInsertExtended() - insert extended partition into linked link
+
+   fdiskRemoveExtended() - remove    ""       ""     from   ""    ""
+
+   fdiskRenumberLogical() - go thru linked list, number partitions sequentially
+
+   fdiskInsertLogical() - add logical partition to given extended partition
+
+   fdiskRemoveLogical() - remove ""      ""    from ""      ""       ""
+
+   fdiskSetAttrLogical() - set attributes of selected logical partition
+
+   fdiskFindLogical() - find a given logical partition (>=5) in linked list.
+
+   
+  User Operations
+  ----------------------
+
+  These operations are what and app should generally be using.
+  They use partition #'s, which are 1-4 for primary partitions, and >=5
+  for logical partitions.
+
+  These operations attempt to hide the difference between extended and
+  primary partitions. These application just manipulates the number,
+  location, and sizes of a list of partitions. When the manipulation is
+  finished, the application can then dump the new configuration to disk.
+
+    fdiskReadPartitions()   -|
+    fdiskWritePartitions()  -+-- Read/Write all partitions from a disk
+
+    fdiskInsertPartition()  -|
+    fdiskRemovePartition()  -+-- Insert/Remove a partition from disk
+
+    fdiskSetAttrPartition() - change attributes of a partition
+
+   Following need to be written:
+
+    fdiskVerifyPartitions() - do a check that current table makes sense
+
+    fdiskPrintPartitions()  - output string buffer of current partitions
+
+    fdiskPartitionType()    - convert partition type to a human read. string
+
+

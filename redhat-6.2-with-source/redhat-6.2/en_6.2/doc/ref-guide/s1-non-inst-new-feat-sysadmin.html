@@ -1,0 +1,732 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-non-inst-new-feat-sysadmin.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>System-Related New Features</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Red Hat Linux 6.2 New Features"
+HREF="ch-non-inst-new-feat.html"><LINK
+REL="PREVIOUS"
+TITLE="Red Hat Linux 6.2 New Features"
+HREF="ch-non-inst-new-feat.html"><LINK
+REL="NEXT"
+TITLE="Miscellaneous New Features"
+HREF="s1-non-inst-new-feat-other.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-non-inst-new-feat.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 1. Red Hat Linux 6.2 New Features</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-non-inst-new-feat-other.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-NON-INST-NEW-FEAT-SYSADMIN"
+>System-Related New Features</A
+></H1
+><P
+>        There are many new features to Red Hat Linux 6.2 that are not part of the
+        installation process. Some new features are tools or applications that
+        you can use, others are new versions of the kernel or desktop
+        environments. This list will provide a little more information about
+        what to expect from Red Hat Linux 6.2 once you are actually using the OS
+        itself.
+      </P
+><P
+></P
+><DL
+><DT
+>Network services split into client, server packages:</DT
+><DD
+><P
+>              The following network services have been split into client and
+              server packages --
+              <P
+></P
+><UL
+><LI
+><P
+>                    <TT
+CLASS="APPLICATION"
+>telnet</TT
+>
+                  </P
+></LI
+><LI
+><P
+>                    <TT
+CLASS="APPLICATION"
+>finger</TT
+>
+                  </P
+></LI
+><LI
+><P
+>                    <TT
+CLASS="APPLICATION"
+>talk</TT
+>
+                  </P
+></LI
+><LI
+><P
+>                    <TT
+CLASS="APPLICATION"
+>rsh</TT
+>
+                  </P
+></LI
+><LI
+><P
+>                    <TT
+CLASS="APPLICATION"
+>rusers</TT
+>
+                  </P
+></LI
+><LI
+><P
+>                    <TT
+CLASS="APPLICATION"
+>rwall</TT
+>
+                  </P
+></LI
+><LI
+><P
+>                    <TT
+CLASS="APPLICATION"
+>tftp</TT
+>
+                  </P
+></LI
+></UL
+>
+            </P
+><P
+>              For example, on the Intel-compatible platform
+              <TT
+CLASS="APPLICATION"
+>telnet</TT
+> is now packaged in two RPMs --
+              <P
+></P
+><UL
+><LI
+><P
+>                    <TT
+CLASS="FILENAME"
+>telnet-0.16-5.i386.rpm</TT
+>
+                  </P
+></LI
+><LI
+><P
+>                    <TT
+CLASS="FILENAME"
+>telnet-server-0.16-5.i386.rpm</TT
+>
+                  </P
+></LI
+></UL
+>
+            </P
+></DD
+><DT
+><TT
+CLASS="APPLICATION"
+>sysctl</TT
+> now controls system settings:</DT
+><DD
+><P
+>              In Red Hat Linux 6.2, kernel options such as IPv4 forwarding and
+              enabling and disabling of the "magic sysrq" keys is done via the
+              <TT
+CLASS="APPLICATION"
+>sysctl</TT
+> program, as opposed to being
+              controlled by the contents of files in
+              <TT
+CLASS="FILENAME"
+>/etc/sysconfig</TT
+>. The
+              <TT
+CLASS="APPLICATION"
+>sysctl</TT
+> settings are stored in
+              <TT
+CLASS="FILENAME"
+>/etc/sysctl.conf</TT
+>, and are loaded at each boot
+              by the command:
+            </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>sysctl -p /etc/sysctl.conf</B
+>
+              </PRE
+></TD
+></TR
+></TABLE
+><P
+>              Here is a sample <TT
+CLASS="FILENAME"
+>/etc/sysctl.conf</TT
+>:
+            </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>              <TT
+CLASS="COMPUTEROUTPUT"
+># Disables IPv4 packet forwarding
+net.ipv4.ip_forward = 0
+# Enables source route verification
+# This drops packets that come in over interfaces they shouldn't;
+# (for example, a machine on an external net claiming to be one on your
+# local network)
+net.ipv4.conf.all.rp_filter = 1
+# Disables automatic defragmentation
+# Automatic defragmentation is needed for masquerading and Linux
+# Virtual Server use; it is not needed otherwise.
+net.ipv4.ip_always_defrag = 0
+# Disables the magic-sysrq key
+kernel.sysrq = 0
+# Disables stop-a on the sparc
+kernel.stop-a = 0
+              </TT
+>
+            </PRE
+></TD
+></TR
+></TABLE
+><P
+>              Many other kernel tunable parameters can be set; to see the full
+              list, run <B
+CLASS="COMMAND"
+>sysctl -a</B
+>, or look in the file
+              <TT
+CLASS="FILENAME"
+>/usr/doc/kernel-doc-<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;version&#62;</I
+></TT
+>/sysctl</TT
+>.
+            </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="90%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>                If you are upgrading your Red Hat Linux system to Red Hat Linux 6.2, any
+                changes you have made to files in
+                <TT
+CLASS="FILENAME"
+>/etc/sysconfig</TT
+> will be migrated to
+                <TT
+CLASS="FILENAME"
+>/etc/sysctl.conf</TT
+>.  You should confirm this
+                by reviewing the file.
+              </P
+></TD
+></TR
+></TABLE
+></DIV
+></DD
+><DT
+>Linux 2.2.14 kernel:</DT
+><DD
+><P
+>              Red Hat Linux 6.2 includes the latest stable version of the
+              2.2.<TT
+CLASS="REPLACEABLE"
+><I
+>x</I
+></TT
+> Linux kernel.
+            </P
+></DD
+><DT
+><TT
+CLASS="APPLICATION"
+>ident</TT
+> service now run as daemon:</DT
+><DD
+><P
+>              The <TT
+CLASS="APPLICATION"
+>ident</TT
+> service is now run as a
+              stand-alone service (called "identd"), and is controlled by
+              settings in the <TT
+CLASS="FILENAME"
+>/etc/identd.conf</TT
+> file.
+            </P
+></DD
+><DT
+>Workstation-class installation now more secure:</DT
+><DD
+><P
+>              Workstation-class installations no longer install the
+              <TT
+CLASS="APPLICATION"
+>inetd</TT
+> "super server."  This means that
+              the following network-related services will not be available if
+              you perform a workstation-class installation:
+              <P
+></P
+><UL
+><LI
+><P
+>                    <TT
+CLASS="APPLICATION"
+>ftp</TT
+>
+                  </P
+></LI
+><LI
+><P
+>                    <TT
+CLASS="APPLICATION"
+>telnet</TT
+>
+                  </P
+></LI
+><LI
+><P
+>                    <TT
+CLASS="APPLICATION"
+>shell</TT
+>
+                  </P
+></LI
+><LI
+><P
+>                    <TT
+CLASS="APPLICATION"
+>login</TT
+>
+                  </P
+></LI
+><LI
+><P
+>                    <TT
+CLASS="APPLICATION"
+>talk</TT
+>
+                  </P
+></LI
+><LI
+><P
+>                    <TT
+CLASS="APPLICATION"
+>finger</TT
+>
+                  </P
+></LI
+></UL
+>
+            </P
+><P
+>	      If you require the above network-related services, you should
+	      consider an installation type other than workstation-class.
+	    </P
+></DD
+><DT
+><TT
+CLASS="APPLICATION"
+>XFree86</TT
+> version 3.3.6:</DT
+><DD
+><P
+>              Red Hat Linux 6.2 contains the latest version of
+              <TT
+CLASS="APPLICATION"
+>XFree86</TT
+> (version 3.3.6 which supports many new
+              drivers).
+            </P
+></DD
+><DT
+>Services no longer run by default:</DT
+><DD
+><P
+>              To permit a more fine-tuned system configuration, Red Hat Linux 6.2
+              no longer runs the following services by default --
+              <P
+></P
+><UL
+><LI
+><P
+>                    The automount daemon <TT
+CLASS="APPLICATION"
+>amd</TT
+> (in the
+                    <TT
+CLASS="FILENAME"
+>am-utils</TT
+> RPM)
+                  </P
+></LI
+><LI
+><P
+>                    The <TT
+CLASS="APPLICATION"
+>bind</TT
+> name server
+                  </P
+></LI
+><LI
+><P
+>                    The <TT
+CLASS="APPLICATION"
+>dhcpd</TT
+> DHCP server
+                  </P
+></LI
+><LI
+><P
+>                    The <TT
+CLASS="APPLICATION"
+>inn</TT
+> news server
+                  </P
+></LI
+><LI
+><P
+>                    The <TT
+CLASS="APPLICATION"
+>knfsd</TT
+> NFS server
+                  </P
+></LI
+><LI
+><P
+>                    The <TT
+CLASS="APPLICATION"
+>samba</TT
+> CIFS server used to
+                    support Windows-based file and print services
+                  </P
+></LI
+></UL
+>
+            </P
+><P
+>              To enable these services, either use <B
+CLASS="COMMAND"
+>chkconfig --level 35
+              <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;service-name&#62;</I
+></TT
+> on</B
+>, or
+              edit the list of services to start with the
+              <TT
+CLASS="APPLICATION"
+>ntsysv</TT
+> or
+              <TT
+CLASS="APPLICATION"
+>tksysv</TT
+> utilities.
+            </P
+></DD
+><DT
+>Mesa graphics library now included:</DT
+><DD
+><P
+>              The Mesa 3-D graphics library (version 3.2) is now included.  Mesa
+              is compatible with the OpenGL graphics API.
+            </P
+></DD
+><DT
+><TT
+CLASS="APPLICATION"
+>Sawmill</TT
+> window manager now included:</DT
+><DD
+><P
+>              The <TT
+CLASS="APPLICATION"
+>sawmill</TT
+> window manager is now
+              included in Red Hat Linux 6.2.  Based on a Lisp-like language,
+              <TT
+CLASS="APPLICATION"
+>sawmill</TT
+> is extensible, and GNOME-aware.
+            </P
+></DD
+><DT
+>Man pages now compressed:</DT
+><DD
+><P
+>              All man pages are now compressed (using
+              <TT
+CLASS="APPLICATION"
+>gzip</TT
+>) to save disk space.
+            </P
+></DD
+><DT
+>Starting programs at X startup:</DT
+><DD
+><P
+>              By placing scripts in
+              <TT
+CLASS="FILENAME"
+>/etc/X11/xinitrc/xinitrc.d</TT
+>, it is now
+              possible to automatically start programs whenever X starts.
+            </P
+></DD
+><DT
+>Fonts recognized automatically:</DT
+><DD
+><P
+>              X fonts that have been added to your Red Hat Linux 6.2 system will now
+              be recognized automatically, when the font server starts.  This
+              can be done during an X session by issuing the following command
+              as root:
+            </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>/etc/rc.d/init.d/xfs restart</B
+>
+            </PRE
+></TD
+></TR
+></TABLE
+></DD
+><DT
+>Encryption-related changes:</DT
+><DD
+><P
+>              Due to relaxation of U.S. encryption laws, encryption-related
+              changes have been made to the following packages:
+
+              <P
+></P
+><UL
+><LI
+><P
+>                    <TT
+CLASS="APPLICATION"
+>Kerberos</TT
+> authentication has been
+                    added to <TT
+CLASS="APPLICATION"
+>mutt</TT
+>,
+                    <TT
+CLASS="APPLICATION"
+>pine</TT
+>,
+                    <TT
+CLASS="APPLICATION"
+>fetchmail</TT
+>,
+                    <TT
+CLASS="APPLICATION"
+>cvs</TT
+>, and
+                    <TT
+CLASS="APPLICATION"
+>imap</TT
+>.
+                  </P
+></LI
+><LI
+><P
+>                    The GNU Privacy Guard (<TT
+CLASS="APPLICATION"
+>GnuPG</TT
+>) is
+                    now included in all editions of Red Hat Linux 6.2.
+                  </P
+></LI
+><LI
+><P
+>                    For those platforms that support it, <TT
+CLASS="APPLICATION"
+>Netscape
+                    Communicator</TT
+> built with 128-bit encryption is
+                    included in Red Hat Linux 6.2.
+                  </P
+></LI
+></UL
+>
+            </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-non-inst-new-feat.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-non-inst-new-feat-other.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Red Hat Linux 6.2 New Features</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-non-inst-new-feat.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Miscellaneous New Features</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-non-inst-new-feat-sysadmin.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

@@ -1,0 +1,114 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/no/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:30 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>SILO konfigurasjon</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.49"><LINK
+REL="HOME"
+TITLE="Hjelp under installasjonen"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="LILO konfigurasjon"
+HREF="s1-help-screens-lilo.html"><LINK
+REL="NEXT"
+TITLE="Nettverkskonfigurasjon"
+HREF="s1-help-screens-netconf.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-SILO"
+>SILO konfigurasjon</A
+></H1
+><P
+>	SILO, eller Sparc Improved LOader, er programvaren som kan brukes til
+	å starte Red Hat Linux på din maskin. Den kan også starte andre
+	operativsystemer, slik som SunOS og Solaris. Her vil du bli spurt hvordan
+	(eller om) du ønsker å konfigurere SILO.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Opprett oppstartsdiskett</B
+>: Du bør opprette en
+        oppstartsdiskett hvis du ikke installerer SILO i det hele tatt eller
+        hvis du ønsker det av hensyn til sikkerhet. Hvis du ikke har en diskett-
+	stasjon vil dette valget bli skjult, hvis du har en Ultra laget av SMCC,
+        som vanligvis ikke har oppstartbare diskettstasjoner, vil dette valget
+        bli satt til slått av.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Ikke installér SILO</B
+>: Du kan velge å hoppe
+        over SILO hvis du ikke ønsker å ha SILO på din disk,
+        f.eks. hvis du har SILO installert på en annen partisjon eller disk
+        allerede og ønsker å starte opp derfra.
+      </P
+><P
+>	For å installere SILO velger du først hvor du ønsker å installere den. 
+	Hvis systemet skal bruke Red Hat Linux eksklusivt kan du med stor 
+	sikkerhet
+ velge Master Boot Record (Oppstartsblokken på den første 
+	partisjonen på
+ disken). For systemer hvor SunOS/Solaris og Red Hat 
+	Linux skal
+ sameksistere på en enkelt harddisk, bør du sannsynligvis ikke 
+	installere SILO på MBR, spesielt ikke hvis SunOS/Solaris er på
+	den første partisjonen på disken.
+      </P
+><P
+>	Hvis du velger å ikke installere SILO i det hele tat, vennligst husk å
+	lage en oppstartsdiskett slik at du kan starte Red Hat Linux.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Opprett PROM-alias</B
+>: Installasjonsprogrammet kan
+        opprette et PROM-alias, "linux", hvis PROMen støtter dette, slik at 
+        du kan starte opp SILO oppstartslasteren fra PROM-kommandolinjen med
+        kommandoen "boot linux".
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Sett standard PROM-oppstartsenhet</B
+>: Installasjons-
+        programmet kan sørge for at PROMen vil starte opp installasjonsprogrammet
+        for Red Hat Linux ved å sette PROM-flagget "boot-device"
+        eller "boot-from".
+      </P
+><P
+>	Hvis du ønsker å legge til standardflagg til SILO kommandolinjen, skriv
+	dem i feltet kjerneparametere. Alle flagg du skriver inn vil bli
+	videreformidlet til kjernen hver gang den starter opp.
+      </P
+><P
+>	Oppstartbar partisjon -- Enhver oppstartbar partisjon listes opp og merkes,
+	dette inkluderer partisjoner i bruk av andre operativsystemer. Hvis du 
+	ønsker å legge til etiketter for andre partisjoner (eller endre eksisterende
+	oppstartsetiketter), klikk en gang på partisjonen og velg den. Når den er
+	valgt, kan du endre etiketten.
+      </P
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/no/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:30 GMT -->
+</HTML
+>

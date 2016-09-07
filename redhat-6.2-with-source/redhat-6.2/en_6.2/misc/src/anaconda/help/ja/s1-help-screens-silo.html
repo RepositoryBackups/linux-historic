@@ -1,0 +1,81 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/ja/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>SILO の設定画面</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.49"><LINK
+REL="HOME"
+TITLE="ヘルプ画面"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="LILO 設定画面"
+HREF="s1-help-screens-lilo.html"><LINK
+REL="NEXT"
+TITLE="ネットワークの設定"
+HREF="s1-help-screens-netconf.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-SILO"
+>SILO の設定画面</A
+></H1
+><P
+> SILO、（Sparc Improved Loader）、を使用して Red Hat Linux を起動することができます。SunOS
+および Solaris などの他のオペレーティングシステムを起動することもできます。この画面で、SILO をインストールするかどうか、どのような設定でインストールするかなどを指定します。 </P
+><P
+><B
+CLASS="GUIBUTTON"
+>ブートディスクを作成する</B
+>: SILO をインストールしない、または安全上の理由から作成したほうが望ましい場合には、ブートディスクを作成する必要があります。フロッピーディスクドライブがない場合にはこのオプションは表示されません。ブート可能なフロッピーディスクドライブを持たない
+SMCC 製 Ultra を使用している場合、このオプションはデフォルトで無効になります。 </P
+><P
+><B
+CLASS="GUIBUTTON"
+>SILO をインストールしない</B
+>: SILO をドライブに書き込みたくない場合には、SILO
+をインストールしなくてもかまいません。たとえば、すでに別のパーティションまたディスク上に SILO がインストールされていて、そこからブートしたいというような場合です。 </P
+><P
+> SILO をインストールするには、まずインストール先を選びます。システムにインストールされているオペレーティングシステムが Red Hat
+Linux のみの場合は、マスターブートレコード (ディスクの先頭パーティションのブートブロック) へのインストールを選択すればよいはずです。SunOS/Solalis
+などほかのオペレーティングシステムと同じハードディスクドライブに Red Hat Linux を共存させる場合、特に SunOS/Solaris がディスクの先頭パーティション上にある場合には、SILO
+を MBR にインストールしないほうがよいでしょう。 </P
+><P
+> SILO をインストールしない場合は、Red Hat Linux をブートできるようにブートディスクを作成してください。 </P
+><P
+><B
+CLASS="GUIBUTTON"
+>PROM エイリアスの作成</B
+>: PROM がサポートされている場合、インストーラは PROM
+エイリアス [linux] を作成できるので、PROM コマンドラインから、[boot linux]コマンドによって、SILO ブートローダをブートすることができます。 </P
+><P
+><B
+CLASS="GUIBUTTON"
+>デフォルト PROM ブートデバイスの設定</B
+>: デフォルト設定では PROM オプション [boot-device]
+または [boot-form] が設定されているので、インストーラは確実に PROM に Red Hat Linux をブートさせることができます。 </P
+><P
+> SILO のブートコマンドにデフォルトのオプションを追加したい場合は、「カーネルパラメータ」フィールドにそれらのオプションを入力します。入力したオプションは、ブート時に
+Linux カーネルに渡されます。 </P
+><P
+> ブート可能パーティション -- ブート可能なすべてのパーティションがブートラベルとともに表示されます。他のオペレーティングシステムが使用するパーティションも含まれます。別パーティションのブートラベルを追加したり、既存のブートラベルを変更したい場合は、パーティションをクリックして選択します。選択したパーティションのブートラベルを変更することができます。 </P
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/ja/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:29 GMT -->
+</HTML
+>

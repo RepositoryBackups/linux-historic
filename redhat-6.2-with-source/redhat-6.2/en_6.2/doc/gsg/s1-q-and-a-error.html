@@ -1,0 +1,268 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-error.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Error Message While Installing an RPM</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Q  A: Quick Answers to Common Questions"
+HREF="ch-q-and-a.html"><LINK
+REL="PREVIOUS"
+TITLE="Shutting Down"
+HREF="s1-q-and-a-shutdown.html"><LINK
+REL="NEXT"
+TITLE="Starting Applications"
+HREF="s1-q-and-a-starting.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-shutdown.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 15. Q &#38; A: Quick Answers to Common Questions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-starting.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-Q-AND-A-ERROR"
+>Error Message While Installing an RPM</A
+></H1
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-ERROR-Q"
+>Q: Errors on Software Installation</A
+></H2
+><P
+>          How do I install an RPM from a CD or the Internet? I keep getting an
+          error message when I use Gnome-RPM.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-ERROR-A"
+>A: Having "Permission"</A
+></H2
+><P
+>          If you're getting the error message similar to "failed to open
+          /var/lib/rpm/packages.rpm" (see <A
+HREF="s1-q-and-a-error.html#GR-Q-AND-A-RPMFAIL"
+>Figure 15-2</A
+>)
+          it's likely due to the your <I
+CLASS="FIRSTTERM"
+>permissions</I
+>.
+        </P
+><P
+>          When you install software, you're often required to make system-wide
+          changes -- changes which only root can enact. In your user account,
+          permission to make such changes will be unavailable to you by default.
+        </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-Q-AND-A-RPMFAIL"
+></A
+><P
+><IMG
+SRC="figs/q-and-a/rpmfail.gif"></P
+><P
+><B
+>Figure 15-2. An RPM Install Error</B
+></P
+></DIV
+><P
+>          Here's a way to install RPMs in your home directory -- so you can work
+          with them in your user account.
+        </P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>              Open an Xterm window and, at the shell prompt, type
+              <B
+CLASS="COMMAND"
+>su</B
+>, then your
+              <TT
+CLASS="USERINPUT"
+><B
+><TT
+CLASS="REPLACEABLE"
+><I
+>rootpassword</I
+></TT
+></B
+></TT
+>.
+            </P
+></LI
+><LI
+><P
+>              At the prompt -- which should now be a hash mark
+              (<TT
+CLASS="PROMPT"
+>#</TT
+>) -- type <B
+CLASS="COMMAND"
+>gnorpm</B
+> to start
+              <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>.
+            </P
+></LI
+><LI
+><P
+>              Install or upgrade your package.		
+            </P
+></LI
+><LI
+><P
+>              Exit from <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> then, to exit from
+              <I
+CLASS="FIRSTTERM"
+>superuser</I
+> mode, at the shell prompt, type
+              <B
+CLASS="COMMAND"
+>exit</B
+>.
+            </P
+></LI
+></OL
+><P
+>          For more information about RPM and
+          <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>, refer to the chapters in this
+          guide or, for greater depth, refer to the
+          <I
+CLASS="CITETITLE"
+>Official Red Hat Linux Reference Guide</I
+>.
+        </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-shutdown.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-starting.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Shutting Down</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-q-and-a.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Starting Applications</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-error.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+</HTML
+>

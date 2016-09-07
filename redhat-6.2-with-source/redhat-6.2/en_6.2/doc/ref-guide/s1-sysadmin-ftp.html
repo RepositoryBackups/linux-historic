@@ -1,0 +1,225 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-sysadmin-ftp.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Anonymous FTP</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="System Administration"
+HREF="ch-sysadmin.html"><LINK
+REL="PREVIOUS"
+TITLE="Controlling Access to Services"
+HREF="s1-sysadmin-access.html"><LINK
+REL="NEXT"
+TITLE="NFS Configuration"
+HREF="s1-sysadmin-nfs.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-sysadmin-access.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 2. System Administration</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-sysadmin-nfs.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-SYSADMIN-FTP"
+>Anonymous FTP</A
+></H1
+><P
+>        Setting up anonymous FTP is simple.  All you need to do is install the
+        <TT
+CLASS="APPLICATION"
+>anon-ftp</TT
+> <TT
+CLASS="APPLICATION"
+>RPM</TT
+>
+        package (which you may have already done at install time).  Once it is
+        installed, anonymous FTP will be up and running.
+      </P
+><P
+>        There are a few files you might wish to edit to configure your FTP
+        server.
+      </P
+><P
+></P
+><DL
+><DT
+><TT
+CLASS="FILENAME"
+>/etc/ftpaccess</TT
+></DT
+><DD
+><P
+>              This file defines most of the access control for your FTP server.
+              Some of the things that you can do are: set up logical "groups" to
+              control access from different sites, limit the number of
+              simultaneous FTP connections, configure transfer logging, and much
+              more.  Read the <TT
+CLASS="APPLICATION"
+>ftpaccess</TT
+> man page for
+              complete details.
+              
+            </P
+></DD
+><DT
+><TT
+CLASS="FILENAME"
+>/etc/ftphosts</TT
+></DT
+><DD
+><P
+>              The <TT
+CLASS="FILENAME"
+>ftphosts</TT
+> file is used to allow or deny
+              access to certain accounts from various hosts.  Read the
+              <TT
+CLASS="APPLICATION"
+>ftphosts</TT
+> man page for details.
+              
+            </P
+></DD
+><DT
+><TT
+CLASS="FILENAME"
+>/etc/ftpusers</TT
+></DT
+><DD
+><P
+>              This file lists all the users that are <I
+CLASS="EMPHASIS"
+>not</I
+>
+              allowed to FTP into your machine.  For example,
+              <TT
+CLASS="FILENAME"
+>root</TT
+> is listed in
+              <TT
+CLASS="FILENAME"
+>/etc/ftpusers</TT
+> by default.  That means that
+              you cannot FTP to your machine and log in as root.  This is a good
+              security measure, but some administrators prefer to remove
+              <TT
+CLASS="FILENAME"
+>root</TT
+> from this file.
+            </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-sysadmin-access.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-sysadmin-nfs.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Controlling Access to Services</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-sysadmin.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>NFS Configuration</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-sysadmin-ftp.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

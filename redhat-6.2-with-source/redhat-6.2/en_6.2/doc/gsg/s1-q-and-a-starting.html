@@ -1,0 +1,416 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-starting.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Starting Applications</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Q  A: Quick Answers to Common Questions"
+HREF="ch-q-and-a.html"><LINK
+REL="PREVIOUS"
+TITLE="Error Message While Installing an RPM"
+HREF="s1-q-and-a-error.html"><LINK
+REL="NEXT"
+TITLE="Accessing a Windows Partition"
+HREF="s1-q-and-a-windows.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-error.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 15. Q &#38; A: Quick Answers to Common Questions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-windows.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-Q-AND-A-STARTING"
+>Starting Applications</A
+></H1
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-STARTING-Q"
+>Q: How Can I Start an Application I Downloaded?</A
+></H2
+><P
+>          I installed an application I downloaded, and everything seemed to go
+          fine, but I still get "command not found" when I type its name. I
+          think I have the right name, so why won't it start?
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-STARTING-A"
+>A: Starting Applications.</A
+></H2
+><P
+>          If you're trying to start an application from the shell prompt and
+          it's proving fruitless, try preceding the name of the application's
+          executable with a <B
+CLASS="COMMAND"
+>./</B
+>.
+        </P
+><P
+>          Let's say you've downloaded a <TT
+CLASS="FILENAME"
+>setiathome</TT
+> client
+          and want to try it out. You follow the directions for installing the
+          software. Now you change to the directory in which you know the
+          exeutable can be found (as shown below).
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cd setiathome</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>          To start the application now, precede the executable with a
+          "<B
+CLASS="COMMAND"
+>./</B
+>," as shown below:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>./setiathome</B
+>
+          </PRE
+></TD
+></TR
+></TABLE
+><P
+>          Briefly, the reason you've got to use the <B
+CLASS="COMMAND"
+>./</B
+> in
+          order to start the application is because the executable wasn't placed
+          in a directory where your shell knew it could be found (such as
+          <TT
+CLASS="FILENAME"
+>/usr/bin</TT
+>).
+        </P
+><P
+>          In such instances, you often have to go into the directory which holds
+          the executable and start the application from there. That means you'll
+          have to tell your shell where it can find the executable -- stating
+          <B
+CLASS="COMMAND"
+>./</B
+> tells bash the executable can be found in the
+          "current working directory."
+        </P
+><P
+>          You can customize your settings so that you won't be required to use
+          the <B
+CLASS="COMMAND"
+>./</B
+>, however. See the following for more info on
+          how to accomplish this.
+        </P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-Q-AND-A-STARTING-PATH"
+>Editing Your <TT
+CLASS="ENVAR"
+>PATH</TT
+></A
+></H3
+><P
+>            If you want to periodically start programs without having to enter a
+            <B
+CLASS="COMMAND"
+>./</B
+> before the executable, you'll have to do a
+            little tweaking.
+          </P
+><P
+>            Basically, you'll have to add the "current working directory" (.) to
+            your the list of directories in your <TT
+CLASS="ENVAR"
+>PATH</TT
+> environment
+            variable, letting the shell know that it can start applications in
+            whichever directory you're currently working.
+          </P
+><DIV
+CLASS="CAUTION"
+><P
+></P
+><TABLE
+CLASS="CAUTION"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/caution.gif"
+HSPACE="5"
+ALT="Caution"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>These instructions are intended <I
+CLASS="EMPHASIS"
+>only</I
+> for
+              user accounts. Avoid modifying files such as
+              <TT
+CLASS="FILENAME"
+>.bash_profile</TT
+> for root, because of the
+              potential security risks.</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>            Using a text editor, such as <TT
+CLASS="APPLICATION"
+>pico</TT
+>, in an
+            Xterm window, open the file called
+            <TT
+CLASS="FILENAME"
+>.bash_profile</TT
+> by typing
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>pico <TT
+CLASS="FILENAME"
+>.bash_profile</TT
+></B
+>
+            </PRE
+></TD
+></TR
+></TABLE
+><P
+>            You'll see a <TT
+CLASS="ENVAR"
+>PATH</TT
+> statement, similar to the one shown
+            below.
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>PATH=$PATH:$HOME/bin:/usr/lib/</TT
+>
+            </PRE
+></TD
+></TR
+></TABLE
+><P
+>            Now, to the end of this statement, add <TT
+CLASS="USERINPUT"
+><B
+>:./</B
+></TT
+>,
+            as shown below
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>PATH=$PATH:$HOME/bin:/usr/lib/:./</TT
+>
+	      </PRE
+></TD
+></TR
+></TABLE
+><P
+>            Now, type
+            <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>X</B
+>; you'll
+            be asked whether you want to save "the modified buffer"; type
+            <B
+CLASS="KEYCAP"
+>Y</B
+> for "yes." Next, you'll see the name the file
+            will be saved as; press the <B
+CLASS="KEYCAP"
+>Enter</B
+> key.
+          </P
+><P
+>            You're done. Now, you won't be required to start some applications
+            with the <B
+CLASS="COMMAND"
+>./</B
+> preceding the name of the executable.
+          </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-error.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-windows.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Error Message While Installing an RPM</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-q-and-a.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Accessing a Windows Partition</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-starting.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+</HTML
+>

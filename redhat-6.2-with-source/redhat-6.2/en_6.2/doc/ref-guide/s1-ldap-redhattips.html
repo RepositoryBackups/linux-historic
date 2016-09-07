@@ -1,0 +1,822 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-ldap-redhattips.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Configuring Your System to Authenticate Using OpenLDAP</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Lightweight Directory Access Protocol (LDAP)"
+HREF="ch-ldap.html"><LINK
+REL="PREVIOUS"
+TITLE="LDAP How To:  A Quick Overview"
+HREF="s1-ldap-quickstart.html"><LINK
+REL="NEXT"
+TITLE="LDAP Resources on the Web"
+HREF="s1-ldap-moreinfo.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-ldap-quickstart.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 8. Lightweight Directory Access Protocol (LDAP)</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-ldap-moreinfo.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-LDAP-REDHATTIPS"
+>Configuring Your System to Authenticate Using OpenLDAP</A
+></H1
+><P
+>	This section provides a brief overview of how to configure your Red Hat Linux
+	system to authenticate using <TT
+CLASS="APPLICATION"
+>OpenLDAP</TT
+>.
+	Unless you're an <TT
+CLASS="APPLICATION"
+>OpenLDAP</TT
+> expert, you will
+	probably need more documentation than is provided here.  Please refer to
+	the references provided in <A
+HREF="s1-ldap-moreinfo.html"
+>the section called <I
+>LDAP Resources on the Web</I
+></A
+> for more
+	information.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-LDAP-INSTALLPACKAGES"
+>Install the Necessary LDAP Packages</A
+></H2
+><P
+>	  First, you'll need to make sure that the appropriate packages are
+	  installed on both the LDAP server and the LDAP client machines. The
+	  LDAP server needs the <TT
+CLASS="FILENAME"
+>openldap</TT
+> package.  
+	</P
+><P
+> 
+	  The LDAP client machines need the following packages
+	  installed: <TT
+CLASS="FILENAME"
+>openldap</TT
+>,
+	  <TT
+CLASS="FILENAME"
+>auth_ldap</TT
+>, <TT
+CLASS="FILENAME"
+>nss_ldap</TT
+> and
+	  <TT
+CLASS="FILENAME"
+>pam_ldap</TT
+>.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-LDAP-SLAPDCONF"
+>Edit Configuration Files</A
+></H2
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-LDAP-SLAPDCONF"
+>Edit <TT
+CLASS="FILENAME"
+>/etc/openldap/slapd.conf</TT
+></A
+></H3
+><P
+>	    The <TT
+CLASS="FILENAME"
+>slapd.conf</TT
+> file, located in
+	    <TT
+CLASS="FILENAME"
+>/etc/openldap</TT
+>, contains the configuration
+	    information needed by your <B
+CLASS="COMMAND"
+>slapd</B
+> LDAP
+	    server. You'll need to edit this file to make it specific to your
+	    domain and your server.
+	  </P
+><P
+>	    The suffix line names the domain for which the LDAP server will
+	    provide information. The suffix line should be changed from:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>suffix 		"dc=your-domain, dc=com"</B
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	    so that it reflects your domain name. For example:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>suffix		"dc=acmewidgets, dc=com"</B
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	    or
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>suffix 		"dc=acmeuniversity, dc=org"</B
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	    The rootdn entry is the DN for a user who is unrestricted by the
+	    access control or administrative limit parameters set for operations
+	    on the LDAP directory. The rootdn user can be thought of as the root
+	    user for the LDAP directory. The rootdn line needs to be changed
+	    from:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>rootdn		"cn=root, dc=your-domain, dc=com"</B
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	    to something like:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>rootdn		"cn=root, dc=redhat, dc=com"</B
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	    or
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>rootdn		"cn=ldapmanager, dc=my_organization, dc=org"</B
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	    Change the rootpw line from:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>rootpw 		secret</B
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	    to something like
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>rootpw		{crypt}s4L9sOIJo4kBM</B
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	    In the above example, you're using an encrypted root password, which
+	    is a much better idea than leaving a plain text root password in the
+	    <TT
+CLASS="FILENAME"
+>slapd.conf</TT
+> file.  To make this crypt string,
+	    you should either copy it out of a <TT
+CLASS="FILENAME"
+>passwd</TT
+> file,
+	    or use Perl:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>perl -e "print crypt('passwd','a_salt_string');"</B
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	    In the previous Perl line, <B
+CLASS="COMMAND"
+>salt_string</B
+> is a two
+	    character salt, and <B
+CLASS="COMMAND"
+>passwd</B
+> is the plain text
+	    version of the password.
+	  </P
+><P
+>	    You could also copy a <TT
+CLASS="FILENAME"
+>passwd</TT
+> entry out of
+	    <TT
+CLASS="FILENAME"
+>/etc/passwd</TT
+>, but this won't work if the
+	    <TT
+CLASS="FILENAME"
+>passwd</TT
+> entry is an MD5 password (the default in
+	    Red Hat Linux 6.2).
+	  </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-LDAP-LDAPCONF"
+>Edit <TT
+CLASS="FILENAME"
+>ldap.conf</TT
+></A
+></H3
+><P
+>	    Edit the <TT
+CLASS="FILENAME"
+>ldap.conf</TT
+> files in
+	    <TT
+CLASS="FILENAME"
+>/etc</TT
+> and in <TT
+CLASS="FILENAME"
+>/etc/openldap</TT
+>
+	    on the LDAP server and clients.
+	  </P
+><P
+>	    Edit <TT
+CLASS="FILENAME"
+>/etc/ldap.conf</TT
+>, the configuration file for
+	    <TT
+CLASS="FILENAME"
+>nss_ldap</TT
+> and <TT
+CLASS="FILENAME"
+>pam_ldap</TT
+>, to
+	    reflect your organization and search base.  The file
+	    <TT
+CLASS="FILENAME"
+>/etc/openldap/ldap.conf</TT
+> is the configuration
+	    file for the command line tools like <B
+CLASS="COMMAND"
+>ldapsearch</B
+>,
+	    <B
+CLASS="COMMAND"
+>ldapadd</B
+>, etc., and it will also need to be edited
+	    for your LDAP setup.  Client machines will need to have both of
+	    these files modified for your system.
+	  </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-LDAP-NSSWITCHCONF"
+>Edit <TT
+CLASS="FILENAME"
+>/etc/nsswitch.conf</TT
+></A
+></H3
+><P
+>	    To use <TT
+CLASS="FILENAME"
+>nss_ldap</TT
+>, you'll need to add
+	    <B
+CLASS="COMMAND"
+>ldap</B
+> to the appropriate fields in
+	    <TT
+CLASS="FILENAME"
+>/etc/nsswitch.conf</TT
+>.  (Be very careful when
+	    editing this file; be sure that you know what you're doing.)  For
+	    example:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>passwd: files ldap
+shadow: files ldap
+group: files ldap</B
+></PRE
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-LDAP-PAMD"
+>Copy the PAM Configuration Files</A
+></H3
+><P
+>	    To use <TT
+CLASS="FILENAME"
+>pam_ldap</TT
+>, you'll need to copy the PAM
+	    configuration files from
+	    <TT
+CLASS="FILENAME"
+>/usr/doc/nss_ldap&#60;version&#62;/pam.d/</TT
+> to your
+	    <TT
+CLASS="FILENAME"
+>/etc/pam.d/</TT
+> directory.  These are a set of PAM
+	    configuration files that allow all of the standard PAM-enabled
+	    applications to use LDAP for authentication.  (PAM is beyond the
+	    scope of this LDAP overview, so if you need help, consult <A
+HREF="s1-sysadmin-auth.html"
+>the section called <I
+>User Authentication with PAM</I
+> in Chapter 2</A
+> and/or PAM man pages.)
+	  </P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN6522"
+>Migrate Your Old Authentication Information to LDAP
+	Format</A
+></H2
+><P
+>	  The <TT
+CLASS="FILENAME"
+>/usr/share/openldap/migration</TT
+> directory
+	  contains a set of shell and Perl scripts for migrating your old
+	  authentication information into LDAP format. (Yes, you'll need to have
+	  Perl on your system to use these scripts.)
+	</P
+><P
+>	  First, you'll need to modify the
+	  <TT
+CLASS="FILENAME"
+>migrate_common.ph</TT
+> file so that it reflects your
+	  domain. The default DNS domain should be changed from:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>$DEFAULT_MAIL_DOMAIN = "padl.com";</B
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	  to something like:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>$DEFAULT_MAIL_DOMAIN = "your_company.com";</B
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	  The default base should also be changed, from:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>$DEFAULT_BASE = "dc=padl,dc=com";</B
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	  to something like:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>$DEFAULT_BASE = "dc=your_company,dc=com";</B
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	  Next, you'll need to decide which script to use. The following table
+	  should tell you:
+	</P
+><DIV
+CLASS="TABLE"
+><A
+NAME="TB-LDAP-MIGRATESCRIPTS"
+></A
+><P
+><B
+>Table 8-1. LDAP Migration Scripts</B
+></P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+CELLSPACING="0"
+CELLPADDING="4"
+CLASS="CALSTABLE"
+><TR
+><TH
+ALIGN="LEFT"
+VALIGN="TOP"
+>Existing name service</TH
+><TH
+ALIGN="LEFT"
+VALIGN="TOP"
+>Is LDAP running?</TH
+><TH
+ALIGN="LEFT"
+VALIGN="TOP"
+>Use this script:</TH
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>/etc</TT
+> flat files</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>yes</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>migrate_all_online.sh</TT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>/etc</TT
+> flat files</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>no</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>migrate_all_offline.sh</TT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>NetInfo</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>yes</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>migrate_all_netinfo_online.sh</TT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>NetInfo</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>no</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>migrate_all_netinfo_offline.sh</TT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>NIS (YP)</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>yes</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>migrate_all_nis_online.sh</TT
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>NIS (YP)</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>No</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>migrate_all_nis_offline.sh</TT
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	  Run the appropriate script based on your existing name service. 
+	</P
+><P
+>	  The <TT
+CLASS="FILENAME"
+>README</TT
+> and the
+	  <TT
+CLASS="FILENAME"
+>migration-tools.txt</TT
+> files in
+	  <TT
+CLASS="FILENAME"
+>/usr/share/openldap/migration</TT
+> provide more
+	  details.
+	</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-ldap-quickstart.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-ldap-moreinfo.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>LDAP How To:  A Quick Overview</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-ldap.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>LDAP Resources on the Web</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-ldap-redhattips.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

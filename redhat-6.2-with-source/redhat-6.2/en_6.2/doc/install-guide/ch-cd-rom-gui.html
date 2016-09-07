@@ -1,0 +1,479 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/ch-cd-rom-gui.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Installing Red Hat Linux 6.2</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="PREVIOUS"
+TITLE="Install Options"
+HREF="s1-install-installpath.html"><LINK
+REL="NEXT"
+TITLE="Partitioning with fdisk"
+HREF="s1-cd-rom-gui-fdisk.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Installation Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-install-installpath.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-cd-rom-gui-fdisk.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CH-CD-ROM-GUI"
+>Chapter 4. Installing Red Hat Linux 6.2</A
+></H1
+><P
+>      Once you have finished this chapter, you will have completed a full
+      installation of Red Hat Linux 6.2.
+    </P
+><P
+>      If you need information about performing an upgrade, please refer to <A
+HREF="ch-upgrade.html"
+>Chapter 5</A
+> for those instructions.
+    </P
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-CD-ROM-GUI-INSTUP"
+>Continuing the Installation</A
+></H1
+><P
+>	You usually install Red Hat Linux on a clean disk partition or set of
+	partitions, or over another installation of Linux.
+      </P
+><DIV
+CLASS="WARNING"
+><P
+></P
+><TABLE
+CLASS="WARNING"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/warning.gif"
+HSPACE="5"
+ALT="Warning"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Warning</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  Installing Red Hat Linux over another installation of Linux (including Red Hat Linux)
+	  does <I
+CLASS="EMPHASIS"
+>not</I
+> preserve any information (files or data)
+	  from a prior installation.  Make sure you save any important files! If
+	  you are worried about saving the current data on your existing system
+	  (without making a backup on your own), you should consider performing
+	  an upgrade instead (see <A
+HREF="ch-upgrade.html"
+>Chapter 5</A
+>).
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	In choosing a full installation, you must also choose the class of the
+	installation. Your options include: <TT
+CLASS="GUILABEL"
+><B
+>GNOME
+	Workstation</B
+></TT
+>, <TT
+CLASS="GUILABEL"
+><B
+>KDE Workstation</B
+></TT
+>,
+	<TT
+CLASS="GUILABEL"
+><B
+>Server</B
+></TT
+> or <TT
+CLASS="GUILABEL"
+><B
+>Custom</B
+></TT
+>.
+      </P
+><P
+>	Most suitable for new users, the workstation-class installation will
+	install your choice of a GNOME or KDE desktop environment, and the X Window
+	System.
+      </P
+><DIV
+CLASS="WARNING"
+><P
+></P
+><TABLE
+CLASS="WARNING"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/warning.gif"
+HSPACE="5"
+ALT="Warning"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Warning</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  Do not choose this method if you're sharing a disk with Windows NT; if
+	  you do, you will be unable to boot Windows NT. LILO will write over
+	  NT's boot loader and you will be unable to boot NT. You must perform a
+	  custom-class installation and configure LILO so that it is not
+	  installed on the Master Boot Record (MBR).
+	</P
+><P
+>	  To create a dual-boot environment on a system that currently has NT,
+	  you must install LILO on the first sector of the root partition, not
+	  the MBR.  Please be sure to create a boot disk. In a case such as
+	  this, you will either need to use the boot disk, or configure the NT
+	  system loader to boot LILO from the first sector of the root
+	  partition. Be sure to check out <A
+HREF="http://www.linuxdoc.org/HOWTO/mini/Linux+NT-Loader.html"
+TARGET="_top"
+>	  http://www.linuxdoc.org/HOWTO/mini/Linux+NT-Loader.html</A
+> for
+	  more information on setting up LILO and NT.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="WARNING"
+><P
+></P
+><TABLE
+CLASS="WARNING"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/warning.gif"
+HSPACE="5"
+ALT="Warning"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Warning</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  A workstation-class installation will erase <I
+CLASS="EMPHASIS"
+>all
+            information</I
+> in <I
+CLASS="EMPHASIS"
+>all Linux-related
+            partitions</I
+> from <I
+CLASS="EMPHASIS"
+>every one</I
+> of your
+	  computer's hard drive(s).
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  Unlike previous workstation-class installations, performing a Red Hat Linux
+	  6.2 workstation-class installation will not install the network
+	  daemon <TT
+CLASS="APPLICATION"
+>inetd</TT
+>.  Not installing
+	  <TT
+CLASS="APPLICATION"
+>inetd</TT
+> results in a more secure installation;
+	  however, network-related services such as
+	  <TT
+CLASS="APPLICATION"
+>finger</TT
+>, <TT
+CLASS="APPLICATION"
+>telnet</TT
+>,
+	  <TT
+CLASS="APPLICATION"
+>talk</TT
+>, and <TT
+CLASS="APPLICATION"
+>FTP</TT
+> will
+	  not work. If you require these types of services, please go back and
+	  choose a server- or a custom-class installation.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	A server-class installation is most appropriate for you if you'd like
+	your system to function as a Linux-based server, and you don't want to
+	heavily customize your system configuration.
+      </P
+><DIV
+CLASS="WARNING"
+><P
+></P
+><TABLE
+CLASS="WARNING"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/warning.gif"
+HSPACE="5"
+ALT="Warning"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Warning</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  A server-class installation will erase <I
+CLASS="EMPHASIS"
+>all
+            partitions</I
+> (both Linux and non-Linux) from
+	  <I
+CLASS="EMPHASIS"
+>every one</I
+> of your computer's hard drive(s).
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	The <I
+CLASS="EMPHASIS"
+>custom-class installation</I
+> allows you the most
+	flexibility during your installation. The workstation-class and
+	server-class installations automatically go through the installation
+	process for you and omit certain steps. During a custom-class
+	installation, it is up to <I
+CLASS="EMPHASIS"
+>you</I
+> how disk space should
+	be partitioned.  You have complete control over the packages that will
+	be installed on your system.  You can also determine whether you'll use
+	LILO (the LInux LOader) to boot your system. Unless you have prior Linux
+	experience, you should not select the custom-class installation method.
+      </P
+><P
+>	If you would like to know what steps are omitted by not performing a
+	custom-class installation please refer to <A
+HREF="ch-mockup-before-begin.html#S4-MOCKUP-BEFORE-BEGIN-BEHIND"
+>the section called <I
+>Behind the Scenes of a Custom-Class Installation</I
+> in Chapter 2</A
+>.
+      </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-install-installpath.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-cd-rom-gui-fdisk.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Install Options</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Partitioning with <TT
+CLASS="APPLICATION"
+>fdisk</TT
+></TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/ch-cd-rom-gui.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:48:00 GMT -->
+</HTML
+>

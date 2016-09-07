@@ -1,0 +1,377 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-managing-locating.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Locating Files and Directories</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Working with Files and Directories"
+HREF="ch-shellmanage.html"><LINK
+REL="PREVIOUS"
+TITLE="Working with Files and Directories"
+HREF="ch-shellmanage.html"><LINK
+REL="NEXT"
+TITLE="Command History and Tab Completion"
+HREF="s1-managing-command-history.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-shellmanage.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 14. Working with Files and Directories</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-managing-command-history.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-MANAGING-LOCATING"
+>Locating Files and Directories</A
+></H1
+><P
+>        There will be times when we know a file or directory exists but we won't
+        know where to find it.  Searching for a file or directory can be easier
+        with the <B
+CLASS="COMMAND"
+>locate</B
+> command.
+      </P
+><P
+>        With <B
+CLASS="COMMAND"
+>locate</B
+>, we'll see every related file or
+        directory which matches our search criterion. Let's say we want to
+        search for all files related to the <B
+CLASS="COMMAND"
+>finger</B
+> command.
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>locate finger</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        The <B
+CLASS="COMMAND"
+>locate</B
+> command uses a database to check for files
+        and directories which match the string <B
+CLASS="COMMAND"
+>finger</B
+>.
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>More about <B
+CLASS="COMMAND"
+>locate</B
+></B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          To learn more about <B
+CLASS="COMMAND"
+>locate</B
+>, read the
+          <B
+CLASS="COMMAND"
+>locate</B
+> man page (type <B
+CLASS="COMMAND"
+>man
+          locate</B
+> at a shell prompt).
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>        It's a handy command which works very quickly -- as long as the database
+        is up to date. That database is automatically updated on a nightly
+        basis, from <B
+CLASS="COMMAND"
+>cron</B
+>. What's <B
+CLASS="COMMAND"
+>cron</B
+>?
+        It's a small program that runs in the background, performing various
+        tasks -- such as updating the <B
+CLASS="COMMAND"
+>locate</B
+> database -- at
+        regularly scheduled intervals.
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>More about <B
+CLASS="COMMAND"
+>cron</B
+></B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          <B
+CLASS="COMMAND"
+>cron</B
+> is a
+          <I
+CLASS="FIRSTTERM"
+>daemon</I
+>. Daemons handle tasks in the
+          background. To read the <B
+CLASS="COMMAND"
+>cron</B
+> man page, type
+          <B
+CLASS="COMMAND"
+>man cron</B
+> at the shell prompt.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>        So what happens if we:
+      </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>            Have more than one operating system on our machine, and switch
+            between them -- causing us to halt and restart our Red Hat Linux system;
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            Shutdown and turn off our machine at the end of the day.
+          </P
+></LI
+></UL
+><P
+>        This might mean that <B
+CLASS="COMMAND"
+>cron</B
+> rarely has a chance to
+        update the <I
+CLASS="FIRSTTERM"
+>slocate</I
+> database, which is used to
+        catalogue locations of files. But we can just update the database
+        manually.  Let's give it a try.
+      </P
+><P
+>        First, <B
+CLASS="COMMAND"
+>su</B
+> to root (type <TT
+CLASS="USERINPUT"
+><B
+>su</B
+></TT
+> in
+	at the prompt, then type your rootpassword).
+      </P
+><P
+>        Now, at the shell prompt, type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>updatedb</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        After perhaps a few minutes, the <TT
+CLASS="APPLICATION"
+>slocate</TT
+>
+        database will be current.
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-shellmanage.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-managing-command-history.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Working with Files and Directories</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-shellmanage.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Command History and Tab Completion</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-managing-locating.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:01 GMT -->
+</HTML
+>

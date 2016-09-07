@@ -1,0 +1,560 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-navigating-filesystem.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>A Larger Picture of the Filesystem</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="You Are Here"
+HREF="ch-navigating.html"><LINK
+REL="PREVIOUS"
+TITLE="Looking Around with ls"
+HREF="s1-navigating-using-ls.html"><LINK
+REL="NEXT"
+TITLE='"Washing" the Window'
+HREF="s1-navigating-washing.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-navigating-using-ls.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 13. You Are Here</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-navigating-washing.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-NAVIGATING-FILESYSTEM"
+>A Larger Picture of the Filesystem</A
+></H1
+><P
+>        Every operating system has a method of storing its files and directories
+        so that it can keep track of additions, modifications and other changes.
+      </P
+><P
+>        In Linux, every file is stored on the system with a unique name, in
+        directories which can also hold other files and directories -- or,
+        subdirectories.
+      </P
+><P
+>        You might think of the system as a tree-like structure, in which
+        directories "branch off." Those directories may contain -- or be the
+        "parent" of -- other directories which may hold files or directories of
+        their own.
+      </P
+><P
+>        There wouldn't be a tree without a root, and the same is true for the
+        Linux filesystem. No matter how far away the branches, everything is
+        connected to the root, which is represented as a single forward slash
+        (/).
+      </P
+><P
+>        It might seem confusing to have several references to "root" - the root
+        account, the root account's login directory and the root directory
+        (<TT
+CLASS="FILENAME"
+>/</TT
+>), but think of it this way: The root login, who
+        is the system administrator, is just as important to keeping things
+        together in the system as the system's root (/).
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>What is the <I
+CLASS="FIRSTTERM"
+>FHS</I
+>?</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          Even though there are other Linux distributions, your Red Hat Linux system is
+          likely to be compatible with them. The reason is because of the
+          <I
+CLASS="FIRSTTERM"
+>Filesystem Hierarchy Standard</I
+> (also known as
+          FHS). These guidelines help to standardize the way system programs and
+          files are stored on all Linux systems.
+        </P
+><P
+>          To read more about the FHS, turn to the chapter on system
+	  administration in the Red Hat Linux Reference Guide. You can also visit the
+	  FHS website: <A
+HREF="http://www.pathname.com/fhs"
+TARGET="_top"
+>http://www.pathname.com/fhs</A
+>.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>        As long as we're logged into our user account -- which will help prevent
+        disastrous mistakes -- let's take a look around.
+      </P
+><P
+>        The first stop on this tour ought to be the root directory, which will
+        give us a larger picture of where things are.
+      </P
+><P
+>        At the shell prompt, then, let's type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cd /</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        We'll see a prompt which looks like:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost /]$</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Now, let's see which directories "branch off" root by typing:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>ls</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Doesn't look like much, does it? Well, it's a little like viewing the
+        tip of an iceberg. These are the parent directories of other
+        directories, in which there may be other directories&#8230; and so on.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-NAVIGATING-ROOTLS"
+></A
+><P
+><IMG
+SRC="figs/navigating/rootls.gif"></P
+><P
+><B
+>Figure 13-9. A View of the Directories from Root</B
+></P
+></DIV
+><P
+>        Here are just a few of the directories we're likely to find:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>etc     lib     sbin
+usr     var</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        There are more, but let's take a look in the <TT
+CLASS="FILENAME"
+>/etc</TT
+>
+        directory.
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost /]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>cd etc</B
+></TT
+>
+<TT
+CLASS="PROMPT"
+>[newuser@localhost /etc]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>ls</B
+></TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Here, among other types of files and directories, we'll find
+        <I
+CLASS="FIRSTTERM"
+>configuration files</I
+>, which are files that help
+        make programs work for our system, store our program and system settings
+        and more.
+      </P
+><P
+>        Among the directories in here, you'll see <TT
+CLASS="FILENAME"
+>/etc/X11</TT
+>,
+        which also contains directories and configuration files for the X Window
+        System.
+      </P
+><P
+>        In the directory <TT
+CLASS="FILENAME"
+>/etc/skel</TT
+>, you'll find
+        <I
+CLASS="FIRSTTERM"
+>skeleton</I
+> user files, which are used to populate
+        newly created user accounts with standard, commonly used files.
+      </P
+><P
+>        That sounds a little Gothic, perhaps, but here's what it means.  When we
+      were logged in as root, one of the first tasks we undertook was to create
+      a user account.
+      </P
+><P
+>        When that user account was created, files were taken from
+        <TT
+CLASS="FILENAME"
+>/etc/skel</TT
+> and placed into the new account. These
+        files helped to "flesh out" the account (skeleton&#8230; flesh&#8230;
+        get it?).
+      </P
+><P
+>        Let's look around a little in <TT
+CLASS="FILENAME"
+>/usr</TT
+>. From our
+        current location in <TT
+CLASS="FILENAME"
+>/etc/skel</TT
+>, we can type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost /skel]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>cd /usr</B
+></TT
+>
+<TT
+CLASS="PROMPT"
+>[newuser@localhost /usr]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>ls</B
+></TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        In <TT
+CLASS="FILENAME"
+>/usr</TT
+>, we're going to find a number of
+        directories which hold some of our system's most important programs and
+        files (see <A
+HREF="s1-navigating-filesystem.html#GR-NAVIGATING-USRLS"
+>Figure 13-10</A
+>).
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-NAVIGATING-USRLS"
+></A
+><P
+><IMG
+SRC="figs/navigating/usrls.gif"></P
+><P
+><B
+>Figure 13-10.           Typing <B
+CLASS="COMMAND"
+>ls</B
+> in <TT
+CLASS="FILENAME"
+>/usr</TT
+>
+        </B
+></P
+></DIV
+><P
+>        In <TT
+CLASS="FILENAME"
+>/usr/man</TT
+> we'll find the system manual pages;
+        other documentation which isn't covered by man pages will be found in
+      <TT
+CLASS="FILENAME"
+>/usr/doc</TT
+> and in <TT
+CLASS="FILENAME"
+>/usr/info</TT
+>.
+      </P
+><P
+>        In <TT
+CLASS="FILENAME"
+>/usr/X11R6</TT
+>, we'll find files related to the X
+        Window System, including configuration and documentation files.
+      </P
+><P
+>        Although we may think of something more literary when we hear the word
+        "libraries," in <TT
+CLASS="FILENAME"
+>/usr/lib</TT
+> we'll find files which are
+        considered <I
+CLASS="FIRSTTERM"
+>libraries</I
+> for our system. In this
+        context, libraries are files containing commonly used snippets of code
+        which can be shared by many programs.
+      </P
+><P
+>        Red Hat Linux uses the <TT
+CLASS="APPLICATION"
+>RPM</TT
+> (the
+        <I
+CLASS="EMPHASIS"
+>R</I
+>PM <I
+CLASS="EMPHASIS"
+>P</I
+>ackage
+        <I
+CLASS="EMPHASIS"
+>M</I
+>anager) technology of software installation and
+        upgrades. Using <TT
+CLASS="APPLICATION"
+>RPM</TT
+>, either from the shell
+        prompt or through <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>, is both a safe
+        and convenient way to upgrade or install software.
+      </P
+><P
+>        (For more on using <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>, see <A
+HREF="ch-rpmlite.html"
+>Chapter 10</A
+>, or turn to its chapter in the Red Hat Linux Reference Guide.)
+      </P
+><P
+>        However, once you become more comfortable with your system, there may be
+        times when you'll want to install software that may not be available in
+        RPM format. To minimize collisions with RPM-managed files, the best
+        place to put such software is in <TT
+CLASS="FILENAME"
+>/usr/local</TT
+>.
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-navigating-using-ls.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-navigating-washing.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Looking Around with <B
+CLASS="COMMAND"
+>ls</B
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-navigating.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>"Washing" the Window</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-navigating-filesystem.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:07 GMT -->
+</HTML
+>

@@ -1,0 +1,384 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-up2date-using.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Using Update Agent</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Working with Update Agent"
+HREF="ch-up2date.html"><LINK
+REL="PREVIOUS"
+TITLE="Configuring Update Agent"
+HREF="s1-up2date-configuration.html"><LINK
+REL="NEXT"
+TITLE="Package Management with RPM"
+HREF="ch-rpm.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-up2date-configuration.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 5. Working with Update Agent</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="ch-rpm.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-UP2DATE-USING"
+>Using <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+></A
+></H1
+><P
+>	When you sign up for services at <A
+HREF="http://www.redhat.com/now/"
+TARGET="_top"
+>http://www.redhat.com/now</A
+>,
+	  you can select an option to receive update notifications by e-mail. If
+	  you choose, you'll be told when updates are available, based on your
+	  preferences.
+	</P
+><P
+>	Once you receive an update notification and have correctly configured
+	<TT
+CLASS="APPLICATION"
+>Update Agent</TT
+>, you can begin to use it to
+	connect to <TT
+CLASS="FILENAME"
+>priority.redhat.com</TT
+> for updates to
+	download and install.
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>You must have either a dedicated
+	connection, or be connected to your ISP through a dialup connection to
+	use <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+>.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	To begin a session, start <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+> (in
+	<B
+CLASS="GUIMENU"
+>System</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Update Agent</B
+>),
+	and provide the root account's password.
+      </P
+><P
+>	From the main screen of the application, click on
+	<B
+CLASS="GUIBUTTON"
+>Connect</B
+>. The status bar at the bottom of the
+	window will indicate that the application is connecting and retrieving
+	information from the updates FTP site.
+      </P
+><P
+>	If you have chosen to exclude packages or files (such as kernel
+	updates), you may see a response similar to <A
+HREF="s1-up2date-using.html#GR-UP2DATE-UNSELECTED"
+>Figure 5-6</A
+>. Click on the <B
+CLASS="GUIBUTTON"
+>OK</B
+>
+	button to continue.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-UP2DATE-UNSELECTED"
+></A
+><P
+><IMG
+SRC="figs/up2date/unselected.gif"></P
+><P
+><B
+>Figure 5-6. Excluded Files</B
+></P
+></DIV
+><P
+>	The status bar on the main <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+>
+	window will indicate the the application is creating a page which will
+	be displayed in your Web browser. Once it's finished sorting the
+	packages and building the page, your browser will open and you'll see
+	results similar to <A
+HREF="s1-up2date-using.html#GR-UP2DATE-PACKAGES"
+>Figure 5-7</A
+>.
+      </P
+><P
+>	If there are updated packages available, you'll see the name of the
+	package, a summary of its function and related details, such as the
+	latest version number, the release number and the size of the package.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-UP2DATE-PACKAGES"
+></A
+><P
+><IMG
+SRC="figs/up2date/packages.gif"></P
+><P
+><B
+>Figure 5-7. Available Updates</B
+></P
+></DIV
+><P
+>	You can select individual packages by scrolling down the page and
+	checking the box next to the package. When you're finished, click on the
+	<B
+CLASS="GUIBUTTON"
+>Request selected packages</B
+> button at the bottom of
+	the page.
+      </P
+><P
+>	If you'd prefer to update your system with all the available packages,
+	click on the <B
+CLASS="GUIBUTTON"
+>Request ALL packages</B
+> button; you
+	won't be required to make individual selections beside each package.
+      </P
+><P
+>	After you've made your request for the packages, the browser window will
+	close. (You may receive a message in a window, asking you whether you
+	want to close the window; confirm this decision by clicking on
+	<B
+CLASS="GUIBUTTON"
+>OK</B
+>.)
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-UP2DATE-DETERMINING"
+></A
+><P
+><IMG
+SRC="figs/up2date/determining.gif"></P
+><P
+><B
+>Figure 5-8. Beginning the download process</B
+></P
+></DIV
+><P
+>	Next, you'll see that the packages which are being downloaded will be
+	shown in the main <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+> screen, under
+	<TT
+CLASS="GUILABEL"
+><B
+>Package Name</B
+></TT
+> and a small button will appear next to
+	each package in the <TT
+CLASS="GUILABEL"
+><B
+>Status</B
+></TT
+> column, similar to <A
+HREF="s1-up2date-using.html#GR-UP2DATE-DETERMINING"
+>Figure 5-8</A
+>.
+      </P
+><P
+>	When packages have completed downloading, the button in the
+	<TT
+CLASS="GUILABEL"
+><B
+>Status</B
+></TT
+> column will reflect this change by becoming
+	a red arrow. The arrow will become a check mark when each package has
+	been successfully installed. The progress bar on the lower right of the
+	window will reflect the work which remains before all the updates have
+	been downloaded and installed.
+      </P
+><P
+>	After all the packages have been retrieved and/or installed on your
+	system, a window will open informing you of the successful
+	procedure. You'll also receive e-mail verification that you'd performed
+	the procedure; the verification will be sent to the address you'd
+	specified as your <TT
+CLASS="GUILABEL"
+><B
+>User ID</B
+></TT
+>.
+      </P
+><P
+>	To quit <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+> once all the packages
+	have been retrieved and installed, click on the
+	<B
+CLASS="GUIBUTTON"
+>Quit</B
+> button.
+	</P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-up2date-configuration.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="ch-rpm.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Configuring <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-up2date.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Package Management with RPM</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-up2date-using.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:33 GMT -->
+</HTML
+>

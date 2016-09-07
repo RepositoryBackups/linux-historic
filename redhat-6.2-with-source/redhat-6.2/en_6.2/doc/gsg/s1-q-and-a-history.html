@@ -1,0 +1,279 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-history.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Find Some Commands Fast</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Q  A: Quick Answers to Common Questions"
+HREF="ch-q-and-a.html"><LINK
+REL="PREVIOUS"
+TITLE="Accessing a Windows Partition"
+HREF="s1-q-and-a-windows.html"><LINK
+REL="NEXT"
+TITLE="Keep ls Output from Scrolling"
+HREF="s1-q-and-a-ls-scrolling.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-windows.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 15. Q &#38; A: Quick Answers to Common Questions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-ls-scrolling.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-Q-AND-A-HISTORY"
+>Find Some Commands Fast</A
+></H1
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-HISTORY-Q"
+>Q: Locating Previously Used Commands</A
+></H2
+><P
+>          I was looking at a man page yesterday, but I can't remember the name
+          of the command I was reading about, and I didn't write it down. How do
+          I get the man page back?
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-HISTORY-A"
+>A: Searching <TT
+CLASS="FILENAME"
+>.bash_history</TT
+>.</A
+></H2
+><P
+>          Chances are good the command you used is stored away in a file called
+          <TT
+CLASS="FILENAME"
+>.bash_history</TT
+>. By default, this file stores away
+          the last 500 commands you typed at the shell prompt.
+        </P
+><P
+>          You can glimpse the history of your commands by typing
+          <B
+CLASS="COMMAND"
+>history</B
+> at the shell prompt -- but the results will
+          speed by quickly.
+        </P
+><P
+>          Another way you can view <TT
+CLASS="FILENAME"
+>.bash_history</TT
+> is with a
+          <I
+CLASS="FIRSTTERM"
+>pager</I
+> such as <TT
+CLASS="APPLICATION"
+>less</TT
+>,
+          by typing <B
+CLASS="COMMAND"
+>less .bash_history</B
+> at the shell
+          prompt. To move forward a screen, press the <B
+CLASS="KEYCAP"
+>Spacebar</B
+>;
+          to move back a screen, press the <B
+CLASS="KEYCAP"
+>B</B
+> key, and to quit,
+          press <B
+CLASS="KEYCAP"
+>Q</B
+>.
+        </P
+><P
+>          But paging through to find a command can be tedious. A useful
+          alternative is to search the file for keywords using
+          <B
+CLASS="COMMAND"
+>grep</B
+>, a powerful search utility.
+        </P
+><P
+>          If you can recall part of any command you'd typed at the shell prompt,
+          and if that command is still in <TT
+CLASS="FILENAME"
+>.bash_history</TT
+>,
+          you can find it fast by <I
+CLASS="FIRSTTERM"
+>piping</I
+> the results of
+          the <B
+CLASS="COMMAND"
+>history</B
+> command through the utility called
+          <B
+CLASS="COMMAND"
+>grep</B
+>.
+        </P
+><P
+>          Let's say you'd been reading the man page the day before, but can't
+          recall its name. To search for the command, then, type:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="USERINPUT"
+><B
+>history | grep man</B
+></TT
+>
+		</PRE
+></TD
+></TR
+></TABLE
+><P
+>          In no time, you'll see all of the commands you'd typed which have the
+          word <I
+CLASS="EMPHASIS"
+>man</I
+> in them -- both the relevant and
+          irrelevant.
+        </P
+><P
+>          There are plenty of ways to make use of command history. For other
+          tips and tricks, see <A
+HREF="s1-q-and-a-history-tips.html"
+>the section called <I
+>Tips on Using Command History</I
+></A
+>
+        </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-windows.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-ls-scrolling.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Accessing a Windows Partition</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-q-and-a.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Keep <B
+CLASS="COMMAND"
+>ls</B
+> Output from Scrolling</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-history.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+</HTML
+>

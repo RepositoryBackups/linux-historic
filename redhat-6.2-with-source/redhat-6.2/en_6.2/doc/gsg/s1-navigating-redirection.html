@@ -1,0 +1,649 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-navigating-redirection.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Using Redirection</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="You Are Here"
+HREF="ch-navigating.html"><LINK
+REL="PREVIOUS"
+TITLE="Using cat"
+HREF="s1-navigating-usingcat.html"><LINK
+REL="NEXT"
+TITLE="Appending Standard Output"
+HREF="s1-navigating-appending.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-navigating-usingcat.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 13. You Are Here</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-navigating-appending.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-NAVIGATING-REDIRECTION"
+>Using Redirection</A
+></H1
+><P
+>        Now that we have a handle on what standard input and standard output
+        are, it's time to expand a little.
+      </P
+><P
+>        <I
+CLASS="FIRSTTERM"
+>Redirection</I
+> means causing the shell to change
+        what it considers standard input or where the standard output is going.
+      </P
+><P
+>        We used <B
+CLASS="COMMAND"
+>cat</B
+> before to demonstrate the idea behind
+        standard input and standard output. Now, let's use
+        <B
+CLASS="COMMAND"
+>cat</B
+> to see how standard output can be redirected.
+      </P
+><P
+>        To redirect standard output, we'll use the &#62; symbol. Placing &#62;
+        after the <B
+CLASS="COMMAND"
+>cat</B
+> command (or after any utility or
+        application that writes to standard output) will direct its output to
+        the filename following the symbol.
+      </P
+><P
+>        Let's try it. In an Xterm window type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>cat &#62; sneakers.txt</B
+></TT
+>
+<TT
+CLASS="USERINPUT"
+><B
+>buy some sneakers</B
+></TT
+>
+<TT
+CLASS="USERINPUT"
+><B
+>then go to the coffee shop</B
+></TT
+>
+<TT
+CLASS="USERINPUT"
+><B
+>then buy some coffee</B
+></TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-NAVIGATING-CAT2"
+></A
+><P
+><IMG
+SRC="figs/navigating/cat2.gif"></P
+><P
+><B
+>Figure 13-12. Redirecting Output to a File</B
+></P
+></DIV
+><P
+>        Now press <B
+CLASS="KEYCAP"
+>Enter</B
+> to go to an empty line, and use the
+        <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>D</B
+> keys to
+        quit <B
+CLASS="COMMAND"
+>cat</B
+>.
+      </P
+><P
+>        Notice the difference (see <A
+HREF="s1-navigating-redirection.html#GR-NAVIGATING-CAT2"
+>Figure 13-12</A
+>)? For one
+        thing, there are no double entries. That's because the standard output
+        from cat was redirected. That redirection was to a brand new file you
+        made called <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+>.
+      </P
+><P
+>        You can find the file in your login directory (may we suggest using
+        <B
+CLASS="COMMAND"
+>ls</B
+> if you want to see it listed?).
+      </P
+><P
+>        You can even use <B
+CLASS="COMMAND"
+>cat</B
+> to read the file, by typing:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cat sneakers.txt</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        at the prompt.
+      </P
+><DIV
+CLASS="CAUTION"
+><P
+></P
+><TABLE
+CLASS="CAUTION"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/caution.gif"
+HSPACE="5"
+ALT="Caution"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Don't overwrite files</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          Be careful when you redirect the output to a file, because you can
+          easily overwrite an existing file! Make sure the name of the file
+          you're creating doesn't match the name of a pre-existing file, unless
+          you want to replace it.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>        Let's use output redirection for another file and call it
+        <TT
+CLASS="FILENAME"
+>home.txt</TT
+>.
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>cat &#62; home.txt</B
+></TT
+>
+<TT
+CLASS="USERINPUT"
+><B
+>bring the coffee home</B
+></TT
+>
+<TT
+CLASS="USERINPUT"
+><B
+>take off shoes</B
+></TT
+>
+<TT
+CLASS="USERINPUT"
+><B
+>put on sneakers</B
+></TT
+>
+<TT
+CLASS="USERINPUT"
+><B
+>make some coffee</B
+></TT
+>
+<TT
+CLASS="USERINPUT"
+><B
+>relax!</B
+></TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Now, on an empty line, use the
+        <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>D</B
+>
+        keys again to quit <B
+CLASS="COMMAND"
+>cat</B
+>.
+      </P
+><P
+>        We can check the file again by typing:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cat home.txt</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        at the prompt.
+      </P
+><P
+>        Let's use <B
+CLASS="COMMAND"
+>cat</B
+> again to join
+        <TT
+CLASS="FILENAME"
+>home.txt</TT
+> with <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+> and
+        redirect the output of both files to a brand new file we'll call
+        <TT
+CLASS="FILENAME"
+>saturday</TT
+> (you'll find an example in <A
+HREF="s1-navigating-redirection.html#GR-NAVIGATING-CAT3"
+>Figure 13-13</A
+>).
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>cat sneakers.txt home.txt &#62; saturday</B
+></TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        That's it.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-NAVIGATING-CAT3"
+></A
+><P
+><IMG
+SRC="figs/navigating/cat3.gif"></P
+><P
+><B
+>Figure 13-13. Joining Files and Redirecting Output</B
+></P
+></DIV
+><P
+>        Now it's time to check our handiwork. Type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>cat saturday</B
+></TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        and you should see something like this:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser @localhost newuser]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>cat saturday</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>buy some sneakers
+then go to the coffee shop
+then buy some coffee
+bring the coffee home
+take off shoes
+put on sneakers
+make some coffee
+relax!</TT
+>
+<TT
+CLASS="PROMPT"
+>[newuser @localhost newuser]$</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        You can see that <B
+CLASS="COMMAND"
+>cat</B
+> has added
+        <TT
+CLASS="FILENAME"
+>home.txt</TT
+> where <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+>
+        left off.
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Combining files with <B
+CLASS="COMMAND"
+>cat</B
+></B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          Creating and combining short files with <B
+CLASS="COMMAND"
+>cat</B
+> can be
+          a convenient alternative to using a text editor like
+          <TT
+CLASS="APPLICATION"
+>Pico</TT
+>.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Summary</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          By using the output redirection symbol (&#62;) you can send the output
+          to a file instead of the terminal. The <B
+CLASS="COMMAND"
+>cat</B
+> utility
+          can be used along with output redirection to join files together into
+          a single, unified file with one filename.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-navigating-usingcat.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-navigating-appending.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Using <B
+CLASS="COMMAND"
+>cat</B
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-navigating.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Appending Standard Output</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-navigating-redirection.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:11 GMT -->
+</HTML
+>

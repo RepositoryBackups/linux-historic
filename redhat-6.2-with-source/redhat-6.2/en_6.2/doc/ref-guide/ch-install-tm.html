@@ -1,0 +1,509 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-install-tm.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:58:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Installing Red Hat Linux via Text Mode</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Installation-Related Reference"
+HREF="p6648.html"><LINK
+REL="PREVIOUS"
+TITLE="Preparing for a Text Mode Installation"
+HREF="ch-before-you-begin.html"><LINK
+REL="NEXT"
+TITLE="Starting the Installation Program"
+HREF="s1-start-install.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-before-you-begin.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-start-install.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CH-INSTALL-TM"
+>Chapter 10. Installing Red Hat Linux via Text Mode</A
+></H1
+><P
+>      This release of Red Hat Linux features a graphical, mouse-based installation
+      program, documented in the <I
+CLASS="CITETITLE"
+>Official Red Hat Linux Installation Guide</I
+>. But you can
+      also install Red Hat Linux with a text mode, keyboard-based installation
+      program. This chapter explains how to use it. Here are some
+      recommendations:
+    </P
+><P
+></P
+><UL
+><LI
+><P
+>          If you're new to Linux installations, read the
+          <I
+CLASS="CITETITLE"
+>Official Red Hat Linux Installation Guide</I
+> first.  Although it focuses on the
+          graphical installation process, most of the concepts apply to the text
+          mode installation as well.  After that, you'll find that <A
+HREF="ch-before-you-begin.html"
+>Chapter 9</A
+>, <I
+CLASS="CITETITLE"
+>Preparing for a Text Mode
+          Installation</I
+>, will give you more in-depth information
+          regarding those aspects of installing Red Hat Linux that do not apply to the
+          graphical installation process.
+        </P
+><P
+>          Additionally, you'll find <A
+HREF="ch-partitions.html"
+>Appendix B</A
+>,
+          <I
+CLASS="CITETITLE"
+>An Introduction to Disk Partitions</I
+>, helpful, as
+          it discusses disk partition resizing (crucial if you plan to install
+          Linux on a disk where another operating system is currently
+          installed).
+        </P
+></LI
+><LI
+><P
+>          If you'll need PCMCIA support to perform the installation (for
+          example, you're installing on a laptop equipped with a PCMCIA card),
+          you must make a PCMCIA boot disk. The <I
+CLASS="CITETITLE"
+>Official Red Hat Linux Installation Guide</I
+>
+          explains how to do this.
+	</P
+></LI
+><LI
+><P
+>          If you plan to install over a network (via NFS, FTP, or HTTP), you
+          must make a network boot disk. The <I
+CLASS="CITETITLE"
+>Official Red Hat Linux Installation Guide</I
+>
+          explains how to do this.
+	</P
+></LI
+><LI
+><P
+>	  If you've never used the text mode installation program, or need
+	  a refresher on its user interface, read the next section.
+	</P
+></LI
+><LI
+><P
+>	  To begin installation without further delay, turn to
+	  <A
+HREF="s1-start-install.html"
+>the section called <I
+>Starting the Installation Program</I
+></A
+>.
+	</P
+></LI
+></UL
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-INSTALL-INTERFACE-TM"
+>The Installation Program User Interface</A
+></H1
+><P
+>	The Red Hat Linux text mode installation program uses a screen-based interface
+	that includes most of the on-screen "widgets" commonly found on
+	graphical user interfaces.  <A
+HREF="ch-install-tm.html#FIG-INSTALL-WIDGET1"
+>Figure 10-1</A
+> and
+	<A
+HREF="ch-install-tm.html#FIG-INSTALL-WIDGET2"
+>Figure 10-2</A
+> illustrate the screens you'll see.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-WIDGET1"
+></A
+><P
+><IMG
+SRC="figs/textmode/widget1.gif"></P
+><P
+><B
+>Figure 10-1. Installation Program Widgets as seen in <TT
+CLASS="GUILABEL"
+><B
+>Configure
+        TCP/IP</B
+></TT
+></B
+></P
+></DIV
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-WIDGET2"
+></A
+><P
+><IMG
+SRC="figs/textmode/widget2.gif"></P
+><P
+><B
+>Figure 10-2. Installation Program Widgets as seen in <TT
+CLASS="APPLICATION"
+>Disk
+        Druid</TT
+> </B
+></P
+></DIV
+><P
+>	Here's a list of the most important widgets shown in <A
+HREF="ch-install-tm.html#FIG-INSTALL-WIDGET1"
+>Figure 10-1</A
+> and <A
+HREF="ch-install-tm.html#FIG-INSTALL-WIDGET2"
+>Figure 10-2</A
+>:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	    Window -- Windows (usually referred to as
+	    <I
+CLASS="FIRSTTERM"
+>dialogs</I
+> in this manual) will appear on your
+	    screen throughout the installation process.  At times, one window
+	    may overlay another; in these cases, you can only interact with the
+	    window on top.  When you are finished in that window, it will
+	    disappear, allowing you to continue working in the window
+	    underneath.
+	  </P
+></LI
+><LI
+><P
+>	    Text Input -- Text input lines are regions where you can enter
+	    information required by the installation program.  When the cursor
+	    rests on a text input line, you may enter and/or edit information on
+	    that line.
+	  </P
+></LI
+><LI
+><P
+>	    Check Box -- Check boxes allow you to select or deselect a feature.
+	    The box displays either an asterisk (selected) or a space
+	    (unselected). When the cursor is within a check box, press
+	    <B
+CLASS="KEYCAP"
+>Space</B
+> to select an unselected feature or to
+	    deselect a selected feature.
+	  </P
+></LI
+><LI
+><P
+>	    Text Widget -- Text widgets are regions of the screen for the
+	    display of text.  At times, text widgets may also contain other
+	    widgets, such as check boxes.  If a text widget contains more
+	    information than can be displayed in the space reserved for it, a
+	    scroll bar appears; if you position the cursor within the text
+	    widget, you can then use the <B
+CLASS="KEYCAP"
+>Up</B
+> and
+	    <B
+CLASS="KEYCAP"
+>Down</B
+> arrow keys to scroll through all the
+	    information available. Your current position is shown on the scroll
+	    bar by a <B
+CLASS="GUIICON"
+>#</B
+> character, which moves up and down the
+	    scroll bar as you scroll.
+	  </P
+></LI
+><LI
+><P
+>	    Button Widget -- Button widgets are the primary method of
+	    interacting with the installation program.  You progress through the
+	    windows of the installation program by navigating these buttons,
+	    using the <B
+CLASS="KEYCAP"
+>Tab</B
+> and <B
+CLASS="KEYCAP"
+>Enter</B
+> keys.
+	    Buttons can be selected when they are highlighted.
+	  </P
+></LI
+><LI
+><P
+>	    Cursor -- Although not a widget, the cursor is used to select (and
+	    interact) with a particular widget.  As the cursor is moved from
+	    widget to widget, it may cause the widget to change color, or you
+	    may only see the cursor itself positioned in or next to the widget.
+	    In <A
+HREF="ch-install-tm.html#FIG-INSTALL-WIDGET1"
+>Figure 10-1</A
+>, the cursor is positioned on
+	    the <B
+CLASS="GUIBUTTON"
+>OK</B
+> button.  <A
+HREF="ch-install-tm.html#FIG-INSTALL-WIDGET2"
+>Figure 10-2</A
+> shows the cursor on the
+	    <B
+CLASS="GUIBUTTON"
+>Edit</B
+> button.
+
+	  </P
+></LI
+></UL
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-INTERFACE-KYBD"
+>Using the Keyboard to Navigate</A
+></H2
+><P
+>	  Navigation through the installation dialogs is performed through a
+	  simple set of keystrokes.  To move the cursor, use
+	  <B
+CLASS="KEYCAP"
+>Left</B
+>, <B
+CLASS="KEYCAP"
+>Right</B
+>, <B
+CLASS="KEYCAP"
+>Up</B
+>,
+	  and <B
+CLASS="KEYCAP"
+>Down</B
+> arrow keys. Use <B
+CLASS="KEYCAP"
+>Tab</B
+>, and
+	  <B
+CLASS="KEYCAP"
+>Alt</B
+>-<B
+CLASS="KEYCAP"
+>Tab</B
+> to cycle forward or backward
+	  through each widget on the screen. Most screens display along the
+	  bottom a summary of available cursor positioning keys.
+	</P
+><P
+>	  To "press" a button, position the cursor over the button (using
+	  <B
+CLASS="KEYCAP"
+>Tab</B
+>, for instance) and press <B
+CLASS="KEYCAP"
+>Space</B
+>
+	  or <B
+CLASS="KEYCAP"
+>Enter</B
+>.  To select an item from a list of items,
+	  move the cursor to the item you wish to select and press
+	  <B
+CLASS="KEYCAP"
+>Enter</B
+>.  To select an item with a <I
+CLASS="FIRSTTERM"
+>check
+	  box</I
+>, move the cursor to the check box and press
+	  <B
+CLASS="KEYCAP"
+>Space</B
+> to select an item.  To deselect, press
+	  <B
+CLASS="KEYCAP"
+>Space</B
+> a second time.
+	</P
+><P
+>	  Pressing <B
+CLASS="KEYCAP"
+>F12</B
+> accepts the current values and proceeds
+	  to the next dialog; it is equivalent to pressing the
+	  <B
+CLASS="GUIBUTTON"
+>OK</B
+> button.
+	</P
+><DIV
+CLASS="CAUTION"
+><P
+></P
+><TABLE
+CLASS="CAUTION"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/caution.gif"
+HSPACE="5"
+ALT="Caution"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Caution</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    Unless a dialog box is waiting for your input, do not press any keys
+	    during the installation process (doing so may result in
+	    unpredictable behavior).
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-before-you-begin.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-start-install.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Preparing for a Text Mode Installation</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="p6648.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Starting the Installation Program</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-install-tm.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:58:05 GMT -->
+</HTML
+>

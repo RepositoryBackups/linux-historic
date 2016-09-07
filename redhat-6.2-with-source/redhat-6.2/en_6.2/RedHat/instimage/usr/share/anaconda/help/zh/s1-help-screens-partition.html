@@ -1,0 +1,297 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/zh/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>分区</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.49"><LINK
+REL="HOME"
+TITLE="安装帮助屏幕"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="自动分区"
+HREF="s1-help-screens-svr.html"><LINK
+REL="NEXT"
+TITLE="选择要格式化的分区"
+HREF="s1-help-screens-format.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-PARTITION"
+>分区</A
+></H1
+><P
+>	您要在何处安装 Red Hat Linux？
+      </P
+><P
+>	首先，您必须为一个或多个磁盘分区定义<I
+CLASS="FIRSTTERM"
+>安装点</I
+>
+，可能还需要在此时创建和（或）删除分区。
+      </P
+><P
+>	如果您不知道如何对系统分区，请阅读 Red Hat Linux Installation Guide 或 Red Hat Linux Reference Guide 中有关分区的章节。
+      </P
+><P
+>	顶端屏幕将显示现有分区，每个分区均具有以下五个字段：
+      </P
+><P
+></P
+><DL
+><DT
+>安装点：</DT
+><DD
+><P
+>	      此字段表示在安装和运行 Red Hat Linux 时，分区将安装在何处。如果分区已存在但标记为“not set”，则必须为其定义安装点。您可以使用
+	      <B
+CLASS="KEYCAP"
+>“编辑”</B
+>键或双击此分区。
+	      </P
+><P
+>	      除非您有理由进行其它分区操作，否则我们建议您创建以下分区：
+	    </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>		  交换分区（至少 16 MB）-- 交换分区用于支持虚拟内存。如果您的计算机 RAM 等于或小于 16 MB，则<I
+CLASS="EMPHASIS"
+>必须</I
+>创建一个交换分区。 即使您的内存大于 16 MB，仍然建议您创建一个交换分区。交换分区大小至少应该等于计算机 RAM 的大小或 
+16 MB（取两者中的较大值）。  
+		</P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>		  <TT
+CLASS="FILENAME"
+>/boot</TT
+> 分区（最大为 16 MB）-- <TT
+CLASS="FILENAME"
+>/boot</TT
+> 上安装的分区包含操作系统内核以及系统自举进程中使用的文件。由于大多数 PC BIOS 的限制，您最好创建一个较小的分区以保存这些文件。此分区大小不应超过 16 
+MB。
+		</P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>		  <TT
+CLASS="FILENAME"
+>根</TT
+>分区 (500 MB 至 1 GB) -- “<TT
+CLASS="FILENAME"
+>/</TT
+>”（根目录）所驻留的分区。在此分区布局中，所有文件（存储在 
+		  <TT
+CLASS="FILENAME"
+>/boot</TT
+> 分区中的文件除外）都驻留在根分区上。500 MB 的根分区仅允许相当于工作站类型的安装（可用空间<I
+CLASS="EMPHASIS"
+>极</I
+>
+少），而 1 GB 的根分区则允许安装所有软件包。
+		</P
+></LI
+></UL
+></DD
+><DT
+>设备：</DT
+><DD
+><P
+>	      此字段显示分区的设备名称（例如，hda2 表示主硬盘驱动器上的第二个分区）。 
+	    </P
+></DD
+><DT
+>要求：</DT
+><DD
+><P
+>	      <I
+CLASS="FIRSTTERM"
+>“要求”</I
+>字段显示分区的空间大小。如果您要重新定义分区大小，则必须删除当前分区，然后使用
+	       <B
+CLASS="KEYCAP"
+>“添加”</B
+>按钮重新创建分区。
+	    </P
+></DD
+><DT
+>实际：</DT
+><DD
+><P
+>	      <I
+CLASS="FIRSTTERM"
+>“实际”</I
+>字段显示分区中当前占用的空间大小。
+	    </P
+></DD
+><DT
+>类型：</DT
+><DD
+><P
+>	      此字段显示分区类型（如 Linux Native 或 DOS）。
+	    </P
+></DD
+></DL
+><P
+>	在<I
+CLASS="FIRSTTERM"
+>“分区”</I
+>部分中滚动时，您可能会看到一个或多个分区后以红色文本显示一则<I
+CLASS="FIRSTTERM"
+>“Unallocated Requested Partition”</I
+>消息。 通常，未分配分区的原因是由于缺少可供分区使用的足够可用空间。  
+      </P
+><P
+>	要解决未分配所要求分区的问题，您必须将此分区移至另一个具有可用空间的驱动器，然后重新调整分区大小以适应当前驱动器，或者完全删除此分区。您可以使用
+<B
+CLASS="KEYCAP"
+>“编辑”</B
+>按钮或双击分区，以进行以上更改。
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DD"
+>对系统进行分区</A
+></H2
+><P
+>	  中间一行按钮用于控制分区工具的操作。您可以在此处添加、编辑和删除分区。此外，还有一些按钮可用于确认您所作的更改、重置和退出分区工具。
+	</P
+><P
+></P
+><DL
+><DT
+>添加：</DT
+><DD
+><P
+>		您可以使用<B
+CLASS="KEYCAP"
+>“添加”</B
+>按钮，以请求创建新分区。一旦选定此按钮，屏幕将显示一个对话框，其中包含您必须填写的字段（例如安装点、大小和类型）。
+	      </P
+></DD
+><DT
+>编辑：</DT
+><DD
+><P
+>		您可以使用<B
+CLASS="KEYCAP"
+>“编辑”</B
+>按钮，以更改当前选定分区的安装点。
+	      </P
+></DD
+><DT
+>删除：</DT
+><DD
+><P
+>		您可以使用<B
+CLASS="KEYCAP"
+>“删除”</B
+>按钮，以删除分区。屏幕将显示一个对话框，请求您确认删除操作。
+	      </P
+></DD
+><DT
+>重置：</DT
+><DD
+><P
+>		您可以使用<B
+CLASS="KEYCAP"
+>“重置”</B
+>按钮，以取消所作的任何更改。
+	      </P
+></DD
+><DT
+>创建 RAID 设备：</DT
+><DD
+><P
+>		仅在您具有使用 RAID 的经验时，才可使用<B
+CLASS="KEYCAP"
+>“创建 RAID 设备”</B
+>按钮。要了解更多有关 RAID 的信息，请参阅 Red Hat Linux Reference Guide。
+	      </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DRIVE"
+>驱动器摘要</A
+></H2
+><P
+>	  此部分用于显示您的计算机磁盘配置。它仅可提供摘要信息，每行包含以下字段：
+	</P
+><P
+></P
+><DL
+><DT
+>驱动器：</DT
+><DD
+><P
+>		此字段显示硬盘驱动器的设备名称（例如 hda 或 hdb）。
+	      </P
+></DD
+><DT
+>Geom [C/H/S]：</DT
+><DD
+><P
+>		硬盘驱动器的<I
+CLASS="FIRSTTERM"
+>几何结构</I
+>显示了磁柱、磁头和扇区数。
+	      </P
+></DD
+><DT
+>合计：</DT
+><DD
+><P
+>		此字段显示硬盘驱动器的合计可用空间。
+	      </P
+></DD
+><DT
+>可用：</DT
+><DD
+><P
+>		您可以在此处查看硬盘驱动器的剩余可用空间。
+	      </P
+></DD
+><DT
+>已用：</DT
+><DD
+><P
+>		这些字段显示当前分配至分区的硬盘空间大小（以兆字节和百分比表示）。
+	      </P
+></DD
+></DL
+></DIV
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/zh/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:50 GMT -->
+</HTML
+>

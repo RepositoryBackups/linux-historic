@@ -1,0 +1,1385 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/ch-managers.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:44:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>File Managers in GNOME and KDE</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Managing Files and Directories"
+HREF="p3804.html"><LINK
+REL="PREVIOUS"
+TITLE="Managing Files and Directories"
+HREF="p3804.html"><LINK
+REL="NEXT"
+TITLE="The KDE File Manager"
+HREF="s1-managers-kfm.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="p3804.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-managers-kfm.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CH-MANAGERS"
+>Chapter 9. File Managers in GNOME and KDE</A
+></H1
+><P
+>      In both GNOME and KDE, the file managers are true workhorses. Use these
+      powerful applications to help you create, edit, and delete, files and
+      directories, as well as accomplish other tasks throughout your system.
+    </P
+><P
+>      Both file managers support drag and drop, and provide you with a fast
+      and easy way to "see" your system. Either file manager will open in your
+      login directory by default. To view other directories on your system,
+      click on the "file folder" representing the directory in the
+      <I
+CLASS="FIRSTTERM"
+>tree view</I
+> pane on the left of the file manager. The
+      contents of the folder will appear in the <I
+CLASS="FIRSTTERM"
+>directory
+      window</I
+>, the pane on the right.
+    </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Do you have <I
+CLASS="FIRSTTERM"
+>permission</I
+>?</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	Unless you're root, you won't be able to gain access to all the files
+	and directories on your system. If you don't have the permission to
+	open, delete or execute a file, you'll receive an error message that
+	your access is denied.
+      </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>      This chapter will provide an overview of <TT
+CLASS="APPLICATION"
+>GMC</TT
+>
+      and <TT
+CLASS="APPLICATION"
+>KFM</TT
+>, the file managers for GNOME and
+      KDE. To learn more details about using them, read the <I
+CLASS="CITETITLE"
+>GNOME
+      User's Guide</I
+> or the KDE user's documentation in their
+      respective help browsers. You'll also be able to find the latest
+      documentation at their websites: <A
+HREF="http://www.gnome.org/"
+TARGET="_top"
+>http://www.gnome.org</A
+> and <A
+HREF="http://www.kde.org/"
+TARGET="_top"
+>http://www.kde.org</A
+>.
+    </P
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-MANAGERS-GMC"
+>The <TT
+CLASS="APPLICATION"
+>GNOME File Manager</TT
+></A
+></H1
+><P
+>	Fast, friendly and flexible, the <TT
+CLASS="APPLICATION"
+>GNOME File
+	Manager</TT
+> lets you easily browse and work with files and
+	directories. The proper name for the file manager is
+	<TT
+CLASS="APPLICATION"
+><I
+CLASS="FIRSTTERM"
+>GNU Midnight
+	Commander</I
+></TT
+>, or
+	<TT
+CLASS="APPLICATION"
+><I
+CLASS="FIRSTTERM"
+>GMC</I
+></TT
+>, because it's
+	based on the <TT
+CLASS="APPLICATION"
+>Midnight Commander</TT
+> file manager.
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>You can still use <TT
+CLASS="APPLICATION"
+>Midnight
+	Commander</TT
+></B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  If you want to use <TT
+CLASS="APPLICATION"
+>Midnight Commander</TT
+>, you
+	  can start it in an Xterm by typing <B
+CLASS="COMMAND"
+>mc</B
+> at the
+	  prompt.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-MANAGERS-GMC-USING"
+>Using the File Manager</A
+></H2
+><P
+>	  There are two ways to easily start <TT
+CLASS="APPLICATION"
+>GMC</TT
+>:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      From the <B
+CLASS="GUIMENU"
+>Main Menu Button</B
+> -- Click on
+	      <B
+CLASS="GUIMENUITEM"
+>File Manager</B
+> entry.
+	      </P
+></LI
+><LI
+><P
+>	      From the desktop --  Double-click on the file folder labeled
+	      <TT
+CLASS="GUILABEL"
+><B
+>Home directory</B
+></TT
+>, which looks like: <IMG
+SRC="figs/managers/homeicon.gif"
+ALIGN="CENTER"> 
+	      </P
+></LI
+></UL
+><P
+>When you first open the <TT
+CLASS="APPLICATION"
+>GMC</TT
+>, you'll see
+	something similar to <A
+HREF="ch-managers.html#GR-MANAGERS-GMC-USING-GMC1"
+>Figure 9-1</A
+>. 
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-MANAGERS-GMC-USING-GMC1"
+></A
+><P
+><IMG
+SRC="figs/managers/gmc1.gif"></P
+><P
+><B
+>Figure 9-1. A Sample <TT
+CLASS="APPLICATION"
+>GMC</TT
+> Window</B
+></P
+></DIV
+><P
+>	  As a new user, it's unlikely you'll find many new files or directories
+	  when you first open the file manager. That's because by default,
+	  <TT
+CLASS="APPLICATION"
+>GMC</TT
+> opens in your login directory. Note the
+	  file <TT
+CLASS="FILENAME"
+>signature.txt</TT
+>, however, in <A
+HREF="ch-managers.html#GR-MANAGERS-GMC-USING-GMC1"
+>Figure 9-1</A
+>. This is the signature file the
+	  user newuser created while configuring <TT
+CLASS="APPLICATION"
+>Netscape
+	  Messenger</TT
+>.
+	</P
+><P
+>	  The tree view, to the left, will reveal all of the directories on your
+	  system. Single-click on a folder to reveal its contents in the
+	  directory window, at right. Folders which have a
+	  <TT
+CLASS="GUILABEL"
+><B
+>+</B
+></TT
+> next to them indicate that they hold
+	  subdirectories and the view is collapsed; click on the
+	  <TT
+CLASS="GUILABEL"
+><B
+>+</B
+></TT
+> to expand the view and reveal the
+	  subdirectories.
+	</P
+><P
+>	  Use the following buttons on the menu above the
+	  <TT
+CLASS="GUILABEL"
+><B
+>Location</B
+></TT
+> bar to determine the detail of view you want:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <B
+CLASS="GUIBUTTON"
+>Icons</B
+> -- The default view. Displays icons
+	      to represent each file and directory type.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="GUIBUTTON"
+>Brief</B
+> -- Shows directories and files in a
+	      list, with directories at the top.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="GUIBUTTON"
+>Detailed</B
+> -- Shows a list, along with
+	      details such as the size and modification time of the files.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="GUIBUTTON"
+>Custom</B
+> -- Shows a customized detailed list
+	      (you can select items you want to include from the
+	      <B
+CLASS="GUIMENU"
+>Settings</B
+> menu, in
+	      <B
+CLASS="GUIMENUITEM"
+>Preferences</B
+> =&#62; <TT
+CLASS="GUILABEL"
+><B
+>Custom
+	      View</B
+></TT
+>).
+	    </P
+></LI
+></UL
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Change the order</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>If you view directory contents in one of the list choices, you
+	  can arrange your view of the list by clicking on one of the list
+	  headings. For example, if you want to see the contents alphabetically,
+	    click on the <TT
+CLASS="GUILABEL"
+><B
+>Name</B
+></TT
+> heading.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-MANAGERS-GMC-USING-NAVIGATION"
+>Navigation</A
+></H3
+><P
+>	    Like many file managers, you can move around by using the scrollbar
+	    next to the tree view to locate a directory you want to move to.
+	  </P
+><P
+>	    You can also use the navigation buttons above the
+	    <TT
+CLASS="GUILABEL"
+><B
+>Location</B
+></TT
+> bar similar to the way you would use
+	    the navigation buttons in <TT
+CLASS="APPLICATION"
+>Netscape
+	    Navigator</TT
+>:
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		<B
+CLASS="GUIBUTTON"
+>Back</B
+> and <B
+CLASS="GUIBUTTON"
+>Forward</B
+>
+		-- Move you up or down through the directory listing history
+	      </P
+></LI
+><LI
+><P
+>		<B
+CLASS="GUIBUTTON"
+>Up</B
+> -- Moves you "up" the directory tree
+	      </P
+></LI
+><LI
+><P
+>		<B
+CLASS="GUIBUTTON"
+>Rescan</B
+> -- Refreshes the view of the
+		current directory
+	      </P
+></LI
+><LI
+><P
+>		<B
+CLASS="GUIBUTTON"
+>Home</B
+> -- Lets you jump back to your
+		default directory
+	      </P
+></LI
+></UL
+><P
+>	    The <TT
+CLASS="GUILABEL"
+><B
+>Location</B
+></TT
+> bar allows you to type the
+	    directory location. If you know the path where you want to go, for
+	    example <TT
+CLASS="FILENAME"
+>/etc/X11</TT
+>, you can type it into the
+	    <TT
+CLASS="GUILABEL"
+><B
+>Location</B
+></TT
+> bar and press <B
+CLASS="KEYCAP"
+>Enter</B
+>
+	    to jump to that location.
+	  </P
+><P
+>	      Actually, the <TT
+CLASS="GUILABEL"
+><B
+>Location</B
+></TT
+> bar can let you browse
+	      more than just your local system. If you're online, and you type
+	      in the location of an FTP site, such as
+	      <TT
+CLASS="FILENAME"
+>ftp.redhat.com</TT
+>, you'll be able to see the
+	      files on that site which are available for download. The FTP
+	      command should look like this:
+	      <B
+CLASS="COMMAND"
+>ftp://ftp.redhat.com</B
+>.To download, just copy a
+	      file to a directory on your local machine.
+	    </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+><TT
+CLASS="APPLICATION"
+>GMC</TT
+> plays well with
+	    <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+></B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	      Speaking of downloaded files, you can use
+	      <TT
+CLASS="APPLICATION"
+>GMC</TT
+> to perform
+	      <TT
+CLASS="APPLICATION"
+>RPM</TT
+>-related work on new software
+	      packages, such as those you download or find on a CD. Just
+	      right-click on the package, and <TT
+CLASS="APPLICATION"
+>GMC</TT
+>
+	      offers you options to install, verify, query, and more (remember,
+	      you must be root to install or uninstall software). You can also
+	      drag and drop packages from the file manager into
+	      <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> for installation (refer to
+	      <A
+HREF="s1-rpmlite-installing.html"
+>the section called <I
+>Installing New Packages</I
+> in Chapter 10</A
+> for more on this).
+	    </P
+><P
+>	      To learn more about <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> and
+	      <TT
+CLASS="APPLICATION"
+>RPM</TT
+>, turn to <A
+HREF="ch-rpmlite.html"
+>Chapter 10</A
+>.
+	    </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-MANAGERS-GMC-USING-FILES"
+>Copying and Moving Files</A
+></H3
+><P
+>	    You can copy and move files from the directory window to your
+	    desktop or to another folder (that is, directory). If you want to
+	    move a file to your desktop, just "pick it up" by clicking on it
+	    once and holding down the mouse button. Release the file on the
+	    desktop; by default, this action causes the file to be moved to your
+	    desktop.
+	  </P
+><P
+> 
+	    If you'd prefer to copy the file rather than move it, click on the
+	    file, then drag it while holding down the <B
+CLASS="KEYCAP"
+>Shift</B
+>
+	    key. 
+	  </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Choose when you get there</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>		Not sure whether you want to move or copy a file? Use the
+		<B
+CLASS="KEYCAP"
+>Alt</B
+> key when you drag a file. A pop-up menu
+		will appear once you release the file, letting you choose
+		whether to copy or move the file. You can also choose to
+		<I
+CLASS="FIRSTTERM"
+>link</I
+> the file, which essentially is a
+		shortcut to the file in its original location.
+	      </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-MANAGERS-GMC-USING-GCOPYFILE"
+></A
+><P
+><IMG
+SRC="figs/managers/gcopyfile.gif"></P
+><P
+><B
+>Figure 9-2. Copying File Dialog</B
+></P
+></DIV
+><P
+>	    If you know the path to the directory to which you want to copy a
+	    file, you can right-click on the file and choose
+	    <TT
+CLASS="GUILABEL"
+><B
+>Copy</B
+></TT
+> from the menu of options which opens. A
+	    dialog will open, in which you can type the location where you want
+	    to copy the file (as in <A
+HREF="ch-managers.html#GR-MANAGERS-GMC-USING-GCOPYFILE"
+>Figure 9-2</A
+>).
+	  </P
+><P
+>	    In the <TT
+CLASS="GUILABEL"
+><B
+>Advanced Options</B
+></TT
+> tab of the
+	    <TT
+CLASS="GUILABEL"
+><B
+>Copy</B
+></TT
+> dialog, you can choose to
+	    <TT
+CLASS="GUILABEL"
+><B
+>Preserve symlinks</B
+></TT
+>, which will make certain that
+	    if the file you're copying is a <I
+CLASS="FIRSTTERM"
+>symbolic
+	    link</I
+>, or shortcut, it will be the same shortcut after
+	    it's copied. Rather than risk losing a shortcut, you should make
+	    certain you select this option if you're copying -- or moving -- a
+	    file that is a shortcut to another file.
+	  </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Moving works the same way</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    Just as you can copy a file by right-clicking, so too, you can move
+	      a file by right-clicking on it and selecting
+	      <B
+CLASS="GUIMENUITEM"
+>Move</B
+> from the menu which appears. If
+	      you want to rename the file while moving or copying it, type its
+	      new name in the <TT
+CLASS="GUILABEL"
+><B
+>Copy</B
+></TT
+> or
+	      <TT
+CLASS="GUILABEL"
+><B
+>Move</B
+></TT
+> box which opens. For example, if you
+	      want to copy the file <TT
+CLASS="FILENAME"
+>signature.txt</TT
+> to
+	      <TT
+CLASS="FILENAME"
+>/home/newuser/tigger</TT
+> and rename it
+	      <TT
+CLASS="FILENAME"
+>backup.txt</TT
+>, you would type
+	      <TT
+CLASS="FILENAME"
+>/home/newuser/tigger/backup.txt</TT
+>.
+	    </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-MANAGERS-GMC-USING-FILEPROPS"
+>File Properties</A
+></H3
+><P
+>	    To change a file's properties, right-click on a file or directory in
+	    the directory window and choose
+	    <B
+CLASS="GUIMENUITEM"
+>Properties</B
+>. A dialog, similar to <A
+HREF="ch-managers.html#GR-MANAGERS-GMC-USING-GFILEPROP1"
+>Figure 9-3</A
+>, will open.
+	  </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-MANAGERS-GMC-USING-GFILEPROP1"
+></A
+><P
+><IMG
+SRC="figs/managers/gfileprop1.gif"></P
+><P
+><B
+>Figure 9-3. File Properties Dialog</B
+></P
+></DIV
+><P
+>	    In the <TT
+CLASS="GUILABEL"
+><B
+>Statistics</B
+></TT
+> tab, you'll find information
+	    about the file, such as the date and time it was created and
+	    modified.
+	  </P
+><P
+>	    In the <TT
+CLASS="GUILABEL"
+><B
+>File Name</B
+></TT
+> field, you can change the name
+	    of the file.
+	  </P
+><P
+>	    In the <TT
+CLASS="GUILABEL"
+><B
+>Options</B
+></TT
+> tab, you can change
+	    <I
+CLASS="FIRSTTERM"
+>action options</I
+> for the file, such as how the
+	    file will be opened, viewed and edited. You probably won't have a
+	    reason to worry about these items; they already have default
+	    settings.
+	  </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-MANAGERS-GMC-USING-GFILEPROP2"
+></A
+><P
+><IMG
+SRC="figs/managers/gfileprop2.gif"></P
+><P
+><B
+>Figure 9-4. The <TT
+CLASS="GUILABEL"
+><B
+>Permissions</B
+></TT
+> Tab in File Properties</B
+></P
+></DIV
+><P
+>	    In the <TT
+CLASS="GUILABEL"
+><B
+>Permissions</B
+></TT
+> tab (see <A
+HREF="ch-managers.html#GR-MANAGERS-GMC-USING-GFILEPROP2"
+>Figure 9-4</A
+>), you can change the
+	    permissions and ownership of a file (that is, if you have the
+	    permission yourself). You can change the read, write and execute
+	    settings, as well set <I
+CLASS="FIRSTTERM"
+>UID</I
+>,
+	    <I
+CLASS="FIRSTTERM"
+>GID</I
+> and <I
+CLASS="FIRSTTERM"
+>Sticky bits</I
+>.
+	  </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>UID, GID and Sticky bits?</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	      Essentially, these items refer to user management and
+	      permissions. UID means <I
+CLASS="FIRSTTERM"
+>User ID</I
+>, a unique
+	      number given to every user on the system; GID means
+	      <I
+CLASS="FIRSTTERM"
+>Group ID</I
+>, the ID of the user's default
+	      group. Sticky refers to <I
+CLASS="FIRSTTERM"
+>Sticky bit</I
+>. You
+	      probably won't have to worry about setting the Sticky bit.
+	    </P
+><P
+>	      For more about how to work with permissions, see <A
+HREF="s1-navigating-ownership.html"
+>the section called <I
+>Ownership and Permissions</I
+> in Chapter 13</A
+>. Once you understand the idea
+	      behind file permissions, you may find using the
+	    <TT
+CLASS="GUILABEL"
+><B
+>Permissions</B
+></TT
+> tab a convenient way to change a
+	    file or directory's permission settings.
+	    </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-MANAGERS-GMC-PREFERENCES"
+>Setting <TT
+CLASS="APPLICATION"
+>GMC</TT
+>'s Preferences</A
+></H2
+><P
+>	  You can adjust quite a few settings for <TT
+CLASS="APPLICATION"
+>GMC</TT
+>
+	  in the <TT
+CLASS="GUILABEL"
+><B
+>Preferences</B
+></TT
+> dialog
+	  (<B
+CLASS="GUIMENU"
+>Settings</B
+> =&#62;
+	  <B
+CLASS="GUIMENUITEM"
+>Preferences</B
+>); see <A
+HREF="ch-managers.html#GR-MANAGERS-GMC-USING-GPREF1"
+>Figure 9-5</A
+> for an example of the
+	  <TT
+CLASS="GUILABEL"
+><B
+>Preferences</B
+></TT
+> dialog. 
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-MANAGERS-GMC-USING-GPREF1"
+></A
+><P
+><IMG
+SRC="figs/managers/gpref1.gif"></P
+><P
+><B
+>Figure 9-5. The <TT
+CLASS="GUILABEL"
+><B
+>File display</B
+></TT
+> Tab in Preferences</B
+></P
+></DIV
+><P
+>	  The dialog includes the following tabbed sections:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>File display</B
+></TT
+> -- Modify the way files are
+	      viewed. Select <TT
+CLASS="GUILABEL"
+><B
+>Show backup files</B
+></TT
+> to reveal
+	      backup files; <TT
+CLASS="GUILABEL"
+><B
+>Show hidden files</B
+></TT
+> to show
+	      <I
+CLASS="FIRSTTERM"
+>dot files</I
+>, usually configuration files and
+	      directories; <TT
+CLASS="GUILABEL"
+><B
+>Mix files and directories</B
+></TT
+> allows
+	      you to see files and directories in an order you select in the
+	      directory window; you don't really have to concern yourself with
+	      the <TT
+CLASS="GUILABEL"
+><B
+>Use shell patterns...</B
+></TT
+> choice, because it
+	      concerns sorting with <I
+CLASS="FIRSTTERM"
+>regular expressions</I
+>,
+	      which is probably more useful to advanced users.
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Confirmation</B
+></TT
+> -- Select whether you should be
+	      required to confirm any decision to delete, overwrite and execute
+	      files. You can also choose whether you want to see a progress
+	      indicator while the actions are being executed.
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>VFS</B
+></TT
+> -- VFS means <I
+CLASS="FIRSTTERM"
+>Virtual File
+	      System</I
+>. VFS means that you can work with files which
+	      aren't on your local machine. Information in this tab applies to
+	      actions related to FTP sites. <TT
+CLASS="GUILABEL"
+><B
+>VFS Timeout</B
+></TT
+>
+	      refers to the time (in seconds) you can be connected without
+	      activity, before you're disconnected. The entry in
+	      <TT
+CLASS="GUILABEL"
+><B
+>Anonymous FTP password</B
+></TT
+> refers to the
+	      identification you want to be transferred for <I
+CLASS="FIRSTTERM"
+>anonymous
+	      logins</I
+> at FTP sites. (Typically, this is your e-mail
+	      address.) Enable the option to <TT
+CLASS="GUILABEL"
+><B
+>Always use FTP
+	      proxy</B
+></TT
+> if you're required to use a proxy to connect to
+	      FTP sites.
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Caching</B
+></TT
+> -- These settings may help to
+	      increase the speed of <TT
+CLASS="APPLICATION"
+>GMC</TT
+>. Select
+	      <TT
+CLASS="GUILABEL"
+><B
+>Fast directory reload</B
+></TT
+> to store directory
+	      information in memory to speed the load time. Using this option
+	      may not always result in an updated display,
+	      however. <TT
+CLASS="GUILABEL"
+><B
+>Compute totals before copying files</B
+></TT
+>
+	      will cause <TT
+CLASS="APPLICATION"
+>GMC</TT
+> to calculate the number
+	      of files you're copying so it can provide information to you about
+	      the task. <TT
+CLASS="GUILABEL"
+><B
+>FTP directory cache timeout</B
+></TT
+> is the
+	      length of time (in seconds) to hold information about an FTP site
+	      in memory. <TT
+CLASS="GUILABEL"
+><B
+>Allow customization of icons in icon
+	      view</B
+></TT
+> lets you change the icon style in the directory
+	      window. Note that checking this may decrease performance.
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Desktop</B
+></TT
+> -- Here, you can specify some ways
+	      that you view the items on your desktop. Click inside the
+	      <TT
+CLASS="GUILABEL"
+><B
+>Icon position</B
+></TT
+> box to specify how the icons
+	      should be aligned on your desktop. Select <TT
+CLASS="GUILABEL"
+><B
+>Automatic icon
+	      placement</B
+></TT
+> to arrange icons on your desktop
+	      automatically, rather than your arranging them manually. Click
+	      <TT
+CLASS="GUILABEL"
+><B
+>Snap icons to grid</B
+></TT
+> if you want icons on the
+	      desktop to be aligned in straight order. <TT
+CLASS="GUILABEL"
+><B
+>Use shaped
+		icons</B
+></TT
+> and <TT
+CLASS="GUILABEL"
+><B
+>Use shaped text</B
+></TT
+> allow
+	      the icons and related text labels to be semi-transparent on your
+	      desktop, rather than "blocky" icons and labels.
+ 	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Custom View</B
+></TT
+> -- In this dialog, you can
+	      specify the additional information you want to see when you select
+	      the <B
+CLASS="GUIBUTTON"
+>Custom</B
+> button from
+	      <TT
+CLASS="APPLICATION"
+>GMC</TT
+>'s menu.
+	    </P
+></LI
+></UL
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="p3804.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-managers-kfm.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Managing Files and Directories</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="p3804.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>The <TT
+CLASS="APPLICATION"
+>KDE File Manager</TT
+></TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/ch-managers.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:44:58 GMT -->
+</HTML
+>

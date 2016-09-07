@@ -1,0 +1,424 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-sysadmin-nfs.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>NFS Configuration</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="System Administration"
+HREF="ch-sysadmin.html"><LINK
+REL="PREVIOUS"
+TITLE="Anonymous FTP"
+HREF="s1-sysadmin-ftp.html"><LINK
+REL="NEXT"
+TITLE="The Boot Process, Init, and Shutdown"
+HREF="s1-sysadmin-boot.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-sysadmin-ftp.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 2. System Administration</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-sysadmin-boot.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-SYSADMIN-NFS"
+>NFS Configuration</A
+></H1
+><P
+>        NFS stands for <I
+CLASS="EMPHASIS"
+>N</I
+>etwork <I
+CLASS="EMPHASIS"
+>F</I
+>ile
+        <I
+CLASS="EMPHASIS"
+>S</I
+>ystem; it is a way to share files between
+        machines as if they were on your local hard drive.  Linux can be both an
+        NFS server and an NFS client, which means that it can
+        <I
+CLASS="FIRSTTERM"
+>export</I
+> filesystems to other systems, and
+        <I
+CLASS="FIRSTTERM"
+>mount</I
+> filesystems exported from other machines.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-NFS-MOUNT"
+>Mounting NFS Filesystems</A
+></H2
+><P
+>          Use the <B
+CLASS="COMMAND"
+>mount</B
+> command to mount an NFS filesystem
+          from another machine:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>mkdir <TT
+CLASS="FILENAME"
+>/mnt/local</TT
+></B
+> # Only required if /mnt/local doesn't exist
+<B
+CLASS="COMMAND"
+>mount <TT
+CLASS="FILENAME"
+>bigdog:/mnt/export</TT
+> <TT
+CLASS="FILENAME"
+>/mnt/local</TT
+></B
+>
+        </PRE
+></TD
+></TR
+></TABLE
+><P
+>          In this command, bigdog is the hostname of the NFS fileserver,
+          <TT
+CLASS="FILENAME"
+>/mnt/export</TT
+> is the filesystem that bigdog is
+          exporting, and <TT
+CLASS="FILENAME"
+>/mnt/local</TT
+> is a directory on the
+          local machine where we want to mount the filesystem.  After the
+          <B
+CLASS="COMMAND"
+>mount</B
+> command runs (and if we have the proper
+          permissions from <TT
+CLASS="FILENAME"
+>bigdog</TT
+>) we can enter <B
+CLASS="COMMAND"
+>ls
+          /mnt/local</B
+> and get a listing of the files in
+          <TT
+CLASS="FILENAME"
+>/mnt/export</TT
+> on bigdog.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-NFS-EXPORT"
+>Exporting NFS Filesystems</A
+></H2
+><P
+>          The file that controls what filesystems you wish to export is
+          <TT
+CLASS="FILENAME"
+>/etc/exports</TT
+>.  Its format is:
+
+          <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+><TT
+CLASS="REPLACEABLE"
+><I
+>directory</I
+></TT
+>       <TT
+CLASS="REPLACEABLE"
+><I
+>hostname</I
+></TT
+>(<TT
+CLASS="REPLACEABLE"
+><I
+>options</I
+></TT
+>)</B
+>
+          </PRE
+></TD
+></TR
+></TABLE
+>
+
+          the <B
+CLASS="COMMAND"
+>(<TT
+CLASS="REPLACEABLE"
+><I
+>options</I
+></TT
+>)</B
+> are
+          discretional.  For example:
+
+          <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+><TT
+CLASS="FILENAME"
+>/mnt/export</TT
+>     speedy.redhat.com</B
+>
+          </PRE
+></TD
+></TR
+></TABLE
+>
+
+          would allow speedy.redhat.com to mount
+          <TT
+CLASS="FILENAME"
+>/mnt/export</TT
+>, but:
+
+          <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+><TT
+CLASS="FILENAME"
+>/mnt/export</TT
+>     speedy.redhat.com(ro)</B
+>
+          </PRE
+></TD
+></TR
+></TABLE
+>
+
+          would just allow speedy to mount <TT
+CLASS="FILENAME"
+>/mnt/export</TT
+>
+          read-only.
+        </P
+><P
+>          Each time you change <TT
+CLASS="FILENAME"
+>/etc/exports</TT
+>, you must tell
+          the NFS daemons to examine it for new information.  One simple way to
+          accomplish this is to just stop and start the daemons:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>/etc/rc.d/init.d/nfs stop</B
+>
+<B
+CLASS="COMMAND"
+>/etc/rc.d/init.d/nfs start</B
+>
+        </PRE
+></TD
+></TR
+></TABLE
+><P
+>	  Or you can restart the daemons with this command:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>/etc/rc.d/init.d/nfs restart</B
+>
+	</PRE
+></TD
+></TR
+></TABLE
+><P
+>          The following will also work:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>killall -HUP rpc.nfsd rpc.mountd</B
+>
+          </PRE
+></TD
+></TR
+></TABLE
+><P
+>          See the following man pages for more details: nfsd(8), mountd(8), and
+          exports(5).  Another good reference is <I
+CLASS="CITETITLE"
+>Managing NFS and NIS
+          Services</I
+>, by Hal Stern, published by O'Reilly &#38;
+          Associates.
+        </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-sysadmin-ftp.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-sysadmin-boot.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Anonymous FTP</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-sysadmin.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>The Boot Process, Init, and Shutdown</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-sysadmin-nfs.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

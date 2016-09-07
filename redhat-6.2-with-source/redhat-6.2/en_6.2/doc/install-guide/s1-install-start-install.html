@@ -1,0 +1,645 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/s1-install-start-install.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:55:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Starting the Installation Program</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Starting the Installation"
+HREF="ch-install.html"><LINK
+REL="PREVIOUS"
+TITLE="Starting the Installation"
+HREF="ch-install.html"><LINK
+REL="NEXT"
+TITLE="Selecting an Installation Method"
+HREF="s1-install-sel-method.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Installation Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-install.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 3. Starting the Installation</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-install-sel-method.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-INSTALL-START-INSTALL"
+>Starting the Installation Program</A
+></H1
+><P
+>        Now it's time to begin installing Red Hat Linux.  To start the installation, you
+        must first boot the installation program.  Please make sure you have all
+        the resources you'll need for the installation.  If you've already read
+        through <A
+HREF="ch-mockup-before-begin.html"
+>Chapter 2</A
+>, and followed the
+        instructions, you should be ready to begin.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-BOOTING"
+>Booting the Installation Program</A
+></H2
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    If you need to create a boot disk, please refer to <A
+HREF="ch-mockup-before-begin.html#S2-MOCKUP-BEFORE-BEGIN-BOOTDISKS"
+>the section called <I
+>Step 6 - How Do You Want to Start the Installation?</I
+> in Chapter 2</A
+>.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>          Insert the boot disk into your computer's first diskette drive and
+          reboot (or boot using the CD-ROM, if your computer supports
+          this). Your BIOS settings may need to be changed to allow you to boot
+          from the diskette or CD-ROM.
+	  <DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Tip</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	      To change your BIOS settings, you will need to take note of the
+	      instructions given when your computer first begins to boot. Often
+	      you will see a line of text telling you to press the
+	      <B
+CLASS="KEYCAP"
+>Del</B
+> key to enter the BIOS settings. Once you have
+	      done whatever process is needed to enter your computer's BIOS, you
+	      can then change the boot order to allow your computer to boot from
+	      the CD-ROM drive or diskette drive first when bootable software is
+	      detected. For more information, please refer to the documentation
+	      that came with your system.
+ 	    </P
+></TD
+></TR
+></TABLE
+></DIV
+>
+        </P
+><P
+>          There are four possible boot methods:
+        </P
+><P
+></P
+><UL
+><LI
+><P
+>              <I
+CLASS="EMPHASIS"
+>Bootable CD-ROM</I
+> -- your machine supports a
+              bootable CD-ROM drive and you want to perform a local CD-ROM
+              installation.
+            </P
+></LI
+><LI
+><P
+>              <I
+CLASS="EMPHASIS"
+>Local boot disk</I
+> -- your machine will
+              not support a bootable CD-ROM and you want to install from a local
+              CD-ROM or a hard drive.
+            </P
+></LI
+><LI
+><P
+>              <I
+CLASS="EMPHASIS"
+>Network boot disk</I
+> -- use to install from
+              NFS, FTP and HTTP installation methods.
+            </P
+></LI
+><LI
+><P
+>              <I
+CLASS="EMPHASIS"
+>PCMCIA boot disk</I
+> -- use in cases where you
+              need PCMCIA support, but your machine does not support booting
+              from the CD-ROM drive <I
+CLASS="EMPHASIS"
+>or</I
+> if you need PCMCIA
+              support in order to make use of the CD-ROM drive on your
+              system. This boot disk offers you all installation methods (CD-ROM,
+              hard drive, NFS, FTP, and HTTP).
+            </P
+></LI
+></UL
+><P
+>          After a short delay, a screen containing the
+          <TT
+CLASS="COMPUTEROUTPUT"
+>boot:</TT
+> prompt should appear.  The
+          screen contains information on a variety of boot options.  Each boot
+          option also has one or more help screens associated with it.  To
+          access a help screen, press the appropriate function key as listed in
+          the line at the bottom of the screen.
+        </P
+><P
+>          You should keep two things in mind:
+        </P
+><P
+></P
+><UL
+><LI
+><P
+>              The initial screen will automatically start the installation
+              program if you take no action within the first minute.  To disable
+              this feature, press one of the help screen function keys.
+            </P
+></LI
+><LI
+><P
+>              If you press a help screen function key, there will be a slight
+              delay while the help screen is read from diskette.
+            </P
+></LI
+></UL
+><P
+>          Normally, you'll only need to press <B
+CLASS="KEYCAP"
+>Enter</B
+> to boot.
+          Watch the boot messages to see whether the Linux kernel detects your
+          hardware. If it does not properly detect your hardware, you may need
+          to restart the installation in "expert" mode. If your hardware is
+          properly detected, please continue to the next section.
+        </P
+><P
+>          Expert mode can be entered using the following boot command:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>	  <TT
+CLASS="PROMPT"
+>boot:</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>linux expert</B
+></TT
+>
+        </PRE
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    If you do not wish to perform a CD-ROM GUI installation, you can
+	    choose to perform a text mode installation by using the following
+	    boot command:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>	    <TT
+CLASS="PROMPT"
+>boot:</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>text</B
+></TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>	    For text mode installation instructions, please refer to the
+	    <I
+CLASS="CITETITLE"
+>Official Red Hat Linux Reference Guide</I
+>.
+	  </P
+><P
+>	    The command to start a <I
+CLASS="FIRSTTERM"
+>serial installation</I
+>
+	    has changed. If you need to perform the installation in serial mode,
+	    type:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>	    <TT
+CLASS="PROMPT"
+>boot:</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>linux console=<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;device&#62;</I
+></TT
+></B
+></TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>	    Where <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;device&#62;</I
+></TT
+> should be the device
+	    you are using (such as ttyS0 or ttyS1).
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>            The initial boot messages will not contain any references to SCSI or
+            network cards.  This is normal, since these devices are supported by
+            modules that are loaded during the installation process.
+          </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>          Options can also be passed to the kernel.
+        </P
+><P
+>          For example, to instruct the kernel to use all the RAM in a 128MB
+          system, enter:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>	  <TT
+CLASS="PROMPT"
+>boot:</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>linux mem=128M</B
+></TT
+>
+        </PRE
+></TD
+></TR
+></TABLE
+><P
+>          After entering any options, press <B
+CLASS="KEYCAP"
+>Enter</B
+> to boot using
+          those options.  
+	</P
+><P
+>	  If you do need to specify boot options to identify your hardware,
+          please make note of them -- they will be needed during the LILO
+          configuration portion of the installation (please see <A
+HREF="s1-cd-rom-gui-lilo-conf.html"
+>the section called <I
+>Installing LILO</I
+> in Chapter 4</A
+> for more information).
+        </P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-INSTALL-AUTOBOOT"
+>Booting without diskettes</A
+></H3
+><P
+>            The Red Hat Linux/Intel CD-ROM can also be booted by computers that support
+            bootable CD-ROMs.  Not all computers support this feature, so if
+            yours can't boot from the CD-ROM, there is one other way to start
+            the installation without using a boot disk.  The following method is
+            specific to Intel-based computers only.
+          </P
+><P
+>	    If you have MS-DOS installed on your system, you can boot directly
+	    from the CD-ROM drive without using a boot disk.
+	  </P
+><P
+>	    To do this (assuming your CD-ROM is drive <TT
+CLASS="FILENAME"
+>d:</TT
+>),
+	    use the following commands:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>	    <TT
+CLASS="PROMPT"
+>C:\&#62; </TT
+><TT
+CLASS="USERINPUT"
+><B
+>d:</B
+></TT
+>
+	    <TT
+CLASS="PROMPT"
+>D:\&#62; </TT
+><TT
+CLASS="USERINPUT"
+><B
+>cd \dosutils</B
+></TT
+>
+	    <TT
+CLASS="PROMPT"
+>D:\dosutils&#62; </TT
+><TT
+CLASS="USERINPUT"
+><B
+>autoboot.bat</B
+></TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>	    This method will not work if run in a DOS window -- the
+	    <TT
+CLASS="FILENAME"
+>autoboot.bat</TT
+> file must be executed with DOS as
+	    the only operating system.  In other words, Windows cannot be running.
+	  </P
+><P
+>	    If your computer can't boot directly from CD-ROM (and you can't use a
+	    DOS-based autoboot), you'll have to use a boot diskette to get things
+	    started.
+	  </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-install.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-install-sel-method.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Starting the Installation</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-install.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Selecting an Installation Method</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/s1-install-start-install.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:55:12 GMT -->
+</HTML
+>

@@ -1,0 +1,861 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-dualboot-fips.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:59:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Partitioning with FIPS</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="How to Create a Dual-Boot System"
+HREF="ch-dualboot.html"><LINK
+REL="PREVIOUS"
+TITLE="Setting Up a Dual-Boot Environment"
+HREF="s1-dualboot-choosing.html"><LINK
+REL="NEXT"
+TITLE="RAID (Redundant Array of Independent Disks)"
+HREF="ch-raid.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-dualboot-choosing.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Appendix D. How to Create a Dual-Boot System</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="ch-raid.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-DUALBOOT-FIPS"
+>Partitioning with <TT
+CLASS="APPLICATION"
+>FIPS</TT
+></A
+></H1
+><P
+>      As a convenience to our customers, we provide the
+      <TT
+CLASS="APPLICATION"
+>FIPS</TT
+> utility. This is a freely available
+      program that can resize FAT (File Allocation Table) partitions. It's
+      included on the Red Hat Linux CD-ROM in the <TT
+CLASS="FILENAME"
+>dosutils</TT
+>
+      directory.
+    </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	Many people have successfully used <TT
+CLASS="APPLICATION"
+>FIPS</TT
+> to
+	repartition their hard drives. However, because of the nature of the
+	operations carried out by <TT
+CLASS="APPLICATION"
+>FIPS</TT
+>, and the wide
+	variety of hardware and software configurations under which it must run,
+	Red Hat cannot guarantee that <TT
+CLASS="APPLICATION"
+>FIPS</TT
+> will work
+	properly on your system. Therefore, no installation support whatsoever
+	is available for <TT
+CLASS="APPLICATION"
+>FIPS</TT
+>; use it at your own
+	risk.
+      </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>      That said, if you decide to repartition your hard drive with
+      <TT
+CLASS="APPLICATION"
+>FIPS</TT
+>, it is vital that you do two things:
+    </P
+><P
+></P
+><UL
+><LI
+><P
+>	  <B
+CLASS="COMMAND"
+>Perform a Backup</B
+> -- Make two copies of all the
+	  important data on your computer. These copies should be to removable
+	  media (such as tape or diskettes), and you should make sure they are
+	  readable before proceeding.
+	</P
+></LI
+><LI
+><P
+>	  <B
+CLASS="COMMAND"
+>Read the Documentation</B
+> -- Completely read the
+	  <TT
+CLASS="APPLICATION"
+>FIPS</TT
+> documentation, located in the
+	  <TT
+CLASS="APPLICATION"
+>FIPS</TT
+> directory on Red Hat Linux CD-ROM.
+	</P
+></LI
+></UL
+><P
+>      Should use decide to use <TT
+CLASS="APPLICATION"
+>FIPS</TT
+>, be aware that
+      after <TT
+CLASS="APPLICATION"
+>FIPS</TT
+> runs you will be left with two
+      partitions: the one you resized, and the one
+      <TT
+CLASS="APPLICATION"
+>FIPS</TT
+> created out of the newly freed space. If
+      your goal is to use that space to install Red Hat Linux, you should delete the
+      newly created partition, either by using <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>
+      under your current operating system, or while setting up partitions during
+      a custom-class installation.
+    </P
+><P
+>      The following instructions are a simplified version of the
+      <TT
+CLASS="APPLICATION"
+>FIPS</TT
+> documentation file,
+      <TT
+CLASS="FILENAME"
+>fips.doc</TT
+>, located in the
+      <TT
+CLASS="APPLICATION"
+>FIPS</TT
+> directory
+      (<TT
+CLASS="FILENAME"
+>/dosutils/fips20/*</TT
+>). These instructions should apply
+      in most instances. If you encounter any problems, see the documentation
+      file.
+    </P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>From Windows:
+    <P
+></P
+><UL
+><LI
+><P
+>Do a full backup.</P
+></LI
+><LI
+><P
+>Run <TT
+CLASS="APPLICATION"
+>scandisk</TT
+> to verify that the
+              hard drive contains no bad clusters.</P
+></LI
+><LI
+><P
+>		Decide how to distribute the available space on the hard drive
+		between the operating systems. Use <TT
+CLASS="APPLICATION"
+>Windows
+		Explorer</TT
+> to see the free space on the drive. Make
+		a note of the space (in megabytes) that each operating system
+		will have.
+	      </P
+></LI
+><LI
+><P
+>		If you don't have one, create a DOS boot disk.
+	      </P
+><P
+>		To create a DOS boot disk, first boot your machine to DOS. 
+	      </P
+><P
+>		Next, insert a blank, formatted diskette into the floppy drive.
+	      </P
+><P
+>		Type the following at the command prompt and press
+		<B
+CLASS="KEYCAP"
+>Enter</B
+>:
+	      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>FORMAT A: /S</B
+>
+	      </PRE
+></TD
+></TR
+></TABLE
+><P
+>		If you're using Windows 95, first insert a blank formatted
+		diskette into the floppy drive. Next, go to
+		<TT
+CLASS="GUILABEL"
+><B
+>Start</B
+></TT
+>/<TT
+CLASS="GUILABEL"
+><B
+>Run</B
+></TT
+>, and type:
+	      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>FORMAT A: /S</B
+>
+	      </PRE
+></TD
+></TR
+></TABLE
+><P
+>		The diskette will be formatted, and <TT
+CLASS="FILENAME"
+>COMMAND.COM</TT
+>,
+		along with the associated hidden files
+		(<TT
+CLASS="FILENAME"
+>IO.SYS</TT
+>, <TT
+CLASS="FILENAME"
+>MSDOS.SYS</TT
+>,
+		and <TT
+CLASS="FILENAME"
+>BDLSAPCE.BIN</TT
+>), will be copied to the
+		diskette.
+	      </P
+></LI
+><LI
+><P
+>		Copy the following files on the Red Hat Linux CD-ROM to the DOS boot
+		disk.
+	      </P
+><P
+CLASS="LITERALLAYOUT"
+>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<TT
+CLASS="FILENAME"
+>/mnt/cdrom/dosutils/fips20/fips.exe</TT
+><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<TT
+CLASS="FILENAME"
+>/mnt/cdrom/dosutils/fips20/restorrb.exe</TT
+><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<TT
+CLASS="FILENAME"
+>/mnt/cdrom/dosutils/fips20/errors.txt</TT
+><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<TT
+CLASS="FILENAME"
+>/mnt/cdrom/dosutils/fips20/fips.doc</TT
+><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<TT
+CLASS="FILENAME"
+>/mnt/cdrom/dosutils/fips20/fips.faq</TT
+><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</P
+></LI
+><LI
+><P
+>		Defragment the hard drive.
+	      </P
+></LI
+></UL
+>
+	</P
+></LI
+><LI
+><P
+>	  Insert the DOS boot disk into the floppy drive and reboot the system.
+	</P
+></LI
+><LI
+><P
+>	  Start <TT
+CLASS="APPLICATION"
+>FIPS</TT
+> (type <B
+CLASS="COMMAND"
+>fips</B
+> at
+	  the prompt).
+	</P
+><P
+>	  When <TT
+CLASS="APPLICATION"
+>FIPS</TT
+> begins, you'll find a welcome
+	  screen similar to the following:
+	</P
+><DIV
+CLASS="FIGURE"
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>&#13;FIPS version 2.0, Copyright (C) 1993/4 Arno Schaefer
+FAT32 Support, Copyright (C) 1997 Gordon Chaffee
+
+DO NOT use FIPS in a multitasking environment like Windows, OS/2, Desqview,
+Novell Task manager or the Linux DOS emulator; boot from a DOS boot disk first.
+
+If you use OS/2 or a disk compressor, read the relevant sections in FIPS.DOC.
+
+FIPS comes with ABSOLUTELY NO WARRANTY, see file COPYING for details.
+
+This is free software, and you are welcome to redistribute it
+under certain conditions; again, see file COPYING for details.
+
+Press any key.
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+><B
+>Figure D-1. FIPS Welcome Screen</B
+></P
+></DIV
+><P
+>	  When you press a key, a root partition screen similar to the following
+	  appears. (Note that, if the computer has more than one hard drive,
+	  you'll be asked to select which one you want to partition.)
+	</P
+><DIV
+CLASS="FIGURE"
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>Partition table:
+
+     |        |     Start      |      |      End       | Start  |Number of|
+Part.|bootable|Head Cyl. Sector|System|Head Cyl. Sector| Sector |Sectors  |  MB
+-----+--------+----------------+------+----------------+--------+---------+----
+1    |    yes |   0  148      1|   83h|  15  295     63|  149184|   149184|  72
+2    |     no |   1    0      1|   06h|  15  139     63|      63|   141057|  68
+3    |     no |   0  140      1|   06h|  15  147     63|  141120|     8064|   3
+4    |     no |   0    0      0|   00h|   0    0      0|       0|        0|   0
+
+Checking root sector ... OK
+
+Press any key.
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+><B
+>Figure D-2. FIPS Root Partition Screen</B
+></P
+></DIV
+><P
+>	  When you press a key, details about the hard drive, such as the
+	  following, will appear.
+	</P
+><DIV
+CLASS="FIGURE"
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>&#13;Boot sector:
+Bytes per sector: 512
+Sectors per cluster: 8
+Reserved sectors: 1
+Number of FATs: 2
+Number of rootdirectory entries: 512
+Number of sectors (short): 0
+Media descriptor byte: f8h
+Sectors per FAT: 145
+Sectors per track: 63
+Drive heads: 16
+Hidden sectors: 63
+Number of sectors (long): 141057
+Physical drive number: 80h
+Signature: 29h
+
+Checking boot sector ... OK
+Checking FAT ... OK
+Searching for free space ... OK
+
+Do you want to make a backup copy of your root and boot sector before
+proceeding? (y/n)
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+><B
+>Figure D-3. FIPS Boot Sector Screen</B
+></P
+></DIV
+><P
+>	  You should select <TT
+CLASS="USERINPUT"
+><B
+>y</B
+></TT
+>, for <TT
+CLASS="PROMPT"
+>yes</TT
+>,
+	  to make a backup copy of your root and boot sector before proceeding
+	  with <TT
+CLASS="APPLICATION"
+>FIPS</TT
+>.
+	</P
+><P
+>	  Next, you'll be presented with the following message:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>Do you have a bootable floppy disk in drive A: as described in the
+documentation? (y/n)
+	</PRE
+></TD
+></TR
+></TABLE
+><P
+>	  Verify that a DOS boot disk is in the floppy drive, and type
+	  <TT
+CLASS="USERINPUT"
+><B
+>y</B
+></TT
+>, for <TT
+CLASS="PROMPT"
+>yes</TT
+>. A screen similar
+	  to the following will appear, allowing you to resize the partition.
+	</P
+><DIV
+CLASS="FIGURE"
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>Writing file a:\rootboot:000
+
+Enter start cylinder for new partition (33-526)
+
+Use the cursor keys to choose the cylinder, &#60;enter&#62; to continue
+
+Old partition           Cylinder              New partition
+ 258.9 MB                  33                   3835.8 MB
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+><B
+>Figure D-4. Partition Resizing Screen</B
+></P
+></DIV
+><P
+>	  The initial values allocate <I
+CLASS="EMPHASIS"
+>all</I
+> free space on the
+	  disk to the new partition. This is not what you want, because this
+	  setting would leave no free space on your Windows partition. Press the
+	  <B
+CLASS="KEYCAP"
+>right arrow</B
+> to increase the size of the Windows
+	  partition and decrease the size of the new (Linux) partition; press
+	  the <B
+CLASS="KEYCAP"
+>left arrow</B
+> to decrease the size of the Windows
+	  partition and increase the size of the Linux partition. When the sizes
+	  are what you want, press <B
+CLASS="KEYCAP"
+>Enter</B
+>. A verification screen similar to
+	  the following appears:
+	</P
+><DIV
+CLASS="FIGURE"
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>&#13;First Cluster: 17442
+Last Cluster: 65511
+
+Testing if empty ... OK
+
+New partition table:
+
+     |        |     Start      |      |      End       | Start  |Number of|
+Part.|bootable|Head Cyl. Sector|System|Head Cyl. Sector| Sector |Sectors  |  MB
+-----+--------+----------------+------+----------------+--------+---------+----
+1    |    yes |   0  148      1|   83h|  15  295     63|  149184|   149184|  1090
+2    |     no |   0  139      1|   06h| 254  521     63| 2233035|  6152995|  3084
+3    |     no |   0  140      1|   06h|  15  147     63|  141120|     8064|   3
+4    |     no |   0    0      0|   00h|   0    0      0|       0|        0|   0
+
+Checking root sector ... OK
+
+Do you want to continue or reedit the partition table (c/r)?
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+><B
+>Figure D-5. FIPS Verification Screen</B
+></P
+></DIV
+><P
+>	  If you answer <TT
+CLASS="USERINPUT"
+><B
+>r</B
+></TT
+> (to re-edit the partition
+	  tables), <I
+CLASS="CITETITLE"
+>Figure 4</I
+> reappears, allowing you to
+	  change the partition sizes. If you answer <TT
+CLASS="USERINPUT"
+><B
+>c</B
+></TT
+>, a
+	  confirmation screen (<I
+CLASS="CITETITLE"
+>Figure 6</I
+>) appears:
+	</P
+><DIV
+CLASS="FIGURE"
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>&#13;New boot sector:
+
+Boot sector:
+Bytes per sector: 512
+Sectors per cluster: 8
+Reserved sectors: 1
+Number of FATs: 2
+Number of rootdirectory entries: 512
+Number of sectors (short): 0
+Media descriptor byte: f8h
+Sectors per FAT: 145
+Sectors per track: 63
+Drive heads: 16
+Hidden sectors: 63
+Number of sectors (long): 141057
+Physical drive number: 80h
+Signature: 29h
+
+Checking boot sector ... OK
+
+Ready to write new partition scheme to disk
+Do you want to proceed (y/n)?
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+><B
+>Figure D-6. FIPS Confirmation Screen</B
+></P
+></DIV
+></LI
+></OL
+><P
+>      Answering <TT
+CLASS="USERINPUT"
+><B
+>y</B
+></TT
+> completes the resizing operation. A
+      harmless error message may occur, stating, in effect that
+      <TT
+CLASS="APPLICATION"
+>FIPS</TT
+> cannot reboot the system.
+    </P
+><P
+>      After a successful operation, the disk will have two partitions. The first
+      partition (<TT
+CLASS="FILENAME"
+>hda1</TT
+> or <TT
+CLASS="FILENAME"
+>sda1</TT
+>) will be
+      used by Windows. We recommend that you start Windows (remember to remove
+      the boot disk from drive <TT
+CLASS="FILENAME"
+>A:</TT
+>) and run
+      <TT
+CLASS="APPLICATION"
+>scandisk</TT
+> on drive <TT
+CLASS="FILENAME"
+>C:</TT
+>.
+    </P
+><P
+>      If you encounter any problems, (for example, Windows will not boot), you
+      can reverse the <TT
+CLASS="APPLICATION"
+>FIPS</TT
+> resizing operation with
+      the <TT
+CLASS="APPLICATION"
+>restorrb.exe</TT
+> command, which you copied to
+      your DOS boot disk. In case of any errors, read the
+      <TT
+CLASS="APPLICATION"
+>FIPS</TT
+> documentation files
+      (<TT
+CLASS="FILENAME"
+>fips.doc</TT
+> and <TT
+CLASS="FILENAME"
+>fips.faq</TT
+>), which
+      indicate a number of factors that could cause the resizing operation to
+      fail. If all else fails, you can restore Windows with the backup you made.
+    </P
+><P
+>      The second partition (<TT
+CLASS="FILENAME"
+>hda2</TT
+> or
+      <TT
+CLASS="FILENAME"
+>sda2</TT
+>) contains the space that the Red Hat Linux installation
+      program will use. When the <TT
+CLASS="APPLICATION"
+>Disk Druid</TT
+> screen
+      appears during installation, delete this partition (the installation
+      manual explains how), then proceed with Linux partitioning.
+    </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-dualboot-choosing.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="ch-raid.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Setting Up a Dual-Boot Environment</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-dualboot.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>RAID (Redundant Array of Independent Disks)</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-dualboot-fips.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:59:24 GMT -->
+</HTML
+>

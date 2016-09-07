@@ -1,0 +1,473 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-install-xconf.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:04:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Configuring the X Window System</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Installing Red Hat Linux via Text Mode"
+HREF="ch-install-tm.html"><LINK
+REL="PREVIOUS"
+TITLE="Package Installation"
+HREF="s1-install-pkgloadstart.html"><LINK
+REL="NEXT"
+TITLE="Creating a Boot Disk"
+HREF="s1-install-create-boot.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-install-pkgloadstart.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 10. Installing Red Hat Linux via Text Mode</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-install-create-boot.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-INSTALL-XCONF"
+>Configuring the X Window System</A
+></H1
+><P
+>	If you are performing a workstation- or a custom-class installation and
+	you have chosen to install the X Window System, the
+	<B
+CLASS="COMMAND"
+>Xconfigurator</B
+> utility starts and gives you the
+	opportunity to configure the X server for your system. If you are
+	performing a server-class installation or you did not choose to install
+	the X Window System, skip ahead to <A
+HREF="s1-install-done.html"
+>the section called <I
+>Finishing Up</I
+></A
+>.
+      </P
+><P
+>	First, <B
+CLASS="COMMAND"
+>Xconfigurator</B
+> presents a list of monitors (see
+	<A
+HREF="s1-install-xconf.html#FIG-INSTALL-MONITOR"
+>Figure 10-41</A
+>).  If your monitor is listed,
+	select it and press <B
+CLASS="KEYCAP"
+>Enter</B
+>.  Otherwise, select
+	<B
+CLASS="GUIMENUITEM"
+>Custom</B
+>.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-MONITOR"
+></A
+><P
+><IMG
+SRC="figs/textmode/monitor.gif"></P
+><P
+><B
+>Figure 10-41. Monitor Setup Dialog</B
+></P
+></DIV
+><P
+>	If you select <B
+CLASS="GUIMENUITEM"
+>Custom</B
+>,
+	<B
+CLASS="COMMAND"
+>Xconfigurator</B
+> prompts you to select the horizontal
+	sync range and vertical sync range of your monitor (these values are
+	usually available in the documentation which accompanies your monitor,
+	or from your monitor's vendor or manufacturer).
+      </P
+><DIV
+CLASS="CAUTION"
+><P
+></P
+><TABLE
+CLASS="CAUTION"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/caution.gif"
+HSPACE="5"
+ALT="Caution"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Caution</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  Do not select any range that exceeds the capacity of your monitor.  If
+	  you do this, it is possible you may overclock your monitor and damage
+	  or destroy it.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	After you've selected your monitor, the program starts to probe your
+	video card.  To bypass the probe and enter scan ranges and display modes
+	manually, select <B
+CLASS="GUIBUTTON"
+>Do Not Probe</B
+>.  This option is
+	provided because an unsuccessful probe of your video card could cause
+	your system not to boot properly or a program to hang.
+      </P
+><P
+>	While the probe is in progress, it is normal for your display to blink.
+      </P
+><P
+>	When the probe is finished, <A
+HREF="s1-install-xconf.html#FIG-INSTALL-PROBE"
+>Figure 10-42</A
+>
+	appears, displaying the results of the probe.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-PROBE"
+></A
+><P
+><IMG
+SRC="figs/textmode/probe.gif"></P
+><P
+><B
+>Figure 10-42. Probing Finished</B
+></P
+></DIV
+><P
+>	Select <TT
+CLASS="GUILABEL"
+><B
+>Use Default</B
+></TT
+> to accept the displayed color
+	depth and resolution. If you select <TT
+CLASS="GUILABEL"
+><B
+>Let Me Choose</B
+></TT
+>,
+	the <TT
+CLASS="GUILABEL"
+><B
+>Select Video Modes</B
+></TT
+> dialog (<A
+HREF="s1-install-xconf.html#FIG-INSTALL-VIDEO-MODES"
+>Figure 10-43</A
+>) displays the video modes supported
+	by your monitor.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-VIDEO-MODES"
+></A
+><P
+><IMG
+SRC="figs/textmode/video-modes.gif"></P
+><P
+><B
+>Figure 10-43. Select Video Modes Dialog</B
+></P
+></DIV
+><P
+>	Do not select a mode that exceeds the capacity of your monitor.
+      </P
+><P
+>	Once you've either selected the default video mode or specified a
+	different mode, the <TT
+CLASS="GUILABEL"
+><B
+>Starting X</B
+></TT
+> dialog lets you test
+	your X configuration.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-STARTX"
+></A
+><P
+><IMG
+SRC="figs/textmode/startx.gif"></P
+><P
+><B
+>Figure 10-44. Test Your X Configuration</B
+></P
+></DIV
+><P
+>	If you select <B
+CLASS="GUIBUTTON"
+>OK</B
+>, you'll have the opportunity to
+	go back enter different configuration values should there be an error.
+	If there is no error, X will start, and a small display window will
+	ask you if you can read its contents clearly: using the mouse, click
+	<B
+CLASS="GUIBUTTON"
+>Yes</B
+> within ten seconds.  Then you are asked
+	whether you want X to start when the system boots.
+      </P
+><P
+>	In most cases, X configuration is complete at this point, and you'll see
+	the completion screen.
+      </P
+><P
+>	To modify your X configuration after installation, as root issue the
+	 <B
+CLASS="COMMAND"
+>Xconfigurator</B
+> command.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-XMANUALCONFIG"
+>If Your Video Card Was Not Detected&#8230;</A
+></H2
+><P
+>	  Earlier, in <A
+HREF="s1-install-videocard.html"
+>the section called <I
+>Configuring Your Video Adapter</I
+></A
+>, your system was
+	  probed for a video card. If none was detected, you were asked to
+	  select your card.  If your card was not listed and you selected
+	  <TT
+CLASS="GUILABEL"
+><B
+>Custom</B
+></TT
+>, you are now asked for the following
+	  information about your video card:
+        </P
+><P
+></P
+><UL
+><LI
+><P
+>	      The amount of video memory installed on your video card.  If you
+	      are not sure, consult the documentation accompanying your video
+	      card.  Choosing more memory than is present in your card will not
+	      damage it, but may cause the <TT
+CLASS="APPLICATION"
+>XFree86</TT
+>
+	      server to start incorrectly.
+	      
+	      <DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-VIDEO-MEM"
+></A
+><P
+><IMG
+SRC="figs/textmode/video-mem.gif"></P
+><P
+><B
+>Figure 10-45. Select Video Memeory Dialog</B
+></P
+></DIV
+>
+
+	    </P
+></LI
+><LI
+><P
+>	    If your video card supports a video clockchip (if it has one).  The
+	    recommended choice is <TT
+CLASS="GUILABEL"
+><B
+>No Clockchip Setting</B
+></TT
+>,
+	    since XFree86 can automatically detect the proper clockchip in most
+	    cases.
+	      
+	      <DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-CLOCKCHIP"
+></A
+><P
+><IMG
+SRC="figs/textmode/clockchip.gif"></P
+><P
+><B
+>Figure 10-46. Clockship Configuration Dialog</B
+></P
+></DIV
+>
+	      
+	    </P
+></LI
+><LI
+><P
+>	      The preferred display mode (see <A
+HREF="s1-install-xconf.html#FIG-INSTALL-VIDEO-MODES"
+>Figure 10-43</A
+>).  Select one or more modes by
+	      pressing <B
+CLASS="KEYCAP"
+>Space</B
+>.
+	    </P
+></LI
+></UL
+><P
+>	  <B
+CLASS="COMMAND"
+>Xconfigurator</B
+> then saves all of your choices to the
+	  configuration file <TT
+CLASS="FILENAME"
+>/etc/X11/XF86Config</TT
+>.  To
+	  modify your X configuration after installation, as root issue the
+	  <B
+CLASS="COMMAND"
+>Xconfigurator</B
+> command.
+	</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-install-pkgloadstart.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-install-create-boot.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Package Installation</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-install-tm.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Creating a Boot Disk</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-install-xconf.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:04:57 GMT -->
+</HTML
+>

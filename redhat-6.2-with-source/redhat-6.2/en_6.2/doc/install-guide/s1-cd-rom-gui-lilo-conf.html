@@ -1,0 +1,640 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/s1-cd-rom-gui-lilo-conf.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:50:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Installing LILO</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Installing Red Hat Linux 6.2"
+HREF="ch-cd-rom-gui.html"><LINK
+REL="PREVIOUS"
+TITLE="Choose Partitions to Format"
+HREF="s1-cd-rom-gui-part-format.html"><LINK
+REL="NEXT"
+TITLE="Network Configuration"
+HREF="s1-cd-rom-gui-netconf.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Installation Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-cd-rom-gui-part-format.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 4. Installing Red Hat Linux 6.2</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-cd-rom-gui-netconf.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-CD-ROM-GUI-LILO-CONF"
+>Installing LILO</A
+></H1
+><P
+>	If you're performing a workstation- or server-class installation, please skip
+	ahead to <A
+HREF="s1-cd-rom-gui-time.html"
+>the section called <I
+>Time Zone Configuration</I
+></A
+>.
+     </P
+><P
+>        In order to be able to boot your Red Hat Linux system, you usually need to
+        install LILO (the LInux LOader).  You may install LILO in one of two
+        places:
+      </P
+><P
+></P
+><DL
+><DT
+>The master boot record (MBR)</DT
+><DD
+><P
+>&#13;              
+	      
+              
+	      
+              
+
+              The recommended place to install LILO, unless the MBR already
+              starts another operating system loader, such System Commander or
+              OS/2's
+              
+              Boot Manager.  The master boot record is a special area on your
+              hard drive that is automatically loaded by your computer's BIOS,
+              and is the earliest point at which LILO can take control of the
+              boot process.  If you install LILO in the MBR, when your machine
+              boots, LILO will present a <TT
+CLASS="COMPUTEROUTPUT"
+>boot:</TT
+>
+              prompt. You can then boot Red Hat Linux or any other operating
+              system you configure LILO to boot.
+            </P
+></DD
+><DT
+>The first sector of your root partition</DT
+><DD
+><P
+>              
+
+              Recommended if you are already using another boot loader on
+              your system (such as OS/2's Boot Manager).  In this case, your
+              other boot loader will take control first.  You can then configure
+              that boot loader to start LILO (which will then boot Red Hat Linux).
+            </P
+></DD
+></DL
+><P
+>        If you choose to install LILO, please select where you would like LILO
+        to be installed on your system (see <A
+HREF="s1-cd-rom-gui-lilo-conf.html#GR-CD-ROM-GUI-FIG-LILO"
+>Figure 4-9</A
+>). If your system will use only
+        Red Hat Linux you should choose the master boot record (MBR). For systems with
+        Win95/98, you also should install LILO to the MBR so that LILO can boot
+        both operating systems.
+      </P
+><P
+>        If you have Windows NT (and you want to install LILO) you should choose
+        to install LILO on the first sector of the root partition, not the
+        MBR. Please be sure to create a boot disk. In a case such as this, you
+        will either need to use the boot disk, or configure the NT system loader
+        to boot LILO from the first sector of the root partition.  Be sure to
+        check out <A
+HREF="http://www.linuxdoc.org/HOWTO/mini/Linux+NT-Loader.html"
+TARGET="_top"
+>        http://www.linuxdoc.org/HOWTO/mini/Linux+NT-Loader.html</A
+> for more
+        information on setting up LILO and NT.
+      </P
+><DIV
+CLASS="CAUTION"
+><P
+></P
+><TABLE
+CLASS="CAUTION"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/caution.gif"
+HSPACE="5"
+ALT="Caution"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Caution</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  If you choose not to install LILO for any reason, you will not be able
+          to boot your Red Hat Linux system directly, and will need to use another boot
+          method (such as a boot diskette).  Use this option only if you are
+          sure you have another way of booting your Red Hat Linux system!
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	The <B
+CLASS="COMMAND"
+>Use linear mode</B
+> button is selected by default.  In
+	most cases, linear mode should be enabled; if your computer cannot use
+	linear mode to access your hard drives, deselect this option.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-CD-ROM-GUI-FIG-LILO"
+></A
+><P
+><IMG
+SRC="figs/cd-rom-gui/lilo.gif"></P
+><P
+><B
+>Figure 4-9. LILO Configuration</B
+></P
+></DIV
+><P
+>        If you wish to add default options to the LILO boot command, enter them
+        into the kernel parameters field.  Any options you enter will be passed
+        to the Linux kernel every time it boots.
+      </P
+><P
+>        Bootable Partition -- Every bootable partition is listed, including
+        partitions used by other operating systems.  The "Boot label" column
+        will be filled in with the word <B
+CLASS="COMMAND"
+>linux</B
+> on the
+        partition holding your Red Hat Linux system's root filesystem. Other partitions
+        may also have boot labels.  If you would like to add boot labels for
+        other partitions (or change an existing boot label), click once on the
+        partition to select it. Once selected, you can change the boot label.
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          The "Boot label" column lists what you must enter at LILO's
+          <TT
+CLASS="COMPUTEROUTPUT"
+>boot:</TT
+> prompt in order to boot the
+          desired operating system.  However, if you forget the boot labels
+          defined on your system, you can always press <B
+CLASS="KEYCAP"
+>Tab</B
+> at
+          LILO's <TT
+CLASS="COMPUTEROUTPUT"
+>boot:</TT
+> prompt to display a list
+          of defined boot labels.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-CD-ROM-GUI-LILOCONF"
+>Configuring LILO</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>              <TT
+CLASS="GUILABEL"
+><B
+>Create boot disk</B
+></TT
+> -- The <TT
+CLASS="GUILABEL"
+><B
+>Create boot
+              disk</B
+></TT
+> option is checked by default. If you do not want
+              to create a boot disk, you should deselect this option. However,
+              we strongly urge you to create a boot disk. A boot disk can be
+              handy for a number of reasons:
+            </P
+><P
+></P
+><UL
+><LI
+><P
+>                  Use It Instead of LILO -- You can use a boot disk instead of
+                  LILO.  This is handy if you're trying Red Hat Linux for the first
+                  time, and you'd feel more comfortable if the boot process for
+                  your other operating system is left unchanged.  With a boot
+                  disk, going back to your other operating system is as easy as
+                  removing the boot disk and rebooting.
+                </P
+></LI
+><LI
+><P
+>                  Use It If Another Operating System Overwrites LILO -- Other
+                  operating systems may not be as flexible as Red Hat Linux when it
+                  comes to supported boot methods.  Quite often, installing or
+                  updating another operating system can cause the master boot
+                  record (originally containing LILO) to be overwritten, making
+                  it impossible to boot your Red Hat Linux installation.  The boot disk
+                  can then be used to boot Red Hat Linux so you can reinstall LILO.
+                </P
+></LI
+></UL
+></LI
+><LI
+><P
+>              <TT
+CLASS="GUILABEL"
+><B
+>Do not install LILO</B
+></TT
+> -- if you have Windows NT
+              installed on your system, you may not want to install LILO. If you
+              choose not to install LILO for this reason, make sure that you
+              have chosen to create a boot disk; otherwise you will not be able
+              to boot Linux. You can also choose to skip LILO if you do not want
+              to write LILO to your hard drive.
+            </P
+></LI
+></UL
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Tip</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    To use the boot disk with rescue mode, you have several
+	    options:
+	    <P
+></P
+><UL
+><LI
+><P
+>		  Using the CD-ROM to boot, type <TT
+CLASS="COMPUTEROUTPUT"
+>linux
+		    rescue</TT
+> at the
+		  <TT
+CLASS="COMPUTEROUTPUT"
+>boot:</TT
+> prompt.
+		</P
+></LI
+><LI
+><P
+>		  Using the network boot disk, type <TT
+CLASS="COMPUTEROUTPUT"
+>linux
+		  rescue</TT
+> at the
+		  <TT
+CLASS="COMPUTEROUTPUT"
+>boot:</TT
+> prompt. You will then
+		  be prompted to pull the rescue image from the network.
+		</P
+></LI
+><LI
+><P
+>		  Using the boot disk included with the Red Hat Linux boxed set, type
+		  <TT
+CLASS="COMPUTEROUTPUT"
+>linux rescue</TT
+> at the
+		  <TT
+CLASS="COMPUTEROUTPUT"
+>boot:</TT
+> prompt. You then pick
+		  an installation method and choose a valid installation tree to
+		  load from.
+		</P
+></LI
+></UL
+>
+	  </P
+><P
+>	    For more information regarding rescue mode, refer to the
+	    <I
+CLASS="CITETITLE"
+>System Administration</I
+> chapter of the
+	    <I
+CLASS="CITETITLE"
+>Official Red Hat Linux Reference Guide</I
+>.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-CD-ROM-GUI-ALT-LILO"
+>Alternatives to LILO</A
+></H2
+><P
+>          If you do not wish to use LILO to boot your Red Hat Linux system, there are
+          several alternatives:
+        </P
+><P
+></P
+><DL
+><DT
+>Boot Disk</DT
+><DD
+><P
+>                As previously stated, you can use the boot disk created by the
+                installation program (if you elected to create one).
+              </P
+></DD
+><DT
+>LOADLIN</DT
+><DD
+><P
+>		
+		
+                
+		
+                You can load Linux from MS-DOS. Unfortunately, it requires a
+                copy of the Linux kernel (and an initial RAM disk, if you have a
+                SCSI adapter) to be available on an MS-DOS partition.  The only
+                way to accomplish this is to boot your Red Hat Linux system using some
+                other method (e.g., from LILO on a diskette) and then copy the
+                kernel to an MS-DOS partition.  <B
+CLASS="COMMAND"
+>LOADLIN</B
+> is
+                available from
+                <A
+HREF="ftp://metalab.unc.edu/pub/Linux/system/boot/dualboot/"
+TARGET="_top"
+>                ftp://metalab.unc.edu/pub/Linux/system/boot/dualboot/</A
+>
+                and associated mirror sites.
+              </P
+></DD
+><DT
+>SYSLINUX</DT
+><DD
+><P
+>		
+
+                
+		
+                An MS-DOS program very similar to <B
+CLASS="COMMAND"
+>LOADLIN</B
+>.
+                It is also available from <A
+HREF="ftp://metalab.unc.edu/pub/Linux/system/boot/loaders/"
+TARGET="_top"
+>                ftp://metalab.unc.edu/pub/Linux/system/boot/loaders/</A
+> and
+                associated mirror sites.
+              </P
+></DD
+><DT
+>Some commercial bootloaders</DT
+><DD
+><P
+>&#13;		
+
+                
+		
+		
+
+                For example, System Commander and Partition
+                Magic, which are able to boot Linux (but still require LILO to
+                be installed in your Linux root partition).
+              </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-CD-ROM-GUI-SMP-LILO"
+>SMP Motherboards and LILO</A
+></H2
+><P
+>          This section is specific to SMP motherboards only. If the installer
+          detects an SMP motherboard on your system, it will automatically
+          create two <I
+CLASS="FIRSTTERM"
+>lilo.conf</I
+> entries, rather than the
+          usual single entry.
+        </P
+><P
+>          One entry will be called <I
+CLASS="FIRSTTERM"
+>linux</I
+> and the other
+          will be called <I
+CLASS="FIRSTTERM"
+>linux-up</I
+>. The
+          <I
+CLASS="EMPHASIS"
+>linux</I
+> will boot by default. However, if you have
+          trouble with the SMP kernel, you can elect to boot the
+          <I
+CLASS="EMPHASIS"
+>linux-up</I
+> entry instead. You will retain all the
+          functionality as before, but you will only be operating with a single
+          processor.
+        </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-cd-rom-gui-part-format.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-cd-rom-gui-netconf.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Choose Partitions to Format</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-cd-rom-gui.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Network Configuration</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/s1-cd-rom-gui-lilo-conf.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:50:51 GMT -->
+</HTML
+>

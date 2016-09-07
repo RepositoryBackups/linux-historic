@@ -1,0 +1,402 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-navigating-pipes.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Pipes</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="You Are Here"
+HREF="ch-navigating.html"><LINK
+REL="PREVIOUS"
+TITLE="Redirecting Standard Input"
+HREF="s1-navigating-redirinput.html"><LINK
+REL="NEXT"
+TITLE="Stringing Commands Together"
+HREF="s1-navigating-stringing.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-navigating-redirinput.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 13. You Are Here</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-navigating-stringing.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-NAVIGATING-PIPES"
+>Pipes</A
+></H1
+><P
+>        No, we're not talking about plumbing here. In Linux,
+        <I
+CLASS="FIRSTTERM"
+>pipes</I
+> connect the standard output of one command
+        to the standard input of another command.
+      </P
+><P
+>        Let's take a step back, to the <B
+CLASS="COMMAND"
+>ls</B
+> command. There are
+        plenty of options available with <B
+CLASS="COMMAND"
+>ls</B
+>, but what if the
+        contents of a directory stream by too quickly for you to view them?
+      </P
+><P
+>        Let's view the contents of the <TT
+CLASS="FILENAME"
+>/etc</TT
+> directory.
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>ls -al /etc</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        How do we take a closer look at the output before it races off the
+        screen?
+      </P
+><P
+>        One answer is to pipe the output to a utility called
+        <B
+CLASS="COMMAND"
+>less</B
+>. Known as a <I
+CLASS="FIRSTTERM"
+>pager,</I
+>
+        <B
+CLASS="COMMAND"
+>less</B
+>, (like <B
+CLASS="COMMAND"
+>more</B
+>) allows us to
+        view information one page (or screen) at a time.
+      </P
+><P
+>        We use the vertical bar (<B
+CLASS="COMMAND"
+>|</B
+>) to pipe the commands (as
+        shown in Figure <A
+HREF="s1-navigating-pipes.html#GR-NAVIGATING-PIPES1"
+>Figure 13-15</A
+>).
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>ls -al /etc | less</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Now we can view the contents one screen at a time. To move forward a
+        screen, just press <B
+CLASS="KEYCAP"
+>Space</B
+>; to move back a screen, press
+        <B
+CLASS="KEYCAP"
+>B</B
+>; to quit, just press <B
+CLASS="KEYCAP"
+>Q</B
+>.
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>How to read your startup messages</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>            Want to read those startup messages more closely? At a shell prompt,
+            type <B
+CLASS="COMMAND"
+>dmesg | less</B
+>. You'll be able to read the
+            file one screen at a time. To move forward, press the
+            <B
+CLASS="KEYCAP"
+>Space</B
+>; to quit, press <B
+CLASS="KEYCAP"
+>Q</B
+>.
+          </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-NAVIGATING-PIPES1"
+></A
+><P
+><IMG
+SRC="figs/navigating/pipes1.gif"></P
+><P
+><B
+>Figure 13-15.           Piping Output of <B
+CLASS="COMMAND"
+>ls</B
+> to <B
+CLASS="COMMAND"
+>less</B
+>
+        </B
+></P
+></DIV
+><P
+>        Actually, we've already been using pipes, before we even discussed what
+        they were.
+      </P
+><P
+>        In previous references to man pages, we used the following to print man
+        page entries:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>man ls | col -b | lpr</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Here, we're sending the output of <B
+CLASS="COMMAND"
+>man ls</B
+> to a filter
+        called <B
+CLASS="COMMAND"
+>col</B
+> with an option of <B
+CLASS="COMMAND"
+>-b</B
+> to
+        help format the text for the printer, then we sent the output of that to
+        the printer using the <B
+CLASS="COMMAND"
+>lpr</B
+> command.
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Summary</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          Piping allows you to send the output of one command as the input of
+          another command. For example: <B
+CLASS="COMMAND"
+>ls -al /etc | more</B
+>
+          pipes the output of the <B
+CLASS="COMMAND"
+>ls</B
+> command to the
+          <B
+CLASS="COMMAND"
+>more</B
+> utility for easy viewing.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-navigating-redirinput.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-navigating-stringing.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Redirecting Standard Input</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-navigating.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Stringing Commands Together</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-navigating-pipes.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:09 GMT -->
+</HTML
+>

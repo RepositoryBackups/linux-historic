@@ -1,0 +1,268 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/ch-uninstall.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:48:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Removing Red Hat Linux </TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="PREVIOUS"
+TITLE="Performing a Partitionless Installation"
+HREF="s1-part-less-installation.html"><LINK
+REL="NEXT"
+TITLE="Index"
+HREF="i2510.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Installation Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-part-less-installation.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="i2510.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="APPENDIX"
+><H1
+><A
+NAME="CH-UNINSTALL"
+>Appendix C. Removing Red Hat Linux </A
+></H1
+><P
+>    To uninstall Red Hat Linux from your system, you will need to remove the
+    LILO information from your Master Boot Record (MBR).
+  </P
+><P
+>    There are several methods to removing LILO from the master boot record of
+    the machine. Inside of Linux, you can replace the MBR with an earlier
+    saved version of the MBR using the /sbin/lilo command:
+  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>    <TT
+CLASS="USERINPUT"
+><B
+>/sbin/lilo -u</B
+></TT
+>
+  </PRE
+></TD
+></TR
+></TABLE
+><P
+>    In DOS, NT, and Windows 95 you can use <TT
+CLASS="APPLICATION"
+>fdisk</TT
+> to
+    create a new MBR with the "undocumented" flag <B
+CLASS="COMMAND"
+>/mbr</B
+>. This
+    will ONLY rewrite the MBR to boot the primary DOS partition. The command
+    should look like:
+  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+> <TT
+CLASS="USERINPUT"
+><B
+>fdisk /mbr</B
+></TT
+>
+  </PRE
+></TD
+></TR
+></TABLE
+><P
+>    If you need to remove Linux from a hard drive, and have attempted to do this
+    with the default DOS <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>, you will experience the
+    "Partitions exist but they don't exist" problem. The best way to remove
+    non-DOS partitions is with a tool that understands partitions other than
+    DOS.
+  </P
+><P
+>    You can perform this with the installation floppy by typing "linux expert"
+    (without the quotes) at the <TT
+CLASS="PROMPT"
+>boot:</TT
+> prompt.
+  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>    <TT
+CLASS="PROMPT"
+>boot:</TT
+><TT
+CLASS="USERINPUT"
+><B
+>linux expert</B
+></TT
+>
+  </PRE
+></TD
+></TR
+></TABLE
+><P
+>    Select install (versus upgrade) and when it comes to partitioning the drive,
+    choose <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>. In <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>
+    type <B
+CLASS="KEYCAP"
+>p</B
+> to print out the partition numbers, and remove the
+    Linux partitions with the <B
+CLASS="KEYCAP"
+>d</B
+> command. When you're satisfied with the
+    changes you have made, you can quit with a <B
+CLASS="KEYCAP"
+>w</B
+> and the
+    changes will be saved to disk. If you deleted too much, type
+    <B
+CLASS="KEYCAP"
+>q</B
+> and no changes will occur.
+  </P
+><P
+>    Once you have removed the Linux partitions, you can reboot your computer by
+    pressing
+    <B
+CLASS="KEYCAP"
+>Control-</B
+>-<B
+CLASS="KEYCAP"
+>Alt-</B
+>-<B
+CLASS="KEYCAP"
+>Delete</B
+> instead of continuing with the install.
+  </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-part-less-installation.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="i2510.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Performing a Partitionless Installation</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Index</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/ch-uninstall.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:48:02 GMT -->
+</HTML
+>

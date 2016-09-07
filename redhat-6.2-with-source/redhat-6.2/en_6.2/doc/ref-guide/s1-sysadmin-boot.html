@@ -1,0 +1,3919 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-sysadmin-boot.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>The Boot Process, Init, and Shutdown</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="System Administration"
+HREF="ch-sysadmin.html"><LINK
+REL="PREVIOUS"
+TITLE="NFS Configuration"
+HREF="s1-sysadmin-nfs.html"><LINK
+REL="NEXT"
+TITLE="Rescue Mode"
+HREF="s1-sysadmin-rescue.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-sysadmin-nfs.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 2. System Administration</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-sysadmin-rescue.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-SYSADMIN-BOOT"
+>The Boot Process, Init, and Shutdown</A
+></H1
+><P
+>        This section contains information on what happens when you boot or
+        shut down your Red Hat Linux system.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-BOOTING"
+>Behind the Scenes of the Boot Process</A
+></H2
+><P
+>	  When a computer is booted, the processor looks at the end of the
+	  system memory for the <I
+CLASS="FIRSTTERM"
+>BIOS</I
+> (Basic Input/Output
+	  System) and runs it. The BIOS program is written into read-only
+	  permanent memory, and is always ready to go. The BIOS provides the
+	  lowest level interface to peripheral devices and controls the first
+	  step of the boot process.
+	</P
+><P
+>	  The BIOS tests the system, looks for and checks peripherals and then
+	  looks for a drive to boot from.  Usually, it checks the floppy drive
+	  (or CD-ROM drive on many newer systems), if present, and then it looks
+	  on the hard drive.  On the hard drive, the BIOS looks for a
+	  <I
+CLASS="FIRSTTERM"
+>Master Boot Record</I
+> (MBR) starting at the first
+	  sector on the first hard drive and starts the MBR running.  
+	</P
+><P
+>	  The MBR looks for the first active partition and reads the partition's
+	  boot record. The boot record contains instructions on how to load the
+	  boot loader, LILO (<I
+CLASS="EMPHASIS"
+>LI</I
+>nux
+	  <I
+CLASS="EMPHASIS"
+>LO</I
+>ader).  The MBR then loads LILO and LILO takes over
+	  the process.
+	</P
+><P
+>	  LILO reads the file <TT
+CLASS="FILENAME"
+>/etc/lilo.conf</TT
+>, which spells
+	  out which operating system(s) to configure or which kernel to start
+	  and where to install itself (for example,
+	  <TT
+CLASS="FILENAME"
+>/dev/hda</TT
+> for your hard drive).  LILO displays a
+	  <TT
+CLASS="PROMPT"
+>LILO:</TT
+> prompt on the screen and waits for a preset
+	  period of time (also set in the <TT
+CLASS="FILENAME"
+>lilo.conf</TT
+> file)
+	  for input from the user.  If your <TT
+CLASS="FILENAME"
+>lilo.conf</TT
+> is
+	  set to give LILO a choice of operating systems, at this time you could
+	  type in the label for whichever OS you wanted to boot.
+	</P
+><P
+>	  After waiting for a set period of time (five seconds is common), LILO
+	  proceeds to boot whichever operating system appears first in the
+	  <TT
+CLASS="FILENAME"
+>lilo.conf</TT
+> file.
+	</P
+><P
+>	  If LILO is booting Linux, it first boots the kernel, which is a
+	  <TT
+CLASS="FILENAME"
+>vmlinuz</TT
+> file (plus a version number, for example,
+	  <TT
+CLASS="FILENAME"
+>vmlinuz-2.2.15-xx</TT
+>) located in the <TT
+CLASS="FILENAME"
+>/boot</TT
+>
+	  directory.  Then the kernel takes over.
+	</P
+><P
+>	  The kernel looks in several different places for
+	  <TT
+CLASS="APPLICATION"
+>init</TT
+> (<TT
+CLASS="FILENAME"
+>/sbin</TT
+> is a
+	  common location) and runs the first one it finds.
+	  <TT
+CLASS="APPLICATION"
+>Init</TT
+> takes over.
+	</P
+><P
+>	  <TT
+CLASS="APPLICATION"
+>Init</TT
+> starts (and becomes the parent or
+	  grandparent of) all of the processes which make up your Linux system.
+	  First, it runs <TT
+CLASS="FILENAME"
+>/etc/rc.d/rc.sysinit</TT
+>, which sets
+	  your path, sets up networking if necessary, starts swapping, checks
+	  the filesystems, and so on.  Basically,
+	  <TT
+CLASS="FILENAME"
+>rc.sysinit</TT
+> is taking care of everything that your
+	  system needs to have done at system initialization.  For example, on a
+	  networked system <TT
+CLASS="FILENAME"
+>rc.sysinit</TT
+> uses the information
+	  in the <TT
+CLASS="FILENAME"
+>/etc/sysconfig/network</TT
+> and
+	  <TT
+CLASS="FILENAME"
+>/etc/sysconfig/clock</TT
+> files to initialize network
+	  processes and the clock. Itmay also run
+	  <TT
+CLASS="FILENAME"
+>rc.serial</TT
+>, if you have serial port processes that
+	  need to be initialized.
+	</P
+><P
+>	  <TT
+CLASS="APPLICATION"
+>Init</TT
+> looks at and implements the
+	  <TT
+CLASS="FILENAME"
+>/etc/inittab</TT
+> file.  The
+	  <TT
+CLASS="FILENAME"
+>/etc/inittab</TT
+> file describes how the system should
+	  be set up in each runlevel and sets the default runlevel.  This file
+	  states that <TT
+CLASS="FILENAME"
+>/etc/rc.d/rc</TT
+> and
+	  <TT
+CLASS="FILENAME"
+>/sbin/update</TT
+> should be run whenever a runlevel
+	  starts.
+	</P
+><P
+>	  The <TT
+CLASS="FILENAME"
+>/sbin/update</TT
+> file flushes dirty buffers back
+	  to disk.
+	</P
+><P
+>	  Whenever the runlevel changes, <TT
+CLASS="FILENAME"
+>/etc/rc.d/rc</TT
+>
+	  starts and stops services. First, <TT
+CLASS="APPLICATION"
+>rc</TT
+> sets
+	  the source function library for the system (commonly
+	  <TT
+CLASS="FILENAME"
+>/etc/rc.d/init.d/functions</TT
+>), which spells out how
+	  to start/kill a program and how to find out the PID of a program.  The
+	  <TT
+CLASS="APPLICATION"
+>rc</TT
+> file then finds out the current and the
+	  previous runlevel and tells <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> the
+	  appropriate runlevel.
+	</P
+><P
+>	  The <TT
+CLASS="APPLICATION"
+>rc</TT
+> file starts all of the background
+	  processes necessary for the system to run, and looks for an
+	  <TT
+CLASS="APPLICATION"
+>rc</TT
+> directory for that runlevel
+	  (<TT
+CLASS="FILENAME"
+>/etc/rc.d/rc<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;x&#62;</I
+></TT
+>.d</TT
+>,
+	  where the <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;x&#62;</I
+></TT
+> is numbered 0-6).
+	  <TT
+CLASS="APPLICATION"
+>rc</TT
+> kills all of the kill scripts (their
+	  file name starts with a <TT
+CLASS="FILENAME"
+>K</TT
+>) in
+	  <TT
+CLASS="FILENAME"
+>/rc.d/</TT
+>.  Then it initializes all of the start
+	  scripts (their file names start with an <TT
+CLASS="FILENAME"
+>S</TT
+>) in the
+	  appropriate runlevel directory (so that all services and applications
+	  are started correctly).
+	</P
+><P
+>	  For example, for runlevel 5, <TT
+CLASS="APPLICATION"
+>rc</TT
+> looks into
+	  the <TT
+CLASS="FILENAME"
+>/etc/rc.d/rc5.d</TT
+> directory and finds that it
+	  needs to kill <TT
+CLASS="APPLICATION"
+>rusersd</TT
+>,
+	  <TT
+CLASS="APPLICATION"
+>rwalld</TT
+>, <TT
+CLASS="APPLICATION"
+>rwhod</TT
+>,
+	  <TT
+CLASS="APPLICATION"
+>mcserv</TT
+>,
+	  <TT
+CLASS="APPLICATION"
+>mars-nwe</TT
+>, <TT
+CLASS="APPLICATION"
+>apmd</TT
+>,
+	  and <TT
+CLASS="APPLICATION"
+>pcmcia</TT
+>.  In the bloody aftermath,
+	  <TT
+CLASS="APPLICATION"
+>rc</TT
+> looks into the same directory and finds
+	  start scripts for <TT
+CLASS="APPLICATION"
+>kmod</TT
+>,
+	  <TT
+CLASS="APPLICATION"
+>network</TT
+>, <TT
+CLASS="APPLICATION"
+>nfsfs</TT
+>,
+	  <TT
+CLASS="APPLICATION"
+>randomc</TT
+>, <TT
+CLASS="APPLICATION"
+>syslog</TT
+>,
+	  <TT
+CLASS="APPLICATION"
+>atd</TT
+>, <TT
+CLASS="APPLICATION"
+>crond</TT
+>,
+	  <TT
+CLASS="APPLICATION"
+>portmap</TT
+>, <TT
+CLASS="APPLICATION"
+>snmpd</TT
+>,
+	  <TT
+CLASS="APPLICATION"
+>inet</TT
+>, <TT
+CLASS="APPLICATION"
+>xntpd</TT
+>,
+	  <TT
+CLASS="APPLICATION"
+>lpd</TT
+>,
+	  <TT
+CLASS="APPLICATION"
+>nfs.rpmsave</TT
+>,
+	  <TT
+CLASS="APPLICATION"
+>dhcpd</TT
+>, <TT
+CLASS="APPLICATION"
+>ypbind</TT
+>,
+	  <TT
+CLASS="APPLICATION"
+>autofs</TT
+>,
+	  <TT
+CLASS="APPLICATION"
+>keytable</TT
+>,
+	  <TT
+CLASS="APPLICATION"
+>sendmail</TT
+>, <TT
+CLASS="APPLICATION"
+>gpm</TT
+>,
+	  <TT
+CLASS="APPLICATION"
+>sound</TT
+>, and
+	  <TT
+CLASS="APPLICATION"
+>smb.rpmsave</TT
+>.  And life begins anew.
+	</P
+><P
+>	  The <TT
+CLASS="FILENAME"
+>/etc/inittab</TT
+> file forks a getty process for
+	  each virtual console (login prompts) for each runlevel (runlevels 2-5
+	  get all six; runlevel 1, which is single user mode, only gets one
+	  console; runlevels 0 and 6 get no virtual consoles).
+	  <TT
+CLASS="FILENAME"
+>/etc/inittab</TT
+> also states that
+	  <TT
+CLASS="APPLICATION"
+>gdm</TT
+>, the X logon manager, should start in
+	  runlevel 5.
+	</P
+><P
+>	  Also, <TT
+CLASS="APPLICATION"
+>/etc/inittab</TT
+> describes how the system
+	  should handle translating
+	  <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>Alt</B
+>-<B
+CLASS="KEYCAP"
+>Delete</B
+>
+	  into something like the command <B
+CLASS="COMMAND"
+>/sbin/shutdown -t3 -r
+	  now</B
+>.  And finally, <TT
+CLASS="FILENAME"
+>/etc/inittab</TT
+> states
+	  what the system should do in case of power failures.
+	</P
+><P
+>	  At this point, you should be looking at a login prompt.  All that, and
+	  it only took a few seconds.
+	</P
+><P
+>	  Next, we'll discuss information on the files in
+	  <TT
+CLASS="FILENAME"
+>/etc/sysconfig</TT
+>.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-SYSCONF"
+>Sysconfig Information</A
+></H2
+><P
+>          The following information outlines the various files in
+          <TT
+CLASS="FILENAME"
+>/etc/sysconfig</TT
+>, their function, and their
+          contents.
+        </P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSADMIN--ETCSYSCONF"
+>Files in <TT
+CLASS="FILENAME"
+>/etc/sysconfig</TT
+></A
+></H3
+><P
+>            The following files are normally found in
+            <TT
+CLASS="FILENAME"
+>/etc/sysconfig</TT
+>:
+          </P
+><P
+></P
+><UL
+><LI
+><P
+>                <TT
+CLASS="FILENAME"
+>/etc/sysconfig/clock</TT
+>
+              </P
+></LI
+><LI
+><P
+>                <TT
+CLASS="FILENAME"
+>/etc/sysconfig/hwconf</TT
+> (this should be
+                ignored for editing)
+              </P
+></LI
+><LI
+><P
+>                <TT
+CLASS="FILENAME"
+>/etc/sysconfig/mouse</TT
+>
+              </P
+></LI
+><LI
+><P
+>                <TT
+CLASS="FILENAME"
+>/etc/sysconfig/sendmail</TT
+>
+              </P
+></LI
+><LI
+><P
+>                <TT
+CLASS="FILENAME"
+>/etc/sysconfig/apmd</TT
+>
+              </P
+></LI
+><LI
+><P
+>                <TT
+CLASS="FILENAME"
+>/etc/sysconfig/init</TT
+>
+              </P
+></LI
+><LI
+><P
+>                <TT
+CLASS="FILENAME"
+>/etc/sysconfig/keyboard</TT
+>
+              </P
+></LI
+><LI
+><P
+>                <TT
+CLASS="FILENAME"
+>/etc/sysconfig/network</TT
+>
+              </P
+></LI
+><LI
+><P
+>                <TT
+CLASS="FILENAME"
+>/etc/sysconfig/pcmica</TT
+>
+              </P
+></LI
+><LI
+><P
+>                <TT
+CLASS="FILENAME"
+>/etc/sysconfig/soundcard</TT
+> (which is written
+                by <TT
+CLASS="APPLICATION"
+>sndconfig</TT
+>)
+              </P
+></LI
+></UL
+><P
+>            Let's take a look at each one.
+          </P
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSADMIN-CLOCK"
+><TT
+CLASS="FILENAME"
+>/etc/sysconfig/clock</TT
+></A
+></H4
+><P
+>              The <TT
+CLASS="FILENAME"
+>/etc/sysconfig/clock</TT
+> file controls the
+              interpretation of values read from the system clock.  Earlier
+              releases of Red Hat Linux used the following values (which are deprecated):
+          
+              <P
+></P
+><UL
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>CLOCKMODE=<TT
+CLASS="REPLACEABLE"
+><I
+>mode</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>mode</I
+></TT
+> is one of the
+                    following:
+                  </P
+><P
+></P
+><UL
+><LI
+><P
+>                        <B
+CLASS="COMMAND"
+>GMT</B
+> -- indicates that the clock is set to UTC.
+                      </P
+></LI
+><LI
+><P
+>                        <B
+CLASS="COMMAND"
+>ARC</B
+> -- on Alpha only indicates the
+                        ARC console's 42-year time offset is in effect.
+                      </P
+></LI
+></UL
+></LI
+></UL
+>
+            </P
+><P
+>              Currently, the correct values are:
+          
+              <P
+></P
+><UL
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>UTC=<TT
+CLASS="REPLACEABLE"
+><I
+>boolean</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>boolean</I
+></TT
+> is the
+                    following:
+                  </P
+><P
+></P
+><UL
+><LI
+><P
+>                        <B
+CLASS="COMMAND"
+>true</B
+> -- indicates that the clock is
+                        set to UTC.  Any other value indicates that it is set to
+                        local time.
+                      </P
+></LI
+></UL
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>ARC=<TT
+CLASS="REPLACEABLE"
+><I
+>boolean</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>boolean</I
+></TT
+> is the
+                    following:
+            
+                    <P
+></P
+><UL
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>true</B
+> -- (for Alpha-based systems
+                          only) Indicates the ARC console's 42-year time offset
+                          is in effect. Any other value indicates that the
+                          normal UNIX epoch is assumed.
+                        </P
+></LI
+></UL
+>
+                  </P
+></LI
+><LI
+><P
+>		    <B
+CLASS="COMMAND"
+>ZONE=<TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>"filename"</I
+></TT
+>
+		      </TT
+></B
+> -- indicates the zonefile under
+		      <TT
+CLASS="FILENAME"
+>/user/share/zoneinfo</TT
+> that
+		      <TT
+CLASS="FILENAME"
+>/etc/localtime</TT
+> is a copy of, for
+		      example:
+		  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>ZONE="US/Eastern"
+		  </PRE
+></TD
+></TR
+></TABLE
+></LI
+></UL
+>
+            </P
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSADMIN-HWCONF"
+><TT
+CLASS="FILENAME"
+>/etc/sysconfig/hwconf</TT
+></A
+></H4
+><P
+>	      The <TT
+CLASS="FILENAME"
+>/etc/sysconfig/hwconf</TT
+> file lists all the
+	      hardware that <TT
+CLASS="APPLICATION"
+>kudzu</TT
+> detected on your
+	      system, as well as the drivers used, vendor ID and device ID
+	      information. It is not meant to be edited. If you do edit it,
+	      devices could suddenly show up as being <I
+CLASS="EMPHASIS"
+>added</I
+>
+	      or <I
+CLASS="EMPHASIS"
+>removed</I
+>.
+	    </P
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSADMIN-MOUSE"
+><TT
+CLASS="FILENAME"
+>/etc/sysconfig/mouse</TT
+></A
+></H4
+><P
+>              The <TT
+CLASS="FILENAME"
+>/etc/sysconfig/mouse</TT
+> file is used to
+              specify information about the available mouse.  The following
+              values may be used:
+
+              <P
+></P
+><UL
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>MOUSETYPE=<TT
+CLASS="REPLACEABLE"
+><I
+>type</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="FILENAME"
+>type</TT
+> is one of the following:
+
+                    <P
+></P
+><UL
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>microsoft</B
+> -- A Microsoft mouse.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>mouseman</B
+> -- A MouseMan mouse.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>mousesystems</B
+> -- A Mouse Systems
+                          mouse.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>ps/2</B
+> -- A PS/2 mouse.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>msbm</B
+> -- A Microsoft bus mouse.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>logibm</B
+> -- A Logitech bus mouse.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>atibm</B
+> -- An ATI bus mouse.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>logitech</B
+> -- A Logitech mouse.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>mmseries</B
+> -- An older MouseMan
+                          mouse.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>mmhittab</B
+> -- An mmhittab mouse.
+                        </P
+></LI
+></UL
+>
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>XEMU3=<TT
+CLASS="REPLACEABLE"
+><I
+>emulation</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>emulation</I
+></TT
+> is one of the
+                    following:
+            
+                    <P
+></P
+><UL
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>yes</B
+> -- Three mouse buttons should
+                          be emulated.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>no</B
+> -- The mouse already has three
+                          buttons.
+                        </P
+></LI
+></UL
+>
+                  </P
+></LI
+></UL
+>
+            </P
+><P
+>              In addition, <TT
+CLASS="FILENAME"
+>/dev/mouse</TT
+> is a symlink that
+              points to the actual mouse device.
+            </P
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSADMIN-SENDMAIL"
+><TT
+CLASS="FILENAME"
+>/etc/sysconfig/sendmail</TT
+></A
+></H4
+><P
+>	      The <TT
+CLASS="FILENAME"
+>/etc/sysconfig/sendmail</TT
+> allows messages
+	      to be sent to one or more recipients, routing the message over
+	      whatever networks are necessary.  The file sets the default values
+	      for the <TT
+CLASS="APPLICATION"
+>sendmail</TT
+> program to run. Its
+	      default values are to run as a background daemon, and to check its
+	      queue once an hour in case something has backed up.
+	    </P
+><P
+>	      The following values may be used:
+	    </P
+><P
+></P
+><UL
+><LI
+><P
+>		  <B
+CLASS="COMMAND"
+>DAEMON=<TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+></B
+>,
+		  where <TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+> is one of the
+		  following:
+		  <P
+></P
+><UL
+><LI
+><P
+>			<B
+CLASS="COMMAND"
+>yes</B
+> --
+			<TT
+CLASS="APPLICATION"
+>Sendmail</TT
+> should be
+			configured. <B
+CLASS="COMMAND"
+>yes</B
+> implies
+			<B
+CLASS="COMMAND"
+>-bd</B
+>.
+		      </P
+></LI
+><LI
+><P
+>			<B
+CLASS="COMMAND"
+>no</B
+> --
+			<TT
+CLASS="APPLICATION"
+>Sendmail</TT
+> should not be
+			configured.
+		      </P
+></LI
+></UL
+>
+		</P
+></LI
+><LI
+><P
+> <B
+CLASS="COMMAND"
+>QUEUE=1h</B
+> which is given to
+		  <TT
+CLASS="APPLICATION"
+>sendmail</TT
+> as
+		  <B
+CLASS="COMMAND"
+>-q$QUEUE</B
+>.  The <B
+CLASS="COMMAND"
+>-q</B
+> option is
+		  not given to <TT
+CLASS="APPLICATION"
+>sendmail</TT
+> if
+		  <TT
+CLASS="FILENAME"
+>/etc/sysconfig/sendmail</TT
+> exists and QUEUE
+		  is empty or undefined.
+		</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSADMIN-APMD"
+><TT
+CLASS="FILENAME"
+>/etc/sysconfig/apmd</TT
+></A
+></H4
+><P
+>	      The <TT
+CLASS="FILENAME"
+>/etc/sysconfig/apmd</TT
+> is used by
+	      <TT
+CLASS="APPLICATION"
+>apmd</TT
+>, as a configuration for what
+	      things to start/stop/change on suspend or resume. It is set up to
+	      turn on or off <TT
+CLASS="APPLICATION"
+>apmd</TT
+> during startup,
+	      depending on whether your hardware supports <TT
+CLASS="APPLICATION"
+>Advanced
+	      Power Management</TT
+> (<TT
+CLASS="APPLICATION"
+>apm</TT
+>),
+	      or if you choose not to use it.
+	    </P
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSADMIN-INIT"
+><TT
+CLASS="FILENAME"
+>/etc/sysconfig/init</TT
+></A
+></H4
+><P
+>	      The <TT
+CLASS="FILENAME"
+>/etc/sysconfig/init</TT
+> file controls how the
+	      system will look during bootup.
+	    </P
+><P
+>	      The following values may be used:
+	    </P
+><P
+></P
+><UL
+><LI
+><P
+>		  
+		  <B
+CLASS="COMMAND"
+>BOOTUP=<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;some bootup
+		      mode&#62;</I
+></TT
+></B
+>, where <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;some bootup
+		    mode&#62;</I
+></TT
+> is one of the following:
+		  <P
+></P
+><UL
+><LI
+><P
+>			<B
+CLASS="COMMAND"
+>BOOTUP=color</B
+> means new (as of Red Hat Linux 6.0)
+			boot display.
+		      </P
+></LI
+><LI
+><P
+>			<B
+CLASS="COMMAND"
+>BOOTUP=verbose</B
+> means old style
+			display.
+		      </P
+></LI
+><LI
+><P
+>			Anything else means new display, but without
+			ANSI-formatting.
+		      </P
+></LI
+></UL
+>
+		</P
+></LI
+><LI
+><P
+>		  <B
+CLASS="COMMAND"
+>LOGLEVEL=<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;a
+		      number&#62;</I
+></TT
+></B
+>, where
+		      <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;a number&#62;</I
+></TT
+> sets the
+		      initial console logging level for the kernel.  The default
+		      is 7; 8 means everything (including debugging); 1 means
+		      nothing except kernel
+		      panics. <TT
+CLASS="APPLICATION"
+>syslogd</TT
+> will override
+		      this once it starts.
+		</P
+></LI
+><LI
+><P
+>		  <B
+CLASS="COMMAND"
+>RES_COL=<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;a
+		      number&#62;</I
+></TT
+></B
+>, where
+		      <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;a number&#62;</I
+></TT
+> is a column of
+		      the screen to start status labels at. Defaults to 60.
+		</P
+></LI
+><LI
+><P
+>		  <B
+CLASS="COMMAND"
+>MOVE_TO_COL=<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;a
+		      command&#62;</I
+></TT
+></B
+>, where
+		      <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;a command&#62;</I
+></TT
+> moves the
+		      cursor to $RES_COL. Defaults to ANSI sequences output by
+		      echo <B
+CLASS="COMMAND"
+>-e</B
+>.
+		</P
+></LI
+><LI
+><P
+>		  <B
+CLASS="COMMAND"
+>SETCOLOR_SUCCESS=<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;a
+		      command&#62;</I
+></TT
+></B
+>, where <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;a
+		    command&#62;</I
+></TT
+> sets the color to a color indicating
+		  success.  Defaults to ANSI sequences output by echo
+		  <B
+CLASS="COMMAND"
+>-e</B
+>, setting the color to green.
+		</P
+></LI
+><LI
+><P
+>		  <B
+CLASS="COMMAND"
+>SETCOLOR_FAILURE=<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;a
+		      command&#62;</I
+></TT
+></B
+>, where
+		      <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;a command&#62;</I
+></TT
+> sets the
+		      color to a color indicating failure.  Defaults to ANSI
+		      sequences output by echo <B
+CLASS="COMMAND"
+>-e</B
+>, setting the
+		      color to red.
+		</P
+></LI
+><LI
+><P
+>		  <B
+CLASS="COMMAND"
+>SETCOLOR_WARNING=<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;a
+		      command&#62;</I
+></TT
+></B
+>, where
+		      <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;a command&#62;</I
+></TT
+> sets the
+		      color to a color indicating warning.  Defaults to ANSI
+		      sequences output by echo <B
+CLASS="COMMAND"
+>-e</B
+>, setting the
+		      color to yellow.
+		</P
+></LI
+><LI
+><P
+>		  <B
+CLASS="COMMAND"
+>SETCOLOR_NORMAL=<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;a
+		      command&#62;</I
+></TT
+></B
+>, where
+		      <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;a command&#62;</I
+></TT
+> sets the
+		      color to 'normal'. Defaults to ANSI sequences output by
+		      echo <B
+CLASS="COMMAND"
+>-e</B
+>.
+		</P
+></LI
+><LI
+><P
+>		  <B
+CLASS="COMMAND"
+>MAGIC_SYSRQ=<TT
+CLASS="REPLACEABLE"
+><I
+>an
+		      answer</I
+></TT
+></B
+>, where <TT
+CLASS="REPLACEABLE"
+><I
+>an
+		      answer</I
+></TT
+> is one of the following:
+		  <P
+></P
+><UL
+><LI
+><P
+>			<B
+CLASS="COMMAND"
+>yes</B
+> -- Enables the magic sysrq key.
+		      </P
+></LI
+><LI
+><P
+>			<B
+CLASS="COMMAND"
+>no</B
+> -- Disables the magic sysrq key,
+			and <B
+CLASS="KEYCAP"
+>Stop</B
+>-<B
+CLASS="KEYCAP"
+>A</B
+> (break on
+			serial console) on SPARC.
+		      </P
+></LI
+></UL
+>
+		</P
+></LI
+><LI
+><P
+>		  <B
+CLASS="COMMAND"
+>PROMPT=<TT
+CLASS="REPLACEABLE"
+><I
+>an
+		  answer</I
+></TT
+></B
+>, where <TT
+CLASS="REPLACEABLE"
+><I
+>an
+		  answer</I
+></TT
+> is one of the following:
+		  <P
+></P
+><UL
+><LI
+><P
+>			<B
+CLASS="COMMAND"
+>yes</B
+> -- Enables the key check for
+			interactive mode.
+		      </P
+></LI
+><LI
+><P
+>			<B
+CLASS="COMMAND"
+>no</B
+> -- Disables the key check for
+			interactive mode.
+		      </P
+></LI
+></UL
+>
+		</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSADMIN-KYBD"
+><TT
+CLASS="FILENAME"
+>/etc/sysconfig/keyboard</TT
+></A
+></H4
+><P
+>              The <TT
+CLASS="FILENAME"
+>/etc/sysconfig/keyboard</TT
+> file controls
+              the behavior of the keyboard.  The following values may be used:
+
+              <P
+></P
+><UL
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>KEYTABLE=<TT
+CLASS="REPLACEABLE"
+><I
+>file</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>file</I
+></TT
+> is the name of a
+                    keytable file.  For example:
+                    <B
+CLASS="COMMAND"
+>KEYTABLE="/usr/lib/kbd/keytables/us.map"</B
+>
+                  </P
+></LI
+><LI
+><P
+>		    <B
+CLASS="COMMAND"
+>KEYBOARD=sun|pc</B
+>, which is used on SPARCs
+		    only. <B
+CLASS="COMMAND"
+>sun</B
+> means a Sun keyboard is
+		    attached on <TT
+CLASS="FILENAME"
+>/dev/kbd</TT
+>,
+		    <B
+CLASS="COMMAND"
+>pc</B
+> means a PS/2 keyboard is on a PS/2 port.
+		  </P
+></LI
+></UL
+>
+            </P
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSADMIN-NETWORK"
+><TT
+CLASS="FILENAME"
+>/etc/sysconfig/network</TT
+></A
+></H4
+><P
+>              The <TT
+CLASS="FILENAME"
+>/etc/sysconfig/network</TT
+> file is used to
+              specify information about the desired network configuration.  The
+              following values may be used:
+
+              <P
+></P
+><UL
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>NETWORKING=<TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+> is one of the
+                    following:
+            
+                    <P
+></P
+><UL
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>yes</B
+> -- Networking should be
+                          configured.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>no</B
+> -- Networking should not be
+                          configured.
+                        </P
+></LI
+></UL
+>
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>HOSTNAME=<TT
+CLASS="REPLACEABLE"
+><I
+>hostname</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>hostname</I
+></TT
+> should be the FQDN
+                    (Fully Qualified Domain Name), but can be whatever hostname
+                    you want.
+                  </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="90%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>                      For compatibility with older software that people might
+                      install (such as <B
+CLASS="COMMAND"
+>trn</B
+>), the
+                      <TT
+CLASS="FILENAME"
+>/etc/HOSTNAME</TT
+> file should contain the
+                      same value as here.
+                    </P
+></TD
+></TR
+></TABLE
+></DIV
+></LI
+></UL
+>
+            </P
+><P
+></P
+><UL
+><LI
+><P
+>                  <B
+CLASS="COMMAND"
+>FORWARD_IPV4=<TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+></B
+>,
+                  where <TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+> is one of the
+                  following:
+          
+                  <P
+></P
+><UL
+><LI
+><P
+>                        <B
+CLASS="COMMAND"
+>yes</B
+> -- Perform IP forwarding.
+                      </P
+></LI
+><LI
+><P
+>                        <B
+CLASS="COMMAND"
+>no</B
+> -- Do not perform IP forwarding.
+                      </P
+></LI
+></UL
+>
+                </P
+><P
+>                  (The current Red Hat Linux installation sets this to "no" by default
+                  [for RFC compliance], but if <B
+CLASS="COMMAND"
+>FORWARD_IPV4</B
+>
+                  is not set at all, forwarding is <I
+CLASS="EMPHASIS"
+>enabled</I
+>
+                  for compatibility with the configuration files used on Red Hat Linux
+                  versions 4.2 and earlier.)
+                </P
+></LI
+></UL
+><P
+></P
+><UL
+><LI
+><P
+>                  <B
+CLASS="COMMAND"
+>GATEWAY=<TT
+CLASS="REPLACEABLE"
+><I
+>gw-ip</I
+></TT
+></B
+>,
+                  where <TT
+CLASS="REPLACEABLE"
+><I
+>gw-ip</I
+></TT
+> is the IP address of
+                  the network's gateway.
+                </P
+></LI
+><LI
+><P
+>                  <B
+CLASS="COMMAND"
+>GATEWAYDEV=<TT
+CLASS="REPLACEABLE"
+><I
+>gw-dev</I
+></TT
+></B
+>,
+                  where <TT
+CLASS="REPLACEABLE"
+><I
+>gw-dev</I
+></TT
+> is the gateway device
+                  (e.g. eth0).
+                </P
+></LI
+><LI
+><P
+>                  <B
+CLASS="COMMAND"
+>NISDOMAIN=<TT
+CLASS="REPLACEABLE"
+><I
+>dom-name</I
+></TT
+></B
+>,
+                  where <TT
+CLASS="REPLACEABLE"
+><I
+>dom-name</I
+></TT
+> is the NIS domain
+                  name.
+                </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSADMIN-PCMCIA"
+><TT
+CLASS="FILENAME"
+>/etc/sysconfig/pcmcia</TT
+></A
+></H4
+><P
+>              The <TT
+CLASS="FILENAME"
+>/etc/sysconfig/pcmcia</TT
+> file is used to
+              specify PCMCIA configuration information.  The following values
+              may be used:
+
+              <P
+></P
+><UL
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>PCMCIA=<TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+> is one of the
+                    following:
+
+                    <P
+></P
+><UL
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>yes</B
+> -- PCMCIA support should be
+                          enabled.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>no</B
+> -- PCMCIA support should not be
+                          enabled.
+                        </P
+></LI
+></UL
+>
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>PCIC=<TT
+CLASS="REPLACEABLE"
+><I
+>pcic-type</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>pcic-type</I
+></TT
+> is one of the
+                    following:
+
+                    <P
+></P
+><UL
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>i82365</B
+> -- The computer has an
+                          i82365-style PCMCIA socket chipset.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>tcic</B
+> -- The computer has a
+                          tcic-style PCMCIA socket chipset.
+                        </P
+></LI
+></UL
+>
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>PCIC_OPTS=<TT
+CLASS="REPLACEABLE"
+><I
+>option</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>option</I
+></TT
+> is the socket driver
+                    (i82365 or tcic) timing parameters.
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>CORE_OPTS=<TT
+CLASS="REPLACEABLE"
+><I
+>option</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>option</I
+></TT
+> is the list of
+                    <TT
+CLASS="FILENAME"
+>pcmcia_core</TT
+> options.
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>CARDMGR_OPTS=<TT
+CLASS="REPLACEABLE"
+><I
+>option</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>option</I
+></TT
+> is the list of
+                    options for the PCMCIA <TT
+CLASS="APPLICATION"
+>cardmgr</TT
+>
+                    (such as <B
+CLASS="COMMAND"
+>-q</B
+>, quiet mode;
+                    <B
+CLASS="COMMAND"
+>-m</B
+>, looks for loadable kernel modules in
+                    the specified director; and so on, read the
+                    <TT
+CLASS="APPLICATION"
+>cardmgr</TT
+> man page for more
+                    information).
+                  </P
+></LI
+></UL
+>
+            </P
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSADMIN-SOUND"
+><TT
+CLASS="FILENAME"
+>/etc/sysconfig/soundcard</TT
+></A
+></H4
+><P
+>              The <TT
+CLASS="FILENAME"
+>/etc/sysconfig/soundcard</TT
+> file is
+              generated by <TT
+CLASS="APPLICATION"
+>sndconfig</TT
+> and should not
+              be modified.  It is used by
+              <TT
+CLASS="FILENAME"
+>/etc/rc.d/init.d/sound</TT
+> to set up your system
+              properly. The sole use of this is to determine what card entry in
+              the menu to pop up by default the next time
+              <TT
+CLASS="APPLICATION"
+>sndconfig</TT
+> is run.
+	    </P
+><P
+>	      It may contain the following:
+	      <P
+></P
+><UL
+><LI
+><P
+>		    <B
+CLASS="COMMAND"
+>CARDTYPE=<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;a
+			card&#62;</I
+></TT
+></B
+>, where
+		    <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;a card&#62;</I
+></TT
+> is seen as,
+		    for example, <B
+CLASS="COMMAND"
+>CARDTYPE=SB16</B
+>.
+		  </P
+></LI
+></UL
+>
+	    </P
+></DIV
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSADMIN-NETWORK"
+>Files in <TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/</TT
+></A
+></H3
+><P
+>            The following files are normally found in
+            <TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts</TT
+>:
+        
+            <P
+></P
+><UL
+><LI
+><P
+>                  <TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/ifup</TT
+>
+                </P
+></LI
+><LI
+><P
+>                  <TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/ifdown</TT
+>
+                </P
+></LI
+><LI
+><P
+>                  <TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/network-functions</TT
+>
+                </P
+></LI
+><LI
+><P
+>                  <TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/ifcfg-<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;interface-name&#62;</I
+></TT
+></TT
+>
+                </P
+></LI
+><LI
+><P
+>                  <TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/ifcfg-<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;interface-name&#62;</I
+></TT
+>-<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;clone-name&#62;</I
+></TT
+></TT
+>
+                </P
+></LI
+><LI
+><P
+>                  <TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/chat-<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;interface-name&#62;</I
+></TT
+></TT
+>
+                </P
+></LI
+><LI
+><P
+>                  <TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/dip-<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;interface-name&#62;</I
+></TT
+></TT
+>
+                </P
+></LI
+><LI
+><P
+>                  <TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/ifup-post</TT
+>
+                </P
+></LI
+><LI
+><P
+>                  <TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/ifdhcpc-done</TT
+>
+                </P
+></LI
+></UL
+>
+          </P
+><P
+>            Let's take a look at each one.
+          </P
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSADMIN-IFUP"
+><TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/ifup</TT
+>,
+              <TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/ifdown</TT
+></A
+></H4
+><P
+>              These are symbolic links to <TT
+CLASS="FILENAME"
+>/sbin/ifup</TT
+> and
+              <TT
+CLASS="FILENAME"
+>/sbin/ifdown</TT
+>, respectively.  These are the
+              only two scripts in this directory that should be called directly;
+              these two scripts call all the other scripts as needed.  These
+              symlinks are here for legacy purposes only -- they will probably
+              be removed in future versions, so only
+              <TT
+CLASS="FILENAME"
+>/sbin/ifup</TT
+> and
+              <TT
+CLASS="FILENAME"
+>/sbin/ifdown</TT
+> should currently be used.
+            </P
+><P
+>              These scripts take one argument normally: the name of the device
+              (e.g. "<B
+CLASS="COMMAND"
+>eth0</B
+>").  They are called with a second
+              argument of "<B
+CLASS="COMMAND"
+>boot</B
+>" during the boot sequence so
+              that devices that are not meant to be brought up on boot
+              (<B
+CLASS="COMMAND"
+>ONBOOT=no</B
+>, [see below]) can be ignored at that
+              time.
+            </P
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSADMIN-NET-FXN"
+><TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/network-functions</TT
+></A
+></H4
+><P
+>              Not really a public file.  Contains functions which the scripts
+              use for bringing interfaces up and down.  In particular, it
+              contains most of the code for handling alternative interface
+              configurations and interface change notification through
+              <TT
+CLASS="APPLICATION"
+>netreport</TT
+>.
+            </P
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSADMIN-INTERFACE"
+><TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/ifcfg-<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;interface-name&#62;</I
+></TT
+></TT
+>,
+          <TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/ifcfg-<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;interface-name&#62;</I
+></TT
+>-<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;clone-name&#62;</I
+></TT
+></TT
+></A
+></H4
+><P
+>              The first file defines an interface, while the second file
+              contains only the parts of the definition that are different in a
+              "clone" (or alternative) interface.  For example, the network
+              numbers might be different, but everything else might be the same,
+              so only the network numbers would be in the clone file, while all
+              the device information would be in the base
+              <TT
+CLASS="FILENAME"
+>ifcfg</TT
+> file.
+            </P
+><P
+>              The items that can be defined in an <TT
+CLASS="FILENAME"
+>ifcfg</TT
+>
+              file depend on the interface type.
+            </P
+><P
+>              The following values are common to all base files:
+          
+              <P
+></P
+><UL
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>DEVICE=<TT
+CLASS="REPLACEABLE"
+><I
+>name</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>name</I
+></TT
+> is the name of the
+                    physical device (except dynamically-allocated PPP devices
+                    where it is the "logical name").
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>IPADDR=<TT
+CLASS="REPLACEABLE"
+><I
+>addr</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>addr</I
+></TT
+> is the IP address.
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>NETMASK=<TT
+CLASS="REPLACEABLE"
+><I
+>mask</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>mask</I
+></TT
+> is the netmask value.
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>NETWORK=<TT
+CLASS="REPLACEABLE"
+><I
+>addr</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>addr</I
+></TT
+> is the network
+                    address.
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>BROADCAST=<TT
+CLASS="REPLACEABLE"
+><I
+>addr</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>addr</I
+></TT
+> is the broadcast
+                    address.
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>GATEWAY=<TT
+CLASS="REPLACEABLE"
+><I
+>addr</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>addr</I
+></TT
+> is the gateway
+                    address.
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>ONBOOT=<TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+> is one of the
+                    following:
+                  </P
+><P
+></P
+><UL
+><LI
+><P
+>                        <B
+CLASS="COMMAND"
+>yes</B
+> -- This device should be
+                        activated at boot-time.
+                      </P
+></LI
+><LI
+><P
+>                        <B
+CLASS="COMMAND"
+>no</B
+> -- This device should not be
+                        activated at boot-time.
+                      </P
+></LI
+></UL
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>USERCTL=<TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+> is one of the
+                    following:
+            
+                    <P
+></P
+><UL
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>yes</B
+> -- Non-root users are allowed
+                          to control this device.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>no</B
+> -- Non-root users are not
+                          allowed to control this device.
+                        </P
+></LI
+></UL
+>
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>BOOTPROTO=<TT
+CLASS="REPLACEABLE"
+><I
+>proto</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>proto</I
+></TT
+> is one of the
+                    following:
+            
+                    <P
+></P
+><UL
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>none</B
+> -- No boot-time protocol
+                          should be used.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>bootp</B
+> -- The BOOTP protocol should
+                          be used.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>dhcp</B
+> -- The DHCP protocol should be
+                          used.
+                        </P
+></LI
+></UL
+>
+                  </P
+></LI
+></UL
+>
+            </P
+><P
+>              The following values are common to all PPP and SLIP files:
+          
+              <P
+></P
+><UL
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>PERSIST=<TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+> is one of the
+                    following:
+            
+                    <P
+></P
+><UL
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>yes</B
+> -- This device should be kept
+                          active at all times, even if deactivated after a modem
+                          hang up.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>no</B
+> -- This device should not be
+                          kept active at all times.
+                        </P
+></LI
+></UL
+>
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>MODEMPORT=<TT
+CLASS="REPLACEABLE"
+><I
+>port</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>port</I
+></TT
+> is the modem port's
+                    device name (for example,
+                    "<TT
+CLASS="FILENAME"
+>/dev/modem</TT
+>").
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>LINESPEED=<TT
+CLASS="REPLACEABLE"
+><I
+>baud</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>baud</I
+></TT
+> is the modem's
+                    linespeed (for example, "<B
+CLASS="COMMAND"
+>115200</B
+>").
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>DEFABORT=<TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+> is one of the
+                    following:
+            
+                    <P
+></P
+><UL
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>yes</B
+> -- Insert default abort strings
+                          when creating/editing the script for this interface.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>no</B
+> -- Do not insert default abort
+                          strings when creating/editing the script for this
+                          interface.
+                        </P
+></LI
+></UL
+>
+                  </P
+></LI
+></UL
+>
+            </P
+><P
+>              The following values are common to all PPP files:
+          
+              <P
+></P
+><UL
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>DEFROUTE=<TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+> is one of the
+                    following:
+            
+                    <P
+></P
+><UL
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>yes</B
+> -- Set this interface as the
+                          default route.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>no</B
+> -- Do not set this interface as
+                          the default route.
+                        </P
+></LI
+></UL
+>
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>ESCAPECHARS=<TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+> is one of the
+                    following:
+
+                    <P
+></P
+><UL
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>yes</B
+> -- Use the pre-defined asyncmap.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>no</B
+> -- Do not use the pre-defined
+                          asyncmap.
+                        </P
+></LI
+></UL
+>
+          
+                    (This represents a simplified interface; it doesn't let
+                    people specify which characters to escape.  However, almost
+                    everyone can use an asyncmap of <B
+CLASS="COMMAND"
+>00000000</B
+>
+                    anyway, and it's possible to set
+                    <B
+CLASS="COMMAND"
+>PPPOPTIONS</B
+> to use an arbitrary asyncmap
+                    if so desired.)
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>HARDFLOWCTL=<TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>answer</I
+></TT
+> is one of the
+                    following:
+
+                    <P
+></P
+><UL
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>yes</B
+> -- Use hardware flow control.
+                        </P
+></LI
+><LI
+><P
+>                          <B
+CLASS="COMMAND"
+>no</B
+> -- Do not use hardware flow
+                          control.
+                        </P
+></LI
+></UL
+>
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>PPPOPTIONS=<TT
+CLASS="REPLACEABLE"
+><I
+>options</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>options</I
+></TT
+> is an arbitrary
+                    option string.  It is placed last on the command line so it
+                    can override other options (such as asyncmap) that were
+                    specified previously.
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>PAPNAME=<TT
+CLASS="REPLACEABLE"
+><I
+>name</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>name</I
+></TT
+> is used as part of
+                    <B
+CLASS="COMMAND"
+>"name <TT
+CLASS="ENVAR"
+>$PAPNAME</TT
+>"</B
+> on the
+                    <B
+CLASS="COMMAND"
+>pppd</B
+> command line.
+                  </P
+><P
+>                    Note that the "<B
+CLASS="COMMAND"
+>remotename</B
+>" option is
+                    always specified as the logical PPP device name, like
+                    "<B
+CLASS="COMMAND"
+>ppp0</B
+>" (which might perhaps be the
+                    physical device ppp1 if some other PPP device was brought up
+                    earlier...), which makes it easy to manage PAP/CHAP files --
+                    name/password pairs are associated with the logical PPP
+                    device name so that they can be managed together.
+                  </P
+><P
+>                    In principle, there shouldn't anything that would keep the
+                    logical PPP device names from being
+                    "<B
+CLASS="COMMAND"
+>worldnet</B
+>" or "<B
+CLASS="COMMAND"
+>myISP</B
+>"
+                    instead of "<B
+CLASS="COMMAND"
+>ppp0</B
+>" --
+                    "<B
+CLASS="COMMAND"
+>pppN</B
+>."
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>REMIP=<TT
+CLASS="REPLACEABLE"
+><I
+>addr</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>addr</I
+></TT
+> is the remote IP
+                    address (which is normally unspecified).
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>MTU=<TT
+CLASS="REPLACEABLE"
+><I
+>value</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>value</I
+></TT
+> is the value to be
+                    used as MTU.
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>MRU=<TT
+CLASS="REPLACEABLE"
+><I
+>value</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>value</I
+></TT
+> is the value to be
+                    used as MRU.
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>DISCONNECTTIMEOUT=<TT
+CLASS="REPLACEABLE"
+><I
+>value</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>value</I
+></TT
+> represents the number
+                    of seconds to wait before re-establishing the connection
+                    after a successfully-connected session terminated.
+                  </P
+></LI
+><LI
+><P
+>                    <B
+CLASS="COMMAND"
+>RETRYTIMEOUT=<TT
+CLASS="REPLACEABLE"
+><I
+>value</I
+></TT
+></B
+>,
+                    where <TT
+CLASS="REPLACEABLE"
+><I
+>value</I
+></TT
+> represents the number
+                    of seconds to wait before re-attempting to establish a
+                    connection after a previous attempt has failed.
+                  </P
+></LI
+></UL
+>
+            </P
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSADMIN-CHAT"
+><TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/chat-<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;interface-name&#62;</I
+></TT
+></TT
+></A
+></H4
+><P
+>              This file is a chat script for PPP or SLIP connections, and is
+              intended to establish the connection.  For SLIP devices, a DIP
+              script is written from the chat script; for PPP devices, the chat
+              script is used directly.
+            </P
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSADMIN-DIP"
+><TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/dip-<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;interface-name&#62;</I
+></TT
+></TT
+></A
+></H4
+><P
+>              This write-only script is created from the chat script by
+              <B
+CLASS="COMMAND"
+>netcfg</B
+>.  Do not modify this file.  In the
+              future, this file may disappear and instead will be created
+              on-the-fly from the chat script.
+            </P
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSADMIN-SLIP"
+><TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/ifup-post</TT
+></A
+></H4
+><P
+>              This file is called when any network device (except a SLIP device)
+              comes up.  Calls
+              <TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/ifup-routes</TT
+> to
+              bring up static routes that depend on that device.  Brings up
+              aliases for that device.  Sets the hostname if it is not already
+              set and a hostname can be found for the IP for that device.  Sends
+              SIGIO to any programs that have requested notification of network
+              events.
+            </P
+><P
+>              Could be extended to fix up name service configuration, call
+              arbitrary scripts, and more, as needed.
+            </P
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSADMIN-DHCPCD"
+><TT
+CLASS="FILENAME"
+>/etc/sysconfig/network-scripts/ifdhcpc-done</TT
+></A
+></H4
+><P
+>              This file is called by <TT
+CLASS="FILENAME"
+>dhcpcd</TT
+> once DHCP
+              configuration is complete; sets up
+              <TT
+CLASS="FILENAME"
+>/etc/resolv.conf</TT
+> from the version
+              <TT
+CLASS="APPLICATION"
+>dhcpcd</TT
+> dropped in
+              <TT
+CLASS="FILENAME"
+>/etc/dhcpc/resolv.conf</TT
+>.
+            </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-SYSV"
+>System V Init</A
+></H2
+><P
+>          This section is a brief description of the internals of the boot
+          process.  It discusses how the machine boots using <TT
+CLASS="APPLICATION"
+>SysV
+          init</TT
+>, as well as the differences between the
+          <TT
+CLASS="APPLICATION"
+>init</TT
+> used in older Linux releases, and
+          <TT
+CLASS="APPLICATION"
+>SysV init</TT
+>.
+        </P
+><P
+>          The <TT
+CLASS="APPLICATION"
+>Init</TT
+> program is run by the
+          kernel at boot time.  It is in charge of starting all the normal
+          processes that need to run at boot time.  These include the getty
+          processes that allow you to log in, NFS daemons, FTP daemons, and
+          anything else you want to run when your machine boots.
+        </P
+><P
+>          <TT
+CLASS="APPLICATION"
+>SysV init</TT
+> is quickly becoming the standard
+          in the Linux world to control the startup of software at boot time,
+          because it is easier to use and more powerful and flexible
+          than the traditional BSD <TT
+CLASS="APPLICATION"
+>init</TT
+>.
+        </P
+><P
+>          <TT
+CLASS="APPLICATION"
+>SysV init</TT
+> also differs from
+          <TT
+CLASS="APPLICATION"
+>BSD init</TT
+> in that the configuration files
+          are in a subdirectory of <TT
+CLASS="FILENAME"
+>/etc</TT
+> instead of residing
+          directly in <TT
+CLASS="FILENAME"
+>/etc</TT
+>.  In
+          <TT
+CLASS="FILENAME"
+>/etc/rc.d</TT
+>, you will find
+          <TT
+CLASS="FILENAME"
+>rc.sysinit</TT
+> and the following directories:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>init.d
+rc0.d
+rc1.d
+rc2.d
+rc3.d
+rc4.d
+rc5.d
+rc6.d</TT
+>
+        </PRE
+></TD
+></TR
+></TABLE
+><P
+>          The <TT
+CLASS="FILENAME"
+>init.d</TT
+> directory contains a variety of
+          scripts.  Basically, you must have one script for each service you may
+          need to start at boot time or when entering another runlevel.
+          Services include things like networking, <B
+CLASS="COMMAND"
+>nfs</B
+>,
+          <B
+CLASS="COMMAND"
+>sendmail</B
+>, <B
+CLASS="COMMAND"
+>httpd</B
+>, and so on.  Services
+          do not include things like <B
+CLASS="COMMAND"
+>setserial</B
+> that must only
+          be run once and then exited.  Things like that should go in
+          <TT
+CLASS="FILENAME"
+>rc.local</TT
+> or <TT
+CLASS="FILENAME"
+>rc.serial</TT
+>.
+        </P
+><P
+>          If you want <TT
+CLASS="FILENAME"
+>rc.local</TT
+>, it should be in
+          <TT
+CLASS="FILENAME"
+>/etc/rc.d</TT
+>.  Most systems include one even though
+          it doesn't do much.  You can also include an
+          <TT
+CLASS="FILENAME"
+>rc.serial</TT
+> file in <TT
+CLASS="FILENAME"
+>/etc/rc.d</TT
+>
+          if you need to perform serial port specific tasks at boot time.
+        </P
+><P
+>          The chain of events is as follows:
+        </P
+><P
+></P
+><UL
+><LI
+><P
+>              The kernel looks in several places for
+              <TT
+CLASS="APPLICATION"
+>init</TT
+> and runs the first one it finds
+            </P
+></LI
+><LI
+><P
+>              <TT
+CLASS="APPLICATION"
+>init</TT
+> runs
+              <TT
+CLASS="FILENAME"
+>/etc/rc.d/rc.sysinit</TT
+>
+            </P
+></LI
+><LI
+><P
+>              <TT
+CLASS="FILENAME"
+>rc.sysinit</TT
+> handles most of the boot loader's
+              processes and then runs <TT
+CLASS="FILENAME"
+>rc.serial</TT
+> (if it
+              exists)
+            </P
+></LI
+><LI
+><P
+>              <TT
+CLASS="APPLICATION"
+>init</TT
+> runs all the scripts for the
+              default runlevel.
+            </P
+></LI
+><LI
+><P
+>              <TT
+CLASS="APPLICATION"
+>init</TT
+> runs <TT
+CLASS="FILENAME"
+>rc.local</TT
+>
+            </P
+></LI
+></UL
+><P
+>          The default runlevel is decided in <TT
+CLASS="FILENAME"
+>/etc/inittab</TT
+>.
+          You should have a line close to the top like:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>id:3:initdefault:</TT
+>
+        </PRE
+></TD
+></TR
+></TABLE
+><P
+>          From this, you'd look in the second column and see that the default
+          runlevel is 3.  If you want to change it, you can edit
+          <TT
+CLASS="FILENAME"
+>/etc/inittab</TT
+> by hand.  Be very careful when you
+          are editing the <TT
+CLASS="FILENAME"
+>inittab</TT
+> file. If you do mess up,
+          you can fix it by rebooting and typing:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>LILO boot:</TT
+>  <TT
+CLASS="USERINPUT"
+><B
+>linux single</B
+></TT
+>
+        </PRE
+></TD
+></TR
+></TABLE
+><P
+>          This <I
+CLASS="EMPHASIS"
+>should</I
+> allow you to boot into single user
+          mode so you can re-edit <TT
+CLASS="FILENAME"
+>inittab</TT
+> to its previous
+          value.
+        </P
+><P
+>          Now, how does it run all the right scripts?  If you enter <B
+CLASS="COMMAND"
+>ls
+-l</B
+> on <TT
+CLASS="FILENAME"
+>rc3.d</TT
+>, you might see something like:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>lrwxrwxrwx 1 root root 17 3:11 S10network -&#62; ../init.d/network
+lrwxrwxrwx 1 root root 16 3:11 S30syslog -&#62; ../init.d/syslog
+lrwxrwxrwx 1 root root 14 3:32 S40cron -&#62; ../init.d/cron
+lrwxrwxrwx 1 root root 14 3:11 S50inet -&#62; ../init.d/inet
+lrwxrwxrwx 1 root root 13 3:11 S60nfs -&#62; ../init.d/nfs
+lrwxrwxrwx 1 root root 15 3:11 S70nfsfs -&#62; ../init.d/nfsfs
+lrwxrwxrwx 1 root root 18 3:11 S90lpd -&#62; ../init.d/lpd.init
+lrwxrwxrwx 1 root root 11 3:11 S99local -&#62; ../rc.local</TT
+>
+        </PRE
+></TD
+></TR
+></TABLE
+><P
+>          What you'll notice is that there are no "real" files in the directory.
+          Everything there is a link to one of the scripts in the
+          <TT
+CLASS="FILENAME"
+>init.d</TT
+> directory.  The links also have an "S" and
+          a number at the beginning.  The "S" means to start this particular
+          script and a "K" would mean to stop it.  The number in the file name
+          is for ordering purposes.  <TT
+CLASS="APPLICATION"
+>Init</TT
+> will start
+          all the services based on the order in which they appear.  You can
+          duplicate numbers, but it will only confuse you somewhat.  You only
+          need to use a two digit number, along with an upper case "S" or "K" to
+          start or stop the services you require.
+        </P
+><P
+>          How does <TT
+CLASS="APPLICATION"
+>init</TT
+> start and stop services?
+          Simple.  Each of the scripts is written to accept an argument which
+          can be "<B
+CLASS="COMMAND"
+>start</B
+>" and "<B
+CLASS="COMMAND"
+>stop</B
+>".  You
+          can execute those scripts by hand, in fact, with a command like:
+      
+          <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>/etc/rc.d/init.d/httpd stop</B
+>
+          </PRE
+></TD
+></TR
+></TABLE
+>
+
+          This will stop the <B
+CLASS="COMMAND"
+>httpd</B
+>
+          server. <TT
+CLASS="APPLICATION"
+>init</TT
+> reads the name and if it has a
+          "K," it calls the script with the "<B
+CLASS="COMMAND"
+>stop</B
+>" argument.
+          If it has an "S" it calls the script with a "<B
+CLASS="COMMAND"
+>start</B
+>"
+          argument.
+        </P
+><P
+>          Why all these runlevels? Some people want an easy way to set up
+          machines to be multi-purpose.  You could have a "server" runlevel that
+          just runs <B
+CLASS="COMMAND"
+>httpd</B
+>, <B
+CLASS="COMMAND"
+>sendmail</B
+>,
+          networking, etc.  Then you could have a "user" runlevel that runs
+          <B
+CLASS="COMMAND"
+>gdm</B
+>, networking, and so on.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-INIT"
+>Init Runlevels</A
+></H2
+><P
+>          Generally, Red Hat Linux operates in runlevel 3 -- full multi-user mode.  The
+          following runlevels are defined in Red Hat Linux:
+        </P
+><BLOCKQUOTE
+CLASS="BLOCKQUOTE"
+><P
+></P
+><UL
+><LI
+><P
+>                <B
+CLASS="COMMAND"
+>0</B
+> -- Halt
+              </P
+></LI
+><LI
+><P
+>                <B
+CLASS="COMMAND"
+>1</B
+> -- Single user mode
+              </P
+></LI
+><LI
+><P
+>                <B
+CLASS="COMMAND"
+>2</B
+> -- Multi-user mode, without NFS
+              </P
+></LI
+><LI
+><P
+>                <B
+CLASS="COMMAND"
+>3</B
+> -- Full multi-user mode
+              </P
+></LI
+><LI
+><P
+>                <B
+CLASS="COMMAND"
+>4</B
+> -- Not used
+              </P
+></LI
+><LI
+><P
+>                <B
+CLASS="COMMAND"
+>5</B
+> -- Full multi-user mode (with an X-based
+                login screen)
+              </P
+></LI
+><LI
+><P
+>                <B
+CLASS="COMMAND"
+>6</B
+> -- Reboot
+              </P
+></LI
+></UL
+></BLOCKQUOTE
+><P
+>          If your machine gets into a state where it will not boot due to a bad
+          <TT
+CLASS="FILENAME"
+>/etc/inittab</TT
+>, or will not let you log in because
+          you have a corrupted <TT
+CLASS="FILENAME"
+>/etc/passwd</TT
+> or have simply
+          forgotten your password, boot into single user mode by typing
+          <TT
+CLASS="FILENAME"
+>linux single</TT
+> at the LILO boot prompt.  A very bare
+          system will boot and you will have a shell from which you can fix
+          things.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-INITSCPT"
+>Initscript Utilities</A
+></H2
+><P
+>          The <B
+CLASS="COMMAND"
+>chkconfig</B
+> utility provides a simple
+          command-line tool for maintaining the <TT
+CLASS="FILENAME"
+>/etc/rc.d</TT
+>
+          directory hierarchy.  It relieves system administrators from having to
+          directly manipulate the numerous symlinks in
+          <TT
+CLASS="FILENAME"
+>/etc/rc.d</TT
+>.
+        </P
+><P
+>          In addition, there is the <B
+CLASS="COMMAND"
+>ntsysv</B
+> utility, that
+          provides a screen-oriented interface, versus
+          <B
+CLASS="COMMAND"
+>chkconfig</B
+>'s command-line interface.
+        </P
+><P
+>          Please see the <B
+CLASS="COMMAND"
+>chkconfig</B
+> and
+          <B
+CLASS="COMMAND"
+>ntsysv</B
+> man pages for more information.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-RUN-BOOT"
+>Running Programs at Boot Time</A
+></H2
+><P
+>          The file <TT
+CLASS="FILENAME"
+>/etc/rc.d/rc.local</TT
+> is executed at boot
+          time, after all other initialization is complete, and whenever you
+          change runlevels.  You can add additional initialization commands
+          here.  For instance, you may want to start up additional daemons, or
+          initialize a printer.  In addition, if you require serial port setup,
+          you can edit <TT
+CLASS="FILENAME"
+>/etc/rc.d/rc.serial</TT
+>, and it will be
+          executed automatically at boot time.
+        </P
+><P
+>          The default <TT
+CLASS="FILENAME"
+>/etc/rc.d/rc.local</TT
+> simply creates a
+          nice login banner with your kernel version and machine type.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-SHUTDOWN"
+>Shutting Down</A
+></H2
+><P
+>          To shut down Red Hat Linux, issue the <B
+CLASS="COMMAND"
+>shutdown</B
+> command.
+          You can read the <B
+CLASS="COMMAND"
+>shutdown</B
+> man page for complete
+          details, but the two most common usages are:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>shutdown -h now</B
+>
+<B
+CLASS="COMMAND"
+>shutdown -r now</B
+>
+        </PRE
+></TD
+></TR
+></TABLE
+><P
+>          Each will cleanly shutdown the system.  After shutting everything
+          down, the <B
+CLASS="COMMAND"
+>-h</B
+> option will halt the machine, and the
+          <B
+CLASS="COMMAND"
+>-r</B
+> option will reboot.
+        </P
+><P
+>          Although the <B
+CLASS="COMMAND"
+>reboot</B
+> and <B
+CLASS="COMMAND"
+>halt</B
+>
+          commands are now "smart" enough to invoke <B
+CLASS="COMMAND"
+>shutdown</B
+>
+          if run while the system is in runlevels 1-5, it is a bad habit to get
+          into, as not all Linux-like operating systems have this feature.
+        </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-sysadmin-nfs.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-sysadmin-rescue.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>NFS Configuration</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-sysadmin.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Rescue Mode</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-sysadmin-boot.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

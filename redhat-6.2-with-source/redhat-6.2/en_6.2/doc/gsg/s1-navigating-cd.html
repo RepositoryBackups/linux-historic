@@ -1,0 +1,1201 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-navigating-cd.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Getting from Here to There: cd</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="You Are Here"
+HREF="ch-navigating.html"><LINK
+REL="PREVIOUS"
+TITLE="You Are Here"
+HREF="ch-navigating.html"><LINK
+REL="NEXT"
+TITLE="Looking Around with ls"
+HREF="s1-navigating-using-ls.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-navigating.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 13. You Are Here</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-navigating-using-ls.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-NAVIGATING-CD"
+>Getting from Here to There: <B
+CLASS="COMMAND"
+>cd</B
+></A
+></H1
+><P
+>        Whenever you want to change directories, all you've got to do is type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cd</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Go ahead, try it in an Xterm window.
+      </P
+><P
+>        That didn't do much, did it? That's because you didn't tell your system
+        where you wanted to go.
+      </P
+><P
+>        Whether you're going to a store in a mall or to visit relatives across
+        the country, you've got to know how to get from one point to
+        another. That is, you'll need to know the path to follow.
+      </P
+><P
+>        As with anything in life, the path -- or, pathname -- is basically the
+        set of directions that takes you from one point to another. In the case
+        of your Linux system (and in the DOS/Windows world, as well), you state
+        a path to take you from one directory or file to another.
+      </P
+><P
+>        Let's try it again. Open an Xterm window. Find yourself first with the
+        <B
+CLASS="COMMAND"
+>pwd</B
+> command. When you type your commands, your window
+        will look like:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>pwd</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>/home/newuser</TT
+>
+<TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Now that you see where you are, you can start to give your system the
+        path to follow.
+      </P
+><P
+>        Well, almost&#8230;
+      </P
+><P
+>        Try typing:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cd home</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        What happened? You know there's a directory called
+        <TT
+CLASS="FILENAME"
+>home</TT
+>, and you typed in the path. So why does it say
+        <TT
+CLASS="COMPUTEROUTPUT"
+>no such file or directory</TT
+>?
+      </P
+><P
+>        It means your path is incomplete.
+      </P
+><P
+>        Try typing:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cd /home</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Now you've successfully changed directories and moved from your login
+        directory into the subdirectory called <TT
+CLASS="FILENAME"
+>home</TT
+>.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-NAVIGATING-CDABSOLUTE"
+></A
+><P
+><IMG
+SRC="figs/navigating/cdabsolute.gif"></P
+><P
+><B
+>Figure 13-2. Absolute Pathnames State Full Path</B
+></P
+></DIV
+><P
+>        The difference, of course, was adding the forward slash.
+      </P
+><P
+>        Let's take a second to look at the reason adding a slash made all the
+        difference.
+      </P
+><P
+>        When you saw you were in <TT
+CLASS="FILENAME"
+>/home/newuser</TT
+>, you were
+        looking at the full path -- or the absolute path from the root
+        directory. You can think of the <TT
+CLASS="FILENAME"
+>newuser</TT
+> directory as
+        being located two directories "down" from the root, which is the topmost
+        level of your system.
+      </P
+><P
+>        So when you typed:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cd /home</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        you were actually saying "go to the root directory, then go to the
+        directory called home, which is one directory below the root." You
+        specified an absolute path to get to the <TT
+CLASS="FILENAME"
+>home</TT
+>
+        directory.
+      </P
+><P
+>        Now, if you type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cd /</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        you'll end up with a prompt that looks like:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost /]$</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        That single forward slash means you're at the root. When you're at the
+        root, you can't go any higher on your system (the same is true in
+        DOS/Windows).
+      </P
+><P
+>        To get back to your login directory from the root directory by using the
+        absolute path, just type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cd /home/newuser</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        You're home.
+      </P
+><P
+>        Using the absolute path is just one way to move around. Another method
+        of getting from one point to another is by using the relative path (as
+        in <A
+HREF="s1-navigating-cd.html#GR-NAVIGATING-CDRELATIVE"
+>Figure 13-3</A
+>).
+      </P
+><P
+>        Let's go back to the <TT
+CLASS="FILENAME"
+>root</TT
+> directory:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cd /</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Now, let's move <I
+CLASS="EMPHASIS"
+>back</I
+> to your login directory using
+        relative pathnames:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cd home/newuser</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Notice that the first <TT
+CLASS="FILENAME"
+>/</TT
+> is missing? That's because
+        the root directory is the <I
+CLASS="FIRSTTERM"
+>parent</I
+> of the
+        <TT
+CLASS="FILENAME"
+>home</TT
+> directory, which means that the
+        <TT
+CLASS="FILENAME"
+>home</TT
+> directory is one step down from the root
+        directory. Since <TT
+CLASS="FILENAME"
+>home</TT
+> is the parent of the
+        directory called <TT
+CLASS="FILENAME"
+>newuser</TT
+>, these two directories are
+        separated with a <TT
+CLASS="FILENAME"
+>/</TT
+>.
+      </P
+><P
+>        If you're in your login directory, you can move up one directory, to
+        home, just by typing:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cd ..</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        The relative path describes the directory you want to
+        <B
+CLASS="COMMAND"
+>cd</B
+> to in terms which are relative to your current
+        directory.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-NAVIGATING-CDRELATIVE"
+></A
+><P
+><IMG
+SRC="figs/navigating/cdrelative.gif"></P
+><P
+><B
+>Figure 13-3. Relative Pathnames are Relative to Current Position</B
+></P
+></DIV
+><P
+>        When you typed <B
+CLASS="COMMAND"
+>cd ..</B
+>, you were saying "go up one
+        directory." The next directory up, from your login directory, was
+        <TT
+CLASS="FILENAME"
+>home</TT
+>.
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>What are <I
+CLASS="FIRSTTERM"
+>parent directories</I
+>?</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          When speaking of directories which hold other directories, you can
+          refer to them as <I
+CLASS="FIRSTTERM"
+>parent directories</I
+>. In our
+          case, <TT
+CLASS="FILENAME"
+>home</TT
+> is the parent directory of
+          <TT
+CLASS="FILENAME"
+>newuser</TT
+>.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>        Using two dots (<TT
+CLASS="FILENAME"
+>..</TT
+>) when you <B
+CLASS="COMMAND"
+>cd</B
+>
+        is the same as stating you want to go to the parent of your current
+        working directory. Try using a single dot. Type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cd .</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        What happened? Not much. That's because using a single dot
+        (<TT
+CLASS="FILENAME"
+>.</TT
+>) is the same as specifying your current working
+        directory.
+      </P
+><P
+>        The differences between absolute and relative paths can sometimes be
+        pretty striking.
+      </P
+><P
+>        Getting back to our shopping mall analogy, if you were to give
+        directions by using an absolute path, you might say something like:
+      </P
+><P
+>        "Get the car keys. Get in the car. Start the car. Pull out of the
+        driveway. Drive to the corner&#8230;"
+      </P
+><P
+>        &#8230;And so on, until you're finally standing inside your favorite
+        shoe store in the shopping mall.
+      </P
+><P
+>        When you're using a relative path, you're saying something like:
+      </P
+><P
+>        "The store's a couple miles from here, in the shopping mall."
+      </P
+><P
+>        That's quite an exaggeration, but you get the idea: As long as you know
+        where you want to go in relation to where you are, you can use relative
+        paths.
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Is the path absolute or relative?</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          A path is absolute if the first character is a <TT
+CLASS="FILENAME"
+>/</TT
+>;
+          otherwise, it's a relative path.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>        You're now in the <TT
+CLASS="FILENAME"
+>home</TT
+> directory, the parent of
+        your login directory. Type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cd ..</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        and you'll find yourself at the root directory.
+      </P
+><P
+>        Using relative paths, get yourself back to your login directory by
+        typing:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cd home/newuser</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Doesn't look much different from absolute paths, does it? Notice,
+        though, that there's no forward slash in front of
+        <TT
+CLASS="FILENAME"
+>home</TT
+>. In essence, you were saying, "go one
+        directory down, to <TT
+CLASS="FILENAME"
+>home</TT
+>, then go to
+        <TT
+CLASS="FILENAME"
+>newuser</TT
+>, in the <TT
+CLASS="FILENAME"
+>home</TT
+> directory."
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Get back to your login directory quickly</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          Whenever you want to quickly jump back to your login directory just
+          type <B
+CLASS="COMMAND"
+>cd</B
+> and press <B
+CLASS="KEYCAP"
+>Enter</B
+> anywhere
+          in the system. You'll end up in your login directory.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>        That wasn't much of a demonstration.
+      </P
+><P
+>        Instead, from your login directory, type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cd ../../etc/X11</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Now, you're in the directory <TT
+CLASS="FILENAME"
+>X11</TT
+>, which is where
+        you'll find configuration files and directories related to the X Window
+        System.
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          You can always type <B
+CLASS="COMMAND"
+>pwd</B
+> to find out where you are
+          in the directory tree. And you can get back to your login directory
+          with the <B
+CLASS="COMMAND"
+>cd</B
+> command.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>        Take a look at your last <B
+CLASS="COMMAND"
+>cd</B
+> command. What you were
+        really telling your system was, "go up to the parent directory, then up
+        to that directory's parent directory (which is the root directory), then
+        go to the <TT
+CLASS="FILENAME"
+>etc</TT
+> directory and from there, to the
+        <TT
+CLASS="FILENAME"
+>X11</TT
+> directory."
+      </P
+><P
+>        Using an absolute path would also get you to the
+        <TT
+CLASS="FILENAME"
+>X11</TT
+> quickly. Type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cd /etc/X11</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        and you're there.
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Know where you are</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          Always make sure you know which working directory you're in before you
+          state the relative path to the directory or file you want to get
+          to. You don't have to worry about your position in the filesystem,
+          though, when you state the absolute path to another directory or file.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>        Now that you're starting to get the hang of changing directories, see
+        what happens when you change to root's login directory.
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cd /root</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Oops&#8230; You're not logged in as root, so you're "denied permission"
+        to access that directory.
+      </P
+><P
+>        Denying access to the root and other users' accounts (or
+        <I
+CLASS="FIRSTTERM"
+>login directories</I
+>) is one way your Linux system
+        prevents accidental or malicious tampering. You'll find out more about
+        file "ownership" and permissions later in this chapter.
+      </P
+><P
+>        Really want to change to the root login? Then you've got to use the
+        <B
+CLASS="COMMAND"
+>su</B
+> command. Type this series of commands:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>su</B
+></TT
+> 
+<TT
+CLASS="PROMPT"
+>Password:</TT
+><TT
+CLASS="USERINPUT"
+><B
+><TT
+CLASS="REPLACEABLE"
+><I
+>your root password</I
+></TT
+></B
+></TT
+> 
+<TT
+CLASS="PROMPT"
+>[root@localhost newuser]#</TT
+><TT
+CLASS="USERINPUT"
+><B
+>cd /root</B
+></TT
+> 
+<TT
+CLASS="PROMPT"
+>[root@localhost /root]#</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        As soon as you give the root password, you'll see the changes in your
+        command prompt to show your new, superuser status: the root account
+        designation at the front of the prompt and "#" at the end (as shown in
+        <A
+HREF="s1-navigating-cd.html#GR-NAVIGATING-CDROOT"
+>Figure 13-4</A
+>).
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-NAVIGATING-CDROOT"
+></A
+><P
+><IMG
+SRC="figs/navigating/cdroot.gif"></P
+><P
+><B
+>Figure 13-4. Becoming Root</B
+></P
+></DIV
+><P
+>        Now, when you <B
+CLASS="COMMAND"
+>cd</B
+> to root's login directory, you'll be
+        granted access.
+      </P
+><P
+>        When you're done working as root, just type <B
+CLASS="COMMAND"
+>exit</B
+> at
+        the prompt.
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[root@localhost /root]#</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>exit</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>exit</TT
+>
+<TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Summary</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          To change directories using absolute pathnames, type <B
+CLASS="COMMAND"
+>cd
+            <TT
+CLASS="REPLACEABLE"
+><I
+>/directory/directory</I
+></TT
+></B
+>; to change
+            directories using relative pathnames, type <B
+CLASS="COMMAND"
+>cd
+            <TT
+CLASS="REPLACEABLE"
+><I
+>directory</I
+></TT
+></B
+> to move one directory
+            below, <B
+CLASS="COMMAND"
+>cd
+            <TT
+CLASS="REPLACEABLE"
+><I
+>directory/directory</I
+></TT
+></B
+> to move two
+            directories below, etc.; to jump from anywhere on the filesystem to
+            your login directory, type <B
+CLASS="COMMAND"
+>cd</B
+>; to change to the
+            parent of the directory you're in, type <B
+CLASS="COMMAND"
+>cd ..</B
+> Use
+            <B
+CLASS="COMMAND"
+>.</B
+> to refer to your current directory.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-navigating.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-navigating-using-ls.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>You Are Here</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-navigating.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Looking Around with <B
+CLASS="COMMAND"
+>ls</B
+></TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-navigating-cd.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:04 GMT -->
+</HTML
+>

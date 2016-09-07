@@ -1,0 +1,535 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-navigating-chmodnum.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Fun with Numbers in chmod</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="You Are Here"
+HREF="ch-navigating.html"><LINK
+REL="PREVIOUS"
+TITLE="Ownership and Permissions"
+HREF="s1-navigating-ownership.html"><LINK
+REL="NEXT"
+TITLE="Working with Files and Directories"
+HREF="ch-shellmanage.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-navigating-ownership.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 13. You Are Here</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="ch-shellmanage.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-NAVIGATING-CHMODNUM"
+>Fun with Numbers in <B
+CLASS="COMMAND"
+>chmod</B
+></A
+></H1
+><P
+>        Remember when we made a reference to the "shorthand" method of chmod?
+        Here's another way to change permissions; it may seem a little complex
+        at first - especially if math isn't your strong suit.
+      </P
+><P
+>        Let's go back to the original permissions for
+        <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+>.
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>-rw-rw-r--    1 newuser newuser     150 Mar 19 08:08 sneakers.txt</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Each permission setting can be represented by a numerical value:
+      </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>            r = 4
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            w = 2
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            x = 1
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            - = 0
+          </P
+></LI
+></UL
+><P
+>        When these values are added together, the total is used to set specific
+        permissions - more specific than changing permissions with the
+        alphabetical "shorthand."
+      </P
+><P
+>        In <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+>, then, here are the numerical
+        permissions settings:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+> -  (rw-)   (rw-)  (r--)
+      |       |      |
+    4+2+0   4+2+0  4+0+0
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        The total for the user is six, the total for the group is six and the
+        total for others is four. The permissions setting, then, is read as
+        <B
+CLASS="COMMAND"
+>664</B
+>.
+      </P
+><P
+>        If we want to change <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+> so those in our
+        group didn't have write access, but could still read the file (as shown
+        in <A
+HREF="s1-navigating-chmodnum.html#GR-NAVIGATING-CHMOD1"
+>Figure 13-20</A
+>), we'll have to remove the
+        access by subtracting 2 from that set of numbers.
+      </P
+><P
+>        The numerical values, then, would become six, four and four -- or 644.
+      </P
+><P
+>        So we can type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>chmod 644 sneakers.txt</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Let's check our changes by listing the file (<B
+CLASS="COMMAND"
+>ls -l
+        sneakers.txt</B
+>):
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>-rw-r--r--    1 newuser newuser     150 Mar 19 08:08 sneakers.txt</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-NAVIGATING-CHMOD1"
+></A
+><P
+><IMG
+SRC="figs/navigating/chmod1.gif"></P
+><P
+><B
+>Figure 13-20. Removing Group Write Permissions</B
+></P
+></DIV
+><P
+>        And there it is; now, neither the group nor others have write permission
+        to <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+>. To return the group's write access
+        for the file, we can just add the value of w (2) to the second set of
+        permissions.
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>chmod 664 sneakers.txt</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="WARNING"
+><P
+></P
+><TABLE
+CLASS="WARNING"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/warning.gif"
+HSPACE="5"
+ALT="Warning"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Beware 666 and 777</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          Biblical implications aside, setting permissions to 666 or 777 will
+          allow everyone to read and write to a file or directory. Such settings
+          as these could allow tampering with sensitive files, so in general,
+          it's not a good idea to allow these settings.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>        Here's a list of some common settings, numerical values and their
+        meanings:
+      </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <TT
+CLASS="COMPUTEROUTPUT"
+>-rw-------</TT
+> (600) -- Only the user
+            has read and write permissions.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <TT
+CLASS="COMPUTEROUTPUT"
+>-rw-r--r--</TT
+> (644) -- Only user has
+            read and write permissions; the group and others can read only.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <TT
+CLASS="COMPUTEROUTPUT"
+>-rwx------</TT
+> (700) -- Only the user
+            has read, write and execute permissions.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <TT
+CLASS="COMPUTEROUTPUT"
+>-rwxr-xr-x</TT
+> (755) -- The user has
+            read, write and execute permissions; the group and others can only
+            read and execute.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <TT
+CLASS="COMPUTEROUTPUT"
+>-rwx--x--x</TT
+> (711) -- The user has
+            read, write and execute permissions; the group and others can only
+            execute.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <TT
+CLASS="COMPUTEROUTPUT"
+>-rw-rw-rw-</TT
+> (666) -- Everyone can
+            read and write to the file. Bad idea.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <TT
+CLASS="COMPUTEROUTPUT"
+>-rwxrwxrwx</TT
+> (777) -- Everyone can
+            read, write and execute.  Another bad idea.
+          </P
+></LI
+></UL
+><P
+>        Here are a couple common settings for directories:
+      </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <TT
+CLASS="COMPUTEROUTPUT"
+>drwx------</TT
+> (700) -- Only the user
+            can read, write in this directory.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <TT
+CLASS="COMPUTEROUTPUT"
+>drwxr-xr-x</TT
+> (755) -- Everyone can
+            read the directory, but its contents can only be changed by the
+            user.
+          </P
+></LI
+></UL
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Summary</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          You can change permissions with the <B
+CLASS="COMMAND"
+>chmod</B
+> command
+          by using letters or numbers.  Type <B
+CLASS="COMMAND"
+>chmod
+          <TT
+CLASS="REPLACEABLE"
+><I
+>permissions</I
+></TT
+> file</B
+> to change
+          permissions of a file or directory.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>        You've already come quite a distance in learning about your Red Hat Linux system
+        -- from navigation to setting and changing permissions.  Now, it's time to learn
+        a little more about managing what you have on your system.
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-navigating-ownership.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="ch-shellmanage.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Ownership and Permissions</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-navigating.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Working with Files and Directories</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-navigating-chmodnum.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:05 GMT -->
+</HTML
+>

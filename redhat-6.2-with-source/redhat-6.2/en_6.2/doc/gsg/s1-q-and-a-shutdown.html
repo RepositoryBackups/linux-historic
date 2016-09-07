@@ -1,0 +1,379 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-shutdown.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Shutting Down</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Q  A: Quick Answers to Common Questions"
+HREF="ch-q-and-a.html"><LINK
+REL="PREVIOUS"
+TITLE="Switching Environments"
+HREF="s1-q-and-a-switching.html"><LINK
+REL="NEXT"
+TITLE="Error Message While Installing an RPM"
+HREF="s1-q-and-a-error.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-switching.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 15. Q &#38; A: Quick Answers to Common Questions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-error.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-Q-AND-A-SHUTDOWN"
+>Shutting Down</A
+></H1
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-SHUTDOWN-Q"
+>Q: "Right way" to Shut Down</A
+></H2
+><P
+>          What's the "right way" to shut down or reboot my system? Are there any
+          shortcuts?
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-SHUTDOWN-A"
+>A: Putting Away Files</A
+></H2
+><P
+>          Any method you choose which allows your Red Hat Linux system to put away all
+          its data files and stop running processes is the "right way" to shut
+          down. <I
+CLASS="EMPHASIS"
+>Never</I
+> simply turn off your machine.
+        </P
+><P
+>          Here are two ways you can cleanly shut down your system:
+        </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>              From your X session: Go to the <B
+CLASS="GUIMENU"
+>Panel's</B
+>
+              <B
+CLASS="GUIICON"
+>Main Menu Button</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Log
+              out</B
+> then choose <B
+CLASS="GUIBUTTON"
+>Logout</B
+>,
+              <B
+CLASS="GUIBUTTON"
+>Halt</B
+> or <B
+CLASS="GUIBUTTON"
+>Reboot</B
+>. You
+              can also choose to save your current setup, which means that the
+              programs which are running when you log out will return when you
+              log back in.
+            </P
+><P
+>              If you select either <B
+CLASS="GUIBUTTON"
+>Halt</B
+> or
+              <B
+CLASS="GUIBUTTON"
+>Reboot</B
+>, you'll be required to enter your
+              login password after you press the <B
+CLASS="GUIBUTTON"
+>OK</B
+>
+              button to verify your selection.
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              From the shell prompt: In an Xterm window, type <B
+CLASS="COMMAND"
+>shutdown
+              -r now</B
+> or <B
+CLASS="COMMAND"
+>shutdown -h now</B
+>. The
+              <B
+CLASS="COMMAND"
+>-r</B
+> means "reboot" and the <B
+CLASS="COMMAND"
+>-h</B
+>
+              means "halt."  You will be required to enter your password before
+              these commands are executed.
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              From the login screen: Go to <B
+CLASS="GUIMENU"
+>Option</B
+> =&#62;
+              <SPAN
+CLASS="GUISUBMENU"
+>System</SPAN
+>. You can choose whether to halt or
+              reboot your system, without a required password.
+            </P
+></LI
+></UL
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-Q-AND-A-REBOOT-SHORTCUT"
+>A Shortcut to Rebooting</A
+></H3
+><P
+>            One of the fastest ways to reboot your system is to perform the
+            "three-fingered salute" -- Pressing the
+            <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>Alt</B
+>-<B
+CLASS="KEYCAP"
+>Del</B
+>
+            keys all at the same time -- from a <I
+CLASS="FIRSTTERM"
+>virtual
+            console</I
+>.
+          </P
+><P
+>            A virtual console is a character cell interface, unlike the
+            graphical interface of the X Window System. There are several
+            virtual consoles available to you, but the easiest to remember is
+            probably the first one.  You can reach it by pressing
+            <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>Alt</B
+>-<B
+CLASS="KEYCAP"
+>F1</B
+>.
+          </P
+><P
+>            <DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Getting Back</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>                To return to your X session from a virtual console, just press
+                the
+                <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>Alt</B
+>-<B
+CLASS="KEYCAP"
+>F7</B
+>
+                keys.
+              </P
+></TD
+></TR
+></TABLE
+></DIV
+>
+          </P
+><P
+>            To reboot from a virtual console, first move to a virtual console by
+            pressing
+            <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>Alt</B
+>-<B
+CLASS="KEYCAP"
+>F1</B
+>,
+            then press
+            <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>Alt</B
+>-<B
+CLASS="KEYCAP"
+>Del</B
+>
+            to reboot.
+          </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-switching.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-error.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Switching Environments</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-q-and-a.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Error Message While Installing an RPM</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-shutdown.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+</HTML
+>

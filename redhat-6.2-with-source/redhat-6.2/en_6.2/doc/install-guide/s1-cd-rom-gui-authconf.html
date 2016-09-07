@@ -1,0 +1,277 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/s1-cd-rom-gui-authconf.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:48:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Authentication Configuration</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Installing Red Hat Linux 6.2"
+HREF="ch-cd-rom-gui.html"><LINK
+REL="PREVIOUS"
+TITLE="Account Configuration"
+HREF="s1-cd-rom-gui-account.html"><LINK
+REL="NEXT"
+TITLE="Package Group Selection"
+HREF="s1-cd-rom-gui-sel-group.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Installation Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-cd-rom-gui-account.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 4. Installing Red Hat Linux 6.2</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-cd-rom-gui-sel-group.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-CD-ROM-GUI-AUTHCONF"
+>Authentication Configuration</A
+></H1
+><P
+>	If you are performing a workstation-class installation, please skip
+	ahead to <A
+HREF="s1-cd-rom-gui-xconf.html"
+>the section called <I
+>GUI X Configuration Tool</I
+></A
+>.
+      </P
+><P
+>	If you are performing a server-class installation, please skip ahead to
+	<A
+HREF="s1-cd-rom-gui-inst-ready.html"
+>the section called <I
+>Preparing to Install</I
+></A
+>.
+      </P
+><P
+>        You may skip this section if you will not be setting up network
+        passwords. If you are unsure as to whether you should do this, please
+        ask your system administrator for assistance.
+      </P
+><P
+>        Unless you are setting up <TT
+CLASS="GUILABEL"
+><B
+>NIS</B
+></TT
+> authentication, you will
+        notice that both <TT
+CLASS="GUILABEL"
+><B
+>MD5</B
+></TT
+> and
+        <TT
+CLASS="GUILABEL"
+><B
+>shadow</B
+></TT
+> passwords are selected (see <A
+HREF="s1-cd-rom-gui-authconf.html#GR-CD-ROM-GUI-FIG-AUTH"
+>Figure 4-13</A
+>). We recommend you use both to
+        make your machine as secure as possible.
+      </P
+><P
+>        To configure the NIS option, you must be connected to an NIS network. If
+        you are unsure whether you are connected to an NIS network, please ask
+        your system administrator.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-CD-ROM-GUI-FIG-AUTH"
+></A
+><P
+><IMG
+SRC="figs/cd-rom-gui/auth.gif"></P
+><P
+><B
+>Figure 4-13. Authentication Configuration</B
+></P
+></DIV
+><P
+></P
+><UL
+><LI
+><P
+>            <TT
+CLASS="GUILABEL"
+><B
+>MD5 Password</B
+></TT
+> -- allows a long password to be
+            used (up to 256 characters), instead of the standard eight letters
+            or less.
+          </P
+></LI
+><LI
+><P
+>            <TT
+CLASS="GUILABEL"
+><B
+>Shadow Password</B
+></TT
+> -- provides a secure method of
+            retaining passwords. The passwords are stored in
+            <B
+CLASS="COMMAND"
+>/etc/shadow</B
+>, which is readable only by root.
+          </P
+></LI
+><LI
+><P
+>            <TT
+CLASS="GUILABEL"
+><B
+>Enable NIS</B
+></TT
+> -- allows you to run a group of
+            computers in the same Network Information Service domain with a
+            common password and group file. There are two options to choose from
+            here:
+          </P
+><P
+></P
+><UL
+><LI
+><P
+>                <TT
+CLASS="GUILABEL"
+><B
+>NIS Domain</B
+></TT
+> -- this option allows you to
+                specify which domain or group of computers your system belongs
+                to.
+              </P
+></LI
+><LI
+><P
+>                <TT
+CLASS="GUILABEL"
+><B
+>NIS Server</B
+></TT
+> -- this option causes your
+                computer to use a specific NIS server, rather than
+                "broadcasting" a message to the local area network asking for
+                any available server to host your system.
+              </P
+></LI
+></UL
+></LI
+></UL
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-cd-rom-gui-account.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-cd-rom-gui-sel-group.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Account Configuration</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-cd-rom-gui.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Package Group Selection</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/s1-cd-rom-gui-authconf.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:48:05 GMT -->
+</HTML
+>

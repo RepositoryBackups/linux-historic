@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# Autorun script for Red Hat Linux
+# Copyright (c) 1999 Red Hat, Inc.
+
+kwmpid=`/sbin/pidof kwm`
+kpackage=`/usr/bin/which kpackage` 2> /dev/null
+gnorpm=`/usr/bin/which gnorpm-auth` 2> /dev/null
+
+if [ -d /mnt/cdrom ]; then
+  cd /mnt/cdrom
+fi
+
+if [ "$kwmpid" = "" ]; then
+  # they are running GNOME most likely, use gnorpm
+  if [ ! "$gnorpm" = "" ]; then
+    $gnorpm
+  elif [ ! "$kpackage" = "" ]; then
+    $kpackage
+  fi
+else
+  if [ ! "$kpackage" = "" ]; then
+    $kpackage
+  elif [ ! "$gnorpm" = "" ]; then
+    $gnorpm
+  fi
+fi

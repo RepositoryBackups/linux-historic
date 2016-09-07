@@ -1,0 +1,213 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-ldap-extrafunctionality.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Modules for Adding Extra Functionality to LDAP</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Lightweight Directory Access Protocol (LDAP)"
+HREF="ch-ldap.html"><LINK
+REL="PREVIOUS"
+TITLE="OpenLDAP Daemons and Utilities"
+HREF="s1-ldap-daemonsutils.html"><LINK
+REL="NEXT"
+TITLE="LDAP How To:  A Quick Overview"
+HREF="s1-ldap-quickstart.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-ldap-daemonsutils.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 8. Lightweight Directory Access Protocol (LDAP)</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-ldap-quickstart.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-LDAP-EXTRAFUNCTIONALITY"
+>Modules for Adding Extra Functionality to LDAP</A
+></H1
+><P
+>	Red Hat Linux includes the following packages which add functionality to LDAP:
+      </P
+><P
+>	The <TT
+CLASS="FILENAME"
+>nss_ldap</TT
+> module is an LDAP module for the
+	<I
+CLASS="FIRSTTERM"
+>Solaris Nameservice Switch</I
+> (NSS).  NSS is a set
+	of C library extensions necessary for accessing LDAP directory
+	information, instead of or in addition to the <I
+CLASS="FIRSTTERM"
+>Network
+	Information Service</I
+> (NIS) name service and/or flat
+	files. The <TT
+CLASS="FILENAME"
+>nss_ldap</TT
+> module is needed to use LDAP as
+	a native name service.
+      </P
+><P
+>	The <TT
+CLASS="FILENAME"
+>pam_ldap</TT
+> module is needed to integrate LDAP
+	authentication into the Pluggable Authentication Modules (PAM) API.  If
+	you use <TT
+CLASS="FILENAME"
+>pam_ldap</TT
+>, users can authenticate and change
+	their password using LDAP directories. The <TT
+CLASS="FILENAME"
+>nss_ldap</TT
+>
+	and <TT
+CLASS="FILENAME"
+>pam_ldap</TT
+> modules are provided in the
+	<TT
+CLASS="FILENAME"
+>nss_ldap</TT
+> package.
+      </P
+><P
+>	Red Hat Linux also includes LDAP modules for the Apache Web server. The
+	<TT
+CLASS="FILENAME"
+>auth_ldap</TT
+> module is for authenticating HTTP clients
+	against the user entries in an LDAP directory. The
+	<TT
+CLASS="FILENAME"
+>php-ldap</TT
+> module adds LDAP support to the PHP3
+	HTML-embedded scripting language. The <TT
+CLASS="FILENAME"
+>auth_ldap</TT
+> and
+	<TT
+CLASS="FILENAME"
+>php-ldap</TT
+> modules will need to be compiled into
+	Apache as <I
+CLASS="FIRSTTERM"
+>Dynamic Shared Objects</I
+> (DSOs).
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-ldap-daemonsutils.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-ldap-quickstart.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><TT
+CLASS="APPLICATION"
+>OpenLDAP</TT
+> Daemons and Utilities</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-ldap.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>LDAP How To:  A Quick Overview</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-ldap-extrafunctionality.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

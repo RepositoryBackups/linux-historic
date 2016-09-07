@@ -1,0 +1,1514 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-sysadmin-usr-grps.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Users, Groups and User-Private Groups</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="System Administration"
+HREF="ch-sysadmin.html"><LINK
+REL="PREVIOUS"
+TITLE="Special Red Hat File Locations"
+HREF="s1-sysadmin-special-file.html"><LINK
+REL="NEXT"
+TITLE="Configuring Console Access"
+HREF="s1-sysadmin-console-access.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-sysadmin-special-file.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 2. System Administration</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-sysadmin-console-access.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-SYSADMIN-USR-GRPS"
+>Users, Groups and User-Private Groups</A
+></H1
+><P
+>        Managing users and groups has traditionally been tedious, but Red Hat Linux has a
+        few tools and conventions that make users and groups easier to manage.
+      </P
+><P
+>	While you can use <B
+CLASS="COMMAND"
+>useradd</B
+> to create a new user from
+        the shell prompt, the easiest way to manage users and groups is through
+        <TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+> (see <A
+HREF="ch-sysconfig.html"
+>Chapter 3</A
+>).  
+      </P
+><P
+>	Next, we'll discuss the basic structure behind managing users and groups.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-USERS"
+>Standard Users</A
+></H2
+><P
+>          In <A
+HREF="s1-sysadmin-usr-grps.html#TB-SYSADMIN-GROUP-USE"
+>Table 2-1</A
+>, you'll find the standard
+          users set up by the installation process (this is essentially the
+          <TT
+CLASS="FILENAME"
+>/etc/passwd</TT
+> file).  The <I
+CLASS="FIRSTTERM"
+>Group
+          ID</I
+> (GID) in this table is the <I
+CLASS="EMPHASIS"
+>primary
+          group</I
+> for the user.  See <A
+HREF="s1-sysadmin-usr-grps.html#S2-SYSADMIN-PRIV-GROUPS"
+>the section called <I
+>User Private Groups</I
+></A
+> for details on how groups are used.
+        </P
+><DIV
+CLASS="TABLE"
+><A
+NAME="TB-SYSADMIN-GROUP-USE"
+></A
+><P
+><B
+>Table 2-1. Standard Users</B
+></P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+CELLSPACING="0"
+CELLPADDING="4"
+CLASS="CALSTABLE"
+><TR
+><TH
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  User
+                </TH
+><TH
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  UID
+                </TH
+><TH
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  GID
+                </TH
+><TH
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  Home Directory
+                </TH
+><TH
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  Shell
+                </TH
+></TR
+><TR
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  root
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  0
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  0
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <TT
+CLASS="FILENAME"
+>/root</TT
+>
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <TT
+CLASS="FILENAME"
+>/bin/bash</TT
+>
+                </TD
+></TR
+><TR
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  bin
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  1
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  1
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <TT
+CLASS="FILENAME"
+>/bin</TT
+>
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  daemon
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  2
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  2
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <TT
+CLASS="FILENAME"
+>/sbin</TT
+>
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  adm
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  3
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  4
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <TT
+CLASS="FILENAME"
+>/var/adm</TT
+>
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  lp
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  4
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  7
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <TT
+CLASS="FILENAME"
+>/var/spool/lpd</TT
+>
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  sync
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  5
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  0
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <TT
+CLASS="FILENAME"
+>/sbin</TT
+>
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <TT
+CLASS="FILENAME"
+>/bin/sync</TT
+>
+                </TD
+></TR
+><TR
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  shutdown
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  6
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  0
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <TT
+CLASS="FILENAME"
+>/sbin</TT
+>
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <TT
+CLASS="FILENAME"
+>/sbin/shutdown</TT
+>
+                </TD
+></TR
+><TR
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  halt
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  7
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  0
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <TT
+CLASS="FILENAME"
+>/sbin</TT
+>
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <TT
+CLASS="FILENAME"
+>/sbin/halt</TT
+>
+                </TD
+></TR
+><TR
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  mail
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  8
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  12
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <TT
+CLASS="FILENAME"
+>/var/spool/mail</TT
+>
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  news
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  9
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  13
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <TT
+CLASS="FILENAME"
+>/var/spool/news</TT
+>
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  uucp
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  10
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  14
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <TT
+CLASS="FILENAME"
+>/var/spool/uucp</TT
+>
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  operator
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  11
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  0
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <TT
+CLASS="FILENAME"
+>/root</TT
+>
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  games
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  12
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  100
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <TT
+CLASS="FILENAME"
+>/usr/games</TT
+>
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  gopher
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  13
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  30
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <TT
+CLASS="FILENAME"
+>/usr/lib/gopher-data</TT
+>
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  ftp
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  14
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  50
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <TT
+CLASS="FILENAME"
+>/home/ftp</TT
+>
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  nobody
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  99
+                </TD
+><TD
+WIDTH="7%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  99
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <TT
+CLASS="FILENAME"
+>/</TT
+>
+                </TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-GROUPS"
+>Standard Groups</A
+></H2
+><P
+>      In <A
+HREF="s1-sysadmin-usr-grps.html#TB-SYSADMIN-GROUP-ETC"
+>Table 2-2</A
+>, you'll find the standard groups
+      as set up by the installation process (this is essentially the
+      <TT
+CLASS="FILENAME"
+>/etc/group</TT
+> file).
+    </P
+><DIV
+CLASS="TABLE"
+><A
+NAME="TB-SYSADMIN-GROUP-ETC"
+></A
+><P
+><B
+>Table 2-2. Standard Groups</B
+></P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+CELLSPACING="0"
+CELLPADDING="4"
+CLASS="CALSTABLE"
+><TR
+><TH
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  Group
+                </TH
+><TH
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  GID
+                </TH
+><TH
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  Members
+                </TH
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  root
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  0
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  root
+                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  bin
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  1
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  root, bin, daemon
+                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  daemon
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  2
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  root, bin, daemon
+                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  sys
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  3
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  root, bin, adm
+                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  adm
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  4
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  root, adm, daemon
+                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  tty
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  5
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  disk
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  6
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  root
+                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  lp
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  7
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  daemon, lp
+                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  mem
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  8
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  kmem
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  9
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  wheel
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  10
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  root
+                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  mail
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  12
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  mail
+                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  news
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  13
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  news
+                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  uucp
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  14
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  uucp
+                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  man
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  15
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  games
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  20
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  gopher
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  30
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  dip
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  40
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  ftp
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  50
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  nobody
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  99
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  users
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  100
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  floppy
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  19
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                </TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-PRIV-GROUPS"
+>User Private Groups</A
+></H2
+><P
+>          Red Hat Linux uses a <I
+CLASS="FIRSTTERM"
+>user private group</I
+> (UPG) scheme,
+          which makes UNIX groups much easier to use.  The UPG scheme does not
+          add or change anything in the standard UNIX way of handling groups.
+          It simply offers a new convention for handling groups.  Whenever you
+          create a new user, by default, he or she has a unique group.  The
+          scheme works as follows:
+        </P
+><P
+></P
+><DL
+><DT
+><I
+CLASS="EMPHASIS"
+>User Private Group</I
+></DT
+><DD
+><P
+>                Each user has their own primary group, of which only they are a
+                member.
+              </P
+></DD
+><DT
+><I
+CLASS="EMPHASIS"
+>umask = 002</I
+></DT
+><DD
+><P
+>                The traditional UNIX umask is 022, which prevents other users
+                <I
+CLASS="EMPHASIS"
+>and other members of a user's primary group</I
+>
+                from modifying a user's files.  Since every user has their own
+                private group in the UPG scheme, this "group protection" is not
+                needed.  A umask of 002 will prevent users from modifying other
+                users' private files.  The umask is set in
+                <TT
+CLASS="FILENAME"
+>/etc/profile</TT
+>.
+              </P
+></DD
+><DT
+><I
+CLASS="EMPHASIS"
+>setgid bit on Directories</I
+></DT
+><DD
+><P
+>                If you set the setgid bit on a directory (with <B
+CLASS="COMMAND"
+>chmod
+                g+s</B
+>
+                <TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>directory</I
+></TT
+></TT
+>),
+                files created in that directory will have their group set to the
+                directory's group.
+              </P
+></DD
+></DL
+><P
+>          Most IT organizations like to create a group for each major project
+          and assign people to the groups they should be in.  Managing files
+          traditionally has been difficult, though, because when someone creates
+          a file it is owned by the primary group he or she belongs to.  When a
+          single person works on multiple projects, it becomes hard to associate
+          the right files to the right ownership group. In the UPG scheme,
+          groups are automatically assigned to files on a project-by-project
+          basis, which makes managing group projects very simple.
+        </P
+><P
+>          Let's say you have a big project called <I
+CLASS="EMPHASIS"
+>devel</I
+>,
+          with many people editing the devel files in a
+          <TT
+CLASS="FILENAME"
+>devel</TT
+> directory.  Make a group called
+          <TT
+CLASS="FILENAME"
+>devel</TT
+>, <B
+CLASS="COMMAND"
+>chgrp</B
+> the
+          <TT
+CLASS="FILENAME"
+>devel</TT
+> directory to <TT
+CLASS="FILENAME"
+>devel</TT
+>,
+          and add the all the devel users to the <TT
+CLASS="FILENAME"
+>devel</TT
+>
+          group.  Now, all devel users will be able to edit the devel files and
+          create new files in the <TT
+CLASS="FILENAME"
+>devel</TT
+> directory, and
+          these files will always retain their <TT
+CLASS="FILENAME"
+>devel</TT
+> group.
+          Thus, they will always be edit-able by other devel users.
+        </P
+><P
+>          If you have multiple projects like <I
+CLASS="EMPHASIS"
+>devel</I
+>, and
+          users who are working on multiple projects, these users will never
+          have to change their umask or group when they move from project to
+          project.  The setgid bit on each project's main directory "selects"
+          the proper group.
+        </P
+><P
+>          Since each user's home directory is owned by the user and their
+          private group, it is safe to set the setgid bit on the home directory.
+          However, by default, files are created with the primary group of the
+          user, so the setgid bit would be redundant.
+        </P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSADMIN-RATIONALE"
+>User Private Group Rationale</A
+></H3
+><P
+>            Although UPG is not new to Red Hat Linux 6.2, many people still have
+            questions about it, such as why UPG is necessary.  The following is
+            the rationale for the scheme.
+          </P
+><P
+></P
+><UL
+><LI
+><P
+>                You'd like to have a group of people work on a set of files in
+                say, the <TT
+CLASS="FILENAME"
+>/usr/lib/emacs/site-lisp</TT
+>
+                directory.  You trust a few people to mess around in there, but
+                certainly not everyone.
+              </P
+></LI
+><LI
+><P
+>                So you enter:
+        
+                <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>chown -R root.emacs <TT
+CLASS="FILENAME"
+>/usr/lib/emacs/site-lisp</TT
+></B
+>
+                </PRE
+></TD
+></TR
+></TABLE
+>
+
+                and you add the proper users to the group.
+              </P
+></LI
+><LI
+><P
+>                To allow the users to actually create files in the directory you
+                enter:
+        
+                <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>chmod 775 <TT
+CLASS="FILENAME"
+>/usr/lib/emacs/site-lisp</TT
+></B
+>
+                </PRE
+></TD
+></TR
+></TABLE
+>
+              </P
+></LI
+><LI
+><P
+>                But when a user creates a new file it is assigned the group of
+                the user's default group (usually <TT
+CLASS="FILENAME"
+>users</TT
+>).
+                To prevent this you enter:
+
+                <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>chmod 2775 /usr/lib/emacs/site-lisp</B
+>
+                </PRE
+></TD
+></TR
+></TABLE
+>
+
+                which causes everything in the directory to be created with the
+                "emacs" group.
+              </P
+></LI
+><LI
+><P
+>                But the new file needs to be mode 664 for another user in the
+                emacs group to be able to edit it.  To do this you make the
+                default umask 002.
+              </P
+></LI
+><LI
+><P
+>                Well, this all works fine, except that if your default group is
+                "users," every file you create in your home directory will be
+                writable by everybody in "users" (usually everyone).
+              </P
+></LI
+><LI
+><P
+>                To fix this, you make each user have a "private group" as their
+                default group.
+              </P
+></LI
+></UL
+><P
+>            At this point, by making the default umask 002 and giving everyone a
+            private default group, you can easily set up groups that users can
+            take advantage of without doing any magic.  Just create the group,
+            add the users, and do the above <B
+CLASS="COMMAND"
+>chown</B
+> and
+            <B
+CLASS="COMMAND"
+>chmod</B
+> on the group's directories.
+          </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-sysadmin-special-file.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-sysadmin-console-access.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Special Red Hat File Locations</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-sysadmin.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Configuring Console Access</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-sysadmin-usr-grps.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

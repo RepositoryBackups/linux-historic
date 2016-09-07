@@ -1,0 +1,207 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-ldap.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:58:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Lightweight Directory Access Protocol (LDAP)</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="System-Related Reference"
+HREF="p196.html"><LINK
+REL="PREVIOUS"
+TITLE="Package Manipulation"
+HREF="s1-gnorpm-manipulation.html"><LINK
+REL="NEXT"
+TITLE="Pros and Cons of LDAP"
+HREF="s1-ldap-procon.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-gnorpm-manipulation.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-ldap-procon.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CH-LDAP"
+>Chapter 8. Lightweight Directory Access Protocol (LDAP)</A
+></H1
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-LDAP-WHATISIT"
+>What is LDAP?</A
+></H1
+><P
+>	LDAP (Lightweight Directory Access Protocol) is a proposed open standard
+	for global or local directory services over a network and/or the
+	Internet.  A directory, in this sense, is very much like a phone book.
+	LDAP can handle other information, but at present it is typically used
+	to associate names with phone numbers and e-mail addresses. Directories
+	are designed to support a high volume of queries, but the data in the
+	directory doesn't change all that often.
+      </P
+><P
+>	LDAP is much more useful than a paper phone book, because LDAP's design
+	is intended to support propagation over LDAP servers throughout the
+	Internet, much like the Domain Name Service (DNS). The DNS system acts
+	as the address book of the Internet by keeping track of domain name/IP
+	address pairs. DNS servers tell networked machines where packets need to
+	go. In the future, LDAP could provide the same type of global access to
+	many types of directory information: at present, LDAP is more commonly
+	used within a single large organization, like a college or a company,
+	for directory services.
+      </P
+><P
+>	LDAP is a client-server system. An LDAP client connects to an LDAP
+	server and either queries for information or provides information that
+	needs to be entered into the directory. The server either answers the
+	query, refers the query to another LDAP server, or accepts the
+	information for incorporation into the directory.
+      </P
+><P
+>	LDAP is sometimes known as <I
+CLASS="FIRSTTERM"
+>X.500 Lite</I
+>. X.500 is
+	an international standard for directories. X.500 is full-featured, but
+	it is complex and requires lots of computing resources and the full OSI
+	stack. LDAP, in contrast, can run easily on a PC and over TCP/IP. LDAP
+	can access X.500 directories, but it does not support every capability
+	of X.500.
+      </P
+><P
+>	
+	This chapter will refer to the configuration and use of
+	<TT
+CLASS="APPLICATION"
+>OpenLDAP</TT
+>, an open source implementation of
+	LDAP.  <TT
+CLASS="APPLICATION"
+>OpenLDAP</TT
+> includes
+	<B
+CLASS="COMMAND"
+>slapd</B
+>, a stand-alone LDAP server;
+	<B
+CLASS="COMMAND"
+>slurpd</B
+>, a stand-alone LDAP replication server;
+	libraries implementing the LDAP protocol; utilities; tools; and sample
+	clients.
+      </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-gnorpm-manipulation.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-ldap-procon.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Package Manipulation</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="p196.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Pros and Cons of LDAP</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-ldap.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:58:05 GMT -->
+</HTML
+>

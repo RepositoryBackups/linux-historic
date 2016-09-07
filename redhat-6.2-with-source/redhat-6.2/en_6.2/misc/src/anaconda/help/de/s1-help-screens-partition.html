@@ -1,0 +1,383 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/de/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Partitionen</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.52"><LINK
+REL="HOME"
+TITLE="Hilfebildschirme für die Installation"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="Automatisch partitionieren"
+HREF="s1-help-screens-svr.html"><LINK
+REL="NEXT"
+TITLE="Konfiguration des Dateisystems"
+HREF="s1-help-screens-loopback.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-PARTITION"
+>Partitionen</A
+></H1
+><P
+>	Wo möchten Sie Red Hat Linux installieren?
+      </P
+><P
+>	<B
+CLASS="COMMAND"
+>Bitte beachten:</B
+> Wenn Sie eine 
+	<B
+CLASS="COMMAND"
+>partitionslose Installation</B
+> durchführen, 
+	müssen Sie eine vorhandene DOS/Windows-Partition als Root (
+	<B
+CLASS="COMMAND"
+>/</B
+>) definieren. Klicken Sie auf die FAT-Partition, 
+	die Sie für diese Installation auswählen möchten. 
+	Sobald diese hervorgehoben wird, klicken Sie auf 
+	<I
+CLASS="GUILABEL"
+>Bearbeiten</I
+>, um der Partition den Mount-Point 
+	<B
+CLASS="COMMAND"
+>/</B
+> (root) zuzuweisen. Klicken Sie dann auf 
+	<I
+CLASS="GUILABEL"
+>OK</I
+>. Wenn Sie Ihre Eingabe bestätigt haben, 
+	müssen Sie geeignete Einstellungen für das Root-Dateisystem 
+	und den Swap-Bereich für Ihr System festlegen.
+      </P
+><P
+>	Weitere Informationen finden Sie im Kapitel 
+	<I
+CLASS="EMPHASIS"
+>Installation ohne Neupartitionieren</I
+> im 
+	<I
+CLASS="CITETITLE"
+>Red Hat Linux Installation Guide</I
+>.
+      </P
+><P
+>	Wenn Sie mit der Partitionierung Ihres Systems noch nicht vertraut 
+	sind, sollten Sie sich den Abschnitt über das Partitionieren 
+	im <I
+CLASS="CITETITLE"
+>Red Hat Linux Installation Guide</I
+> oder 
+	<I
+CLASS="CITETITLE"
+>Red Hat Linux Reference Guide</I
+> durchlesen.
+      </P
+><P
+>	Wenn Sie gerade das Partitionieren Ihrer Festplatte(n) mit 
+	<TT
+CLASS="APPLICATION"
+>fdisk</TT
+> abgeschlossen haben, müssen Sie 
+	jetzt <I
+CLASS="FIRSTTERM"
+>Mount-Points</I
+> für Ihre Partitionen 
+	definieren. Wählen Sie hierzu die gewünschte Partition aus, 
+	und klicken Sie dann auf 
+	<I
+CLASS="GUILABEL"
+>Bearbeiten</I
+>, um die Mount-Points festzulegen.
+      </P
+><P
+>	Wenn Sie <TT
+CLASS="APPLICATION"
+>Disk Druid</TT
+> verwenden, müssen 
+	Sie Mount-Points für eine oder mehrere Festplattenpartitionen 
+	festlegen. Möglicherweise ist es auch erforderlich, daß 
+	Sie jetzt Partitionen erstellen und/oder löschen.
+      </P
+><P
+>	In der oberen Hälfte Ihres Bildschirms können Sie sich 
+	über Ihre vorhandenen Partitionen informieren. Für jede 
+	Partition werden fünf Felder angezeigt:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Mount-Point:</B
+> Dieses Feld zeigt an, wo die 
+	    Partition gemountet wird, wenn Red Hat Linux installiert ist und 
+	    ausgeführt wird. Wenn eine Partition bereits existiert, aber 
+	    als "nicht gesetzt" gekennzeichnet ist, müssen Sie 
+	    noch den Mount-Point für diese Partition definieren. Zu 
+	    diesem Zweck können Sie auf 
+	    <B
+CLASS="KEYCAP"
+>Bearbeiten </B
+> klicken oder auf die Partition 
+	    doppelklicken.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Gerät:</B
+> In diesem Feld wird der 
+	    Gerätename Ihrer Partition angezeigt (beispielsweise steht 
+	    hda2 für die zweite Partition auf Ihrer ersten Festplatte).
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Angefordert:</B
+> Im Feld 
+	    <I
+CLASS="FIRSTTERM"
+>Angefordert</I
+> wird angezeigt, wie groß 
+	    der von der Partition zur Verfügung gestellte Platz ist. Wenn 
+	    Sie die Größe ändern möchten, müssen Sie 
+	    die aktuelle Partition löschen und mit dem Befehl 
+	    <B
+CLASS="KEYCAP"
+>Hinzufügen</B
+> wieder erstellen.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Tatsächlich:</B
+> In diesem Feld wird 
+	    angezeigt, wieviel Platz die Partition belegt.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Typ:</B
+> In diesem Feld wird der Partitionstyp 
+	    angezeigt (wie Linux Native oder DOS).
+	  </P
+></LI
+></UL
+><P
+>	Wenn Sie die Liste im Bereich <I
+CLASS="FIRSTTERM"
+>Partitionen</I
+> 
+	scrollen, wird möglicherweise in roter Schrift die Meldung 
+	angezeigt, daß Partitionen noch nicht zugewiesen wurden (
+	<I
+CLASS="FIRSTTERM"
+>Nicht zugewiesene, angeforderte Partition</I
+>
+	). Außerdem erfahren Sie, um welche Partitionen es sich dabei 
+	handelt. Häufig sind nicht zugewiesene Partitionen darauf 
+	zurückzuführen, daß für die Partition nicht 
+	ausreichend freier Platz vorhanden ist.
+      </P
+><P
+>	Um Probleme mit nicht zugewiesenen Partitionen zu beheben, müssen 
+	Sie die Partition entweder auf ein anderes Laufwerk mit ausreichend 
+	Speicher verschieben, die Größe der Partition an das 
+	aktuelle Laufwerk anpassen oder die Partition vollständig 
+	löschen. Die erforderlichen Änderungen können Sie 
+	vornehmen, indem Sie auf den Button 
+	<B
+CLASS="KEYCAP"
+>Bearbeiten</B
+> klicken oder auf die Partition 
+	doppelklicken.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DD"
+>Partitionieren des Systems</A
+></H2
+><P
+>	  Mit den Buttons in der Mitte können Sie die verschiedenen 
+	  Aktionen für das Partitionieren starten. Sie haben die 
+	  Möglichkeit, durch Klicken auf diese Buttons Partitionen 
+	  hinzuzufügen, zu bearbeiten und zu löschen. Außerdem 
+	  stehen Ihnen Buttons zur Verfügung, mit denen Sie die 
+	  vorgenommenen Änderungen akzeptieren, die Einstellungen 
+	  zurücksetzen oder das Dienstprogramm zur Partitionierung 
+	  beenden können.
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Hinzufügen:</B
+> Mit diesem Button 
+	      können Sie eine neue Partition erstellen. Nachdem Sie auf 
+	      den Button geklickt haben, wird ein Dialogfeld angezeigt, in dem 
+	      Sie in verschiedenen Feldern Angaben machen müssen 
+	      (beispielsweise zum Mount-Point und zu Größe und Typ 
+	      der neuen Partition).
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Bearbeiten:</B
+> Mit diesem Button können Sie 
+	      den Mount-Point einer aktuell ausgewählten Partition 
+	      ändern.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Löschen:</B
+> Mit diesem Button können 
+	      Sie eine Partition löschen. Nachdem Sie auf den Button 
+	      geklickt haben, müssen Sie Ihre Auswahl in einem Dialogfeld 
+	      bestätigen.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Zurücksetzen:</B
+> Mit diesem Button 
+	      können Sie alle vorgenommenen Änderungen wieder 
+	      rückgängig machen.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>RAID-Gerät erstellen:</B
+> Verwenden Sie den 
+	      Button <B
+CLASS="KEYCAP"
+>RAID-Gerät erstellen</B
+> nur dann, wenn 
+	      Sie über Erfahrungen mit der Verwendung von RAID-Systemen 
+	      verfügen. Weitere Informationen über RAID finden Sie im 
+	      <I
+CLASS="CITETITLE"
+>Red Hat Linux Reference Guide</I
+>.
+	    </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DRIVE"
+>Laufwerks-Zusammenfassungen</A
+></H2
+><P
+>	  In diesem Abschnitt wird die Konfiguration der Laufwerke Ihres 
+	  Computers angezeigt, wobei Sie eine Zusammenfassung der wichtigsten 
+	  Parameter erhalten. In jeder Zeile sind die folgenden Felder 
+	  enthalten:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Laufwerk:</B
+> In diesem Feld wird der 
+	      Gerätename der Festplatte angezeigt (wie hda oder hdb).
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Geom [Z/K/S]:</B
+> Bei den Angaben zur 
+	      <I
+CLASS="FIRSTTERM"
+>Geometrie</I
+> der Festplatte handelt es sich 
+	      um die Anzahl der Zylinder, Köpfe und Sektoren.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Gesamt:</B
+> In diesem Feld wird der insgesamt 
+	      verfügbare Platz auf der Festplatte angezeigt.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Frei:</B
+> Hier sehen Sie, wie groß der noch 
+	      zur Verfügung stehende Platz auf der Festplatte ist.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Verwendet:</B
+> In diesen Feldern wird in Megabyte 
+	      und als Prozentwert angezeigt, wie groß der aktuell 
+	      verschiedenen Partitionen zugewiesene Platz auf der Festplatte 
+	      ist.
+	    </P
+></LI
+></UL
+></DIV
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/de/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:24 GMT -->
+</HTML
+>

@@ -1,0 +1,410 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-rpmlite-gnorpm.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Using Gnome-RPM</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Using Gnome-RPM and RPM"
+HREF="ch-rpmlite.html"><LINK
+REL="PREVIOUS"
+TITLE="Using Gnome-RPM and RPM"
+HREF="ch-rpmlite.html"><LINK
+REL="NEXT"
+TITLE="Installing New Packages"
+HREF="s1-rpmlite-installing.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-rpmlite.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 10. Using Gnome-RPM and RPM</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-rpmlite-installing.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-RPMLITE-GNORPM"
+>Using <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+></A
+></H1
+><P
+>	
+
+	
+
+	
+
+
+	<TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> was written by James Henstridge
+	(<TT
+CLASS="EMAIL"
+>&#60;<A
+HREF="mailto:james@daa.com.au"
+>james@daa.com.au</A
+>&#62;</TT
+>); <TT
+CLASS="APPLICATION"
+>RPM</TT
+> 3.0
+	support was written by Red Hat and additional
+	<TT
+CLASS="APPLICATION"
+>rpmfind</TT
+> code was written by Daniel
+	Veillard. <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> is a fast, convenient
+	tool for working with RPMs; with such features as <I
+CLASS="FIRSTTERM"
+>Web
+	find</I
+>, it's also a powerful utility which allows you to
+	easily search for new RPMs on the Internet.
+      </P
+><P
+>	You can start <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> (which is also
+	referred to as <TT
+CLASS="APPLICATION"
+>gnorpm</TT
+>) from the shell prompt
+	in your user account, and from both the shell prompt and the GNOME Panel
+	if you have logged in as root (rather than performing an
+	<B
+CLASS="COMMAND"
+>su</B
+> from your user account).
+      </P
+><P
+>	To start <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> from the Panel, go to the
+      <B
+CLASS="GUIMENU"
+>Main Menu Button</B
+> =&#62; <SPAN
+CLASS="GUISUBMENU"
+>System</SPAN
+> =&#62;
+      <B
+CLASS="GUIMENUITEM"
+>Gnome-RPM</B
+>.
+      </P
+><P
+>	To start <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> from the shell prompt, type
+	<B
+CLASS="COMMAND"
+>gnorpm</B
+>. When the application starts, you'll see a
+	window similar to <A
+HREF="s1-rpmlite-gnorpm.html#GR-RPMLITE-GNORPMMAIN"
+>Figure 10-1</A
+>.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-RPMLITE-GNORPMMAIN"
+></A
+><P
+><IMG
+SRC="figs/rpmlite/gnorpmmain.gif"></P
+><P
+><B
+>Figure 10-1. Main <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> Window</B
+></P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-RPMLITE-MAINDISPLAY"
+>The Package Window</A
+></H2
+><P
+>	
+	The main window will appear similar to <A
+HREF="s1-rpmlite-gnorpm.html#GR-RPMLITE-GNORPMMAIN"
+>Figure 10-1</A
+>.
+      </P
+><P
+>	<P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>	      Package Panel - On the left; allows you to browse and select
+	      packages on your system.
+	    </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	      Display window - To the right of the package panel; shows you
+	      contents from folders in the panel.
+	    </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	      Toolbar - Above the display and panel; a graphical display of
+	      package tools.
+	    </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	      Menu - Above the toolbar; contains text-based commands, as well as
+	      help info, preferences and other settings.
+	    </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	      Status bar - Beneath the panel and display windows; shows the
+	      total number of selected packages.
+
+	    </P
+></LI
+></UL
+>
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-RPMLITE-DISPLAY"
+>The Package Display</A
+></H2
+><P
+>	  Each folder icon in the tree view at left represents a group of
+	  packages.  Each group can contain subgroups. Groups are used to place
+	  packages that perform similar functions in similar locations.
+	</P
+><P
+>	  This tree view is expandable. A folder which appears with a
+	  <TT
+CLASS="GUILABEL"
+><B
+>+</B
+></TT
+> next to it indicates that there are subfolders
+	  within that category.
+	</P
+><P
+>	  To view the packages and subgroups within a group, click once on a
+	  folder or a <TT
+CLASS="GUILABEL"
+><B
+>+</B
+></TT
+> with your left mouse button.  The
+	  display window will then show you the contents of that folder. 
+	</P
+><P
+>	  By default, you'll see icons to represent the packages. You can change
+	  customize your view by selecting <B
+CLASS="GUIMENUITEM"
+>View as list</B
+>
+	  from the <B
+CLASS="GUIMENU"
+>Interface</B
+> tab you'll find under
+	  <B
+CLASS="GUIMENU"
+>Operations</B
+> =&#62; <B
+CLASS="GUIMENU"
+>Preferences</B
+>.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-RPMLITE-SELECTING"
+>Selecting Packages</A
+></H2
+><P
+>	  To select a single package, click on it with the left mouse
+	  button. You'll notice that highlighting will appear around the
+	  package's title (as shown in <A
+HREF="s1-rpmlite-gnorpm.html#GR-RPMLITE-GNOSELECT"
+>Figure 10-2</A
+>). To unselect it, either click on an
+	  empty space in the display panel with the left mouse button, or click
+	  on the <B
+CLASS="COMMAND"
+>Unselect</B
+> button on the toolbar.
+	</P
+><P
+>	  <DIV
+CLASS="FIGURE"
+><A
+NAME="GR-RPMLITE-GNOSELECT"
+></A
+><P
+><IMG
+SRC="figs/rpmlite/gnoselect.gif"></P
+><P
+><B
+>Figure 10-2. Selecting Packages in <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+></B
+></P
+></DIV
+>
+	</P
+><P
+>	  To select more than one package incrementally, left-click with your
+	  mouse button, while holding down the <B
+CLASS="KEYCAP"
+>Ctrl</B
+> key; you'll
+	  see highlighting around each additional selection.
+	</P
+><P
+>	  The status bar at the bottom of <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>
+	  will display the total number of packages you have selected.
+      </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-rpmlite.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-rpmlite-installing.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Using Gnome-RPM and RPM</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-rpmlite.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Installing New Packages</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-rpmlite-gnorpm.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:38 GMT -->
+</HTML
+>

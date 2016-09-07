@@ -1,0 +1,615 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-basics-bootdisk.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:45:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Pulling Yourself Up by the Boot</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Shell Prompt Basics"
+HREF="ch-basics.html"><LINK
+REL="PREVIOUS"
+TITLE="Shell Prompt Basics"
+HREF="ch-basics.html"><LINK
+REL="NEXT"
+TITLE='A Good "Man" Is Easy to Find'
+HREF="s1-basics-man-pages.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-basics.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 12. Shell Prompt Basics</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-basics-man-pages.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-BASICS-BOOTDISK"
+>Pulling Yourself Up by the Boot</A
+></H1
+><P
+>	When you're logged in as root, you might want to take a few minutes to
+	create a fresh <I
+CLASS="FIRSTTERM"
+>boot disk</I
+> or copy the boot disk
+	you already have.
+      </P
+><P
+>	There are a number of reasons you should make a boot disk: it can
+	help you recover from a system failure, it can help you test a new
+	kernel you've downloaded and compiled and it can help you share your
+	computer with more than one operating system.
+      </P
+><P
+>	You were given the opportunity to make a boot disk when you installed
+	Red Hat Linux. If you chose not to make a boot disk at installation, here's your
+	chance to start from scratch.
+      </P
+><P
+>	Open an Xterm and make sure you're logged in as root. At the shell
+	prompt, if you see something like <TT
+CLASS="PROMPT"
+>[newuser@localhost
+	newuser]$</TT
+>, for example, type:
+      </P
+><P
+>	  <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+><TT
+CLASS="USERINPUT"
+><B
+>su -</B
+></TT
+>
+<TT
+CLASS="PROMPT"
+>Password:</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>yourrootpassword</B
+></TT
+>
+<TT
+CLASS="PROMPT"
+>[root@localhost newuser]#</TT
+> 
+	</PRE
+></TD
+></TR
+></TABLE
+>
+    </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>A "super" command</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    The command <B
+CLASS="COMMAND"
+>su</B
+> means substitute users,
+	    which lets you temporarily log in as another user. When you type
+	    <B
+CLASS="COMMAND"
+>su</B
+> all by itself and press
+	    <B
+CLASS="KEYCAP"
+>Enter</B
+>, you become root, or "superuser" while still
+	    inside your login shell. Typing <B
+CLASS="COMMAND"
+>su -</B
+> makes you
+	    become root with root's login shell -- that is, it's as if you had
+	    logged in as root. What's the difference? There are some commands
+	    which can be performed only if you've logged in as root; so typing
+	    <B
+CLASS="COMMAND"
+>su -</B
+> allows you to perform these commands without
+	    logging out and logging back in.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	Briefly, you'll find the Linux kernel version; then, you'll use the
+	<B
+CLASS="COMMAND"
+>mkbootdisk</B
+> command to make a bootable floppy from the
+	kernel.
+      </P
+><P
+>	Put a standard diskette in the floppy drive.
+      </P
+><P
+>	<DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Naming the floppy drive</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    In Linux, the floppy drive is referred to as
+	    <TT
+CLASS="FILENAME"
+>/dev/fd0</TT
+>.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+>
+      </P
+><P
+>	If you have previously used the diskette, remember: You will lose anything
+	that had been on that diskette!
+      </P
+><P
+>	<DIV
+CLASS="FIGURE"
+><A
+NAME="GR-BASICS-NEWUSERCD"
+></A
+><P
+><IMG
+SRC="figs/basics/newusercd.gif"></P
+><P
+><B
+>Figure 12-1. Changing Directories to <TT
+CLASS="FILENAME"
+>/lib/modules</TT
+></B
+></P
+></DIV
+>
+      </P
+><P
+>	Now, at the prompt, type:
+      </P
+><P
+>	  <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cd /lib/modules</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+>
+	(Shown in <A
+HREF="s1-basics-bootdisk.html#GR-BASICS-NEWUSERCD"
+>Figure 12-1</A
+>.)
+      </P
+><P
+>	Now, type:
+      </P
+><P
+>	  <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>ls</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+>
+
+	The command <B
+CLASS="COMMAND"
+>ls</B
+> will list the contents of a
+	directory. (You can learn more about the <B
+CLASS="COMMAND"
+>cd</B
+> and
+	<B
+CLASS="COMMAND"
+>ls</B
+> commands in <A
+HREF="ch-navigating.html"
+>Chapter 13</A
+>. For
+	now, just type the commands as you see them.)
+      </P
+><P
+>	Here, you can find the kernel version of your Red Hat Linux system. The kernel
+	is the heart of any Linux system. Your kernel version will be something
+	similar to:
+      </P
+><P
+>	  <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>2.2.<TT
+CLASS="REPLACEABLE"
+><I
+>x</I
+></TT
+>-<TT
+CLASS="REPLACEABLE"
+><I
+>yy</I
+></TT
+></TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+>
+
+        (there will be several numbers after
+        <TT
+CLASS="COMPUTEROUTPUT"
+>2.2</TT
+>, as in
+        <TT
+CLASS="COMPUTEROUTPUT"
+>2.2.14-<TT
+CLASS="REPLACEABLE"
+><I
+>xx</I
+></TT
+></TT
+>).
+      </P
+><P
+>	Now that you've found the kernel version, you can tell the
+	<B
+CLASS="COMMAND"
+>mkbootdisk</B
+> command which kernel to copy to your
+	floppy. (If you don't tell <B
+CLASS="COMMAND"
+>mkbootdisk</B
+> where to copy
+        the kernel, it will default to copying to the floppy in
+	<TT
+CLASS="FILENAME"
+>/dev/fd0</TT
+>.)
+      </P
+><P
+>	Just type:
+      </P
+><P
+>	  <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>mkbootdisk --device /dev/fd0 2.2.<TT
+CLASS="REPLACEABLE"
+><I
+>x</I
+></TT
+>-<TT
+CLASS="REPLACEABLE"
+><I
+>yy</I
+></TT
+></B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+>
+      </P
+><P
+>	Then press <B
+CLASS="KEYCAP"
+>Enter</B
+>.
+      </P
+><P
+>	<DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Clearing things up</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    If your screen becomes a little crowded with commands and
+	    <TT
+CLASS="PROMPT"
+>command not found</TT
+>s, you can always start with a
+	    clean slate by typing <B
+CLASS="COMMAND"
+>clear</B
+> at the prompt.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+>
+      </P
+><P
+>	You're done.
+      </P
+><P
+>	<DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Summary</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    As root, in a terminal window, <B
+CLASS="COMMAND"
+>cd
+	      /lib/modules</B
+>; choose kernel number; then type
+	    <B
+CLASS="COMMAND"
+>mkbootdisk --device /dev/fd0 kernel.number</B
+>.
+	  </P
+><P
+>	    To clean the display, type <B
+CLASS="COMMAND"
+>clear</B
+>.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+>
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-basics.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-basics-man-pages.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Shell Prompt Basics</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-basics.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>A Good "Man" Is Easy to Find</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-basics-bootdisk.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:45:48 GMT -->
+</HTML
+>

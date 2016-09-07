@@ -1,0 +1,5157 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-sysconfig.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:58:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>System Configuration</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="System-Related Reference"
+HREF="p196.html"><LINK
+REL="PREVIOUS"
+TITLE="Rescue Mode"
+HREF="s1-sysadmin-rescue.html"><LINK
+REL="NEXT"
+TITLE="System Configuration with the Control Panel"
+HREF="s1-sysconfig-control-panel.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-sysadmin-rescue.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-sysconfig-control-panel.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CH-SYSCONFIG"
+>Chapter 3. System Configuration</A
+></H1
+><P
+>      One of the main strengths of Red Hat Linux is that the operating system can be
+      configured to do just about anything.  In the past, this meant editing
+      sometimes cryptic configuration files by hand, then restarting system
+      services and crossing your fingers in the hope that your changes were
+      correctly made. Additionally, the variety of configuration options can be
+      bewildering to new users, who may not know where to look for a particular
+      configuration file.
+    </P
+><P
+>      Red Hat Linux provides two system configuration utilities:
+      <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> and the control panel. The control
+      panel provides a launcher for various Red Hat system configuration tools,
+      including <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>.  Instructions on how to
+      use the control panel and the tools it includes can be found in <A
+HREF="s1-sysconfig-control-panel.html"
+>the section called <I
+>System Configuration with the Control Panel</I
+></A
+>.
+    </P
+><P
+>      The <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> configuration tool can ease some
+      of the burdens of system configuration.
+      <TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+> is both:
+    </P
+><P
+></P
+><UL
+><LI
+><P
+>	  A configuration interface -- You type the values needed to configure
+	  your system into a user interface.
+	</P
+></LI
+><LI
+><P
+>	  A configuration activator -- When you're satisfied with your edits,
+	  you tell <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> to apply the changes
+	  you've made.
+	</P
+></LI
+></UL
+><P
+>      While <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> can do nearly everything the
+      control panel tools can, there are two areas in which the control panel
+      still holds the upper hand:
+    </P
+><P
+></P
+><UL
+><LI
+><P
+>	  Printer configuration
+	</P
+></LI
+><LI
+><P
+>	  Loading kernel modules to support new hardware
+	</P
+></LI
+></UL
+><P
+>      Let's take a look at <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>.
+    </P
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-SYSCONFIG-LINUXCONF"
+>System Configuration with <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+></A
+></H1
+><P
+>        <TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+> allows you to configure and control
+        various aspects of your system, and is capable of handling a wide range
+        of programs and tasks.  Complete documentation of
+        <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> could be a separate book in its own
+        right and is certainly more than we can cover in this chapter. Instead,
+        we'll focus on common tasks such as adding new users and getting
+        connected to a network.
+      </P
+><P
+>        More information on <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>, including its
+        most recent release can be found at the
+        <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> website:
+      </P
+><P
+>        <A
+HREF="http://www.solucorp.qc.ca/linuxconf/"
+TARGET="_top"
+>        http://www.solucorp.qc.ca/linuxconf/</A
+>
+      </P
+><P
+>        The <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> website includes fairly
+        extensive information, including a description, rationale, history, list
+        of contacts, and a lot of other information in addition to the software.
+        The website is maintained by <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>'s
+        creator and developer, Jacques Gelinas, so it includes the latest news
+        about <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>.
+      </P
+><P
+>	This chapter will go into detail on just a few of
+	<TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>'s capabilities. If you just need a
+	quick reference to show you where to go in
+	<TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> for the tasks covered by this
+	chapter, see <A
+HREF="ch-sysconfig.html#S2-SYSCONFIG-QUICKREF"
+>the section called <I
+>Finding Your Way Through
+	  <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+></I
+></A
+>.
+      </P
+><P
+>	If you need more help with <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>,
+	please try these sources:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	    The <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> FAQ, which is available
+	      at <A
+HREF="http://www.xc.org/jonathan/linuxconf-faq.html"
+TARGET="_top"
+>http://www.xc.org/jonathan/linuxconf-faq.html</A
+>.
+	  </P
+></LI
+><LI
+><P
+>	    The archives of the <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> mailing
+	    list, which are available at <A
+HREF="http://hub.xc.org/scripts/lyris.pl?visit=linuxconf"
+TARGET="_top"
+>http://hub.xc.org/scripts/lyris.pl?visit=linuxconf</A
+>.
+	  </P
+></LI
+><LI
+><P
+>	    After you've checked the <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> FAQ
+	    and the archives of the <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> list,
+	    you might try posting your question to the
+	    <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> list.  Subscription information
+	    for the <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> list is available at
+	    the <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> website (<A
+HREF="http://www.solucorp.qc.ca/linuxconf/"
+TARGET="_top"
+>http://www.solucorp.qc.ca/linuxconf/</A
+>);
+	    click on the "Mailing lists" link.
+	  </P
+><P
+>	    Please note that this list is for questions pertaining to
+	    <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>, and is not intended for
+	    general Linux questions.
+	  </P
+></LI
+></UL
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSCONFIG-RUN-LCONF"
+>Running <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+></A
+></H2
+><P
+>          You'll need to be root to run <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>, so
+          if you're in your user account, <B
+CLASS="COMMAND"
+>su</B
+> to become root.
+        </P
+><P
+>          Now, type <B
+CLASS="COMMAND"
+>linuxconf</B
+> at the shell prompt to begin
+          the program. 
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSCONFIG-LCINTERFACES"
+><TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+> User Interfaces</A
+></H2
+><P
+>	  <TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+> has four user interfaces:
+        </P
+><P
+></P
+><UL
+><LI
+><P
+>              Text-based -- Using the same user interface style as the Red Hat Linux
+              text-mode installation program, the text-based interface makes it
+              easy to navigate your way through
+              <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> if you aren't running
+              X. If you are running X, you can switch to a virtual console, log
+              in as root, and type <B
+CLASS="COMMAND"
+>linuxconf</B
+> to bring up
+              text-mode <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>.
+	    </P
+><P
+>	      Use the <B
+CLASS="KEYCAP"
+>Tab</B
+> and <B
+CLASS="KEYCAP"
+>arrow</B
+> keys to
+              navigate the text-mode screens.  A <TT
+CLASS="GUILABEL"
+><B
+>down arrow</B
+></TT
+>
+              on a line indicates that a pull-down menu exists on that line. The
+              <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>X</B
+>
+              key combination will make pull-down menus appear.
+            </P
+></LI
+><LI
+><P
+>              Graphical user interface (GUI) --
+              <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> can take advantage of X, and
+              give you an easy-to-use "point and click" tree menu interface (see
+              <A
+HREF="ch-sysconfig.html#S2-SYSCONFIG-TREE-MENU"
+>the section called <I
+>Tree Menu Interface</I
+></A
+> for more information).
+              Red Hat Linux includes a GUI interface for
+              <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> called gnome-linuxconf.
+            </P
+><P
+>	      This document will display <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>
+	      screens using the gnome-linuxconf interface, but you shouldn't
+	      have any trouble using the other interfaces with the instructions
+	      provided here.
+	    </P
+></LI
+><LI
+><P
+>              Web-based -- A Web-based interface makes remote system
+              administration a breeze; it can also be displayed with the
+              <TT
+CLASS="APPLICATION"
+>Lynx</TT
+> text-mode browser.
+            </P
+><P
+>	      To use the <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> Web interface, use
+	      your browser to connect to port 98 on the machine running
+	      <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> (i.e., http://your_machine:98).
+	    </P
+><P
+>	      Before you use the Web-based interface, you'll need to configure
+	      <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> to allow connections from the
+	      machine running the browser.  See <A
+HREF="ch-sysconfig.html#S2-SYSCONFIG-WEB-BASED"
+>the section called <I
+>Enabling Web-Based <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> Access</I
+></A
+> for instructions on enabling Web
+	      access to <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>.
+	    </P
+></LI
+><LI
+><P
+>              Command line -- <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>'s
+              command-line mode is handy for manipulating your system's
+              configuration in scripts. 
+            </P
+></LI
+></UL
+><P
+>          <TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+> will start in either
+          character-cell or X mode, depending on your <TT
+CLASS="ENVAR"
+>DISPLAY</TT
+>
+          environment variable.  The first time you run
+          <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>, an introductory message will be
+          shown; although it is only displayed once, accessing help from the
+          main screen will give you the same basic information.
+        </P
+><P
+>          <TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+> includes some context-specific
+          help.  For information on any specific aspect of
+          <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>, select <B
+CLASS="GUIMENU"
+>Help</B
+>
+          from the screen you'd like help with.  Note that not all help screens
+          are complete at this time; as help screens are updated, they will be
+          included in subsequent versions of
+          <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSCONFIG-TREE-MENU"
+>Tree Menu Interface</A
+></H2
+><P
+>	  <TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+> provides a tree menu of its
+	  hierarchical structure.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-LC-ENTSCR"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/lc-l1.12.gif"></P
+><P
+><B
+>Figure 3-1. <TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+> Tree Menu View</B
+></P
+></DIV
+><P
+>	  Finding the appropriate panel should be simple and fast.  Collapse and
+	  expand sections by clicking on the + or - next to the menu item.
+	</P
+><P
+>	  Selected entries will appear as tabs in the right-hand panel and will
+	  remain there until closed.  If you end up with more tabs open than you
+	  like, just select <B
+CLASS="GUIBUTTON"
+>Cancel</B
+> on the bottom of each
+	  tab to close it without making any changes, or
+	  <B
+CLASS="GUIBUTTON"
+>Accept</B
+> to implement them.
+	</P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    If you've grown fond of the older X Window System interface, it's
+	    still available.  To return to it:
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>	      Open <B
+CLASS="GUIMENUITEM"
+>Control</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Control
+                files and systems</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Configure
+                linuxconf modules</B
+>
+	    </P
+></LI
+><LI
+><P
+>	      De-select the treemenu check box
+	    </P
+></LI
+><LI
+><P
+>	      Click <B
+CLASS="GUIBUTTON"
+>Accept</B
+>
+	    </P
+></LI
+><LI
+><P
+>	      Click <B
+CLASS="GUIBUTTON"
+>Quit</B
+>
+	    </P
+></LI
+><LI
+><P
+>	      Restart <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>
+	    </P
+></LI
+></OL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSCONFIG-WEB-BASED"
+>Enabling Web-Based <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> Access</A
+></H2
+><P
+>	  For security reasons, Web-based access to
+	  <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> is disabled by default. Before
+	  attempting to access <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> with a Web
+	  browser, you'll need to enable access.  Here's how to do it:
+	</P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>	      Open <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62;
+	      <B
+CLASS="GUIMENUITEM"
+>Networking</B
+> =&#62;
+	      <B
+CLASS="GUIMENUITEM"
+>Misc</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Linuxconf network
+	      access</B
+>
+	    </P
+></LI
+><LI
+><P
+>	      In the <B
+CLASS="GUIMENUITEM"
+>Linuxconf html access control</B
+>
+	      dialog box, enter the hostname of any computers that should be
+	      allowed access to <TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+>.  This
+	      includes your own system, if you wish to use the Web-based
+	      interface locally.  Web accesses related to
+	      <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> may be logged to your
+	      system's <TT
+CLASS="FILENAME"
+>htmlaccess.log</TT
+> file by selecting the
+	      check box.
+	    </P
+></LI
+><LI
+><P
+>	      Select the <B
+CLASS="GUIBUTTON"
+>Accept</B
+> button.  
+	    </P
+></LI
+></OL
+><P
+>	  Web-based access should be enabled.  To test it out, go to a system
+	  that you added to the access control list.  Then, launch your Web
+	  browser, and enter the following URL:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>http://<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;host&#62;</I
+></TT
+>:98/</B
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	  (Replace <B
+CLASS="COMMAND"
+><TT
+CLASS="REPLACEABLE"
+><I
+>&#60;host&#62;</I
+></TT
+></B
+>
+	  with your system's hostname, of course.)  You should see the main
+	  <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> page.  Note that you will need to
+	  enter your system's root password to gain access beyond the first
+	  page.
+	</P
+><P
+>	  You can also enable network-wide access to
+	  <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> by following the same steps, by
+	  entering a network name instead of a hostname.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSCONFIG-ADD-USER-GEN"
+>Adding a User Account</A
+></H2
+><P
+>	  Adding a user is one of the most basic tasks you will encounter in
+	  administering your system.  To add a user:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      Open <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Users
+	      accounts</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Normal</B
+> =&#62;
+	      <B
+CLASS="GUIMENUITEM"
+>User
+	      accounts</B
+>. <TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+> may
+	      show you a filter screen (see <A
+HREF="ch-sysconfig.html#GR-SYSCONFIG-LC-FCONTROL"
+>Figure 3-2</A
+>).
+	    </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-LC-FCONTROL"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/lc-fcontrol.gif"></P
+><P
+><B
+>Figure 3-2. Filter Control Screen</B
+></P
+></DIV
+><P
+>	      You can set the filter cutoff using
+	      <B
+CLASS="GUIMENUITEM"
+>Control</B
+> =&#62;
+	      <B
+CLASS="GUIMENUITEM"
+>Features</B
+>.  The <TT
+CLASS="GUILABEL"
+><B
+>Trigger for
+	      filter</B
+></TT
+> field sets the number of entries that will pop
+	      up a filter screen. You can use the filter screen to select a
+	      smaller range of accounts than the full list.  To get the full
+	      list, select <B
+CLASS="GUIBUTTON"
+>Accept</B
+> without changing any of
+	      the parameters.  For detailed information on the various filters,
+	      select the <B
+CLASS="GUIBUTTON"
+>Help</B
+> button on the
+	      <B
+CLASS="GUIMENUITEM"
+>Filter control</B
+> screen.Once you've
+	      applied or bypassed the filter, you'll see the <B
+CLASS="GUIMENUITEM"
+>Users
+	      accounts</B
+> tab (see <A
+HREF="ch-sysconfig.html#GR-SYSCONFIG-LC-UACCOUNTS"
+>Figure 3-3</A
+>).
+	    </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-LC-UACCOUNTS"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/lc-uaccounts.gif"></P
+><P
+><B
+>Figure 3-3. Users Accounts Screen</B
+></P
+></DIV
+></LI
+><LI
+><P
+>	      Select <B
+CLASS="GUIBUTTON"
+>Add</B
+>. This will open the
+	      <B
+CLASS="GUIMENUITEM"
+>User account creation</B
+> tab (see <A
+HREF="ch-sysconfig.html#GR-SYSCONFIG-LC-UACREATION"
+>Figure 3-4</A
+>).
+              </P
+></LI
+></UL
+><P
+>	  The <B
+CLASS="GUIMENUITEM"
+>User account creation</B
+> screen includes
+	  the <TT
+CLASS="GUILABEL"
+><B
+>Base info</B
+></TT
+>, <TT
+CLASS="GUILABEL"
+><B
+>Mail settings</B
+></TT
+>
+	  and <TT
+CLASS="GUILABEL"
+><B
+>Privileges</B
+></TT
+> sections. Only the <TT
+CLASS="GUILABEL"
+><B
+>Login
+	  name</B
+></TT
+> is required, but you should be aware of the other
+	  fields, which you may or may not want to fill in.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-LC-UACREATION"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/lc-uacreation.gif"></P
+><P
+><B
+>Figure 3-4. User Account Creation</B
+></P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSCONFIG-BASEINFO"
+><TT
+CLASS="GUILABEL"
+><B
+>Base info</B
+></TT
+> for User Accounts</A
+></H3
+><P
+>	    The <TT
+CLASS="GUILABEL"
+><B
+>Login name</B
+></TT
+> is the name of the account and
+	    is usually all lowercase letters.  First or last names, initials or
+	    some combination thereof are fairly common login names.  For a user
+	    named John T. Smith, <TT
+CLASS="USERINPUT"
+><B
+>smith</B
+></TT
+>,
+	    <TT
+CLASS="USERINPUT"
+><B
+>john</B
+></TT
+>, <TT
+CLASS="USERINPUT"
+><B
+>jts</B
+></TT
+>, or
+	    <TT
+CLASS="USERINPUT"
+><B
+>jsmith</B
+></TT
+> would be common user names.  Of course
+	    <TT
+CLASS="USERINPUT"
+><B
+>spike</B
+></TT
+> or something else works just fine, too.
+	    You can also use numbers, so <TT
+CLASS="USERINPUT"
+><B
+>jts2</B
+></TT
+> would be
+	    fine if you had a second person with the same initials.  There is no
+	    default for this field.
+	  </P
+><P
+>	    The <TT
+CLASS="GUILABEL"
+><B
+>Full name</B
+></TT
+> is the name of the user or the
+	    account.  For an individual, it would be their name, <TT
+CLASS="USERINPUT"
+><B
+>John
+	    T. Smith</B
+></TT
+> for example.  If the account represents a
+	    position rather than a person, the full name might be the title.  So
+	    an account called <TT
+CLASS="USERINPUT"
+><B
+>webmaster</B
+></TT
+> might have a full
+	    name of <TT
+CLASS="USERINPUT"
+><B
+>Red Hat Webmaster</B
+></TT
+> or just
+	    <TT
+CLASS="USERINPUT"
+><B
+>Webmaster</B
+></TT
+>.  There is no default for this
+	    field.
+	  </P
+><P
+>	    Since Red Hat Linux uses the User Private Group scheme, each user will be
+	    assigned to a default <TT
+CLASS="GUILABEL"
+><B
+>group</B
+></TT
+> consisting only of
+	    the user.  For more information on User Private Groups, see <A
+HREF="s1-sysadmin-usr-grps.html#S2-SYSADMIN-PRIV-GROUPS"
+>the section called <I
+>User Private Groups</I
+> in Chapter 2</A
+>.
+	  </P
+><P
+>	    In the <TT
+CLASS="GUILABEL"
+><B
+>Supplementary groups</B
+></TT
+> field, you can
+	    specify additional groups.  Group names should be separated by
+	    spaces.  The default for this field is blank, meaning no
+	    supplementary groups are specified.
+	  </P
+><P
+>	    The <TT
+CLASS="GUILABEL"
+><B
+>Home directory</B
+></TT
+> specifies the home or login
+	    directory for the account.  The default is
+	    <TT
+CLASS="FILENAME"
+>/home/<TT
+CLASS="REPLACEABLE"
+><I
+>login</I
+></TT
+></TT
+>, where
+	    <TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>login</I
+></TT
+></TT
+> is replaced by
+	    the login name.  A home directory is your starting point in the
+	    directory structure when you log in, or if in X, for each Xterm
+	    window opened.  This is also where account specific preference files
+	    are stored.
+	  </P
+><P
+>	    The <TT
+CLASS="GUILABEL"
+><B
+>Command interpreter</B
+></TT
+> is the default shell for
+	    the account. The <B
+CLASS="COMMAND"
+>bash</B
+> shell is the default shell
+	    for Red Hat Linux.
+	  </P
+><P
+>	    The <TT
+CLASS="GUILABEL"
+><B
+>User ID</B
+></TT
+> (UID) is the number associated with
+	    each user account.  This is automatically generated by the system
+	    when the account is created, so just leave this field blank.  The
+	    system uses the UID to identify an account.
+	  </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSCONFIG-MAILSETTINGS"
+><TT
+CLASS="GUILABEL"
+><B
+>Mail settings</B
+></TT
+> for User Accounts</A
+></H3
+><P
+>	    The <TT
+CLASS="GUILABEL"
+><B
+>Redirect messages to</B
+></TT
+> field 
+	    sets the system to forward e-mail messages sent to the user to this
+	    address instead.
+	  </P
+><P
+>	    An <TT
+CLASS="GUILABEL"
+><B
+>E-mail alias</B
+></TT
+> is a supplemental e-mail
+	    address that will be accepted by the system and forwarded on to the
+	    user. For example, you could add the alias
+	    <TT
+CLASS="USERINPUT"
+><B
+>jane_smith@yourdomain.com</B
+></TT
+> to user smitj's
+	    account.  Then, e-mail sent to jane_smith@yourdomain.com would
+	    automatically be forwarded to smitj@yourdomain.com.
+	  </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSCONFIG-PRIVILEGES"
+><TT
+CLASS="GUILABEL"
+><B
+>Privileges</B
+></TT
+> for User Accounts</A
+></H3
+><P
+>	    In the <TT
+CLASS="GUILABEL"
+><B
+>Privileges</B
+></TT
+> section, you can grant access
+	    and/or control over various aspects of system configuration.  As a
+	    default, regular users are denied all privileges on this screen.
+	    You may instead choose to grant or to silently grant them specific
+	    privileges. The difference between <TT
+CLASS="GUILABEL"
+><B
+>Granted</B
+></TT
+> and
+	    <TT
+CLASS="GUILABEL"
+><B
+>Granted/silent</B
+></TT
+> is that if the privilege is
+	    granted, <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> will ask for the
+	    user's password before allowing them the privilege.  If the
+	    privilege is granted silently, <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>
+	    will not prompt for their password.
+	  </P
+><P
+>	    Generally, careful system administrators won't grant users any
+	    system configuration privileges unless it is absolutely
+	    necessary. If you do grant privileges, be careful when granting them
+	    silently.  If a user with silently granted privileges logs in to
+	    his/her machine and walks away, their privileges are wide open for
+	    the next person who sits down at their desk.  Silently granted
+	    privileges are less risky if used on machines in a physically
+	    restricted area.
+	  </P
+><P
+>	    <TT
+CLASS="GUILABEL"
+><B
+>May use linuxconf</B
+></TT
+>: the user is allowed to
+	    access all of <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>'s capabilities,
+	    and they can set up or change <TT
+CLASS="GUILABEL"
+><B
+>linuxconf</B
+></TT
+>
+	    parameters.  Note that use of <TT
+CLASS="GUILABEL"
+><B
+>linuxconf</B
+></TT
+> is
+	    separate from the privilege of activating configuration changes.
+	    System administrators might want to grant the use of
+	    <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>, but deny the activation
+	    privilege, so that the sysadmin has a final "yes/no" on whether to
+	    activate any configuration changes.
+	  </P
+><P
+>	    <TT
+CLASS="GUILABEL"
+><B
+>May activate config changes</B
+></TT
+>: After you change a
+	    parameter in <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>, at some point
+	    you'll have to indicate to <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> that
+	    the changes you made should be applied.  Depending upon the flavor
+	    of <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> that you're using, you might
+	    do this by clicking on an <B
+CLASS="GUIBUTTON"
+>Activate the
+	    changes</B
+> button in GUI
+	    <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>, or clicking on an
+	    <B
+CLASS="GUIBUTTON"
+>Accept</B
+> button in Web-based
+	    <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>, or selecting an
+	    <B
+CLASS="GUIBUTTON"
+>Accept</B
+> button in text-mode
+	    <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>, etc.
+	  </P
+><P
+>	    You can grant the privilege of activating changes to a user.  In
+	    that case, the user will be able to activate any changed system
+	    configuration parameters in <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>.
+	  </P
+><P
+>	    <TT
+CLASS="GUILABEL"
+><B
+>May shutdown</B
+></TT
+>: A user can be granted the right
+	    to shutdown the system. Note that Red Hat Linux is set in
+	    <TT
+CLASS="FILENAME"
+>/etc/inittab</TT
+> to cleanly shutdown following the
+	    <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>Alt</B
+>-<B
+CLASS="KEYCAP"
+>Del</B
+> keystroke combination. 
+	  </P
+><P
+>	    Once you have entered the login name and any other desired
+	    information select the <B
+CLASS="GUIBUTTON"
+>Accept</B
+> button at the
+	    bottom of the screen. If you decide against creating a new user,
+	    select <B
+CLASS="GUIBUTTON"
+>Cancel</B
+> instead.
+	  </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-LC-CPASSWORD"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/lc-cpassword.gif"></P
+><P
+><B
+>Figure 3-5. Change Password Screen</B
+></P
+></DIV
+><P
+>            When you click on <B
+CLASS="GUIBUTTON"
+>Accept</B
+>
+            <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> will prompt you to enter the
+            password, as in <A
+HREF="ch-sysconfig.html#GR-SYSCONFIG-LC-CPASSWORD"
+>Figure 3-5</A
+>.  You'll
+            have to re-type the password, to prevent unusable passwords caused
+            by typos.  Passwords must be at least six characters in length, but
+            you can increase the required length and set other parameters for
+            users' passwords at the <B
+CLASS="GUIMENUITEM"
+>Users Accounts</B
+> =&#62;
+            <B
+CLASS="GUIMENUITEM"
+>Password &#38; Account Policies</B
+> screen.
+	  </P
+><P
+>	    Good passwords contain a combination of letters, numbers, and
+	    special characters. It should use both upper case and lower case
+	    letters.  Don't use your username, your anniversary, your social
+	    security number, your dog's name, your middle name or the word root.
+	    Don't use any variation of a word associated with your account or
+	    with yourself. Don't use a word that can be found in a dictionary;
+	    dictionary words are easy to crack.
+	  </P
+><P
+>	    A simple technique for creating a password is to use the first
+	    letters from each word of a phrase that is familiar to you (a line
+	    from a favorite song might be appropriate).  Make a few letters
+	    uppercase, and insert a few numbers and/or special characters in
+	    place of letters and you'll have a decent password.
+	  </P
+><P
+>            Press the <B
+CLASS="GUIBUTTON"
+>Accept</B
+> button again when finished.
+            The system will let you know if it thinks the password is easy to
+            crack; if you get a warning message, don't use the password.
+          </P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSCONFIG-MOD-USER"
+>Modifying a User Account</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>	      Go to <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Users
+		accounts</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Normal</B
+> =&#62;
+		<B
+CLASS="GUIMENUITEM"
+>User accounts</B
+>, use the filter if
+		necessary, and then select the account that you wish to modify.
+	    </P
+></LI
+><LI
+><P
+>	      See <A
+HREF="ch-sysconfig.html#S2-SYSCONFIG-ADD-USER-GEN"
+>the section called <I
+>Adding a User Account</I
+></A
+> if you need
+	      guidance for how to fill in the user accounts fields.
+	    </P
+></LI
+></UL
+><P
+>	  To implement the changes select <B
+CLASS="GUIBUTTON"
+>Accept</B
+>.  If you
+	  decide against making any changes select
+	  <B
+CLASS="GUIBUTTON"
+>Cancel</B
+>.  This guarantees that no changes are
+	  made.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSCONFIG-USER-PASSWD-GEN"
+>Changing a User's Password</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>	      Open <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Users
+              accounts</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Normal</B
+> =&#62;
+              <B
+CLASS="GUIMENUITEM"
+>User accounts</B
+>. This will open the
+              <TT
+CLASS="GUILABEL"
+><B
+>Users accounts</B
+></TT
+> tab (see <A
+HREF="ch-sysconfig.html#GR-SYSCONFIG-LC-UACCOUNTS"
+>Figure 3-3</A
+>).
+	    </P
+></LI
+><LI
+><P
+>	      You may see a filter screen, depending upon the settings you've
+	      provided on <B
+CLASS="GUIMENUITEM"
+>Control</B
+> =&#62;
+	      <B
+CLASS="GUIMENUITEM"
+>Features</B
+>.  If you want the full list,
+	      select <B
+CLASS="COMMAND"
+>Accept</B
+> without changing any of the
+	      parameters.  For detailed information on the various filters,
+	      select the <B
+CLASS="COMMAND"
+>Help</B
+> button on the <TT
+CLASS="GUILABEL"
+><B
+>Filter
+	      control</B
+></TT
+> screen.
+	    </P
+></LI
+><LI
+><P
+>	      Select the account whose password you wish to change.  This will
+	      open the <TT
+CLASS="GUILABEL"
+><B
+>User information</B
+></TT
+> tab.
+	    </P
+></LI
+><LI
+><P
+>	      Select <B
+CLASS="GUIBUTTON"
+>Passwd</B
+> from the options at the
+	      bottom of the screen.
+	    </P
+></LI
+></UL
+><P
+>	  <TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+> will prompt you to enter the new
+	  password.  There is also a field called
+	  <B
+CLASS="COMMAND"
+>Confirmation</B
+> where you will need to type the
+	  password again.  This is to prevent you from mistyping the password.
+	  See <A
+HREF="ch-sysconfig.html#S2-SYSCONFIG-ADD-USER-GEN"
+>the section called <I
+>Adding a User Account</I
+></A
+> for guidance on
+	  choosing a password.  If you decide against changing the password,
+	  select <B
+CLASS="COMMAND"
+>Cancel</B
+>.  Once you have entered the new
+	  password select <B
+CLASS="COMMAND"
+>Accept</B
+>.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSCONFIG-ROOT-PASSWD-GEN"
+>Changing the Root Password</A
+></H2
+><P
+>	  Because of the security implications of root access,
+	  <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> requires you to verify that you
+	  currently have access to the root account.
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      Open <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Users
+                accounts</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Normal</B
+> =&#62;
+	      <B
+CLASS="GUIMENUITEM"
+>Change root password</B
+>.
+	    </P
+></LI
+></UL
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-LC-CSUPASSWORD"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/lc-csupassword.gif"></P
+><P
+><B
+>Figure 3-6. Root Password Verification Screen</B
+></P
+></DIV
+><P
+>	  You'll first need to enter the current root password to verify access
+	  to the root account.
+	</P
+><P
+>	  Once you have entered root's current password, it will prompt you for
+	  a new password.  In the <TT
+CLASS="GUILABEL"
+><B
+>Confirmation</B
+></TT
+> field, type
+	  the password again (see <A
+HREF="ch-sysconfig.html#GR-SYSCONFIG-LC-CPASSWORD"
+>Figure 3-5</A
+>).
+	  This is to prevent you from mistyping the password.  See <A
+HREF="ch-sysconfig.html#S2-SYSCONFIG-ADD-USER-GEN"
+>the section called <I
+>Adding a User Account</I
+></A
+> if you need guidance on choosing
+	  a password.  Be sure to choose a good password!  If you decide against
+	  changing the root password, just select <B
+CLASS="GUIBUTTON"
+>Cancel</B
+>.
+	  Once you have entered the new password select
+	  <B
+CLASS="GUIBUTTON"
+>Accept</B
+>. 
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSCONFIG-KILL-USER-ACCT"
+>Disabling a User Account</A
+></H2
+><P
+>	  Disabling a user's account is preferable to deleting a user's account,
+	  unless you need the storage space or you're certain that his/her data
+	  will not be needed in the future. If a user's account is disabled,
+	  they will not be allowed to log in.
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      Open <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Users
+                accounts</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Normal</B
+> =&#62;
+	      <B
+CLASS="GUIMENUITEM"
+>User accounts</B
+>.
+	    </P
+></LI
+><LI
+><P
+>	      De-select the check-box that states that <B
+CLASS="COMMAND"
+>The account is
+                enabled</B
+>.  Select the <B
+CLASS="COMMAND"
+>Accept</B
+> button
+	      at the bottom of the window and you're all set.
+	    </P
+></LI
+></UL
+><P
+>	  The account is disabled and can be enabled later using a similar
+	  method.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSCONFIG-ENABLE-ACCOUNT"
+>Enabling a User Account</A
+></H2
+><P
+>	  By default, all newly created user accounts are enabled.  If you
+	  need to enable an account, you can use
+	  <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> to do it.
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      Open <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Users
+                accounts</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Normal</B
+> =&#62;
+	      <B
+CLASS="GUIMENUITEM"
+>User accounts</B
+>. Select the <TT
+CLASS="GUILABEL"
+><B
+>The
+                account is enabled</B
+></TT
+> checkbox. 
+	    </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSCONFIG-DEL-ACCT-GEN"
+>Deleting a User Account</A
+></H2
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    While there are options for retaining files associated with an
+	    account, any files that are deleted are gone and effectively
+	    unrecoverable.  Take care when using this option!
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	  To delete an account: 
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      Open <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Users
+                accounts</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>User
+                accounts</B
+>.
+	    </P
+></LI
+><LI
+><P
+>	      On the <TT
+CLASS="GUILABEL"
+><B
+>User accounts</B
+></TT
+> screen (see <A
+HREF="ch-sysconfig.html#GR-SYSCONFIG-LC-UACCOUNTS"
+>Figure 3-3</A
+>) select the account you
+	      wish to delete.
+	    </P
+></LI
+><LI
+><P
+>	      At the bottom of the <TT
+CLASS="GUILABEL"
+><B
+>User information</B
+></TT
+> screen,
+	      select <B
+CLASS="GUIBUTTON"
+>Del</B
+> to delete the account.
+	    </P
+></LI
+></UL
+><P
+>	  <TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+> will then prompt you with a
+	  list of options.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-LC-DACCOUNT"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/lc-daccount.gif"></P
+><P
+><B
+>Figure 3-7. Deleting Account Screen</B
+></P
+></DIV
+><P
+>	  The default option is to archive the account's data.  The archive
+	  option has the following effects:
+	</P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>	      Removes the user from the user accounts list;
+	    </P
+></LI
+><LI
+><P
+>	      Takes everything contained in the user's home directory and
+	      archives it (using tar and gzip compression), storing the
+	      resulting file in the
+	      <TT
+CLASS="FILENAME"
+>/default_home_directory/oldaccounts</TT
+>
+	      directory.  For an account named
+	      <TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>useraccount</I
+></TT
+></TT
+> the
+	      filename would be similar to:
+	    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>useraccount</I
+></TT
+>-2000-01-10-497.tar.gz</TT
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	      The date indicates when the account was deleted, and the number
+	      following it is the ID of the process that actually performed the
+	      deletion.  The <TT
+CLASS="FILENAME"
+>oldaccounts</TT
+> directory is
+	      created in the same place as all of your user directories, and is
+	      created automatically the first time you remove a user account
+	      using this option.
+	    </P
+></LI
+><LI
+><P
+>	      Files not contained in the user's home directory, but owned by
+	      that user remain.  The file is owned by the deleted account's user
+	      ID (UID).  If you create a new account and specifically assign it
+	      the UID of a deleted account, it will then become the owner of any
+	      remaining files.
+	    </P
+></LI
+></OL
+><P
+>	  Selecting <TT
+CLASS="GUILABEL"
+><B
+>Delete the account's data</B
+></TT
+> on the
+	  <TT
+CLASS="GUILABEL"
+><B
+>Deleting account
+	  <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;accountname&#62;</I
+></TT
+></B
+></TT
+>
+	  screen (see <A
+HREF="ch-sysconfig.html#GR-SYSCONFIG-LC-DACCOUNT"
+>Figure 3-7</A
+>) will:
+	</P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>	      Remove the user from the user accounts list;
+	    </P
+></LI
+><LI
+><P
+>	      Remove the user's home directory and all its contents.
+	    </P
+></LI
+></OL
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    Files not contained in the user's home directory, but owned by that
+	    user will remain on the system.  The file will still be owned by the
+	    deleted account's user ID (UID).  If you create a new account and
+	    specifically assign it the UID of a deleted account, it will then
+	    become the owner of any such "orphaned" files.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	  Selecting <TT
+CLASS="GUILABEL"
+><B
+>Leave the account's data in place</B
+></TT
+> on the
+	  <TT
+CLASS="GUILABEL"
+><B
+>Deleting account
+	  <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;accountname&#62;</I
+></TT
+></B
+></TT
+>
+	  screen (see <A
+HREF="ch-sysconfig.html#GR-SYSCONFIG-LC-DACCOUNT"
+>Figure 3-7</A
+>) will:
+	</P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>	      Remove the user from the user accounts list;
+	    </P
+></LI
+><LI
+><P
+>	      Leave the user's home directory (with all its files) in place.
+	    </P
+></LI
+></OL
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    Files and directories owned by the deleted account's user ID (UID)
+	    will remain on the system.  If you create a new account and
+	    specifically assign it the UID of a deleted account, it will then
+	    become the owner of these "orphaned" files.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSCONFIG-GROUPS"
+>Groups</A
+></H2
+><P
+>	  All users belong to one or more groups.  Just as each file has a
+	  specific owner, each file belongs to a particular group as well.  The
+	  group might be specific to the owner of the file, or may be a group
+	  shared by all users.  The ability to read, write or execute a file can
+	  be assigned to a group; this is separate from the owner's rights.  For
+	  example, the owner of a file will be able to write to a document,
+	  while other group members may only be able to read it.
+	</P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSCONFIG-CREATE-GROUP-GEN"
+>Creating a Group</A
+></H3
+><P
+>	    To create a new group:
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		Open <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Users
+		  accounts</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Normal</B
+> =&#62;
+                <B
+CLASS="GUIMENUITEM"
+>Group definition</B
+>.
+	      </P
+></LI
+></UL
+><P
+>	    You may see a filter screen, depending upon the settings in
+	    <B
+CLASS="GUIMENUITEM"
+>Control</B
+> =&#62;
+	    <B
+CLASS="GUIMENUITEM"
+>Filters</B
+>. Either provide a filter, or
+	    select <B
+CLASS="GUIBUTTON"
+>Accept</B
+> to bypass the filter.
+	  </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-LC-UGROUPS"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/lc-ugroups.gif"></P
+><P
+><B
+>Figure 3-8. User Groups Screen</B
+></P
+></DIV
+><P
+>	    Select <B
+CLASS="COMMAND"
+>Add</B
+> at the bottom of the <TT
+CLASS="GUILABEL"
+><B
+>User
+	      groups</B
+></TT
+> screen.
+	  </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-LC-GSPECIFICATION"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/lc-gspecification.gif"></P
+><P
+><B
+>Figure 3-9. Group Specification Screen</B
+></P
+></DIV
+><P
+>	    Enter a group name.  You may also wish to specify members of the
+	    group and can do so in the <TT
+CLASS="GUILABEL"
+><B
+>Alternate members</B
+></TT
+>
+	    field.  The list of users should be space delimited, meaning that
+	    each username must have a space between it and the next one.  Leave
+	    the <TT
+CLASS="GUILABEL"
+><B
+>Group name</B
+></TT
+> field blank, so that the system
+	    will assign a <TT
+CLASS="GUILABEL"
+><B
+>Group ID</B
+></TT
+> (GID) to your new group.
+	    When you're finished, select <B
+CLASS="COMMAND"
+>Accept</B
+> and the group
+	    will be created.
+	  </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSCONFIG-DEL-GROUP-GEN"
+>Deleting a Group</A
+></H3
+><P
+>	    To delete a group:
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		Open <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Users
+                accounts</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Normal</B
+> =&#62;
+		<B
+CLASS="GUIMENUITEM"
+>Group definitions</B
+>.
+	      </P
+><P
+>		You may see a filter screen, depending upon the filter setting
+		in <B
+CLASS="GUIMENUITEM"
+>Control</B
+> =&#62;
+		<B
+CLASS="GUIMENUITEM"
+>Features</B
+>. You can use the filter to
+		narrow your choice of groups by specifying a prefix.
+	      </P
+></LI
+><LI
+><P
+>		With or without a prefix select <B
+CLASS="COMMAND"
+>Accept</B
+> at the
+		bottom of the screen.
+	      </P
+></LI
+><LI
+><P
+>		On the <TT
+CLASS="GUILABEL"
+><B
+>User groups</B
+></TT
+> screen (see <A
+HREF="ch-sysconfig.html#GR-SYSCONFIG-LC-UGROUPS"
+>Figure 3-8</A
+>) select the group you wish to
+		delete.
+	      </P
+></LI
+><LI
+><P
+>		You'll be presented with the <TT
+CLASS="GUILABEL"
+><B
+>Group
+		  specification</B
+></TT
+> screen (see <A
+HREF="ch-sysconfig.html#GR-SYSCONFIG-LC-GSPECIFICATION"
+>Figure 3-9</A
+>).
+	      </P
+></LI
+><LI
+><P
+>		Select <B
+CLASS="COMMAND"
+>Del</B
+> to delete the group.
+		<TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+> will then prompt you to
+		confirm the deletion.  Choose <B
+CLASS="GUIBUTTON"
+>yes</B
+> to
+		delete the group.
+	      </P
+></LI
+></UL
+><P
+>	    The group's files will still remain and their respective owners will
+	    still have sole control over them.  The group name will be replaced
+	    with the deleted group's ID.  The files may be assigned to a new
+	    group by using the <B
+CLASS="COMMAND"
+>chgrp</B
+> command.  More
+	    information on <B
+CLASS="COMMAND"
+>chgrp</B
+> can be found by typing the
+	    command <B
+CLASS="COMMAND"
+>info chgrp</B
+> or <B
+CLASS="COMMAND"
+>man
+	    chgrp</B
+> at the shell prompt.  If a new group is created and
+	    the deleted group's ID is specified then the new group will have
+	    access to the deleted group's files.  Don't worry,
+	    <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> doesn't recycle old group
+	    numbers any more than it does old user IDs, so it won't happen by
+	    accident.
+	  </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSCONFIG-MODIFY-GROUP"
+>Modifying Group Membership</A
+></H3
+><P
+>	    There are two ways to modify the list of users that belong to a
+	    group.  You can either update each user account itself, or you can
+	    update the group definitions.  In general, the fastest way is to
+	    update each of the group definitions.  If you're planning on
+	    changing more information for each user than just the group
+	    information, then updating each user account may prove easier.
+	  </P
+><P
+>	    We'll start by detailing the group definitions method. 
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		Start <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> by typing
+		<B
+CLASS="COMMAND"
+>linuxconf</B
+> at the shell prompt.
+	      </P
+></LI
+><LI
+><P
+>		Open <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Users
+		  accounts</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Normal</B
+> =&#62;
+		<B
+CLASS="GUIMENUITEM"
+>Group definitions</B
+>.
+	      </P
+><P
+>		Depending on the filter settings in
+		<B
+CLASS="GUIMENUITEM"
+>Control</B
+> =&#62;
+		<B
+CLASS="GUIMENUITEM"
+>Features</B
+>, you may see a filter
+		screen.  Use the filter to narrow the list, or just select
+		<B
+CLASS="GUIBUTTON"
+>Accept</B
+> to bypass the filter.
+	      </P
+></LI
+><LI
+><P
+>		Select the group you wish to modify.  This will open the
+		<TT
+CLASS="FILENAME"
+>Group specification</TT
+> screen (see <A
+HREF="ch-sysconfig.html#GR-SYSCONFIG-LC-GSPECIFICATION"
+>Figure 3-9</A
+>).
+	      </P
+></LI
+><LI
+><P
+>		Add or remove each user from the <TT
+CLASS="GUILABEL"
+><B
+>Alternate
+		  members</B
+></TT
+> field.  Make sure that all of the user names
+		are separated by a space character.
+	      </P
+></LI
+><LI
+><P
+>		Select <B
+CLASS="COMMAND"
+>Accept</B
+>, which can be found at the bottom
+		of the screen.
+	      </P
+></LI
+></UL
+><P
+>	    This will automatically update each user account with the group
+	    showing up in the <TT
+CLASS="GUILABEL"
+><B
+>Supplementary groups</B
+></TT
+> field if
+	    added or absent if removed.
+	  </P
+><P
+>	    Adding and removing groups can also be done by modifying each
+	    individual user account.
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		Start <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> by typing
+		<B
+CLASS="COMMAND"
+>linuxconf</B
+> at the shell prompt.
+	      </P
+></LI
+><LI
+><P
+>		Open <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Users
+		  accounts</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Normal</B
+> =&#62;
+		<B
+CLASS="GUIMENUITEM"
+>User accounts</B
+>.
+	      </P
+><P
+>		You may see a filter screen, depending on the settings in
+		<B
+CLASS="GUIMENUITEM"
+>Control</B
+> =&#62;
+		<B
+CLASS="GUIMENUITEM"
+>Features</B
+>. Use the filter to narrow
+		the list or select <B
+CLASS="GUIBUTTON"
+>Accept</B
+> to bypass the
+		filter.
+	      </P
+></LI
+><LI
+><P
+>		On the <TT
+CLASS="GUILABEL"
+><B
+>User accounts</B
+></TT
+> screen (see <A
+HREF="ch-sysconfig.html#GR-SYSCONFIG-LC-UACCOUNTS"
+>Figure 3-3</A
+>), select a user that you wish
+		to update.  You will be presented with the <TT
+CLASS="GUILABEL"
+><B
+>User
+		  information</B
+></TT
+> screen.
+	      </P
+></LI
+><LI
+><P
+>		Add or remove the desired groups from the <TT
+CLASS="GUILABEL"
+><B
+>Supplementary
+		  groups</B
+></TT
+> field.  Each group should be separated by a
+		space character.
+	      </P
+></LI
+><LI
+><P
+>		Once you've made all the changes you'd like, select
+		<B
+CLASS="COMMAND"
+>Accept</B
+> at the bottom of the screen.
+	      </P
+></LI
+></UL
+><P
+>	    This will automatically update the group definitions.  Repeat the
+	    process for each user.
+	  </P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSCONFIG-CDROM-HD"
+>Filesystems</A
+></H2
+><P
+>	  A filesystem is composed of files and directories, all starting from a
+	  single root directory.  The root directory may contain any number of
+	  files and other directories, with each directory in turn following
+	  suit.  The average filesystem often looks like an inverted tree with
+	  the directories as branches and the files as leaves.  Filesystems
+	  reside on mass storage devices such as diskette drives, hard drives,
+	  and CD-ROMs.
+	</P
+><P
+>	  For example, a diskette drive on DOS and Windows machines is typically
+	  referenced by <TT
+CLASS="FILENAME"
+>A:\</TT
+>.  This describes both the
+	  device (<TT
+CLASS="FILENAME"
+>A:</TT
+>), and the root directory on that
+	  device (<TT
+CLASS="FILENAME"
+>\</TT
+>).  The primary hard drive on the same
+	  systems is typically referred to as the "C" drive because the device
+	  specification for the first hard drive is <TT
+CLASS="FILENAME"
+>C:</TT
+>.  To
+	  specify the root directory on the C drive, you would use
+	  <TT
+CLASS="FILENAME"
+>C:\</TT
+>.
+	</P
+><P
+>	  Under this arrangement, there are two filesystems -- the one on
+	  <TT
+CLASS="FILENAME"
+>A:</TT
+>, and the one on <TT
+CLASS="FILENAME"
+>C:</TT
+>.  In
+	  order to specify <I
+CLASS="EMPHASIS"
+>any</I
+> file on a DOS/Windows
+	  filesystem, you must either explicitly specify the device on which the
+	  file resides, or it must be on the system's default drive (which is
+	  where DOS' C prompt comes from -- that's the default drive in a system
+	  with a single hard drive).
+	</P
+><P
+>	  Under Linux, it is possible to link the filesystems on several mass
+	  storage devices together into a single, larger, filesystem.  This is
+	  done by placing one device's filesystem "under" a directory on another
+	  device's filesystem.  So while the root directory of a diskette drive
+	  on a DOS machine may be referred to as <TT
+CLASS="FILENAME"
+>A:\</TT
+>, the
+	  same drive on a Linux system may be accessible as
+	  <TT
+CLASS="FILENAME"
+>/mnt/floppy</TT
+>.
+	</P
+><P
+>	  The process of merging filesystems in this way is known as
+	  <I
+CLASS="FIRSTTERM"
+>mounting</I
+>.  When a device is mounted, it is then
+	  accessible to the system's users.  The directory "under" which a
+	  mounted device's filesystem becomes accessible is known as the
+	  <I
+CLASS="FIRSTTERM"
+>mount point</I
+>.  In the previous paragraph's
+	  example, <TT
+CLASS="FILENAME"
+>/mnt/floppy</TT
+> was the diskette drive's
+	  mount point.  Note that there are no restrictions (other than common
+	  conventions) as to the naming of mount points.  We could have just as
+	  easily mounted the floppy to
+	  <TT
+CLASS="FILENAME"
+>/long/path/to/the/floppy/drive</TT
+>.
+	</P
+><P
+>	  One thing to keep in mind is that all of a device's files and
+	  directories are relative to its mount point.  Consider the following
+	  example:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      A Linux System:
+	      
+	      <P
+></P
+><UL
+><LI
+><P
+>		    <TT
+CLASS="FILENAME"
+>/</TT
+> -- system root directory
+		  </P
+></LI
+><LI
+><P
+>		    <TT
+CLASS="FILENAME"
+>/foo</TT
+> -- mount point for the CD-ROM
+		  </P
+></LI
+></UL
+>
+	    </P
+></LI
+><LI
+><P
+>	      A CD-ROM:
+	      
+	      <P
+></P
+><UL
+><LI
+><P
+>		    <TT
+CLASS="FILENAME"
+>/</TT
+> -- CD-ROM's root directory
+		  </P
+></LI
+><LI
+><P
+>		    <TT
+CLASS="FILENAME"
+>/images</TT
+> -- A directory of images on the CD-ROM
+		  </P
+></LI
+><LI
+><P
+>		    <TT
+CLASS="FILENAME"
+>/images/old</TT
+> -- A directory of old images
+		  </P
+></LI
+></UL
+>
+	    </P
+></LI
+></UL
+><P
+>	  So, if the above describes the individual filesystems, and you mount
+	  the CD-ROM at <TT
+CLASS="FILENAME"
+>/foo</TT
+>, the new operating system
+	  directory structure would be:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      A Linux System (with the CD-ROM mounted):
+	      
+	      <P
+></P
+><UL
+><LI
+><P
+>		    <TT
+CLASS="FILENAME"
+>/</TT
+> -- System root directory
+		  </P
+></LI
+><LI
+><P
+>		    <TT
+CLASS="FILENAME"
+>/foo</TT
+> -- CD-ROM root directory
+		  </P
+></LI
+><LI
+><P
+>		    <TT
+CLASS="FILENAME"
+>/foo/images</TT
+> -- A directory of images
+		    on the CD-ROM
+		  </P
+></LI
+><LI
+><P
+>		    <TT
+CLASS="FILENAME"
+>/foo/images/old</TT
+> -- A directory of old
+		    images
+		  </P
+></LI
+></UL
+>
+	    </P
+></LI
+></UL
+><P
+>	  To mount a filesystem make sure to be logged in as root, or become
+	  root using the <B
+CLASS="COMMAND"
+>su</B
+> command.  For the latter, type
+	  <B
+CLASS="COMMAND"
+>su</B
+> at the shell prompt and then enter the root
+	  password.  Once you are root, type <B
+CLASS="COMMAND"
+>mount</B
+> followed
+	  by the device and then the mount point.  For example, to mount the
+	  first diskette drive on <TT
+CLASS="FILENAME"
+>/mnt/floppy</TT
+>, you would
+	  type the command <B
+CLASS="COMMAND"
+>mount /dev/fd0 /mnt/floppy</B
+>.
+	</P
+><P
+>	  At installation, Red Hat Linux will create <TT
+CLASS="FILENAME"
+>/etc/fstab</TT
+>.
+	  This file contains information on devices and associated mount points.
+	  The advantage to this file is that it allows you to shorten your mount
+	  commands and it controls which filesystems are automatically mounted
+	  when the system is booted.
+	</P
+><P
+> 
+	  Using the information in <TT
+CLASS="FILENAME"
+>/etc/fstab</TT
+>, you can
+	  type <B
+CLASS="COMMAND"
+>mount</B
+> and then either the mount point or the
+	  device.  The <B
+CLASS="COMMAND"
+>mount</B
+> command will look for the rest
+	  of the information in <TT
+CLASS="FILENAME"
+>/etc/fstab</TT
+>.  It's possible
+	  to modify this file by hand, or by using
+	  <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>.
+	</P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSCONFIG-REV-FILE-GEN"
+>Reviewing Your Current Filesystem</A
+></H3
+><P
+>	    We'll start by looking at your current directory structure.
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		Open <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>File
+		  systems</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Access local
+		  drive</B
+>.
+	      </P
+></LI
+></UL
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-LC-LVOLUME"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/lc-lvolume.gif"></P
+><P
+><B
+>Figure 3-10. Local Volume Screen</B
+></P
+></DIV
+><P
+>	    The fields, as shown in <A
+HREF="ch-sysconfig.html#GR-SYSCONFIG-LC-LVOLUME"
+>Figure 3-10</A
+>,
+	    are:
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Source</B
+></TT
+>: The physical hardware;
+		<TT
+CLASS="FILENAME"
+>hd</TT
+> indicates an IDE hard drive,
+		<TT
+CLASS="FILENAME"
+>fd</TT
+> indicates a diskette drive, and
+		<TT
+CLASS="FILENAME"
+>cdrom</TT
+> typically indicates a CD-ROM drive.
+		If your system has a SCSI drive, you will see an
+		<TT
+CLASS="FILENAME"
+>sd</TT
+> instead.  More than one drive of a type
+		are listed by letters, so <TT
+CLASS="FILENAME"
+>hda</TT
+> represents
+		the first IDE drive, while <TT
+CLASS="FILENAME"
+>hdb</TT
+> would be the
+		second.  In some cases, you'll see numbers following these
+		letters; on hard drives, the numbers represent the partitions on
+		that drive, while for diskette drives, this number refers to the
+		actual unit.
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Mount point</B
+></TT
+>: This is where in the system
+		the drive is accessible from when mounted.
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>FsType</B
+></TT
+>: The type of filesystem.  A standard
+		Linux partition uses the ext2 filesystem type.  A filesystem
+		type of vfat indicates a DOS filesystem with long filename
+		support, while a fat filesystem type is for DOS filesystems
+		supporting traditional 8.3 filenames.  The iso9660 filesystem
+		type indicates a CD-ROM drive.
+
+		<DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="90%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>		    Red Hat Linux 6.2 can access FAT32 filesystems using the
+		    <TT
+CLASS="FILENAME"
+>vfat</TT
+> filesystem type.
+		  
+		    
+		  </P
+></TD
+></TR
+></TABLE
+></DIV
+>
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Size</B
+></TT
+>: Size may indicate the size of the
+		filesystem in megabytes (M), or it may not be filled in.
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Partition type</B
+></TT
+>: A description of the
+		filesystem used on that partition (may not be filled in).
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Status</B
+></TT
+>:  Whether the device is mounted or
+		not.
+	      </P
+></LI
+></UL
+><P
+>	    Filesystems from other machines on a network may also be available.
+	    These can range from single small directories to entire volumes.  No
+	    information on <TT
+CLASS="GUILABEL"
+><B
+>Size</B
+></TT
+> or <TT
+CLASS="GUILABEL"
+><B
+>Partition
+	    type</B
+></TT
+> is available for these partitions, either.
+	    Additional information on NFS filesystems (should you have any
+	    available) will be contained under:
+	  </P
+><P
+>	    <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>File
+	      systems</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Access nfs
+	      volume</B
+>
+	  </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-LC-NVOLUME"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/lc-nvolume.gif"></P
+><P
+><B
+>Figure 3-11. NFS Volume Screen</B
+></P
+></DIV
+><P
+>	    The screen (see <A
+HREF="ch-sysconfig.html#GR-SYSCONFIG-LC-NVOLUME"
+>Figure 3-11</A
+> is similar
+	    to the <TT
+CLASS="GUILABEL"
+><B
+>Local volume</B
+></TT
+> screen, with some notable
+	    differences in the information provided for each entry:
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Source</B
+></TT
+>: This will be the name of the
+		machine serving the filesystem, followed by the remote
+		directory.  For example:
+		<TT
+CLASS="FILENAME"
+>foo:/var/spool/mail</TT
+> where
+		<TT
+CLASS="FILENAME"
+>foo</TT
+> is the machine serving the directory,
+		and <TT
+CLASS="FILENAME"
+>/var/spool/mail</TT
+> is the directory being
+		served.
+	      </P
+></LI
+><LI
+><P
+>		FsType -- This will always be "nfs."
+	    </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSCONFIG-ADD-NFS-GEN"
+>Adding NFS Mounts</A
+></H3
+><P
+>	    NFS (Network File System) is a way for computers to share sections
+	    of their local filesystem across a network.  These sections may be
+	    as small as a single directory, or include thousands of files in a
+	    vast hierarchy of directories.  For example, many companies will
+	    have a single mail server with individuals' mail files served as an
+	    NFS mount to each users' local systems.
+	  </P
+><P
+>	    To add an NFS mount:
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		Open <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>File
+		  systems</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Access nfs
+		  volume</B
+>.
+	      </P
+></LI
+><LI
+><P
+>		On the <TT
+CLASS="GUILABEL"
+><B
+>NFS volume</B
+></TT
+> screen, select
+		<B
+CLASS="COMMAND"
+>Add</B
+>.
+	      </P
+></LI
+></UL
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-LC-VSPECIFICATION"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/lc-vspecification.gif"></P
+><P
+><B
+>Figure 3-12. Volume Specification Screen</B
+></P
+></DIV
+><P
+>	    The three fields on the <TT
+CLASS="GUILABEL"
+><B
+>Base</B
+></TT
+> tab are what
+	    you'll need to concern yourself with next (see <A
+HREF="ch-sysconfig.html#GR-SYSCONFIG-LC-VSPECIFICATION"
+>Figure 3-12</A
+>).
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Server</B
+></TT
+>: The host name of the machine the
+                desired filesystem resides on.  For example, foo.bar.com.
+              </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Volume</B
+></TT
+>: The filesystem you wish to add.  For
+		example, <TT
+CLASS="FILENAME"
+>/var/spool/mail</TT
+>.
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Mount point</B
+></TT
+>: Where in your system you want
+		the remote file system accessible from.  For example,
+		<TT
+CLASS="FILENAME"
+>/mnt/mail</TT
+>.
+	      </P
+></LI
+></UL
+><P
+>	    This is all you need to get the mount created.
+	    <TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+> will update your
+	    <TT
+CLASS="FILENAME"
+>/etc/fstab</TT
+> file accordingly.  If you are aware
+	    of additional requirements, please read the help file on the
+	    <TT
+CLASS="GUILABEL"
+><B
+>Volume specification</B
+></TT
+> screen and see the
+	    <B
+CLASS="COMMAND"
+>mount</B
+> man page for more information.
+	  </P
+><P
+>	  Once you have entered the information, select
+	    <B
+CLASS="COMMAND"
+>Accept</B
+>.
+	  </P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSCONFIG-GET-CONNECT"
+>Getting Connected with <TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+> (Network Configuration)</A
+></H2
+><P
+>	  The first thing to determine when getting hooked up is whether you're
+	  connecting to a local area network, such as a group of computers in an
+	  office, or a wide area network, such as the Internet.  Before
+	  continuing, it's important to know what hardware you have and how you
+	  intend to connect.  If you're going to dial into another computer,
+	  then make sure your modem is installed and that the cables are
+	  arranged properly.  If you're using a network card, make sure it is
+	  installed properly and that the cables are correctly connected.
+	  Regardless of what network configuration you specify, if every phone
+	  line or cable is not in place, you'll never get connected.  We'll
+	  start with modem connections and then move on to using network cards.
+	</P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSCONFIG-ADD-PPP-GEN"
+>Adding Modem/PPP/SLIP connections</A
+></H3
+><P
+>	    Red Hat Linux 6.2 uses the utility called
+	    <TT
+CLASS="APPLICATION"
+>RP3</TT
+>, or the <TT
+CLASS="APPLICATION"
+>RH PPP
+	    Dialer</TT
+>, a graphical tool which helps users configure
+	    and monitor network accounts -- particularly PPP accounts. (To read
+	    more about <TT
+CLASS="APPLICATION"
+>RP3</TT
+>, see the related chapter
+	    in the <I
+CLASS="CITETITLE"
+>Official Red Hat Linux Getting Started Guide</I
+>.) However, you can still
+	    depend on <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> to set up network
+	    configuration.
+	  </P
+><P
+>	    There are several pieces of information you will need to get from
+	    your ISP (Internet Service Provider) or systems administrator before
+	    getting your PPP or SLIP account working.  In the case of some
+	    providers, you may have to sort through directions on how to set up
+	    a PPP connection on a Linux system.  Some ISPs are ill-equipped to
+	    handle individuals using Linux.  Don't worry, you can still get
+	    connected; you just need some additional information from your ISP.
+	  </P
+><P
+>	    The following is what you need for a connection with Red Hat Linux.  The ISP
+	    representatives may respond that you don't need this information, or
+	    may suggest that you need more than this.  Red Hat has streamlined the
+	    information needed using intelligent defaults and tools such as
+	    <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> to simplify this process for
+	    you.  Unless they have a document specifically for Red Hat Linux, just
+	    request the information below and go from there.  Specifically,
+	    you'll need:
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		The IP address for the ISP's domain name server
+	      </P
+></LI
+><LI
+><P
+>		The telephone number to dial
+	      </P
+></LI
+><LI
+><P
+>		Your login and password
+	      </P
+></LI
+><LI
+><P
+>		An IP address for your machine if the network you are connecting
+		to isn't going to provide you with a dynamic one
+	      </P
+></LI
+><LI
+><P
+>		Information about whether your ISP uses an authentication method
+		such as PAP, CHAP or MS-CHAP.  If so, you will need a "secret"
+		to enable authentication.  The secret will be a word or sequence
+		of characters.  CHAP and MS-CHAP are not currently supported
+		using <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>, and are rarely used.
+	      </P
+></LI
+></UL
+><P
+>	    Additional information which may be helpful, but isn't necessary
+	    includes a secondary name server address, and a search domain.  Once
+	    you have all this information, you're ready to get connected.
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		Open <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62;
+		<B
+CLASS="GUIMENUITEM"
+>Networking</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Client
+		  tasks</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>PPP/SLIP/PLIP</B
+>.
+	      </P
+></LI
+><LI
+><P
+>		Select <B
+CLASS="COMMAND"
+>Add</B
+>.
+	      </P
+></LI
+></UL
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-LC-PCONFIGURATIONS"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/lc-pconfigurations.gif"></P
+><P
+><B
+>Figure 3-13. PPP/SLIP/PLIP Configurations Screen</B
+></P
+></DIV
+><P
+>	    Initially there won't be any configurations specified.  When you
+	    select <B
+CLASS="COMMAND"
+>Add</B
+> you will be given a choice between
+	    PPP, SLIP and PLIP.
+	  </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-LC-TOINTERFACE"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/lc-tointerface.gif"></P
+><P
+><B
+>Figure 3-14. Type of Interface Screen</B
+></P
+></DIV
+><P
+>	    PPP is the most commonly used interface and is the default.  To set up
+	    a PPP connection select <B
+CLASS="COMMAND"
+>PPP</B
+> and select
+	    <B
+CLASS="COMMAND"
+>Accept</B
+>.
+	  </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-LC-PINTERFACE"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/lc-pinterface.gif"></P
+><P
+><B
+>Figure 3-15. PPP Interface Screen</B
+></P
+></DIV
+><P
+>	    You'll see the following fields:
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Phone number</B
+></TT
+> -- The number your modem will
+		need to dial to access your ISP or the remote system
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Modem port</B
+></TT
+> -- Indicates where your modem
+		is and should already be set
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Use PAP authentication</B
+></TT
+> check box -- Check
+                if you know that the system you are dialing into requires this
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Login name</B
+></TT
+> -- Your login name for the PPP
+		account
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Password</B
+></TT
+> -- Your password for the PPP
+		account
+	      </P
+></LI
+></UL
+><P
+>	    Notice that the title bar is <TT
+CLASS="GUILABEL"
+><B
+>PPP interface
+            ppp0</B
+></TT
+>.  <TT
+CLASS="FILENAME"
+>ppp0</TT
+> is the first PPP
+            interface, <TT
+CLASS="FILENAME"
+>ppp1</TT
+> would be the second and so on.
+            It's important to keep track of which interface you're using if you
+            have more than one.  SLIP connections use <TT
+CLASS="FILENAME"
+>sl</TT
+>
+            instead of <TT
+CLASS="FILENAME"
+>ppp</TT
+> for their interface prefix.
+            With the exception of a PAP authentication option, the entry screens
+            for adding a PPP or a SLIP account are identical.
+	  </P
+><P
+>	    Enter the complete phone number for the remote machine, and make
+	    sure to include any numbers required to access outside lines.
+	  </P
+><P
+>	    For example, if you need to dial 9 and then the number, and the
+	    computer you're connecting to has a telephone number of 555-0111,
+	    then you'd enter <TT
+CLASS="USERINPUT"
+><B
+>95550111</B
+></TT
+>.
+	  </P
+><P
+>	    The next information you're asked for is the modem port.  This is a
+	    drop down box of available ports.  If you're using a dual-boot
+	    Linux/Windows system and you know the COM port your modem is on, the
+	    following map may be of use:
+	  </P
+><P
+>	    Map to Windows COM ports are as follows:
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		<TT
+CLASS="FILENAME"
+>ttyS0</TT
+> -- COM1: under MS-DOS;
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="FILENAME"
+>ttyS1</TT
+> -- COM2: under MS-DOS;
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="FILENAME"
+>ttyS2</TT
+> -- COM3: under MS-DOS;
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="FILENAME"
+>ttyS3</TT
+> -- COM4: under MS-DOS.
+	      </P
+></LI
+></UL
+><P
+>	    The login name is the one for the PPP account.  The password you
+	    enter will be shown in plain text, so be careful who you have around
+	    when you enter it!  If you will be using PAP authentication, check
+	    the box; when you've entered the other required information, select
+	    the <B
+CLASS="COMMAND"
+>Customize</B
+> button at the bottom of the screen.
+	  </P
+><P
+>	    If you're using PAP, select the <TT
+CLASS="GUILABEL"
+><B
+>PAP</B
+></TT
+> tab and
+	    enter your username and then the secret the ISP has provided you in
+	    the <TT
+CLASS="GUILABEL"
+><B
+>Secret field</B
+></TT
+>. The other defaults should be
+	    sufficient, but if you need to, you can edit the initial settings
+	    using the <B
+CLASS="COMMAND"
+>Customize</B
+> option.
+	  </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSCONFIG-MOD-PPP-GEN"
+>Modifying a PPP or SLIP Configuration</A
+></H3
+><P
+>	    You can edit an existing configuration as well as delete it by
+	    selecting it from the list on the <TT
+CLASS="GUILABEL"
+><B
+>PPP/SLIP/PLIP
+	    configurations</B
+></TT
+> screen.
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		Open <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62;
+		<B
+CLASS="GUIMENUITEM"
+>Networking</B
+> =&#62; <TT
+CLASS="GUILABEL"
+><B
+>Client
+		  tasks</B
+></TT
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>PPP/SLIP/PLIP</B
+>.
+	      </P
+></LI
+><LI
+><P
+>		You will then be presented with the <B
+CLASS="COMMAND"
+>PPP/SLIP/PLIP
+		  configurations</B
+> screen (see <A
+HREF="ch-sysconfig.html#GR-SYSCONFIG-LC-PCONFIGURATIONS"
+>Figure 3-13</A
+>).  Select the
+		configuration you would like to modify or delete.
+	      </P
+><P
+>		This will open the appropriate interface screen for your
+		configuration.  If you wish to delete the configuration, select
+		<B
+CLASS="COMMAND"
+>Del</B
+> at the bottom of the screen.  The Modem
+		port is on the <TT
+CLASS="GUILABEL"
+><B
+>Hardware</B
+></TT
+> tab and is a drop
+		down menu.  If you want to change the other settings you entered
+		when you originally created the configuration, select the
+		<TT
+CLASS="GUILABEL"
+><B
+>Communication</B
+></TT
+> tab.  The first
+		<TT
+CLASS="GUILABEL"
+><B
+>Send</B
+></TT
+> field contains your login, and the
+		next <TT
+CLASS="GUILABEL"
+><B
+>Send</B
+></TT
+> field contains your password.
+		The <TT
+CLASS="GUILABEL"
+><B
+>Expect</B
+></TT
+> fields correspond to the
+		<TT
+CLASS="FILENAME"
+>login:</TT
+> and <TT
+CLASS="FILENAME"
+>password:</TT
+>
+		prompts, which explains the <TT
+CLASS="FILENAME"
+>ogin:</TT
+> and
+		<TT
+CLASS="FILENAME"
+>ord:</TT
+> entries.
+	      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="90%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>		  The <TT
+CLASS="FILENAME"
+>ogin:</TT
+> and <TT
+CLASS="FILENAME"
+>ord:</TT
+>
+		  entries may not be the same for your system. Different ISP/PPP
+		  servers may use different text and should be changed to fit
+		  the needs of whatever server type you are logging in
+		  to. Instead, you may see such prompts as <TT
+CLASS="FILENAME"
+>User
+		  ID</TT
+> and <TT
+CLASS="FILENAME"
+>authentification</TT
+>.
+		</P
+></TD
+></TR
+></TABLE
+></DIV
+></LI
+></UL
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-LC-SINTERFACE2"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/lc-sinterface2.gif"></P
+><P
+><B
+>Figure 3-16. PPP Customization -- The Communication Tab</B
+></P
+></DIV
+><P
+>	    Once you have made your changes, you can test to see if your
+	    configuration is working.  Select <B
+CLASS="COMMAND"
+>Connect</B
+> from
+	    the bottom of the screen.  This will attempt to connect you to the
+	    remote system using the information you've entered.
+	  </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSCONFIG-OTHER-NET-CONN-GEN"
+>Other Network Connections</A
+></H3
+><P
+>	    Setting up a network connection over Ethernet requires an entirely
+	    different type of setup.  Network connections to Token Ring or
+	    ARCnet networks follow a similar procedure, but will not be
+	    discussed here.
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		First you will need to have an Ethernet card installed.
+	      </P
+></LI
+><LI
+><P
+>		Start <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> by typing
+		<B
+CLASS="COMMAND"
+>linuxconf</B
+> at the shell prompt.
+	      </P
+></LI
+><LI
+><P
+>		Open <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62;
+		<B
+CLASS="GUIMENUITEM"
+>Networking</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Client
+		tasks</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Basic host
+		information</B
+>.  The <TT
+CLASS="FILENAME"
+>Host name</TT
+>
+		tab will request a host name, which should be specified by
+		default unless you did not setup your networking during the
+		installation process. If it is not already specified, please
+		take the time now to configure it. It should be specified as
+		<TT
+CLASS="COMPUTEROUTPUT"
+>localhost.localdomain</TT
+>.  Skip
+		this tab. Select the tab for <TT
+CLASS="FILENAME"
+>Adaptor 1</TT
+>.
+	      </P
+></LI
+></UL
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-LC-ALTHBCONFIGURE"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/lc-althbconfiguration.gif"></P
+><P
+><B
+>Figure 3-17. Adaptor 1</B
+></P
+></DIV
+><P
+>	    The first item on this screen is a check box to indicate whether
+	    this adaptor is enabled or not.  It should be checked if this is the
+	    one you intend to use.  Below that is a choice of <TT
+CLASS="GUILABEL"
+><B
+>Config
+	    modes</B
+></TT
+>.  <TT
+CLASS="GUILABEL"
+><B
+>Manual</B
+></TT
+> means that you will
+	    be providing all the information and entering it yourself.
+	    <TT
+CLASS="GUILABEL"
+><B
+>Dhcp</B
+></TT
+> and <TT
+CLASS="GUILABEL"
+><B
+>Bootp</B
+></TT
+> mean that
+	    your machine will be getting its network configuration information
+	    from a remote DHCP or BOOTP server.  If you're not sure what option
+	    to choose, talk to your network administrator.
+	  </P
+><P
+>	    Required fields for DHCP or BOOTP:
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Net device</B
+></TT
+> -- The type of network card you
+                are using; for example, eth0 would be the appropriate entry to
+                use the first Ethernet card.
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Kernel module</B
+></TT
+> -- The correct module based
+                on your network card; for further information see the list
+                below.
+	      </P
+></LI
+></UL
+><P
+>	    For DHCP and bootp configurations you only need to specify the
+	    <TT
+CLASS="GUILABEL"
+><B
+>Net device</B
+></TT
+> and the <TT
+CLASS="GUILABEL"
+><B
+>Kernel
+	    module</B
+></TT
+>.  For the <TT
+CLASS="GUILABEL"
+><B
+>Net device</B
+></TT
+>, you
+	    will choose from a list where the <TT
+CLASS="GUILABEL"
+><B
+>eth</B
+></TT
+> prefix
+	    represents Ethernet cards, <TT
+CLASS="GUILABEL"
+><B
+>arc</B
+></TT
+> specifies an
+	    ARCnet card and <TT
+CLASS="GUILABEL"
+><B
+>tr</B
+></TT
+> specifies Token Ring cards.
+	    A complete list of network cards and their respective modules can be
+	    found in <A
+HREF="ch-modules.html"
+>Appendix A</A
+>.  For the most up-to-date list,
+	    please see our website at:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><A
+HREF="http://www.redhat.com/support/hardware/"
+TARGET="_top"
+>http://www.redhat.com/support/hardware</A
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	    The netmask information may be set by default, although depending on
+	    what kind of network you are setting up, or becoming a part of, you
+	    may need to specify this.  If you are connecting to an ISP, ask them
+	    for the information.  Most likely it will be 255.255.255.0.
+	  </P
+><P
+>	    Required fields for manual configuration:
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Primary name + domain</B
+></TT
+> -- The primary name
+		is the name of your computer, while the domain is how your
+		network is specified. For example,
+		<TT
+CLASS="FILENAME"
+>foo.bar.com</TT
+>; <TT
+CLASS="FILENAME"
+>foo</TT
+> is
+		the primary name and <TT
+CLASS="FILENAME"
+>bar.com</TT
+> is the domain.
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>IP address</B
+></TT
+> -- The address of the
+                machine and will follow the pattern of
+                <TT
+CLASS="REPLACEABLE"
+><I
+>x</I
+></TT
+>.<TT
+CLASS="REPLACEABLE"
+><I
+>x</I
+></TT
+>
+                .<TT
+CLASS="REPLACEABLE"
+><I
+>x</I
+></TT
+>.<TT
+CLASS="REPLACEABLE"
+><I
+>x</I
+></TT
+>. For
+                example, 192.168.0.13.
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Net device</B
+></TT
+> -- The type of network card you
+                are using; eth0 would be the appropriate entry to use the first
+                Ethernet card.
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Kernel module</B
+></TT
+> -- The correct module based
+		on your network card.
+	      </P
+></LI
+></UL
+><P
+>	    Information on net devices and kernel modules is described above.
+	    The appropriate primary name + domain and IP address will depend on
+	    whether you are adding the computer to an existing network or
+	    creating a new network.  For connecting to an existing network,
+	    contact your network administrator for the information. Getting a
+	    network connected to the Internet is beyond the scope of this book,
+	    and we recommend the following starting point:
+	  </P
+><P
+>	    <I
+CLASS="CITETITLE"
+>TCP/IP Network Administration, 2nd Edition</I
+>,
+	    by Craig Hunt (O'Reilly and Associates).
+	  </P
+><P
+>	    If you're setting up a private network that won't
+	    <I
+CLASS="EMPHASIS"
+>ever</I
+> be connected to the Internet, then you can
+	    choose any primary name + domain name you would like and have
+	    several choices for IP addresses (See <A
+HREF="ch-sysconfig.html#TB-SYSCONFIG-ADDRESSES"
+>Table 3-1</A
+>).
+	  </P
+><DIV
+CLASS="TABLE"
+><A
+NAME="TB-SYSCONFIG-ADDRESSES"
+></A
+><P
+><B
+>Table 3-1. Addresses and Examples</B
+></P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+CELLSPACING="0"
+CELLPADDING="4"
+CLASS="CALSTABLE"
+><TR
+><TH
+ALIGN="LEFT"
+VALIGN="TOP"
+>		    <B
+CLASS="COMMAND"
+>Addresses available</B
+>
+		  </TH
+><TH
+ALIGN="LEFT"
+VALIGN="TOP"
+>		    <B
+CLASS="COMMAND"
+>Examples</B
+>
+		  </TH
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>		    10.0.0.0 - 10.255.255.255
+		  </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>		    10.5.12.14
+		  </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>		    172.16.0.0 - 172.31.255.255
+		  </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>		    172.16.9.1, 172.28.2.5
+		  </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>		    192.168.0.0 - 192.168.255.25
+		  </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>		    192.168.0.13
+		  </TD
+></TR
+></TABLE
+></DIV
+><P
+>	    The three sets of numbers above correspond to class a, b, and c
+	    networks respectively.  The classes are used to describe the number
+	    of IP addresses available as well as the range of numbers.  The
+	    numbers above have been set aside for private networks.
+	  </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	      You should not use these IP addresses if you connect to the Internet
+	      since 192.168.0.* and 192.168.255.* are not reliably considered
+	      private.  If you want your network to be connected to the Internet,
+	      or think you might want to at some point in the future, do yourself
+	      a favor and get yourself non-private addresses now.
+	    </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSCONFIG-NAMESERVER"
+>Name Server Specification</A
+></H3
+><P
+>	    A name server and default domain are also needed to establish a
+	    network connection.  The name server is used to translate host names
+	    such as <TT
+CLASS="FILENAME"
+>private.network.com</TT
+> to their
+	    corresponding IP address such as <TT
+CLASS="FILENAME"
+>192.168.7.3</TT
+>.
+	  </P
+><P
+>	    The default domain tells the computer where to look if a fully
+	    qualified hostname isn't specified.  Fully qualified means that the
+	    full address is given, so <TT
+CLASS="FILENAME"
+>foo.redhat.com</TT
+> is the
+	    fully qualified hostname, while the hostname is simply
+	    <TT
+CLASS="FILENAME"
+>foo</TT
+>.  If you specified your default domain as
+	    <TT
+CLASS="FILENAME"
+>redhat.com</TT
+>, then you could use just the
+	    hostname to connect successfully. For example <B
+CLASS="COMMAND"
+>ftp
+	    foo</B
+> would be sufficient if your search domain is
+	    <TT
+CLASS="FILENAME"
+>redhat.com</TT
+>, while <B
+CLASS="COMMAND"
+>ftp
+	    foo.redhat.com</B
+> would be required if it wasn't.
+	  </P
+><P
+>	    To specify the nameserver, open <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62;
+	    <B
+CLASS="GUIMENUITEM"
+>Networking</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Client
+	    tasks</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Name server specification
+	    (DNS)</B
+>.
+          </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-LC-RCONFIGURATION"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/lc-rconfiguration.gif"></P
+><P
+><B
+>Figure 3-18. Resolver Configuration Screen</B
+></P
+></DIV
+><P
+>	    Nameservers are ranked according to the order in which they are
+	    accessed, so it's not unusual to see nameservers referred to as
+	    primary, secondary, tertiary and so on down the list if more than
+	    one is specified.  Each of these must be an IP address and not a
+	    name, since the computer has no way to resolve the name until it
+	    connects to a nameserver.
+	  </P
+><P
+>	    In addition to a default domain, you can also specify search
+	    domains.  Search domains work differently; they progress from one to
+	    six in a similar manner to the nameserver.  However, they all take
+	    precedence over the default domain!  Keep this in mind when
+	    specifying search domains.  Search domains are not commonly used.
+	  </P
+><P
+>	    The one item not yet covered is the check box for DNS usage.  If you
+	    are running a small private network with no Internet connection,
+	    then using <TT
+CLASS="FILENAME"
+>/etc/hosts</TT
+> files and keeping them
+	    all synchronized will work.  As you add more and more machines, the
+	    complexity increases until it is easier to have a single machine run
+	    a DNS than to continue to sync <TT
+CLASS="FILENAME"
+>/etc/hosts</TT
+>
+	    files.
+	  </P
+><P
+>	    Another reason for not using DNS is if your network is going to use
+	    NIS instead.  Note that NIS can be used in conjunction with DNS.  So
+	    to sum it all up, unless you know why using
+	    <TT
+CLASS="FILENAME"
+>/etc/hosts</TT
+> or NIS would be best for your
+	    situation, DNS is probably going to be your best choice.
+	  </P
+><P
+>	    You can add, modify, or delete entries from the
+	    <TT
+CLASS="FILENAME"
+>/etc/hosts</TT
+> file using
+	    <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>.  Open
+	    <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62;
+	    <B
+CLASS="GUIMENUITEM"
+>Networking</B
+> =&#62;
+	    <B
+CLASS="GUIMENUITEM"
+>Misc</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Information about
+	    other hosts</B
+>.
+	  </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-LC-EHOSTS"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/lc-ehosts.gif"></P
+><P
+><B
+>Figure 3-19. <TT
+CLASS="FILENAME"
+>/etc/hosts</TT
+> Screen</B
+></P
+></DIV
+><P
+>	    To modify or delete an entry select it.  To delete the entry, select
+	    <B
+CLASS="GUIBUTTON"
+>Del</B
+> at the bottom of the <TT
+CLASS="GUILABEL"
+><B
+>host/network
+	      definition</B
+></TT
+> screen.
+	  </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-LC-HDEFINITION"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/lc-hdefinition.gif"></P
+><P
+><B
+>Figure 3-20. Host/Network Definition Screen</B
+></P
+></DIV
+><P
+>	    To modify it, change the information as necessary.  To add a new
+	    entry, select <B
+CLASS="COMMAND"
+>Add</B
+> at the bottom of the
+	    <TT
+CLASS="GUILABEL"
+><B
+>/etc/hosts</B
+></TT
+> screen.  This will also open the
+	    <TT
+CLASS="GUILABEL"
+><B
+>host/network definition</B
+></TT
+> screen.
+	  </P
+><P
+>	    Required Fields:
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Primary name + domain</B
+></TT
+> -- The primary name is
+		the name of the computer, while the domain is how the network it
+		is attached to is specified.  For example, given
+		<TT
+CLASS="FILENAME"
+>foo.bar.com</TT
+>, <TT
+CLASS="FILENAME"
+>foo</TT
+> is
+		the primary name and <TT
+CLASS="FILENAME"
+>bar.com</TT
+> is the domain.
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>IP number</B
+></TT
+> -- Also referred to as IP address;
+		this is the address of the machine and will follow the pattern
+		of <TT
+CLASS="REPLACEABLE"
+><I
+>x</I
+></TT
+>.<TT
+CLASS="REPLACEABLE"
+><I
+>x</I
+></TT
+>.
+		<TT
+CLASS="REPLACEABLE"
+><I
+>x</I
+></TT
+>.<TT
+CLASS="REPLACEABLE"
+><I
+>x</I
+></TT
+>.  For
+		example, 192.168.0.13.
+	      </P
+></LI
+></UL
+><P
+>	    Optional Fields:
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Aliases</B
+></TT
+> -- A shorthand for the fully
+		qualified domain name.  This is often the same as the primary
+		name.  So, for example, if the fully qualified domain name is
+		foo.bar.com, you could select foo as the alias.
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Comment</B
+></TT
+> -- A comment on the machine.  For
+		example, "The remote nameserver."
+	      </P
+></LI
+></UL
+><P
+>	    Once finished, select <B
+CLASS="COMMAND"
+>Accept</B
+>.
+	  </P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSCONFIG-QUICKREF"
+>Finding Your Way Through
+	  <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+></A
+></H2
+><P
+>	  This table provides a quick reference for this chapter.
+	  Unfortunately, it doesn't provide a complete quick reference for
+	  <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>, which has many more capabilities
+	  than this documentation provides.
+	</P
+><DIV
+CLASS="TABLE"
+><A
+NAME="TB-SYSCONFIG-QUICKREF"
+></A
+><P
+><B
+>Table 3-2. <TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+> Quick Reference</B
+></P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+CELLSPACING="0"
+CELLPADDING="4"
+CLASS="CALSTABLE"
+><TR
+><TH
+ALIGN="LEFT"
+VALIGN="TOP"
+>What do you want to do?</TH
+><TH
+ALIGN="LEFT"
+VALIGN="TOP"
+>Where to find it in
+		  <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+></TH
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Add/modify/disable/delete a user account</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Users
+		    accounts</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Normal</B
+> =&#62;
+		  <B
+CLASS="GUIMENUITEM"
+>User accounts</B
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Change a user's password</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Users
+		    accounts</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Normal</B
+> =&#62;
+		  <B
+CLASS="GUIMENUITEM"
+>User accounts</B
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Change the root password</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Users
+		    accounts</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Normal</B
+> =&#62;
+		  <B
+CLASS="GUIMENUITEM"
+>Change root password</B
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Configure networking</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62;
+		  <B
+CLASS="GUIMENUITEM"
+>Networking</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Client
+		    tasks</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Basic host
+		    information</B
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Create/delete a group</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Users
+		    accounts</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Normal</B
+> =&#62;
+		  <B
+CLASS="GUIMENUITEM"
+>Group definitions</B
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Create/modify modem/PPP/SLIP connections</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62;
+		  <B
+CLASS="GUIMENUITEM"
+>Networking</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Client
+		    tasks</B
+> =&#62;
+		  <B
+CLASS="GUIMENUITEM"
+>PPP/SLIP/PLIP</B
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Edit parameters for passwords</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><B
+CLASS="GUIMENUITEM"
+>Users Accounts</B
+> =&#62;
+		  <B
+CLASS="GUIMENUITEM"
+>Password &#38; Account Policies</B
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Disable tree menu</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><B
+CLASS="GUIMENUITEM"
+>Control</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Control
+		    files and systems</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Configure
+		    linuxconf modules</B
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Enable Web-based access to
+		  <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62;
+		  <B
+CLASS="GUIMENUITEM"
+>Networking</B
+> =&#62;
+		  <B
+CLASS="GUIMENUITEM"
+>Misc</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Linuxconf network
+		    access</B
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Modify <TT
+CLASS="FILENAME"
+>/etc/hosts</TT
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62;
+		  <B
+CLASS="GUIMENUITEM"
+>Networking</B
+> =&#62;
+		  <B
+CLASS="GUIMENUITEM"
+>Misc</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Information about
+		    other hosts</B
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Modify group membership</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Users
+		    accounts</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Normal</B
+> =&#62;
+		  <B
+CLASS="GUIMENUITEM"
+>Group definitions</B
+> or
+		  <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Users
+		    accounts</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Normal</B
+> =&#62;
+		  <B
+CLASS="GUIMENUITEM"
+>User accounts</B
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Set filter parameters</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><B
+CLASS="GUIMENUITEM"
+>Control</B
+> =&#62;
+		  <B
+CLASS="GUIMENUITEM"
+>Features</B
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Specify a nameserver (DNS)</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62;
+		  <B
+CLASS="GUIMENUITEM"
+>Networking</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Client
+		    tasks</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Name server specification
+		    (DNS)</B
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>View filesystem</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>File
+		    systems</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Access local
+		    drive</B
+> or <B
+CLASS="GUIMENUITEM"
+>Config</B
+> =&#62;
+		  <B
+CLASS="GUIMENUITEM"
+>File systems</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Access nfs
+		    volume</B
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-sysadmin-rescue.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-sysconfig-control-panel.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Rescue Mode</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="p196.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>System Configuration with the Control Panel</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-sysconfig.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:59:17 GMT -->
+</HTML
+>

@@ -1,0 +1,122 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/fr/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:27 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Configuration de SILO</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.52"><LINK
+REL="HOME"
+TITLE="Ecrans d'aide de l'installation"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="Configuration de LILO"
+HREF="s1-help-screens-lilo.html"><LINK
+REL="NEXT"
+TITLE="Configuration du réseau"
+HREF="s1-help-screens-netconf.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-SILO"
+>Configuration de SILO</A
+></H1
+><P
+>        Vous pouvez aussi utiliser SILO (Sparc Improved LOader) pour lancer 
+	Red Hat Linux sur votre ordinateur. Il permet également de lancer 
+	d'autres systèmes d'exploitation, tels que SunOS et Solaris. 
+	A ce niveau, le système vous demande comment vous souhaitez 
+	configurer SILO.
+      </P
+><P
+>      <B
+CLASS="GUIBUTTON"
+>Création d'une disquette d'amorçage</B
+> : 
+        vous devez créer une disquette d'amorçage si vous 
+        n'installez pas SILO ou pour garantir la sécurité de 
+	votre système. Si vous ne disposez pas de lecteur de disquettes, 
+	cette option ne sera pas accessible ; si vous utilisez une station de 
+	travail Ultra de Sun Microsystems (ne comportant 
+	généralement pas de lecteur de disquettes 
+	amorçable), cette option sera désactivée par 
+	défaut.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Ne pas installer SILO</B
+> : vous pouvez 
+	éviter SILO si vous ne voulez pas le copier sur votre disque, 
+	par exemple, si SILO est déjà installé sur une 
+	autre partition ou sur un autre disque que vous souhaitez utiliser 
+	pour démarrer votre système.
+      </P
+><P
+>        Pour installer SILO, sélectionnez l'emplacement 
+	approprié. Si votre ordinateur n'utilise que Red Hat Linux, 
+	choisissez le bloc de démarrage maître (MBR) (bloc de 
+	démarrage de la première partition du disque). Pour les 
+	ordinateurs utilisant SunOS/Solaris et Red Hat Linux sur un seul 
+	disque dur, il est préférable de ne pas installer SILO 
+	sur le bloc de démarrage maître (MBR), en particulier 
+	si SunOS/Solaris se trouve sur la première partition du disque.
+      </P
+><P
+>        Si vous ne souhaitez pas installer SILO, créez une disquette 
+	d'amorçage afin de pouvoir démarrer Red Hat Linux.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Créez un alias de PROM </B
+> : le programme 
+	d'installation peut créer un alias de PROM "linux" 
+	si le PROM le permet, afin que vous puissiez démarrer dans le 
+	chargeur de démarrage SILO à partir de la ligne de 
+	commande du PROM en entrant "boot linux".
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Définissez un périphérique de 
+	démarrage de PROM par défaut</B
+> : le programme 
+	d'installation va s'assurer que le PROM ne va pas démarrer par 
+	défaut dans le programme d'installation de Red Hat Linux en 
+	définissant l'option PROM "boot-device" ou 
+	"boot-from".
+      </P
+><P
+>       Si vous souhaitez ajouter des options par défaut à la 
+       commande de démarrage de SILO, entrez-les dans le champ des 
+       paramètres du noyau. Les options saisies seront transmises au 
+       noyau Linux à chaque démarrage.
+      </P
+><P
+>       Partitions amorçables -- Chaque partition amorçable est 
+       répertoriée et identifiée, y compris les partitions 
+       utilisées par d'autres systèmes d'exploitation. Pour 
+       ajouter des labels de boot pour d'autres partitions (ou modifier ceux 
+       existants), cliquez sur la partition pour la sélectionner. Vous 
+       pouvez ensuite changer le label.
+      </P
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/fr/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:27 GMT -->
+</HTML
+>

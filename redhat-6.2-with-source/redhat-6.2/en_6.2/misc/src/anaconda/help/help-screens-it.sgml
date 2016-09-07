@@ -1,0 +1,1054 @@
+<!DOCTYPE BOOK PUBLIC "-//Davenport//DTD DocBook V3.0//EN" [
+<!ENTITY RH "Red Hat">
+<!ENTITY RHL "Red Hat Linux">
+<!ENTITY RHLRGS "Red Hat Linux Reference Guide">
+<!ENTITY RHLIG "Red Hat Linux Installation Guide">
+<!ENTITY RHLGSG "Red Hat Linux Getting Started Guide">
+<!ENTITY RHI "Red Hat, Inc.">
+]>
+
+<book id="book">
+<title>Help di installazione</title>
+  <chapter id="s1-help-screens-lang">
+    <title></title>
+    <sect1 id="lang">
+      <title>Scelta della Lingua</title>
+      <para>
+        Quale lingua volete utilizzare durante l'installazione?
+      </para>
+      <para>
+	Scegliete la lingua che desiderate utilizzare dall'elenco.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-kybd">
+      <title>Configurazione della Tastiera</title>
+      <para>
+	Quale tipo di tastiera avete?
+      </para>
+      <para>
+	Se non trovate il tipo esatto di tastiera, scegliete il tipo
+	<guilabel>Generic</guilabel> piu simile alla vostra tastiera 
+        (per es., Generic 101-key PC).
+      </para>
+      <para>
+	Successivamente scegliete il tipo di layout della vostra tastiera 
+	(per es., U.S. English).
+      </para>
+      <para>
+	L'inserimento di caratteri speciali (quali  &Ntilde;, &Ocirc;, e
+         &Ccedil;) viene effettuato tramite le  "dead keys" (anche conosciute 
+          come compose key sequences). Se desiderate usare caratteri speciali
+          che richiedono l'utilizzo di dead keys, selezionate
+      <guilabel>Enable dead keys</guilabel>. Altrimenti <guilabel>Disable
+	dead keys</guilabel>.
+      </para>
+      <para>
+	Utilizzate la entry in basso allo schermo per controllare
+        la configurazione della vostra tastiera.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-mouse">
+      <title>Configurazione del Mouse</title>
+      <para>
+	Quale tipo di mouse avete?
+      </para>
+      <para>
+        Avete un mouse PS/2, Bus o seriale?
+	(Suggerimento: Se il connettore per il vostro mouse e' rotondo, 
+        avete un mouse PS/2 o un Bus mouse; se e' rettangolare, si tratta
+        di un mouse seriale.)
+      </para>
+      <para>
+        Cercate il tipo esatto nel primo riquadro sulla destra.
+	Se non fosse possibile, sceglietene uno compatibile con il vostro.
+	 Altrimenti, scegliete il tipo di mouse
+          <guilabel>Generic</guilabel> appropriato.
+      </para>
+      <para>
+        Se avete un mouse seriale, scegliete il dispositivo e la porta
+	a cui e' collegato.
+      </para>
+      <para>
+       Il sistema X Window e' stato progettato per utilizzare un mouse a
+       tre tasti.
+       Se avete un mouse a due tasti, &RHL; puo' emulare il tasto centrale.
+      </para>
+      <para>
+        Se avete un mouse a due tasti, selezionate l'opzione
+	 <guilabel>Emulate 3 buttons</guilabel>.
+         Dopo l'installazione potete premere su entrambi i tasti del 
+         mouse contemporaneamente, per emulare il tasto centrale.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-wel">
+      <title>Benvenuti in Red Hat Linux</title>
+      <para>
+	Benvenuti!
+       Questo processo di installazione e' descritto in dettaglio nel
+	<citetitle>&RHLIG;</citetitle> disponibile su &RHI;. Per favore 
+        leggete l'intero manuale prima di iniziare il processo di
+         installazione.
+      </para>
+      <para>
+	I manuali sono disponibili in formato HTML e PostScript al sito
+	http://www.redhat.com. Sono presenti anche sui CD ufficiali
+	Red Hat Linux.
+      </para>
+      <para>
+	<command>Nuova Caratteristica:</command> &RHL; 6.2 ha un nuovo
+        metodo di installazione conosciuto come installazione
+        "partitionless". Se il vostro sistema ha una partizione FAT
+	(DOS/Windows) con spazio libero sufficiente, potete installare
+	&RHL; senza ripartizionare il vostro hard drive.
+        Questa opzione e' adatta per le persone che vogliono provare 
+        &RHL; con un cambiamento minimo rispetto al sistema corrente.
+       </para>
+      <para>
+        Se avete acquistato il prodotto Official &RHL; 
+         registrate il vostro prodotto tramite il sito web
+	(www.redhat.it/now).
+      </para>
+      <para>
+        Durante l'installazione, potete utilizzare il mouse per selezionare
+	la configurazione desiderata. Inoltre potete utilizzare i tasti
+        <keycap>Tab</keycap> e <keycap>Enter</keycap>.
+      </para>
+      <para>
+        Usate i tasti  <guibutton>Avanti</guibutton> e 
+         <guibutton>Indietro</guibutton>
+	per muovervi in  queste finestre. Premete sul pulsante
+	<guibutton>Avanti</guibutton> per salvare le informazioni e per
+	proseguire nell'installazione; premete sul pulsante 
+        <guibutton>Indietro</guibutton>
+         per tornare alla finestra precedente senza salvare alcuna
+	 configurazione.
+      </para>
+      <para>
+        Per ridurre la finestra dell'help, premete sul tasto
+	 <guibutton>Nascondi Help</guibutton>.
+      </para>
+      <para>
+        Potete cancellare questa installazione in ogni momento
+	finche' non siete arrivati alla finestra
+	<guimenu>Preparing to Install</guimenu>.
+         Una volta premuto <guibutton>Avanti</guibutton> presente nella
+	finestra <guimenu>Preparing to Install</guimenu>, iniziera' 
+	l'installazione dei pacchetti ed i dati presenti sul disco verranno
+	riscritti.
+         Per riavviare il computer potete premere il pulsante
+         <keycap>reset</keycap> del vostro computer, o
+	<keycombo>
+	  <keycap>Ctrl</keycap> <keycap>Alt</keycap> <keycap>Del</keycap>
+	</keycombo>).
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-welreconfig">
+      <title>Benvenuti in Red Hat Linux</title>
+      <para>
+       Siete entrati nella modalita' riconfigurazione, che vi permette
+       di riconfigurare  il vostro computer. 
+       Per uscire senza cambiare il vostro setup, selezionate 'No'
+       e premete il tasto <guibutton>Avanti</guibutton>.
+      </para>
+      <para>
+        Tramite questa configurazione siete in grado di usare il 
+        vostro mouse per attivare le opzioni disponibili.
+        Potete anche modificare la configurazione utilizzando i tasti        
+        <keycap>Tab</keycap> e <keycap>Enter</keycap>.
+      </para>
+      <para>
+       Utilizzate i tasti <guibutton>Avanti</guibutton> e
+        <guibutton>Indietro</guibutton> per navigare attraverso queste
+	finestre. Premete <guibutton>Avanti</guibutton> per salvare la
+	configurazione e per accedere alla prossima finestra; premete
+        <guibutton>Indietro</guibutton> per tornare allo schermo precedente
+	 senza salvare la nuova configurazione.
+      </para>
+      <para>
+       Per ridurre la finestra dell'help, premete sul pulsante
+      <guibutton>Nascondi Help</guibutton>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-instpath">
+      <title>Opzioni per l'installazione</title>
+      <para>
+       Quale tipo di installazione di &RHL; volete attivare?
+      </para>
+      <para>
+       Un'installazione completa cancella ogni informazione precedentemente
+        salvata sulle partizioni selezionate.
+      </para>
+      <para>
+       Un aggiornamento del sistema preserva i dati esistenti nel sistema
+       &RHL;
+      </para>
+      <para>
+        Se volete realizzare un'installazione completa, dovete scegliere
+        la classe o il tipo di installazione. Le opzioni disponibili sono:
+        GNOME Workstation, KDE Workstation, Server, o Custom.
+      </para>
+      <para>
+        Se avete familiarita' con il tool <application>fdisk</application>
+	potete scegliere di utilizzarlo. L'installer
+        utilizza per default il tool <application>Disk Druid</application>.
+        <application>Disk Druid</application> e' sicuramente piu' adatto
+	per gli utenti che non hanno esperienza con l'uso dell'applicazione 
+	<application>fdisk</application>.
+      </para>
+      <para>
+        Se non sapete quale classe di installazione utilizzare, 
+	leggete attentamente questo help.
+      </para>
+      <para>
+	<command>NB:</command>
+        Oltre ai metodi d'installazione menzionati nel seguito dell'help
+	e' possibile installare &RHL; all'interno di una partizione
+        FAT (DOS/Windows) gia' esistente. Questo metodo d'installazione
+         "senza partizioni" viene selezionato una volta che contrassegnate
+	una partizione  DOS durante l'uso di <application>Disk Druid</application>.
+         Non attiva il ripartizionamento automatico delle partizioni
+	 durante un'installazione di classe workstation.
+      </para>
+      <para>
+       L'installazione Workstation-class installera' il sistema X Window 
+       ed il desktop manager di vostra scelta. <emphasis>Un'installazione
+        workstation-class rimuove ogni partizione Linux presente sui
+	 dischi ed utilizza tutto lo spazio libero e
+	 non partizionato.</emphasis> Tutte le partizioni non relative a
+        Linux saranno lasciate invariate, e sarete in grado di fare il 
+        boot di altri sistemi operativi esistenti, in aggiunta a &RHL;,
+	dopo l'installazione.
+      </para>
+      <para>
+       Se volete che il vostro sistema funzioni come  server Linux, 
+       e volete personalizzare la configurazione del vostro sistema
+       oppure installare il sistema X Window, e' consigliabile attivare 
+        l'installazione server-class.
+	<emphasis>
+         Un'installazione server-class rimuove TUTTE le partizioni esistenti
+        su tutti i dischi esistenti, quindi scegliete questa classe di 
+        installazione solo se siete sicuri di poter cancellare TUTTI i dati!
+        </emphasis> Questo include tutte le partizioni in uso anche da altri
+           sistemi operativi.<emphasis> Tutti i dischi
+	  saranno cancellati -- non stiamo scherzando!</emphasis>
+      </para>
+      <para>
+        Solamente l'installazione custom-class vi offre una flessibilita'
+	completa. Durante un'installazione custom-class, dipende da
+        <emphasis>voi</emphasis> come deve essere partizionato lo spazio
+        sul disco. Potrete inoltre scegliere quali pacchetti installare
+	sul vostro sistema.
+        Potete anche determinare se userete LILO per fare il boot del vostro
+        sistema.       
+        Se non avete esperienza con Linux, non selezionate il metodo
+	d'installazione custom-class. 
+      </para>
+      <para>
+       Per maggiori informazioni riguardanti le differenze tra le classi 
+       di installazione workstation, server, e custom-class, consultate
+       il &RHLIG;.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-upgrade">
+      <title>Aggiornamento del sistema</title>
+      <para>
+      Durante l'aggiornamento del sistema, potete scegliere quali
+      pacchetti installare sul vostro sistema.
+      </para>
+      <para>
+      Se non volete scegliere quali pacchetti installare, premete
+      <guibutton>Avanti</guibutton> per continuare.
+      </para>
+      <para>
+        Per personalizzare i pacchetti da installare, selezionate il tasto
+	<guilabel>Customize packages to be upgraded</guilabel>
+         e poi il tasto <guibutton>Avanti</guibutton>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-fdisk">
+      <title><application>fdisk</application></title>
+      <para>
+        Selezionate quale drive volete partizionare. Quando selezionate il
+        drive, vi comparira' la tabella delle partizioni tramite 
+         <application>fdisk</application>. Potete usare
+        <application>fdisk</application> per creare, cancellare, o modificare
+         delle partizioni sul disco selezionato.
+      </para>
+      <para>
+        Se decidete che non volete usare
+	<application>fdisk</application>, premete sul pulsante
+         <guibutton>Indietro</guibutton> per tornare alla finestra precedente,
+	 togliete la selezione <guimenuitem>Use fdisk</guimenuitem>, e premete
+	 sul pulsante <guibutton>Avanti</guibutton> per continuare.
+      </para>
+      <para>
+        Terminata la fase di partizionamento del disco tramite
+	<application>fdisk</application>, tornerete a questa finestra.
+        Se avete un altro hard drive che volete partizionare utilizzando       
+	<application>fdisk</application>, selezionatelo. Altrimenti, premete
+	<guibutton>Avanti</guibutton> per assegnare mount points alla vostra
+         partizione usando <application>Disk Druid</application>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-fdiskpart">
+      <title>Partizionamento del disco con <application>fdisk</application></title>
+      <para>
+	Potete partizionare il vostro disco con l'applicazione
+	<application>fdisk</application>.
+      </para>
+      <para>
+        Per visualizzare l'help, digitate<command>m</command>. Apparira'
+        la lista di commandi.
+      </para>
+      <para>
+       Alcuni commandi veloci per cominciare:
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>n</command> -- Aggiunge una partizione nuova.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>d</command> -- Cancella una partizione.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>p</command> -- Visualizza la tabella delle partizioni.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>l</command> -- Visualizza la lista di partizioni conosciute.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>	      
+	      <command>w</command> -- Salva la nuova tabella delle partizioni
+             sul  disco  e termina l'applicazione <application>fdisk</application>.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>q</command> -- Esce senza salvare i cambiamenti.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-wkst">
+      <title>Partizionamento automatico</title>
+      <para>
+	Siete sicuri?
+      </para>
+      <para>
+        Attivando l'installazione workstation perderete i dati presenti
+	nelle partizioni Linux gia' esistenti.
+      </para>
+      <para>
+        Questa classe di installazione rimuovera' i dati presenti su
+        <emphasis>TUTTE</emphasis> le partizioni Linux dei dischi.
+      </para>
+      <para>
+        Se volete preservare i dati presenti sulle partizioni Linux,
+        dovete scegliere di partizionare manualmente il disco o scegliere
+        un'installazione custom-class.
+      </para>
+      <para>
+        Utilizzate il tasto <guibutton>Indietro</guibutton> per scegliere una
+        installazione custom-class, o scegliete <guibutton>Avanti</guibutton>
+         se volete procedere con un'installazione workstation-class.
+      </para>
+    </sect1>
+      
+      <sect1 id="s1-help-screens-svr">
+      <title>Partizionamento Automatico</title>
+      <para>
+	Siete sicuri?
+      </para>
+      <para>
+        L'installazione custom inizializza i dischi presenti nel
+	calcolatore.
+      </para>
+      <para>
+        Questa classe di installazione rimuove <emphasis>TUTTI</emphasis> 
+	i dati su <emphasis>TUTTE</emphasis> le partizioni di
+	<emphasis>TUTTI</emphasis> i dischi.
+      </para>
+      <para>
+        Se avete un altro OS che volete tenere, non scegliete questa classe
+        di installazione.
+      </para>
+      <para>
+        Se volete preservare i dati o un altro OS, dovreste scegliere il
+        partizionamenti manuale o scegliere un'installazione custom-class.
+      </para>
+      <para>
+        Usate il tasto <guibutton>Indietro</guibutton> per scegliere
+	un'installazione custom-class, oppure scegliete
+	<guibutton>Avanti</guibutton> se volete
+        procedere con un'installazione server-class.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-partition">
+      <title>Partizioni</title>
+      
+      <para>
+	Dove volete installare &RHL;?
+      </para>
+      <para>
+	<command>NB:</command> 
+         Se state creando un'<command>Installazione senza
+	 partizionamento</command> avrete bisogno di definire
+        una partizione esistente  DOS/Windows come root
+	(<command>/</command>). Selezionate la partizione FAT che volete
+         utilizzare durante l'installazione.
+	Selezionate <guilabel>Modifica</guilabel> per assegnargli il mount
+	point <command>/</command> (root). Premete <guilabel>Ok</guilabel>
+        quando avete finito. Confermata la scelta, dovrete definire
+	l'ammontare appropriato di root filesystem per il vostro sistema.
+      </para>
+      <para>
+        Per maggiori informazioni, fate riferimento al capitolo
+	<emphasis>Installing Without Partitioning</emphasis> nel
+	<citetitle>&RHLIG;</citetitle>.
+      </para>
+      <para>
+        Se non sapete come partizionare il vostro sistema, consultate
+        l'<citetitle>&RHLIG;</citetitle> oppure
+	l'<citetitle>&RHLRGS;</citetitle>.
+      </para>
+      <para>
+        Terminata la fase di partizionamento del disco tramite
+        <application>fdisk</application>,
+	dovete definire i <firstterm>mount point</firstterm> per le vostre
+	partizioni. Usate il tasto <guilabel>Modifica</guilabel>,
+        una volta scelta la partizione, per definire il mount point.
+      </para>
+      <para>
+        Se state usando <application>Disk Druid</application>,
+         dovrete definire i  mount point per una o piu' partizioni del disco.
+          Avrete anche bisogno di creare e/o cancellare partizioni.        
+      </para>
+      <para>
+        Lo schermo in alto vi mostra le partizioni esistenti. Ogni partizione
+        ha cinque campi:
+      </para>
+      
+      <itemizedlist>
+	<listitem>
+	  <para>
+	    <command>Mount Point:</command> Questo campo indica dove
+            viene montata la partizione.
+            Se una partizione esiste, ma e' etichettata come "not set"
+            avrete bisogno di definire il mount point.
+            Potete usare il pulsante <keycap>Modifica</keycap> o
+	    compiere un doppio click sulla partizione.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Device:</command>Questo campo mostra il nome del
+	    dispositivo e della partizione (per esempio, hda2 rappresenta
+	    la seconda partizione sul vostro hard drive primario).
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Requested:</command> Il campo
+              <firstterm>Requested</firstterm>
+               mostra quanto spazio ha la partizione.	    
+              Se volete ridefinire la dimensione, dovete cancellare la
+             partizione corrente e ricrearla usando il tasto
+             <keycap>Aggiungi</keycap>.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Actual:</command> Questo campo mostra quanto spazio sta 
+            utilizzando la partizione.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Tipo:</command> Questo campo mostra il tipo di partizione
+            (come Linux Native o DOS).
+	  </para>
+	</listitem>
+      </itemizedlist>
+      
+      <para>
+        
+	Se guardate la sezione <firstterm>Partitions</firstterm>, potreste
+        vedere un messaggio
+         <firstterm>Unallocated Requested Partition</firstterm>
+	 (scritto in rosso), seguito da una o piu' partizioni.
+	Potrebbe accadere che una partizione non sia allocata. Normalmente
+	cio' e' dovuto ad una mancanza di spazio libero sul disco.
+      </para>
+      <para>
+        Per risolvere il problema di una partizione non allocata, dovete
+	spostarla su un disco in cui c'e' sufficiente spazio libero,
+	ridimensionarla oppure cancellarla completamente.
+         Effettuate i cambiamenti utilizzando il tasto
+	 <keycap>Modifica</keycap> oppure compiendo un doppio click
+	 sulla partizione.
+      </para>
+	
+      <sect2 id="s2-help-screens-dd">
+	<title>Partizionamento del sistema</title>
+	<para>
+          La fila centrale di tasti controlla le azioni del tool per il
+	  partizionamento del disco.
+          Potete aggiungere, modificare, o cancellare le partizioni.	  
+          Inoltre, ci sono dei tasti che potete usare per accettare i 
+          cambiamenti che avete fatto, oppure per ripristinare la 
+	  configurazione esistente della tabella delle partizioni.
+	</para>
+	
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>Aggiungi:</command> Utilizzate questo tasto per
+	      aggiungere una nuova partizione. Dopo averlo selezionato,
+	      appare una dialog box per la configurazione di una nuova
+	      partizione (mount point, dimensione e tipo).
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Modifica:</command> Usate questo tasto per cambiare
+             il mount point di una partizione correntemente selezionata.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Cancella:</command> Usate questo tasto per cancellare
+              una partizione. Appare una dialog box per la richiesta della
+	      conferma di questa operazioni.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Reset:</command> Usate questo tasto per eliminare tutti
+              i cambiamenti che avete fatto.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Make RAID Device:</command> Usate il tasto
+                <keycap>Make RAID Device</keycap> solo se avete esperienza 
+                  nell'utilizzo della tecnologia RAID.
+                  Per maggiori informazioni sul RAID, fate riferimento a
+                   <citetitle>&RHLRGS;</citetitle>.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
+	
+      <sect2 id="s2-help-screens-drive">
+	<title>Drive Summaries</title>
+	<para>
+         Questa sezione mostra la configurazione del disco del vostro
+          computer ed ha solamente lo scopo di riassumere le informazioni.	  
+         Ogni riga ha i seguenti campi:
+	</para>
+	
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>Drive:</command> Questo campo mostra il nome del 
+              dispositivo del disco (come hda o hdb).
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Geom [C/H/S]:</command> La 
+	      <firstterm>geometria</firstterm> del disco mostra il numero 
+             di cilindri, testine e settori.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Totale:</command> Questo campo mostra lo spazio 
+               disponibile totale sul disco.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Libero:</command> Qui potete controllare quanto spazio
+              sul disco e' ancora disponibile.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Usato:</command> Questi campi mostrano quanto spazio
+              del hard disk e allocato per le partizioni, in Mbyte
+	      ed in percentuale.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-loopback">
+      <title>Configuratione del filesystem</title>
+      <para>
+        Prima di tutto, scegliete la grandezza del root filesystem, se
+        volete modificare il valore preimpostato. Il valore
+        preimpostato per il root filesystem occupa la met&agrave;
+        dello spazio su disco disponbile.
+      </para>
+      <para>
+        Lo spazio di swap di default &egrave; di 32Mbyte. Comunque
+        potete aumentarlo secondo le vostre esigenze.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-format">
+      <title>Scelta delle partizioni da formattare</title>
+      <para>
+        Scegliete le partizioni che volete formattare per &RHL;.
+      </para>
+      <para>
+        Volete controllare la presenza di blocchi danneggiati?
+      </para>
+      <para>
+        Il controllo della presenza di blocchi danneggiati puo' prevenire
+	la perdita di dati. I blocchi danneggiati rilevati sono inseriti
+	in una lista, per evitare che i file vengano scritti in questi
+	blocchi.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-lilo">
+      <title>Configurazione LILO</title> 
+      <para>
+	LILO, il LInux LOader, e' un software che viene utilizzato per
+        avviare &RHL; sul vostro computer. Puo' avviare anche altri sistemi 
+        operativi, come Windows 9<replaceable>x</replaceable>.
+	In questa finestra e' possibile configurare LILO.
+      </para>
+      <para>
+	<guibutton>Creare boot disk</guibutton>:Dovreste creare un boot disk
+	se non state installando LILO sull'MBR o se non state installando
+        LILO.
+      </para>
+      <para>
+	<guibutton>Non installate LILO</guibutton>: Potete scegliere di
+         omettere LILO se non volete utilizzarlo per avviare Linux.
+         Se avete due dischi con un OS differente su ognuno, potreste
+         preferire l'uso di un boot disk invece di LILO.        
+       </para>
+      <para>
+       Per installare LILO, selezionate dove volete installarlo. Se il vostro
+       sistema utilizza solo &RHL; dovreste scegliere il Master Boot Record
+        (MBR). Per i sistemi nei quali Win95/98 e &RHL; risiedono su un
+        singolo disco, dovreste installare LILO sull'MBR.
+      </para>
+      <para>
+        Se avete Windows NT (e volete installare LILO) dovreste scegliere di
+      installare  LILO sul primo settore della partizione boot. Assicuratevi
+      anche di creare un boot disk, altrimenti non sarete in grado di
+      riavviare Linux.
+      </para>
+      <para>
+        Se scegliete di non installare LILO per <emphasis>qualsiasi</emphasis>
+        ragione, create un boot disk affinche' sia possibile avviare &RHL;.
+      </para>
+      <para>
+         Se il vostro computer non puo' accedere al disco in linear mode,
+         togliete la selezione a <guibutton>Use linear mode</guibutton>.
+      </para>
+      <para>
+        Se desiderate aggiungere alcune opzioni di default al comando LILO
+	boot, inseritele nel campo dei parametri del kernel.
+        Qualunque opzione inserita, verra' passata al kernel di Linux ogni 
+        volta che si riavviera' il sistema.
+      </para>
+      <para>
+	<guilabel>Boot Label</guilabel>: Ad ogni partizione avviabile
+        viene associata un'etichettata (sotto <guilabel>Boot Label</guilabel>
+        incluse le partizioni usate da altri sistemi operativi.
+	Se desiderate aggiungere una boot label per altre partizioni
+	(o cambiare boot label esistenti), premete una volta sulla
+	partizione per selezionarla. Una volta selezionata, potete
+	cambiare la boot label.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-silo">
+      <title>Configurazione SILO</title>
+      <para>
+        SILO, il Sparc Improved LOader, e' un programma che puo' essere
+	utilizzato per avviare Red Hat Linux su sistemi Sparc.
+        Puo' anche avviare altri sistemi operativi, quali SunOS e
+        Solaris. Qui verra' chiesto come (o se) volete configurare SILO.
+      </para>
+      <para>
+        <guibutton>Crea boot disk</guibutton>: Dovreste creare un boot disk
+       se non state installando SILO.
+       Se non possedete un floppy questa opzione verra' disabilitata.
+      </para>
+      <para>
+        <guibutton>Non installare SILO</guibutton>: Potete scegliere di
+         non installare SILO se e' gia' presente su un altro disco o se
+	state utilizzando un altro boot loader.
+      </para>
+      <para>
+        Per installare SILO, selezionate dove volete installarlo.
+         Se il vostro sistema utilizza solo Red Hat Linux
+         dovreste scegliere di installarlo nel Master Boot Record
+	 (Blocco di avvio della prima partizione del primo disco).
+       Per i sistemi in cui risiedono SunOS/Solaris e Red Hat Linux
+         su un hard drive singolo, dovreste installare SILO nel MBR,
+         specialmente se SunOS/Solaris non e' la prima partizione del
+         disco.
+      </para>
+      <para>
+        Anche se scegliete di installare SILO, create comunque un
+         boot disk in modo da poter riavviare Red Hat Linux.
+      </para>
+      <para>
+        <guibutton>Create PROM alias</guibutton>: L'installer puo'
+         creare un PROM alias "linux" se il PROM lo supporta, affinche'
+        possiate riavviare il programm SILO dal prompt PROM.
+      </para>
+      <para>
+        <guibutton>Set default PROM boot device</guibutton>:
+        Il PROM riavvia Red Hat Linux inserendo come opzioni di default
+        "boot-device" o "boot-from".
+      </para>
+      <para>
+       Se desiderate aggiungere opzioni di default al comando
+         SILO boot, inseritele nel campo dei parametri kernel.
+       Qualsiasi opzione inserita, verra' passata al kernel di        
+          Linux ogni volta che si riavvia il sistema.
+      </para>
+      <para> 
+       Partizioni riavviabili -- Ogni partizione riavviabile e' elencata ed
+       etichettata, incluse le partizioni usate da altri sistemi operativi.
+       Se volete aggiungere etichette per altre partizioni (o cambiare le boot
+       label esistenti), premete una volta sulla partizione per selezionarla.
+        Una volta selezionata, potete cambiare la boot label.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-netconf">
+      <title>Configurazione della rete</title>
+      <para>
+        Se il vostro calcolatore ha in dotazione una scheda di rete,
+	potete configurare il protocollo TCP/IP
+        Altrimenti premete sul pulsante <guibutton>Avanti</guibutton>
+	per proseguire l'installazione.
+      </para>
+      <para>
+        Scegliete il tipo di scheda di rete in dotazione e se desiderate
+	configurarla tramite DHCP. Se avete piu' dispositivi Ethernet
+	(eth0, eth1, ...) ognuno avra' la sua configurazione.
+      Se selezionate <guilabel>Activate on boot</guilabel>, la scheda
+      di rete viene attivata automaticamente al boot del sistema.
+      </para>
+      <para> Se avete accesso ad un server DHCP o se non siete sicuri 
+      di questa opzione, contattate il vostro Network Administrator.
+      </para>
+      <para>
+	Inserite, se necessario, l'indirizzo IP, Netmask, Network, e
+        gli indirizzi Broadcast. Contattate il vostro Network Administrator
+	per i valori degli indirizzi da inserire in questi campi.
+      </para>
+      <para> 
+        Inserite il nome del vostro computer. In caso contrario,
+	avra' come nome di default "localhost."
+      </para>
+      <para>
+       Infine, inserite il Gateway, il DNS primario, il DNS secondario
+       ed il DNS terziario.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-timezone">
+      <title>Scelta del fuso orario</title>
+      <para> 
+         Potete definire il vostro fuso orario selezionando la posizione 
+         fisica del vostro computer. 
+      </para>
+      <para>
+        Osservate le due linguette in alto nello schermo.
+	La prima linguetta primo tab vi offre la possibilita' di
+	configurare il fuso orario tramite la mappa.
+        Tramite questa opzione potete scegliere la vostra view.
+         Scegliendo <guimenuitem>View</guimenuitem>, le opzioni disponibili 
+	sono: World, North America, South America, Pacific Rim, Europe,
+	Africa,	e Asia.
+      </para>
+      <para>
+        Dalla mappa interattiva, potete selezionare una citta' specifica, come
+        indicato dai punti gialli, e una <guilabel>X</guilabel> rossa
+	apparira' al momento della vostra selezione.
+      </para>
+      <para>
+        Potete anche scorrere attraverso la lista della citta' e scegliere
+	il fuso orario desiderato.
+      </para>
+      <para>
+        La seconda linguetta vi offre la possibilita' di usare l'Universal
+        Coordinated Time (UTC) offset. 
+        Qui troverete una lista di offset da cui scegliere.
+      </para>
+      <para>
+        Per entrambe le linguette, e' presente un'opzione per selezionare
+	<guilabel>System Clock uses UTC</guilabel>. (UTC, anche conosciuto
+	come GMT, permette al vostro sistema di manovrare
+	daylight-saving time.) 
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-accts">
+      <title>Configurazione Account</title>
+      <para>
+        Inserite una password per l'account di root. La password 
+        deve avere almeno sei caratteri.
+        Confermate la password riinserendo la password
+	nel  secondo campo d'entrata. Il tasto <guibutton>Avanti</guibutton>
+        verra' abilitato una volta che entrambi i campi d'entrata combaciano.
+      </para>
+      <para>
+        Successivamente potete creare un'account utente.
+      </para
+      <para>
+         Inserite un nome account utente. Poi create una password per quel
+        account utente e confermatela.
+        Infine, inserite il nome intero dell'account utente e premete       
+         <keycap>Enter</keycap>. La vostra informazione account verra' aggiunta
+        alla lista account.
+      </para>
+      <para>
+        Per aggiungere un altro utente, scegliete <guibutton>New</guibutton>
+        ed inserite l'informazione nei campi liberi.
+        Una volta inserita le informazioni richieste per l'account utente,
+	selezionate il tasto <guibutton>Aggiungi</guibutton> per aggiungere
+	l'utente al sistema.
+      </para>
+      <para>
+        Potete anche premere <guibutton>Modifica</guibutton> per modificare
+	gli utenti che avete creato, o <guibutton>Cancellare</guibutton>
+	per cancellare un account.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-authconf">
+      <title>Configurazione dell'autenticazione</title>
+      <para>
+        Potete saltare questa sezione se non avete esigenze particolari
+	Consultate il vostro system administrator per maggiori
+	informazioni.
+      </para>
+      <para>
+         A meno che non utilizziate un server <firstterm>NIS</firstterm>,
+        noterete che entrambi i campi <firstterm>MD5</firstterm> e
+	<firstterm>shadow</firstterm>  sono selezionati.
+         Vi raccomandiamo di usare entrambe queste opzioni per rendere la
+	vostra macchina piu' sicura e robusta agli attacchi provenienti
+	dall'esterno.
+      </para>
+      <para>
+	<emphasis>Abilita MD5 passwords</emphasis> - permette l'uso di
+        password lunghe fino a 256 charatteri.
+      </para>
+      <para>
+	<emphasis>Abilita shadow password</emphasis> -
+        offre un metodo piu' sicuro per memorizzare le password.
+        Tutte le password si trovano in <filename>/etc/shadow</filename>,
+	ed e' accessibile solo da root.
+      </para>
+      <para>
+        Per configurare l'opzione NIS, dovete avere accesso ad una rete NIS.
+        Per maggiori informazioni, contattate il vostro system administrator.
+      </para>
+      <para>
+	<emphasis>Abilita NIS</emphasis> - vi permettere di creare un gruppo
+         di computer all'interno di un dominio Network Information Service.
+	 Vi sono due opzioni da cui scegliere:
+      </para>
+      <para>
+	<emphasis>NIS Domain</emphasis> - questa opzione vi permette di
+          specificare a quale dominio o gruppo di computer apparterra'.
+      </para>
+      <para>
+	<emphasis>NIS Server</emphasis> -
+         questa opzione permette al vostro computer di usare un server NIS
+        specifico, invece di un messaggio di "broadcast" 
+	per identificare il server NIS disponibile.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-sel-group">
+      <title>Scelta dei gruppi di pacchetti</title>
+      <para>
+	Selezionate i gruppi di pacchetti che volete installare. Per 
+        installare un gruppo di pacchetti, spuntate la check box accanto.
+      </para>
+      
+      <para>
+        Per selezionare i pacchetti individualmente, dovete attivare la box
+	<guilabel>Select Individual Packages</guilabel> presente nella parte
+	superiore dello schermo.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-sel-indiv">
+      <title>Scelta individuale dei pacchetti</title>
+      <para>
+       Sulla parte sinistra dello schermo vedrete una lista di gruppi di 
+        pacchetti. Quando espandete questa lista e scegliete un gruppo,
+       apparira' la lista di pacchetti in quel gruppo nel pannello sulla 
+        destra.
+      </para>
+      <para>
+        Per selezionare un pacchetto individuale, fate un doppio click
+        su di esso per evidenziarlo e premete sul pulsante
+	 <guilabel>Select Package For Installation</guilabel>.
+        Una marca di controllo appare su qualsiasi pacchetto 
+         selezionato.
+      </para>
+      <para>
+        Per maggiori informazioni su un pacchetto specifico, e'
+	sufficiente selezionarlo. Le informazioni sul pacchetto
+	appaioni in alto allo schermo, insieme al nome del pacchetto ed
+	alla dimensione.
+      </para>
+    </sect1>
+      
+      <sect1 id="s1-help-screens-depend">
+      <title>Dipendenze irrisolte</title>
+      <para>
+        Molti pacchetti software dipendono da altri pacchetti e librerie.
+        Per assicurarvi che il vostro sistema abbia tutti i pacchetti di cui 
+        avete bisogno per lavorare, &RHL; controllate queste	
+        <firstterm>dipendenze</firstterm> ogni volta che 
+        installate o rimuovete un pacchetto.
+        Se un pacchetto ha bisogno di un altro pacchetto che non e' stato
+        installato, si creano delle dipendenze irrisolte.
+      </para>
+      <para>
+      Uno o piu' pacchetti da voi selezionati hanno dipendenze irrisolte.
+      Potete risolvere cio' selezionando
+      <guilabel>Install Packages to Satisfy Dependencies</guilabel>.
+      </para>
+    </sect1>
+    
+    <sect1 id="s1-help-screens-monitor">
+      <title>Configurazione di X</title>
+      <para>
+        Il programma di installazione rileva il vostro monitor
+	per determinare la migliore configurazione grafica.
+          Se il vostro monitor non e' stato rilevato, scegliete il monitor
+          che piu si addice al modello collegato al vostro computer.
+      </para>
+      <para>
+         Potete anche inserire le caratteristiche del vostro monitor.
+        Questi valori sono presenti nella documentazione del vostro
+	monitor.
+        Fate attenzione quando inserite questi valori; se inserite dei 
+        valori che sono al di fuori delle capacita' del vostro hardware,
+         potreste danneggiare il vostro monitor.      
+         Inserite i numeri in questo campo solo se i valori nel vostro 
+         manuale non corrispondono alle selezioni nella lista del monitor.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-xconf">
+      <title>Configurazione di X</title>
+      <para>
+        Sebbene, il programma di installazione prova a determinare la miglior
+        scheda video per il vostro sistema, potete scegliere un'altra scheda
+        video, se necessario.
+      </para>
+      <para>
+       Una volta selezionata la vostra scheda video, scegliete
+       la quantita' di RAM video presente sulla vostra scheda.
+      </para>
+      <para>
+        Potete anche scegliere se volete avviare il vostro sistema
+	direttamente in modalita' grafica.
+      </para>
+      <para>
+       Selezionate il tasto <guibutton>Customize X Configuration</guibutton>
+          per modificare la risoluzione e la profondita' di colore.
+      </para>
+      <para>
+       Potete anche scegliere <guibutton>Skip X Configuration</guibutton>
+       se preferite configurare X dopo l'installazione.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-aboutinstall">
+      <title> About to Install</title>
+      <para>
+	<command>Attenzione:</command> Una volta premuto
+       <guibutton>Avanti</guibutton>,
+	inizia l'installazione di &RHL;.
+        Questo processo non puo' essere eliminato, quindi, se avete deciso di
+        non installare &RHL;, questo e' l'ultimo punto in cui potete
+        bloccare il processo di installazione.
+      </para>
+      <para>
+        Per bloccare questa installazione, rimuovete tutti i media &RHL,
+	e premete il tasto  <command>Reset</command> oppure <keycombo>
+	  <keycap>Control-</keycap> <keycap>Alt-</keycap>
+	  <keycap>Delete</keycap>
+	</keycombo>
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-installing">
+      <title>Pacchetti d'installazione</title>
+      <para>
+        Abbiamo raccolto tutte le informazioni necessarie per installare
+	 &RHL; sul vostro sistema. L'installazione di Red Hat Linux richiede
+	un po' di tempo a seconda del numero di pacchetti che si desidera
+	installare e della velocita' del computer.
+	Se avete un Official &RHL; boxed set, e' il momento migliore per
+        sfogliare  <citetitle>&RHLGSG;</citetitle> e
+	<citetitle>&RHLRGS;</citetitle>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-bootdisk">
+      <title>Creazione Boot Disk</title>
+      <para>
+        Inserite un dischetto vuoto e formattato nel vostro floppy drive,
+        e premete <guibutton>Avanti</guibutton> per continuare.
+      </para>
+    </sect1>
+  </chapter>
+</book>
+
+
+
+
+  

@@ -1,0 +1,470 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-install-network.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:02:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Installing over a Network</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Installing Red Hat Linux via Text Mode"
+HREF="ch-install-tm.html"><LINK
+REL="PREVIOUS"
+TITLE="Identify Disk Partition to Install From"
+HREF="s1-disk-image.html"><LINK
+REL="NEXT"
+TITLE="Welcome"
+HREF="s1-install-welcome.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-disk-image.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 10. Installing Red Hat Linux via Text Mode</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-install-welcome.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-INSTALL-NETWORK"
+>Installing over a Network</A
+></H1
+><P
+>	If you are performing a network installation, the <TT
+CLASS="GUILABEL"
+><B
+>Configure
+	TCP/IP</B
+></TT
+> dialog appears; for an explanation of this dialog, go
+	to <A
+HREF="s1-install-configuringtcpip.html"
+>the section called <I
+>Configuring a Network Connection</I
+></A
+> and then return here.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-NFS-SETUP"
+>NFS Setup</A
+></H2
+><P
+>	  The NFS setup dialog (<A
+HREF="s1-install-network.html#FIG-INST-NFS"
+>Figure 10-7</A
+>) applies only if
+	  you are installing from an NFS server (that is, if you booted
+	  from a network or PCMCIA boot disk and selected <B
+CLASS="GUIMENUITEM"
+>NFS
+	  Image</B
+> in the <TT
+CLASS="GUILABEL"
+><B
+>Installation Method</B
+></TT
+>
+	  dialog).
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INST-NFS"
+></A
+><P
+><IMG
+SRC="figs/textmode/nfs.gif"></P
+><P
+><B
+>Figure 10-7. NFS Setup Dialog</B
+></P
+></DIV
+><P
+>	  Enter the fully-qualified domain name or IP address of your NFS
+	  server, and the name of the exported directory that contains the Red Hat Linux
+	  installation files or CD.  For example, if you're installing from a
+	  host named <TT
+CLASS="FILENAME"
+>eastcoast</TT
+> in the domain
+	  <TT
+CLASS="FILENAME"
+>redhat.com</TT
+>, enter
+	  <TT
+CLASS="FILENAME"
+>eastcoast.redhat.com</TT
+> in the <TT
+CLASS="GUILABEL"
+><B
+>NFS
+	  Server</B
+></TT
+> field.
+	</P
+><P
+>	  If the NFS server has the Red Hat Linux CD mounted on
+	  <TT
+CLASS="FILENAME"
+>/mnt/cdrom</TT
+>, enter <TT
+CLASS="FILENAME"
+>/mnt/cdrom</TT
+>
+	  in the <TT
+CLASS="GUILABEL"
+><B
+>Red Hat directory</B
+></TT
+> field. If the NFS server
+	  is exporting a mirror of the Red Hat Linux installation tree instead of a CD,
+	  enter the directory which contains the <TT
+CLASS="FILENAME"
+>RedHat</TT
+>
+	  directory.  For example, if your NFS server contains the directory
+	  <TT
+CLASS="FILENAME"
+>/mirrors/redhat/i386/RedHat</TT
+>, enter
+	  <TT
+CLASS="FILENAME"
+>/mirrors/redhat/i386</TT
+>.
+	</P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    If you are performing an NFS installation and are copying the files
+	    from the Red Hat Linux CD-ROM, be sure to check the file permissions to make
+	    sure they are set correctly for your installation. If you do not,
+	    the files that you copy will not be executable and you will have to
+	    change the permissions before you are able to install.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	  Next you'll see the <TT
+CLASS="GUILABEL"
+><B
+>Welcome</B
+></TT
+> dialog: Turn now to <A
+HREF="s1-install-welcome.html"
+>the section called <I
+>Welcome</I
+></A
+>.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-FTP-SETUP"
+>FTP Setup</A
+></H2
+><P
+>	  The <TT
+CLASS="GUILABEL"
+><B
+>FTP Setup</B
+></TT
+> screen (<A
+HREF="s1-install-network.html#FIG-INST-FTP"
+>Figure 10-8</A
+>) applies only if you are installing from an
+	  FTP server (that is, if you selected
+	  <B
+CLASS="GUIMENUITEM"
+>FTP</B
+> in the <TT
+CLASS="GUILABEL"
+><B
+>Installation
+	  Method</B
+></TT
+> dialog). This dialog allows you to identify the FTP
+	  server you are installing from.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INST-FTP"
+></A
+><P
+><IMG
+SRC="figs/textmode/ftp.gif"></P
+><P
+><B
+>Figure 10-8. FTP Setup Diallog</B
+></P
+></DIV
+><P
+>	  Enter the fully-qualified domain name or IP address of the FTP site
+	  you are installing from, and the name of the directory there which
+	  contains the <TT
+CLASS="FILENAME"
+>RedHat</TT
+> installation files for your
+	  architecture.  For example, if the FTP site contains the directory
+	  <TT
+CLASS="FILENAME"
+>/pub/mirrors/redhat/i386/RedHat</TT
+>, enter
+	  <TT
+CLASS="USERINPUT"
+><B
+>/pub/mirrors/redhat/i386</B
+></TT
+>.
+	</P
+><P
+>	  If everything has been specified properly, a message box appears
+	  indicating that <TT
+CLASS="FILENAME"
+>base/hdlist</TT
+> is being retrieved.
+	</P
+><P
+>	  Next you'll see the <TT
+CLASS="GUILABEL"
+><B
+>Welcome</B
+></TT
+> dialog: Turn now to <A
+HREF="s1-install-welcome.html"
+>the section called <I
+>Welcome</I
+></A
+>.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HTTP-SETUP"
+>HTTP Setup</A
+></H2
+><P
+>	  The <TT
+CLASS="GUILABEL"
+><B
+>HTTP Setup</B
+></TT
+> screen (<A
+HREF="s1-install-network.html#FIG-INST-HTTP"
+>Figure 10-9</A
+>) applies only if you are installing from an
+	  HTTP server (that is, if you selected <B
+CLASS="GUIMENUITEM"
+>HTTP</B
+>
+	  in the <TT
+CLASS="GUILABEL"
+><B
+>Installation Method</B
+></TT
+> dialog).  This dialog
+	  prompts you for information about the HTTP server you are installing
+	  from.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INST-HTTP"
+></A
+><P
+><IMG
+SRC="figs/textmode/http.gif"></P
+><P
+><B
+>Figure 10-9. HTTP Setup Dialog</B
+></P
+></DIV
+><P
+>	  Enter the name or IP address of the HTTP site you are installing from,
+	  and the name of the directory there which contains the
+	  <TT
+CLASS="FILENAME"
+>RedHat</TT
+> installation files for your architecture. For
+	  example, if the HTTP site contains the directory
+	  <TT
+CLASS="FILENAME"
+>/pub/mirrors/redhat/i386/RedHat</TT
+>, enter
+	  <TT
+CLASS="USERINPUT"
+><B
+>/pub/mirrors/redhat/i386</B
+></TT
+>.
+	</P
+><P
+>	  If everything has been specified properly, a message box appears
+	  indicating that <TT
+CLASS="FILENAME"
+>base/hdlist</TT
+> is being retrieved.
+	</P
+><P
+>	  Next you'll see the <TT
+CLASS="GUILABEL"
+><B
+>Welcome</B
+></TT
+> dialog: Turn now to
+	    <A
+HREF="s1-install-welcome.html"
+>the section called <I
+>Welcome</I
+></A
+>.
+	</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-disk-image.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-install-welcome.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Identify Disk Partition to Install From</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-install-tm.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Welcome</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-install-network.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:02:49 GMT -->
+</HTML
+>

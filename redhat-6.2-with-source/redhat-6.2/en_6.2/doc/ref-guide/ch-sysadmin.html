@@ -1,0 +1,855 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-sysadmin.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:58:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>System Administration</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="System-Related Reference"
+HREF="p196.html"><LINK
+REL="PREVIOUS"
+TITLE="Miscellaneous New Features"
+HREF="s1-non-inst-new-feat-other.html"><LINK
+REL="NEXT"
+TITLE="Special Red Hat File Locations"
+HREF="s1-sysadmin-special-file.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-non-inst-new-feat-other.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-sysadmin-special-file.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CH-SYSADMIN"
+>Chapter 2. System Administration</A
+></H1
+><P
+>      This chapter provides an overview of the Red Hat Linux system.  Here, you will
+      learn aspects that you may not know about the system and things that are
+      somewhat different from other UNIX systems.
+    </P
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-SYSADMIN-FILESYS"
+>Filesystem Structure</A
+></H1
+><P
+>        Red Hat is committed to the <I
+CLASS="FIRSTTERM"
+>Filesystem Hierarchy
+        Standard</I
+> (<I
+CLASS="FIRSTTERM"
+>FHS</I
+>), a collaborative
+        document that defines the names and locations of many files and
+        directories.  We will continue to track the standard to keep Red Hat Linux
+        compliant.
+      </P
+><P
+>	The current FHS document is the authoritative reference to any FHS
+        compliant filesystem, but the standard leaves many areas undefined or
+        extensible.  In this section we provide an overview of the standard and
+        a description of the parts of the filesystem not covered by the
+        standard.
+      </P
+><P
+>        The complete standard can be viewed at:
+    
+        <BLOCKQUOTE
+CLASS="BLOCKQUOTE"
+><P
+>            <A
+HREF="http://www.pathname.com/fhs/"
+TARGET="_top"
+>http://www.pathname.com/fhs/</A
+>
+          </P
+></BLOCKQUOTE
+>
+      </P
+><P
+>        While compliance with the standard means many things, the two most
+        important are compatibility with other compliant systems, and the
+        ability to mount the <TT
+CLASS="FILENAME"
+>/usr</TT
+> partition as read-only
+        because it contains common executables and is not meant to be changed by
+        users.  Because of this, <TT
+CLASS="FILENAME"
+>/usr</TT
+> can be mounted from
+        the CD-ROM or from another machine via read-only NFS.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-FSSTND"
+>Overview of the FHS</A
+></H2
+><P
+>          The directories and files noted here are a small subset of those
+          specified by the FHS document.  Check the latest FHS document for the
+          most complete information.
+        </P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSADMIN-DEV"
+>The <TT
+CLASS="FILENAME"
+>/dev</TT
+> Directory</A
+></H3
+><P
+>            The <TT
+CLASS="FILENAME"
+>/dev</TT
+> directory contains filesystem entries
+            which represent devices that are attached to the system. These files
+            are essential for the system to function properly.
+          </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSADMIN-ETC"
+>The <TT
+CLASS="FILENAME"
+>/etc</TT
+> Directory</A
+></H3
+><P
+>            The <TT
+CLASS="FILENAME"
+>/etc</TT
+> directory is reserved for
+            configuration files that are local to your machine.  No binaries are
+            to be put in <TT
+CLASS="FILENAME"
+>/etc</TT
+>. Binaries that were in the
+            past put in <TT
+CLASS="FILENAME"
+>/etc</TT
+> should now go into
+            <TT
+CLASS="FILENAME"
+>/sbin</TT
+> or possibly <TT
+CLASS="FILENAME"
+>/bin</TT
+>.
+          </P
+><P
+>            The <TT
+CLASS="FILENAME"
+>X11</TT
+> and <TT
+CLASS="FILENAME"
+>skel</TT
+>
+            directories should be subdirectories of <TT
+CLASS="FILENAME"
+>/etc</TT
+>:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>/etc
+  |- X11
+  +- skel</PRE
+></TD
+></TR
+></TABLE
+><P
+>            The <TT
+CLASS="FILENAME"
+>X11</TT
+> directory is for X11 configuration
+            files such as <TT
+CLASS="FILENAME"
+>XF86Config</TT
+>.  The
+            <TT
+CLASS="FILENAME"
+>skel</TT
+> directory is for "skeleton" user files,
+            which are files used to populate a home directory when a user is
+            first created.
+          </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSADMIN-LIB"
+>The <TT
+CLASS="FILENAME"
+>/lib</TT
+> Directory</A
+></H3
+><P
+>            The <TT
+CLASS="FILENAME"
+>/lib</TT
+> directory should contain only those
+            libraries that are needed to execute the binaries in
+            <TT
+CLASS="FILENAME"
+>/bin</TT
+> and <TT
+CLASS="FILENAME"
+>/sbin</TT
+>.
+          </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSADMIN-PROC"
+>The <TT
+CLASS="FILENAME"
+>/proc</TT
+> Directory</A
+></H3
+><P
+>            The <TT
+CLASS="FILENAME"
+>/proc</TT
+> directory contains special files that
+            either extract information or send information to the kernel. It is
+            an easy method of accessing information about the operating system
+            using the <TT
+CLASS="FILENAME"
+>cat</TT
+> command.
+          </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSADMIN-SBIN"
+>The <TT
+CLASS="FILENAME"
+>/sbin</TT
+> Directory</A
+></H3
+><P
+>            The <TT
+CLASS="FILENAME"
+>/sbin</TT
+> directory is for executables used
+            only by the root user, and only those executables needed to boot and
+            mount <TT
+CLASS="FILENAME"
+>/usr</TT
+> and perform system recovery
+            operations.  The FHS says:
+        
+            <BLOCKQUOTE
+CLASS="BLOCKQUOTE"
+><P
+>                "<TT
+CLASS="FILENAME"
+>/sbin</TT
+> typically contains files essential
+                for booting the system in addition to the binaries in
+                <TT
+CLASS="FILENAME"
+>/bin</TT
+>.  Anything executed after
+                <TT
+CLASS="FILENAME"
+>/usr</TT
+> is known to be mounted (when there are
+                no problems) should be placed in <TT
+CLASS="FILENAME"
+>/usr/sbin</TT
+>.
+                Local-only system administration binaries should be placed into
+                <TT
+CLASS="FILENAME"
+>/usr/local/sbin</TT
+>."
+              </P
+></BLOCKQUOTE
+>
+          </P
+><P
+>            At a minimum, the following programs should be in
+            <TT
+CLASS="FILENAME"
+>/sbin</TT
+>:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="FILENAME"
+>arp</TT
+>, <TT
+CLASS="FILENAME"
+>clock</TT
+>, <TT
+CLASS="FILENAME"
+>getty</TT
+>, <TT
+CLASS="FILENAME"
+>halt</TT
+>, <TT
+CLASS="FILENAME"
+>init</TT
+>, <TT
+CLASS="FILENAME"
+>fdisk</TT
+>,
+<TT
+CLASS="FILENAME"
+>fsck.*</TT
+>, <TT
+CLASS="FILENAME"
+>ifconfig</TT
+>, <TT
+CLASS="FILENAME"
+>lilo</TT
+>, <TT
+CLASS="FILENAME"
+>mkfs.*</TT
+>, <TT
+CLASS="FILENAME"
+>mkswap</TT
+>, <TT
+CLASS="FILENAME"
+>reboot</TT
+>,
+<TT
+CLASS="FILENAME"
+>route</TT
+>, <TT
+CLASS="FILENAME"
+>shutdown</TT
+>, <TT
+CLASS="FILENAME"
+>swapoff</TT
+>, <TT
+CLASS="FILENAME"
+>swapon</TT
+>, <TT
+CLASS="FILENAME"
+>update</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSADMIN-USR"
+>The <TT
+CLASS="FILENAME"
+>/usr</TT
+> Directory</A
+></H3
+><P
+>            The <TT
+CLASS="FILENAME"
+>/usr</TT
+> directory is for files that can be
+            shared across a whole site.  The <TT
+CLASS="FILENAME"
+>/usr</TT
+> directory
+            usually has its own partition, and it should be mountable read-only.
+            The following directories should be subdirectories of
+            <TT
+CLASS="FILENAME"
+>/usr</TT
+>:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>/usr
+  |- X11R6
+  |- bin
+  |- dict
+  |- doc
+  |- etc
+  |- games
+  |- include
+  |- info
+  |- lib
+  |- libexec	    
+  |- local
+  |- man
+  |- sbin
+  |- share
+  +- src</PRE
+></TD
+></TR
+></TABLE
+><P
+>            The <TT
+CLASS="FILENAME"
+>X11R6</TT
+> directory is for the X Window System
+            (<TT
+CLASS="APPLICATION"
+>XFree86</TT
+> on Red Hat Linux),
+            <TT
+CLASS="FILENAME"
+>bin</TT
+> is for executables,
+            <TT
+CLASS="FILENAME"
+>doc</TT
+> is for random, non-man-page documentation,
+            <TT
+CLASS="FILENAME"
+>etc</TT
+> is for site-wide configuration files,
+            <TT
+CLASS="FILENAME"
+>include</TT
+> is for C header files,
+            <TT
+CLASS="FILENAME"
+>info</TT
+> is for GNU info files,
+            <TT
+CLASS="FILENAME"
+>lib</TT
+> is for libraries, <TT
+CLASS="FILENAME"
+>man</TT
+>
+            is for man pages, <TT
+CLASS="FILENAME"
+>sbin</TT
+> is for system
+            administration binaries (those that do not belong in
+            <TT
+CLASS="FILENAME"
+>/sbin</TT
+>), and <TT
+CLASS="FILENAME"
+>src</TT
+> is for
+            source code.
+          </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSADMIN-USR-LOCAL"
+>The <TT
+CLASS="FILENAME"
+>/usr/local</TT
+> Directory</A
+></H3
+><P
+>            The FHS says:
+        
+            <BLOCKQUOTE
+CLASS="BLOCKQUOTE"
+><P
+>                "The <TT
+CLASS="FILENAME"
+>/usr/local</TT
+> hierarchy is for use by the
+                system administrator when installing software locally.  It needs
+                to be safe from being overwritten when the system software is
+                updated.  It may be used for programs and data that are
+                shareable amongst a group of machines, but not found in
+                <TT
+CLASS="FILENAME"
+>/usr</TT
+>."
+              </P
+></BLOCKQUOTE
+>
+          </P
+><P
+>            The <TT
+CLASS="FILENAME"
+>/usr/local</TT
+> directory is similar in
+            structure to the <TT
+CLASS="FILENAME"
+>/usr</TT
+> directory.  It has the
+            following subdirectories, which are similar in purpose to those in
+            the <TT
+CLASS="FILENAME"
+>/usr</TT
+> directory:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>/usr/local
+       |- bin
+       |- doc
+       |- etc
+       |- games
+       |- info
+       |- lib
+       |- man
+       |- sbin
+       +- src</PRE
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSADMIN-VAR"
+>The <TT
+CLASS="FILENAME"
+>/var</TT
+> Directory</A
+></H3
+><P
+>            Since the FHS requires that you be able to mount
+            <TT
+CLASS="FILENAME"
+>/usr</TT
+> read-only, any programs that write log
+            files or need <TT
+CLASS="FILENAME"
+>spool</TT
+> or
+            <TT
+CLASS="FILENAME"
+>lock</TT
+> directories probably should write them to
+            the <TT
+CLASS="FILENAME"
+>/var</TT
+> directory.  The FHS states
+            <TT
+CLASS="FILENAME"
+>/var</TT
+> is for:
+        
+            <BLOCKQUOTE
+CLASS="BLOCKQUOTE"
+><P
+>                "&#8230;variable data files.  This includes spool directories
+                and files, administrative and logging data, and transient and
+                temporary files."
+              </P
+></BLOCKQUOTE
+>
+          </P
+><P
+>            The following directories should be subdirectories of
+            <TT
+CLASS="FILENAME"
+>/var</TT
+>:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>/var
+  |- catman
+  |- lib
+  |- local
+  |- lock
+  |- log
+  |- named
+  |- nis
+  |- preserve
+  |- run
+  +- spool
+       |- anacron
+       |- at
+       |- cron
+       |- fax
+       |- lpd
+       |- mail
+       |- mqueue
+       +- news
+       |- rwho
+       |- samba
+       |- slrnpull
+       |- squid
+       |- up2date
+       |- uucp
+       |- uucppublic
+       |- vbox
+       |- voice
+  |- tmp</PRE
+></TD
+></TR
+></TABLE
+><P
+>            System log files such as <TT
+CLASS="FILENAME"
+>wtmp</TT
+> and
+            <TT
+CLASS="FILENAME"
+>lastlog</TT
+> go in <TT
+CLASS="FILENAME"
+>/var/log</TT
+>.
+            The <TT
+CLASS="FILENAME"
+>/var/lib</TT
+> directory also contains the RPM
+            system databases.  Formatted man pages go in
+            <TT
+CLASS="FILENAME"
+>/var/catman</TT
+>, and lock files go in
+            <TT
+CLASS="FILENAME"
+>/var/lock</TT
+>.  The <TT
+CLASS="FILENAME"
+>/var/spool</TT
+>
+            directory has subdirectories for various systems that need to store
+            data files.
+          </P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSADMIN-USR-LOCAL"
+><TT
+CLASS="FILENAME"
+>/usr/local</TT
+> in Red Hat Linux</A
+></H2
+><P
+>          In Red Hat Linux, the intended use for <TT
+CLASS="FILENAME"
+>/usr/local</TT
+> is
+          slightly different from that specified by the FHS.  The FHS says
+          that <TT
+CLASS="FILENAME"
+>/usr/local</TT
+> should be where you store
+          software that is to remain safe from system software upgrades.  Since
+          system upgrades from Red Hat are done safely with the RPM system and
+          <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>, you don't need to protect files
+          by putting them in <TT
+CLASS="FILENAME"
+>/usr/local</TT
+>.  Instead, we
+          recommend you use <TT
+CLASS="FILENAME"
+>/usr/local</TT
+> for software that is
+          local to your machine.
+        </P
+><P
+>          For instance, let's say you have mounted <TT
+CLASS="FILENAME"
+>/usr</TT
+> via
+          read-only NFS from <I
+CLASS="EMPHASIS"
+>beavis</I
+>.  If there is a package
+          or program you would like to install, but you are not allowed to write
+          to <I
+CLASS="EMPHASIS"
+>beavis</I
+>, you should install it under
+          <TT
+CLASS="FILENAME"
+>/usr/local</TT
+>.  Later perhaps, if you've managed to
+          convince the system administrator of <I
+CLASS="EMPHASIS"
+>beavis</I
+> to
+          install the program on <TT
+CLASS="FILENAME"
+>/usr</TT
+>, you can uninstall it
+          from <TT
+CLASS="FILENAME"
+>/usr/local</TT
+>.
+        </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-non-inst-new-feat-other.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-sysadmin-special-file.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Miscellaneous New Features</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="p196.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Special Red Hat File Locations</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-sysadmin.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:58:24 GMT -->
+</HTML
+>

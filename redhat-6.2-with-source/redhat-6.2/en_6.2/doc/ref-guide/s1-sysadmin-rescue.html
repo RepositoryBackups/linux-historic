@@ -1,0 +1,559 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-sysadmin-rescue.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Rescue Mode</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="System Administration"
+HREF="ch-sysadmin.html"><LINK
+REL="PREVIOUS"
+TITLE="The Boot Process, Init, and Shutdown"
+HREF="s1-sysadmin-boot.html"><LINK
+REL="NEXT"
+TITLE="System Configuration"
+HREF="ch-sysconfig.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-sysadmin-boot.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 2. System Administration</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="ch-sysconfig.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-SYSADMIN-RESCUE"
+>Rescue Mode</A
+></H1
+><P
+>        When things go wrong, there are several ways to work on fixing them.
+        However, they require that you understand the system well.  We will
+        present the ways that you can boot into rescue modes where you can use
+        your own knowledge to rescue the system.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-BASICS-RESCUE-MODE"
+>What is Rescue Mode?</A
+></H2
+><P
+>	  Rescue mode is a term used to describe a method of booting a small
+	  Linux environment completely from a diskette, CD or other method.
+	</P
+><P
+>	  What follows in this section may help you recover from a problem at
+	  some point.
+	</P
+><P
+>	  As the name implies, rescue mode is there to rescue you from
+	  something.  In normal operation, your Red Hat Linux system uses files located
+	  on your system's hard drive to do everything -- run programs, store
+	  your files, and more.
+	</P
+><P
+>	  However, there may be times when you are unable to get Linux running
+	  completely enough to access its files on your system's hard drive.  By
+	  using rescue mode, it's possible to access the files stored on your
+	  system's hard drive, even if you can't actually run Linux from that
+	  hard drive.
+	</P
+><P
+>	  Normally, you'll need to get into rescue mode for one of two reasons:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      You are unable to boot Linux, and you'd like to fix it.
+	    </P
+></LI
+><LI
+><P
+>	      You are having hardware or software problems, and you want to get
+	      a few important files off your system's hard drive.
+	    </P
+></LI
+></UL
+><P
+>	  Let's take a closer look at each of these scenarios.
+	</P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-BASICS-UNABLE-TO-BOOT"
+>Unable to boot Linux</A
+></H3
+><P
+>	    Many times this is caused by the installation of another operating
+	    system after you've installed Red Hat Linux. Some other operating systems
+	    assume that you have no other operating systems on your computer,
+	    and overwrite the Master Boot Record (or MBR) that originally
+	    contained the LILO bootloader.  If LILO is overwritten in this
+	    manner, you're out of luck -- unless you can get into rescue mode.
+	  </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-BASICS-HARDWARE-TROUBLES"
+>Hardware/software problems</A
+></H3
+><P
+>	    There can be as many different situations under this category as
+	    there are systems running Linux.  Things like failing hard drives
+	    and forgetting to run LILO after building a new kernel are just two
+	    instances that can keep you from booting Red Hat Linux.  If you can get into
+	    rescue mode, you might be able to resolve the problem -- or at least
+	    get copies of your most important files.
+	  </P
+><P
+>	    To boot your system in rescue mode, enter the following parameter at
+	    the installation boot prompt:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>boot:</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>linux rescue</B
+></TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>	    You can get to the installation boot prompt in one of these ways:
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>                By booting your system from the diskette or CD-ROM that came
+		with your Red Hat Linux boxed set.
+              </P
+></LI
+><LI
+><P
+>		By booting from a network or PCMCIA boot diskette. These methods
+		assume your network connection is working and require you to
+		identify the network host and transfer type. For an explanation
+		of how to specify this information, see "Installing over the
+		Network" in <A
+HREF="ch-install-tm.html"
+>Chapter 10</A
+>.
+              </P
+></LI
+></UL
+><P
+>	    Once you have your system in rescue mode, a prompt appears:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>bash#</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>	    From this prompt, you can run the commands listed below:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>anaconda          gzip        mkfs.ext2   ps
+badblocks         head        mknod       python
+bash              hwclock     mkraid      python1.5
+cat               ifconfig    mkswap      raidstart
+chatter           init        mlabel      raidstop
+chmod             insmod      mmd         rcp
+chroot            less        mmount      rlogin
+clock             ln          mmove       rm
+collage           loader      modprobe    rmmod
+cp                ls          mount       route
+cpio              lsattr      mpartition  rpm
+dd                lsmod       mrd         rsh
+ddcprobe          mattrib     mread       sed
+depmode           mbadblocks  mren        sh
+df                mcd         mshowfat    sync 
+e2fsck            mcopy       mt          tac
+fdisk             mdel        mtools      tail
+fsck              mdeltree    mtype       tar
+fsck.ext2         mdir        mv          touch
+ftp               mdu         mzip        traceroute
+genhdlist         mformat     open        umount
+gnome-pty-helper  minfo       pico        uncpio
+grep              mkdir       ping        uniq
+gunzip            mke2fs      probe       zcat</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>	    However, if your root filesystem is undamaged, you can mount it and
+	    then run any standard Linux utility. For example, suppose your root
+	    filesystem is in <TT
+CLASS="FILENAME"
+>/dev/hda5</TT
+>. Here's how to mount
+	    this partition:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>mount -t ext2 /dev/hda5 <TT
+CLASS="REPLACEABLE"
+><I
+>/foo</I
+></TT
+></B
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>	    Where <TT
+CLASS="REPLACEABLE"
+><I
+>/foo</I
+></TT
+> is a directory that you have
+	    created.
+	  </P
+><P
+>	    Now you can run <B
+CLASS="COMMAND"
+>chroot</B
+>, <B
+CLASS="COMMAND"
+>fsck</B
+>,
+	    <B
+CLASS="COMMAND"
+>man</B
+>, and other utilities. At this point, you are
+	    running Linux in single-user mode.
+	  </P
+><P
+>	    If you don't know the names of your Linux partitions, you can guess:
+	    mounting non-existent partitions will do no harm.
+	  </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-BASICS-BOOTING-SINGLE"
+>Booting Single-User Mode Directly</A
+></H3
+><P
+>	    You may be able to boot single-user mode directly. If your system
+	    boots, but does not allow you to log in when it has completed
+	    booting, try rebooting and specifying one of these options at the
+	    LILO boot prompt:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>&#13;<TT
+CLASS="PROMPT"
+>LILO boot:</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>linux single</B
+></TT
+>
+<TT
+CLASS="PROMPT"
+>LILO boot:</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>linux emergency</B
+></TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>	    In single-user mode, you computer boots to runlevel 1. Your local
+	    filesystems will be mounted but your network will not be
+	    activated. You get a usable system maintenance shell.
+	  </P
+><P
+>	    In emergency mode, you are booted into the most minimal environment
+	    possible. The root filesystem will be mounted read-only and almost
+	    nothing will be set up. The main advantage of this over
+	    <B
+CLASS="COMMAND"
+>linux single</B
+> is that your
+	    <TT
+CLASS="APPLICATION"
+>init</TT
+> files are not loaded. If
+	    <TT
+CLASS="APPLICATION"
+>init</TT
+> is corrupted or not working, you can
+	    still mount filesystems to recover data that could be lost during a
+	    re-installation.
+	  </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSADMIN-TRICK"
+>A Handy Trick</A
+></H3
+><P
+>	    Have you ever rebuilt a kernel and, eager to try out your new
+	    handiwork, rebooted before running LILO? And you didn't have an
+	    entry for an older kernel in <TT
+CLASS="FILENAME"
+>lilo.conf</TT
+>?  Read
+	    on&#8230;
+	  </P
+><P
+>	    In many cases, it's possible to boot your Red Hat Linux/Intel system from the
+	    Red Hat Linux boot disk with your root filesystem mounted and ready to
+	    go. Here's how:
+	  </P
+><P
+>	    Enter the following command at the boot disk's
+	    <TT
+CLASS="PROMPT"
+>boot:</TT
+> prompt:
+	  </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>linux single root=<TT
+CLASS="FILENAME"
+>/dev/hd<TT
+CLASS="REPLACEABLE"
+><I
+>XX</I
+></TT
+></TT
+> initrd=</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>	    (Replace the <B
+CLASS="COMMAND"
+><TT
+CLASS="REPLACEABLE"
+><I
+>XX</I
+></TT
+></B
+> in
+	    <TT
+CLASS="FILENAME"
+>/dev/hd<TT
+CLASS="REPLACEABLE"
+><I
+>XX</I
+></TT
+></TT
+> with the
+	    appropriate letter and number for your root partition.)
+	  </P
+><P
+>	    What does this do? First, it starts the boot in single-user mode,
+	    with the root partition set to your root partition. The empty
+	    <B
+CLASS="COMMAND"
+>initrd</B
+> specification bypasses the
+	    installation-related image on the boot disk, which will cause you to
+	    enter single-user mode immediately.
+	  </P
+><P
+>	    Is there a downside? Unfortunately, yes. Because the
+	    kernel on the Red Hat Linux boot disk only has support for IDE built-in,
+	    those of you with SCSI-based systems won't be able to use this
+	    trick.  In that case, you'll have to use the boot/rescue disk
+	    combination mentioned above.
+	  </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-sysadmin-boot.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="ch-sysconfig.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>The Boot Process, Init, and Shutdown</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-sysadmin.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>System Configuration</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-sysadmin-rescue.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

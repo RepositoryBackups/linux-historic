@@ -1,0 +1,481 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/ch-install.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:48:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Starting the Installation</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="PREVIOUS"
+TITLE="System Requirements Table"
+HREF="s1-mockup-before-begin-table.html"><LINK
+REL="NEXT"
+TITLE="Starting the Installation Program"
+HREF="s1-install-start-install.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Installation Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-mockup-before-begin-table.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-install-start-install.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CH-INSTALL"
+>Chapter 3. Starting the Installation</A
+></H1
+><P
+>      This chapter explains how to start the Red Hat Linux installation
+      process. We'll cover the following areas:
+    </P
+><P
+></P
+><UL
+><LI
+><P
+>          Getting familiar with the installation program's user interface;
+        </P
+></LI
+><LI
+><P
+>	  Starting the installation program;
+        </P
+></LI
+><LI
+><P
+>          Selecting an installation method;
+        </P
+></LI
+><LI
+><P
+>          Beginning the installation. 
+        </P
+></LI
+></UL
+><P
+>      By the end of this chapter, the installation program will be running on
+      your system, and you will have begun the process of either installing or
+      upgrading to Red Hat Linux 6.2.
+    </P
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-INSTALL-INTERFACE"
+>The Installation Program User Interface</A
+></H1
+><P
+>        If you've used a <I
+CLASS="FIRSTTERM"
+>graphical user interface (GUI)</I
+>
+        before, you'll be familiar with this process. If not, simply use your
+        mouse to navigate the screens, "click" buttons or enter text fields. You
+        can also navigate through the installation using the
+        <B
+CLASS="KEYCAP"
+>Tab</B
+> and <B
+CLASS="KEYCAP"
+>Enter</B
+> keys.
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  If you do not wish to use the GUI installation program, the text mode
+	  installation program is also available. To enter text mode, enter the
+	  following boot command:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>	  <TT
+CLASS="PROMPT"
+>boot:</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>text</B
+></TT
+>
+	</PRE
+></TD
+></TR
+></TABLE
+><P
+>	  For text mode installation instructions, please refer to the
+	  <I
+CLASS="CITETITLE"
+>Official Red Hat Linux Reference Guide</I
+>.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-VIRTUAL-CONSOLES"
+>A Note about Virtual Consoles</A
+></H2
+><P
+>          The Red Hat Linux installation program offers more than the dialog boxes of
+          the installation process. Several different kinds of diagnostic
+          messages are available to you, in addition to giving you a way to
+          enter commands from a shell prompt. It presents this information on
+          five <I
+CLASS="FIRSTTERM"
+>virtual consoles</I
+>, among which you can switch
+          using a single keystroke.
+        </P
+><P
+>          These virtual consoles can be helpful if you encounter a problem while
+          installing Red Hat Linux.  Messages displayed on the installation or system
+          consoles can help pinpoint a problem.  Please see <A
+HREF="ch-install.html#TB-INSTALL-CONSOLE"
+>Table 3-1</A
+> for a listing of the virtual consoles,
+          keystrokes to switch to them, and their contents.
+        </P
+><DIV
+CLASS="TABLE"
+><A
+NAME="TB-INSTALL-CONSOLE"
+></A
+><P
+><B
+>Table 3-1. Console,  Keystrokes, and Contents</B
+></P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+CELLSPACING="0"
+CELLPADDING="4"
+CLASS="CALSTABLE"
+><TR
+><TH
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  Console
+                </TH
+><TH
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  Keystrokes
+                </TH
+><TH
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  Contents
+                </TH
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  1
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>Alt</B
+>-<B
+CLASS="KEYCAP"
+>F1</B
+>
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  installation dialog
+                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  2
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>Alt</B
+>-<B
+CLASS="KEYCAP"
+>F2</B
+>
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  shell prompt
+                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  3
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>Alt</B
+>-<B
+CLASS="KEYCAP"
+>F3</B
+>
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  install log (messages from installation program)
+                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  4
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>Alt</B
+>-<B
+CLASS="KEYCAP"
+>F4</B
+>
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  system-related messages
+                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  5
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>Alt</B
+>-<B
+CLASS="KEYCAP"
+>F5</B
+>
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  other messages
+                </TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  7
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>                  <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>Alt</B
+>-<B
+CLASS="KEYCAP"
+>F7</B
+>
+                </TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>		  X graphical display
+                </TD
+></TR
+></TABLE
+></DIV
+><P
+>          Generally, there's no reason to leave the default console (virtual
+          console #7) unless you are attempting to diagnose installation
+          problems.  But if you get curious, feel free to look around.
+        </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-mockup-before-begin-table.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-install-start-install.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>System Requirements Table</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Starting the Installation Program</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/ch-install.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:48:00 GMT -->
+</HTML
+>

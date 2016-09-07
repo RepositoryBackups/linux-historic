@@ -1,0 +1,461 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-memory.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Using All Available RAM</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Q  A: Quick Answers to Common Questions"
+HREF="ch-q-and-a.html"><LINK
+REL="PREVIOUS"
+TITLE='Starting "Services"'
+HREF="s1-q-and-a-ntsysv.html"><LINK
+REL="NEXT"
+TITLE="Configuring a Sound Card"
+HREF="s1-q-and-a-sound.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-ntsysv.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 15. Q &#38; A: Quick Answers to Common Questions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-sound.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-Q-AND-A-MEMORY"
+>Using All Available RAM</A
+></H1
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-MEMORY-Q"
+>Q: Using All the Memory</A
+></H2
+><P
+>          My computer has 128 MB of RAM, but I'm not sure all of it is being
+          used. How can I find out whether all the RAM is being used? Is there a
+          way to get Linux to recognize all my memory, if it isn't already?
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-MEMORY-A"
+>A: Instruct the Kernel to Use All Your RAM</A
+></H2
+><P
+>	  Usually, the Linux kernel will recognize all of the RAM on a system; however,
+	  there may be circumstances in which not all of the memory is being
+	  recognized.
+	</P
+><P
+>	  There are a couple ways to make certain that all of your machine's
+	  memory is being used by the Linux kernel. First, you can test to see
+	  if it's being used and, if it isn't, you can either enter the option
+	  at the <TT
+CLASS="PROMPT"
+>boot:</TT
+> prompt or you can edit a file called
+	  <TT
+CLASS="FILENAME"
+>/etc/lilo.conf</TT
+> to make sure that the memory is
+	  used each time you boot into your system. (The
+	  <TT
+CLASS="FILENAME"
+>/etc/lilo.conf</TT
+> is the configuration file for
+	  <TT
+CLASS="APPLICATION"
+>LILO</TT
+>, the LInux LOader.)
+	</P
+><P
+>	  First, open an Xterm window and, at the shell prompt, type
+	  <B
+CLASS="COMMAND"
+>cat /proc/meminfo</B
+> to find out the current
+	  statistics about memory usage on your system. Your output will
+	  probably look similar to the following:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>        total:    used:    free:  shared: buffers:  cached:
+Mem:  64655360 63033344  1622016 51159040  1552384 33816576
+Swap: 73990144   700416 73289728
+MemTotal:     63140 kB
+MemFree:       1584 kB
+MemShared:    49960 kB
+Buffers:       1516 kB
+Cached:       33024 kB
+SwapTotal:    72256 kB
+SwapFree:     71572 kB</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>	Among the categories you'll find will be the total amount of memory the
+	  Linux kernel "sees" (<TT
+CLASS="COMPUTEROUTPUT"
+>Mem:</TT
+>). If, for
+	  example, you have 128 MB of RAM, and you see the
+	  <TT
+CLASS="COMPUTEROUTPUT"
+>Mem</TT
+> entry reporting only 64 MB or so,
+	  then you can instruct the kernel to use all the RAM on your system.
+	</P
+><P
+>	  You can pass the instruction to the kernel at the LILO
+	  <TT
+CLASS="PROMPT"
+>boot:</TT
+> prompt by typing it in, such as
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>boot:</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>linux mem=128M</B
+></TT
+>
+		</PRE
+></TD
+></TR
+></TABLE
+><P
+>	  Once you press <B
+CLASS="KEYCAP"
+>Enter</B
+>, you'll boot with your new
+	  memory options. If you don't want to type the option each time you
+	  boot, you can enter the option in
+	  <TT
+CLASS="FILENAME"
+>/etc/lilo.conf</TT
+>. You can use the editor called
+	  <TT
+CLASS="APPLICATION"
+>Pico</TT
+>.
+	</P
+><P
+>	  But first, you'll have to <B
+CLASS="COMMAND"
+>su</B
+> to root. In an Xterm, type
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[you@localhost you]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>su</B
+></TT
+>
+<TT
+CLASS="PROMPT"
+>password:</TT
+> <TT
+CLASS="USERINPUT"
+><B
+><TT
+CLASS="REPLACEABLE"
+><I
+>yourrootpassword</I
+></TT
+></B
+></TT
+>
+<TT
+CLASS="PROMPT"
+>[root@localhost you]#</TT
+>
+		</PRE
+></TD
+></TR
+></TABLE
+><P
+>	  Now, to edit <TT
+CLASS="FILENAME"
+>/etc/lilo.conf</TT
+>, in the same Xterm
+	  window, type
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[root@localhost you]# </TT
+><TT
+CLASS="USERINPUT"
+><B
+>pico /etc/lilo.conf</B
+></TT
+>
+		</PRE
+></TD
+></TR
+></TABLE
+><P
+>	  The file will probably look similar to the following:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>boot=/dev/hda
+map=/boot/map
+install=/boot/boot.b
+prompt
+timeout=50
+image=/boot/vmlinuz-2.2.5-15
+        label=linux
+        root=/dev/hda1
+        read-only</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>	  In this file, place the following as the first line:
+	  <TT
+CLASS="USERINPUT"
+><B
+>append="mem=128M"</B
+></TT
+>. With the addition, then, the
+	  file should look something like this:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>append="mem=128M"
+boot=/dev/hda
+map=/boot/map
+install=/boot/boot.b
+prompt
+timeout=50
+image=/boot/vmlinuz-2.2.5-15
+        label=linux
+        root=/dev/hda1
+        read-only</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>	  You can use the
+	  <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>X</B
+> to quit
+	  the file.
+	</P
+><P
+>	  You'll be asked if you want to save the file; select
+	  <B
+CLASS="KEYCAP"
+>Y</B
+> to save your changes, <B
+CLASS="KEYCAP"
+>N</B
+> if you
+	  don't want to save the changes, and <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>C</B
+> to cancel.
+	</P
+><P
+>	  Now, type <B
+CLASS="COMMAND"
+>/sbin/lilo</B
+> at the prompt to restart
+	  LILO. You can type <B
+CLASS="COMMAND"
+>exit</B
+> to leave root, and type
+	  <B
+CLASS="COMMAND"
+>exit</B
+> again to close the window.
+      </P
+><P
+>	  When you reboot, your memory configuration will be passed to the
+	  kernel.
+        </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-ntsysv.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-sound.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Starting "Services"</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-q-and-a.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Configuring a Sound Card</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-memory.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+</HTML
+>

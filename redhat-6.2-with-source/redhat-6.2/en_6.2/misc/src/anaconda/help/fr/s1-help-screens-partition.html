@@ -1,0 +1,370 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/fr/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:27 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Partitions</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.52"><LINK
+REL="HOME"
+TITLE="Ecrans d'aide de l'installation"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="Partitionnement automatique"
+HREF="s1-help-screens-svr.html"><LINK
+REL="NEXT"
+TITLE="Configuration des systèmes de fichiers"
+HREF="s1-help-screens-loopback.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-PARTITION"
+>Partitions</A
+></H1
+><P
+>	Où souhaitez-vous installer Red Hat Linux ?
+      </P
+><P
+>	<B
+CLASS="COMMAND"
+>Remarque :</B
+> si vous effectuez une 
+	<B
+CLASS="COMMAND"
+>installation sans partition</B
+>, vous devez 
+	définir une partition DOS/Windows existante comme partition 
+	root, indiquée par 
+	<B
+CLASS="COMMAND"
+>/</B
+>. Cliquez sur la partition FAT que vous souhaitez 
+	sélectionner pour cette installation. Lorsque la partition est 
+	en surbrillance, cliquez sur 
+	<I
+CLASS="GUILABEL"
+>Modifier</I
+> pour lui affecter le point de montage 
+	<B
+CLASS="COMMAND"
+>/</B
+> (root). Cliquez sur <I
+CLASS="GUILABEL"
+>Ok</I
+> 
+	lorsque vous avez terminé. Une fois que vous avez 
+	confirmé ce choix, vous devez définir la taille du 
+	système de fichiers root et de l'espace swap pour votre 
+	système.
+      </P
+><P
+>	Pour des instructions plus détaillées, reportez-vous 
+	au chapitre 
+	<I
+CLASS="EMPHASIS"
+>Installation sans partitionnement</I
+> du 
+	<I
+CLASS="CITETITLE"
+>Red Hat Linux Installation Guide</I
+>.
+      </P
+><P
+>	Si vous ne savez pas comment partitionner votre système, 
+	consultez la section consacrée au partitionnement dans le 
+	<I
+CLASS="CITETITLE"
+>Red Hat Linux Installation Guide</I
+> ou le 
+	<I
+CLASS="CITETITLE"
+>Red Hat Linux Reference Guide</I
+>.
+      </P
+><P
+>	Si vous venez de terminer le partitionnement avec 
+	<TT
+CLASS="APPLICATION"
+>fdisk</TT
+>, vous devez définir des 
+	<I
+CLASS="FIRSTTERM"
+>points de montage</I
+> pour vos partitions. 
+	Dès que vous avez choisi une partition, utilisez le bouton 
+	<I
+CLASS="GUILABEL"
+>Modifier</I
+> pour définir le point de montage 
+	approprié.
+      </P
+><P
+>	Si vous utilisez <TT
+CLASS="APPLICATION"
+>Disk Druid</TT
+>, vous devez 
+	définir des points de montage pour une ou plusieurs partitions. 
+	En même temps, vous pouvez également créer et/ou 
+	supprimer des partitions.
+      </P
+><P
+>	L'écran supérieur indique les partitions existantes. 
+	Chaque partition comporte cinq champs :
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Point de montage :</B
+> ce champ indique où 
+	    la partition est montée lorsque Red Hat Linux est installé 
+	    et en fonctionnement. Si une partition existe mais n'est pas 
+	    définie, vous devez indiquer son point de montage. Vous 
+	    pouvez utiliser le bouton <B
+CLASS="KEYCAP"
+>Modifier</B
+> ou cliquer 
+	    deux fois sur la partition.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Périphérique :</B
+> ce champ affiche 
+	    le nom du périphérique de la partition (par exemple, 
+	    hda2 représente la seconde partition sur votre disque dur 
+	    principal).
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Demandé :</B
+> le champ 
+	    <I
+CLASS="FIRSTTERM"
+>Demandé</I
+>
+	      indique la taille de la partition. Pour redéfinir cette 
+	      taille, vous devez supprimer la partition en cours et la 
+	      recréer à l'aide du bouton <B
+CLASS="KEYCAP"
+>Ajouter</B
+>.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Actuel :</B
+> ce champ indique l'espace 
+	    occupé par la partition.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Type :</B
+> ce champ indique le type de la 
+	    partition (tel que Linux Native ou DOS).
+	  </P
+></LI
+></UL
+><P
+>	Lorsque vous vous déplacez dans la section 
+	<I
+CLASS="FIRSTTERM"
+>Partitions</I
+>, le message 
+	<I
+CLASS="FIRSTTERM"
+>Partition demandée non allouée </I
+>
+	 peut apparaître (texte en rouge), suivi par une ou plusieurs 
+	 partitions. La raison d'une partition non allouée est 
+	 généralement le manque d'espace disque disponible.
+      </P
+><P
+>	Pour résoudre ce problème, vous devez déplacer 
+	la partition vers un autre disque disposant d'un espace libre 
+	suffisant, réduire la partition afin qu'elle tienne sur le 
+	disque actuel, ou supprimer complètement la partition. Pour 
+	effectuer des modifications, utilisez le bouton 
+	<B
+CLASS="KEYCAP"
+>Modifier</B
+> ou cliquez deux fois sur la partition.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DD"
+>Partitionnement de votre système</A
+></H2
+><P
+>	  La ligne centrale de boutons permet de contrôler les 
+	  opérations de l'outil de partitionnement. Vous pouvez ainsi 
+	  ajouter, modifier et supprimer des partitions à ce niveau. 
+	  De plus, certains boutons permettent d'accepter les modifications 
+	  effectuées ou de réinitialiser les paramètres 
+	  et de quitter l'outil de partitionnement.
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Ajouter :</B
+> utilisez ce bouton pour créer 
+	      une nouvelle partition. Le système affiche alors une 
+	      boîte de dialogue contenant les champs à renseigner 
+	      (tels que le point de montage, la taille et le type).
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Modifier :</B
+> utilisez ce bouton pour modifier 
+	      le point de montage de la partition sélectionnée.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Supprimer :</B
+> utilisez ce bouton pour supprimer 
+	      une partition. Le système affiche une boîte de 
+	      dialogue vous demandant de confirmer la suppression.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>RAZ :</B
+> utilisez ce bouton pour annuler les 
+	      modifications effectuées.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Créer le périphérique RAID :</B
+> 
+	      appuyez sur le bouton <B
+CLASS="KEYCAP"
+>Créer le 
+	      périphérique RAID </B
+> UNIQUEMENT si vous 
+	      avez déjà utilisé RAID. Pour en savoir plus 
+	      sur RAID, reportez-vous au <I
+CLASS="CITETITLE"
+>Red Hat Linux Reference Guide</I
+>.
+	    </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DRIVE"
+>Résumés disque</A
+></H2
+><P
+>	  Cette section indique la configuration du disque de votre ordinateur. 
+	  Son but est uniquement informatif. Chaque ligne comprend les champs 
+	  suivants :
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Disque :</B
+> ce champ indique le nom du disque 
+	      dur (par exemple, hda ou hdb).
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Geom [C/H/S] :</B
+> la 
+	      <I
+CLASS="FIRSTTERM"
+>géométrie</I
+> du disque dur 
+	      indique le nombre de cylindres, de têtes et de secteurs.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Total :</B
+> ce champ indique l'espace total 
+	      disponible sur le disque dur.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Libre :</B
+> ce champ indique l'espace libre 
+	      restant sur le disque dur.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Utilisé :</B
+> ces champs affichent la 
+	      répartition actuelle des partitions sur le disque dur en 
+	      méga-octets et en pourcentage.
+	    </P
+></LI
+></UL
+></DIV
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/fr/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:27 GMT -->
+</HTML
+>

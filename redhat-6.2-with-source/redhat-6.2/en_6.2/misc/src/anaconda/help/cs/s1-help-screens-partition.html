@@ -1,0 +1,352 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/cs/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Oddíly</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.49"><LINK
+REL="HOME"
+TITLE="Nápovìda pro Instalátor"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="Automatické dìlení disku"
+HREF="s1-help-screens-svr.html"><LINK
+REL="NEXT"
+TITLE="Konfigurace systému souborù"
+HREF="s1-help-screens-loopback.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-PARTITION"
+>Oddíly</A
+></H1
+><P
+>        Kam chcete nainstalovat Red Hat Linux?
+      </P
+><P
+>	<B
+CLASS="COMMAND"
+>Poznámka:</B
+> Pokud provádíte Instalaci bez
+        vytváøení oddílù, musíte urèit nìjaký existující DOS/Windows
+        oddíl jako koøen (oznaèuje se jako <B
+CLASS="COMMAND"
+>/</B
+>).
+        Kliknìte na oddíl s FAT, pokud chcete provést tento typ instalace.
+        Pak stisknìte tlaèítko <I
+CLASS="GUILABEL"
+>Edit</I
+> pro pøiøazení
+        pøípojného místa <B
+CLASS="COMMAND"
+>/</B
+> pro koøenový oddíl.
+        Pak stisknìte <I
+CLASS="GUILABEL"
+>Ok</I
+>. Po potvrzení této volby
+        budete muset je¹tì vybrat odkládací prostor pro Vá¹ systém
+        (swap space).
+      </P
+><P
+>        Detailní instrukce naleznete v kapitole
+        <I
+CLASS="EMPHASIS"
+>Installing Without Partitioning</I
+>
+        (Instalace bez dìlení disku) v knize <I
+CLASS="CITETITLE"
+>Red Hat Linux Installation Guide</I
+>.
+      </P
+><P
+>        Pokud nevíte, jak vytvoøit oddíly na Va¹em systému, pøeètìte si prosím
+        pøíslu¹nou kapitolu v <I
+CLASS="CITETITLE"
+>Red Hat Linux Installation Guide</I
+> nebo v
+	<I
+CLASS="CITETITLE"
+>Red Hat Linux Reference Guide</I
+>.
+      </P
+><P
+>        Pokud jste provedli dìlení na oddíly programem
+        <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>, musíte zde urèit
+        <I
+CLASS="FIRSTTERM"
+>mount pointy</I
+> (místa pøipojení) pro
+        Va¹e oddíly. K tomu slou¾í tlaèítko <I
+CLASS="GUILABEL"
+>Edit</I
+>,
+        kdy¾ zvýrazníte pøíslu¹ný oddíl.
+      </P
+><P
+>        Pokud chcete pou¾ít <TT
+CLASS="APPLICATION"
+>Disk Druid</TT
+>,
+        musíte také urèit místa pøipojení pro oddíly. Mù¾ete zde
+        vytvoøit i smazat jednotlivé oddíly.
+      </P
+><P
+>        V horní èásti obrazovky jsou uvedeny v¹echny rozpoznané oddíly.
+        Pro ka¾dý oddíl je zde pìt polo¾ek:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Mount Point:</B
+>
+            Toto políèko obsahuje informaci o tom, do kterého adresáøe
+            bude oddíl pøipojen pøi bìhu Red Hat Linux. Pokud oddíl
+            existuje, ale je oznaèen jako 'not set' (nenastavený), musíte
+            uvést místo pøípojení. Mù¾ete kliknou na tlaèítko
+            <B
+CLASS="KEYCAP"
+>Edit</B
+> (úpravy) nebo provést dvojklik na
+            pøíslu¹ném oddílu. Alespoò jeden oddíl musí být oznaèen
+            jako koøenový (místo pøipojení bude <B
+CLASS="COMMAND"
+>/</B
+>).
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Device:</B
+>
+            Zde se zobrazuje jméno zaøízení, na kterém je umístìn daný oddíl
+            (napøíklad hda2 je druhý oddíl na prvním disku Va¹eho primárního
+            IDE rozhraní).
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Requested:</B
+>
+            Ukazuje, kolik místa je na oddílu k dispozici. Pokud chcete zmìnit
+            velikost oddílu, musíte jej smazat a znovu vytvoøit
+            v po¾adované velikosti. K tomu pou¾ijte tlaèítko
+	    <B
+CLASS="KEYCAP"
+>Add</B
+>.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Actual:</B
+> Zobrazuje, kolik místa oddíl zabírá.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Type:</B
+>
+            Zde najdete typ oddílu (napøíklad 'Linux Native' nebo 'DOS').
+	  </P
+></LI
+></UL
+><P
+>        Pokud si budete prohlí¾et seznam <I
+CLASS="FIRSTTERM"
+>oddílù</I
+>
+        mù¾ete spatøit èervené hlá¹ení
+        <I
+CLASS="FIRSTTERM"
+>Unallocated Requested Partition</I
+>
+        (nealokovaný po¾adovaný oddíl). Dùvodem je nedostatek místa pro
+        po¾adovaný oddíl na disku.
+      </P
+><P
+>        Nápravu zjednáte tak, ¾e pøesunete oddíl na disk, na kterém je k
+        dispozici po¾adované místo, zmìníte velikost oddílu nebo tento oddíl
+        sma¾ete. V¹echny zmìny mù¾ete provádìt tlaèítkem <B
+CLASS="KEYCAP"
+>Edit</B
+>
+        nebo dvojklikem na pøíslu¹né oddíly.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DD"
+>Vytváøení oddílù</A
+></H2
+><P
+>          Støední øada tlaèítek ovládá nástroj na oddíly. Oddíl mù¾ete
+          pøidat, zmìnit nebo smazat. Dále jsou zde tlaèítka, kterými
+          mù¾ete ulo¾it provedené zmìny nebo bez ulo¾ení zmìn tento nástroj
+          ukonèit.
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Add:</B
+> 
+              Slou¾í k pøidávání nových oddílù. Pokud jej zvolíte, objeví
+              se okno s polo¾kami, které musíte vyplnit (pøípojné místo,
+              velikost, typ).
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Edit:</B
+>
+              Slou¾í ke zmìnì pøípojného místa aktuálního oddílu.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Delete:</B
+>
+              Slou¾í ke smazání oddílu. Po zvolení se objeví okno, ve kterém
+              musíte potvrdit svùj zámìr.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Reset:</B
+>
+              Slou¾í ke zru¹ení v¹ech zmìn, které jste provedli.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Make RAID Device:</B
+>
+              Pou¾ijte JEN v pøípadì, pokud ji¾ máte s RAID nìjaké zku¹enosti
+              a chcete vytvoøit RAID zaøízení.
+              Pokud zku¹enosti nemáte, pøeètìte si dokumentaci v referenèní
+              pøíruèce <I
+CLASS="CITETITLE"
+>Red Hat Linux Reference Guide</I
+>, která je i
+              na tomto CD.
+	    </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DRIVE"
+>Celkový pøehled o discích</A
+></H2
+><P
+>          V této èásti si zobrazíte konfiguraci va¹ich diskù
+          (to znamená pouze pøehled). Najdete zde tyto polo¾ky:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Drive:</B
+>
+              Políèko zobrazuje jméno zaøízení (napø. 'hda' nebo 'hdb').
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Geom [C/H/S]:</B
+>
+              zobrazuje <I
+CLASS="FIRSTTERM"
+>geometrii</I
+> disku, tj.
+              poèet cylindrù, hlav a sektorù disku.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Total:</B
+>
+              Celkové dostupné místo na disku.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Free:</B
+>
+              Zobrazuje, kolik místa na disku je je¹tì volného.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Used:</B
+>
+              Zobrazuje, kolik místa ji¾ zabírají nadefinované oddíly
+              (v MB a procentech).
+	    </P
+></LI
+></UL
+></DIV
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/cs/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:22 GMT -->
+</HTML
+>

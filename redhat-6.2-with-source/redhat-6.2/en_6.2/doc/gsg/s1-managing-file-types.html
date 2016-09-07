@@ -1,0 +1,1450 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-managing-file-types.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Identifying and Working with File Types</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Working with Files and Directories"
+HREF="ch-shellmanage.html"><LINK
+REL="PREVIOUS"
+TITLE="Command History and Tab Completion"
+HREF="s1-managing-command-history.html"><LINK
+REL="NEXT"
+TITLE="Copying, Moving and Renaming Files and Directories"
+HREF="s1-managing-working-with-files.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-managing-command-history.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 14. Working with Files and Directories</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-managing-working-with-files.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-MANAGING-FILE-TYPES"
+>Identifying and Working with File Types</A
+></H1
+><P
+>        If you're new to Linux, it won't take long before you begin seeing files
+        with extensions that may seem foreign. A file's extension is the last
+        part of a file's name, after the final dot (in the file
+        <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+>, "<TT
+CLASS="FILENAME"
+>txt</TT
+>" is that
+        file's extension).
+      </P
+><P
+>        Here's a brief listing of extensions and their meanings:
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-MANAGING-COMPRESSED"
+>Compressed/Archived Files</A
+></H2
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.Z </TT
+> -- a compressed file
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.tar </TT
+> -- an archive file (short for
+              <I
+CLASS="EMPHASIS"
+>tape archive</I
+>)
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.gz </TT
+> -- a compressed file (gzipped)
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.tgz </TT
+> -- a tarred and gzipped file
+            </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-MANAGING-FORMATS"
+>File Formats</A
+></H2
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.txt </TT
+> -- a plain ASCII text file
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.html/.htm </TT
+> -- an HTML file
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.ps </TT
+> -- a PostScript file; formatted for
+              printing
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.au </TT
+> -- an audio file
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.wav </TT
+> -- an audio file
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.xpm </TT
+> -- an image file
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.jpg </TT
+> -- a graphical or image file, such as a
+              photo or artwork
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.gif </TT
+> -- a graphical or image file
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.png </TT
+> -- a graphical or image file
+            </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-MANAGING-SYSTEM-FILES"
+>System Files</A
+></H2
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.rpm </TT
+> -- a Red Hat Package Manager file
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.conf </TT
+> -- a configuration file
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.a </TT
+> -- an archive file
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.lock </TT
+> -- a "lock" file; determines whether a
+              program is in use
+            </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-MANAGING-SCRIPTING"
+>Programming and Scripting Files</A
+></H2
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.h </TT
+> -- a C and C++ program language header
+              file
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.c </TT
+> -- a C program language source code file
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.cpp </TT
+> -- a C++ program language source code
+              file
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.o </TT
+> -- a program object file
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.pl </TT
+> -- a Perl script
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.tcl </TT
+> -- a TCL script
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <TT
+CLASS="FILENAME"
+>.so </TT
+> -- a library file
+            </P
+></LI
+></UL
+><P
+>          But file extensions are not always used, or used consistently. So what
+          happens when a file doesn't have an extension, or the file doesn't
+          seem to be what the extension says it's supposed to be?
+        </P
+><P
+>          That's when the <B
+CLASS="COMMAND"
+>file</B
+> command can come in handy.
+        </P
+><P
+>          In <A
+HREF="ch-navigating.html"
+>Chapter 13</A
+>, we created a file called
+          <TT
+CLASS="FILENAME"
+>saturday</TT
+> -- without an extension. Using the
+          <B
+CLASS="COMMAND"
+>file</B
+> command, we can tell what the file is by
+          typing:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>file saturday</B
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>          and we'll see it's a text file. Any file that's designated a text file
+          should be readable using <B
+CLASS="COMMAND"
+>cat</B
+>,
+          <B
+CLASS="COMMAND"
+>more</B
+>, or <B
+CLASS="COMMAND"
+>less</B
+>.
+        </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Read the man page</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>            To learn more about <B
+CLASS="COMMAND"
+>file</B
+>, read the
+            <B
+CLASS="COMMAND"
+>file</B
+> man page by typing <B
+CLASS="COMMAND"
+>man
+            file</B
+>.
+          </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>          And speaking of reading files&#8230;
+        </P
+><P
+>          There are plenty of ways to read files in Linux. In <A
+HREF="ch-navigating.html"
+>Chapter 13</A
+>, for example, we covered the pagers
+            <B
+CLASS="COMMAND"
+>more</B
+> and <B
+CLASS="COMMAND"
+>less</B
+>
+            -- they're called pagers because you can "page" through documents
+            one screen at a time. We also learned how we can not only view but
+            manipulate files with <B
+CLASS="COMMAND"
+>cat</B
+>.
+        </P
+><P
+>          But there are even more options when it comes time to take a look at
+          README files, man pages or documents you've created.
+        </P
+><P
+>          You have a number of tools to help you read text files, among them,
+          the text editors <TT
+CLASS="APPLICATION"
+>pico</TT
+>,
+          <TT
+CLASS="APPLICATION"
+>emacs</TT
+>, and <TT
+CLASS="APPLICATION"
+>vim,</TT
+>
+          the pagers <B
+CLASS="COMMAND"
+>more</B
+> and
+          <B
+CLASS="COMMAND"
+>less</B
+>, and the viewers
+          <B
+CLASS="COMMAND"
+>head</B
+>, <B
+CLASS="COMMAND"
+>tail</B
+>,
+          <B
+CLASS="COMMAND"
+>cat</B
+>, and <B
+CLASS="COMMAND"
+>grep</B
+>.
+        </P
+><P
+>          Let's take a look at some of the features in these tools.
+        </P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-MANAGING-LESS"
+>The <B
+CLASS="COMMAND"
+>less</B
+> Command</A
+></H3
+><P
+>            In <A
+HREF="ch-navigating.html"
+>Chapter 13</A
+>, we introduced to the pager
+            <B
+CLASS="COMMAND"
+>less</B
+>. Less is the pager that's used to display
+            man pages.
+          </P
+><P
+>            Let's view the man page for <B
+CLASS="COMMAND"
+>less</B
+> to see
+            <B
+CLASS="COMMAND"
+>less</B
+> in action.
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>man less</B
+>
+	      </PRE
+></TD
+></TR
+></TABLE
+><P
+>            To move forward a screen, press <B
+CLASS="KEYCAP"
+>Space</B
+>; to move back
+            a screen, press <B
+CLASS="KEYCAP"
+>B</B
+>, and to quit, press
+            <B
+CLASS="KEYCAP"
+>Q</B
+>.
+          </P
+><P
+>            There are other powerful features to <B
+CLASS="COMMAND"
+>less</B
+>, as
+            well, including the ability to scroll horizontally and specify the
+            number of lines to scroll.
+          </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-MANAGING-MORE"
+>The <B
+CLASS="COMMAND"
+>more</B
+> Command</A
+></H3
+><P
+>            Odd as it may seem, <B
+CLASS="COMMAND"
+>more</B
+> offers less than
+            <B
+CLASS="COMMAND"
+>less</B
+> (actually, <B
+CLASS="COMMAND"
+>less</B
+> was
+            inspired by <B
+CLASS="COMMAND"
+>more</B
+>).
+          </P
+><P
+>            Let's take a look at the man page for <B
+CLASS="COMMAND"
+>more</B
+>, but
+            this time, we'll open the page using <B
+CLASS="COMMAND"
+>more</B
+> -- by
+            piping <B
+CLASS="COMMAND"
+>man</B
+>'s output to <B
+CLASS="COMMAND"
+>more</B
+>.
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>man more | more</B
+>
+	      </PRE
+></TD
+></TR
+></TABLE
+><P
+>            It may not look too different at first, but there are fewer
+            enhancements to <B
+CLASS="COMMAND"
+>more</B
+> than to
+            <B
+CLASS="COMMAND"
+>less</B
+>. Probably the most striking difference at
+            first is the lack of a way to go backwards in a document -- although
+            moving forward by pressing <B
+CLASS="KEYCAP"
+>Space</B
+> and quitting by
+            pressing <B
+CLASS="KEYCAP"
+>Q</B
+> are the same.
+          </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-MANAGING-HEAD"
+>The <B
+CLASS="COMMAND"
+>head</B
+> Command</A
+></H3
+><P
+>            You can use the <B
+CLASS="COMMAND"
+>head</B
+> command if you just want to
+            look at the beginning of a file. The command is:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>head <TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>&#60;filename&#62;</I
+></TT
+></TT
+></B
+>
+	      </PRE
+></TD
+></TR
+></TABLE
+><P
+>            <B
+CLASS="COMMAND"
+>Head</B
+> can be useful, but because it's limited to
+            the first several lines, you won't know how long the file actually
+            is. By default, you can only read the first 10 lines of a file,
+            although we can specify the number to see more by typing:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>head -20 <TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>&#60;filename&#62;</I
+></TT
+></TT
+></B
+>
+            </PRE
+></TD
+></TR
+></TABLE
+><P
+>            Read <B
+CLASS="COMMAND"
+>head's</B
+> man page (<B
+CLASS="COMMAND"
+>man
+            head</B
+>) for more information. You'll probably find that
+            <B
+CLASS="COMMAND"
+>less</B
+> or <B
+CLASS="COMMAND"
+>more</B
+> are more helpful,
+            because you can page through the file if you find that the
+            information you're looking for is further into the file than you
+            originally thought.
+          </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-MANAGING-TAIL"
+>The <B
+CLASS="COMMAND"
+>tail</B
+> Command</A
+></H3
+><P
+>            The reverse of <B
+CLASS="COMMAND"
+>head</B
+> (obviously), is
+            <B
+CLASS="COMMAND"
+>tail</B
+>.  With (<B
+CLASS="COMMAND"
+>tail</B
+>), you can
+            review the last 10 lines of a file.
+          </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-MANAGING-MORECAT"
+>The <B
+CLASS="COMMAND"
+>cat</B
+> Command</A
+></H3
+><P
+>            The command <B
+CLASS="COMMAND"
+>cat</B
+>, short for concatenation, will
+            dump the contents of the entire file on the screen. Using
+            <B
+CLASS="COMMAND"
+>cat</B
+> can be handy if the file is fairly short,
+            such as when we created <B
+CLASS="COMMAND"
+>sneakers.txt</B
+>. But if a
+            file is fairly long, it will easily scroll past you on the screen,
+            since <B
+CLASS="COMMAND"
+>cat</B
+> displays the whole file.
+          </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-MANAGING-MOREGREP"
+>The <B
+CLASS="COMMAND"
+>grep</B
+> Command</A
+></H3
+><P
+>            The <B
+CLASS="COMMAND"
+>grep</B
+> command is pretty nifty for finding
+            specific character strings in a file. Let's say we want to find
+            every reference we made to "coffee" in the file
+            <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+>, which we created in our login
+            directory. We could type:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>grep coffee sneakers.txt</B
+>
+          </PRE
+></TD
+></TR
+></TABLE
+><P
+>            and we would see every line in which the word "coffee" could be
+            found.
+          </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Remember case</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>              Unless otherwise specified, <B
+CLASS="COMMAND"
+>grep</B
+> searches are
+              <I
+CLASS="FIRSTTERM"
+>case sensitive</I
+>. That means that searching
+              for <I
+CLASS="EMPHASIS"
+>Coffee</I
+> is different than searching for
+              <I
+CLASS="EMPHASIS"
+>coffee</I
+>. So among <B
+CLASS="COMMAND"
+>grep</B
+>'s
+              options is <B
+CLASS="COMMAND"
+>-i</B
+>, which allows you to make a
+              case-insensitive search through a file. Read the
+              <B
+CLASS="COMMAND"
+>grep</B
+> man page for more about this command.
+            </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-MANAGING-IO"
+>I/O Redirection and Pipes</A
+></H3
+><P
+>            And don't forget about using pipes and output redirection when you
+            want to store and/or print information to read at a later time.
+          </P
+><P
+>            You can, for example, use <B
+CLASS="COMMAND"
+>grep</B
+> to search for
+            particular contents of a file, then have those results either saved
+            as a file or sent to a printer.
+          </P
+><P
+>            To print the information about references to "coffee" in
+            <B
+CLASS="COMMAND"
+>sneakers.txt</B
+>, for example, just type:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>grep coffee sneakers.txt | lpr</B
+>
+	      </PRE
+></TD
+></TR
+></TABLE
+><P
+>            This command behaves similar to the command <B
+CLASS="COMMAND"
+>ls -al /etc |
+            more</B
+>, which you may have used in <A
+HREF="ch-navigating.html"
+>Chapter 13</A
+> to list the contents of the
+            <TT
+CLASS="FILENAME"
+>/etc</TT
+> directory then send the results through
+            the <B
+CLASS="COMMAND"
+>more</B
+> command for viewing on the screen.
+          </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>It's safest to use &#62;&#62;</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>              Remember the distinction of using &#62; and &#62;&#62;: using &#62;
+              will overwrite a file, while &#62;&#62; appends the information to a
+              file. Usually, unless you're certain you want to, it's safer to
+              use &#62;&#62;, because you won't lose potentially valuable
+              information (though you may have to edit the file if you didn't
+              want to append information to it).
+            </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-MANAGING-WILD"
+>Wildcards and Regular Expressions</A
+></H3
+><P
+>            What if you forget the name of the file you're looking for? You
+            can't say to your computer, "Find a file called 'sneak' or
+            'sneak-something'."
+          </P
+><P
+>            Well, yes you can, in a way. Using <I
+CLASS="FIRSTTERM"
+>wildcards</I
+>
+            or <I
+CLASS="FIRSTTERM"
+>regular expressions</I
+>, you can perform
+            actions on a file or files without knowing the complete
+            filename. Just fill out what you know, then substitute the remainder
+            with a wildcard.
+          </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Find out more about wildcards and regular expressions</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>              To read more about wildcards and regular expressions, take a look
+              at the <TT
+CLASS="APPLICATION"
+>bash</TT
+> man page (<B
+CLASS="COMMAND"
+>man
+              bash</B
+>). Remember that you can save the file to a text
+              file by typing <B
+CLASS="COMMAND"
+>man bash | col -b &#62;
+              bash.txt</B
+>. Then, you can open and read the file with
+              <B
+CLASS="COMMAND"
+>less</B
+> or <B
+CLASS="COMMAND"
+>pico</B
+> (<B
+CLASS="COMMAND"
+>pico
+              bash.txt</B
+>). If you want to print the file, be prepared:
+              It's quite long.
+            </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>            We know the file's called "sneak-something.txt," so just type:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>ls sneak*.txt</B
+>
+	      </PRE
+></TD
+></TR
+></TABLE
+><P
+>            and there's the name of the file:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+>
+	      </PRE
+></TD
+></TR
+></TABLE
+><P
+>            You'll probably use the asterisk (<B
+CLASS="COMMAND"
+>*</B
+>) most
+            frequently when you're searching. The asterisk will search out
+            everything that matches the pattern you're looking for. So even by
+            typing:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>ls *.txt</B
+>
+	      </PRE
+></TD
+></TR
+></TABLE
+><P
+>            or:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>ls sn*</B
+>
+	      </PRE
+></TD
+></TR
+></TABLE
+><P
+>            you'd find <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+> -- except that as time
+            goes on, there will be more text files, and they'll all show up
+            because they match the pattern you're searching for.
+          </P
+><P
+>            It helps, then, to narrow your search as much as possible.
+          </P
+><P
+>            One way to narrow that search might be to use the question mark
+            symbol (<B
+CLASS="COMMAND"
+>?</B
+>). Like the asterisk, using
+            <B
+CLASS="COMMAND"
+>?</B
+> can help locate a file matching a search
+            pattern.
+          </P
+><P
+>            In this case, though, <B
+CLASS="COMMAND"
+>?</B
+> is useful for matching a
+            single character -- so if you were searching for
+            <TT
+CLASS="FILENAME"
+>sneaker?.txt</TT
+>, you'd get
+            <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+> as a result -- and/or
+            <TT
+CLASS="FILENAME"
+>sneakerz.txt</TT
+>, if there were such a filename.
+          </P
+><P
+>            When an asterisk, for example, just happens to be part of a
+            filename, such as might be the case if the file
+            <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+> was called
+            <TT
+CLASS="FILENAME"
+>sneak*.txt</TT
+>, that's when regular expressions can
+            come in handy.
+          </P
+><P
+>            Regular expressions are more complex than the straightforward
+            asterisk or question mark.
+          </P
+><P
+>            Using the backslash (<B
+CLASS="COMMAND"
+>\</B
+>), you can specify that you
+            don't want to search out <I
+CLASS="EMPHASIS"
+>everything</I
+> by using
+            the asterisk, but you're instead looking for a file with an asterisk
+            in the name.
+          </P
+><P
+>            If the file is called <TT
+CLASS="FILENAME"
+>sneak*.txt</TT
+>, then, type:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>sneak\*.txt</B
+>
+	      </PRE
+></TD
+></TR
+></TABLE
+><P
+>            Here is a brief list of wildcards and regular expressions:
+          </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>                <B
+CLASS="COMMAND"
+>*</B
+> -- Matches all characters
+              </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>                <B
+CLASS="COMMAND"
+>?</B
+> -- Matches one character in a string
+                (such as <TT
+CLASS="FILENAME"
+>sneaker?.txt</TT
+>)
+              </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>                <B
+CLASS="COMMAND"
+>\*</B
+> -- Matches the * character
+              </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>                <B
+CLASS="COMMAND"
+>\?</B
+> -- Matches the ? character
+              </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>                <B
+CLASS="COMMAND"
+>\)</B
+> -- Matches the ) character
+              </P
+></LI
+></UL
+><P
+>            You can also use wildcards for more than searching: they can come in
+            handy when you want to move and rename files. And regular
+            expressions can help you rename files with characters like * and ?
+            in them.
+          </P
+><P
+>            For more on that, read on.
+          </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-managing-command-history.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-managing-working-with-files.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Command History and Tab Completion</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-shellmanage.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Copying, Moving and Renaming Files and Directories</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-managing-file-types.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:01 GMT -->
+</HTML
+>

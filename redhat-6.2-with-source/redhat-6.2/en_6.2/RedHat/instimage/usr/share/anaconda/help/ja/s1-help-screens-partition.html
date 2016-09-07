@@ -1,0 +1,275 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/ja/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:34 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>パーティション</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.49"><LINK
+REL="HOME"
+TITLE="ヘルプ画面"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="パーティション設定を自動的に行う"
+HREF="s1-help-screens-svr.html"><LINK
+REL="NEXT"
+TITLE="フォーマットするパーティションの選択"
+HREF="s1-help-screens-format.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-PARTITION"
+>パーティション</A
+></H1
+><P
+> Red Hat Linux をインストールするパーティションを選択してください。 </P
+><P
+><B
+CLASS="COMMAND"
+>注意:</B
+> <B
+CLASS="COMMAND"
+>パーティションレスインストール</B
+>を実行する場合は、既存の
+DOS/Windows パーティションを、<B
+CLASS="COMMAND"
+>/</B
+> と表される root として定義する必要があります。このインストール方法で使用する
+FAT パーティションをクリックして選択します。パーティションがハイライトされたら、<B
+CLASS="GUILABEL"
+>「編集」</B
+>をクリックして <B
+CLASS="COMMAND"
+>/</B
+> (root) のマウントポイントを割り当てます。割当が終了したら、<B
+CLASS="GUILABEL"
+>「Ok」</B
+>をクリックします。選択内容を確認したら、root
+ファイルシステムとスワップ領域の大きさを決定する必要かあります。 </P
+><P
+> 設定の詳細については、『Red Hat Linux インストレーションガイド』 の <B
+CLASS="EMPHASIS"
+>「パーティションを作成せずにインストールする」</B
+>の章を参照してください。 </P
+><P
+> システムにどのようなパーティションが必要かわからない場合は、<I
+CLASS="CITETITLE"
+>『Red Hat Linux インストレーションガイド』</I
+> または <I
+CLASS="CITETITLE"
+>『Red Hat Linux リファレンスガイド』</I
+>
+のパーティションについての説明を参照してください。 </P
+><P
+> <TT
+CLASS="APPLICATION"
+>fdisk</TT
+> によるパーティションの作成を行っている場合は、そのパーティションの<I
+CLASS="FIRSTTERM"
+>マウントポイント</I
+>を決定します。パーティションを選択してから、<B
+CLASS="GUILABEL"
+>「編集」</B
+>ボタンを使用して、マウントポイントを定義します。 </P
+><P
+> <TT
+CLASS="APPLICATION"
+>Disk Druid</TT
+> を使用している場合は、一つ以上のディスクパーティションのマウントポイントを決定します。必要なパーティションを追加したり、不要なパーティションを削除します。 </P
+><P
+> 最初の画面では、既存のパーティションが表示されます。パーティションごとに、以下の 5 つのフィールドが表示されます。 </P
+><P
+></P
+><UL
+><LI
+><P
+><B
+CLASS="COMMAND"
+>Mount Point:</B
+> このフィールドには、Red Hat Linux のインストール後（実行時）に、そのパーティションがどこにマウントされるかが表示されます。パーティションが既にあり、[not
+set]  と表示されている場合は、マウントポイントを指定する必要があります。<B
+CLASS="KEYCAP"
+>編集</B
+>を選択するか、パーティションをダブルクリックすると、設定を変更できます。 </P
+></LI
+><LI
+><P
+><B
+CLASS="COMMAND"
+>Device:</B
+> このフィールドには、パーティションのデバイス名 が表示されます。たとえば、hda2
+はプライマリハードドライブの 2 番目のパーティションを示します。 </P
+></LI
+><LI
+><P
+><B
+CLASS="COMMAND"
+>Requested:</B
+> <I
+CLASS="FIRSTTERM"
+>この</I
+>フィールドには、パーティションの容量が表示されます。
+サイズを変更したい場合は、そのパーティションをいったん削除し、<B
+CLASS="KEYCAP"
+>追加</B
+>を選択して作成し直す必要があります。 </P
+></LI
+><LI
+><P
+><B
+CLASS="COMMAND"
+>Actual:</B
+> このフィールドには、パーティションが使用する容量が表示されます。 </P
+></LI
+><LI
+><P
+><B
+CLASS="COMMAND"
+>Type:</B
+> このフィールドには、パーティションの種類
+(Linux Native、DOSなど)が表示されます。 </P
+></LI
+></UL
+><P
+> <I
+CLASS="FIRSTTERM"
+>パーティション</I
+>の画面で設定をしているときに、<I
+CLASS="FIRSTTERM"
+>「要求されたパーティションを作成できません。」</I
+> という赤のメッセージテキストがパーティション名とともに表示される場合があります。未設定のパーティションが存在するというメッセージが表示される主な理由として、そのパーティションの空き領域が少ないことが考えられます。 </P
+><P
+> この問題を解決するには、十分な空き領域のあるほかのドライブにパーティションを移すか、パーティションのサイズを現在のドライブに適したサイズに変更するか、そのパーティションを削除する必要があります。変更するには、<B
+CLASS="KEYCAP"
+>編集</B
+>を使用するか、パーティションをダブルクリックします。 </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DD"
+>システムのパーティション設定</A
+></H2
+><P
+> 真ん中の列のボタンは、パーティション設定に使います。これらのボタンで、パーティションの追加、変更、削除を行うことができます。さらに、変更を確定したり、元に戻してパーティション設定を終了するためのボタンもあります。 </P
+><P
+></P
+><UL
+><LI
+><P
+><B
+CLASS="COMMAND"
+>追加:</B
+> 「追加」ボタンを使うと、新しいパーティションを作成することができます。このボタンを選択すると、マウントポイント、サイズ、種類などの必要な情報を入力するためのダイアログボックスが表示されます。 </P
+></LI
+><LI
+><P
+><B
+CLASS="COMMAND"
+>編集:</B
+> 「編集」ボタンを使うと、選択されているパーティションのマウントポイントを変更することができます。 </P
+></LI
+><LI
+><P
+><B
+CLASS="COMMAND"
+>削除:</B
+> 「削除」ボタンを使うと、選択されているパーティションを削除することができます。このボタンを選択すると、削除を確認するダイアログボックスが表示されます。 </P
+></LI
+><LI
+><P
+><B
+CLASS="COMMAND"
+>リセット:</B
+> 「リセット」ボタンを使うと、それまでに行ったパーティションの設定がすべて元に戻されます。 </P
+></LI
+><LI
+><P
+><B
+CLASS="COMMAND"
+>RAID デバイスの作成:</B
+> RAID をお使いになったことのある方以外は、<B
+CLASS="KEYCAP"
+>RAID デバイスの作成</B
+>ボタンを使用しないでください。RAID の詳細については、<I
+CLASS="CITETITLE"
+>『Red Hat Linux リファレンスガイド』</I
+>
+を参照してください。 </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DRIVE"
+>ドライブ情報</A
+></H2
+><P
+> このセクションでは、お使いのコンピュータのディスク構成が表示されます。概要を確認するためのセクションなので、ここで変更を行うことはできません。各行には次のようなのフィールドがあります。 </P
+><P
+></P
+><UL
+><LI
+><P
+><B
+CLASS="COMMAND"
+>Drive:</B
+> このフィールドには、ハードディスクドライブのデバイス名 (had、hdb
+など)が表示されます。 </P
+></LI
+><LI
+><P
+><B
+CLASS="COMMAND"
+>Geom [C/H/S]:</B
+> ハードディスクドライブの <I
+CLASS="FIRSTTERM"
+>ジオメトリ</I
+> はシリンダ、ヘッド、およびセクタの数を示します。 </P
+></LI
+><LI
+><P
+><B
+CLASS="COMMAND"
+>Total:</B
+> このフィールドには、ハードドディスクライブの総容量が表示されます。 </P
+></LI
+><LI
+><P
+><B
+CLASS="COMMAND"
+>Free:</B
+> このフィールドには、ハードドライブの空き領域のサイズが表示されます。 </P
+></LI
+><LI
+><P
+><B
+CLASS="COMMAND"
+>Used:</B
+> このフィールドには、パーティションに割り当てられているハードディスクドライブの領域のサイズがMBとパーセンテージで表示されます。 </P
+></LI
+></UL
+></DIV
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/ja/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:34 GMT -->
+</HTML
+>

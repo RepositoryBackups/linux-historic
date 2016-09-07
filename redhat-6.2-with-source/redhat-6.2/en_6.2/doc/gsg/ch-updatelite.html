@@ -1,0 +1,409 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/ch-updatelite.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:45:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Working with Update Agent</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Managing Files and Directories"
+HREF="p3804.html"><LINK
+REL="PREVIOUS"
+TITLE="RPM from the Shell Prompt"
+HREF="s1-rpmlite-console.html"><LINK
+REL="NEXT"
+TITLE="Configuring Update Agent"
+HREF="s1-up2date-configuration.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-rpmlite-console.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-up2date-configuration.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CH-UPDATELITE"
+>Chapter 11. Working with Update Agent</A
+></H1
+><P
+>      One of the more convenient ways to keep your Red Hat Linux system up to date is
+	through <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+>. This utility  allows you
+	to automatically locate, download and install updated packages from
+	Red Hat, Inc.
+    </P
+><P
+>      Through a secure connection to <TT
+CLASS="FILENAME"
+>priority.redhat.com</TT
+>,
+      Red Hat's own fast access FTP server, you're assured that new packages are
+      specific to your Red Hat Linux system, rather than might be the case with upgrades
+      you could find through another source. Upgrades and bug fixes are presented
+      to you on a single "page" in your Web browser. You can select individual
+      packages or all of the packages for download. You can also configure
+      <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+> to automatically install the new
+      packages once they've been downloaded.
+    </P
+><P
+>      By using <TT
+CLASS="FILENAME"
+>priority.redhat.com</TT
+>, you can save yourself
+      the time and trouble of searching for and downloading individual packages
+      from numerous FTP servers.
+     </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Register first</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>To use <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+>, you must first
+      register your copy of Red Hat Linux 6.2. To register, go to <A
+HREF="http://www.redhat.com/now"
+TARGET="_top"
+>http://www.redhat.com/now</A
+>. Once
+      you register, you can select a <I
+CLASS="FIRSTTERM"
+>user name</I
+> and
+      <I
+CLASS="FIRSTTERM"
+>password</I
+> which you should use to configure
+      <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+>. Please refer to <A
+HREF="s1-up2date-configuration.html"
+>the section called <I
+>Configuring <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+></I
+></A
+> for more details.
+      </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	<TT
+CLASS="APPLICATION"
+>Update Agent</TT
+> can also automatically download
+	specific packages, based on your preferences.
+      </P
+><P
+>	It isn't necessary to have a dedicated line in order to work with
+	<TT
+CLASS="APPLICATION"
+>Update Agent</TT
+>; if you have dialup access to an
+	ISP you can also benefit from the application's features.
+      </P
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-UP2DATE-STARTING"
+>Starting <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+></A
+></H1
+><P
+>In most cases, <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+> will be
+	installed as a matter of course during a new installation or an
+	upgrade.
+      </P
+><P
+>	To start the application in GNOME, go to the <B
+CLASS="GUIMENU"
+>Main Menu
+	Button</B
+> on the <B
+CLASS="GUIMENU"
+>Panel</B
+>, then go to
+	<B
+CLASS="GUIMENU"
+>System</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Update
+	Agent</B
+>. If you're using KDE as your graphical environment,
+	you can start <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+> by going to the
+	<B
+CLASS="GUIMENU"
+>Panel</B
+> =&#62; <B
+CLASS="GUIMENU"
+>Red Hat</B
+> =&#62;
+	<B
+CLASS="GUIMENU"
+>System</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Update
+	  Agent</B
+>. On the menu, the entry for <TT
+CLASS="APPLICATION"
+>Update
+	Agent</TT
+> will look like:  <IMG
+SRC="figs/updatelite/updateicon.gif"
+ALIGN="CENTER"> 
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>You must be root</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  Only root can use <TT
+CLASS="APPLICATION"
+>Update
+	    Agent</TT
+>. Each time you start the application, you will be
+	  asked to supply your root password, as <A
+HREF="ch-updatelite.html#GR-UP2DATE-ROOTBOX"
+>Figure 11-1</A
+> shows.
+      </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-UP2DATE-ROOTBOX"
+></A
+><P
+><IMG
+SRC="figs/updatelite/rootbox.gif"></P
+><P
+><B
+>Figure 11-1. Box Requesting Root Password</B
+></P
+></DIV
+><P
+>	You can also start the application from the shell prompt. If you're in
+	your user account, type <B
+CLASS="COMMAND"
+>su</B
+> to become
+	<I
+CLASS="FIRSTTERM"
+>superuser</I
+>, or root; then type root's
+	password. When you're root, type <B
+CLASS="COMMAND"
+>/usr/bin/up2date</B
+> to
+	start <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+>.
+      </P
+><P
+>	Once the application starts, you'll see a screen like <A
+HREF="s1-up2date-configuration.html#GR-UP2DATE-UPDATEMAIN"
+>Figure 11-2</A
+>. From within this main dialog, you have
+	the option of connecting to the priority update server, configuring or
+	quitting the application.
+      </P
+><P
+>	Before continuing, however, you'll have to configure the application
+	with information that's specific to your machine and software.
+      </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-rpmlite-console.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-up2date-configuration.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><TT
+CLASS="APPLICATION"
+>RPM</TT
+> from the Shell Prompt</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="p3804.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Configuring <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+></TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/ch-updatelite.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:45:43 GMT -->
+</HTML
+>

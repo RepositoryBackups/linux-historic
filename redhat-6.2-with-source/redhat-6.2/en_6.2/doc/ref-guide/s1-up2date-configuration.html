@@ -1,0 +1,719 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-up2date-configuration.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Configuring Update Agent</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Working with Update Agent"
+HREF="ch-up2date.html"><LINK
+REL="PREVIOUS"
+TITLE="Working with Update Agent"
+HREF="ch-up2date.html"><LINK
+REL="NEXT"
+TITLE="Using Update Agent"
+HREF="s1-up2date-using.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-up2date.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 5. Working with Update Agent</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-up2date-using.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-UP2DATE-CONFIGURATION"
+>Configuring <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+></A
+></H1
+><P
+>	  As shipped, <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+> will not
+	  automatically connect, download and install updated packages. Before
+	  proceeding, you'll have to supply information about yourself, such as
+	  the user name and password which you selected when you registered
+	  Red Hat Linux 6.2. (To learn more about registration benefits, go to
+	  <A
+HREF="http://www.redhat.com/now"
+TARGET="_top"
+>http://www.redhat.com/now</A
+>.)
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-UP2DATE-UPDATEMAIN"
+></A
+><P
+><IMG
+SRC="figs/up2date/updatemain.gif"></P
+><P
+><B
+>Figure 5-2. Main Update Agent Window</B
+></P
+></DIV
+><P
+>	To configure the application, select <TT
+CLASS="GUILABEL"
+><B
+>Configure</B
+></TT
+> on
+	the main dialog. (The button labeled <TT
+CLASS="GUILABEL"
+><B
+>Abort</B
+></TT
+> is only
+	active during a download or installation process; selecting this button
+	causes <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+> to cease its current
+	work.)
+      </P
+><P
+>	The <TT
+CLASS="GUILABEL"
+><B
+>Configuration</B
+></TT
+> dialog presents you with three
+	tabbed windows in which you must enter information:
+      </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    <TT
+CLASS="GUILABEL"
+><B
+>User</B
+></TT
+> -- Here, you'll enter the user name and
+	    password which you had selected when you registered Red Hat Linux 6.2
+	    at <A
+HREF="http://www.redhat.com/now"
+TARGET="_top"
+>http://www.redhat.com/now</A
+>.
+	    You should also enter an e-mail address to which correspondence
+	    regarding update transactions should be sent.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    <TT
+CLASS="GUILABEL"
+><B
+>Retrieval</B
+></TT
+> -- Specify the name of the server and
+	    certain installation instructions, such as which version of Red Hat Linux to
+	    update and whether to install as well as download packages.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    <TT
+CLASS="GUILABEL"
+><B
+>Exceptions</B
+></TT
+> -- Specify files and/or packages
+	    which you want to exclude from your update search, such as
+	    kernel-related files.
+          </P
+></LI
+></UL
+><P
+>	Let's begin with the <TT
+CLASS="GUILABEL"
+><B
+>User</B
+></TT
+> tab. When you're
+	finished, your information should appear somewhat like <A
+HREF="s1-up2date-configuration.html#GR-UP2DATE-CONFIGUSER"
+>Figure 5-3</A
+>.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-UP2DATE-CONFIGUSER"
+></A
+><P
+><IMG
+SRC="figs/up2date/configuser.gif"></P
+><P
+><B
+>Figure 5-3. User Configuration Tab</B
+></P
+></DIV
+><P
+>	The <TT
+CLASS="GUILABEL"
+><B
+>User</B
+></TT
+> dialog is separated into two sections:
+	<TT
+CLASS="GUILABEL"
+><B
+>User Information</B
+></TT
+> and <TT
+CLASS="GUILABEL"
+><B
+>E-Mail
+	Addresses</B
+></TT
+>.
+      </P
+><P
+>	In the <TT
+CLASS="GUILABEL"
+><B
+>User Information</B
+></TT
+> section, enter the user
+	name you specified when you registered in the box marked <TT
+CLASS="GUILABEL"
+><B
+>User
+	ID</B
+></TT
+>. In the box for <TT
+CLASS="GUILABEL"
+><B
+>Password</B
+></TT
+>, enter the
+	password you chose when you registered.
+      </P
+><P
+>	In the <TT
+CLASS="GUILABEL"
+><B
+>E-Mail Addresses</B
+></TT
+> section, you should specify
+	the e-mail address to which feedback and summaries from
+	<TT
+CLASS="APPLICATION"
+>Update Agent</TT
+> should be sent for review. You
+	can have the feedback and summaries sent to numerous accounts, such as
+	your user account. Just enter the addresses in the <TT
+CLASS="GUILABEL"
+><B
+>Add
+	new</B
+></TT
+> box, then click on the <B
+CLASS="GUIBUTTON"
+>Add</B
+>
+	button. The entry will appear in the address window.
+      </P
+><P
+>	Now it's time to specify your options in the
+	<TT
+CLASS="GUILABEL"
+><B
+>Retrieval</B
+></TT
+> tab.
+      </P
+><P
+>	The <TT
+CLASS="GUILABEL"
+><B
+>Retrieval</B
+></TT
+> tab is divided into three sections,
+	which detail the location of the priority updates server, specific
+	download and installation instructions, and the location of the
+	directory where updates are stored on your system. (See <A
+HREF="s1-up2date-configuration.html#GR-UP2DATE-CONFIGRETRIEVE"
+>Figure 5-4</A
+> for an example.)
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-UP2DATE-CONFIGRETRIEVE"
+></A
+><P
+><IMG
+SRC="figs/up2date/configretrieve.gif"></P
+><P
+><B
+>Figure 5-4. Retrieval Configuration Tab</B
+></P
+></DIV
+><P
+>	In the <TT
+CLASS="GUILABEL"
+><B
+>Server</B
+></TT
+> entry, you should enter
+	<TT
+CLASS="FILENAME"
+>priority.redhat.com</TT
+> as the priority updates server,
+	if it isn't already present. The entry for <TT
+CLASS="GUILABEL"
+><B
+>Program</B
+></TT
+>
+	is unavailable for you to specify; it simply indicates the location of
+	the CGI script which executes <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+>.
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Tip</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  You can still use <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+> if your
+	  registration expires to <TT
+CLASS="FILENAME"
+>priority.redhat.com</TT
+>. Just
+	  point the application to <TT
+CLASS="FILENAME"
+>ftp.redhat.com</TT
+>.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	Similar to options you might find in
+	<TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>, the selections which follow the
+	server information allow you to customize how you want to retrieve and
+	install updates. Selecting a button chooses that option. Your options
+	are:
+      </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    <B
+CLASS="GUIBUTTON"
+>Do not replace config files</B
+> -- Packages which
+	    contain configuration files that are modified on your system will
+	    not be selected for updating. Let's say, for example, that you've
+	    modified the <TT
+CLASS="FILENAME"
+>/etc/syslog.conf</TT
+> configuration
+	    file. If there is an update available for
+	    <TT
+CLASS="FILENAME"
+>sysklogd</TT
+>, which would create a new
+	    <TT
+CLASS="FILENAME"
+>/etc/syslog.conf</TT
+> file, this package will not be
+	    downloaded and installed. If you haven't modified the configuration
+	    file on your system, it will be available for downloading and
+	    installation -- and the previous file will be backed up (in this
+	    case, as <TT
+CLASS="FILENAME"
+>/etc/syslog.conf.rpmsave</TT
+>).
+           </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    <B
+CLASS="GUIBUTTON"
+>Display all available packages</B
+> -- Select this
+	    box if you want <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+> to show you
+	    <I
+CLASS="EMPHASIS"
+>all</I
+> the available packages, not just the
+	    packages specific to your installed system.
+           </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    <B
+CLASS="GUIBUTTON"
+>Retrieve packages, but do not install</B
+> -- By
+	    default, this option is selected. When this option is selected,
+	    <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+> only downloads packages into
+	    a temporary directory. Once downloaded, you will be able to install
+	    the packages yourself. If this option is unchecked,
+	    <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+> will download and
+	    automatically install your selections. Uncheck this option, then, to
+	    both download and install updated packages; to install the packages
+	    yourself, refer to the location specified in the <TT
+CLASS="GUILABEL"
+><B
+>Package
+	    storage directory</B
+></TT
+> at the bottom of the location.
+           </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    <B
+CLASS="GUIBUTTON"
+>Keep packages after installation</B
+> -- Retains
+	    the package files after they've been installed. This could be useful
+	    if you want to keep copies of packages, however selecting this could
+	    potentially eat up quite a bit of disk space.
+           </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    <B
+CLASS="GUIBUTTON"
+>Attempts to resolve dependencies</B
+> -- The
+	    value associated with this option instructs <TT
+CLASS="APPLICATION"
+>Update
+	    Agent</TT
+> on the number of times to check for possible
+	    dependency problems with selected packages. The value ranges from 1
+	    to 10, and can be adjusted by using the scroll buttons on the side
+	    of the box. The higher the value, the greater the number of
+	    dependency checks before your updated packages are installed.
+           </P
+></LI
+></UL
+><P
+>	Beneath the package options, two additional boxes allow you to specify
+	the version of Red Hat Linux files you want to update, and the location where
+	those upgrade files will be kept.
+      </P
+><P
+>	The drop-down menu for <TT
+CLASS="GUILABEL"
+><B
+>Override version</B
+></TT
+> will show
+	you a current or previous versions of Red Hat Linux. Most users will probably
+	retain the default entry, which is Red Hat Linux 6.2. If no value is
+	specified here, the proper value will automatically be determined.
+      </P
+><P
+>	The default entry for <TT
+CLASS="GUILABEL"
+><B
+>Package storage directory</B
+></TT
+> is
+	set to <TT
+CLASS="FILENAME"
+>/var/spool/up2date</TT
+> as the default, although
+	you can specify a more preferable location. For example, if you've
+	chosen to download packages without automatically installing them, you
+	may find that these downloads take up quite a bit of space over
+	time. Specifying a directory on your filesystem allows you to send these
+	packages to a directory which you know can accommodate their size.
+      </P
+><P
+>	The <TT
+CLASS="GUILABEL"
+><B
+>Exceptions</B
+></TT
+> tab allows you to specify packages
+	or individual files which you don't want retrieved from
+	<TT
+CLASS="FILENAME"
+>priority.redhat.com</TT
+> and offered as an update. (See
+	<A
+HREF="s1-up2date-configuration.html#GR-UP2DATE-CONFIGEXCEPT"
+>Figure 5-5</A
+> for an example of this tab.)
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-UP2DATE-CONFIGEXCEPT"
+></A
+><P
+><IMG
+SRC="figs/up2date/configexcept.gif"></P
+><P
+><B
+>Figure 5-5. Update Exceptions Tab</B
+></P
+></DIV
+><P
+>	In this tab, you have the opportunity to specify which files and
+	packages you would prefer not to be updated or modified. Both entries --
+	<TT
+CLASS="GUILABEL"
+><B
+>Skip Packages</B
+></TT
+> and <TT
+CLASS="GUILABEL"
+><B
+>Skip Files</B
+></TT
+>
+	-- allow you to use <I
+CLASS="FIRSTTERM"
+>wildcards</I
+>, such as an
+	asterisk (*) and a question mark (?).
+      </P
+><P
+>	The default entry in the <TT
+CLASS="GUILABEL"
+><B
+>Skip Packages</B
+></TT
+> section
+	lists <TT
+CLASS="GUILABEL"
+><B
+>kernel*</B
+></TT
+>, meaning that any packages which
+	begin with <TT
+CLASS="FILENAME"
+>kernel</TT
+> are excluded from download and
+	installation. Most users will likely want to keep this exclusion.
+      </P
+><P
+>	To add new entries, type the name of the package you do not want
+	selected (for example <TT
+CLASS="USERINPUT"
+><B
+>exmh*</B
+></TT
+> for the e-mail
+	application <TT
+CLASS="APPLICATION"
+>exmh</TT
+>), then click on the
+	<B
+CLASS="GUIBUTTON"
+>Add</B
+> button. Your entry will be added to the list.
+      </P
+><P
+>	Like the <TT
+CLASS="GUILABEL"
+><B
+>Skip Packages</B
+></TT
+> option, the <TT
+CLASS="GUILABEL"
+><B
+>Skip
+	Files</B
+></TT
+> section allows you to specify individual files you do
+	not want selected. For example, if you want to exclude all the files in
+	<TT
+CLASS="FILENAME"
+>/home</TT
+>, you would enter
+	<TT
+CLASS="USERINPUT"
+><B
+>/home/*</B
+></TT
+> and the accounts in
+	<TT
+CLASS="FILENAME"
+>/home</TT
+> will be excluded from updates.
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-up2date.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-up2date-using.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Working with Update Agent</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-up2date.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Using <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+></TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-up2date-configuration.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:31 GMT -->
+</HTML
+>

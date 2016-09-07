@@ -1,0 +1,562 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-gnorpm.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:58:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Gnome-RPM</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="System-Related Reference"
+HREF="p196.html"><LINK
+REL="PREVIOUS"
+TITLE="Other RPM Resources"
+HREF="s1-rpm-other-resources.html"><LINK
+REL="NEXT"
+TITLE="The Package Display"
+HREF="s1-gnorpm-package-display.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-rpm-other-resources.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-gnorpm-package-display.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CH-GNORPM"
+>Chapter 7. Gnome-RPM</A
+></H1
+><P
+>      One of the most convenient package manipulation tools available is
+      <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>, a graphical tool which runs under
+      the X Window System. <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> was written by
+      James Henstridge (<TT
+CLASS="EMAIL"
+>&#60;<A
+HREF="mailto:james@daa.com.au"
+>james@daa.com.au</A
+>&#62;</TT
+>); RPM 3.0 support was
+      written by Red Hat and additional <TT
+CLASS="APPLICATION"
+>rpmfind</TT
+> code
+      was written by Daniel Veillard.
+    </P
+><P
+>      <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> (which is also referred to as
+      <TT
+CLASS="APPLICATION"
+>gnorpm</TT
+>) allows the end-user to easily work with
+      RPM technology; it is fast, powerful and features a friendly interface.
+    </P
+><P
+>      To learn more about RPM technology, turn to <A
+HREF="ch-rpm.html"
+>Chapter 6</A
+>.
+    </P
+><P
+>      <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> is "GNOME-compliant," meaning that
+      it seamlessly integrates into GNOME, the X Window System desktop
+      environment.
+    </P
+><P
+>      With <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>, you can easily
+    </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>          install RPM packages
+        </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>          uninstall RPM packages
+        </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>          upgrade RPM packages
+        </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>          find new RPM packages
+        </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>          query RPM packages
+        </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>          verify RPM packages
+        </P
+></LI
+></UL
+><P
+>      The interface features a menu, a toolbar, a tree and a display window of
+      currently installed packages.
+    </P
+><P
+>      Operations are often performed in <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> by
+      finding and selecting packages, then choosing the type of operation to
+      perform via push-button on the toolbar, through the menu or by
+      right-clicking with the mouse.
+    </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>          Installing a package places all of the components of that package on
+          your system in the correct locations.
+        </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>          Uninstalling a package removes all traces of the package except for
+          configuration files you have modified.
+        </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>          Upgrading a package installs the newly available version and
+          uninstalls all other versions that were previously installed. This
+          allows quick upgrading to the latest releases of packages. Refer to
+          <A
+HREF="s1-gnorpm-config.html"
+>the section called <I
+>Configuration</I
+></A
+> for information about how to alter
+          the default settings for installing and uninstalling packages.
+        </P
+></LI
+></UL
+><P
+>      You can also use the <TT
+CLASS="GUILABEL"
+><B
+>Web find</B
+></TT
+> option to search the
+      Internet for newly released packages. You can direct
+      <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> to search for particular
+      distributions when you want to look for new packages. (If you have a slow
+      connection, this option can take some time to fully execute.)  See <A
+HREF="s1-gnorpm-config.html"
+>the section called <I
+>Configuration</I
+></A
+> for more information about this feature.
+    </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>        Exercise caution if you choose to use the <TT
+CLASS="GUILABEL"
+><B
+>Web find</B
+></TT
+>
+        option, since there is no way to verify the integrity of the many
+        packages which are available at numerous repositories. Before installing
+        packages, you should perform a query on that package to help you
+        determine whether it can be trusted. Packages not produced by Red Hat are
+        not supported in any way by Red Hat.
+      </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>      Using <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> to perform all of these and
+      many other operations is the same as using <B
+CLASS="COMMAND"
+>rpm</B
+> from the
+      shell prompt. However, the graphical nature of
+      <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> often makes these operations easier
+      to perform.
+    </P
+><P
+>      The usual way to work with <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> is to
+      display the available packages, select the package(s) you want to operate
+      on, and then select an option from the toolbar or menu which performs the
+      operation. However, <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> is flexible
+      enough to display packages in a variety of views, thanks to the use of
+      <I
+CLASS="FIRSTTERM"
+>filters.</I
+> Refer to <A
+HREF="s1-gnorpm-installing.html"
+>the section called <I
+>Installing New Packages</I
+></A
+> for more information on using filters to
+      identify packages.
+    </P
+><P
+>      You can install, upgrade or uninstall several packages with a few button
+      clicks. Similarly, you can query and verify more than one package at a
+      time. Because of <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>'s integration with
+      GNOME, you can also perform installation, query and verification on
+      packages from within the <TT
+CLASS="APPLICATION"
+>GNOME File Manager</TT
+>.
+    </P
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-GNORPM-STARTING"
+>Starting Gnome-RPM</A
+></H1
+><P
+>        You can start <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> from either an Xterm
+        window or from the GNOME desktop Panel (<B
+CLASS="GUIMENU"
+>Main Menu
+        Button</B
+> =&#62; <B
+CLASS="GUIMENU"
+>System</B
+> =&#62;
+        <B
+CLASS="GUIMENUITEM"
+>GnoRPM</B
+>).
+      </P
+><P
+>        To start <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> from an Xterm window, at
+        the shell prompt, simply type
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="USERINPUT"
+><B
+>gnorpm &#38;</B
+></TT
+>
+      </PRE
+></TD
+></TR
+></TABLE
+><P
+>        That will bring up the main <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> window
+        (as shown in <A
+HREF="ch-gnorpm.html#GR-GNORPM-GNORPMMAIN"
+>Figure 7-1</A
+>).
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          If you would like to install, upgrade or uninstall packages, you must
+          be in root. The easiest way to do this is to type
+          <B
+CLASS="COMMAND"
+>su</B
+> to become root, and then type the root password
+          at a shell prompt. However, it isn't necessary to be root in order to
+          query and verify packages.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>        There are several parts to the <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>
+        interface.
+      </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>            Package Panel - On the left; allows you to browse and select
+            packages on your system.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            Display window - To the right of the package panel; shows you
+            contents from folders in the panel.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            Toolbar - Above the display and panel; a graphical display of
+            package tools.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            Menu - Above the toolbar; contains text-based commands, as well as
+            help info, preferences and other settings.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            Status bar - Beneath the panel and display windows; shows the total
+            number of selected packages.
+          </P
+></LI
+></UL
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-GNORPM-GNORPMMAIN"
+></A
+><P
+><IMG
+SRC="figs/gnorpm/gnorpmmain.gif"></P
+><P
+><B
+>Figure 7-1. Main Gnome-RPM Window</B
+></P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-rpm-other-resources.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-gnorpm-package-display.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Other RPM Resources</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="p196.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>The Package Display</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-gnorpm.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:58:02 GMT -->
+</HTML
+>

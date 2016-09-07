@@ -1,0 +1,246 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/s1-install-sel-mouse.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:54:33 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Mouse Configuration</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Starting the Installation"
+HREF="ch-install.html"><LINK
+REL="PREVIOUS"
+TITLE="Keyboard Configuration"
+HREF="s1-install-sel-kybd.html"><LINK
+REL="NEXT"
+TITLE="Welcome to Red Hat Linux"
+HREF="s1-install-welcome.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Installation Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-install-sel-kybd.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 3. Starting the Installation</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-install-welcome.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-INSTALL-SEL-MOUSE"
+>Mouse Configuration</A
+></H1
+><P
+>        Choose the correct mouse type for your system. If an exact match cannot
+        be found, choose a mouse type that you are sure is compatible with your
+        system (see <A
+HREF="s1-install-sel-mouse.html#GR-INSTALL-FIG-MOUSE"
+>Figure 3-3</A
+>).
+      </P
+><P
+>	To determine your mouse's interface, follow the mouse cable back to
+        where it plugs into your system.  If the connector at the end of the
+        mouse cable plugs into a rectangular connector, you have a serial mouse;
+        if the connector is round, you have a PS/2 mouse.  If you are installing
+        Red Hat Linux on a laptop computer, in most cases the pointing device will be
+        PS/2 compatible.
+      </P
+><P
+>        If you cannot find a mouse that you are sure is compatible with your
+        system, select one of the <TT
+CLASS="GUILABEL"
+><B
+>Generic</B
+></TT
+> entries, based on
+        your mouse's number of buttons, and its interface.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-INSTALL-FIG-MOUSE"
+></A
+><P
+><IMG
+SRC="figs/install/mouse.gif"></P
+><P
+><B
+>Figure 3-3. Mouse Configuration</B
+></P
+></DIV
+><P
+>        If you have a PS/2 or a Bus mouse, you do not need to pick a port and
+        device. If you have a serial mouse, you should choose the correct port
+        and device that your serial mouse is on.
+      </P
+><P
+>        The <TT
+CLASS="GUILABEL"
+><B
+>Emulate 3 Buttons</B
+></TT
+> check box allows you to use a
+        two-button mouse as if it had three buttons.  In general, it's easiest
+        to use the X Window System if you have a three-button mouse.  If you
+        select this check box, you can emulate a third, "middle" button by
+        pressing both mouse buttons simultaneously.
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Tip</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  To change your mouse configuration post-installation, become root. You
+	  can then use the <B
+CLASS="COMMAND"
+>/usr/sbin/mouseconfig</B
+> command from
+	  the shell prompt.
+	</P
+><P
+>	  To configure your mouse as a left-handed mouse, you can reset the
+	  order of the mouse buttons. This can be done after you have booted
+	  your Red Hat Linux system, by typing <TT
+CLASS="COMPUTEROUTPUT"
+>gpm -B
+	  321</TT
+> at the shell prompt.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-install-sel-kybd.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-install-welcome.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Keyboard Configuration</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-install.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Welcome to Red Hat Linux</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/s1-install-sel-mouse.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:55:12 GMT -->
+</HTML
+>

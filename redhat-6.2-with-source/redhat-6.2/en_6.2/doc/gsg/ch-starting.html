@@ -1,0 +1,1135 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/ch-starting.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:45:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Getting Started</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="The Basics"
+HREF="p169.html"><LINK
+REL="PREVIOUS"
+TITLE="The Basics"
+HREF="p169.html"><LINK
+REL="NEXT"
+TITLE="GNOME in 60 Seconds (or so)"
+HREF="ch-gnome60.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="p169.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="ch-gnome60.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CH-STARTING"
+>Chapter 1. Getting Started</A
+></H1
+><P
+>    Like many new users, learning how to work on your Red Hat Linux system can be both
+    exciting and a little unnerving. To begin your journey, you'll have to log
+    in. When you log in, you're basically "introducing yourself" to the system.
+  </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Linux is <I
+CLASS="FIRSTTERM"
+>case sensitive</I
+></B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	Like UNIX, Linux is case sensitive. That means that typing
+	<I
+CLASS="WORDASWORD"
+>root</I
+> refers to a different account than
+	<I
+CLASS="WORDASWORD"
+>Root</I
+>, as far as Linux is concerned -- the
+	lowercase <I
+CLASS="WORDASWORD"
+>root</I
+> is the name of the
+	<I
+CLASS="FIRSTTERM"
+>root login</I
+>, or system administrator.
+      </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>    When you installed Red Hat Linux, you had the opportunity to install the
+    <I
+CLASS="FIRSTTERM"
+>X Window System</I
+> -- also simply called
+    <I
+CLASS="FIRSTTERM"
+>X</I
+> -- which is the graphical environment. You were
+    also asked whether you wanted to use a graphical screen, rather than a
+    <I
+CLASS="FIRSTTERM"
+>console</I
+> to log in. Although our emphasis throughout
+    this book will be on navigation and productivity using
+    <TT
+CLASS="APPLICATION"
+>X</TT
+>, we'll cover both the graphical and console
+    methods of logging in and starting the <TT
+CLASS="APPLICATION"
+>X Window
+    System</TT
+>.
+  </P
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-STARTING-LOGIN"
+>Log In, Please</A
+></H1
+><P
+>	Unlike some other operating systems, your Red Hat Linux system uses
+	<I
+CLASS="FIRSTTERM"
+>accounts</I
+> to manage privileges, maintain security
+	and more. Not all accounts are created equal: some have fewer rights to
+	access files or services than others.
+      </P
+><P
+>	If you've already created a <I
+CLASS="FIRSTTERM"
+>user account</I
+>, you can
+	  skip ahead to <A
+HREF="ch-gnome60.html"
+>Chapter 2</A
+>. If you created only the
+	  <I
+CLASS="FIRSTTERM"
+>root account</I
+>, read on to learn how to set up a
+	  user account.
+      </P
+><DIV
+CLASS="IMPORTANT"
+><P
+></P
+><TABLE
+CLASS="IMPORTANT"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/important.gif"
+HSPACE="5"
+ALT="Important"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Don't "root" around</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>Because your Red Hat Linux system
+	creates one account (the root account) during installation, some new
+	users are tempted to use only this account for all their
+	activities. This is a bad idea; because the root account is allowed to
+	do anything on the system, you can easily damage your system by
+	mistakenly deleting or modifying sensitive system files. You may be
+	tempted to forego creating and using a user account during or after
+	installation, but you're playing with fire if you do.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-STARTING-LOGIN-ROOT"
+>Create a User Account</A
+></H2
+><P
+>	When you installed Red Hat Linux, you were asked to create a <I
+CLASS="FIRSTTERM"
+>root
+	  password</I
+> -- that is, a password for the root account, the
+	  <I
+CLASS="FIRSTTERM"
+>system administrator</I
+>. At that time, you were
+	  also able to create additional user accounts, which allow you to
+	  accomplish most tasks, without potentially harming your system -- as
+	  would be the case if you were to use your root account for everything.
+      </P
+><P
+>	If you didn't create a user account during the installation, that's your
+	first task. Here's what you'll do:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>              Log in from the console or from a graphical screen.
+	  </P
+></LI
+><LI
+><P
+>	    Open a <I
+CLASS="FIRSTTERM"
+>terminal emulation window</I
+> (also called
+	      an <I
+CLASS="FIRSTTERM"
+>Xterm window</I
+> or
+	      <I
+CLASS="FIRSTTERM"
+>Xterm</I
+>) on the desktop.
+	  </P
+></LI
+><LI
+><P
+>             Create a new user account.
+	  </P
+></LI
+><LI
+><P
+>	    Log out, then log in to the new account.
+	  </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-STARTING-ROOTLOGIN"
+>Logging In As Root</A
+></H2
+><P
+>	  Regardless of whether you've chosen a graphical or console login
+	  screen, you'll have to supply a login account name and the password
+	  associated with that account.
+	</P
+><P
+>	  From a console screen, for example, you'll see something like:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>  
+<TT
+CLASS="PROMPT"
+>Red Hat Linux release 6.2</TT
+>
+	  <TT
+CLASS="PROMPT"
+>Kernel 2.2.14-<TT
+CLASS="REPLACEABLE"
+><I
+>xx</I
+></TT
+> on an i686</TT
+>
+<TT
+CLASS="PROMPT"
+>localhost login:</TT
+><TT
+CLASS="USERINPUT"
+><B
+>root</B
+></TT
+>
+<TT
+CLASS="PROMPT"
+>Password:</TT
+><TT
+CLASS="USERINPUT"
+><B
+><TT
+CLASS="REPLACEABLE"
+><I
+>yourrootpassword</I
+></TT
+></B
+></TT
+>
+        </PRE
+></TD
+></TR
+></TABLE
+><P
+>	  Unless you've chosen to give your machine a
+	  <I
+CLASS="FIRSTTERM"
+>name</I
+>, as in a network setting, your machine
+	  will probably be called <I
+CLASS="FIRSTTERM"
+>localhost</I
+>.
+	</P
+><P
+>	  To log in to the root account, at the <TT
+CLASS="PROMPT"
+>login</TT
+> and
+	  <TT
+CLASS="PROMPT"
+>password</TT
+> prompts, type <TT
+CLASS="USERINPUT"
+><B
+>root</B
+></TT
+>
+	  and the root password you chose when you installed Red Hat Linux.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-STARTING-ROOTGDM"
+></A
+><P
+><IMG
+SRC="figs/starting/rootgdm.gif"></P
+><P
+><B
+>Figure 1-1. The Graphical Login Screen</B
+></P
+></DIV
+><P
+>	  If you're using the graphical login screen, similar to <A
+HREF="ch-starting.html#GR-STARTING-ROOTGDM"
+>Figure 1-1</A
+>, just type <TT
+CLASS="USERINPUT"
+><B
+>root</B
+></TT
+>
+	    in the box, press <B
+CLASS="KEYCAP"
+>Enter</B
+> and type in the
+	    password you created for the root account.
+	</P
+><P
+>	  If you still see your console screen (instead of the graphical
+	  desktop) you can start the X Window System by typing
+	  <TT
+CLASS="USERINPUT"
+><B
+>startx</B
+></TT
+> as follows:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>  
+<TT
+CLASS="PROMPT"
+>[root@localhost /root]#</TT
+><TT
+CLASS="USERINPUT"
+><B
+>startx</B
+></TT
+></PRE
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>To change your login screen</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>To find out how you
+	  can change from a console to a graphical login screen see <A
+HREF="s1-q-and-a-runlevels.html"
+>the section called <I
+>Changing Login from Console to X at Startup</I
+> in Chapter 15</A
+>.</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	  Once you start the <TT
+CLASS="APPLICATION"
+>X Window System</TT
+>, you'll
+	    find a desktop similar to <A
+HREF="ch-starting.html#GR-STARTING-ROOTDESK"
+>Figure 1-2</A
+> in
+	    GNOME or <A
+HREF="ch-starting.html#GR-STARTING-FIRSTKDEDESK"
+>Figure 1-3</A
+> in KDE.
+	    </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-STARTING-ROOTDESK"
+></A
+><P
+><IMG
+SRC="figs/starting/rootdesk.gif"></P
+><P
+><B
+>Figure 1-2. A GNOME Desktop</B
+></P
+></DIV
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-STARTING-FIRSTKDEDESK"
+></A
+><P
+><IMG
+SRC="figs/starting/firstkdedesk.gif"></P
+><P
+><B
+>Figure 1-3. A KDE Desktop</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-STARTING-XTERM"
+>Starting an Xterm</A
+></H2
+><P
+>	  Both GNOME and KDE offer quick launch buttons on their
+	  <I
+CLASS="FIRSTTERM"
+>panels</I
+> to open an Xterm window.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-STARTING-GNOMEPANEL"
+></A
+><P
+><IMG
+SRC="figs/starting/gnomepanel.gif"></P
+><P
+><B
+>Figure 1-4. The GNOME <TT
+CLASS="APPLICATION"
+>Panel</TT
+></B
+></P
+></DIV
+><P
+>	  On the GNOME <TT
+CLASS="APPLICATION"
+>Panel</TT
+>, the button which
+	  launches an Xterm appears near the center and looks like: <IMG
+SRC="figs/starting/gnometerm2.gif"
+ALIGN="CENTER">
+          
+	</P
+><P
+>	  You can also find launchers to Xterms from the GNOME menu, under
+	  <B
+CLASS="GUIMENU"
+>Utilities</B
+>. Items which will open Xterms include
+	  <B
+CLASS="GUIMENUITEM"
+>GNOME terminal</B
+>, <B
+CLASS="GUIMENUITEM"
+>Regular
+	    XTerm</B
+>, and <B
+CLASS="GUIMENUITEM"
+>Color XTerm</B
+>.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-STARTING-KDEPANEL"
+></A
+><P
+><IMG
+SRC="figs/starting/kdepanel.gif"></P
+><P
+><B
+>Figure 1-5. The KDE <TT
+CLASS="APPLICATION"
+>Panel</TT
+></B
+></P
+></DIV
+><P
+>	  Similar to GNOME, the KDE <TT
+CLASS="APPLICATION"
+>Panel</TT
+> prominently
+	  features a quick launch button for an Xterm. The launcher looks like:
+<IMG
+SRC="figs/starting/kdeshell2.gif"
+ALIGN="CENTER">
+          
+	</P
+><P
+>	  You can also find the launcher from the KDE main menu under
+	  <B
+CLASS="GUIMENU"
+>Utilities</B
+>=&#62;<B
+CLASS="GUIMENUITEM"
+>Konsole</B
+>.
+	</P
+><P
+>	  Now, click on the <B
+CLASS="GUIBUTTON"
+>Xterm</B
+> button to open a
+	  window. You'll see the shell prompt inside the window, and will look
+	  like 
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>  
+<TT
+CLASS="PROMPT"
+>[root@localhost /root]#</TT
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>	  Type <B
+CLASS="COMMAND"
+>useradd</B
+>, then a space and the name of the new
+	  user account (name the account
+	  <TT
+CLASS="USERINPUT"
+><B
+>newuser</B
+></TT
+>, for example).
+	</P
+><P
+>	  It may not appear that anything has happened, but you've just
+	  completed step one of creating the new account. All that remains is
+	  for you to give this account a <I
+CLASS="FIRSTTERM"
+>password</I
+>.
+	</P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Picking account names</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    Often, user accounts are just variations on the user's name, such as
+	    <I
+CLASS="WORDASWORD"
+>jsmith</I
+> for John Smith. You can choose whichever
+	    name you prefer, however, such as <I
+CLASS="WORDASWORD"
+>musicman</I
+> or
+	    <I
+CLASS="WORDASWORD"
+>ElivsisKing</I
+>.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	  Now, on the next line, type <B
+CLASS="COMMAND"
+>passwd</B
+>, a space and
+	  type the name of the new account for which you want to create the
+	  password (<B
+CLASS="COMMAND"
+>passwd newuser</B
+>).
+	</P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>What is a secure password?</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    You can be fancy or plain when you pick a user account name, but
+	    take precautions when you choose a password. The password is the key
+	    to your account, so it should be both unique and easy for you to
+	    remember. Your password should be at least six characters
+	    (actually, it can be 256 characters long, though you probably don't
+	    need that). You can mix upper- and lowercase letters, as well as
+	    numbers and characters. Avoid easy selections, such as
+	    <I
+CLASS="WORDASWORD"
+>qwerty</I
+> or
+	    <I
+CLASS="WORDASWORD"
+>password</I
+>. If you want to pick an
+	    easy-to-remember but somewhat unique password, consider a
+	    variation of a word, such as <I
+CLASS="WORDASWORD"
+>a!rPl8nE</I
+>
+	    for <I
+CLASS="WORDASWORD"
+>airplane</I
+>. If you need more
+	  information about passwords, see <A
+HREF="ch-basics.html"
+>Chapter 12</A
+>.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	  Next, you'll be asked to enter the password for the new user's account
+	  -- the prompt will state: <TT
+CLASS="PROMPT"
+>New UNIX password</TT
+>. Enter a
+	  password that will be easy to remember and secure.
+	 </P
+><P
+>	  Type the password again for confirmation, and you'll see a message
+	  stating <TT
+CLASS="PROMPT"
+>passwd: all authentication tokens updated
+	  successfully</TT
+>, which means that you've successfully created
+	  the new account.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-STARTING-USERADD"
+></A
+><P
+><IMG
+SRC="figs/starting/useradd.gif"></P
+><P
+><B
+>Figure 1-6. Adding a user in an Xterm</B
+></P
+></DIV
+><P
+>	  In <A
+HREF="ch-starting.html#GR-STARTING-USERADD"
+>Figure 1-6</A
+>, you can see a sample of an
+	  Xterm window with the commands and prompts.
+	</P
+><P
+>	  You can exit from the Xterm by clicking the <B
+CLASS="GUIBUTTON"
+>X</B
+>
+	  button on the upper right of the window, or by typing
+	  <B
+CLASS="COMMAND"
+>exit</B
+> at the prompt.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-STARTING-ROOTLOGOUT"
+>Logging Out of Root</A
+></H2
+><P
+> Now, you should log out of the root account and log in to your
+	user account.
+	  </P
+><P
+>	  To log out from GNOME, click once on the <B
+CLASS="GUIMENU"
+>Main Menu
+	    Button</B
+> on the <TT
+CLASS="APPLICATION"
+>Panel</TT
+> and
+	    <I
+CLASS="FIRSTTERM"
+>drag</I
+> your mouse cursor to the first item,
+	  labeled <B
+CLASS="GUIMENUITEM"
+>Log out</B
+> (as in <A
+HREF="ch-starting.html#GR-STARTING-GNOMELOGOUT"
+>Figure 1-7</A
+>).
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-STARTING-GNOMELOGOUT"
+></A
+><P
+><IMG
+SRC="figs/starting/gnomelogout.gif"></P
+><P
+><B
+>Figure 1-7. The <B
+CLASS="GUIMENUITEM"
+>Log out</B
+> Selection</B
+></P
+></DIV
+><P
+>	  When the confirmation dialog appears (see <A
+HREF="ch-starting.html#GR-STARTING-LOGOUT-BOX"
+>Figure 1-8</A
+>), select the
+	    <TT
+CLASS="GUILABEL"
+><B
+>Logout</B
+></TT
+> option and click the
+	    <B
+CLASS="GUIBUTTON"
+>Yes</B
+> button. If you want to save the
+	    configuration of your <TT
+CLASS="APPLICATION"
+>Panel</TT
+>, as well as
+	    any programs which are running, check the <TT
+CLASS="GUILABEL"
+><B
+>Save current
+	    setup</B
+></TT
+> option, as well.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-STARTING-LOGOUT-BOX"
+></A
+><P
+><IMG
+SRC="figs/starting/logout.gif"></P
+><P
+><B
+>Figure 1-8. Logout Confirmation</B
+></P
+></DIV
+><P
+>	  Similarly, in KDE, you can log out from the <TT
+CLASS="APPLICATION"
+>menu
+	    button</TT
+> on the <TT
+CLASS="APPLICATION"
+>Panel</TT
+> (see
+	    <A
+HREF="ch-starting.html#GR-STARTING-KDELOGOUT"
+>Figure 1-9</A
+>). 
+	</P
+><P
+>	  By default, the <TT
+CLASS="APPLICATION"
+>Panel</TT
+> in KDE also contains
+	    a quick launch button to log out; it's located near the
+	    <TT
+CLASS="APPLICATION"
+>Taskbar</TT
+>, at the center of the
+	    <TT
+CLASS="APPLICATION"
+>Panel</TT
+>, and looks like:  <IMG
+SRC="figs/starting/klogouticon.gif"
+ALIGN="CENTER">
+          
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-STARTING-KDELOGOUT"
+></A
+><P
+><IMG
+SRC="figs/starting/kdelogout.gif"></P
+><P
+><B
+>Figure 1-9. The <B
+CLASS="GUIMENUITEM"
+>Logout</B
+> Entry in KDE</B
+></P
+></DIV
+><P
+>	  You'll either return to the graphical login screen or the shell
+	  prompt, depending on how you chose to log in.
+	</P
+><P
+>	  If you're returned to a non-graphical console prompt, just type
+	  <B
+CLASS="COMMAND"
+>exit</B
+> at the prompt, as in:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>  
+<TT
+CLASS="PROMPT"
+>[root@localhost /root]#</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>exit</B
+></TT
+></PRE
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Another way to exit</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>You can exit at the shell prompt either by typing the word
+	      <B
+CLASS="COMMAND"
+>exit</B
+> or by using the key combination of
+	    <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>D</B
+>.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	  Now, you can log into your user account the same way you logged in as
+	  root.
+	</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="p169.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="ch-gnome60.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>The Basics</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="p169.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>GNOME in 60 Seconds (or so)</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/ch-starting.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:45:41 GMT -->
+</HTML
+>

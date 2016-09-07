@@ -1,0 +1,526 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/ch-shellmanage.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:45:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Working with Files and Directories</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="The Shell Prompt"
+HREF="p5202.html"><LINK
+REL="PREVIOUS"
+TITLE="Fun with Numbers in chmod"
+HREF="s1-navigating-chmodnum.html"><LINK
+REL="NEXT"
+TITLE="Locating Files and Directories"
+HREF="s1-managing-locating.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-navigating-chmodnum.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-managing-locating.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CH-SHELLMANAGE"
+>Chapter 14. Working with Files and Directories</A
+></H1
+><P
+>      If you're a Linux newbie -- and there are many -- you may feel a little
+      disoriented when you want to accomplish your first tasks.
+    </P
+><P
+>      Relax. If you've had any experience with other operating systems, learning
+      Linux is a bit like learning to drive in a new country: Many of the ideas
+      are the same, but some of the particulars are a bit different.
+    </P
+><P
+>      We'll go over several of these "rules of the road" in this chapter.
+    </P
+><P
+>      But there's one component of your new operating system you just can't do
+      without: the <I
+CLASS="FIRSTTERM"
+>shell</I
+>. We've made numerous references
+      to the shell -- as in "shell prompt," or "bash."
+    </P
+><P
+>      Now, it's time to learn a little more about this indispensable tool. But
+      first, some background information&#8230;
+    </P
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-MANAGING-SHELLS"
+>Shell Collecting</A
+></H1
+><P
+>        In the olden days (we're talking '60s here), when AT&#38;T's Dennis
+        Ritchie and Ken Thompson were designing UNIX<sup
+>TM</sup
+>,
+        they wanted to create a way that humans could interact with their new
+        system.
+      </P
+><P
+>        Operating systems at the time did come with <I
+CLASS="FIRSTTERM"
+>command
+        interpreters</I
+>, which could take commands from the user and
+        interpret them so the machine could use them.
+      </P
+><P
+>        But Ritchie and Thompson wanted something more, something which could
+        offer better features than the command interpreters of the day.
+      </P
+><P
+>        Enter the <I
+CLASS="FIRSTTERM"
+>Bourne shell</I
+> (known simply as
+        <I
+CLASS="FIRSTTERM"
+>sh</I
+>), created by S.R. Bourne, which fulfilled the
+        goals of UNIX's creators.
+      </P
+><P
+>        Since the creation of the Bourne shell, other shells have been
+        developed, such as the <I
+CLASS="FIRSTTERM"
+>C shell</I
+>
+        (<I
+CLASS="FIRSTTERM"
+>csh</I
+>) and the <I
+CLASS="FIRSTTERM"
+>Korn shell</I
+>
+        (<I
+CLASS="FIRSTTERM"
+>ksh</I
+>).
+      </P
+><P
+>        When the Free Software Foundation sought a royalty-free shell,
+        developers began to work on the language behind the Bourne shell as well
+        as some of the popular features from other shells available at the time.
+      </P
+><P
+>        The result was the <I
+CLASS="FIRSTTERM"
+>Bourne Again Shell</I
+> -- or
+        <I
+CLASS="FIRSTTERM"
+>bash</I
+>.
+      </P
+><P
+>        By now, of course, you've probably seen the word <TT
+CLASS="PROMPT"
+>bash</TT
+>
+        when you've mistyped commands at the shell prompt (as in <TT
+CLASS="PROMPT"
+>bash:
+        somecommand: command not found</TT
+>).
+      </P
+><P
+>        In <A
+HREF="ch-navigating.html"
+>Chapter 13</A
+>, when we talked about redirection and
+        piping, we were also demonstrating the power of
+        <TT
+CLASS="APPLICATION"
+>bash</TT
+>.
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>More about <TT
+CLASS="APPLICATION"
+>bash</TT
+></B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          You can learn more about <TT
+CLASS="APPLICATION"
+>bash</TT
+> by reading
+          the <TT
+CLASS="APPLICATION"
+>bash</TT
+> man page. At the shell prompt,
+          type <B
+CLASS="COMMAND"
+>man bash</B
+> (or you can save the file as a text
+          file by typing <B
+CLASS="COMMAND"
+>man bash | col -b &#62; bash.txt</B
+>,
+          which you can then open to read with an editor like
+          <TT
+CLASS="APPLICATION"
+>pico</TT
+> or a pager like
+          <B
+CLASS="COMMAND"
+>less</B
+>. You can also print the file with
+          <B
+CLASS="COMMAND"
+>man bash | col -b | lpr</B
+>, but be warned: it's a
+          large file. If you want more information, O'Reilly &#38; Associates
+          publishes <I
+CLASS="CITETITLE"
+>Learning the bash Shell</I
+>, by Cameron
+          Newham and Bill Rosenblatt.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>        Although your system came with several different shells,
+        <TT
+CLASS="APPLICATION"
+>bash</TT
+> is the default shell for Red Hat Linux.
+      </P
+><P
+>        You might think of <TT
+CLASS="APPLICATION"
+>bash</TT
+> as a fleet-footed
+        office assistant who has made a habit of keeping notes on ways to
+        fulfill commands quickly. This assistant also keeps "pointers" on how
+        you like to customize the way you work.
+      </P
+><P
+>        These pointers <TT
+CLASS="APPLICATION"
+>bash</TT
+> keeps are referred to as
+        <I
+CLASS="FIRSTTERM"
+>environment variables</I
+>.
+      </P
+><P
+>        The shell uses an "environment" in the same way we use an environment,
+        like a kitchen. We work in our kitchen, arrange pots, pans, and
+        spices. We know where the dishes are, how things operate.
+      </P
+><P
+>        The same can be said for <TT
+CLASS="APPLICATION"
+>bash</TT
+> and its
+        environment. There's a basic arrangement to
+        <TT
+CLASS="APPLICATION"
+>bash</TT
+> as there would be to just about any
+        kitchen. For example, we'd expect to see pots in a kitchen in the same
+        way that we would expect to see certain commands in
+        <TT
+CLASS="APPLICATION"
+>bash</TT
+>.
+      </P
+><P
+>        That's the idea behind environment variables.
+      </P
+><P
+>        As long as your assistant has the right pointers, he'll fulfill your
+        commands quickly.
+      </P
+><P
+>        Let's take a look at our environment variables. At the shell prompt,
+        type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>env</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Quite a few "shortcuts" <TT
+CLASS="APPLICATION"
+>bash</TT
+> uses, aren't there?
+      </P
+><P
+>        Each one of these helps <TT
+CLASS="APPLICATION"
+>bash</TT
+> customize the
+        environment for you.
+      </P
+><P
+>        Among the most important environment variables is the
+        <TT
+CLASS="ENVAR"
+>PATH</TT
+> environment variable -- which defines what is known
+        as the <I
+CLASS="FIRSTTERM"
+>default path</I
+>.
+      </P
+><P
+>        The <TT
+CLASS="ENVAR"
+>PATH</TT
+> environment variable for our account
+        <B
+CLASS="COMMAND"
+>newuser</B
+> might look something like this:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>PATH=/usr/local/bin:/usr/X11R6/bin:/usr/bin:/bin:/usr/X11R6/bin:/home/newuser/bin</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        It looks crowded, but the <TT
+CLASS="ENVAR"
+>PATH</TT
+> statement is a great
+        signpost, which points to where programs can be found.
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>A standard for the <TT
+CLASS="ENVAR"
+>PATH</TT
+></B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          Remember the earlier reference to the Filesystem Hierarchy Standard
+          (see <A
+HREF="s1-navigating-filesystem.html"
+>the section called <I
+>A Larger Picture of the Filesystem</I
+> in Chapter 13</A
+>)? The
+          <TT
+CLASS="ENVAR"
+>PATH</TT
+> statement is set according to that standard, and
+          programs are installed in directories in accordance with the FHS as
+          well. The result is that the <TT
+CLASS="ENVAR"
+>PATH</TT
+> statement will enable
+          <TT
+CLASS="APPLICATION"
+>bash</TT
+> to automatically find nearly any
+          program, assuming it has been installed in accordance with the FHS.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-navigating-chmodnum.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-managing-locating.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Fun with Numbers in <B
+CLASS="COMMAND"
+>chmod</B
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="p5202.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Locating Files and Directories</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/ch-shellmanage.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:45:25 GMT -->
+</HTML
+>

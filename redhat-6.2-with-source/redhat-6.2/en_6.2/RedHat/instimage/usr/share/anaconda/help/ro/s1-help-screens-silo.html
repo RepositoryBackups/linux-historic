@@ -1,0 +1,110 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/ro/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Configurarea SILO</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.49"><LINK
+REL="HOME"
+TITLE="Instrucþiuni de instalare"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="Configurarea LILO"
+HREF="s1-help-screens-lilo.html"><LINK
+REL="NEXT"
+TITLE="Configurarea reþelei"
+HREF="s1-help-screens-netconf.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-SILO"
+>Configurarea SILO</A
+></H1
+><P
+>        SILO (Sparc Improved LOader) este un program care poate fi folosit
+        pentru a porni Red Hat Linux pe calculatorul dvs. SILO poate porni
+        alte sisteme de operare, de exemplu SunOS ºi Solaris. Aici veþi fi
+        întrebat cum (sau dacã) doriþi sã configuraþi SILO.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Creare disc de boot</B
+>: Dacã nu instalaþi SILO deloc,
+        sau dacã o doriþi din motive de securitate, veþi crea un disc de boot.
+        Dacã nu aveþi o dischetã, aceastã opþiune va fi ascunsã; dacã aveti
+        un sistem Ultra fabricat de SMCC, care în mod normal nu are dischete de pe
+        care sã poatã fi boot-at, aceastã opþiune va fi implicit inactivã.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Fãrã instalare SILO</B
+>: Puteþi renunþa la SILO dacã
+        nu doriþi SILO pe discul dvs., de exemplu dacã SILO este deja instalat
+        pe o altã partiþie sau disc ºi doriþi ca boot-area sã se realizeze de
+        acolo.
+      </P
+><P
+>        Pentru a instala SILO, alegeþi unde doriþi sa îl instalaþi. Dacã 
+        sistemul va folosi doar Red Hat Linux, ar trebui sã alegeþi opþiunea
+        Master Boot Record (blocul de boot de pe prima partiþie de pe disc).
+        Pentru sisteme unde SunOS/Solaris ºi Red Hat Linux vor fi instalate pe
+        acelaºi disc, nu este indicat sã instalaþi SILO în MBR, mai ales dacã
+        SunOS/Solaris este pe prima partiþie a discului.
+      </P
+><P
+>        Dacã, dintr-un motiv oarecare, alegeþi sã nu instalaþi SILO, trebuie
+        sã faceþi un disc de boot, pentru a putea incãrca Red Hat Linux.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Creare alias în PROM</B
+>: The installer can
+        create a PROM alias "linux" if the PROM supports it, so that
+        you can boot into the SILO boot loader from the PROM command
+        line by the command "boot linux".
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Set default PROM boot device</B
+>: Programul
+        de instalare poate sã seteze PROM-ul pentru ca Red Hat Linux
+        sã fie implicit încãrcat, prin alegerea opþiunii "boot-device"
+        sau "boot-from".
+      </P
+><P
+>       Dacã doriþi sã adãugaþi opþiuni implicite la comanda de 
+       încãrcare SILO, acestea pot si specificate în câmpul parametrilor
+       kernelului. Orice opþiune completatã va fi transmisã kernelului
+       Linux de fiecare datã când acesta se incarcã.
+      </P
+><P
+>       Partiþie Boot-abilã --  Fiecare partiþie boot-abilã este listatã ºi
+       etichetatã, inclusiv partiþiile folosite de alte sisteme de operare.
+       Dacã doriþi sã adãugaþi ethichete pentru alte partiþii (sau sã
+       schimbaþi etichetele de boot actuale), selectaþi printr-un click
+       partiþia. Odatã selectatã, puteþi schimba eticheta de boot.
+      </P
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/ro/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:37 GMT -->
+</HTML
+>

@@ -1,0 +1,653 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-printing-utilities.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:27 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Printing Utilities in KDE and GNOME</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Setting Up Your Printer"
+HREF="ch-printing.html"><LINK
+REL="PREVIOUS"
+TITLE="Setting Up Your Printer"
+HREF="ch-printing.html"><LINK
+REL="NEXT"
+TITLE="Getting Online"
+HREF="ch-ppp.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-printing.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 5. Setting Up Your Printer</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="ch-ppp.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-PRINTING-UTILITIES"
+>Printing Utilities in KDE and GNOME</A
+></H1
+><P
+>	Once you've configured your printer, you'll find KDE and GNOME provide
+	utilities to help you monitor and modify printer settings and printing
+	jobs.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PRINTING-KLJET"
+>Using <TT
+CLASS="APPLICATION"
+>Ljet Tool</TT
+> in KDE</A
+></H2
+><P
+>	In KDE, <TT
+CLASS="APPLICATION"
+>Ljet Tool</TT
+> can help you configure a
+	Hewlett-Packard LaserJet printer in KDE.
+      </P
+><P
+>	Also called <TT
+CLASS="APPLICATION"
+>KLJetTool</TT
+>, the utility can allow
+	you to modify your printer settings for all KDE-compliant
+	  applications. <TT
+CLASS="APPLICATION"
+>Ljet Tool</TT
+> can be used by
+	regular users; not just by the root user.
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Possible conflicts</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  <TT
+CLASS="APPLICATION"
+>Ljet Tool</TT
+> is best suited for Hewlett-Packard
+	LaserJet and compatible printers. The utility uses PCL, the same printer
+	control language to control options used by Hewlett-Packard. If your
+	printer isn't a Hewlett-Packard LaserJet or PCL-compatible printer, you
+	may experience problems if you try to use
+	<TT
+CLASS="APPLICATION"
+>Ljet</TT
+>.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PRINTING-LJETSTARTING"
+>Starting <TT
+CLASS="APPLICATION"
+>Ljet Tool</TT
+></A
+></H2
+><P
+>	You can start <TT
+CLASS="APPLICATION"
+>Ljet</TT
+> from the
+	<B
+CLASS="GUIMENU"
+>Panel</B
+> or from the shell prompt.
+      </P
+><P
+>	To start the utility from the shell prompt, open an Xterm window and, at
+	the prompt, type <B
+CLASS="COMMAND"
+>kljettool</B
+>.
+      </P
+><P
+>	To start <TT
+CLASS="APPLICATION"
+>Ljet</TT
+> from the
+	<B
+CLASS="GUIMENU"
+>Panel</B
+>, go to the <B
+CLASS="GUIMENU"
+>Utilities</B
+> menu,
+	then go to <B
+CLASS="GUIMENUITEM"
+>HP LaserJet Control Panel</B
+> (see <A
+HREF="s1-printing-utilities.html#GR-PRINTING-LJETMENU"
+>Figure 5-9</A
+> for an example).
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PRINTING-LJETMENU"
+></A
+><P
+><IMG
+SRC="figs/print/ljetmenu.gif"></P
+><P
+><B
+>Figure 5-9. Starting <TT
+CLASS="APPLICATION"
+>Ljet</TT
+> from the <B
+CLASS="GUIMENU"
+>Panel</B
+></B
+></P
+></DIV
+><P
+>	In four tabbed dialogs, the utility allows you to specify details
+	like paper size, resolution, font size and more.
+      </P
+><P
+>	Most of the options are fairly self-explanatory, but some of the
+	settings in the <TT
+CLASS="GUILABEL"
+><B
+>Fonts</B
+></TT
+> dialog may be a little
+	confusing: specifically, the settings for <TT
+CLASS="GUILABEL"
+><B
+>Language</B
+></TT
+>
+	and <TT
+CLASS="GUILABEL"
+><B
+>Symbol Set</B
+></TT
+>. See <A
+HREF="s1-printing-utilities.html#GR-PRINTING-LJET4"
+>Figure 5-10</A
+> for an example.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PRINTING-LJET4"
+></A
+><P
+><IMG
+SRC="figs/print/ljet4.gif"></P
+><P
+><B
+>Figure 5-10. The <TT
+CLASS="GUILABEL"
+><B
+>Fonts</B
+></TT
+> dialog in <TT
+CLASS="APPLICATION"
+>Ljet Tool</TT
+></B
+></P
+></DIV
+><P
+>	The above dialog allows you to choose default settings for the
+	characters which are used to print documents.
+	</P
+><P
+>	The <TT
+CLASS="GUILABEL"
+><B
+>Language</B
+></TT
+> entry defines which printer language
+	is used to process your documents. By default, this is set to
+	<TT
+CLASS="GUILABEL"
+><B
+>PCL</B
+></TT
+>, which is the standard printer language for
+	Hewlett-Packard printers. You can use the drop-down list to select
+	PostScript, however, if your printer has such capabilities.
+      </P
+><P
+>	The <TT
+CLASS="GUILABEL"
+><B
+>Symbol Set</B
+></TT
+> entry refers to the default
+	character set you'd prefer to use when printing. The setting of
+	<TT
+CLASS="GUILABEL"
+><B
+>PC8</B
+></TT
+> is the default mode; if you want to print
+	special math, Windows or non-English characters, however, you can make
+	your selections here.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PRINTING-KLPQ"
+>The Printer Queue in KDE</A
+></H2
+><P
+>	  On the KDE desktop, the printer icon represents your printer
+	  queue. You can drag and drop files onto the printer icon to send them
+	  to the printer.
+	</P
+><P
+>	  You can open the printer queue either by clicking on the printer icon
+	  on your desktop or by going to the <B
+CLASS="GUIMENUITEM"
+>Printer
+	  Queue</B
+> item on the <B
+CLASS="GUIMENU"
+>Utilities</B
+> menu of
+	  the <B
+CLASS="GUIMENU"
+>Panel</B
+> (see <A
+HREF="s1-printing-utilities.html#GR-PRINTING-KPRINTQMENU"
+>Figure 5-11</A
+>).
+	</P
+><P
+>	  You can also open the printer queue by typing <B
+CLASS="COMMAND"
+>klpq</B
+>
+	  at the shell prompt.
+	</P
+><P
+>	  When you first start the printer queue application, you'll be asked
+	  which print spooler you use. By default, <TT
+CLASS="GUILABEL"
+><B
+>BSD</B
+></TT
+> will
+	  be checked, and you probably won't have to alter this setting.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PRINTING-KPRINTQMENU"
+></A
+><P
+><IMG
+SRC="figs/print/kprintqmenu.gif"></P
+><P
+><B
+>Figure 5-11. Opening the Printer Queue from the <B
+CLASS="GUIMENU"
+>Panel</B
+></B
+></P
+></DIV
+><P
+>	  When you open the printer queue, you won't see any entries in the
+	  queue  (see <A
+HREF="s1-printing-utilities.html#GR-PRINTING-KPRINTQ"
+>Figure 5-12</A
+>), unless you're currently printing a document.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PRINTING-KPRINTQ"
+></A
+><P
+><IMG
+SRC="figs/print/kprintq.gif"></P
+><P
+><B
+>Figure 5-12. The Printer Queue Window</B
+></P
+></DIV
+><P
+>	  A document you send to the printer will be displayed in the
+	  <TT
+CLASS="APPLICATION"
+>Printer Queue</TT
+> utility. See <A
+HREF="s1-printing-utilities.html#GR-PRINTING-KPRINTQ2"
+>Figure 5-13</A
+> for an example of a document listed in
+	  the queue.
+	</P
+><P
+>	  Once in the queue, you can see details about the job, such as the user
+	  who sent the job to the printer, its order in the printer queue -- if
+	  there is more than one job -- the size of the document and more.
+	  </P
+><P
+>	  The <TT
+CLASS="APPLICATION"
+>Printer Queue</TT
+> also allows you to change
+	  the order of jobs, or to remove printing jobs.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PRINTING-KPRINTQ2"
+></A
+><P
+><IMG
+SRC="figs/print/kprintq2.gif"></P
+><P
+><B
+>Figure 5-13. A Print Job in the Queue</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PRINTING-GPRINTAPP"
+>The Printer Applet in GNOME</A
+></H2
+><P
+>	  GNOME offers a convenient way to drag and drop documents to the
+	  printer with the <TT
+CLASS="APPLICATION"
+>Printer Applet</TT
+>. The
+	  utility can be placed on the <B
+CLASS="GUIMENU"
+>Panel</B
+>.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PRINTING-PRINTAPPPANEL"
+></A
+><P
+><IMG
+SRC="figs/print/printapppanel.gif"></P
+><P
+><B
+>Figure 5-14. Adding the <TT
+CLASS="APPLICATION"
+>Printer Applet</TT
+> to the
+	    <B
+CLASS="GUIMENU"
+>Panel</B
+></B
+></P
+></DIV
+><P
+>	  To add the applet to the <B
+CLASS="GUIMENU"
+>Panel</B
+>, right-click on the
+	  <B
+CLASS="GUIMENU"
+>Panel</B
+> and drag your cursor to <B
+CLASS="GUIMENUITEM"
+>Add
+	  Applet</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Utility</B
+> =&#62;
+	  <B
+CLASS="GUIMENUITEM"
+>Printer Applet</B
+> (see <A
+HREF="s1-printing-utilities.html#GR-PRINTING-PRINTAPPPANEL"
+>Figure 5-14</A
+>). Release your mouse button over
+	  <B
+CLASS="GUIMENUITEM"
+>Printer Applet</B
+>; the applet will appear on
+	  your <B
+CLASS="GUIMENU"
+>Panel</B
+> and look like: <IMG
+SRC="figs/print/gprinticon.gif"
+ALIGN="CENTER"> 
+	</P
+><P
+>	  To use the applet, drag a document from a folder or from the file
+	  manager and "drop" it over the <TT
+CLASS="GUILABEL"
+><B
+>Print</B
+></TT
+> icon on the
+	  <B
+CLASS="GUIMENU"
+>Panel</B
+>. (When you hover your document over the icon
+	  and an outline surrounds the icon, you'll know that you can drop your
+	  document on the applet.) After a few moments, your document should
+	  begin printing.
+	</P
+><P
+>	  You can adjust a couple of the settings in the <TT
+CLASS="APPLICATION"
+>Printer
+	  Applet</TT
+> by right-clicking on the applet in the
+	  <B
+CLASS="GUIMENU"
+>Panel</B
+> and selecting the
+	  <TT
+CLASS="GUILABEL"
+><B
+>Properties</B
+></TT
+> dialog.
+	</P
+><P
+>	  In <TT
+CLASS="GUILABEL"
+><B
+>Printer properties</B
+></TT
+> (see <A
+HREF="s1-printing-utilities.html#GR-PRINTING-PRINTAPPPROP"
+>Figure 5-15</A
+>), you can select a name for the
+	  printer label on the <B
+CLASS="GUIMENU"
+>Panel</B
+>. Your default print
+	  command will most likely be <B
+CLASS="COMMAND"
+>lpr</B
+>, so you should
+	  leave the <TT
+CLASS="GUILABEL"
+><B
+>Print command</B
+></TT
+> entry the default
+	  <TT
+CLASS="GUILABEL"
+><B
+>lpr</B
+></TT
+>.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PRINTING-PRINTAPPPROP"
+></A
+><P
+><IMG
+SRC="figs/print/printappprop.gif"></P
+><P
+><B
+>Figure 5-15. Properties in the <TT
+CLASS="APPLICATION"
+>Printer Applet</TT
+></B
+></P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-printing.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="ch-ppp.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Setting Up Your Printer</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-printing.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Getting Online</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-printing-utilities.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+</HTML
+>

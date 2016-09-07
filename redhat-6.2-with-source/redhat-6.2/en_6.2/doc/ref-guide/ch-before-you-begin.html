@@ -1,0 +1,792 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-before-you-begin.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:57:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Preparing for a Text Mode Installation</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Installation-Related Reference"
+HREF="p6648.html"><LINK
+REL="PREVIOUS"
+TITLE="Installation-Related Reference"
+HREF="p6648.html"><LINK
+REL="NEXT"
+TITLE="Installing Red Hat Linux via Text Mode"
+HREF="ch-install-tm.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="p6648.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="ch-install-tm.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CH-BEFORE-YOU-BEGIN"
+>Chapter 9. Preparing for a Text Mode Installation</A
+></H1
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-BEFOREBEGIN-THINGS-TO-KNOW"
+>Things You Should Know</A
+></H1
+><P
+>	Before attempting to install Red Hat Linux, you should collect some system
+	information in order to prevent any surprises during the installation.
+	You can find most of this information in the documentation that came
+	with your system, or from the system's vendor or manufacturer.
+      </P
+><P
+>	The most recent list of hardware supported by Red Hat Linux can be found at
+	<A
+HREF="http://www.redhat.com/hardware"
+TARGET="_top"
+>	  http://www.redhat.com/hardware</A
+>.  It's a good idea to check
+	your hardware against this list before proceeding.
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  You can perform a text mode installation of Red Hat Linux 6.2 by
+	  following instructions in this chapter and in <A
+HREF="ch-install-tm.html"
+>Chapter 10</A
+>. However, if you're installing from a CD-ROM,
+	  you might prefer to use the graphical installation mode, which offers
+	  both ease of use and a flexible, custom-class installation mode. For
+	  more information on graphical installations, turn to the
+	  <I
+CLASS="CITETITLE"
+>Official Red Hat Linux Installation Guide</I
+>.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Tip</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  At the end of the <I
+CLASS="CITETITLE"
+>Before You Begin</I
+> chapter in
+	  the <I
+CLASS="CITETITLE"
+>Official Red Hat Linux Installation Guide</I
+> is a table for you to fill out with
+	  your specific system requirements, which will help you keep up with
+	  any information you will need during your installation.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-BEFORE-YOU-BEGIN-HARDWARE"
+>Basic Hardware Configuration</A
+></H2
+><P
+>	  You should have a basic understanding of the hardware installed in your
+	  computer, including:
+	  
+	  <P
+></P
+><UL
+><LI
+><P
+>		hard drive(s) -- Specifically, the number, size, and type. If
+		you have more than one, it's helpful to know which one is first,
+		second, and so on.  It is also good to know if your drives are
+		IDE or SCSI.  If you have IDE drives, you should check your
+		computer's BIOS to see if you are accessing them in
+		<I
+CLASS="FIRSTTERM"
+>linear mode</I
+>.  Please refer to your
+		computer's documentation for the proper key sequence to access
+		the BIOS.  Note that your computer's BIOS may refer to linear mode
+		by other names, such as "large disk mode."  Again, your
+		computer's documentation should be consulted for clarification.
+	      </P
+></LI
+><LI
+><P
+>		memory -- The amount of RAM installed in your computer.
+	      </P
+></LI
+><LI
+><P
+>		CD-ROM -- Most importantly, the unit's interface type (IDE, SCSI,
+		or other interface) and, for non-IDE, non-SCSI CD-ROMs, the make
+		and model number.  IDE CD-ROMs (also known as ATAPI) are the most
+		common type in recently manufactured, PC-compatible computers.
+	      </P
+></LI
+><LI
+><P
+>		SCSI adapter (if one is present) -- The adapter's make and model
+		number.
+	      </P
+></LI
+><LI
+><P
+>		network card (if one is present) -- The card's make and model
+		number.
+	      </P
+></LI
+><LI
+><P
+>		mouse -- The mouse's type (serial, PS/2, or bus mouse), protocol
+		(Microsoft, Logitech, MouseMan, etc.), and number of buttons;
+		also, for serial mice, the serial port it is connected to.
+	      </P
+></LI
+></UL
+>
+	</P
+><P
+>	  On many newer systems, the installation program is able to
+	  automatically identify most hardware.  However, it's a good idea to
+	  collect this information anyway, just to be sure.
+	  </P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-BEFORE-YOU-BEGIN-HARDWR-WIN"
+>Learning About Your Hardware with Windows</A
+></H3
+><P
+>	    If your computer is already running Windows
+	    9<TT
+CLASS="REPLACEABLE"
+><I
+>x</I
+></TT
+>, you can use the following procedure
+	    to get additional configuration information:
+	    
+	    <DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-BEF-YOU-BEGIN-WIN1"
+></A
+><P
+><IMG
+SRC="figs/bef-you-begin/win1.gif"></P
+><P
+><B
+>Figure 9-1. Windows System Properties</B
+></P
+></DIV
+>
+
+	    <P
+></P
+><UL
+><LI
+><P
+>		  In Windows, click on the <TT
+CLASS="GUILABEL"
+><B
+>My Computer</B
+></TT
+> icon
+		  using the secondary (normally the right) mouse button.  A
+		  pop-up menu should appear.
+		</P
+></LI
+><LI
+><P
+>		  Select <TT
+CLASS="GUILABEL"
+><B
+>Properties</B
+></TT
+>.  The <TT
+CLASS="GUILABEL"
+><B
+>System
+		  Properties</B
+></TT
+> window should appear.  Note the
+		  information listed under <TT
+CLASS="GUILABEL"
+><B
+>Computer</B
+></TT
+> -- in
+		  particular the amount of RAM listed.
+		</P
+></LI
+><LI
+><P
+>		  Click on the <TT
+CLASS="GUILABEL"
+><B
+>Device Manager</B
+></TT
+> tab.  You
+		  will then see a graphical representation of your computer's
+		  hardware configuration.  Make sure the <B
+CLASS="GUIBUTTON"
+>View devices
+		  by type</B
+> button is selected.
+		</P
+></LI
+></UL
+>
+	  </P
+><P
+>	    At this point, you can either double-click on the icons (or
+	    single-click on the plus sign <TT
+CLASS="GUILABEL"
+><B
+>+</B
+></TT
+>) to look at
+	    each entry in more detail. Look under the following icons for more
+	    information:
+	    
+	    <DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-BEF-YOU-BEGIN-WIN2"
+></A
+><P
+><IMG
+SRC="figs/bef-you-begin/win2.gif"></P
+><P
+><B
+>Figure 9-2. Device Manager Under Windows 95</B
+></P
+></DIV
+>
+
+	    <P
+></P
+><UL
+><LI
+><P
+>		  <TT
+CLASS="GUILABEL"
+><B
+>Disk drives</B
+></TT
+> -- You will find the type
+		  (IDE or SCSI) of hard drive here.  (IDE drives will normally
+		  include the word "IDE," while SCSI drives won't.)
+		</P
+></LI
+><LI
+><P
+>		  <TT
+CLASS="GUILABEL"
+><B
+>Hard disk controllers</B
+></TT
+> -- You can get more
+		  information about your hard drive controller here.
+		</P
+></LI
+><LI
+><P
+>		  <TT
+CLASS="GUILABEL"
+><B
+>CDROM</B
+></TT
+> -- Here is where you'll find out
+		  about any CD-ROM drives connected to your computer.
+		</P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="90%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>		    In some cases, there may be no CD-ROM icon, yet your
+		    computer has a functioning CD-ROM drive.  This is normal,
+		    depending on how Windows was originally installed.  In this
+		    case, you may be able to learn additional information by
+		    looking at the CD-ROM driver loaded in your computer's
+		    <TT
+CLASS="FILENAME"
+>config.sys</TT
+> file.
+		  </P
+></TD
+></TR
+></TABLE
+></DIV
+></LI
+><LI
+><P
+>		  <TT
+CLASS="GUILABEL"
+><B
+>Mouse</B
+></TT
+> -- The type of mouse present on
+		  your computer can be found here.
+		</P
+></LI
+><LI
+><P
+>		  <TT
+CLASS="GUILABEL"
+><B
+>Display adapters</B
+></TT
+> -- If you're interested
+		  in running the X Window System, you should write down the
+		  information you find here.
+		</P
+></LI
+><LI
+><P
+>		  <TT
+CLASS="GUILABEL"
+><B
+>Sound, video and game controllers</B
+></TT
+> -- If
+		  your computer has sound capabilities, you'll find more
+		  information about that here.
+		</P
+></LI
+><LI
+><P
+>		  <TT
+CLASS="GUILABEL"
+><B
+>Network adapters</B
+></TT
+> -- Here you'll find
+		  additional information on your computer's network card (if you
+		  have one).
+		</P
+></LI
+><LI
+><P
+>		  <TT
+CLASS="GUILABEL"
+><B
+>SCSI controllers</B
+></TT
+> -- If your computer uses
+		  SCSI peripherals, you'll find additional info on the SCSI
+		  controller here.
+		</P
+></LI
+></UL
+>
+	  </P
+><P
+>	    While this method is not a complete substitute for opening your
+	    computer's case and physically examining each component, in many
+	    cases it can provide sufficient information to continue with the
+	    installation.
+	  </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	      This information can also be printed by clicking on the
+	      <B
+CLASS="GUIBUTTON"
+>Print</B
+> button.  A second window will appear,
+	      allowing you to choose the printer, as well as the type of report
+	      (the <TT
+CLASS="GUILABEL"
+><B
+>All Devices and System Summary</B
+></TT
+> report
+	      type is the most complete).
+	    </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-BEFORE-YOU-BEGIN-VIDEO"
+>Video Configuration</A
+></H2
+><P
+>	  If you will be installing the X Window System, you should also be
+	  familiar with the following:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      your video card -- The card's make and model number (or the
+	      video chipset it uses), and the amount of video RAM it has.  (Most
+	      PCI-based cards are auto-detected by the installation program.)
+	    </P
+></LI
+><LI
+><P
+>	      your monitor -- The unit's make and model number, along with
+	      allowable ranges for horizontal and vertical refresh rates. (Newer
+	      models may be auto-detected by the installation program.)
+	    </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-BEFORE-YOU-BEGIN-NETWORK"
+>Network-related Information</A
+></H2
+><P
+>	  If you're connected to a network, be sure you know the following:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      IP address -- Usually represented as a set of four numbers
+	      separated by dots, such as
+	      <TT
+CLASS="FILENAME"
+>10.0.2.15</TT
+>.
+	    </P
+></LI
+><LI
+><P
+>	      netmask -- Another set of four numbers separated by dots.  An
+	      example netmask would be <TT
+CLASS="FILENAME"
+>255.255.248.0</TT
+>.
+	    </P
+></LI
+><LI
+><P
+>	      gateway IP address -- Yet another set of four dot-separated
+	      numbers.  For instance,
+	      <TT
+CLASS="FILENAME"
+>10.0.2.254</TT
+>.
+	    </P
+></LI
+><LI
+><P
+>	      one or more name server IP addresses -- One or more sets of
+	      dot-separated numbers.  For example, <TT
+CLASS="FILENAME"
+>10.0.2.1</TT
+>
+	      might be the address of a name server.
+	    </P
+></LI
+><LI
+><P
+>	      domain name -- The name your organization uses.  For instance,
+	      Red Hat has a domain name of <TT
+CLASS="FILENAME"
+>redhat.com</TT
+>.
+	    </P
+></LI
+><LI
+><P
+>	      hostname -- The name assigned to your individual system.  A
+	      computer might be named <TT
+CLASS="FILENAME"
+>pooh</TT
+>, for instance.
+	    </P
+></LI
+></UL
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    The information given above is an example only!  Do
+	    <I
+CLASS="EMPHASIS"
+>not</I
+> use it when you install Red Hat Linux!  If you
+	    don't know the proper values for your network, ask your network
+	    administrator.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="p6648.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="ch-install-tm.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Installation-Related Reference</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="p6648.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Installing Red Hat Linux via Text Mode</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-before-you-begin.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:57:51 GMT -->
+</HTML
+>

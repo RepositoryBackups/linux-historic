@@ -1,0 +1,996 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-modules-scsi.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>SCSI parameters</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="General Parameters and Modules"
+HREF="ch-modules.html"><LINK
+REL="PREVIOUS"
+TITLE="CD-ROM Module Parameters"
+HREF="s1-modules-cdromparameters.html"><LINK
+REL="NEXT"
+TITLE="Ethernet parameters"
+HREF="s1-modules-ethernet.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-modules-cdromparameters.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Appendix A. General Parameters and Modules</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-modules-ethernet.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-MODULES-SCSI"
+>SCSI parameters</A
+></H1
+><DIV
+CLASS="TABLE"
+><A
+NAME="TB-MODULES-SCSIPARAMETERS"
+></A
+><P
+><B
+>Table A-3. SCSI Parameters</B
+></P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+CELLSPACING="0"
+CELLPADDING="4"
+CLASS="CALSTABLE"
+><TR
+><TH
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Hardware</TH
+><TH
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Module</TH
+><TH
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Parameters</TH
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>NCR53c810/820/720, NCR53c700/710/700-66</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>53c7,8xx.o</TT
+></TD
+><TD
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>AM53/79C974 PC-SCSI Driver
+		Qlogic PCI-Basic</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>AM53C974.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>AM53C974=host-scsi-id,
+		  target-scsi-id,max-rate,
+		  max-offset</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Most Buslogic (now Mylex)
+		cards with "BT" part number</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>BusLogic.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>BusLogic_Options=option,option,&#8230; 
+		(See
+		<TT
+CLASS="FILENAME"
+>README.BusLogic</TT
+> in
+		<TT
+CLASS="FILENAME"
+>&#8230;drivers/scsi/)</TT
+></TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>&nbsp;</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>NCR53c406a.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>ncr53c406a=io_port[, IRQ[, FASTPIO]]
+		ncr53c406a io=io_port 
+		irq=IRQ 
+		fastpio=FASTPIO</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Advansys SCSI Cards</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>advansys.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Adaptec AHA 152x</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>aha152x.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>aha152x=io_base, IRQ, scsi_id, reconnect, parity</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Adaptec AHA 1542</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>aha1542.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>aha1542=io_base,buson,busoff,dmaspeed</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Adaptec AHA 1740</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>aha1740.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Adaptec AHA-274x, AHA-284x,
+		AHA-29xx, AHA-394x, AHA-398x, 
+		AHA-274x, AHA-274xT, AHA-2842, 
+		AHA-2910B, AHA-2920C, AHA-2930/U/U2, 
+		AHA-2940/W/U/UW/AU/,
+        U2W/U2/U2B/, 
+		U2BOEM, AHA-2944D/WD/UD/UWD, 
+		AHA-2950U2/W/B, AHA-3940/U/W/UW/,
+		AUW/U2W/U2B, AHA-3950U2D,
+		AHA-3985/U/W/UW, AIC-777x, AIC-785x, 
+		AIC-786x, AIC-787x, AIC-788x , AIC-789x, 
+		AIC-3860</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>aic7xxx.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>aic7xxx=string</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Data Technology Corp DTC3180/3280</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>dtc.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>DTP SCSI host adapters (EATA/DMA)
+		PM2011B/9X ISA,  PM2021A/9X ISA, PM2012A,
+		PM2012B, PM2022A/9X EISA, PM2122A/9X, 
+		PM2322A/9X, SmartRAID PM3021, PM3222,
+		PM3224</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>eata.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>eata=port0,port1,port2,&#8230; options 
+		eata io_port=port0,port1,port2,&#8230; option=value</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>DTP SCSI Adapters PM2011, PM2021, PM2041,
+		PM3021, PM2012B, PM2022, PM2122, PM2322, 
+		PM2042, PM3122, PM3222, PM3332, PM2024, 
+		PM2124, PM2044, PM2144, PM3224, PM3334</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>eata_dma.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>DTP EATA-PIO boards</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>eata_pio.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Future Domain TMC-16x0- based cards
+		TMC-1800, TMC-18C50, TMC-18C30, 
+		TMC-36C70, Future Domain TMC-1650, 
+		TMC-1660, TMC-1670, TMC-1680,
+		TMC-1610M/MER/MEX, TMC-3260 (PCI), 
+		Quantum  ISA-200S, ISA-250MG,
+		Adaptec AHA-2920A (PCI) (NOT AHA-2920C)</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>fdomain.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>fdomain=io_base, IRQ[, ADAPTER_ID]</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>NCR5380 and NCR53c400 cards</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>g_NCR5380.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>ncr5380=io_port,IRQ,dma 
+		ncr53c400=io_port,IRQ
+		ncr5380 io=io_port irq=IRQ dma=dma
+		ncr53c400 io=io_port irq=IRQ</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>GDT ISA/EISA/PCI Disk Array Controller</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>gdth.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>gdth=IRQ0,IRQ1,IRQ2,&#8230; options:values</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>IOMEGA MatchMaker parallel port SCSI adapter</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>imm.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Always IN2000 ISA SCSI card</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>in2000.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>in2000=setup_string:value 
+		in2000 setup_string=value</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Initio INI-9X00U/UW SCSI host adapters</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>initio.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>AMI MegaRAID 418, 428, 438, 466, 762</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>megaraid.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>NCR SCSI controllers with 810/810A/815/
+		825/825A/860/875/876/895 chipsets</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>ncr53c8xx.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>ncr53c8xx=option1:value1,option2:value2,&#8230;
+		ncr53c8xx="option1:value1
+		option2:value2&#8230;"</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Pro Audio Spectrum/Studio 16</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>pas16.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>pas16=port,irq</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>IOMEGA PPA3 parallel port SCSI host adapter</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>ppa.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Perceptive Solutions PSI-240I EIDE</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>psi240i.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>QLogic Fast SCSI FASXXX ISA/VLB/PCMCIA</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>qlogicfas.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>QLogic ISP2100 SCSI-FCP</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>qlogicfc.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>QLogic ISP1020 Intelligent SCSI cards
+		IQ-PCI, IQ-PCI-10, IQ-PCI-D</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>qlogicisp.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Seagate ST01/ST02</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>seagate.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>controller_type=1 base_address=base_addr
+	      irq=irq</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Future Domain TMC-885, TMC-950</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>seagate.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>controller_type=2 base_address=base_addr
+	      irq=irq</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Cards with the sym53c416 chipset</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>sym53c416.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>sym53c416=PORTBASE[,IRQ]
+		sym53c416 io=PORTBASE irq=IRQ</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Trantor T128/T128F/T228 SCSI Host Adapter</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>t128.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Tekram DC390 and other AMD53C974A
+		based PCI SCSI adapters</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>tmscsim.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>tmscsim=ID,SPEED</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>UltraStor 14F/34F SCSI host adapters
+		(14F, 24F, 34F)</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>u14-34f.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>u14-34f=io_port1,io_port2,&#8230; io_port10
+		u14-34f
+		io_port=io_port1,io_port2, &#8230; io_port10</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>UltraStor 14F, 24F, and 34F</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>ultrastor.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>WD7000-FASST2,WD7000-ASC,
+		WD7000-AX/MX/EX</TD
+><TD
+WIDTH="29%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="FILENAME"
+>wd7000.o</TT
+></TD
+><TD
+WIDTH="35%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>wd7000=IRQ,dma,io_port
+		wd7000 io=io_port irq=IRQ dma=dma
+	      </TD
+></TR
+></TABLE
+></DIV
+><P
+>	Here are some examples of these modules in use:
+      </P
+><DIV
+CLASS="TABLE"
+><A
+NAME="TB-MODULES-SCSIEXAMPLES"
+></A
+><P
+><B
+>Table A-4. SCSI Parameters Configuration Examples</B
+></P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+CELLSPACING="0"
+CELLPADDING="4"
+CLASS="CALSTABLE"
+><TR
+><TH
+ALIGN="LEFT"
+VALIGN="TOP"
+>Configuration</TH
+><TH
+ALIGN="LEFT"
+VALIGN="TOP"
+>Example</TH
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Adaptec AHA1522 at port 330, IRQ 11, SCSI ID 7</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>aha152x=0x330,11,7</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Adaptec AHA1542 at port 330</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>bases=0x330</TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>Future Domain TMC-800 at CA000, IRQ 10</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+>controller_type=2 base_address=0xca000 irq=10</TD
+></TR
+></TABLE
+></DIV
+><P
+>	When a parameter has commas, make sure you do <I
+CLASS="EMPHASIS"
+>not</I
+>
+	put a space after a comma.
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-modules-cdromparameters.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-modules-ethernet.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>CD-ROM Module Parameters</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-modules.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Ethernet parameters</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-modules-scsi.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

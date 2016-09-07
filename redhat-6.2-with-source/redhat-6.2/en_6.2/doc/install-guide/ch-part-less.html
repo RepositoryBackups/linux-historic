@@ -1,0 +1,292 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/ch-part-less.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:48:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Installing Without Partitioning</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="PREVIOUS"
+TITLE="Support Frequently Asked Questions (FAQ)"
+HREF="s1-supfaq-supportfaq.html"><LINK
+REL="NEXT"
+TITLE="Performing a Partitionless Installation"
+HREF="s1-part-less-installation.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Installation Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-supfaq-supportfaq.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-part-less-installation.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="APPENDIX"
+><H1
+><A
+NAME="CH-PART-LESS"
+>Appendix B. Installing Without Partitioning</A
+></H1
+><P
+>    This chapter explains how to install Red Hat Linux 6.2 without creating Linux
+    partitions on your system.
+  </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>      Although this is a great way to explore the world of Red Hat Linux without having
+      to put Linux partitions on your system, please note that you will still
+      have to perform a full Red Hat Linux installation as outlined in this manual.
+    </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>      <I
+CLASS="EMPHASIS"
+>You must currently have a formatted DOS (FAT) filesystem in
+	order to perform this type of installation.</I
+> Users who have
+	Win95/98 should have no problems with this type of installation. Users
+	who have NTFS partitions (such as those using Windows NT) will have to
+	create and format a DOS (FAT) filesystem before this installation can be
+	performed. This installation will not work unless the DOS (FAT)
+	filesystem has been formatted prior starting the Red Hat Linux installation.
+    </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-PART-LESS-WHY"
+>The Ups and Downs of a Partitionless Installation</A
+></H1
+><P
+>      There may be reasons why you might want to perform a
+      partitionless installation, but there also are some drawbacks (depending on
+      how you look at them).
+    </P
+><P
+>      Here we will cover the basics of what will happen, both during an
+      installation and as a result of this type of installation, and how
+      your system will be affected.
+    </P
+><P
+></P
+><DL
+><DT
+>Basic Installation</DT
+><DD
+><P
+>	    You will perform a basic Red Hat Linux installation. However, instead of
+	    adding Linux partitions to your system, you will edit an existing,
+	    formatted DOS (FAT) partition (that must have enough free space) to be
+	    named root (/).
+	  </P
+><P
+>	    Unlike a typical Red Hat Linux installation, you will not need to format any
+	    partitions, since you will not be adding any partitions to your
+	    system.
+	  </P
+></DD
+><DT
+>LILO (<I
+CLASS="EMPHASIS"
+>LI</I
+>nux <I
+CLASS="EMPHASIS"
+>LO</I
+>ader) and
+	  Boot Disk</DT
+><DD
+><P
+>	    In a partitionless installation, you will not configure LILO (the
+	    LInux LOader). In a typical installation, you are able to choose
+	    where you would like LILO to be installed -- either on the master
+	    boot record (MBR) or on the first sector of your root partition --
+	    or you can choose not to install LILO at all.
+	  </P
+><P
+>	    You must create a boot disk in order to access Red Hat Linux with a
+	    partitionless installation, and you will be prompted to create a boot
+	    disk at the end of the installation. 
+	  </P
+></DD
+><DT
+>Performance Implications</DT
+><DD
+><P
+>	    Red Hat Linux will perform slower than it would if it had its own dedicated
+	    partitions. However, for those of you unconcerned with speed, a
+	    partitionless installation is a great way of seeing what Red Hat Linux has
+	    to offer without having to deal with partitioning your system.
+	  </P
+></DD
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-supfaq-supportfaq.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-part-less-installation.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Support Frequently Asked Questions (FAQ)</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Performing a Partitionless Installation</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/ch-part-less.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:48:02 GMT -->
+</HTML
+>

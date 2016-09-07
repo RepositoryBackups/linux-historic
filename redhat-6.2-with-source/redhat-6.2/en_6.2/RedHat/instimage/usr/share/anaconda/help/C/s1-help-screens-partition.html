@@ -1,0 +1,352 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/C/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Partitions</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.52"><LINK
+REL="HOME"
+TITLE="Install Help Screens"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="Automatic Partitioning"
+HREF="s1-help-screens-svr.html"><LINK
+REL="NEXT"
+TITLE="Filesystem Configuration"
+HREF="s1-help-screens-loopback.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-PARTITION"
+>Partitions</A
+></H1
+><P
+>	Where do you want to install Red Hat Linux?
+      </P
+><P
+>	<B
+CLASS="COMMAND"
+>Please note:</B
+> If you are performing a
+	<B
+CLASS="COMMAND"
+>Partitionless Installation</B
+> you will need to define an
+	existing DOS/Windows partition as root, shown as
+	<B
+CLASS="COMMAND"
+>/</B
+>. Click on the FAT partition you want to select for
+	this installation. Once it is highlighted, click
+	<I
+CLASS="GUILABEL"
+>Edit</I
+> to assign it the mount point of
+	<B
+CLASS="COMMAND"
+>/</B
+> (root). Click <I
+CLASS="GUILABEL"
+>Ok</I
+> when you're
+	done. Once you have confirmed this choice, you will need to define the
+	appropriate amount of root filesystem and swap space for your system.
+      </P
+><P
+>	For more detailed instructions, you must refer to the chapter
+	<I
+CLASS="EMPHASIS"
+>Installing Without Partitioning</I
+> in the
+	<I
+CLASS="CITETITLE"
+>Red Hat Linux Installation Guide</I
+>.
+      </P
+><P
+>	If you don't know how to partition your system, please read the section
+	on partitioning in the <I
+CLASS="CITETITLE"
+>Red Hat Linux Installation Guide</I
+> or the
+	<I
+CLASS="CITETITLE"
+>Red Hat Linux Reference Guide</I
+>.
+      </P
+><P
+>	If you just finished partitioning with <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>,
+	you must define <I
+CLASS="FIRSTTERM"
+>mount points</I
+> for your
+	partitions. Use the <I
+CLASS="GUILABEL"
+>Edit</I
+> button, once you have
+	chosen a partition, to define its mount point.
+      </P
+><P
+>	If you are using <TT
+CLASS="APPLICATION"
+>Disk Druid</TT
+>, you'll have to
+	define mount points for one or more disk partitions.  You may also need
+	to create and/or delete partitions at this time.
+      </P
+><P
+>	The top screen shows your existing partitions. Each partition has five
+	fields:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Mount Point:</B
+> This field indicates where the
+	    partition will be mounted when Red Hat Linux is installed and running. If a
+	    partition exists, but is labeled as "not set" you will need to
+	    define its mount point. You can use the <B
+CLASS="KEYCAP"
+>Edit</B
+> key or
+	    double-click on the partition.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Device:</B
+> This field displays the partition's
+	    device name (for example, hda2 represents the second partition on
+	    your primary hard drive).
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Requested:</B
+> The <I
+CLASS="FIRSTTERM"
+>Requested</I
+>
+	    field shows how much space the partition has. If you want to
+	    re-define the size, you must delete the current partition and
+	    recreate it using the <B
+CLASS="KEYCAP"
+>Add</B
+> button.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Actual:</B
+> This field shows how much space the
+	    partition is using.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Type:</B
+> This field shows the partition's type (such
+	    as Linux Native or DOS).
+	  </P
+></LI
+></UL
+><P
+>	As you scroll through the <I
+CLASS="FIRSTTERM"
+>Partitions</I
+> section, you
+	might see an <I
+CLASS="FIRSTTERM"
+>Unallocated Requested Partition</I
+>
+	message (in red text), followed by one or more partitions.  A common
+	reason for having an unallocated partition is a lack of sufficient free
+	space for the partition.
+      </P
+><P
+>	To fix an unallocated requested partition, you must either move the
+	partition to another drive which has the available space, resize the
+	partition to fit on the current drive, or delete the partition
+	entirely. Make changes using the <B
+CLASS="KEYCAP"
+>Edit</B
+> button or by
+	double-clicking on the partition.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DD"
+>Partitioning Your System</A
+></H2
+><P
+>	  The center row of buttons controls the partitioning tool's actions.
+	  You can add, edit, and delete partitions here. In addition, there are
+	  buttons you can use to accept the changes you've made, or to reset and
+	  exit the partitioning tool.
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Add:</B
+> Use this button to request a new
+	      partition.  When selected, a dialog box will appear containing
+	      fields that must be filled in (such as mount point, size and
+	      type).
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Edit:</B
+> Use this button to change the mount point
+	      of a currently selected partition.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Delete:</B
+> Use this button to delete a
+	      partition. A dialog box will appear asking you to confirm the
+	      deletion.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Reset:</B
+> Use this button to cancel any changes
+	      you may have made.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Make RAID Device:</B
+> Use the <B
+CLASS="KEYCAP"
+>Make RAID
+		Device</B
+> button ONLY if you have experience using
+	      RAID. To learn more about RAID, please refer to the
+	      <I
+CLASS="CITETITLE"
+>Red Hat Linux Reference Guide</I
+>.
+	    </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DRIVE"
+>Drive Summaries</A
+></H2
+><P
+>	  This section displays your computer's disk configuration. It is only
+	  meant to provide a summary. Each line has the following fields:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Drive:</B
+> This field shows the hard drive's device
+	      name (such as hda or hdb).
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Geom [C/H/S]:</B
+> The hard drive's
+	      <I
+CLASS="FIRSTTERM"
+>geometry</I
+> shows the number of cylinders,
+	      heads and sectors.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Total:</B
+> This field shows the total available
+	      space on the hard drive.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Free:</B
+> Here you'll see how much of the hard
+	      drive's space is still available.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Used:</B
+> These fields show how much of the hard
+	      disk's space is currently allocated to partitions, in megabytes
+	      and percentage.
+	    </P
+></LI
+></UL
+></DIV
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/C/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:25 GMT -->
+</HTML
+>

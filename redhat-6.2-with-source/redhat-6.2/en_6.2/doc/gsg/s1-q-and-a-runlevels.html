@@ -1,0 +1,367 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-runlevels.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Changing Login from Console to X at Startup</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Q  A: Quick Answers to Common Questions"
+HREF="ch-q-and-a.html"><LINK
+REL="PREVIOUS"
+TITLE="Removing Red Hat Linux"
+HREF="s1-q-and-a-removing.html"><LINK
+REL="NEXT"
+TITLE="Appendixes"
+HREF="p8326.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-removing.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 15. Q &#38; A: Quick Answers to Common Questions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="p8326.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-Q-AND-A-RUNLEVELS"
+>Changing Login from Console to X at Startup</A
+></H1
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-RUNLEVELS-Q"
+>Q: Changing to Graphical Login</A
+></H2
+><P
+>         How do I change my login from the console to the graphical screen? 
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-RUNLEVELS-A"
+>A. Edit <TT
+CLASS="FILENAME"
+>/etc/inittab</TT
+></A
+></H2
+><P
+>         If you find yourself logging into your system at the console, only to
+	  type the <B
+CLASS="COMMAND"
+>startx</B
+> command to start the X Window
+	  System, changing your login from console to graphical will save you a
+	  step or two.
+	</P
+><P
+>	  You must edit one file, <TT
+CLASS="FILENAME"
+>/etc/inittab</TT
+>, by changing
+	  just one number in the <I
+CLASS="FIRSTTERM"
+>runlevel</I
+> section. When
+	  you're finished, log out and, the next time you log in, you'll have a
+	  graphical screen.
+	</P
+><P
+>          Open an Xterm window. If you're in your user account,
+          <B
+CLASS="COMMAND"
+>su</B
+> to root by typing
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="USERINPUT"
+><B
+>su</B
+></TT
+>
+<TT
+CLASS="PROMPT"
+>Password:</TT
+><TT
+CLASS="USERINPUT"
+><B
+><TT
+CLASS="REPLACEABLE"
+><I
+>yourrootpassword</I
+></TT
+></B
+></TT
+>
+	      </PRE
+></TD
+></TR
+></TABLE
+><P
+>	  Now, type <B
+CLASS="COMMAND"
+>pico /etc/inittab</B
+> to edit the file with
+	  <TT
+CLASS="APPLICATION"
+>Pico</TT
+>. The file
+	  <TT
+CLASS="FILENAME"
+>/etc/inittab</TT
+> will open. Within the first screen,
+	  you'll see a section of the file which looks like this:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+># Default runlevel. The runlevels used by RHS are:
+#   0 - halt (Do NOT set initdefault to this)
+#   1 - Single user mode
+#   2 - Multiuser, without NFS (The same as 3, if you do not have networking)
+#   3 - Full multiuser mode
+#   4 - unused
+#   5 - X11
+#   6 - reboot (Do NOT set initdefault to this)
+# 
+id:3:initdefault:
+
+	      </PRE
+></TD
+></TR
+></TABLE
+><P
+>	  To change from a console to a graphical login, you should change the
+	  number in the line <TT
+CLASS="FILENAME"
+>id:3:initdefault:</TT
+> from a
+	  <TT
+CLASS="FILENAME"
+>3</TT
+> to a <TT
+CLASS="FILENAME"
+>5</TT
+>.
+	</P
+><DIV
+CLASS="WARNING"
+><P
+></P
+><TABLE
+CLASS="WARNING"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/warning.gif"
+HSPACE="5"
+ALT="Warning"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Be careful!</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>Change <I
+CLASS="EMPHASIS"
+>only</I
+> the number of the runlevels
+	    from <TT
+CLASS="FILENAME"
+>3</TT
+> to <TT
+CLASS="FILENAME"
+>5</TT
+>.</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	  Your changed line should look like:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>id:5:initdefault:
+	      </PRE
+></TD
+></TR
+></TABLE
+><P
+>	  When you're satisfied with your change, save and exit the file by
+	  using the <B
+CLASS="KEYCAP"
+>Ctrl</B
+>-<B
+CLASS="KEYCAP"
+>X</B
+> keys. You'll see a message telling you that the file has
+	  been modified, and asking you to confirm your change. Type
+	  <B
+CLASS="KEYCAP"
+>Y</B
+> for yes. 
+	</P
+><P
+>	  When the file is closed, exit from root by typing
+	  <B
+CLASS="COMMAND"
+>exit</B
+>, and close the Xterm window by typing
+	  <B
+CLASS="COMMAND"
+>exit</B
+>.
+	</P
+><P
+> 
+	  That's it. Your next login will be from the graphical screen.
+	  </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-removing.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="p8326.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Removing Red Hat Linux</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-q-and-a.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Appendixes</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-runlevels.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+</HTML
+>

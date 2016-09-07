@@ -1,0 +1,298 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-kickstart2-file.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>The Kickstart File</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Kickstart Installations"
+HREF="ch-kickstart2.html"><LINK
+REL="PREVIOUS"
+TITLE="Starting a Kickstart Installation"
+HREF="s1-kickstart2-startinginstall.html"><LINK
+REL="NEXT"
+TITLE="Kickstart Commands"
+HREF="s1-kickstart2-commands.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-kickstart2-startinginstall.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Appendix F. Kickstart Installations</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-kickstart2-commands.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-KICKSTART2-FILE"
+>The Kickstart File</A
+></H1
+><P
+>      Now that you have some background information on kickstart installations,
+      let's take a look at the kickstart file itself.  The kickstart file is a
+      simple text file, containing a list of items, each identified by a
+      keyword.  You can create it by editing a copy of the
+      <TT
+CLASS="FILENAME"
+>sample.ks</TT
+> file found in the <TT
+CLASS="FILENAME"
+>/doc</TT
+>
+      directory of the Red Hat Linux CD-ROM, or you can create it from scratch.  You
+      should be able to edit it with any text editor or word processor that can
+      save files as ASCII text.
+    </P
+><P
+>      First, some ground rules to keep in mind while creating your kickstart
+      file:
+    </P
+><P
+></P
+><UL
+><LI
+><P
+>	  Items must be specified <I
+CLASS="EMPHASIS"
+>in order</I
+>.  It is not a
+	  good idea to try to change the order of the required items.
+	</P
+></LI
+><LI
+><P
+>	  Items that aren't required can be omitted.
+	</P
+></LI
+><LI
+><P
+>	  Omitting any required item will result in the installation program
+	  prompting the user for an answer to the related item, just as during a
+	  typical installation.  Once the answer is given the installation will
+	  continue unattended (unless it comes across another missing item).
+	</P
+></LI
+><LI
+><P
+>	  Lines starting with a pound sign ("#") are treated as comments, and
+	  are ignored.
+	</P
+></LI
+><LI
+><P
+>	  For kickstart <I
+CLASS="EMPHASIS"
+>upgrades</I
+>, the following items are
+	  required:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      language
+	    </P
+></LI
+><LI
+><P
+>	      installation method
+	    </P
+></LI
+><LI
+><P
+>	      device specification (if device is needed to perform
+	      installation)
+	    </P
+></LI
+><LI
+><P
+>	      keyboard setup
+	    </P
+></LI
+><LI
+><P
+>	      the <B
+CLASS="COMMAND"
+>upgrade</B
+> keyword
+	    </P
+></LI
+><LI
+><P
+>	      LILO configuration
+	    </P
+></LI
+></UL
+><P
+>	  If any other items are specified for an upgrade, those items will be
+	  ignored (note that this includes package selection).
+	</P
+></LI
+><LI
+><P
+>	  Kickstart files are split into three sections: commands, package list,
+	  and scripts. The file must be of the form:
+	  <P
+></P
+><UL
+><LI
+><P
+>		<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;kickstart commands&#62;</I
+></TT
+>
+	      </P
+></LI
+><LI
+><P
+>		%packages
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;package list&#62;</I
+></TT
+>
+	      </P
+></LI
+><LI
+><P
+>		%post
+	      </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;post script&#62;</I
+></TT
+>
+	      </P
+></LI
+></UL
+>
+	</P
+></LI
+></UL
+><P
+>      The order matters; it can't be random. The post section goes to the end of
+      the file and ends the file, no marker is necessary to end the file other
+      than the post section itself.
+    </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-kickstart2-startinginstall.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-kickstart2-commands.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Starting a Kickstart Installation</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-kickstart2.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Kickstart Commands</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-kickstart2-file.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

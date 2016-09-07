@@ -1,0 +1,286 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-ls-scrolling.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Keep ls Output from Scrolling</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Q  A: Quick Answers to Common Questions"
+HREF="ch-q-and-a.html"><LINK
+REL="PREVIOUS"
+TITLE="Find Some Commands Fast"
+HREF="s1-q-and-a-history.html"><LINK
+REL="NEXT"
+TITLE="Tips on Using Command History"
+HREF="s1-q-and-a-history-tips.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-history.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 15. Q &#38; A: Quick Answers to Common Questions</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-q-and-a-history-tips.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-Q-AND-A-LS-SCROLLING"
+>Keep <B
+CLASS="COMMAND"
+>ls</B
+> Output from Scrolling</A
+></H1
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-LS-SCROLLING-Q"
+>Q: When <B
+CLASS="COMMAND"
+>ls</B
+> Output Scrolls Off the Screen</A
+></H2
+><P
+>          Whenever I type <B
+CLASS="COMMAND"
+>ls</B
+> I can barely see the output of
+          the directory because it scrolls by too quickly. How can I actually
+          read the output?
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-Q-AND-A-LS-SCROLLING-A"
+>A: "Piping" the Output of <B
+CLASS="COMMAND"
+>ls</B
+></A
+></H2
+><P
+>          You can prevent the output of <B
+CLASS="COMMAND"
+>ls</B
+> from scrolling by
+          too quickly by <I
+CLASS="FIRSTTERM"
+>piping</I
+> the output to a pager,
+          such as <B
+CLASS="COMMAND"
+>less</B
+> or <B
+CLASS="COMMAND"
+>more</B
+>. The
+          results are akin to the DOS command <B
+CLASS="COMMAND"
+>dir
+          <TT
+CLASS="REPLACEABLE"
+><I
+>somedirectory</I
+></TT
+> /p</B
+>, because you'll
+          see the output one screen, or "page" at at time.
+        </P
+><P
+>          To read the output of <TT
+CLASS="FILENAME"
+>/etc</TT
+> with
+          <B
+CLASS="COMMAND"
+>less</B
+>, for example, at the shell prompt, type:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="USERINPUT"
+><B
+>ls -al /etc | less</B
+></TT
+>
+          </PRE
+></TD
+></TR
+></TABLE
+><P
+>          To move forward a screen, press <B
+CLASS="KEYCAP"
+>Space</B
+>; to move back a
+          screen, press the <B
+CLASS="KEYCAP"
+>B</B
+> key; to quit, press
+          <B
+CLASS="KEYCAP"
+>Q</B
+>.
+        </P
+><P
+>          You can achieve the same results with <B
+CLASS="COMMAND"
+>more</B
+>, another
+          pager.
+        </P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-Q-AND-A-LS-SCROLLING-PRINT"
+>Printing Output of <B
+CLASS="COMMAND"
+>ls</B
+></A
+></H3
+><P
+>            You can also print the directory by piping the output to a printer
+            in the same way that you piped the output to your screen. Assuming
+            you've configured a printer, to pipe the output type:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="USERINPUT"
+><B
+>ls -al /etc | lpr</B
+></TT
+>
+		</PRE
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-history.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-q-and-a-history-tips.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Find Some Commands Fast</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-q-and-a.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Tips on Using Command History</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-q-and-a-ls-scrolling.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:32 GMT -->
+</HTML
+>

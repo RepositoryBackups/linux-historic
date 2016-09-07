@@ -1,0 +1,359 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/s1-cd-rom-gui-fdisk.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:48:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Partitioning with fdisk</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Installing Red Hat Linux 6.2"
+HREF="ch-cd-rom-gui.html"><LINK
+REL="PREVIOUS"
+TITLE="Installing Red Hat Linux 6.2"
+HREF="ch-cd-rom-gui.html"><LINK
+REL="NEXT"
+TITLE="Automatic Partitioning"
+HREF="s1-cd-rom-gui-autopart.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Installation Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-cd-rom-gui.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 4. Installing Red Hat Linux 6.2</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-cd-rom-gui-autopart.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-CD-ROM-GUI-FDISK"
+>Partitioning with <TT
+CLASS="APPLICATION"
+>fdisk</TT
+></A
+></H1
+><DIV
+CLASS="CAUTION"
+><P
+></P
+><TABLE
+CLASS="CAUTION"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/caution.gif"
+HSPACE="5"
+ALT="Caution"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Caution</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  Unless you have previously used <TT
+CLASS="APPLICATION"
+>fdisk</TT
+> and
+	  understand how it works, we do not recommend that you use
+	  it. <TT
+CLASS="APPLICATION"
+>Disk Druid</TT
+> is an easier and friendlier
+	  partitioning tool for those new to partitioning their system. To exit
+	  <TT
+CLASS="APPLICATION"
+>fdisk</TT
+> click <TT
+CLASS="GUILABEL"
+><B
+>Back</B
+></TT
+> to
+	  return to the previous screen, deselect
+	  <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>, and then click
+	  <TT
+CLASS="GUILABEL"
+><B
+>Next</B
+></TT
+>.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	This section applies only if you chose to use
+	<TT
+CLASS="APPLICATION"
+>fdisk</TT
+> to partition your system. If are not
+	using <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>, please skip to <A
+HREF="s1-cd-rom-gui-autopart.html"
+>the section called <I
+>Automatic Partitioning</I
+></A
+> for automatic partitioning or <A
+HREF="s1-cd-rom-gui-partitioning.html"
+>the section called <I
+>Partitioning Your System</I
+></A
+> for partitioning with
+	<TT
+CLASS="APPLICATION"
+>Disk Druid</TT
+>.
+      </P
+><P
+>	If you have chosen to use <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>, the next
+	screen (see <A
+HREF="s1-cd-rom-gui-fdisk.html#GR-CD-ROM-GUI-FIG-FDISK"
+>Figure 4-1</A
+>) will prompt you to
+	select a drive to partition using <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-CD-ROM-GUI-FIG-FDISK"
+></A
+><P
+><IMG
+SRC="figs/cd-rom-gui/fdisk.gif"></P
+><P
+><B
+>Figure 4-1. <TT
+CLASS="APPLICATION"
+>fdisk</TT
+></B
+></P
+></DIV
+><P
+>	Once you have chosen which drive to partition, you will be presented
+	with the <TT
+CLASS="APPLICATION"
+>fdisk</TT
+> command screen (see <A
+HREF="s1-cd-rom-gui-fdisk.html#GR-CD-ROM-GUI-FIG-FDISK-PART"
+>Figure 4-2</A
+>). If you are unsure as to what
+	command you should use, type <B
+CLASS="KEYCAP"
+>m</B
+> at the prompt for
+	help. Please refer to the <I
+CLASS="CITETITLE"
+>Official Red Hat Linux Reference Guide</I
+> for an overview
+	of <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>. When you've finished making
+	partitions, type <B
+CLASS="COMMAND"
+>w</B
+> to save your changes and quit. You
+	will be taken back to the original <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>
+	screen where you can choose to partition another drive or continue with
+	your installation.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-CD-ROM-GUI-FIG-FDISK-PART"
+></A
+><P
+><IMG
+SRC="figs/cd-rom-gui/fdisk-part.gif"></P
+><P
+><B
+>Figure 4-2. Partitioning with <TT
+CLASS="APPLICATION"
+>fdisk</TT
+></B
+></P
+></DIV
+><P
+>	After you have partitioned your drive(s), click
+	<B
+CLASS="GUIBUTTON"
+>Next</B
+>.  You will then use <TT
+CLASS="APPLICATION"
+>Disk
+	Druid</TT
+> to assign <I
+CLASS="FIRSTTERM"
+>mount points</I
+> to
+	your partitions.
+      </P
+><P
+>	You will not be able to add new partitions using <TT
+CLASS="APPLICATION"
+>Disk
+	Druid</TT
+>, but you will be able to edit those you have already
+	created.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-CD-ROM-GUI-FIG-DD-FDISK"
+></A
+><P
+><IMG
+SRC="figs/cd-rom-gui/dd-fdisk.gif"></P
+><P
+><B
+>Figure 4-3. Editing with <TT
+CLASS="APPLICATION"
+>Disk Druid</TT
+></B
+></P
+></DIV
+><P
+>	Skip to <A
+HREF="s1-cd-rom-gui-part-format.html"
+>the section called <I
+>Choose Partitions to Format</I
+></A
+> for further
+	installation instructions.
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-cd-rom-gui.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-cd-rom-gui-autopart.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Installing Red Hat Linux 6.2</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-cd-rom-gui.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Automatic Partitioning</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/install-guide/s1-cd-rom-gui-fdisk.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:49:55 GMT -->
+</HTML
+>

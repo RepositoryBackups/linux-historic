@@ -1,0 +1,25 @@
+* in startPcmcia()
+* pcmcia probe returned: |PCI bridge probe: not found.
+Intel PCIC probe: not found.
+Databook TCIC-2 probe: not found.
+|
+* no pcic controller found
+* probing buses
+* finished bus probing
+* found suggestion of eepro100
+* found eepro100 device
+* found suggestion of old_tulip
+* found old_tulip device
+* found suggestion of aic7xxx
+* found aic7xxx device
+* found suggestion of aic7xxx
+* found aic7xxx device
+* found suggestion of aic7xxx
+* found aic7xxx device
+* found suggestion of aic7xxx
+* found aic7xxx device
+* found suggestion of aic7xxx
+* found aic7xxx device
+* found suggestion of Server:Mach64
+* found devices justProbe is 0
+* would have insmod old_tulip.o

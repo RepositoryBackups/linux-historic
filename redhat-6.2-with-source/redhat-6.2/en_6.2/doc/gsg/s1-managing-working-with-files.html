@@ -1,0 +1,974 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-managing-working-with-files.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Copying, Moving and Renaming Files and Directories</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Working with Files and Directories"
+HREF="ch-shellmanage.html"><LINK
+REL="PREVIOUS"
+TITLE="Identifying and Working with File Types"
+HREF="s1-managing-file-types.html"><LINK
+REL="NEXT"
+TITLE="Q & A"
+HREF="p7405.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-managing-file-types.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 14. Working with Files and Directories</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="p7405.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-MANAGING-WORKING-WITH-FILES"
+>Copying, Moving and Renaming Files and Directories</A
+></H1
+><P
+>        By now, you've learned a little about the structure of the filesystem;
+        and you've learned how to create files and directories.
+      </P
+><P
+>        But just because you know how to create files and directories doesn't
+        mean that you're stuck with the changes you've made. What if you want to
+        rename and/or move files and directories?
+      </P
+><P
+>        Let's start with the copy command.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-MANAGING-COPY"
+>Copying Files</A
+></H2
+><P
+>          Like so many Linux features, you have a variety of options from which
+          to choose when you want to manipulate files and directories. You can
+          also use wildcards when you're copying, moving, or deleting files and
+          directories.
+        </P
+><P
+>          Basically, the copy command is not much more complex than typing:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cp <TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>&#60;source&#62;</I
+></TT
+></TT
+> <TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>&#60;destination&#62;</I
+></TT
+></TT
+></B
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>          so to copy the file <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+> to the directory
+          <TT
+CLASS="FILENAME"
+>tigger</TT
+> in your login directory, just type:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cp sneakers.txt tigger</B
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>          Notice that you also used relative pathnames to copy the file. You can
+          use both relative and absolute pathnames with <B
+CLASS="COMMAND"
+>cp</B
+>.
+          Our login directory is the parent of the directory
+          <TT
+CLASS="FILENAME"
+>tigger</TT
+>; meaning that <TT
+CLASS="FILENAME"
+>tigger</TT
+>
+          is one directory down from ours.
+        </P
+><P
+>          Read the <B
+CLASS="COMMAND"
+>cp</B
+> man page (<B
+CLASS="COMMAND"
+>man cp</B
+>)
+          for a full list of the options available with
+          <B
+CLASS="COMMAND"
+>cp</B
+>. But among the options you can use with
+          <B
+CLASS="COMMAND"
+>cp</B
+> are:
+        </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <B
+CLASS="COMMAND"
+>-i</B
+> -- interactive. Prompts you to confirm if
+              the file is going to overwrite a file in your destination. This is
+              a handy option because it can help prevent you from making
+              mistakes.
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <B
+CLASS="COMMAND"
+>-r</B
+> -- recursive. Rather than just copying all
+              the files and directories, copies the whole directory tree,
+              subdirectories and all, to another location.
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <B
+CLASS="COMMAND"
+>-f</B
+> -- force. Copies without prompting you for
+              confirmation that the file should be overwritten. Unless you're
+              sure you want to force the copy, you probably don't want to make
+              friends with this option right now.
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <B
+CLASS="COMMAND"
+>-v</B
+> - verbose. Will show the progress of the
+              files being copied.
+            </P
+></LI
+></UL
+><P
+>          Just by using <B
+CLASS="COMMAND"
+>cp</B
+> alone, you won't see much when the
+          command is executed. Using an option, such as <B
+CLASS="COMMAND"
+>-i</B
+>,
+          can make the process a little more useful, because if you want to copy
+          a file to a location that already has a file with the same name,
+          you'll be asked first if you really want to overwrite -- meaning
+          replace -- the file that's already there.
+        </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Don't be too "forceful"</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>            Remember that among your options is <B
+CLASS="COMMAND"
+>-f</B
+> (force),
+            which can overwrite files without asking you if you're certain. Make
+            sure, when you use the force option, that you
+            <I
+CLASS="EMPHASIS"
+>really</I
+> want to overwrite a file.
+          </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>          Now that we have the file <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+> in the
+          <TT
+CLASS="FILENAME"
+>tigger</TT
+> directory, let's use <B
+CLASS="COMMAND"
+>cp
+          -i</B
+> to copy the file again to the same location.
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$ </TT
+><TT
+CLASS="USERINPUT"
+><B
+>cp -i sneakers.txt tigger</B
+></TT
+>
+<TT
+CLASS="PROMPT"
+>cp: overwrite 'tigger/sneakers.txt'?</TT
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>          To overwrite the file that's already there, press
+          <B
+CLASS="KEYCAP"
+>Y</B
+> and then <B
+CLASS="KEYCAP"
+>Enter</B
+>. Don't want to
+          overwrite the file? Now is the time to press
+          <B
+CLASS="KEYCAP"
+>N</B
+> and <B
+CLASS="KEYCAP"
+>Enter</B
+>.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-MANAGING-MOVING"
+>Moving Files</A
+></H2
+><P
+>          To move files, use the <B
+CLASS="COMMAND"
+>mv</B
+> command (<B
+CLASS="COMMAND"
+>man
+          mv</B
+>), which is similar to the <B
+CLASS="COMMAND"
+>cp</B
+> command,
+          except that with <B
+CLASS="COMMAND"
+>mv</B
+> the file is physically moved
+          from one place to another, instead of being duplicated, as with
+          <B
+CLASS="COMMAND"
+>cp</B
+>.
+        </P
+><P
+>          Common options available with <B
+CLASS="COMMAND"
+>mv</B
+> include:
+        </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <B
+CLASS="COMMAND"
+>-i</B
+> -- interactive. Will prompt you if the file
+              you've selected will overwrite an existing file in the destination
+              directory.  This is a good option, because like the
+              <B
+CLASS="COMMAND"
+>-i</B
+> option in <B
+CLASS="COMMAND"
+>cp</B
+>, you'll be
+              given the chance to make sure you want to replace an existing
+              file.
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <B
+CLASS="COMMAND"
+>-f</B
+> -- force. Overrides the interactive mode and
+              moves without prompting. Unless you know what you're doing, this
+              option doesn't play nice; be very careful about using it until you
+              become more comfortable with your system.
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <B
+CLASS="COMMAND"
+>-v</B
+> -- verbose. Shows a list of the files being
+              moved.
+            </P
+></LI
+></UL
+><P
+>          If you want to move a file out of your home directory and into another
+          directory, you would type:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>mv sneakers.txt tigger</B
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>          or, <B
+CLASS="COMMAND"
+>mv sneakers.txt /home/newuser /home/newuser/tigger</B
+>
+          using absolute pathnames.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-MANAGING-"
+>Renaming Files</A
+></H2
+><P
+>          Actually, we've already covered half of renaming, because when you
+          copy or move files, you can also rename.
+        </P
+><P
+>          To copy the file <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+> from our login
+          directory to our <TT
+CLASS="FILENAME"
+>tigger</TT
+> subdirectory, just type:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cp sneakers.txt tigger</B
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>          To copy and rename that file from <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+> to
+          <TT
+CLASS="FILENAME"
+>piglet.txt</TT
+>, type:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cp sneakers.txt tigger/piglet.txt</B
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>          To <I
+CLASS="EMPHASIS"
+>move</I
+> and rename the file, just substitute
+          <B
+CLASS="COMMAND"
+>mv</B
+> for <B
+CLASS="COMMAND"
+>cp</B
+> in the above example.
+        </P
+><P
+>          If you <B
+CLASS="COMMAND"
+>cd</B
+> to <TT
+CLASS="FILENAME"
+>tigger</TT
+> and use
+          <B
+CLASS="COMMAND"
+>ls</B
+>, you'll see the file
+          <B
+CLASS="COMMAND"
+>piglet.txt</B
+>.
+        </P
+><P
+>          If you just want to rename the file and keep its location, just
+          <B
+CLASS="COMMAND"
+>mv</B
+> in your current directory:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>mv  sneakers.txt piglet.txt</B
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-MANAGING-DELETING"
+>Deleting Files and Directories</A
+></H2
+><P
+>          We talked about creating files with the <B
+CLASS="COMMAND"
+>touch</B
+>
+          command and by using redirection in <A
+HREF="ch-navigating.html"
+>Chapter 13</A
+>. And we created the directory
+          <TT
+CLASS="FILENAME"
+>tigger</TT
+> using <B
+CLASS="COMMAND"
+>mkdir</B
+>.
+        </P
+><P
+>          But we haven't discussed how to delete files and directories.
+        </P
+><P
+>          Deleting files and directories with the <B
+CLASS="COMMAND"
+>rm</B
+> command
+          (<B
+CLASS="COMMAND"
+>man rm</B
+>) is a straightforward process.
+        </P
+><P
+>          Let's take our new file <TT
+CLASS="FILENAME"
+>piglet.txt</TT
+>, and delete it
+          from the <TT
+CLASS="FILENAME"
+>tigger</TT
+> directory with the
+          <B
+CLASS="COMMAND"
+>rm</B
+> command:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>rm piglet.txt</B
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>          What happens if we didn't really want to get rid of it? Too late!
+          Again, that's where the <B
+CLASS="COMMAND"
+>-i</B
+> (interactive) option
+          comes in handy, because it gives a second chance to think about
+          whether we really want to toss the file.
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$ </TT
+><TT
+CLASS="USERINPUT"
+><B
+>rm -i piglet.txt</B
+></TT
+>
+<TT
+CLASS="PROMPT"
+>rm: remove 'piglet.txt'?</TT
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>          You can also delete files using the wildcard <B
+CLASS="COMMAND"
+>*</B
+>, but
+          be careful, because you can easily delete files you didn't intend to
+          throw away.
+        </P
+><P
+>          To remove a file using a wildcard, you would type:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>rm pig*</B
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>          You can also remove more than one file in one command, as in:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>rm piglet.txt sneakers.txt</B
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>          Options for removing files -- and directories -- include:
+        </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <B
+CLASS="COMMAND"
+>-i</B
+> -- interactive. Prompts you to confirm the
+              deletion. This is good.
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <B
+CLASS="COMMAND"
+>-f</B
+> -- force. Overrides interactive mode and
+              removes the file(s) without prompting. This might not be good,
+              unless you know exactly what you're doing.
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <B
+CLASS="COMMAND"
+>-v</B
+> -- verbose. Shows a listing of files as
+              they're being removed.
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <B
+CLASS="COMMAND"
+>-r</B
+> -- recursive. When removing directories,
+              will remove all of the files and the subdirectories of the
+              specified directory. This can also get rid of an empty directory.
+            </P
+></LI
+></UL
+><P
+>          To remove directories with <B
+CLASS="COMMAND"
+>rm</B
+>, you must specify the
+          <B
+CLASS="COMMAND"
+>-r</B
+> option.
+        </P
+><P
+>          For example, if you want to recursively remove the directory
+          <B
+CLASS="COMMAND"
+>tigger</B
+> you would type:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>rm -r tigger</B
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>          And if you want to combine options, such as forcing a recursive
+          deletion, you can type:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>rm -rf tigger</B
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="CAUTION"
+><P
+></P
+><TABLE
+CLASS="CAUTION"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/caution.gif"
+HSPACE="5"
+ALT="Caution"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Be careful!</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>            The <B
+CLASS="COMMAND"
+>rm</B
+> is a powerful command, and can delete your
+            entire system! If you're root and you type the simple command
+            <B
+CLASS="COMMAND"
+>rm -rf /</B
+> you're sunk -- like a snake eating its
+            tail, the command will recursively remove everything on your system.
+          </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>          A safer alternative to using <B
+CLASS="COMMAND"
+>rm</B
+> for removing
+          directories is the <B
+CLASS="COMMAND"
+>rmdir</B
+> command. With this
+          command, you won't be allowed to use recursive deletions, so a
+          directory which has files in it won't be deleted.
+        </P
+><P
+>          Read the <B
+CLASS="COMMAND"
+>rmdir</B
+> man page by typing <B
+CLASS="COMMAND"
+>man
+          rmdir</B
+> to find out more about the command.
+        </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-managing-file-types.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="p7405.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Identifying and Working with File Types</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-shellmanage.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Q &#38; A</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-managing-working-with-files.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:01 GMT -->
+</HTML
+>

@@ -1,0 +1,112 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/C/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>SILO Configuration</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.52"><LINK
+REL="HOME"
+TITLE="Install Help Screens"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="LILO Configuration"
+HREF="s1-help-screens-lilo.html"><LINK
+REL="NEXT"
+TITLE="Network Configuration"
+HREF="s1-help-screens-netconf.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-SILO"
+>SILO Configuration</A
+></H1
+><P
+>        SILO, the Sparc Improved LOader, is the software that can be
+        used to start Red Hat Linux on your computer. It can also
+        start other operating systems, such as SunOS and
+        Solaris. Here, you'll be asked how (or whether) you want to
+        configure SILO.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Create boot disk</B
+>: You should create a
+        boot disk if you are not installing SILO at all or if you want
+        it for safety reasons.  If you don't have a floppy this option
+        will be hidden, if you have a SMCC manufactured Ultra which
+        usually don't have floppies which can be booted, this option
+        will default to disabled.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Do not install SILO</B
+>: You can choose to
+        skip SILO if you do not want to write SILO to your drive,
+        e.g. if you have SILO already installed on a different
+        partition or disk and want to boot from there.
+      </P
+><P
+>        To install SILO, select where you want to install it. If your
+        system will use only Red Hat Linux you should probably choose
+        the Master Boot Record (Boot Block of the first partition on
+        the disk). For systems where SunOS/Solaris and Red Hat Linux
+        will reside on a single hard drive, you should probably not
+        install SILO into the MBR, especially if SunOS/Solaris is on
+        the first partition of the disk.
+      </P
+><P
+>        If you choose not to install SILO for ANY reason, please make
+        a boot disk so you can boot Red Hat Linux.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Create PROM alias</B
+>: The installer can
+        create a PROM alias "linux" if the PROM supports it, so that
+        you can boot into the SILO boot loader from the PROM command
+        line by the command "boot linux".
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Set default PROM boot device</B
+>: The
+        installer can make sure the PROM will boot by default into the
+        Red Hat Linux installer by setting PROM option "boot-device"
+        or "boot-from".
+      </P
+><P
+>       If you wish to add default options to the SILO boot command, enter them
+       into the kernel parameters field.  Any options you enter will be passed
+       to the Linux kernel every time it boots.
+      </P
+><P
+>       Bootable Partition -- Every bootable partition is listed and labeled,
+       including partitions used by other operating systems. If you would like
+       to add boot labels for other partitions (or change existing boot
+       labels), click once on the partition to select it. Once selected, you
+       can change the boot label.
+      </P
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/C/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:20 GMT -->
+</HTML
+>

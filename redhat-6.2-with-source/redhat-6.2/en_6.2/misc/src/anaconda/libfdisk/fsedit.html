@@ -1,0 +1,120 @@
+#!/usr/bin/python
+
+import sys
+sys.path.append('../isys')
+sys.path.append('../kudzu')
+import os
+import kudzu
+import isys
+
+if len (sys.argv) < 2:
+    print "specify a mode"
+    sys.exit (1)
+
+drives = [ 'hda' ]
+    
+if sys.argv[1] == "gnome":
+    from gnomepyfsedit import fsedit
+
+    sys.argv.remove ("gnome")
+    from gtk import *
+    from gnome.ui import *
+    
+    win = GtkWindow()
+    vbox = GtkVBox (FALSE, 10)
+    bbox = GtkHButtonBox ()
+
+    prevButtonStock = GnomeStockButton (STOCK_BUTTON_PREV)
+    nextButtonStock = GnomeStockButton (STOCK_BUTTON_NEXT)
+
+    bbox.add (prevButtonStock)
+    bbox.add (nextButtonStock)
+
+    vbox.pack_end (bbox, FALSE)
+    
+    frame = GtkFrame (label = "Uber Kool Disk Partitioner")
+
+    ddruid = fsedit(1, drives, [])
+
+#    attempt = [
+#        ( "/boot",      16,     0x83, 0, -1 ),
+#        ( "/",          256,    0x83, 0, -1 ),
+#        ( "/usr",       512,    0x83, 1, -1 ),
+#        ( "/var",       256,    0x83, 0, -1 ),
+#        ( "/home",      512,    0x83, 1, -1 ),
+#        ( "Swap-auto",  64,     0x82,   0, -1 ),
+#        ]
+
+#    ddruid.attempt (attempt, "Neat-o magic", 4)
+
+    def back (window, ddruid):
+        print "back"
+        ddruid.back ()
+
+    def forward (window, ddruid):
+        print "next"
+        ddruid.next ()
+	mainquit()
+        
+    prevButtonStock.connect ("clicked", back, ddruid)
+    nextButtonStock.connect ("clicked", forward, ddruid)
+
+    def enableCallback (foo, value):
+        print "enableCallback", value
+    
+    ddruid.setCallback (enableCallback, None)
+    
+    bin = GtkFrame (label = "", _obj = ddruid.getWindow ())
+
+    vbox.pack_end (bin, FALSE)
+
+    frame.add (vbox)
+    win.add (frame)
+    win.show_all ()
+
+    win.set_position (WIN_POS_CENTER)
+        
+    ddruid.edit ()
+
+    mainloop ()
+
+#    ddruid.save ()
+
+#    confirm = ddruid.getConfirm ()
+#    if confirm:
+#        win = GtkWindow()
+#        bin = GtkFrame (label = "", _obj = confirm)
+#
+#        win.add (bin)
+#        win.show_all ()
+#        mainloop ()
+
+
+elif sys.argv[1] == "newt":
+    import snack
+    from newtpyfsedit import fsedit
+
+    screen = snack.SnackScreen()
+
+    ddruid = fsedit(1, drives, [])
+    ddruid.edit ()
+#    ddruid.save ()
+
+    screen.finish()
+    del screen
+elif sys.argv[1] == "auto":
+    import snack
+    from newtpyfsedit import fsedit
+    from newtpyfsedit import CLEARALL
+    ddruid = fsedit(1, drives, [])
+
+    attempt = []
+    attempt.append(('/', 500, 0x83, 1, -1, "", 2))
+    attempt.append(('/usr', 400, 0x83, 1, -1, "", 1))
+    print ddruid.attempt(attempt, 'Junk', CLEARALL)
+
+print ddruid.partitionList()
+    
+
+
+

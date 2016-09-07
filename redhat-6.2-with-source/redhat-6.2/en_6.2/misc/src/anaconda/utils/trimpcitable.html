@@ -1,0 +1,12 @@
+#!/usr/bin/perl
+
+foreach $n (@ARGV) {
+    $n =~ s/\.o$//;
+    $mods{"\"$n\""} = $n;
+}
+
+while (<STDIN>) {
+    chop;
+    @a = split;
+    $mods{$a[2]} && print "$_\n";
+}

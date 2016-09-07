@@ -1,0 +1,15 @@
+
+
+/dev/cdrom              /mnt/cdrom              iso9660 noauto,ro       0 0
+/dev/fd0                /mnt/floppy             ext2    noauto          0 0
+/dev/md0                /mnt/redhat             ext2    defaults	1 2
+/dev/sda1               /                       ext2    defaults        1 1
+/dev/sda2               swap                    swap    defaults        0 0
+/dev/sda3               /mnt/space              ext2    defaults        1 2
+/dev/sdb4               /mnt/jaz                vfat    noauto  0 0
+devserv.devel:/home/devel /home/devel		nfs     rw,rsize=8192,wsize=8192,bg,soft,intr	0 0
+devserv.devel:/mnt/devel /mnt/devel		nfs	rw,rsize=8912,wsize=8192,bg,soft,intr	0 0
+lacrosse:/home		/home			nfs     rw,rsize=8192,wsize=8192,bg,soft,intr	0 0
+lacrosse:/usr/rhs	/usr/rhs		nfs	rw,rsize=8192,wsize=8192,bg,soft,intr	0 0
+none                    /dev/pts                devpts  mode=0622       0 0
+none                    /proc                   proc    defaults        0 0

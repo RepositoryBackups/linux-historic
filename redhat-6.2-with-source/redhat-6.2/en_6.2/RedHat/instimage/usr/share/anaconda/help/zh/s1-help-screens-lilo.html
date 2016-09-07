@@ -1,0 +1,79 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/zh/s1-help-screens-lilo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:50 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>LILO 配置</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.49"><LINK
+REL="HOME"
+TITLE="安装帮助屏幕"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="选择要格式化的分区"
+HREF="s1-help-screens-format.html"><LINK
+REL="NEXT"
+TITLE="SILO 配置"
+HREF="s1-help-screens-silo.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-LILO"
+>LILO 配置</A
+></H1
+><P
+>	LILO（Linux 装载程序）是可用于在计算机上启动 Red Hat Linux 的软件。它还可用于启动其它操作系统，例如 Windows 98。系统将在此处询问您如何（或是否）配置 LILO。
+      </P
+><P
+>	<B
+CLASS="GUIBUTTON"
+>创建引导盘</B
+>：如果您并非在 MBR 上安装 LILO，或者根本不安装 LILO，则应该创建一张引导盘。
+      </P
+><P
+>	<B
+CLASS="GUIBUTTON"
+>不安装 LILO</B
+>：如果您不想将 LILO 写入驱动器，也可以选择跳过 LILO。如果您配备了两个硬盘驱动器，并且分别安装了不同的操作系统，则可能宁愿使用引导盘而不用 LILO。
+      </P
+><P
+>	要安装 LILO，请为其选择安装位置。如果系统仅使用 Red Hat Linux，则应该选择主引导记录 (MBR)。对于 Win95/98 和 Red Hat Linux 同时驻留在一个硬盘驱动器中的系统，则也应该在 MBR 中安装 LILO。
+      </P
+><P
+>	如果您使用 Windows NT（并且希望安装 LILO），则应该选择在引导分区的第一个扇区上安装 LILO。同时请务必创建一张引导盘，否则将无法引导至 Linux。有关如何从 Windows NT 的引导管理程序中引导 LILO 的信息，请参阅 Red Hat Linux Installation Guide。
+      </P
+><P
+>	如果您出于某种原因而选择不安装 LILO，请创建一张引导盘以便引导 Red Hat Linux。
+      </P
+><P
+>	如果您的计算机以 LBA 模式访问硬盘驱动器，请选取
+	<B
+CLASS="GUIBUTTON"
+>“Use linear mode”</B
+>。 
+      </P
+><P
+>	如果您希望在 LILO 引导命令中添加缺省选项，请在“kernel parameters”字段中输入这些选项。每次引导时，您输入的任何选项均将传递至 Linux 内核。
+      </P
+><P
+>	可引导分区 -- 列出并标记每个可引导分区，包括其它操作系统使用的分区。如果您要为其它分区添加引导标记（或更改现有的引导标记），请单击以选择此分区。一旦选定了分区，您就可以更改引导标记。
+      </P
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/zh/s1-help-screens-lilo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:50 GMT -->
+</HTML
+>

@@ -1,0 +1,473 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-powertools-installing.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Installing PowerTools Packages</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="PowerTools"
+HREF="ch-powertools.html"><LINK
+REL="PREVIOUS"
+TITLE="Reading the Contents of the CD-ROM"
+HREF="s1-powertools-contents.html"><LINK
+REL="NEXT"
+TITLE="Working with Update Agent"
+HREF="ch-up2date.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-powertools-contents.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 4. PowerTools</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="ch-up2date.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-POWERTOOLS-INSTALLING"
+>Installing PowerTools Packages</A
+></H1
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-POWERTOOLS-GUI"
+>Installing PowerTools in a GUI Environment</A
+></H2
+><P
+>	  If you're using GNOME or KDE, place the CD-ROM in your CD-ROM
+	  drive. You'll be prompted for the root password (you must to be root
+	  in order to install packages). After you type in the root password,
+	  either the <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> or the
+	  <TT
+CLASS="APPLICATION"
+>Kpackage</TT
+> package management program will
+	  start automatically (depending on you GUI environment) and can be used
+	  to install PowerTools.
+	</P
+><P
+>	  See <A
+HREF="ch-gnorpm.html"
+>Chapter 7</A
+> for specific instructions on how to use
+	  <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>. See <A
+HREF="http://www.general.uwa.edu.au/u/toivo/kpackage/"
+TARGET="_top"
+>	  http://www.general.uwa.edu.au/u/toivo/kpackage/</A
+> for more
+	  information on how to use <TT
+CLASS="APPLICATION"
+>Kpackage</TT
+>.
+	</P
+><P
+>	  If you're not using GNOME or KDE, you'll need to use the shell prompt
+	  to install PowerTools.  See <A
+HREF="s1-powertools-installing.html#S2-POWERTOOLS-CONSOLE"
+>the section called <I
+>Installing PowerTools from the Shell Prompt</I
+></A
+> for
+	  more information.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-POWERTOOLS-CONSOLE"
+>Installing PowerTools from the Shell Prompt</A
+></H2
+><P
+>	  First, mount the PowerTools CD-ROM on your CD-ROM drive.
+	</P
+><P
+>	  Place the PowerTools CD in your CD-ROM drive.  As root, type the
+	  following:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>	  <TT
+CLASS="PROMPT"
+>#</TT
+> <B
+CLASS="COMMAND"
+>mount -t iso9660 /dev/cdrom /mnt/cdrom</B
+>
+	  <TT
+CLASS="PROMPT"
+>#</TT
+>
+	</PRE
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    On your system, you or the system administrator may already allow
+	    users (instead of only root) to mount the CD-ROM drive.  Users have
+	    this privilege if the <B
+CLASS="COMMAND"
+>user</B
+> option is included in
+	    the <TT
+CLASS="FILENAME"
+>/dev/cdrom</TT
+> line in the
+	    <TT
+CLASS="FILENAME"
+>/etc/fstab</TT
+> file.  However, keep in mind that
+	    you must be logged in as root to install any PowerTools RPMs.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	  After you've mounted the drive, <B
+CLASS="COMMAND"
+>cd</B
+> to the mounted
+	  CD-ROM directory with the following command:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>	  <TT
+CLASS="PROMPT"
+>#</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>cd /mnt/cdrom</B
+></TT
+>
+	</PRE
+></TD
+></TR
+></TABLE
+><P
+>	  When you list the contents of the CD with <B
+CLASS="COMMAND"
+>ls</B
+>,
+	  you'll see the following directories: <TT
+CLASS="FILENAME"
+>SRPMS</TT
+>,
+	  <TT
+CLASS="FILENAME"
+>alpha</TT
+>, <TT
+CLASS="FILENAME"
+>i386</TT
+>,
+	  <TT
+CLASS="FILENAME"
+>i586</TT
+>, <TT
+CLASS="FILENAME"
+>i686</TT
+>,
+	  <TT
+CLASS="FILENAME"
+>noarch</TT
+>, <TT
+CLASS="FILENAME"
+>nosrc</TT
+>,
+	  <TT
+CLASS="FILENAME"
+>sparc</TT
+>, and <TT
+CLASS="FILENAME"
+>sparc64</TT
+>. The
+	  <TT
+CLASS="FILENAME"
+>SRPMS</TT
+> directory contains the PowerTools source
+	  RPMs. The <TT
+CLASS="FILENAME"
+>alpha</TT
+>, <TT
+CLASS="FILENAME"
+>i386</TT
+>,
+	  <TT
+CLASS="FILENAME"
+>sparc</TT
+>, and <TT
+CLASS="FILENAME"
+>sparc64</TT
+>
+	  directories contain the RPMs for the three specified operating system
+	  architectures.  The <TT
+CLASS="FILENAME"
+>noarch</TT
+> directory contains
+	  RPMs which are not architecture-specific and should install on any of
+	  the three architectures.
+	</P
+><P
+>	  The <TT
+CLASS="FILENAME"
+>i386</TT
+> path is used as a general example.  You
+	  should substitute the correct directory for <TT
+CLASS="FILENAME"
+>i386</TT
+>,
+	  depending upon your architecture and which package you're installing.
+	</P
+><P
+>	  <B
+CLASS="COMMAND"
+>cd</B
+> to the <TT
+CLASS="FILENAME"
+>i386</TT
+> directory:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>	  <TT
+CLASS="PROMPT"
+>#</TT
+> <B
+CLASS="COMMAND"
+>cd i386</B
+>
+	  <TT
+CLASS="PROMPT"
+>#</TT
+>
+	</PRE
+></TD
+></TR
+></TABLE
+><P
+>	  List the RPM files in the directory with <B
+CLASS="COMMAND"
+>ls</B
+>
+	  to see the complete list of RPM packages included for
+	  Intel-compatible systems.
+	</P
+><P
+>	  You will probably want more information about a specific package
+	  before you can decide whether you want to install it.  You can use
+	  <TT
+CLASS="APPLICATION"
+>RPM</TT
+>'s querying capability to find out more
+	  information about the packages, such as the packages' functions and
+	  origination. See <A
+HREF="s1-rpm-impressing.html"
+>the section called <I
+>Impressing Your Friends with RPM</I
+> in Chapter 6</A
+> for instructions
+	  on how to query packages using <TT
+CLASS="APPLICATION"
+>RPM</TT
+>.
+	</P
+><P
+>	  You can install your selected packages with
+	  <TT
+CLASS="APPLICATION"
+>RPM</TT
+>.  <TT
+CLASS="APPLICATION"
+>RPM</TT
+> is a
+	  powerful command line-driven package management system. See <A
+HREF="ch-rpm.html"
+>Chapter 6</A
+> for more information on how to use
+	  <TT
+CLASS="APPLICATION"
+>RPM</TT
+> to install and manage PowerTools
+	  packages.
+	</P
+><P
+>	  Once you have finished installing your packages, you'll need to
+	  unmount your CD-ROM. Type <B
+CLASS="COMMAND"
+>umount /mnt/cdrom</B
+> to
+	  unmount the CD-ROM.  Type <B
+CLASS="COMMAND"
+>eject /mnt/cdrom</B
+> and the
+	  CD-ROM drive will open so that you can remove the CD.
+	</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-powertools-contents.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="ch-up2date.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Reading the Contents of the CD-ROM</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-powertools.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Working with Update Agent</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-powertools-installing.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

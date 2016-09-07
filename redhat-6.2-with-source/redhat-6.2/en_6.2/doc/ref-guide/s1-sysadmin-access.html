@@ -1,0 +1,220 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-sysadmin-access.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Controlling Access to Services</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="System Administration"
+HREF="ch-sysadmin.html"><LINK
+REL="PREVIOUS"
+TITLE="Sendmail"
+HREF="s1-sysadmin-sendmail.html"><LINK
+REL="NEXT"
+TITLE="Anonymous FTP"
+HREF="s1-sysadmin-ftp.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-sysadmin-sendmail.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 2. System Administration</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-sysadmin-ftp.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-SYSADMIN-ACCESS"
+>Controlling Access to Services</A
+></H1
+><P
+>        As a security measure, most network services are managed by a protective
+        program called a <I
+CLASS="FIRSTTERM"
+>TCP wrapper</I
+>.  The protected
+        services are those listed in <TT
+CLASS="FILENAME"
+>/etc/inetd.conf</TT
+> that
+        specify <TT
+CLASS="FILENAME"
+>/usr/sbin/tcpd</TT
+>.  <B
+CLASS="COMMAND"
+>tcpd</B
+>
+        can allow or deny access to a service based on the origin of the
+        request, and the configuration in <TT
+CLASS="FILENAME"
+>/etc/hosts.allow</TT
+>
+        and <TT
+CLASS="FILENAME"
+>/etc/hosts.deny</TT
+>.
+      </P
+><P
+>        By default Red Hat Linux allows all service requests.  To disable or limit
+        services you can edit <TT
+CLASS="FILENAME"
+>/etc/hosts.allow</TT
+>.  Here is an
+        example <TT
+CLASS="FILENAME"
+>/etc/hosts.allow</TT
+> file:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>ALL: redhat.com .redhat.com
+in.talkd: ALL
+in.ntalkd: ALL
+in.fingerd: ALL
+in.ftpd: ALL</TT
+>
+      </PRE
+></TD
+></TR
+></TABLE
+><P
+>        This configuration allows all connections from redhat.com and
+        <TT
+CLASS="FILENAME"
+>*.redhat.com</TT
+> machines.  It also allows talk,
+        finger, and FTP requests from all machines.
+      </P
+><P
+>        <B
+CLASS="COMMAND"
+>tcpd</B
+> allows much more sophisticated access control,
+        using a combination of <TT
+CLASS="FILENAME"
+>/etc/hosts.allow</TT
+> and
+        <TT
+CLASS="FILENAME"
+>/etc/hosts.deny</TT
+>.  Read the tcpd(8) and
+        hosts_access(5) man pages for complete details.
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-sysadmin-sendmail.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-sysadmin-ftp.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Sendmail</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-sysadmin.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Anonymous FTP</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-sysadmin-access.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

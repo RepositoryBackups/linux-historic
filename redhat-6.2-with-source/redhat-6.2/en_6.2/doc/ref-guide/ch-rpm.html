@@ -1,0 +1,308 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-rpm.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:58:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Package Management with RPM</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="System-Related Reference"
+HREF="p196.html"><LINK
+REL="PREVIOUS"
+TITLE="Using Update Agent"
+HREF="s1-up2date-using.html"><LINK
+REL="NEXT"
+TITLE="Using RPM"
+HREF="s1-rpm-using.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-up2date-using.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-rpm-using.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CH-RPM"
+>Chapter 6. Package Management with RPM</A
+></H1
+><P
+>      The <I
+CLASS="EMPHASIS"
+>R</I
+>PM  <I
+CLASS="EMPHASIS"
+>P</I
+>ackage
+      <I
+CLASS="EMPHASIS"
+>M</I
+>anager (RPM), is an open packaging system available
+      for anyone to use, and works on Red Hat Linux as well as other Linux and UNIX
+      systems. Red Hat, Inc. encourages other vendors to take the time to look at
+      RPM and use it for their own products. RPM is distributable under the
+      terms of the GPL.
+    </P
+><P
+>      For the end user, RPM provides many features that make maintaining a
+      system far easier than it has ever been. Installing, uninstalling, and
+      upgrading RPM packages are all one line commands, and all the messy
+      details have been taken care of for you. RPM maintains a database of
+      installed packages and their files, which allows you to perform powerful
+      queries and verification of your system.
+    </P
+><P
+>      During upgrades, RPM handles configuration files specially, so that you
+      never lose your customizations -- a feature that is impossible with
+      straight <TT
+CLASS="FILENAME"
+>.tar.gz</TT
+> files.
+    </P
+><P
+>      For the developer, RPM allows you to take source code for software and
+      package it into source and binary packages for end users. This process is
+      quite simple and is driven from a single file and optional patches that
+      you create. This clear delineation of "pristine" sources and your patches
+      and build instructions eases the maintenance of the package as new
+      versions of the software are released.
+    </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>        Although it can be important to understand the concepts behind RPM, for
+        those who prefer a graphical interface to the command line, we suggest
+        you use <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>. Please see <A
+HREF="ch-gnorpm.html"
+>Chapter 7</A
+> for more information.
+      </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-RPM-DESIGN"
+>RPM Design Goals</A
+></H1
+><P
+>        Before trying to understand how to use RPM, it helps to have an idea of
+        what the design goals are.
+      </P
+><P
+></P
+><DL
+><DT
+>Upgradability</DT
+><DD
+><P
+>              With RPM you can upgrade individual components of your system
+              without completely reinstalling.  When you get a new release of an
+              operating system based on RPM (such as Red Hat Linux), you don't need
+              to reinstall on your machine (as you do with operating systems
+              based on other packaging systems).  RPM allows intelligent,
+              fully-automated, in-place upgrades of your system.  Configuration
+              files in packages are preserved across upgrades, so you won't lose
+              your customizations.
+            </P
+></DD
+><DT
+>Powerful Querying</DT
+><DD
+><P
+>              RPM is also designed to have powerful querying options.  You can
+              do searches through your entire database for packages or just
+              certain files.  You can also easily find out what package a file
+              belongs to and where it came from.  The files an RPM package
+              contains are in a compressed archive, with a custom binary header
+              containing useful information about the package and its contents,
+              allowing you to query individual packages quickly and easily.
+            </P
+></DD
+><DT
+>System Verification</DT
+><DD
+><P
+>              Another powerful feature is the ability to verify packages.  If
+              you are worried that you deleted an important file for some
+              package, simply verify the package.  You will be notified of any
+              anomalies.  At that point, you can reinstall the package if
+              necessary.  Any configuration files that you modified are
+              preserved during reinstallation.
+            </P
+></DD
+><DT
+>Pristine Sources</DT
+><DD
+><P
+>              A crucial design goal was to allow the use of "pristine" software
+              sources, as distributed by the original authors of the software.
+              With RPM, you have the pristine sources along with any patches
+              that were used, plus complete build instructions.  This is a big
+              advantage for several reasons.  For instance, if a new version of
+              a program comes out, you don't necessarily have to start from
+              scratch to get it to compile.  You can look at the patch to see
+              what you <I
+CLASS="EMPHASIS"
+>might</I
+> need to do.  All the
+              compiled-in defaults, and all of the changes that were made to get
+              the software to build properly are easily visible this way.
+            </P
+><P
+>              This goal may only seem important for developers, but it results
+              in higher quality software for end users too.  We would like to
+              thank the folks from the BOGUS distribution for originating the
+              pristine source concept.
+            </P
+></DD
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-up2date-using.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-rpm-using.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Using <TT
+CLASS="APPLICATION"
+>Update Agent</TT
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="p196.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Using RPM</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-rpm.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:58:24 GMT -->
+</HTML
+>

@@ -1,0 +1,1059 @@
+<!DOCTYPE BOOK PUBLIC "-//Davenport//DTD DocBook V3.0//EN" [
+<!ENTITY RH "Red Hat">
+<!ENTITY RHL "Red Hat Linux">
+<!ENTITY RHLRGS "Red Hat Linux Reference Guide">
+<!ENTITY RHLIG "Red Hat Linux Installation Guide">
+<!ENTITY RHLGSG "Red Hat Linux Getting Started Guide">
+<!ENTITY RHI "Red Hat, Inc.">
+]>
+<book id="book">
+<title>Nápovìda pro Instalátor</title>
+  <chapter id="s1-help-screens-lang">
+    <title></title>
+    <sect1 id="lang">
+      <title>Volba jazyka</title>
+      <para>
+        Jaký jazyk chcete pou¾ít bìhem instalace a posléze jako defaultní
+        pro nainstalovaný systém &RHL; (lze pozdìji kdykoliv zmìnit)?
+      </para>
+      <para>
+	Zvolte jej ze seznamu vpravo.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-kybd">
+      <title>Konfigurace klávesnice</title>
+      <para>
+	Jaký typ klávesnice máte?
+      </para>
+      <para>
+        Pokud nemù¾ete najít pøesný odpovídající typ, zvolte nejbli¾¹í
+        <guilabel>generickou</guilabel> (napø. Generic 101-key PC).
+      </para>
+      <para>
+        Pak zvolte rozmístìní kláves (napø. U.S. English).
+      </para>
+      <para>
+        Pro vkládání speciálních znakù (jako &Ntilde;, &Ocirc; a &Ccedil;)
+        se pou¾ívají speciální "mrtvé klávesy" (známé také jako compose
+        sekvence). Pokud chcete psát speciální znaky, které vy¾adují
+        pou¾ití mrtvých kláves, povolte volbu <guilabel>Povolit mrtvé
+        klávesy</guilabel>. Pokud ne, zvolte <guilabel>Zakázat mrtvé
+        klávesy</guilabel>.
+      </para>
+      <para>
+        Volné textové políèko v dolní èásti slou¾í pro otestování
+        zvolené konfigurace klávesnice.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-mouse">
+      <title>Konfigurace my¹i</title>
+      <para>
+	Jakou máte my¹?
+      </para>
+      <para>
+        Máte PS/2, Bus nebo sériovou my¹? (Nápovìda: pokud je
+        konektor Va¹í my¹i kulatý, máte typ PS/2 nebo Bus; pokud je
+        lichobì¾níkový (oválný), máte sériovou my¹)
+      </para>
+      <para>
+        Zkuste najít v pravém poli typ odpovídající Va¹í my¹i. Pokud takový
+        nenaleznete, mù¾ete zvolit jakoukoliv kompatibilní. Jinak zvolte
+        <guilabel>Generic</guilabel> (generická).
+      </para>
+      <para>
+        Pokud máte sériovou my¹, budete muset v dal¹ím poli vybrat zaøízení
+        a port, ke kterému je pøipojena.
+      </para>
+      <para>
+        Prostøedí X Window System je navr¾ené tak, aby plnì vyu¾ívalo
+        mo¾nosti tøítlaèítkových my¹í. Pokud máte my¹ pouze se dvìma
+        tlaèítky, mù¾e být stisk prostøedního tlaèítka nahrazen
+        (emulován) stiskem obou tlaèítek souèasnì.
+      </para>
+      <para>
+        Pokud máte dvoutlaèítkovou my¹, zatrhnìte volbu <guilabel>
+        Emulovat 3 tlaèítka</guilabel>. V tomto pøípadì bude po instalaci stisk
+        obou tlaèítek souèasnì interpretován jako stisk prostøedního tlaèítka.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-wel">
+      <title>Vítejte v Red Hat Linuxu</title>
+      <para>
+	Vítejte! Tento instalaèní proces je podrobnì popsán v pøíruèce
+	<citetitle>&RHLIG;</citetitle>, která je dostupná na tomto CD v
+	elektronické podobì nebo od firmy &RHI;. Pøeètìte si prosím celý manuál
+	pøed tím, ne¾ zaènete instalovat.
+      </para>
+      <para>
+        Dokumentace je dostupná ve formátech HTML a PostScript
+        na adrese http://www.redhat.com. Na instalaèním CD &RHL;
+        jsou HTML verze dokumentace v adresáøi <command>doc</command>.
+        Doplòující dokumentace k èeské mutaci &RHL; 6.2 CZ je
+        k dispozici na adrese http://www.linux.cz/redhat-cz/.
+      </para>
+      <para>
+	<command>Novinka:</command> &RHL; 6.2 má novou instalaèní metodu
+        známou jako "Instalace bez oddílù". Pokud na Va¹em systému máte
+        FAT oddíl (DOS/Windows) s dostatkem volného místa, mù¾ete si
+        nainstalovat &RHL; bez nutnosti pøerozdìlení oblastí na disku.
+        Tato volba je velmi vhodná pro v¹echny, kteøí chtìjí vyzkou¹et
+        &RHL; bez jakýchkoliv zásahù do svého souèasného systému.
+      </para>
+      <para>
+        Pokud jste si zakoupili 'Oficiální &RHL;', ujistìte se,
+        ¾e jste se zaregistrovali (na adrese http://www.redhat.com/now).
+      </para>
+      <para>
+        Bìhem instalace budete moci pou¾ívat Va¹í my¹ a vybírat
+        rùzné zpùsoby instalace. V instalaèním programu se mù¾ete
+        té¾ pohybovat pomocí kláves: <keycap>Tab</keycap> a
+        <keycap>Enter</keycap>.
+      </para>
+      <para>
+        Pomocí tlaèítek <guibutton>Dal¹í</guibutton> a
+        <guibutton>Zpìt</guibutton> se mù¾ete pohybovat mezi jednotlivými
+        obrazovkami (kroky) instalaèního procesu. Kliknìte na tlaèítko
+	<guibutton>Dal¹í</guibutton> pro ulo¾ení vlo¾ených informací a
+        pokraèování na dal¹í obrazovce; kliknìte na tlaèítko
+        <guibutton>Zpìt</guibutton> pokud se chcete vrátit na pøedchozí
+        obrazovku bez ulo¾ení vlo¾ených údajù.
+      </para>
+      <para>
+        Pro skrytí této nápovìdy stisknìte tlaèítko
+        <guibutton>Skrýt nápovìdu</guibutton>.
+      </para>
+      <para>
+        Pokud budete chtít z nìjakého dùvodu pøeru¹it tuto instalaci,
+        mù¾ete to bezpeènì uèinit tlaèítkem <keycap>reset</keycap> a¾
+        do stránky <guimenu>Pøíprava na instalaci</guimenu>. Pokud
+        na této stránce kliknete na tlaèítko <guibutton>Dal¹í</guibutton>,
+        instalaèní program zaène zapisovat data na Vá¹ disk.
+        Instalaci mù¾ete bezpeènì pøeru¹it kdykoliv pøed touto stránkou
+        stiskem klávesy <keycap>reset</keycap> na Va¹em poèítaèi nebo
+        stiskem kláves
+	<keycombo>
+	  <keycap>Ctrl</keycap> <keycap>Alt</keycap> <keycap>Del</keycap>
+	</keycombo>.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-welreconfig">
+      <title>Vítejte v Red Hat Linuxu</title>
+      <para>
+        Vstoupili jste do re¾imu, kdy si mù¾ete nastavit systém podle
+        vlastních potøeb. Pokud nechcete mìnit svoje souèasné
+        nastavení systému, zvolte 'Ne' a stisknìte tlaèítko
+        <guibutton>Dal¹í</guibutton>.
+      </para>
+      <para>
+        Bìhem této konfigurace Va¹eho systému budete moci pomocí
+        my¹i zvolit rùzná nastavení. K pohybu v menu mù¾ete pou¾ít i kláves
+        <keycap>Tab</keycap> a <keycap>Enter</keycap>.
+      </para>
+      <para>
+        Pomocí tlaèítek <guibutton>Dal¹í</guibutton> a
+        <guibutton>Zpìt</guibutton> se mù¾ete pohybovat mezi jednotlivými
+        obrazovkami (kroky) instalaèního procesu. Kliknìte na tlaèítko
+        <guibutton>Dal¹í</guibutton> pro ulo¾ení vlo¾ených informací a
+        pokraèování na dal¹í obrazovce; kliknìte na tlaèítko
+        <guibutton>Zpìt</guibutton> pokud se chcete vrátit na pøedchozí
+        obrazovku bez ulo¾ení vlo¾ených údajù.
+      </para>
+      <para>
+        Pro skrytí této nápovìdy stisknìte tlaèítko
+        <guibutton>Skrýt nápovìdu</guibutton>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-instpath">
+      <title>Zpùsob instalace</title>
+      <para>
+        Jak chcete nainstalovat Vá¹ &RHL;?
+      </para>
+      <para>
+        Plná instalace sma¾e v¹echny data, která máte ulo¾ena na oddílech
+        (partitions), které urèíte jako cíl instalace.
+      </para>
+      <para>
+        Upgrade zachová Va¹e ji¾ existující konfiguraèní soubory.
+      </para>
+      <para>
+        Pokud zvolíte Plnou instalaci, musíte je¹tì zvolit, jaký typ instalace
+        si pøejete. Na výbìr jsou: Pracovní stanice s GNOME,
+        Pracovní stanice s KDE, Server nebo Vlastní.
+      </para>
+      <para>
+        Pokud umíte pracovat s nástrojem <application>fdisk</application>
+        na definování oddílù, zvolte zde jeho pou¾ití. Pokud nezvolíte
+        <application>fdisk</application>, instalaèní program pou¾ije
+        standardní nástroj <application>Disk Druid</application>.
+        <application>Disk Druid</application> je lep¹í volbou, pokud
+        jste pøed tím nikdy s programem <application>fdisk</application>
+        nepracovali.
+      </para>
+      <para>
+        Pokud nevíte, jaký typ instalace zvolit, pøeètìte si následující
+        øádky velmi peèlivì!
+      </para>
+      <para>
+	<command>Poznámka:</command> Jako doplnìk ke v¹em zde zmínìným
+        typùm instalace mù¾e být &RHL; pou¾ita instalace "bez oddílù",
+        pokud oznaèíte jako koøen (<command>/</command>) oddíl s 
+        FAT (DOS/Windows) v <application>Disk Druidovi</application>.
+        Tato volba zru¹í automatické smazání oddílù v instalaci
+        typu 'Pracovní stanice'.
+      </para>
+      <para>
+        Instalace typu 'Pracovní stanice' nainstaluje X Window System a správce
+        oken, kterého vyberete. <emphasis>Tento zpùsob instalace sma¾e v¹echny
+        Linuxové oddíly na Va¹em disku a vyu¾ije ve¹keré takto získané místo
+        pro instalaci systému</emphasis> (tj. i místo, které není obsazeno
+        nìjakými oddíly). V¹echny oddíly, které nejsou Linuxové, zùstanou
+        nedotèeny a budete moci nadále pou¾ívat i ostatní operaèní systémy,
+        které jste mìli ji¾ nainstalovány.
+      </para>
+      <para>
+        Pokud chcete Vá¹ systém pou¾ívat jako server a nechcete
+        sami zdlouhavì urèovat, jaké balíèky budou nainstalovány nebo
+        instalovat X Window System, zvolte instalaci typu Server.
+        <emphasis>Instalace typu Server sma¾e V©ECHNY existující oddíly
+        na V©ECH pøipojených discích, tak¾e zvolte tento typ instalace
+        pouze v pøípadì, ¾e jste si jisti, ¾e nemáte na discích nic,
+        co byste potøebovali uchovat!</emphasis>. Budou smazány v¹echny
+        oddíly pou¾ívané jinými operaèními systémy. <emphasis>V©ECHNY
+        disky budou smazány -- nedìláme si legraci!</emphasis>
+      </para>
+      <para>
+        Pouze 'Vlastní instalace' Vám dá mo¾nost ovlivòovat
+        v¹echny kroky, které budou provedeny. Budete moci
+        <emphasis>sami</emphasis> urèovat, kolik místa vyhradíte pro
+        jednotlivé oddíly (partitions).
+        Budete mít plnou kontrolu nad výbìrem balíèkù urèených k instalaci
+        a budete moci urèit, jak bude pou¾ito LILO pro start Va¹eho
+        systému. Pokud nemáte pøedchozí zku¹enosti s Linuxem,
+        nemìli byste volit tento typ instalace.
+      </para>
+      <para>
+        Dal¹í informace o prùbìhu a rozdíly mezi jednotlivými typy
+        instalaèního procesu najdete v Instalaèní pøíruèce &RHLIG;.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-upgrade">
+      <title>Upgrade systému</title>
+      <para>
+        Pokud jste zvolili upgrade, mù¾ete se rozhodnout, zda chcete
+        ovlivnit výbìr balíèkù.
+      </para>
+      <para>
+        Pokud nechcete zvolit dodateèné balíèky pro upgrade, kliknìte
+        na tlaèítko <guibutton>Dal¹í</guibutton> pro pokraèování.
+      </para>
+      <para>
+        Pokud chcete ovlivnit výbìr balíèkù, zvolte volbu
+        <guilabel>Vybrat balíèky pro upgrade</guilabel> a kliknìte na
+        tlaèítko <guibutton>Dal¹í</guibutton>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-fdisk">
+      <title><application>fdisk</application></title>
+      <para>
+        Zvolte, na který disk chcete dìlit na oddíly. Kdy¾ kliknete
+        na nìjaký disk, pøejdete na obrazovku s programem
+        <application>fdisk</application>. Tento program umo¾òuje
+        vytváøet, mazat a upravovat oddíly na zvoleném disku.
+      </para>
+      <para>
+        Pokud se rozhodnete nepou¾ít program <application>fdisk</application>,
+        kliknìte na tlaèítko <guibutton>Zpìt</guibutton> pro návrat
+        do pøedchozí obrazovky, zru¹te volbu 
+        <guimenuitem>Pou¾ít fdisk</guimenuitem> a kliknìte zde na tlaèítko
+        <guibutton>Dal¹í</guibutton> pro pokraèování bez této obrazovky s 
+        programem <application>fdisk</application>.
+      </para>
+      <para>
+        Po ukonèení dìlení disku na oddíly pomocí programu 
+        <application>fdisk</application> se vrátíte do této obrazovky.
+        Pokud máte dal¹í disky, na kterých potøebujete vytvoøit
+        nebo zmìnit oddíly, zvolte je. Pak kliknìte na tlaèítko
+        <guibutton>Dal¹í</guibutton>, abyste mohli pøiøadit k oddílùm
+        pøípojné body programem <application>Disk Druid</application>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-fdiskpart">
+      <title>Vytváøení oddílù programe <application>fdisk</application></title>
+      <para>
+        Zde mù¾ete rozdìlit svùj disk na oddíly pomocí programu
+	<application>fdisk</application>.
+      </para>
+      <para>
+        Pro nápovìdu stisknìte <command>m</command> v promptu. Bude
+        vypsán seznam dostupných pøíkazù.
+      </para>
+      <para>
+        Krátký pøehled pøíkazù:
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>n</command> -- Vytvoøení nového oddílu.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>d</command> -- Smazání oddílu.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>p</command> -- Výpis nadefinovaných oddílù.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>l</command> -- Vypsat známé typy oddílù.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>	      
+	      <command>w</command> -- Zapsání tabulky oddílù na disk a
+	      ukonèení programu <application>fdisk</application>.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>q</command> -- Ukonèení programu bez ulo¾ení zmìn.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-wkst">
+      <title>Automatické dìlení disku</title>
+      <para>
+	Jste si jist?
+      </para>
+      <para>
+        Va¹e existující data na discích budou smazána, pokud zvolíte tento
+        typ instalace.
+      </para>
+      <para>
+        Tento zpùsob instalace sma¾e <emphasis>v¹echna</emphasis>
+        data na <emphasis>v¹ech</emphasis> Linuxových oddílech na 
+        <emphasis>v¹ech</emphasis> discích.
+      </para>
+      <para>
+        Pokud chcete zachovat data na Va¹ich existujících Linuxových oddílech,
+        musíte zvolit ruèní rozdìlování diskù nebo vlastní
+        zpùsob instalace.
+      </para>
+      <para>
+        Pou¾ijte tlaèítko <guibutton>Zpìt</guibutton>, pokud chcete
+        zvolit vlastní zpùsob instalace. Stisknìte tlaèítko
+        <guibutton>Dal¹í</guibutton>, pokud chcete pokraèovat
+        v instalaci pracovní stanice.
+      </para>
+    </sect1>
+      
+      <sect1 id="s1-help-screens-svr">
+      <title>Automatické dìlení disku</title>
+      <para>
+	Jste si jisti?
+      </para>
+      <para>
+	Pøijdete o v¹echna ulo¾ená data, pokud zvolíte tuto instalaci!
+      </para>
+      <para>
+        Tento zpùsob instalace sma¾e <emphasis>v¹echna</emphasis> data
+        <emphasis>v¹ech</emphasis> oddílech na <emphasis>v¹ech</emphasis>
+        discích.
+      </para>
+      <para>
+        Pokud máte na poèítaèi jiný OS, který chcete zachovat,
+        nevolte tento typ instalace.
+      </para>
+      <para>
+        Pokud chcete zachovat data nebo jiný OS, musíte zvolit
+        ruèní rozdìlování diskù nebo vlastní zpùsob instalace.
+      </para>
+      <para>
+        Pro volbu vlastní instalace stisknìte tlaèítko
+        <guibutton>Zpìt</guibutton>. Stisknìte tlaèítko
+        <guibutton>Dal¹í</guibutton>, pokud chcete pokraèovat
+        v instalaci typu server.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-partition">
+      <title>Oddíly</title>
+      
+      <para>
+        Kam chcete nainstalovat &RHL;?
+      </para>
+      <para>
+	<command>Poznámka:</command> Pokud provádíte Instalaci bez
+        vytváøení oddílù, musíte urèit nìjaký existující DOS/Windows
+        oddíl jako koøen (oznaèuje se jako <command>/</command>).
+        Kliknìte na oddíl s FAT, pokud chcete provést tento typ instalace.
+        Pak stisknìte tlaèítko <guilabel>Edit</guilabel> pro pøiøazení
+        pøípojného místa <command>/</command> pro koøenový oddíl.
+        Pak stisknìte <guilabel>Ok</guilabel>. Po potvrzení této volby
+        budete muset je¹tì vybrat odkládací prostor pro Vá¹ systém
+        (swap space).
+      </para>
+      <para>
+        Detailní instrukce naleznete v kapitole
+        <emphasis>Installing Without Partitioning</emphasis>
+        (Instalace bez dìlení disku) v knize <citetitle>&RHLIG;</citetitle>.
+      </para>
+      <para>
+        Pokud nevíte, jak vytvoøit oddíly na Va¹em systému, pøeètìte si prosím
+        pøíslu¹nou kapitolu v <citetitle>&RHLIG;</citetitle> nebo v
+	<citetitle>&RHLRGS;</citetitle>.
+      </para>
+      <para>
+        Pokud jste provedli dìlení na oddíly programem
+        <application>fdisk</application>, musíte zde urèit
+        <firstterm>mount pointy</firstterm> (místa pøipojení) pro
+        Va¹e oddíly. K tomu slou¾í tlaèítko <guilabel>Edit</guilabel>,
+        kdy¾ zvýrazníte pøíslu¹ný oddíl.
+      </para>
+      <para>
+        Pokud chcete pou¾ít <application>Disk Druid</application>,
+        musíte také urèit místa pøipojení pro oddíly. Mù¾ete zde
+        vytvoøit i smazat jednotlivé oddíly.
+      </para>
+      <para>
+        V horní èásti obrazovky jsou uvedeny v¹echny rozpoznané oddíly.
+        Pro ka¾dý oddíl je zde pìt polo¾ek:
+      </para>
+      
+      <itemizedlist>
+	<listitem>
+	  <para>
+	    <command>Mount Point:</command>
+            Toto políèko obsahuje informaci o tom, do kterého adresáøe
+            bude oddíl pøipojen pøi bìhu &RHL;. Pokud oddíl
+            existuje, ale je oznaèen jako 'not set' (nenastavený), musíte
+            uvést místo pøípojení. Mù¾ete kliknou na tlaèítko
+            <keycap>Edit</keycap> (úpravy) nebo provést dvojklik na
+            pøíslu¹ném oddílu. Alespoò jeden oddíl musí být oznaèen
+            jako koøenový (místo pøipojení bude <command>/</command>).
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Device:</command>
+            Zde se zobrazuje jméno zaøízení, na kterém je umístìn daný oddíl
+            (napøíklad hda2 je druhý oddíl na prvním disku Va¹eho primárního
+            IDE rozhraní).
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Requested:</command>
+            Ukazuje, kolik místa je na oddílu k dispozici. Pokud chcete zmìnit
+            velikost oddílu, musíte jej smazat a znovu vytvoøit
+            v po¾adované velikosti. K tomu pou¾ijte tlaèítko
+	    <keycap>Add</keycap>.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Actual:</command> Zobrazuje, kolik místa oddíl zabírá.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Type:</command>
+            Zde najdete typ oddílu (napøíklad 'Linux Native' nebo 'DOS').
+	  </para>
+	</listitem>
+      </itemizedlist>
+      
+      <para>
+        Pokud si budete prohlí¾et seznam <firstterm>oddílù</firstterm>
+        mù¾ete spatøit èervené hlá¹ení
+        <firstterm>Unallocated Requested Partition</firstterm>
+        (nealokovaný po¾adovaný oddíl). Dùvodem je nedostatek místa pro
+        po¾adovaný oddíl na disku.
+      </para>
+      <para>
+        Nápravu zjednáte tak, ¾e pøesunete oddíl na disk, na kterém je k
+        dispozici po¾adované místo, zmìníte velikost oddílu nebo tento oddíl
+        sma¾ete. V¹echny zmìny mù¾ete provádìt tlaèítkem <keycap>Edit</keycap>
+        nebo dvojklikem na pøíslu¹né oddíly.
+      </para>
+	
+      <sect2 id="s2-help-screens-dd">
+	<title>Vytváøení oddílù</title>
+	<para>
+          Støední øada tlaèítek ovládá nástroj na oddíly. Oddíl mù¾ete
+          pøidat, zmìnit nebo smazat. Dále jsou zde tlaèítka, kterými
+          mù¾ete ulo¾it provedené zmìny nebo bez ulo¾ení zmìn tento nástroj
+          ukonèit.
+	</para>
+	
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>Add:</command> 
+              Slou¾í k pøidávání nových oddílù. Pokud jej zvolíte, objeví
+              se okno s polo¾kami, které musíte vyplnit (pøípojné místo,
+              velikost, typ).
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Edit:</command>
+              Slou¾í ke zmìnì pøípojného místa aktuálního oddílu.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Delete:</command>
+              Slou¾í ke smazání oddílu. Po zvolení se objeví okno, ve kterém
+              musíte potvrdit svùj zámìr.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Reset:</command>
+              Slou¾í ke zru¹ení v¹ech zmìn, které jste provedli.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Make RAID Device:</command>
+              Pou¾ijte JEN v pøípadì, pokud ji¾ máte s RAID nìjaké zku¹enosti
+              a chcete vytvoøit RAID zaøízení.
+              Pokud zku¹enosti nemáte, pøeètìte si dokumentaci v referenèní
+              pøíruèce <citetitle>&RHLRGS;</citetitle>, která je i
+              na tomto CD.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
+
+      <sect2 id="s2-help-screens-drive">
+	<title>Celkový pøehled o discích</title>
+	<para>
+          V této èásti si zobrazíte konfiguraci va¹ich diskù
+          (to znamená pouze pøehled). Najdete zde tyto polo¾ky:
+	</para>
+	
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>Drive:</command>
+              Políèko zobrazuje jméno zaøízení (napø. 'hda' nebo 'hdb').
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Geom [C/H/S]:</command>
+              zobrazuje <firstterm>geometrii</firstterm> disku, tj.
+              poèet cylindrù, hlav a sektorù disku.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Total:</command>
+              Celkové dostupné místo na disku.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Free:</command>
+              Zobrazuje, kolik místa na disku je je¹tì volného.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Used:</command>
+              Zobrazuje, kolik místa ji¾ zabírají nadefinované oddíly
+              (v MB a procentech).
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
+    </sect1>
+
+    <sect1 id="s1-help-screens-loopback">
+      <title>Konfigurace systému souborù</title>
+      <para>
+        Pokud nesouhlasíte s pøeddefinovanou hodnotou,
+        urèete velikost koøenového systému souborù (oddílu).
+        Standardnì je koøenový oddíl velký jednu polovinu dostupného místa.
+      </para>
+      <para>
+        Odkládací (swap) oddíl je standardnì 32 megabytù,
+        pokud potøebujete, mù¾ete jej zvìt¹it.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-format">
+      <title>Zvolte oddíly pro formátování</title>
+      <para>
+        Zvolte oddíly, které chcete zformátovat pøed instalací &RHL;.
+      </para>
+      <para>
+        Chcete zkontrolovat oddíl na vadné sektory?
+      </para>
+      <para>
+        Kontrola na vadné sektory Vám mù¾e pomoci ochránit data pøed
+        jejich ztrátou tak, ¾e vadné sektory nalezne, oznaèí je a tím
+        zajistí, ¾e se do nich nebudou v budoucnosti zapisovat data.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-lilo">
+      <title>Konfigurace LILO</title> 
+      <para>
+        LILO (LInux LOader) je program, který mù¾e být pou¾it pro zavedení
+        &RHL; na Va¹em poèítaèi. Mù¾e zavádìt i jiné operaèní
+        systémy, jako jsou napøíklad Windows'9<replaceable>x</replaceable>.
+        Zde budete dotázáni, jakým zpùsobem chcete LILO nastavit.
+      </para>
+      <para>
+	<guibutton>Vytvoøení zavádìcí diskety</guibutton>:
+        startovací disketu si musíte vytvoøit v pøípadì, ¾e nechcete
+        LILO nainstalovat do MBR nebo ho nebudete instalovat vùbec.
+      </para>
+      <para>
+	<guibutton>Neinstalovat LILO</guibutton>:
+        Zvolte pøeskoèení konfigurace LILO, pokud jej nechcete mít na svém
+        disku. Mù¾ete dávat pøednost startovací disketì (co¾ je pomalej¹í).
+      </para>
+      <para>
+        Pokud chcete LILO nainstalovat, zvolte kam. Pokud Vá¹ systém
+        bude pou¾ívat pouze &RHL;, zvolte Hlavní zavádìcí
+        záznam MBR (Master Boot Record) stejnì jako v pøípadì,
+        ¾e &RHL; bude sdílet disk s Win95/98.
+      </para>
+      <para>
+        Pokud máte Windows NT (a chcete, aby bylo LILO nainstalováno),
+        zvolte nainstalovat LILO do prvního sektoru v zavádìcího
+        oddílu. Ujistìte se, ¾e si vytvoøíte startovací disketu, proto¾e
+        jinak nebudete moci zavést po startu poèítaèe &RHL;.
+      </para>
+      <para>
+        Pokud z <emphasis>jakéhokoliv</emphasis> dùvodu nebudete instalovat
+        LILO, vytvoøte si startovací disketu, jinak nebudete moci nastartovat
+        &RHL;.
+      </para>
+      <para>
+        Pokud Vá¹ poèítaè nepøistupuje k disku v lineárním re¾imu, od¹krtnìte
+        volbu <guibutton>Use linear mode</guibutton>.
+      </para>
+      <para>
+        Pokud potøebujete pøedat jádru Linuxu pøi ka¾dém startu nìjaké
+        volby, vlo¾te je do políèka 'Parametry jádra'.
+      </para>
+      <para>
+	<guilabel>Boot Label</guilabel>:
+        Ka¾dý oddíl, který je oznaèen jako startovací (vèetnì oddílù
+        pou¾ívaných jinými operaèními systémy), je vlo¾en do seznamu.
+        Pokud chcete pøidat dal¹í
+        startovací mo¾nosti nebo zmìnit stávající, kliknìte na pøíslu¹ný
+        oddíl, abyste mohli informace o oddílu zmìnit.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-silo">
+      <title>Konfigurace SILO</title>
+      <para>
+        SILO (Sparc Improved LOader), je program, který mù¾ete pou¾ít
+        pro start &RHL; na Va¹em poèítaèi. Mù¾e zavádìt i jiné 
+        operaèní systémy, jako je SunOS a Solaris. Zde budete dotázáni,
+        zda a jak budete SILO chtít nastavit.
+      </para>
+      <para>
+        <guibutton>Vytvoøit zavádìcí disketu</guibutton>:
+        startovací disketu si musíte vytvoøit v pøípadì, ¾e nechcete
+        instalovat SILO nebo pro jistotu. Pokud nemáte disketovou
+        mechaniku, tato volba bude vypnuta. Pokud máte SMCC
+        od Ultra, tato volba bude také vypnuta, proto¾e obvykle
+        disketovou mechaniku nemají.
+      </para>
+      <para>
+        <guibutton>Neinstalovat SILO</guibutton>:
+        Mù¾ete pøeskoèit instalaci SILO, pokud ji¾ SILO v poèítaèi máte.
+      </para>
+      <para>
+        Pro instalaci SILO zvolte, kde má být nainstalováno. 
+        Pokud Vá¹ systém bude pou¾ívat pouze &RHL;, zvolte Hlavní zavádìcí
+        záznam MBR (Master Boot Record). Pro systémy, kde bude
+        zároveò &RHL; i SunOS nebo Solaris na stejném disku, pravdìpodobnì
+        nebudete SILO instalovat (zejména pokud je SunOS nebo Solaris
+        v prvním oddílu na disku).
+      </para>
+      <para>
+        Pokud z jakéhokoliv dùvodu nebudete instalovat SILO, vytvoøte
+        si startovací disketu, jinak nebudete moci nastartovat &RHL;
+      </para>
+      <para>
+        <guibutton>Vytvoøit PROM alias</guibutton>:
+        Instalaèní program mù¾e vytvoøit PROM alias "linux", pokud to
+        PROM umo¾òuje. V kladném pøípadì budete moci zavést SILO
+        z pøíkazové øádky PROM pomocí pøíkazu "boot linux".
+      </para>
+      <para>
+        <guibutton>Nastavit defaultní PROM boot zaøízení</guibutton>:
+        Instalaèní program mù¾e nastavit PROM tak, aby standardnì
+        zavádìla &RHL; (nastavením volby "boot-device" nebo "boot-from").
+      </para>
+      <para>
+       Pokud potøebujete pøedat jádru Linuxu pøi ka¾dém startu nìjaké
+       volby, vlo¾te je do políèka 'Parametry jádra'.
+      </para>
+      <para>
+       Startovací oddíl (Default boot image) -- ka¾dý oddíl, který je
+       oznaèen jako startovací vèetnì oddílù pou¾ívaných jinými operaèními
+       systémy, je vlo¾ena do seznamu. Pokud chcete pøidat dal¹í
+       startovací mo¾nosti nebo zmìnit stávající, kliknìte na pøíslu¹ný
+       oddíl, abyste mohli tyto informace zmìnit.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-netconf">
+      <title>Konfigurace sítì</title>
+      <para>
+        Pokud máte sí»ovou kartu, musíte nastavit Va¹í sí»ovou
+        konfiguraci. Pokud sí» nemáte, kliknìte na tlaèítko
+	<guibutton>Dal¹í</guibutton>.
+      </para>
+      <para>
+        Zvolte typ Va¹eho sí»ového zaøízení a pokud chcete èi mù¾ete
+        pou¾ít DHCP. Pokud máte více Ethernetových sí»ových karet, budete
+        vkládat pro ka¾dou informace zvlá¹». Informace budou ukládány
+        a oznaèeny na listech názvy zaøízení (napø. eth0 a eth1). Pokud zvolíte
+        u zaøízeni volbu <guilabel>Aktivovat pøi startu</guilabel>,
+        bude sí»ové rozhraní automaticky nastaveno podle zadaných
+        informací pøi startu.
+      </para>
+      <para>
+        Pokud nemù¾ete pou¾ít konfiguraci pomocí DHCP nebo si nejste jisti,
+        co to znamená, kontaktujte svého správce sítì.
+      </para>
+      <para>
+        Na v¹ech místech, kde je potøeba, vlo¾te IP adresu, masku sítì,
+        èíslo sítì a broadcastovou adresu. Pokud si nejste jisti,
+        kontaktujte svého správce sítì.
+      </para>
+      <para>
+        Vlo¾te jméno Va¹eho systému. Pokud ho nevlo¾íte, bude automaticky
+        nastaveno na 'localhost'.
+      </para>
+      <para>
+        Nakonec vyplòte adresu brány (Gateway), primárního,
+        sekundárního a terciálního DNS serveru.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-timezone">
+      <title>Volba èasové zóny</title>
+      <para>
+        Èasovou zónu si mù¾ete nastavit buï podle fyzického umístìní Va¹eho
+        poèítaèe nebo podle odchylky od UTC (Universal Coordinated Time),
+        døíve známý jako GMT (Greenwich Mean Time). Tento èas
+        vyjadøuje, kolik je právì hodin na nultém poledníku.
+      </para>
+      <para>
+        V¹imnìte si dvou listù v horní èásti obrazovky. První vám umo¾òuje
+        zvolit èasovou zónu podle umístìní. Pokud zvolíte tento zpùsob, mù¾ete
+        volit podrobnìj¹í pohled. K dispozici jsou pohledy na:
+        World, North America, South America, Pacific Rim, Europe, Africa,
+        a Asia (Svìt, Severní Amerika, Ji¾ní Amerika, Tichomoøí, Evropa,
+        Afrika a Asie).
+      </para>
+      <para>
+        Na interaktivní mapì mù¾ete kliknout na zvolené mìsto indikované
+        ¾lutou teèkou a pak se Vám zde objeví èervené <guilabel>X</guilabel>
+        v místì, které jste zvolili.
+      </para>
+      <para>
+        Èasovou zónu si mù¾ete vybrat také ze seznamu mìst.
+      </para>
+      <para>
+        Druhý list Vám umo¾òuje zvolit èasový posun od UTC
+        (Universal Coordinated Time). Najdete zde seznam mo¾ných odchylek
+        a volbu pro letního èasu (Daylight Saving Time).
+      </para>
+      <para>
+        V obou pøípadech mù¾ete zvolit, zda
+       <guilabel>Hardwarové hodiny pou¾ívají èas v UTC</guilabel>.
+        Zvolte tuto volbu, pokud máte èas v CMOS ulo¾en v UTC. Tato volba
+        umo¾òuje, aby systém sám správnì rozpoznal pøechod z letního
+        èasu na zimní a zpìt. Neumo¾òuje v¹ak korektní spolupráci
+        s jinými operaèními systémy, které si nedovedou èas správnì
+        pøepoèítat a potøebují mít v CMOS lokální èas.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-accts">
+      <title>Nastavení u¾ivatelských úètù</title>
+      <para>
+        Vlo¾te heslo pro správce systému (u¾ivatel root). Heslo musí být
+        alespoò ¹est znakù dlouhé. Vlo¾te jej i podruhé pro kontrolu,
+        jestli se obì shodují. Tlaèítko <guibutton>Dal¹í</guibutton>
+        bude zapnuto v okam¾iku, kdy se budou obì hesla shodovat.
+      </para>
+      <para>
+	Pak vytvoøte u¾ivatelské úèty.
+      </para>
+      <para>
+        Vlo¾te pøihla¹ovací jméno u¾ivatele do polo¾ky 'Jméno úètu',
+        jeho heslo a potvrïte jej opìtovným vlo¾ením stejného hesla.
+        Nakonec vyplòte plné jméno u¾ivatele a stisknìte tlaèítko
+        <keycap>Pøidat</keycap>.
+        Poté budou Va¹e vlo¾ené informace zaregistrovány do seznamu úètù.
+      </para>
+      <para>
+        Pokud budete chtít vlo¾it dal¹ího u¾ivatele, stisknìte tlaèítko
+        <guibutton>Nový</guibutton> a vyplòte pøíslu¹ná políèka. A¾ je
+        v¹echna vyplníte, stisknìte tlaèítko <guibutton>Pøidat</guibutton>,
+        aby byly vlo¾ené informace zaøazeny do seznamu úètù.
+      </para>
+      <para>
+        Na ji¾ vytvoøené úèty mù¾ete pou¾ít tlaèítka
+        <guibutton>Upravit</guibutton> a <guibutton>Smazat</guibutton>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-authconf">
+      <title>Konfigurace ovìøování hesel</title>
+      <para>
+        Tuto sekci mù¾ete pøeskoèit, pokud si nebudete pou¾ívat hesla
+        ze sítì. Pokud si nejste jisti, kontaktujte svého
+        správce sítì (administrátora).
+      </para>
+      <para>
+        Pokud nenastavujete ovìøování hesel pomocí <firstterm>NIS</firstterm>,
+        v¹imnìte si, ¾e obì polo¾ky <firstterm>MD5</firstterm> a 
+        <firstterm>stínová hesla</firstterm> jsou zvoleny. 
+        Doporuèujeme Vám je obì ponechat zvolené, aby byl Vá¹ poèítaè
+        co nejvíce zabezpeèen.
+      </para>
+      <para>
+	<emphasis>Povolit MD5 hesla</emphasis> - 
+        dovoluje, aby hesla mohla být dlouhá a¾ 256 znakù místo standardních
+        8 znakù nebo ménì.
+      </para>
+      <para>
+	<emphasis>Povolit stínová hesla</emphasis> - 
+        poskytuje velmi bezpeèný úkryt pro za¹ifrovaná hesla. Zakódovaná hesla
+        jsou pøesunuta ze standardního umístìní do souboru
+        <filename>/etc/shadow</filename>, který je èitelný jen pro
+        administrátora (u¾ivatel root). Hesla
+        sice nejsou èitelná ani pøeveditelná do pùvodní podoby ani
+        v jednom pøípadì, av¹ak tímto zpùsobem zamezíte, aby se nìkdo
+        mohl pokusil uhodnout cizí hesla hrubou silou (se znalostí
+        jejich za¹ifrované podoby).
+      </para>
+      <para>
+        Pokud chcete konfigurovat volbu NIS, musíte být pøipojeni do sítì,
+        kde jsou u¾ivatelské úèty spravovány tímto zpùsobem. Pokud si
+        nejste jisti, co to znamená, kontaktujte svého správce sítì
+        (administrátora).
+      </para>
+      <para>
+	<emphasis>Povolit NIS</emphasis> -
+        umo¾òuje, aby skupiny poèítaèù mìly ulo¾eny informace o u¾ivatelských
+        heslech na centrálním místì (NIS - Network Information Service).
+        Mù¾ete si zde vybrat mezi dvìma volbami:
+      </para>
+      <para>
+	<emphasis>NIS Doména</emphasis> - 
+        zde volíte, ve které doménì nebo skupinì je zaøazen Vá¹ poèítaè.
+      </para>
+      <para>
+	<emphasis>NIS Server</emphasis> -
+        tato volba zpùsobí, ¾e Vá¹ poèítaè bude pou¾ívat konkrétní NIS sever.
+        Obrácenou mo¾ností je pou¾ití tzv. 'v¹esmìrové vysílání' pro
+        kdy na dotaz klienta mù¾e odpovìdìt jakýkoliv dostupný
+        server v lokální síti, který dotaz usly¹í.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-sel-group">
+      <title>Výbìr skupin balíèkù</title>
+      <para>
+        zvolte skupiny balíèkù, které chcete nainstalovat.
+        Zvolením jedné skupiny se automaticky vybere více balíèkù k instalaci.
+        Je to pohodlné zejména proto, ¾e se automaticky nainstalují napø.
+        v¹echny balíèky potøebné pro pøekládání jádra (Kernel Development)
+        - tedy jednak zdrojové kódy jádra, ale i pøekladaè a dal¹í
+        nezbytné souèásti.
+      </para>
+      <para>
+        Abyste si mohli vybírat jednotlivé balíèky za¹krtnìte
+        volbu <guilabel>Výbìr jednotlivých balíèkù</guilabel>
+        ve spodní èásti obrazovky.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-sel-indiv">
+      <title>Výbìr jednotlivých balíèkù</title>
+      <para>
+        Na levé stranì vidíte skupiny balíèkù zobrazené jako adresáøovou
+        strukturu. Pokud si seznam rozbalíte a zvolíte nìjakou skupinu,
+        uvidíte seznam dostupných balíèkù, ze kterých mù¾ete vybírat.
+      </para>
+      <para>
+        Pokud nìkterý balíèek chcete nainstalovat, dvakrát na nìj kliknìte
+        nebo kliknìte na tlaèítko <guilabel>Výbìr balíèku pro instalaci
+        </guilabel>. Na balíèku se objeví èervené zatr¾ení, které výbìr
+        signalizuje.
+      </para>
+      <para>
+        Pokud si budete chtít pøeèíst informace o obsahu balíèku,
+        kliknìte na nìj a ve spodní èásti obrazovky se zobrazí popis
+        balíèku spolu s jeho názvem a velikostí.
+      </para>
+    </sect1>
+      
+      <sect1 id="s1-help-screens-depend">
+      <title>Nevyøe¹ené závislosti</title>
+      <para>
+        Mnoho balíèkù s programy potøebuje ke své èinnosti jiné balíèky nebo
+        sdílené knihovny, které v nich samotných nejsou obsa¾eny.
+        Aby v¹echny programy po instalaci pracovat správnì, kontroluje
+        &RHL; automaticky tyto <firstterm>závislosti</firstterm>
+        (dependencies) poka¾dé, kdy¾ instalujete nebo odstraòujete
+        nìjaké balíèky ze systému. Pokud balíèek vy¾aduje jiný, který není
+        nainstalován, vznikne 'nevyøe¹ená závislost'.
+      </para>
+      <para>
+        Jeden nebo více balíèkù, které jste zvolili, má nevyøe¹ené závislosti.
+        Vyøe¹it tento problém mù¾ete jednodu¹e tak, ¾e kliknete na
+        tlaèítko <guilabel>Instalace balíèkù k vyøe¹ení závislostí</guilabel>.
+      </para>
+    </sect1>
+    
+    <sect1 id="s1-help-screens-monitor">
+      <title>Konfigurace monitoru pro X</title>
+      <para>
+        Instalaèní program se nyní pokusí zjistit typ Va¹eho
+        monitoru, aby mohl nastavit co nejlep¹í nastavení grafické
+        karty. Pokud automatická detekce nefunguje, zvolte prosím
+        nejbli¾¹í mo¾ný model ze seznamu.
+      </para>
+      <para>
+        Mù¾ete vlo¾it i horizontální a vertikální rozsah frekvencí,
+        které Vá¹ monitor podporuje. Tyto informace naleznete
+        v dokumentaci k Va¹emu monitoru. Pøi vkládání tìchto údajù
+        buïte opatrní; pokud vlo¾íte hodnoty mimo povolený rozsah
+        Va¹ich zaøízení, mù¾ete zpùsobit jejich poruchu. Do políèka
+        vlo¾te tyto informace jen v pøípadì, ¾e jste si jisti jejich
+        správností a pokud zobrazené informace neodpovídají skuteènosti.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-xconf">
+      <title>Konfigurace X Window</title>
+      <para>
+        Instalaèní program se nyní pokusí zjistit, jakou videokartu a monitor
+        máte ve Va¹em systému, aby mohl nastavit co nejlep¹í parametry
+        pro grafické prostøedí. Pokud bude úspì¹ný, vypí¹e va¹i
+        konfiguraci. Pokud nebude schopen zjistit typ a vlastnosti Va¹eho
+        hardware (technického vybavení poèítaèe), vypí¹e seznam zaøízení,
+        ze kterého si budete moci vybrat.
+      </para>
+      <para>
+        Po zvolení typu Va¹í videokarty vlo¾te velikost videopamìti na
+        kartì.
+      </para>
+      <para>
+        Vlo¾ené údaje mù¾ete otestovat.
+      </para>
+      <para>
+        Zvolte, zda má Vá¹ systém automaticky spou¹tìt grafické
+        rozhraní pøi startu.
+      </para>
+      <para>
+	Kliknìte na tlaèítko <guibutton>Upøesnìní konfigurace X</guibutton>,
+        abyste si mohli sami zvolit poèet barev a rozli¹ení.
+      </para>
+      <para>
+        Mù¾ete zvolit i <guibutton>Pøeskoèit konfiguraci X</guibutton>,
+        pokud si chcete grafické rozhraní nakonfigurovat sami po instalaci
+        (programem Xconfigurator) nebo vùbec.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-xcustom">
+      <title>
+        Vlastní konfigurace
+      </title>
+      <para>
+        Zvolte pøíslu¹né rozli¹ení pro X Window System. Poté kliknìte
+        na tlaèítko <guibutton>Otestovat konfiguraci</guibutton>,
+        abyste ji ovìøili. Pokud nechcete pou¾ít testovanou
+        konfiguraci, kliknìte na <guibutton>Ne</guibutton>
+        a zvolte jiné rozli¹ení.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-aboutinstall">
+      <title>Vlastní instalace</title>
+      <para>
+        <command>Pozor:</command>
+        Pokud zde kliknete na tlaèítko <guibutton>Dal¹í</guibutton>,
+        zaène se &RHL; zapisovat na Vá¹ disk. Tento proces nejde
+        vrátit zpìt, tak¾e pokud si nejste jisti, ¾e instalaci chcete
+        opravdu provést, máte poslední mo¾nost celý proces pøeru¹it.
+      </para>
+      <para>
+        Pokud chcete instalaci pøeru¹it, vyndejte z mechanik v¹echny
+        diskety a CD-ROM a stisknìte tlaèítko <command>Reset</command>
+        na Va¹em poèítaèi. Mù¾ete té¾ pou¾ít kombinaci kláves
+	<keycombo>
+        <keycap>Control-</keycap> <keycap>Alt-</keycap><keycap>Delete</keycap>
+	</keycombo>
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-installing">
+      <title>Instalace balíèkù</title>
+      <para>
+        Shromá¾dili jsme v¹echny informace potøebné pro instalaci
+        &RHL; na Va¹em systému. Celá instalace bude trvat v závislosti
+        na poètu vybraných balíèkù zhruba 15 minut a¾ pùl hodiny.
+        Uplynulý èas a odhad zbývajícího èasu instalace se bude prùbì¾nì
+        zobrazovat na obrazovce.
+      </para>
+      <para>
+        Nyní je nejlep¹í èas pøeèíst si dokumentaci, kterou jste
+        od dodavatele získali. Kromì jiných upozoròujeme na publikace
+        <citetitle>&RHLGSG;</citetitle> a <citetitle>&RHLRGS;</citetitle>,
+        které jsou k dispozici v elektronické podobì na Va¹em CD.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-bootdisk">
+      <title>Vytvoøení startovací diskety</title>
+      <para>
+        Vlo¾te prázdnou zformátovanou disketu do disketové mechaniky
+        a kliknìte na tlaèítko <guibutton>Dal¹í</guibutton>.
+      </para>
+    </sect1>
+  </chapter>
+</book>

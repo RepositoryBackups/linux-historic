@@ -1,0 +1,356 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/ro/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Partiþionare hard discuri</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.49"><LINK
+REL="HOME"
+TITLE="Instrucþiuni de instalare"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="Partiþionare Automatã"
+HREF="s1-help-screens-svr.html"><LINK
+REL="NEXT"
+TITLE="Configurarea Sistemului de Fiºiere"
+HREF="s1-help-screens-loopback.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-PARTITION"
+>Partiþionare hard discuri</A
+></H1
+><P
+>	Unde doriþi sã instalaþi Red Hat Linux?
+      </P
+><P
+>	<B
+CLASS="COMMAND"
+>Atenþie:</B
+> Dacã doriþi sã realizaþi o
+	<B
+CLASS="COMMAND"
+>Instalare fãrã partiþionare</B
+> trebuie sã
+	definiþi o partiþie DOS/Windows existentã ca rãdacinã, notatã
+	<B
+CLASS="COMMAND"
+>/</B
+>. Selectaþi partiþia de tip FAT pe care o
+	doriþi pentru aceastã instalare. Dupa ce a fost marcatã,
+	selectaþi <I
+CLASS="GUILABEL"
+>Editare</I
+> pentru a-i asigna punctul de
+	montare <B
+CLASS="COMMAND"
+>/</B
+> (rãdãcina). Selectaþi
+	<I
+CLASS="GUILABEL"
+>Ok</I
+> cind aþi terminat. În momentul în care
+	aþi confirmat aceasta opþiune, trebuie sã specificaþi
+	dimensiunea potrivitã pentru sistemul de fiºiere al rãdãcinii
+	ºi spaþiul tip swap pentru sistemul dvs.
+      </P
+><P
+>	Dacã doriþi detalii, consultaþi capitolul <I
+CLASS="EMPHASIS"
+>Installing
+	Without Partitioning</I
+> din <I
+CLASS="CITETITLE"
+>Ghidul de Instalare Red Hat Linux</I
+>.
+      </P
+><P
+>	Dacã nu ºtiþi cum sã partiþionaþi sistemul dvs., vã rugãm
+	sã citiþi secþiunea despre partiþionare din
+	<I
+CLASS="CITETITLE"
+>Ghidul de Instalare Red Hat Linux</I
+> sau din
+	<I
+CLASS="CITETITLE"
+>Ghidul de Referinþe Red Hat Linux</I
+>.
+      </P
+><P
+>	Dacã aþi efectuat partiþionarea cu <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>,
+	trebuie sã definiþi <I
+CLASS="FIRSTTERM"
+>puncte de montare</I
+> pentru
+	partiþiile dvs. Folosiþi butonul <I
+CLASS="GUILABEL"
+>Editare</I
+>, când
+	aþi ales o partiþie, pentru a-i defini punctul de montare.
+      </P
+><P
+>	Dacã utilizaþi <TT
+CLASS="APPLICATION"
+>Disk Druid</TT
+>, trebuie sã
+	definiþi puncte de montare pentru una sau mai multe partiþii. De
+	asemenea, puteþi crea ºi/sau ºterge partiþii în acest moment.
+      </P
+><P
+>	În partea superioarã a ecranului sânt afiºate partiþiile
+	existente. Fiecare partiþie conþine cinci câmpuri: 
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Mount Point:</B
+> Acest câmp indicã unde va fi
+	    montatã partiþia când Red Hat Linux este instalat ºi ruleazã. Dacã
+	    o partiþie existã, dar este marcatã ca "not set" trebuie
+	    sã-i specificaþi un punct de montare. Puteþi utiliza butonul
+	    <B
+CLASS="KEYCAP"
+>Editare</B
+> sau dublu-click pe partiþie.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Device:</B
+> Acest câmp afiºeazã numele
+	    device-ului pentru partiþia respectivã (de exemplu, hda2
+	    reprezintã a doua partiþie de pe hard-disk-ul primar).
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Requested:</B
+> Câmpul
+	    <I
+CLASS="FIRSTTERM"
+>Requested</I
+> aratã dimensiunea partiþiei.
+	    Dacã doriþi sa o redimensionaþi, trebuie sa o ºtergeþi si
+	    sã o recreaþi folosind butonul <B
+CLASS="KEYCAP"
+>Adaugã</B
+>.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Actual:</B
+> Acest câmp aratã cât spaþiu este
+	    utilizat de cãtre partiþie.
+	  </P
+></LI
+><LI
+><P
+>	    <B
+CLASS="COMMAND"
+>Type:</B
+> Acest câmp aratã tipul partiþiei (de
+	    exemplu Linux Native sau DOS).
+	  </P
+></LI
+></UL
+><P
+>	Pe mãsurã ce parcurgeþi secþiunea <I
+CLASS="FIRSTTERM"
+>Partitions</I
+>,
+	puteþi vedea un mesaj de tipul <I
+CLASS="FIRSTTERM"
+>Unallocated Requested
+	Partition</I
+> (colorat in roºu), urmat de una sau mai multe
+	partiþii. O cauzã a existenþei unei partiþii nealocate este
+	lipsa de spaþiu pentru partiþie.
+      </P
+><P
+>	Pentru a reface o partiþie nealocatã, trebuie sã mutaþi
+	partiþia pe un alt hard-disk care sã aibã spaþiu necesar, sau
+	sã redimensionþi partiþia pentru a putea fi alocatã pe
+	hard-disk-ul curent, sau sã o ºtergeþi în întregime. Realizaþi
+	aceste modificãri utilizând butonul <B
+CLASS="KEYCAP"
+>Editare</B
+> sau
+	prin dublu-click pe partiþie.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DD"
+>Partiþionarea sistemului dvs.</A
+></H2
+><P
+>	  Rândul central de butoane permite operaþiuni pentru
+	  partiþionare. Puteþi adãuga, edita sau ºterge partiþii. În
+	  plus, existã butoane pe care le puteþi utiliza pentru a accepta
+	  sau anula modificãrile pe care le-aþi fãcut sau pentru a ieºi
+	  din programul de partiþionare.
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Adaugã:</B
+> Folosiþi acest buton când doriþi
+	      sã creaþi o nouã partiþie. În momentul selecþiei, este
+	      afiºatã o cutie de dialog ce conþine câmpurile care
+	      trebuie completate (de exemplu punctul de montare, dimensiunea
+	      ºi tipul).
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Editare:</B
+> Folosiþi acest buton pentru a
+	      schimba punctul de montare al partiþiei curente selectate.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>ªterge:</B
+> Folosiþi acest buton pentru a
+	      ºterge o partiþie. O cutie de dialog va apare cerându-vã
+	      sa confirmaþi ºtergerea.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Reset:</B
+> Folosiþi acest buton pentru a anula
+	      schimbãrile fãcute anterior.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Make RAID Device:</B
+> Folosiþi butonul
+	      <B
+CLASS="KEYCAP"
+>Make RAID Device</B
+> NUMAI dacã aveþi
+	      experienþã in utilizarea RAID. Pentru a învãþa mai multe
+	      despre RAID, consultaþi <I
+CLASS="CITETITLE"
+>Ghidul de Referinþe Red Hat Linux</I
+>.
+	    </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-HELP-SCREENS-DRIVE"
+>Structura Hard-Disk</A
+></H2
+><P
+>	  Aceastã secþiune afiºeazã configuraþia hard-disk-urilor
+	  sistemului. Fiecare linie conþine urmãtoarele câmpuri:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Drive:</B
+> Acest câmp afiºeazã numele
+	      device-ului (ex. hda sau hdb).
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Geom [C/H/S]:</B
+> <I
+CLASS="FIRSTTERM"
+>Geometria</I
+>
+	      hard-disk-ului afiºeazã numãrul de cilindri, capete ºi
+	      sectoare.  </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Total:</B
+> Acest câmp aratã spaþiul total de
+	      pe hard-disk.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Free:</B
+> Aici gãsiþi cât spaþiu pe
+	      hard-disk este nefolosit.
+	    </P
+></LI
+><LI
+><P
+>	      <B
+CLASS="COMMAND"
+>Used:</B
+> Aceste câmpuri aratã cât spaþiu
+	      de pe hard-disk este în mod curent alocat partiþiilor, în
+	      megaocteþi ºi în procente.
+	    </P
+></LI
+></UL
+></DIV
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/ro/s1-help-screens-partition.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:32 GMT -->
+</HTML
+>

@@ -1,0 +1,316 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-install-packages.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:02:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Select Packages to Install</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Installing Red Hat Linux via Text Mode"
+HREF="ch-install-tm.html"><LINK
+REL="PREVIOUS"
+TITLE="Authentication Configuration"
+HREF="s1-install-authconf.html"><LINK
+REL="NEXT"
+TITLE="Configuring Your Video Adapter"
+HREF="s1-install-videocard.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-install-authconf.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 10. Installing Red Hat Linux via Text Mode</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-install-videocard.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-INSTALL-PACKAGES"
+>Select Packages to Install</A
+></H1
+><P
+>	<A
+HREF="s1-install-packages.html#FIG-INSTALL-PKG-GROUP"
+>Figure 10-34</A
+> appears only if you're performing a
+	custom-class installation. Use this dialog to select the types of
+	software packages you wish to install.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-PKG-GROUP"
+></A
+><P
+><IMG
+SRC="figs/textmode/pkg-group.gif"></P
+><P
+><B
+>Figure 10-34. Package Group Selection Dialog</B
+></P
+></DIV
+><P
+>	Selecting <B
+CLASS="GUIMENUITEM"
+>Everything</B
+> (which can be found at
+	the end of the component list) installs all packages included with
+	Red Hat Linux.  Selecting every package will require close to 1.7GB of free disk
+	space.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-PACKAGESINGLE"
+>Selecting Individual Packages</A
+></H2
+><P
+>	  You can also select or deselect individual packages in an application
+	  category. To do this, check the <TT
+CLASS="GUILABEL"
+><B
+>Select individual
+	  packages</B
+></TT
+> check box. When you select
+	  <B
+CLASS="GUIBUTTON"
+>OK</B
+>, a screen like <A
+HREF="s1-install-packages.html#FIG-INSTALL-PKG-INDI"
+>Figure 10-35</A
+> appears.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-PKG-INDI"
+></A
+><P
+><IMG
+SRC="figs/textmode/pkg-indi.gif"></P
+><P
+><B
+>Figure 10-35. Selecting Individual Packages in Package Group Selection
+          Dialog</B
+></P
+></DIV
+><P
+>	  To see the list of packages in the
+	  <B
+CLASS="GUIMENUITEM"
+>Applications/Editors</B
+> category, for example,
+	  use the arrow keys to select this group and press
+	  <B
+CLASS="KEYCAP"
+>Enter</B
+> or <B
+CLASS="KEYCAP"
+>Space</B
+>. When you do, the
+	  <B
+CLASS="GUIMENUITEM"
+>+</B
+> sign (closed) changes to a
+	  <B
+CLASS="GUIMENUITEM"
+>-</B
+> sign (open) and a list of packages in
+	  this category appears.  An <B
+CLASS="GUIMENUITEM"
+>*</B
+> appears beside
+	  currently selected packages. Press the <B
+CLASS="KEYCAP"
+>Enter</B
+> or
+	  <B
+CLASS="KEYCAP"
+>Space</B
+> keys to select or deselect packages.
+	</P
+><P
+>	  To see a description of a particular package, make sure that package
+	  is highlighted and press <B
+CLASS="KEYCAP"
+>F1</B
+>.
+	</P
+><P
+>	  Note that some packages that are required for every Red Hat Linux system (such
+	  as the kernel and certain libraries) do not appear in the package
+	  selection dialogs.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-INSTALL-PKG-DEP"
+>Unresolved Package Dependencies</A
+></H2
+><P
+>	  Many software packages, in order to work correctly, require that other
+	  software packages are also installed on your system.  For example,
+	  many of the graphical system administration tools require the
+	  <TT
+CLASS="FILENAME"
+>python</TT
+> and <TT
+CLASS="FILENAME"
+>pythonlib</TT
+>
+	  packages.  To make sure your system has all the packages it needs in
+	  order to be fully functional, Red Hat Linux checks these package
+	  <I
+CLASS="FIRSTTERM"
+>dependencies</I
+> each time you install or remove
+	  software packages.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-UD"
+></A
+><P
+><IMG
+SRC="figs/textmode/ud.gif"></P
+><P
+><B
+>Figure 10-36. Package Dependencies Dialog</B
+></P
+></DIV
+><P
+>	  After you have finished selecting packages to install, the
+	  installation program checks the list of selected packages for
+	  dependencies.  If any package requires another package which you have
+	  not selected to install, the program presents a list of these
+	  <I
+CLASS="FIRSTTERM"
+>unresolved dependencies</I
+> and gives you the
+	  opportunity to resolve them (see <A
+HREF="s1-install-packages.html#FIG-INSTALL-UD"
+>Figure 10-36</A
+>). If you simply press
+	  <B
+CLASS="GUIBUTTON"
+>OK</B
+>, the program will resolve them automatically
+	  by adding all required packages to the list of selected packages.
+	</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-install-authconf.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-install-videocard.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Authentication Configuration</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-install-tm.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Configuring Your Video Adapter</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-install-packages.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:03:14 GMT -->
+</HTML
+>

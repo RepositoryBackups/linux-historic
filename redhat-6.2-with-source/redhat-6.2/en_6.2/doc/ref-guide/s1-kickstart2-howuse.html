@@ -1,0 +1,349 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-kickstart2-howuse.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>How Do You Perform a Kickstart Installation?</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Kickstart Installations"
+HREF="ch-kickstart2.html"><LINK
+REL="PREVIOUS"
+TITLE="Kickstart Installations"
+HREF="ch-kickstart2.html"><LINK
+REL="NEXT"
+TITLE="Starting a Kickstart Installation"
+HREF="s1-kickstart2-startinginstall.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-kickstart2.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Appendix F. Kickstart Installations</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-kickstart2-startinginstall.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-KICKSTART2-HOWUSE"
+>How Do You Perform a Kickstart Installation?</A
+></H1
+><P
+>      Kickstart installations can only be performed using a local CD-ROM, a
+      local hard drive, or NFS installation methods.  FTP and HTTP installations
+      cannot be automated using kickstart mode.
+    </P
+><P
+>      To use kickstart mode, you must first create a kickstart file
+      (<TT
+CLASS="FILENAME"
+>ks.cfg</TT
+>), and make it available to the Red Hat Linux
+      installation program.
+    </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-KICKSTART2-PUTKICKSTARTHERE"
+>Where to Put A Kickstart File</A
+></H2
+><P
+>	A kickstart file must be placed in one of two locations:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	    on a boot disk
+	  </P
+></LI
+><LI
+><P
+>	    on a network
+	  </P
+></LI
+></UL
+><P
+>	Normally a kickstart file is copied to the boot disk, or made available
+	on the network.  The network-based approach is most commonly used, as
+	most kickstart installations tend to be performed on networked
+	computers.  
+      </P
+><P
+>	Let's take a more in-depth look at where the kickstart
+	file may be placed.
+      </P
+><P
+>	To perform a diskette-based kickstart installation, the kickstart file
+	must be named <TT
+CLASS="FILENAME"
+>ks.cfg</TT
+>, and reside in the boot disk's
+	top-level directory. Note that the Red Hat Linux boot disks are in MS-DOS
+	format, making it easy to copy the kickstart file under Linux using the
+	<B
+CLASS="COMMAND"
+>mcopy</B
+> command:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>mcopy ks.cfg a:
+	</PRE
+></TD
+></TR
+></TABLE
+><P
+>	(or, if you insist, you can also use Windows).  You can also mount the
+	MS-DOS boot disk and <B
+CLASS="COMMAND"
+>cp</B
+> the file over. Although
+	there's no technological requirement for it, most diskette-based
+	kickstart installations install Red Hat Linux from a local CD-ROM.
+      </P
+><P
+>	Network installations using kickstart are quite common, because system
+	administrators can easily automate the installation on many networked
+	computers quickly and painlessly.  In general, the approach most
+	commonly used is for the administrator to have both a BOOTP/DHCP server
+	and an NFS server on the local network.  The BOOTP/DHCP server is used
+	to give the client system its networking information, while the actual
+	files used during the installation are served by the NFS server.  Often,
+	these two servers run on the same physical machine, but there is no
+	requirement for this.
+      </P
+><P
+>	To do a network-based kickstart installation, you must have a BOOTP/DHCP
+	server on your network, and it must include configuration information
+	for the machine on which you are attempting to install Red Hat Linux.  The BOOTP/DHCP
+	server will be used to give the client its networking information as
+	well as the location of the kickstart file.
+      </P
+><P
+>	If a kickstart file is specified by the BOOTP/DHCP server, the client
+	system will attempt an NFS mount of the file's path, and will copy the
+	specified file to the client, using it as the kickstart file.  The exact
+	settings required vary depending on the BOOTP/DHCP server you use.
+      </P
+><P
+>	Here's an example of a line from the <TT
+CLASS="FILENAME"
+>dhcpd.conf</TT
+>
+	file for the DHCP server shipped with Red Hat Linux:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="FILENAME"
+>filename</TT
+> "/usr/new-machine/kickstart/";
+next-server blarg.redhat.com;
+      </PRE
+></TD
+></TR
+></TABLE
+><P
+>	Note that you should use <TT
+CLASS="FILENAME"
+>filename</TT
+> for the
+	kickstart file's name (or the directory in which the kickstart file
+	resides) and <TT
+CLASS="FILENAME"
+>next-server</TT
+> to set the NFS server
+	name.
+      </P
+><P
+>	If the filename returned by the BOOTP/DHCP server ends with a slash
+	("/"), then it is interpreted as a path only.  In this case, the client
+	system mounts that path using NFS, and searches for a specially-named
+	file.  The filename the client searches for is:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>&#60;ip-addr&#62;</I
+></TT
+>-kickstart</TT
+>
+      </PRE
+></TD
+></TR
+></TABLE
+><P
+>	The <TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>&#60;ip-addr&#62;</I
+></TT
+></TT
+>
+	section of the filename should be replaced with the client's IP address
+	in dotted decimal notation.  For example, the filename for a computer
+	with an IP address of 10.10.0.1 would be
+	<TT
+CLASS="FILENAME"
+>10.10.0.1-kickstart</TT
+>.
+      </P
+><P
+>	Note that if you don't specify a server name, then the client system
+	will attempt to use the server that answered the BOOTP/DHCP request as
+	its NFS server.  If you don't specify a path or filename, the client
+	system will try to mount <TT
+CLASS="FILENAME"
+>/kickstart</TT
+> from the
+	BOOTP/DHCP server, and will try to find the kickstart file using the
+	same
+	<TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>&#60;ip-addr&#62;</I
+></TT
+>-kickstart</TT
+>
+	filename as described above.
+      </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-kickstart2.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-kickstart2-startinginstall.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Kickstart Installations</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-kickstart2.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Starting a Kickstart Installation</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-kickstart2-howuse.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

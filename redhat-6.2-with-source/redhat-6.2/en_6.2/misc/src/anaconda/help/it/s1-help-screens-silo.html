@@ -1,0 +1,108 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/it/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Configurazione SILO</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.52"><LINK
+REL="HOME"
+TITLE="Help di installazione"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="Configurazione LILO"
+HREF="s1-help-screens-lilo.html"><LINK
+REL="NEXT"
+TITLE="Configurazione della rete"
+HREF="s1-help-screens-netconf.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-SILO"
+>Configurazione SILO</A
+></H1
+><P
+>        SILO, il Sparc Improved LOader, e' un programma che puo' essere
+	utilizzato per avviare Red Hat Linux su sistemi Sparc.
+        Puo' anche avviare altri sistemi operativi, quali SunOS e
+        Solaris. Qui verra' chiesto come (o se) volete configurare SILO.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Crea boot disk</B
+>: Dovreste creare un boot disk
+       se non state installando SILO.
+       Se non possedete un floppy questa opzione verra' disabilitata.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Non installare SILO</B
+>: Potete scegliere di
+         non installare SILO se e' gia' presente su un altro disco o se
+	state utilizzando un altro boot loader.
+      </P
+><P
+>        Per installare SILO, selezionate dove volete installarlo.
+         Se il vostro sistema utilizza solo Red Hat Linux
+         dovreste scegliere di installarlo nel Master Boot Record
+	 (Blocco di avvio della prima partizione del primo disco).
+       Per i sistemi in cui risiedono SunOS/Solaris e Red Hat Linux
+         su un hard drive singolo, dovreste installare SILO nel MBR,
+         specialmente se SunOS/Solaris non e' la prima partizione del
+         disco.
+      </P
+><P
+>        Anche se scegliete di installare SILO, create comunque un
+         boot disk in modo da poter riavviare Red Hat Linux.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Create PROM alias</B
+>: L'installer puo'
+         creare un PROM alias "linux" se il PROM lo supporta, affinche'
+        possiate riavviare il programm SILO dal prompt PROM.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Set default PROM boot device</B
+>:
+        Il PROM riavvia Red Hat Linux inserendo come opzioni di default
+        "boot-device" o "boot-from".
+      </P
+><P
+>       Se desiderate aggiungere opzioni di default al comando
+         SILO boot, inseritele nel campo dei parametri kernel.
+       Qualsiasi opzione inserita, verra' passata al kernel di        
+          Linux ogni volta che si riavvia il sistema.
+      </P
+><P
+> 
+       Partizioni riavviabili -- Ogni partizione riavviabile e' elencata ed
+       etichettata, incluse le partizioni usate da altri sistemi operativi.
+       Se volete aggiungere etichette per altre partizioni (o cambiare le boot
+       label esistenti), premete una volta sulla partizione per selezionarla.
+        Una volta selezionata, potete cambiare la boot label.
+      </P
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/misc/src/anaconda/help/it/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:57:28 GMT -->
+</HTML
+>

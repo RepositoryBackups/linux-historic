@@ -1,0 +1,115 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/sv/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>SILO-konfiguration</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.49"><LINK
+REL="HOME"
+TITLE="Installationshjälpskärmar"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="LILO-konfiguration"
+HREF="s1-help-screens-lilo.html"><LINK
+REL="NEXT"
+TITLE="Nätverkskonfiguration"
+HREF="s1-help-screens-netconf.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-SILO"
+>SILO-konfiguration</A
+></H1
+><P
+>        SILO (Sparc Improved LOader) är mjukvara som kan användas
+	för att starta Red Hat Linux på din dator. Det kan också
+	starta andra operativsystem, som exempelvis SunOS eller
+	Solaris. Här kommer du att efterfrågas hur (eller om) du
+	vill konfigurera SILO.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Skapa bootdiskett</B
+>: Du bör skapa en
+	bootdiskett om du inte alls installerar SILO eller om du
+	vill ha det på grund av säkerhetsskäl. Om du inte har en
+	diskettstation kommer detta alternativ att vara gömt. Om du har
+	en Ultra från SMCC (som vanligtvis inte har bootbara
+	diskettstationer) kommer detta alternativ att som standard
+	vara deaktiverat.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Installera inte SILO</B
+>: Du kan välja att
+	hoppa över SILO om du inte vill skriva SILO till din hårddisk,
+	exempelvis om du redan har SILO installerat på en annan
+	partition eller hårddisk och vill boota därifrån.
+      </P
+><P
+>        För att installera SILO väljer du var du vill installera det.
+	Om ditt system endast kommer att använda Red Hat Linux bör du
+	troligen välja huvudbootposten (MBR; bootblocket på första
+	partitionen på hårddisken). För system där både
+	SunOS/Solaris och Red Hat Linux kommer att finnas på en och samma
+	hårddisk bör du troligtvis inte installera SILO på MBR,
+	särskilt om SunOS/Solaris finns på hårddiskens första
+	partition.
+      </P
+><P
+>        Om du väljer att inte installera SILO av någon anledning bör du
+	skapa en bootdiskett så att du kan boota till Red Hat Linux.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Skapa PROM-alias</B
+>: Installationsprogrammet
+	kan skapa ett "linux"-alias i PROM:et, om PROM:et stöder detta,
+	så att du kan boota till SILO från PROM-kommandoraden med
+	kommandot "boot linux".
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Sätt standard bootenhet i PROM</B
+>:
+	Installationsprogrammet kan säkerställa att PROM:et som standard
+	kommer att boota till Red Hat Linux installationsprogram, genom
+	att sätta PROM-alternativet "boot-device" eller "boot-from".
+      </P
+><P
+>       Om du vill lägga till standardalternativ till SILO-bootkommandot
+       skriver du in dem i fältet parametrar till kärnan. Eventuella
+       alternativ som du anger kommer att skickas till Linuxkärnan varje
+       gång den bootar.
+      </P
+><P
+>       Bootbar partition -- Varje bootbar partition, inklusive partitioner
+       som används av andra operativsystem, visas och har en etikett.
+       Om du vill lägga till bootetiketter för andra partitioner (eller
+       ändra existerande partitioner) klickar du först på partitionen för
+       att välja ut den. När den väl är vald kan du ändra bootetiketten.
+      </P
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/sv/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:44 GMT -->
+</HTML
+>

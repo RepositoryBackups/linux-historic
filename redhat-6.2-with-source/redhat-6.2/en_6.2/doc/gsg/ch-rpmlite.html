@@ -1,0 +1,399 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/ch-rpmlite.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:45:25 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Using Gnome-RPM and RPM</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Managing Files and Directories"
+HREF="p3804.html"><LINK
+REL="PREVIOUS"
+TITLE="The KDE File Manager"
+HREF="s1-managers-kfm.html"><LINK
+REL="NEXT"
+TITLE="Using Gnome-RPM"
+HREF="s1-rpmlite-gnorpm.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-managers-kfm.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-rpmlite-gnorpm.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CH-RPMLITE"
+>Chapter 10. Using Gnome-RPM and RPM</A
+></H1
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-RPMLITE-INTRO"
+>The benefits of <TT
+CLASS="APPLICATION"
+>RPM</TT
+></A
+></H1
+><P
+>&#13;	
+
+	
+
+	
+
+	RPM stands for <I
+CLASS="EMPHASIS"
+>R</I
+>PM <I
+CLASS="EMPHASIS"
+>P</I
+>ackage
+	<I
+CLASS="EMPHASIS"
+>M</I
+>anager. At its heart,
+	<TT
+CLASS="APPLICATION"
+>RPM</TT
+> is one of the most convenient
+	technologies available for Red Hat Linux. That convenience extends beyond the
+	user; Red Hat encourages other vendors to consider the ease of use behind
+	the <TT
+CLASS="APPLICATION"
+>RPM</TT
+> system for their own products (the
+	system may be distributed under terms of the GPL).
+      </P
+><P
+>	Want to install or remove an application? No problem. Upgrade an
+	application you already have? It's easy. By typing a few simple commands
+	or pressing a few buttons, the process will be taken care of for you.
+      </P
+><P
+>	<TT
+CLASS="APPLICATION"
+>RPM</TT
+> also features useful tools to view the contents of a
+	<I
+CLASS="FIRSTTERM"
+>package</I
+>, as well as other essential file and
+	system maintenance features.
+      </P
+><P
+>	From its earliest days, <TT
+CLASS="APPLICATION"
+>RPM</TT
+> was intended to
+	be an easy and secure way to get packages on an off a user's
+	system. Often, the only requirement to installing an
+	<TT
+CLASS="APPLICATION"
+>RPM</TT
+> package -- sometimes referred to as a
+	<I
+CLASS="FIRSTTERM"
+>pre-compiled binary</I
+> if it's an application -- is
+	that you're root and that you press the right buttons!
+      </P
+><P
+>	You can choose to work with <TT
+CLASS="APPLICATION"
+>RPM</TT
+> packages from
+	either a graphical front-end or the shell
+	prompt. <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>, which was introduced in
+	Red Hat Linux 6.0, is a graphical <TT
+CLASS="APPLICATION"
+>RPM</TT
+> tool. An
+	alternative to <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> are various
+	<TT
+CLASS="APPLICATION"
+>RPM</TT
+> commands you can issue from the shell
+	prompt in an Xterm window.
+      </P
+><P
+>	This chapter will cover some of the basic features of
+	<TT
+CLASS="APPLICATION"
+>RPM</TT
+> use from
+	<TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> and from the shell prompt. For more
+	in-depth information, about both <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>
+	and <TT
+CLASS="APPLICATION"
+>RPM</TT
+> technology, refer to the related
+	chapters in the <I
+CLASS="CITETITLE"
+>Official Red Hat Linux Reference Guide.</I
+>
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>You must be root</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  Because <TT
+CLASS="APPLICATION"
+>RPM</TT
+> makes changes to your system,
+	  for most functions you must be root in order to use
+	  <TT
+CLASS="APPLICATION"
+>RPM</TT
+> from either the shell prompt or through
+	  <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-RPMLITE-SU"
+>Changing to Root</A
+></H2
+><P
+>	  
+	  Changing to root can be easily accomplished from within your user
+	  account.
+	</P
+><P
+>	  You can temporarily switch from your user account to root by using the
+	  <B
+CLASS="COMMAND"
+>su</B
+> command. Once you're root, you can install,
+	  delete and work with packages and perform maintenance on system files.
+	</P
+><P
+>	  Remember, however, that when you're root you can inadvertently damage
+	  your system, so use caution!
+	</P
+><P
+>	  Just type <B
+CLASS="COMMAND"
+>su</B
+> at the shell prompt. You'll see
+	  something like this:
+
+		  <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[you@localhost you]$</TT
+><TT
+CLASS="USERINPUT"
+><B
+>su</B
+></TT
+>
+<TT
+CLASS="PROMPT"
+>Password:</TT
+> <TT
+CLASS="USERINPUT"
+><B
+><TT
+CLASS="REPLACEABLE"
+><I
+>yourrootpassword</I
+></TT
+></B
+></TT
+>
+<TT
+CLASS="PROMPT"
+>[root@localhost you]#</TT
+>
+		  </PRE
+></TD
+></TR
+></TABLE
+>
+      </P
+><P
+>	Now that you're root, you can start <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+> or
+      perform your <TT
+CLASS="APPLICATION"
+>RPM</TT
+> command from the shell prompt.
+	</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-managers-kfm.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-rpmlite-gnorpm.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>The <TT
+CLASS="APPLICATION"
+>KDE File Manager</TT
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="p3804.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Using <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+></TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/ch-rpmlite.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:45:25 GMT -->
+</HTML
+>

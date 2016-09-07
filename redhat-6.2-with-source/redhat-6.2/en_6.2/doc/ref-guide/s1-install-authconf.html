@@ -1,0 +1,286 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-install-authconf.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:59:39 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Authentication Configuration</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Installing Red Hat Linux via Text Mode"
+HREF="ch-install-tm.html"><LINK
+REL="PREVIOUS"
+TITLE="Creating a User Account"
+HREF="s1-install-create-user.html"><LINK
+REL="NEXT"
+TITLE="Select Packages to Install"
+HREF="s1-install-packages.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-install-create-user.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 10. Installing Red Hat Linux via Text Mode</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-install-packages.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-INSTALL-AUTHCONF"
+>Authentication Configuration</A
+></H1
+><P
+>	If you are performing a custom installation, your next step is to
+	configure the type of password authentication your Red Hat Linux system will use
+	(see <A
+HREF="s1-install-authconf.html#FIG-INSTALL-AUTHCONF"
+>Figure 10-33</A
+>).  You will also have the
+	opportunity to configure NIS support; If you are unsure as to whether or
+	not you should do this, ask your network administrator.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-INSTALL-AUTHCONF"
+></A
+><P
+><IMG
+SRC="figs/textmode/authconf.gif"></P
+><P
+><B
+>Figure 10-33. Authentication Configuration Dialog</B
+></P
+></DIV
+><P
+>	Here's a brief explanation of the authentication password prompts: 
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>            <TT
+CLASS="GUILABEL"
+><B
+>Use Shadow Passwords</B
+></TT
+> -- provides a very secure
+	    method of retaining passwords for you.  The password filed in the
+	    <TT
+CLASS="FILENAME"
+>/etc/passwd</TT
+> file is replaced by
+	    <TT
+CLASS="FILENAME"
+>/etc/shadow</TT
+> which is readable only by root.
+          </P
+></LI
+><LI
+><P
+>            <TT
+CLASS="GUILABEL"
+><B
+>Enable MD5 Passwords</B
+></TT
+> -- allows a long password
+	    to be used (up to 256 characters) instead of the standard eight
+	    letters or less.
+          </P
+></LI
+><LI
+><P
+>            <TT
+CLASS="GUILABEL"
+><B
+>Enable NIS</B
+></TT
+> -- allows you to run a group of
+	    computers in the same Network Information Service domain with a
+	    common password and group file. There are two options here to choose
+	    from:
+          </P
+><P
+></P
+><UL
+><LI
+><P
+>                <TT
+CLASS="GUILABEL"
+><B
+>NIS Domain</B
+></TT
+> -- this option allows you to
+		specify which domain or group of computers your system will
+		belong to.
+              </P
+></LI
+><LI
+><P
+>                <TT
+CLASS="GUILABEL"
+><B
+>NIS Server</B
+></TT
+> -- this option causes your
+		computer to use a specific NIS server, rather than
+		"broadcasting" a message to the local area network asking for
+		any available server to host your system.
+              </P
+></LI
+></UL
+></LI
+></UL
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          To configure the NIS option, you must be connected to an NIS
+          network. If you are unsure whether you are connected to an NIS
+          network, please ask your network administrator.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	Unless you are setting up NIS, you will notice that both shadow passwords
+	and MD5 passwords are selected. We recommend you use both to make your
+	machine as secure as possible.
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-install-create-user.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-install-packages.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Creating a User Account</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-install-tm.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Select Packages to Install</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-install-authconf.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:59:46 GMT -->
+</HTML
+>

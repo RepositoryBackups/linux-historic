@@ -1,0 +1,1871 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-ppp-kppp.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Connecting with Kppp</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Getting Online"
+HREF="ch-ppp.html"><LINK
+REL="PREVIOUS"
+TITLE="Getting Online"
+HREF="ch-ppp.html"><LINK
+REL="NEXT"
+TITLE="The Web, E-Mail and News in GNOME and KDE"
+HREF="ch-email.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-ppp.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 6. Getting Online</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="ch-email.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-PPP-KPPP"
+>Connecting with <TT
+CLASS="APPLICATION"
+>Kppp</TT
+></A
+></H1
+><P
+>	<TT
+CLASS="APPLICATION"
+>Kppp</TT
+> is one the useful utilities included in
+	KDE. <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> can make establishing your Internet
+	connection easy -- and easy to modify. A dialer and configuration
+	application, <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> works with
+	<TT
+CLASS="APPLICATION"
+>pppd</TT
+> -- the Point-to-Point Protocol daemon.
+    </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PPP-STARTINGKPPP"
+>Starting <TT
+CLASS="APPLICATION"
+>Kppp</TT
+></A
+></H2
+><P
+>	  To start <TT
+CLASS="APPLICATION"
+>Kppp</TT
+>, go to the <B
+CLASS="GUIMENU"
+>Main Menu
+	    K</B
+> icon =&#62; <B
+CLASS="GUIMENU"
+>Internet</B
+> =&#62;
+	    <B
+CLASS="GUIMENUITEM"
+>Kppp</B
+> (see <A
+HREF="s1-ppp-kppp.html#GR-PPP-KPPPMENU"
+>Figure 6-15</A
+>).
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-KPPPMENU"
+></A
+><P
+><IMG
+SRC="figs/ppp/kpppmenu.gif"></P
+><P
+><B
+>Figure 6-15. Starting <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> from the menu</B
+></P
+></DIV
+><P
+>	  Type the password for the root account when it's requested. The
+	  opening dialog for <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> will be "grayed
+	  out," because you haven't created an account yet (see <A
+HREF="s1-ppp-kppp.html#GR-PPP-KPPP1"
+>Figure 6-16</A
+>).
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-KPPP1"
+></A
+><P
+><IMG
+SRC="figs/ppp/kppp1.gif"></P
+><P
+><B
+>Figure 6-16. The Main Dialog of <TT
+CLASS="APPLICATION"
+>Kppp</TT
+></B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PPP-CONFIGUREKPPP"
+>Configuring <TT
+CLASS="APPLICATION"
+>Kppp</TT
+></A
+></H2
+><P
+>	  To begin, select the <B
+CLASS="GUIBUTTON"
+>Setup</B
+> button. The next
+	  dialog to open will be the <TT
+CLASS="APPLICATION"
+>Kppp</TT
+>
+	  configuration dialog (similar to <A
+HREF="s1-ppp-kppp.html#GR-PPP-KPPP2"
+>Figure 6-17</A
+>).
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-KPPP2"
+></A
+><P
+><IMG
+SRC="figs/ppp/kppp2.gif"></P
+><P
+><B
+>Figure 6-17. The <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> Configuration Dialog</B
+></P
+></DIV
+><P
+>	  Click the <B
+CLASS="GUIBUTTON"
+>New</B
+> button to enter your Internet
+	  account information.
+	</P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-PPP-NEWKPPP"
+>The <TT
+CLASS="GUILABEL"
+><B
+>Dial</B
+></TT
+> Tab</A
+></H3
+><P
+>	  In the <TT
+CLASS="GUILABEL"
+><B
+>New Account</B
+></TT
+> dialog, you can specify the
+	  account details, such as name, phone number, DNS entries and other
+	  information. The information is divided into "tabbed" dialogs (see <A
+HREF="s1-ppp-kppp.html#GR-PPP-KPPP3"
+>Figure 6-18</A
+>).
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-KPPP3"
+></A
+><P
+><IMG
+SRC="figs/ppp/kppp3.gif"></P
+><P
+><B
+>Figure 6-18. The <TT
+CLASS="GUILABEL"
+><B
+>New Account</B
+></TT
+> Dial Tab</B
+></P
+></DIV
+><P
+>	  In the <TT
+CLASS="GUILABEL"
+><B
+>Dial</B
+></TT
+> tab, enter the following:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Connection Name:</B
+></TT
+> The name you wish to give
+	      your account (for example, Mindspring or My ISP).
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Phone Number:</B
+></TT
+> The phone number to connect to
+	      your ISP.
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Authentication:</B
+></TT
+> From this drop-down list, you
+	      can select the following methods of login authentication: PAP,
+	      Script-based, Terminal-based, or CHAP. (These are methods used to
+	      verify your login. You may want to check with your ISP to
+	      determine which type of authentication method you must use.) If
+	      you're required to use a script-based login, <A
+HREF="s1-ppp-kppp.html#S3-PPP-KPPPSCRIPT"
+>the section called <I
+>The <TT
+CLASS="GUILABEL"
+><B
+>Login Script</B
+></TT
+> Tab</I
+></A
+> can assist you in entering your
+	      script.
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Store password:</B
+></TT
+> Check this option if you
+	      don't want to be required to enter your password each time you
+	      want to log on.
+	    </P
+></LI
+></UL
+><P
+>	  The remaining fields allow you to specify a program you want to run
+	  when your connection is established (or after you've disconnected).
+	</P
+><P
+>	  You can also specify options you want to pass to
+	  <TT
+CLASS="APPLICATION"
+>pppd</TT
+> in the <TT
+CLASS="GUILABEL"
+><B
+>Edit pppd
+	  arguments</B
+></TT
+> by pressing the <B
+CLASS="GUIBUTTON"
+>Arguments</B
+>
+	  button.
+	</P
+><P
+>	  Unless you know what you're doing, however, you should leave these
+	  additional options alone.
+	</P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-PPP-KPPPIP"
+>Static or Dynamic IP</A
+></H3
+><P
+>	  In the <TT
+CLASS="GUILABEL"
+><B
+>IP</B
+></TT
+> tab, you should specify whether you'll
+	  be using <I
+CLASS="FIRSTTERM"
+>dynamic IP addresses</I
+> or, if your ISP
+	  has provided you with your own IP address you can enter it here (see
+	  <A
+HREF="s1-ppp-kppp.html#GR-PPP-KPPP4"
+>Figure 6-19</A
+>).
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-KPPP4"
+></A
+><P
+><IMG
+SRC="figs/ppp/kppp4.gif"></P
+><P
+><B
+>Figure 6-19. Specify <TT
+CLASS="GUILABEL"
+><B
+>IP</B
+></TT
+> Addressing</B
+></P
+></DIV
+><P
+>	  (Hint: If your ISP has <I
+CLASS="EMPHASIS"
+>not</I
+> provided you with an
+	  IP address, you should check <TT
+CLASS="GUILABEL"
+><B
+>Dynamic IP
+	  Address</B
+></TT
+>.)
+	</P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-PPP-KPPPDNS"
+>DNS entries</A
+></H3
+><P
+>	  In the <TT
+CLASS="GUILABEL"
+><B
+>DNS</B
+></TT
+> tab (see <A
+HREF="s1-ppp-kppp.html#GR-PPP-KPPP5"
+>Figure 6-20</A
+>), you should enter the name of your ISP's
+	    domain name (such as <TT
+CLASS="REPLACEABLE"
+><I
+>earthlink.net</I
+></TT
+>).
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-KPPP5"
+></A
+><P
+><IMG
+SRC="figs/ppp/kppp5.gif"></P
+><P
+><B
+>Figure 6-20. Specify Domain Name and DNS Entries</B
+></P
+></DIV
+><P
+>	  If your ISP provided you with DNS addresses, enter them in the
+	  <TT
+CLASS="GUILABEL"
+><B
+>DNS IP Address</B
+></TT
+> field. When you've finished
+	  typing in the numbers, click on the <B
+CLASS="GUIBUTTON"
+>Add</B
+> button,
+	  and the numbers will be entered into the <TT
+CLASS="GUILABEL"
+><B
+>DNS Address
+	    List</B
+></TT
+> box. (By default, you won't be able to click on the
+	  <B
+CLASS="GUIBUTTON"
+>Add</B
+> button until you've entered the entire DNS
+	  number in the address field.)
+	  </P
+><P
+>	  Note that the field <TT
+CLASS="GUILABEL"
+><B
+>Disable existing DNS Servers during
+	  Connection</B
+></TT
+> will override the DNS list. If you've entered
+	  DNS numbers, you should leave this option unchecked.
+	  </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-KPPP6"
+></A
+><P
+><IMG
+SRC="figs/ppp/kppp6.gif"></P
+><P
+><B
+>Figure 6-21. Select Default or Static Gateway</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-PPP-KPPPGATEWAY"
+>Specify Gateways</A
+></H3
+><P
+>	  In the next tab, <TT
+CLASS="GUILABEL"
+><B
+>Gateway</B
+></TT
+> (see <A
+HREF="s1-ppp-kppp.html#GR-PPP-KPPP6"
+>Figure 6-21</A
+>), select either
+	  <TT
+CLASS="GUILABEL"
+><B
+>Default Gateway</B
+></TT
+> or <TT
+CLASS="GUILABEL"
+><B
+>Static
+	  Gateway</B
+></TT
+>. If your ISP has specified an IP address you should
+	  use as a static gateway, enter that IP number in the space provided.
+	</P
+><DIV
+CLASS="IMPORTANT"
+><P
+></P
+><TABLE
+CLASS="IMPORTANT"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/important.gif"
+HSPACE="5"
+ALT="Important"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Assigning the "default route"</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	    Unless you know what you're doing, you should leave <TT
+CLASS="GUILABEL"
+><B
+>Assign
+	    the Default Route to this Gateway</B
+></TT
+> box checked. Unchecking
+	    this option could cause problems for your software when you're
+	    online.
+	  </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-PPP-KPPPSCRIPT"
+>The <TT
+CLASS="GUILABEL"
+><B
+>Login Script</B
+></TT
+> Tab</A
+></H3
+><P
+>	  The <TT
+CLASS="GUILABEL"
+><B
+>Login Script</B
+></TT
+> tab allows you to specify how
+	  you want to login to your ISP (see <A
+HREF="s1-ppp-kppp.html#GR-PPP-KPPP7"
+>Figure 6-22</A
+>). If
+	  you chose to use a script-based login in the
+	  <TT
+CLASS="GUILABEL"
+><B
+>Authentication</B
+></TT
+> procedure of the
+	  <TT
+CLASS="GUILABEL"
+><B
+>Dial</B
+></TT
+> tab, you can enter that script here.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-KPPP7"
+></A
+><P
+><IMG
+SRC="figs/ppp/kppp7.gif"></P
+><P
+><B
+>Figure 6-22. The <TT
+CLASS="GUILABEL"
+><B
+>Login Script</B
+></TT
+> Dialog</B
+></P
+></DIV
+><P
+>	    Not all ISPs require a script-based login procedure; you should
+	    check with your ISP to find out specific entries which might be
+	    necessary in a login script.
+	  </P
+><P
+>	    A login script helps your machine negotiate a successful connection
+	    with your ISP. Your machine <I
+CLASS="EMPHASIS"
+>expects</I
+> a string
+	    of information from your ISP, then <I
+CLASS="EMPHASIS"
+>sends</I
+> a
+	    string of information or prompts. In this way, your machine "shakes
+	    hands" with your ISP.
+	  </P
+><P
+>	    In the <TT
+CLASS="GUILABEL"
+><B
+>Login Script</B
+></TT
+> tab, use the drop-down list
+	    at the left of the dialog to create a series of steps you want your
+	    machine to follow when you log in to your ISP. You can select a
+	    variety of options to create your script, step by step. In the
+	    window to the right of the drop-down list, type in the specific
+	    information you want to supply with the option from the drop-down
+	    list.
+	  </P
+><P
+>	    Click the <B
+CLASS="GUIBUTTON"
+>Add</B
+> button to add your step. If you
+	    must modify your script, you can choose an option, supply the
+	    information and use the <B
+CLASS="GUIBUTTON"
+>Insert</B
+> button to
+	    place it in the script, rather than having to recreate the script
+	    from scratch.
+	  </P
+><P
+>	    You can also remove a step in your script by highlighting the entry
+	    and clicking the <B
+CLASS="GUIBUTTON"
+>Remove</B
+> button.
+	  </P
+><P
+>	    If you have difficulty connecting to your ISP after you configure
+	    <TT
+CLASS="APPLICATION"
+>Kppp</TT
+>, check the option <TT
+CLASS="GUILABEL"
+><B
+>Show Log
+	      Window</B
+></TT
+> on the main <TT
+CLASS="APPLICATION"
+>Kppp</TT
+>
+	    dialog. The log window will open when you try to connect to your
+	    ISP, showing you what your ISP is expecting and what your machine is
+	    sending.
+	  </P
+><P
+>	    In <A
+HREF="s1-ppp-kppp.html#GR-PPP-KPPP7"
+>Figure 6-22</A
+>, for example, the login script is
+	    for an ISP which sends a prompt for the login ID, then for the
+	    password and finally, after a brief pause, requires that a user send
+	    the string <TT
+CLASS="USERINPUT"
+><B
+>ppp</B
+></TT
+>. The script looks like:
+	  </P
+><DIV
+CLASS="TABLE"
+><A
+NAME="TB-SCRIPT"
+></A
+><P
+><B
+>Table 6-1. A Sample Login Script</B
+></P
+><TABLE
+BORDER="1"
+BGCOLOR="#E0E0E0"
+CELLSPACING="0"
+CELLPADDING="4"
+CLASS="CALSTABLE"
+><TR
+><TH
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Option</TH
+><TH
+WIDTH="20%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Enter</TH
+><TH
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Purpose</TH
+></TR
+><TR
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="USERINPUT"
+><B
+>Expect</B
+></TT
+></TD
+><TD
+WIDTH="20%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="USERINPUT"
+><B
+>ID:</B
+></TT
+></TD
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Wait for the <TT
+CLASS="PROMPT"
+>ID:</TT
+> login prompt from the server</TD
+></TR
+><TR
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="USERINPUT"
+><B
+>Send</B
+></TT
+></TD
+><TD
+WIDTH="20%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="USERINPUT"
+><B
+>mylogin</B
+></TT
+></TD
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Send your login name for the account</TD
+></TR
+><TR
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="USERINPUT"
+><B
+>Expect</B
+></TT
+></TD
+><TD
+WIDTH="20%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="USERINPUT"
+><B
+>word:</B
+></TT
+></TD
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Wait for the <TT
+CLASS="PROMPT"
+>password</TT
+> prompt from the server</TD
+></TR
+><TR
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="USERINPUT"
+><B
+>Send</B
+></TT
+></TD
+><TD
+WIDTH="20%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="USERINPUT"
+><B
+>mypassword</B
+></TT
+></TD
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Send the account's password</TD
+></TR
+><TR
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="USERINPUT"
+><B
+>Expect</B
+></TT
+></TD
+><TD
+WIDTH="20%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="USERINPUT"
+><B
+>welcome to yourisp</B
+></TT
+></TD
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Wait for the welcome message from the server</TD
+></TR
+><TR
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="USERINPUT"
+><B
+>Pause</B
+></TT
+></TD
+><TD
+WIDTH="20%"
+ALIGN="LEFT"
+VALIGN="TOP"
+><TT
+CLASS="USERINPUT"
+><B
+>3</B
+></TT
+></TD
+><TD
+WIDTH="40%"
+ALIGN="LEFT"
+VALIGN="TOP"
+>Specifies a pause of 3 seconds (a value for
+                <TT
+CLASS="USERINPUT"
+><B
+>Pause</B
+></TT
+> will be in seconds, by default)</TD
+></TR
+></TABLE
+></DIV
+><P
+>	  It may not be necessary for you to use a script-based login procedure,
+	  however; this depends on requirements from your ISP. In some cases,
+	  using <TT
+CLASS="APPLICATION"
+>PAP</TT
+> or
+	  <TT
+CLASS="APPLICATION"
+>CHAP</TT
+> may be all that's necessary. Again,
+	  check with your ISP for specific login requirements.
+	</P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-PPP-KPPPACCOUNTING"
+>The <TT
+CLASS="GUILABEL"
+><B
+>Accounting</B
+></TT
+> Tab</A
+></H3
+><P
+>	  In the <TT
+CLASS="GUILABEL"
+><B
+>Accounting</B
+></TT
+> tab, you can specify whether
+	  and how you want <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> to monitor your
+	  online activities (see <A
+HREF="s1-ppp-kppp.html#GR-PPP-KPPP8"
+>Figure 6-23</A
+>).
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-KPPP8"
+></A
+><P
+><IMG
+SRC="figs/ppp/kppp8.gif"></P
+><P
+><B
+>Figure 6-23. Specifying Accounting</B
+></P
+></DIV
+><P
+> Accounting can be useful if your ISP bills you by the number of
+	  bytes transferred during your time online -- rather than by a flat
+	  monthly rate, for example. Referred to as <I
+CLASS="FIRSTTERM"
+>volume
+	  accounting</I
+>, this tool will count the number of bytes to or
+	  from your machine on the Internet.
+	</P
+><P
+>	  Once you're finished creating your account, click on the
+	  <B
+CLASS="GUIBUTTON"
+>OK</B
+> button.
+	</P
+><P
+>	  Next, in the <TT
+CLASS="GUILABEL"
+><B
+>kppp Configuration</B
+></TT
+> window, you'll see
+	  your newly created account. (If you want to modify the account,
+	  highlight the account by clicking on it once, then selecting the
+	  <B
+CLASS="GUIBUTTON"
+>Edit</B
+> button to the side of the
+	  <TT
+CLASS="GUILABEL"
+><B
+>Account Setup</B
+></TT
+> window.)
+	</P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-PPP-KPPPDEVICE"
+>Specifying a Device</A
+></H3
+><P
+>	  Now, it's time to provide the location and speed of your modem, in the
+	  <TT
+CLASS="GUILABEL"
+><B
+>Device</B
+></TT
+> tab (see <A
+HREF="s1-ppp-kppp.html#GR-PPP-KPPPDEVICE"
+>Figure 6-24</A
+>). Here, you specify where your modem is
+	  located, its baud rate, some hardware settings and other specifics.
+	</P
+><P
+>	    In <TT
+CLASS="GUILABEL"
+><B
+>Modem Device</B
+></TT
+>, you'll find a drop-down box
+	    allowing you to choose the location of your modem. 
+	  </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-KPPPDEVICE"
+></A
+><P
+><IMG
+SRC="figs/ppp/kpppdevice.gif"></P
+><P
+><B
+>Figure 6-24. Device Configuration</B
+></P
+></DIV
+><P
+>	    The following list is a comparison of serial line names in MS-DOS
+	  (and Windows) and Linux. If you know that your modem is attached to
+	  <TT
+CLASS="FILENAME"
+>COM2</TT
+> under Windows, for example, its location in
+	  Linux will be <TT
+CLASS="FILENAME"
+>/dev/ttyS1</TT
+>.
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>		<TT
+CLASS="FILENAME"
+>COM1</TT
+> = <TT
+CLASS="FILENAME"
+>/dev/ttyS0</TT
+>
+	</P
+></LI
+><LI
+><P
+>		<TT
+CLASS="FILENAME"
+>COM2</TT
+> = <TT
+CLASS="FILENAME"
+>/dev/ttyS1</TT
+>
+	</P
+></LI
+><LI
+><P
+>		<TT
+CLASS="FILENAME"
+>COM3</TT
+> = <TT
+CLASS="FILENAME"
+>/dev/ttyS2</TT
+>
+	</P
+></LI
+><LI
+><P
+>		<TT
+CLASS="FILENAME"
+>COM4</TT
+> = <TT
+CLASS="FILENAME"
+>/dev/ttyS3</TT
+>
+	</P
+></LI
+></UL
+><P
+>	    Once you've selected the location of your modem, you can select the
+	    <I
+CLASS="FIRSTTERM"
+>flow control</I
+>. 
+	  </P
+><P
+>	    Although you have a choice in the drop-down list for <TT
+CLASS="GUILABEL"
+><B
+>Flow
+	      Control</B
+></TT
+>, the default -- <TT
+CLASS="GUILABEL"
+><B
+>CRTSCTS</B
+></TT
+>,
+	      which specifies <I
+CLASS="FIRSTTERM"
+>hardware flow control</I
+> -- is
+	      the recommended setting (<TT
+CLASS="GUILABEL"
+><B
+>XON/XOFF</B
+></TT
+> specifies
+	      <I
+CLASS="FIRSTTERM"
+>software flow control</I
+>).
+	  </P
+><P
+>	    The following entry, <TT
+CLASS="GUILABEL"
+><B
+>Line Termination</B
+></TT
+>, allows
+	    you to specify a correct setting for your modem. Often, the
+	    <TT
+CLASS="GUILABEL"
+><B
+>CR/LF</B
+></TT
+> entry is correct for most modems. If,
+	    however, you have difficulty <I
+CLASS="FIRSTTERM"
+>querying your
+	    modem</I
+> (see <A
+HREF="s1-ppp-kppp.html#S3-PPP-KPPPMODEM"
+>the section called <I
+>Testing Your Modem</I
+></A
+>), this may
+	    be one area to which you should return to adjust settings.
+	  </P
+><P
+>	    The <TT
+CLASS="GUILABEL"
+><B
+>Connection Speed</B
+></TT
+> entry allows you to select
+	    the highest baud rate for your modem (for example, a 56k modem can
+	    typically be set to 115200).
+	  </P
+><P
+>	    By default, <TT
+CLASS="GUILABEL"
+><B
+>Use Lock File</B
+></TT
+> is checked. This
+	    means that <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> will <I
+CLASS="FIRSTTERM"
+>lock the
+	    device</I
+> while you're online -- preventing others from
+	    using the modem.
+	    </P
+><P
+>	    The <TT
+CLASS="GUILABEL"
+><B
+>Modem Timeout</B
+></TT
+> entry provides the time, in
+	    seconds during which <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> waits for a
+	    <TT
+CLASS="PROMPT"
+>CONNECT</TT
+> response after dialing.
+	  </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-PPP-KPPPMODEM"
+>Testing Your Modem</A
+></H3
+><P
+>	    In the <TT
+CLASS="GUILABEL"
+><B
+>Modem</B
+></TT
+> section, you can test your modem's
+	    responsiveness to your configuration (see <A
+HREF="s1-ppp-kppp.html#GR-PPP-KPPPMODEM"
+>Figure 6-25</A
+>). By adjusting the sliding bar next to
+	    <TT
+CLASS="GUILABEL"
+><B
+>Modem volume</B
+></TT
+>, you can modify the volume of your
+	    modem while you're dialing and connecting.
+	  </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-KPPPMODEM"
+></A
+><P
+><IMG
+SRC="figs/ppp/kpppmodem.gif"></P
+><P
+><B
+>Figure 6-25. The <TT
+CLASS="GUILABEL"
+><B
+>Modem</B
+></TT
+> Tab</B
+></P
+></DIV
+><P
+>	    When you select the <B
+CLASS="GUIBUTTON"
+>Modem Commands</B
+> button,
+	    you'll be presented with the <TT
+CLASS="GUILABEL"
+><B
+>Edit Modem
+	    Commands</B
+></TT
+> dialog, which will allow you to modify how your
+	    modem dials, connects and more.
+	  </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Check your modem's documentation</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>Check the documentation supplied with your modem for specifics
+	    on your modem's <I
+CLASS="FIRSTTERM"
+>initialization string</I
+>,
+	    <I
+CLASS="FIRSTTERM"
+>dial string</I
+> and other settings.
+	    </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	    Click on the <B
+CLASS="GUIBUTTON"
+>Query Modem</B
+> button to have
+	    <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> search your system to identify the
+	    modem. A window similar to <A
+HREF="s1-ppp-kppp.html#GR-PPP-KPPPQUERY"
+>Figure 6-26</A
+> will
+	    open to show the progress of the query.
+	  </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-KPPPQUERY"
+></A
+><P
+><IMG
+SRC="figs/ppp/kpppquery.gif"></P
+><P
+><B
+>Figure 6-26. Querying for the Modem</B
+></P
+></DIV
+><P
+>	    If the query was successful, you'll see the results in the dialog
+	    which follows, showing details which <TT
+CLASS="APPLICATION"
+>Kppp</TT
+>
+	    has gleaned from your modem (see <A
+HREF="s1-ppp-kppp.html#GR-PPP-KPPPQUERY2"
+>Figure 6-27</A
+>).
+	  </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-KPPPQUERY2"
+></A
+><P
+><IMG
+SRC="figs/ppp/kpppquery2.gif"></P
+><P
+><B
+>Figure 6-27. Results of the Query</B
+></P
+></DIV
+><P
+>	    If you select the <B
+CLASS="GUIBUTTON"
+>Terminal</B
+> button,
+	    <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> will open a
+	    <I
+CLASS="FIRSTTERM"
+>mini-terminal</I
+>, with which you can test your
+	    modem configuration.
+	  </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-PPP-KPPPPPPETC"
+>The <TT
+CLASS="GUILABEL"
+><B
+>PPP</B
+></TT
+> and <TT
+CLASS="GUILABEL"
+><B
+>Graph</B
+></TT
+> Tabs</A
+></H3
+><P
+>	    In the <TT
+CLASS="GUILABEL"
+><B
+>PPP</B
+></TT
+> tab, you can determine such options
+	    as automatic reconnection or disconnection, display of
+	    <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> on connection and more.
+	  </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-KPPPPPP"
+></A
+><P
+><IMG
+SRC="figs/ppp/kpppppp.gif"></P
+><P
+><B
+>Figure 6-28. The <TT
+CLASS="GUILABEL"
+><B
+>PPP</B
+></TT
+> Tab</B
+></P
+></DIV
+><P
+>	    You can select from the following options:
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		  <TT
+CLASS="GUILABEL"
+><B
+>pppd Timeout</B
+></TT
+>: Specifies the time allowed
+		  to establish a connection, before giving up.
+		</P
+></LI
+><LI
+><P
+>		  <TT
+CLASS="GUILABEL"
+><B
+>Dock into Panel on Connect</B
+></TT
+>: Select this
+		  to have <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> displayed as an icon
+		  in the <B
+CLASS="GUIMENU"
+>Panel</B
+> once you establish a
+		  connection. (This option overrides the <TT
+CLASS="GUILABEL"
+><B
+>Minimize
+		  Window on Connect</B
+></TT
+> selection.)
+		</P
+></LI
+><LI
+><P
+>		  <TT
+CLASS="GUILABEL"
+><B
+>Automatic Redial on Disconnect</B
+></TT
+>: Place a
+		  checkmark in this box if you want to have
+		  <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> immediately redial your
+		  service if you're disconnected.
+		</P
+></LI
+><LI
+><P
+>		  <TT
+CLASS="GUILABEL"
+><B
+>Show Clock on Caption</B
+></TT
+>: Check this to see
+		  a clock displaying your connection time.
+		</P
+></LI
+><LI
+><P
+>		  <TT
+CLASS="GUILABEL"
+><B
+>Disconnect on X-server shutdown</B
+></TT
+>: If you
+		  choose this option, your connection will be terminated when
+		  your X server shuts down. This is a useful option if you're
+		  likely to shutdown your X session without taking the time to
+		  disconnect, because it causes a disconnection when you log
+		  out.
+		</P
+></LI
+><LI
+><P
+>		  <TT
+CLASS="GUILABEL"
+><B
+>Quit on Disconnect</B
+></TT
+>: When you've
+		  disconnected from your ISP, <TT
+CLASS="APPLICATION"
+>Kppp</TT
+>
+		  will also quit. Otherwise, you'll return to the initial
+		  <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> window.
+		</P
+></LI
+><LI
+><P
+>		  <TT
+CLASS="GUILABEL"
+><B
+>Minimize Window on Connect</B
+></TT
+>: This will
+		  minimize <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> to the taskbar. 
+		</P
+></LI
+></UL
+><P
+>	  In the <TT
+CLASS="GUILABEL"
+><B
+>Graph</B
+></TT
+> tab, you can modify the colors of
+	  the <I
+CLASS="FIRSTTERM"
+>throughput graph</I
+>, which is a visual chart
+	  showing you the bytes exchanged between your machine and your ISP
+	  while you're online.
+	</P
+><P
+>	  The <TT
+CLASS="GUILABEL"
+><B
+>About</B
+></TT
+> tab displays some information about
+	  <TT
+CLASS="APPLICATION"
+>Kppp</TT
+>, such as its authors, copyright and
+	  credits.
+	</P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PPP-KPPPCONNECTING"
+>Connecting and Disconnecting with <TT
+CLASS="APPLICATION"
+>Kppp</TT
+></A
+></H2
+><P
+>&#13;	  Once you've configured <TT
+CLASS="APPLICATION"
+>Kppp</TT
+>, you're ready
+	  to try it out.
+	  </P
+><P
+>	  From the <B
+CLASS="GUIMENU"
+>Main Menu K</B
+> icon, go to
+	  <B
+CLASS="GUIMENU"
+>Internet</B
+> and click on
+	  <B
+CLASS="GUIMENUITEM"
+>Kppp</B
+>. Before the application starts, you'll
+	  be required to enter your root password. (Note that you can remain in
+	  your user account, however; it isn't necessary to log in as root.)
+	</P
+><P
+>	  In the main dialog for <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> which opens,
+	  enter the login ID and password for your Internet account (as in <A
+HREF="s1-ppp-kppp.html#GR-PPP-KPPPCONNECT1"
+>Figure 6-29</A
+>).
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-KPPPCONNECT1"
+></A
+><P
+><IMG
+SRC="figs/ppp/kpppconnect1.gif"></P
+><P
+><B
+>Figure 6-29. The Main Dialog for <TT
+CLASS="APPLICATION"
+>Kppp</TT
+></B
+></P
+></DIV
+><P
+>	  If you want to <I
+CLASS="FIRSTTERM"
+>debug</I
+> the configuration, or
+	  watch the progress of your connection, check the box marked
+	  <TT
+CLASS="GUILABEL"
+><B
+>Show Log Window</B
+></TT
+>. 
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-KPPPDEBUG"
+></A
+><P
+><IMG
+SRC="figs/ppp/kpppdebug.gif"></P
+><P
+><B
+>Figure 6-30. The Login Script Debug Window in <TT
+CLASS="APPLICATION"
+>Kppp</TT
+></B
+></P
+></DIV
+><P
+>	  To begin your session, click on the <B
+CLASS="GUIBUTTON"
+>Connect</B
+>
+	  button. A window, similar to <A
+HREF="s1-ppp-kppp.html#GR-PPP-KPPPCONNECTING"
+>Figure 6-31</A
+>,
+	  will show the status of your connection, such as the initialization of
+	  your modem, and the progress of the transaction. (You can also open
+	  the log window by clicking on the <B
+CLASS="GUIBUTTON"
+>Log</B
+> button in
+	  this progress window.)
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-KPPPCONNECTING"
+></A
+><P
+><IMG
+SRC="figs/ppp/kpppconnecting.gif"></P
+><P
+><B
+>Figure 6-31. The Progress Window</B
+></P
+></DIV
+><P
+>	  Once you've established a connection with your ISP,
+	  <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> will dock into the
+	  <B
+CLASS="GUIMENU"
+>Panel</B
+> or become minimized on the
+	  <B
+CLASS="GUIMENU"
+>Taskbar</B
+>, depending on the options you selected when
+	  you configured the application.
+	</P
+><P
+>	  To view statistics about your connection, such as the throughput rate
+	  and IP addresses, open the status window of
+	  <TT
+CLASS="APPLICATION"
+>Kppp</TT
+> and click on the
+	  <B
+CLASS="GUIBUTTON"
+>Details</B
+> button, which will open a window
+	  showing you statistics about your connection (see <A
+HREF="s1-ppp-kppp.html#GR-PPP-KPPPSTATS"
+>Figure 6-32</A
+>).
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-KPPPSTATS"
+></A
+><P
+><IMG
+SRC="figs/ppp/kpppstats.gif"></P
+><P
+><B
+>Figure 6-32. Connection Statistics</B
+></P
+></DIV
+><P
+>	  To disconnect, if the application is docked into the
+	  <B
+CLASS="GUIMENU"
+>Panel</B
+>, click once on the icon to open the
+	  connection status window (see <A
+HREF="s1-ppp-kppp.html#GR-PPP-KPPPCONNECT"
+>Figure 6-33</A
+>),
+	  then click on the <B
+CLASS="GUIBUTTON"
+>Disconnect</B
+> button.
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PPP-KPPPCONNECT"
+></A
+><P
+><IMG
+SRC="figs/ppp/kpppconnect.gif"></P
+><P
+><B
+>Figure 6-33. Connection Status</B
+></P
+></DIV
+><P
+>	  If you chose to minimize the application to the
+	  <B
+CLASS="GUIMENU"
+>Taskbar</B
+>, then maximize the application and click on
+	  the <B
+CLASS="GUIBUTTON"
+>Disconnect</B
+> button.
+	</P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-ppp.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="ch-email.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Getting Online</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-ppp.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>The Web, E-Mail and News in GNOME and KDE</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-ppp-kppp.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:27 GMT -->
+</HTML
+>

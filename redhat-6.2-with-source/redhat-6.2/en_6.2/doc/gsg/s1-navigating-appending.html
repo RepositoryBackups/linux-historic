@@ -1,0 +1,367 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-navigating-appending.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:01 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Appending Standard Output</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="You Are Here"
+HREF="ch-navigating.html"><LINK
+REL="PREVIOUS"
+TITLE="Using Redirection"
+HREF="s1-navigating-redirection.html"><LINK
+REL="NEXT"
+TITLE="Redirecting Standard Input"
+HREF="s1-navigating-redirinput.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-navigating-redirection.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 13. You Are Here</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-navigating-redirinput.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-NAVIGATING-APPENDING"
+>Appending Standard Output</A
+></H1
+><P
+>        There's a neat twist to output redirection which allows you to add new
+        information to the end of an existing file. Similar to when you used the
+        &#62; symbol, you tell your shell to send the information somewhere other
+        than standard output.
+      </P
+><P
+>        However, when you use &#62;&#62;, you're <I
+CLASS="EMPHASIS"
+>adding</I
+>
+        information, rather than replacing it.
+      </P
+><P
+>        The best explanation is a demonstration, so let's take two files which
+      have already been created -- <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+> and
+      <TT
+CLASS="FILENAME"
+>home.txt</TT
+> -- and join them by using the append output
+      symbol. We want to add the information in <TT
+CLASS="FILENAME"
+>home.txt</TT
+> to
+      the information already in <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+>, so we type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cat home.txt &#62;&#62; sneakers.txt</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Now let's check the file by typing:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cat sneakers.txt</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        And there it is -- with the contents of <TT
+CLASS="FILENAME"
+>home.txt</TT
+> at
+        the end.
+      </P
+><P
+>        What we were saying when we typed that command was, "append the output
+        from the file <TT
+CLASS="FILENAME"
+>home.txt</TT
+> to the file
+        <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+>."
+      </P
+><P
+>        By appending the output, we've saved ourselves a step or two (and a bit
+        of disk clutter) by using existing files, rather than creating a new
+        file.
+      </P
+><P
+>        Compare the results of the files <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+> and
+        <TT
+CLASS="FILENAME"
+>saturday</TT
+> now, and you'll see that they're
+        identical. To make your comparison, just type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cat sneakers.txt; cat saturday</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        The contents of both files will be displayed - first
+        <TT
+CLASS="FILENAME"
+>sneakers.txt</TT
+>, then <TT
+CLASS="FILENAME"
+>saturday</TT
+>
+        (as shown in <A
+HREF="s1-navigating-appending.html#GR-NAVIGATING-CAT4"
+>Figure 13-14</A
+>).
+      </P
+><DIV
+CLASS="CAUTION"
+><P
+></P
+><TABLE
+CLASS="CAUTION"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/caution.gif"
+HSPACE="5"
+ALT="Caution"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Don't replace when you append</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	Remember that when you append output, you've got to include two
+          greater-than symbols (&#62;&#62;). Otherwise, you'll end up replacing
+          the very file to which you want to append information!
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-NAVIGATING-CAT4"
+></A
+><P
+><IMG
+SRC="figs/navigating/cat4.gif"></P
+><P
+><B
+>Figure 13-14. Stringing Commands and Comparing Files</B
+></P
+></DIV
+><P
+>        (By the way, if you're curious about the use of the semi-colon in that
+        last command, read on. We'll cover that later in this chapter.)
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Summary</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          To append output, use two greater-than symbols (&#62;&#62;). For
+          example: <B
+CLASS="COMMAND"
+>cat addthisfile &#62;&#62; tothisfile</B
+>.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-navigating-redirection.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-navigating-redirinput.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Using Redirection</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-navigating.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Redirecting Standard Input</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-navigating-appending.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:02 GMT -->
+</HTML
+>

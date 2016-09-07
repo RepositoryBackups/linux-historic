@@ -1,0 +1,123 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/de/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>SILO Konfiguration</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.52"><LINK
+REL="HOME"
+TITLE="Hilfebildschirme für die Installation"
+HREF="book.html"><LINK
+REL="UP"
+HREF="s1-help-screens-lang.html"><LINK
+REL="PREVIOUS"
+TITLE="Konfigurieren von LILO"
+HREF="s1-help-screens-lilo.html"><LINK
+REL="NEXT"
+TITLE="Netzwerk-Konfiguration"
+HREF="s1-help-screens-netconf.html"></HEAD
+><BODY
+CLASS="SECT1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-HELP-SCREENS-SILO"
+>SILO Konfiguration</A
+></H1
+><P
+>        Bei SILO, dem Sparc Improved LOader, handelt es sich um Software, die 
+	für das Starten von Red Hat Linux auf Ihrem Computer verwendet 
+	werden kann. Mit SILO können Sie auch andere Betriebssysteme wie 
+	SunOS oder Solaris starten. An dieser Stelle werden Sie gefragt, ob 
+	bzw. auf welche Weise Sie SILO konfigurieren möchten.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Bootdiskette erstellen</B
+>: Sie sollten eine 
+	Bootdiskette erstellen, wenn Sie SILO nicht installieren möchten 
+	oder aus Gründen der Sicherheit eine Bootdiskette benötigen. 
+	Wenn Sie über kein Diskettenlaufwerk verfügen, wird diese 
+	Option ausgeblendet. Falls Sie eine Ultra-Workstation von SMCC 
+	besitzen, die normalerweise nicht über bootfähige 
+	Diskettenlaufwerke verfügt, wird diese Option 
+	standardmäßig deaktiviert.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>SILO nicht installieren</B
+>: Sie können 
+	festlegen, daß die Einrichtung von SILO übersprungen oder 
+	daß SILO nicht auf Ihre Festplatte geschrieben werden soll. 
+	Diese Option ist für den Fall gedacht, daß SILO bereits 
+	auf einer anderen Partition oder Festplatte installiert wurde und 
+	das System von dort gestartet werden soll.
+      </P
+><P
+>        Wenn Sie sich für die Installation von SILO entschieden haben, 
+	müssen Sie zunächst angeben, wo SILO installiert werden 
+	soll. Wenn Sie auf Ihrem System ausschließlich Red Hat Linux 
+	verwenden möchten, sollten Sie den Master Boot Record (Boot-Block 
+	der ersten Partition auf der Festplatte) auswählen. Bei Systemen, 
+	auf denen SunOS/Solaris und Red Hat Linux auf einer einzelnen 
+	Festplatte installiert sind, empfiehlt sich die Installation von SILO 
+	im MBR eher nicht. Dies gilt insbesondere für den Fall, daß 
+	sich SunOS/Solaris auf der ersten Partition der Festplatte befindet.
+      </P
+><P
+>        Wenn Sie SILO nicht installieren möchten, müssen Sie in 
+	jedem Fall eine Bootdiskette erstellen, um Red Hat Linux booten zu 
+	können.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>PROM-Alias erstellen</B
+>: Der Installer kann den 
+	PROM-Alias "linux" erstellen, wenn dies vom PROM 
+	unterstützt wird. Auf diese Weise können Sie SILO von der 
+	PROM-Befehlszeile durch den Befehl "boot linux" starten.
+      </P
+><P
+>        <B
+CLASS="GUIBUTTON"
+>Standardmäßiges PROM-Bootgerät 
+	festlegen</B
+>: Der Installer kann durch Festlegen der 
+	PROM-Option "boot-device" oder "boot-from" 
+	sicherstellen, daß das PROM standardmäßig den 
+	Red Hat Linux Installer bootet.
+      </P
+><P
+>       Falls Sie dem SILO-Bootbefehl weitere Standardoptionen hinzufügen 
+       möchten, geben Sie diese in das Feld für die Kernel-Parameter 
+       ein. Alle von Ihnen festgelegten Optionen werden bei jedem Booten an 
+       den Linux-Kernel übergeben.
+      </P
+><P
+>       Bootbare Partition - Jede bootbare Partition wird aufgelistet und 
+       bezeichnet (einschließlich der Partitionen, die von anderen 
+       Betriebssystemen verwendet werden). Wenn Sie Boot-Kennungen für 
+       weitere Partitionen hinzufügen oder vorhandene Boot-Kennungen 
+       ändern möchten, klicken Sie auf die gewünschte 
+       Partition, um diese auszuwählen. Daraufhin können Sie die 
+       Boot-Kennung ändern.
+      </P
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/RedHat/instimage/usr/share/anaconda/help/de/s1-help-screens-silo.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 22:21:29 GMT -->
+</HTML
+>

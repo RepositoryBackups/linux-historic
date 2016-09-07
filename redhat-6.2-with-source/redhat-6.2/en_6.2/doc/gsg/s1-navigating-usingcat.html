@@ -1,0 +1,345 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-navigating-usingcat.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Using cat</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="You Are Here"
+HREF="ch-navigating.html"><LINK
+REL="PREVIOUS"
+TITLE='"Washing" the Window'
+HREF="s1-navigating-washing.html"><LINK
+REL="NEXT"
+TITLE="Using Redirection"
+HREF="s1-navigating-redirection.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-navigating-washing.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 13. You Are Here</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-navigating-redirection.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-NAVIGATING-USINGCAT"
+>Using <B
+CLASS="COMMAND"
+>cat</B
+></A
+></H1
+><P
+>        There's a handy utility which can help you keep short lists, gather
+        those lists together and, at the same time, show you a little of the
+        power behind your Red Hat Linux system.
+      </P
+><P
+>        The utility is called <B
+CLASS="COMMAND"
+>cat</B
+>, short for "concatenate,"
+        which means that it strings files together.
+      </P
+><P
+>        But <B
+CLASS="COMMAND"
+>cat</B
+> can also perform a quick demonstration of two
+        important terms: <I
+CLASS="FIRSTTERM"
+>standard input</I
+> and
+        <I
+CLASS="FIRSTTERM"
+>standard output</I
+>.
+      </P
+><P
+>        Standard input and standard output direct input and output (often
+        referred to as <I
+CLASS="FIRSTTERM"
+>I/O</I
+>) to the user. If a program
+        reads from standard input, it will, by default be reading from the
+        keyboard. If a program writes to standard output, by default it will be
+        writing to the screen.
+      </P
+><P
+>        Start <B
+CLASS="COMMAND"
+>cat</B
+> to see what this means. At the shell
+        prompt, type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cat</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        The cursor moves to a blank line. Now, in that blank line, let's type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="USERINPUT"
+><B
+>stop by sneaker store</B
+></TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>      and press the <B
+CLASS="KEYCAP"
+>Enter</B
+> key. Your screen will look like:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>cat</B
+></TT
+>
+<TT
+CLASS="USERINPUT"
+><B
+>stop by sneaker store</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>stop by sneaker store</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-NAVIGATING-CAT1"
+></A
+><P
+><IMG
+SRC="figs/navigating/cat1.gif"></P
+><P
+><B
+>Figure 13-11.           <B
+CLASS="COMMAND"
+>cat</B
+> Demonstrates Standard Input and Standard
+          Output
+        </B
+></P
+></DIV
+><P
+>        To quit <B
+CLASS="COMMAND"
+>cat</B
+> now, just move the cursor to a blank line
+        by pressing <B
+CLASS="KEYCAP"
+>Enter</B
+> then press the <B
+CLASS="KEYCAP"
+>Ctrl</B
+>
+        and <B
+CLASS="KEYCAP"
+>D</B
+> keys at the same time.
+      </P
+><P
+>        So it's not too exciting. But <B
+CLASS="COMMAND"
+>cat</B
+> has just
+        demonstrated the definition of standard input and standard output. Your
+        input was read from the keyboard (standard input), and that input was
+        then directed to your terminal (standard output).
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Summary</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          Standard input is often text which is entered from the
+          keyboard. Standard output is the place where information is sent, such
+          as your terminal (as shown in <A
+HREF="s1-navigating-usingcat.html#GR-NAVIGATING-CAT1"
+>Figure 13-11</A
+>).
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-navigating-washing.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-navigating-redirection.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>"Washing" the Window</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-navigating.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Using Redirection</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-navigating-usingcat.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:14 GMT -->
+</HTML
+>

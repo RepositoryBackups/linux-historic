@@ -1,0 +1,1019 @@
+<!DOCTYPE BOOK PUBLIC "-//Davenport//DTD DocBook V3.0//EN" [
+<!ENTITY RH "Red Hat">
+<!ENTITY RHL "Red Hat Linux">
+<!ENTITY RHLRGS "Red Hat Linux Reference Guide">
+<!ENTITY RHLIG "Red Hat Linux Installation Guide">
+<!ENTITY RHLGSG "Red Hat Linux Getting Started Guide">
+<!ENTITY RHI "Red Hat, Inc.">
+]>
+<book id="book">
+<title>Install Help Screens</title>
+  <chapter id="s1-help-screens-lang">
+    <title></title>
+    <sect1 id="lang">
+      <title>Language Selection</title>
+      <para>
+	Which language would you like to use during the installation and as the
+	system default once &RHL; is installed?
+      </para>
+      <para>
+	Choose from the list at right.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-kybd">
+      <title>Keyboard Configuration</title>
+      <para>
+	What kind of keyboard do you have?
+      </para>
+      <para>
+	If you can't find an exact match, choose the closest
+	<guilabel>Generic</guilabel> match (for example, Generic 101-key PC).
+      </para>
+      <para>
+	Then choose the layout type for your keyboard (for example,
+	U.S. English).
+      </para>
+      <para>
+	Entering special characters (such as &Ntilde;, &Ocirc;, and &Ccedil;) is
+	done using "dead keys" (also known as compose key sequences). If you
+	wish to use special characters requiring the use of dead keys, select
+	<guilabel>Enable dead keys</guilabel>. If not, select <guilabel>Disable
+	dead keys</guilabel>.
+      </para>
+      <para>
+	Use the blank text field at the bottom of the screen to test your
+	keyboard configuration.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-mouse">
+      <title>Mouse Configuration</title>
+      <para>
+	What kind of mouse do you have?
+      </para>
+      <para>
+	Do you have a PS/2, Bus or serial mouse?  (Hint: If the connector your
+	mouse plugs into is round, you have a PS/2 or a Bus mouse; if it's
+	rectangular, it's a serial mouse.)
+      </para>
+      <para>
+	Try to find an exact match in the first box at right.  If an exact match
+	cannot be found, choose one which is compatible with yours. Otherwise,
+	choose the appropriate <guilabel>Generic</guilabel> mouse type.
+      </para>
+      <para>
+	If you have a serial mouse, pick the device and port it is connected to
+	in the next box.
+      </para>
+      <para>
+	The X Window System is designed to make use of a three-button mouse. If
+	you have a two-button mouse, &RHL; can emulate the middle mouse button.
+      </para>
+      <para>
+	If you have a two-button mouse, select the <guilabel>Emulate 3
+	  buttons</guilabel> option. After the installation, you can click both
+	mouse buttons at the same time to act as the middle mouse button.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-wel">
+      <title>Welcome to Red Hat Linux</title>
+      <para>
+	Welcome! This installation process is outlined in detail in the
+	<citetitle>&RHLIG;</citetitle> available from &RHI;. Please read through
+	the entire manual before you begin this installation process.
+      </para>
+      <para>
+	HTML and Postscript copies of the manual are online, at
+	http://www.redhat.com. There is also an HTML copy on the &RHL; CD set.
+      </para>
+      <para>
+	<command>New Feature:</command> &RHL; 6.2 has a new installation method
+	known as a "partitionless" installation. If your system has a FAT
+	(DOS/Windows) partition with sufficient free space, you can install
+	&RHL; without repartitioning your hard drive. This option is best suited
+	for people who would like to try &RHL; with a minimum of disruption to
+	their current system.
+      </para>
+      <para>
+	If you have purchased the Official &RHL; boxed set, be sure to register
+	your product through our website (www.redhat.com/now).
+      </para>
+      <para>
+	Throughout this installation, you will be able to use your mouse to
+	choose different options. You can also navigate the installation using
+	the <keycap>Tab</keycap> and <keycap>Enter</keycap> keys.
+      </para>
+      <para>
+	Use the <guibutton>Next</guibutton> and <guibutton>Back</guibutton>
+	buttons to progress through these screens. Click
+	<guibutton>Next</guibutton> to save the information and proceed to the
+	next screen; click <guibutton>Back</guibutton> to move to the previous
+	screen without saving any information.
+      </para>
+      <para>
+	To minimize this help screen, click on the <guibutton>Hide
+	  Help</guibutton> button.
+      </para>
+      <para>
+	You can cancel this installation at any time up to the
+	<guimenu>Preparing to Install</guimenu> screen. Once you click
+	<guibutton>Next</guibutton> on <guimenu>Preparing to Install</guimenu>,
+	package installation will begin and data will be written to your hard
+	drive. To cancel before this screen, you can safely reboot your system
+	(use the <keycap>reset</keycap> button, or
+	<keycombo>
+	  <keycap>Ctrl</keycap> <keycap>Alt</keycap> <keycap>Del</keycap>
+	</keycombo>).
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-welreconfig">
+      <title>Welcome to Red Hat Linux</title>
+      <para>
+        You have entered reconfiguration mode, which will allow you to
+        configure site-specific features of your computer.  To exit
+        without changing your setup, select 'No' and press the
+        <guibutton>Next</guibutton> button below.
+      </para>
+      <para>
+        Throughout this configuration, you will be able to use your
+        mouse to choose different options. You can also navigate the
+        configuration using the <keycap>Tab</keycap> and
+        <keycap>Enter</keycap> keys.
+      </para>
+      <para>
+        Use the <guibutton>Next</guibutton> and
+        <guibutton>Back</guibutton> buttons to navigate through these
+        screens. Click <guibutton>Next</guibutton> to save the
+        information and proceed to the next screen; click
+        <guibutton>Back</guibutton> to move to the previous screen
+        without saving any information.
+      </para>
+      <para>
+        To minimize this help screen, click on the <guibutton>Hide
+        Help</guibutton> button.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-instpath">
+      <title>Install Options</title>
+      <para>
+	How do you want to install &RHL;?
+      </para>
+      <para>
+	A full installation will destroy any previously saved information on the
+	selected partitions.
+      </para>
+      <para>
+	An upgrade will preserve existing &RHL; system data.
+      </para>
+      <para>
+	If you want to perform a full installation, you must choose the class
+	(or type) of the installation. Your options are: GNOME Workstation, KDE
+	Workstation, Server, or Custom.
+      </para>
+      <para>
+	If you are familiar with the <application>fdisk</application>
+	partitioning tool, you may select it here.  If you do not choose to use
+	<application>fdisk</application>, the installer will use the default
+	partitioning tool, <application>Disk
+	  Druid</application>. <application>Disk Druid</application> is a better
+	choice if you do not have prior experience with
+	<application>fdisk</application>.
+      </para>
+      <para>
+	If you don't know which installation class you want, read the following
+	very carefully.
+      </para>
+      <para>
+	<command>Please note:</command> In addition to the installation methods
+	mentioned below, &RHL; can also be installed "within" an already
+	existing FAT (DOS/Windows) partition. This "partitionless" installation
+	method is selected once you label a DOS partition as
+	<command>/</command> during the <application>Disk Druid</application>
+	partitioning screen. It overrides the automatic partition deletion used
+	in workstation-class installations.
+      </para>
+      <para>
+	Workstation-class installations will install the X Window System and the
+	desktop manager of your choice. <emphasis>A workstation-class
+	installation removes any Linux-related partitions on all installed hard
+	drives (and uses all free unpartitioned disk space).</emphasis> All
+	non-Linux-related partitions will be left untouched, and you will be
+	able to boot other installed operating systems, in addition to &RHL;,
+	after the installation.
+      </para>
+      <para>
+	If you want your system to function as a Linux-based server, and you
+	don't want to heavily customize your system configuration or install the
+	X Window System, a server-class installation is most appropriate.
+	<emphasis>A server-class installation removes ALL existing partitions on
+	ALL installed hard drives, so choose this installation class only if
+	  you're sure you have nothing you want saved!</emphasis> This includes
+	ALL partitions in use by other operating systems. <emphasis>ALL drives
+	  will be erased -- we're not kidding!</emphasis>
+      </para>
+      <para>
+	Only the custom-class installation gives you complete
+	flexibility. During a custom-class installation, it is up to
+	<emphasis>you</emphasis> how disk space should be partitioned.  You have
+	complete control over the packages that will be installed on your
+	system.  You can also determine whether you'll use LILO to boot your
+	system. Unless you have prior Linux experience, you should not select
+	the custom-class installation method.
+      </para>
+      <para>
+	For more information concerning the differences among workstation-,
+	server-, and custom-class installations, please refer to the &RHLIG;.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-upgrade">
+      <title>Upgrading Your System</title>
+      <para>
+	Once you have chosen to upgrade, you can also decide whether you want to
+	customize your packages.
+      </para>
+      <para>
+	If you do not want to select additional packages for upgrade, click
+	<guibutton>Next</guibutton> to continue.
+      </para>
+      <para>
+	To customize your packages, select the <guilabel>Customize packages to
+	  be upgraded</guilabel> button and then click
+	<guibutton>Next</guibutton>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-fdisk">
+      <title><application>fdisk</application></title>
+      <para>
+	Select which drive you want to partition. When you click on the drive,
+	you will be presented with the <application>fdisk</application>
+	partitioning screen. You may then use <application>fdisk</application>
+	to create, delete, or modify partitions on the selected hard drive.
+      </para>
+      <para>
+	If you decide that you don't want to use
+	<application>fdisk</application>, click <guibutton>Back</guibutton> to
+	return to the previous screen, deselect <guimenuitem>Use
+	fdisk</guimenuitem>, and click <guibutton>Next</guibutton> to continue.
+      </para>
+      <para>
+	Once you have partitioned the drive using
+	<application>fdisk</application>, you will return to this screen. If you
+	have another hard drive that you would like to partition using
+	<application>fdisk</application>, select it.  Otherwise, click
+	<guibutton>Next</guibutton> to assign mount points to your partitions
+	using <application>Disk Druid</application>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-fdiskpart">
+      <title>Partitioning With <application>fdisk</application></title>
+      <para>
+	Here, you can partition your drive with
+	<application>fdisk</application>.
+      </para>
+      <para>
+	For help, type <command>m</command> at the prompt for a list of
+	commands.
+      </para>
+      <para>
+	Some quick commands to get you started:
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>n</command> -- Adds a new partition.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>d</command> -- Deletes a partition.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>p</command> -- Prints out the partition table.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>l</command> -- Lists known partition types.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>	      
+	      <command>w</command> -- Writes partition table to disk and
+	      exists <application>fdisk</application>.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>q</command> -- Quits without saving any changes.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-wkst">
+      <title>Automatic Partitioning</title>
+      <para>
+	Are you sure?
+      </para>
+      <para>
+	You will lose data by performing a workstation installation.
+      </para>
+      <para>
+	This class of installation will remove <emphasis>ALL</emphasis> data on
+	<emphasis>ALL</emphasis> existing Linux partitions on
+	<emphasis>ALL</emphasis> disk drives.
+      </para>
+      <para>
+	If you want to preserve data on existing Linux partitions, you should
+	choose to partition manually or choose a custom-class installation.
+      </para>
+      <para>
+	Use the <guibutton>Back</guibutton> button to choose a custom-class
+	installation, or choose <guibutton>Next</guibutton> if you want to
+	proceed with a workstation-class installation.
+      </para>
+    </sect1>
+      
+      <sect1 id="s1-help-screens-svr">
+      <title>Automatic Partitioning</title>
+      <para>
+	Are you sure?
+      </para>
+      <para>
+	You will lose data by performing a server installation.
+      </para>
+      <para>
+	This class of installation will remove <emphasis>ALL</emphasis> data on
+	<emphasis>ALL</emphasis> partitions of <emphasis>ALL</emphasis> disk
+	drives.
+      </para>
+      <para>
+	If you have another OS that you want to keep, do not choose this
+	installation class.
+      </para>
+      <para>
+	If you want to preserve data or another OS, you should choose to
+	partition manually or choose a custom-class installation.
+      </para>
+      <para>
+	Use the <guibutton>Back</guibutton> button to choose a custom-class
+	installation, or choose <guibutton>Next</guibutton> if you want to
+	proceed with a server-class installation.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-partition">
+      <title>Partitions</title>
+      
+      <para>
+	Where do you want to install &RHL;?
+      </para>
+      <para>
+	<command>Please note:</command> If you are performing a
+	<command>Partitionless Installation</command> you will need to define an
+	existing DOS/Windows partition as root, shown as
+	<command>/</command>. Click on the FAT partition you want to select for
+	this installation. Once it is highlighted, click
+	<guilabel>Edit</guilabel> to assign it the mount point of
+	<command>/</command> (root). Click <guilabel>Ok</guilabel> when you're
+	done. Once you have confirmed this choice, you will need to define the
+	appropriate amount of root filesystem and swap space for your system.
+      </para>
+      <para>
+	For more detailed instructions, you must refer to the chapter
+	<emphasis>Installing Without Partitioning</emphasis> in the
+	<citetitle>&RHLIG;</citetitle>.
+      </para>
+      <para>
+	If you don't know how to partition your system, please read the section
+	on partitioning in the <citetitle>&RHLIG;</citetitle> or the
+	<citetitle>&RHLRGS;</citetitle>.
+      </para>
+      <para>
+	If you just finished partitioning with <application>fdisk</application>,
+	you must define <firstterm>mount points</firstterm> for your
+	partitions. Use the <guilabel>Edit</guilabel> button, once you have
+	chosen a partition, to define its mount point.
+      </para>
+      <para>
+	If you are using <application>Disk Druid</application>, you'll have to
+	define mount points for one or more disk partitions.  You may also need
+	to create and/or delete partitions at this time.
+      </para>
+      <para>
+	The top screen shows your existing partitions. Each partition has five
+	fields:
+      </para>
+      
+      <itemizedlist>
+	<listitem>
+	  <para>
+	    <command>Mount Point:</command> This field indicates where the
+	    partition will be mounted when &RHL; is installed and running. If a
+	    partition exists, but is labeled as "not set" you will need to
+	    define its mount point. You can use the <keycap>Edit</keycap> key or
+	    double-click on the partition.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Device:</command> This field displays the partition's
+	    device name (for example, hda2 represents the second partition on
+	    your primary hard drive).
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Requested:</command> The <firstterm>Requested</firstterm>
+	    field shows how much space the partition has. If you want to
+	    re-define the size, you must delete the current partition and
+	    recreate it using the <keycap>Add</keycap> button.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Actual:</command> This field shows how much space the
+	    partition is using.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Type:</command> This field shows the partition's type (such
+	    as Linux Native or DOS).
+	  </para>
+	</listitem>
+      </itemizedlist>
+      
+      <para>
+	As you scroll through the <firstterm>Partitions</firstterm> section, you
+	might see an <firstterm>Unallocated Requested Partition</firstterm>
+	message (in red text), followed by one or more partitions.  A common
+	reason for having an unallocated partition is a lack of sufficient free
+	space for the partition.
+      </para>
+      <para>
+	To fix an unallocated requested partition, you must either move the
+	partition to another drive which has the available space, resize the
+	partition to fit on the current drive, or delete the partition
+	entirely. Make changes using the <keycap>Edit</keycap> button or by
+	double-clicking on the partition.
+      </para>
+	
+      <sect2 id="s2-help-screens-dd">
+	<title>Partitioning Your System</title>
+	<para>
+	  The center row of buttons controls the partitioning tool's actions.
+	  You can add, edit, and delete partitions here. In addition, there are
+	  buttons you can use to accept the changes you've made, or to reset and
+	  exit the partitioning tool.
+	</para>
+	
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>Add:</command> Use this button to request a new
+	      partition.  When selected, a dialog box will appear containing
+	      fields that must be filled in (such as mount point, size and
+	      type).
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Edit:</command> Use this button to change the mount point
+	      of a currently selected partition.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Delete:</command> Use this button to delete a
+	      partition. A dialog box will appear asking you to confirm the
+	      deletion.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Reset:</command> Use this button to cancel any changes
+	      you may have made.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Make RAID Device:</command> Use the <keycap>Make RAID
+		Device</keycap> button ONLY if you have experience using
+	      RAID. To learn more about RAID, please refer to the
+	      <citetitle>&RHLRGS;</citetitle>.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
+
+      <sect2 id="s2-help-screens-drive">
+	<title>Drive Summaries</title>
+	<para>
+	  This section displays your computer's disk configuration. It is only
+	  meant to provide a summary. Each line has the following fields:
+	</para>
+	
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>Drive:</command> This field shows the hard drive's device
+	      name (such as hda or hdb).
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Geom [C/H/S]:</command> The hard drive's
+	      <firstterm>geometry</firstterm> shows the number of cylinders,
+	      heads and sectors.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Total:</command> This field shows the total available
+	      space on the hard drive.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Free:</command> Here you'll see how much of the hard
+	      drive's space is still available.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Used:</command> These fields show how much of the hard
+	      disk's space is currently allocated to partitions, in megabytes
+	      and percentage.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
+    </sect1>
+
+    <sect1 id="s1-help-screens-loopback">
+      <title>Filesystem Configuration</title>
+      <para>
+        First, choose a root filesystem size value, if you do not
+        want to accept the default value.  The root filesystem
+        default is one-half of the available free space.
+      </para>
+      <para>
+        Swap space defaults to 32 megabytes, but you can make it
+        larger if necessary.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-format">
+      <title>Choose Partitions to Format</title>
+      <para>
+	Choose the partitions that you would like to format for &RHL;.
+      </para>
+      <para>
+	Do you want to check for bad blocks?
+      </para>
+      <para>
+	Checking for bad blocks can help prevent data loss by finding the bad
+	blocks on a drive and making a list of them to prevent data from being
+	written to them in the future.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-lilo">
+      <title>LILO Configuration</title> 
+      <para>
+	LILO, the LInux LOader, is software that can be used to start &RHL; on
+	your computer. It can also start other operating systems, such as
+	Windows 9<replaceable>x</replaceable>. Here, you'll be asked how (or
+	whether) you want to configure LILO.
+      </para>
+      <para>
+	<guibutton>Create boot disk</guibutton>: You should create a boot disk
+	if you are not installing LILO on the MBR or if you are not installing
+	LILO at all.
+      </para>
+      <para>
+	<guibutton>Do not install LILO</guibutton>: You can choose to skip LILO
+	if you do not want to write LILO to your drive. If you have two hard
+	drives with a different OS on each drive, you may prefer to use a boot
+	disk rather than LILO.
+      </para>
+      <para>
+	To install LILO, select where you want to install it. If your system
+	will use only &RHL; you should choose the Master Boot Record (MBR). For
+	systems on which Win95/98 and &RHL; will reside on a single hard drive,
+	you should also install LILO to the MBR.
+      </para>
+      <para>
+	If you have Windows NT (and you want LILO to be installed) you should
+	choose to install LILO on the first sector of the boot partition. Also,
+	make sure to create a boot disk, otherwise you will not be able to boot
+	into Linux.
+      </para>
+      <para>
+	If you choose not to install LILO for <emphasis>any</emphasis> reason,
+	please make a boot disk so you can boot &RHL;.
+      </para>
+      <para>
+	If your computer does not access a hard drive in linear mode, deselect
+	<guibutton>Use linear mode</guibutton>.
+      </para>
+      <para>
+	If you wish to add default options to the LILO boot command, enter them
+	into the kernel parameters field.  Any options you enter will be passed
+	to the Linux kernel every time it boots.
+      </para>
+      <para>
+	<guilabel>Boot Label</guilabel>: Every bootable partition is
+	listed and labeled (under the <guilabel>Boot Label</guilabel>
+	listing at the bottom of the screen, including partitions used
+	by other operating systems. If you would like to add boot
+	labels for other partitions (or change existing boot labels),
+	click once on the partition to select it. Once selected, you
+	can change the boot label in the field above it.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-silo">
+      <title>SILO Configuration</title>
+      <para>
+        SILO, the Sparc Improved LOader, is the software that can be
+        used to start Red Hat Linux on your computer. It can also
+        start other operating systems, such as SunOS and
+        Solaris. Here, you'll be asked how (or whether) you want to
+        configure SILO.
+      </para>
+      <para>
+        <guibutton>Create boot disk</guibutton>: You should create a
+        boot disk if you are not installing SILO at all or if you want
+        it for safety reasons.  If you don't have a floppy this option
+        will be hidden, if you have a SMCC manufactured Ultra which
+        usually don't have floppies which can be booted, this option
+        will default to disabled.
+      </para>
+      <para>
+        <guibutton>Do not install SILO</guibutton>: You can choose to
+        skip SILO if you do not want to write SILO to your drive,
+        e.g. if you have SILO already installed on a different
+        partition or disk and want to boot from there.
+      </para>
+      <para>
+        To install SILO, select where you want to install it. If your
+        system will use only Red Hat Linux you should probably choose
+        the Master Boot Record (Boot Block of the first partition on
+        the disk). For systems where SunOS/Solaris and Red Hat Linux
+        will reside on a single hard drive, you should probably not
+        install SILO into the MBR, especially if SunOS/Solaris is on
+        the first partition of the disk.
+      </para>
+      <para>
+        If you choose not to install SILO for ANY reason, please make
+        a boot disk so you can boot Red Hat Linux.
+      </para>
+      <para>
+        <guibutton>Create PROM alias</guibutton>: The installer can
+        create a PROM alias "linux" if the PROM supports it, so that
+        you can boot into the SILO boot loader from the PROM command
+        line by the command "boot linux".
+      </para>
+      <para>
+        <guibutton>Set default PROM boot device</guibutton>: The
+        installer can make sure the PROM will boot by default into the
+        Red Hat Linux installer by setting PROM option "boot-device"
+        or "boot-from".
+      </para>
+      <para>
+       If you wish to add default options to the SILO boot command, enter them
+       into the kernel parameters field.  Any options you enter will be passed
+       to the Linux kernel every time it boots.
+      </para>
+      <para>
+       Bootable Partition -- Every bootable partition is listed and labeled,
+       including partitions used by other operating systems. If you would like
+       to add boot labels for other partitions (or change existing boot
+       labels), click once on the partition to select it. Once selected, you
+       can change the boot label.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-netconf">
+      <title>Network Configuration</title>
+      <para>
+	If you have a network card, you can set up your networking
+	information. Otherwise, click <guibutton>Next</guibutton> to proceed.
+      </para>
+      <para>
+	Choose your network card and whether you would like to configure using
+	DHCP.  If you have multiple Ethernet devices, each device will have its
+	own configuration screen.  You can switch between device screens, (for
+	example eth0 and eth1); the information you give will be specific to
+	each screen. If you select <guilabel>Activate on boot</guilabel>, your
+	network card will be started when you boot.
+      </para>
+      <para>
+	If you do not have DHCP client access or are unsure as to what this
+	information is, please contact your Network Administrator.
+      </para>
+      <para>
+	Next enter, where applicable, the IP Address, Netmask, Network, and
+	Broadcast addresses. If you are unsure about any of these, contact your
+	Network Administrator.
+      </para>
+      <para>
+	Enter in a hostname for your system. If you do not, your system will be
+	known as "localhost."
+      </para>
+      <para>
+	Finally, enter the Gateway, Primary DNS, Secondary DNS and Tertiary DNS
+	addresses.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-timezone">
+      <title>Time Zone Selection</title>
+      <para>
+	You can set your time zone either by selecting your computer's physical
+	location, or by your time zone's offset from Universal Coordinated Time
+	(also known as UTC).
+      </para>
+      <para>
+	Notice the two tabs at the top of the screen. The first tab offers you
+	the ability to configure by location. With this option, you can choose
+	your view. In choosing <guimenuitem>View</guimenuitem>, your options
+	are: World, North America, South America, Pacific Rim, Europe, Africa,
+	and Asia.
+      </para>
+      <para>
+	From the interactive map, you can click on a specific city, as indicated
+	by the yellow dots, and a red <guilabel>X</guilabel> will appear at your
+	selection.
+      </para>
+      <para>
+	You can also scroll through the city list and choose your desired time
+	zone.
+      </para>
+      <para>
+	The second tab offers you the ability to use the Universal Coordinated
+	Time (UTC) offset.  Here, you'll find a list of offsets for you to
+	choose from, as well as an option to set Daylight-Saving Time.
+      </para>
+      <para>
+	For both tabs, there is the option of selecting <guilabel>System Clock
+	  uses UTC</guilabel>. (UTC, also known as GMT, will allow your system
+	  to properly handle daylight-saving time.) Please select this if your
+	computer's hardware clock is set to UTC (instead of being set to your
+	local time).
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-accts">
+      <title>Account Configuration</title>
+      <para>
+	Enter a password for the root account. The password must be at least six
+	characters in length. Confirm the password by re-entering the password
+	in the second entry field. The <guibutton>Next</guibutton> button will
+	become enabled once both entry fields match.
+      </para>
+      <para>
+	Then create a user account.
+      </para
+      <para>
+	Enter a user account name. Next, create a password for that user account
+	and confirm it. Finally, enter the full name of the account user and
+	press <keycap>Enter</keycap>. Your account information will then be
+	added to the account list.
+      </para>
+      <para>
+	To add another user, choose <guibutton>New</guibutton> and enter the
+	information in the blank fields.  Once the information has been entered
+	for that user account, select the <guibutton>Add</guibutton> button to
+	add the user to the account list.
+      </para>
+      <para>
+	You can also <guibutton>Edit</guibutton> the user accounts you have
+	created, or <guibutton>Delete</guibutton> an account that you don't want
+	by selecting an account and using the <guibutton>Edit</guibutton> or
+	<guibutton>Delete</guibutton> buttons.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-authconf">
+      <title>Authentication Configuration</title>
+      <para>
+	You can skip this section if you will not be setting up network
+	passwords. If you are unsure, please ask your system administrator for
+	assistance.
+      </para>
+      <para>
+	Unless you are setting up an <firstterm>NIS</firstterm> password, you
+	will notice that both <firstterm>MD5</firstterm> and
+	<firstterm>shadow</firstterm> passwords are selected. We recommend you
+	use both to make your machine as secure as possible.
+      </para>
+      <para>
+	<emphasis>Enable MD5 passwords</emphasis> - allows a long password to be
+	used (up to 256 characters), instead of the standard eight letters or
+	less.
+      </para>
+      <para>
+	<emphasis>Enable shadow passwords</emphasis> - provides a very secure
+	method of retaining passwords for you. All passwords are stored in
+	<filename>/etc/shadow</filename>, which is readable only by root.
+      </para>
+      <para>
+	To configure the NIS option, you must be connected to an NIS network. If
+	you are unsure whether you are connected to an NIS network, please ask
+	your system administrator.
+      </para>
+      <para>
+	<emphasis>Enable NIS</emphasis> - allows you to run a group of computers
+	in the same Network Information Service domain with a common password
+	and group file. There are two options here to choose from:
+      </para>
+      <para>
+	<emphasis>NIS Domain</emphasis> - this option allows you to specify
+	which domain or group of computers your system will belong to.
+      </para>
+      <para>
+	<emphasis>NIS Server</emphasis> - this option causes your computer to
+	use a specific NIS server, rather than "broadcasting" a message to the
+	local area network asking for any available server to host your system.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-sel-group">
+      <title>Selecting Package Groups</title>
+      <para>
+	Select the package groups that you want to install. To select a package
+	group, click on the check box beside it.
+      </para>
+      
+      <para>
+	To select packages individually, you must check the <guilabel>Select
+	  Individual Packages</guilabel> box at the bottom of the screen.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-sel-indiv">
+      <title>Selecting Individual Packages</title>
+      <para>
+	On the left side of the screen you will see a listing of package
+	groups. When you expand this list and pick one group, the list of
+	packages in that group will appear in the panel on the right.
+      </para>
+      <para>
+	To select an individual package, double-click on it, or click on it once
+	to highlight it and click on <guilabel>Select Package For
+	Installation</guilabel>. A check mark will appear on any of the packages
+	you have selected.
+      </para>
+      <para>
+	For more information about a specific package, click on it.  The package
+	information will then appear at the bottom of the screen, along with the
+	package name and size.
+      </para>
+    </sect1>
+      
+      <sect1 id="s1-help-screens-depend">
+      <title>Unresolved Dependencies</title>
+      <para>
+	Many software packages depend on other packages or libraries in order to
+	work correctly. To make sure your system has all the packages it needs
+	in order to work, &RHL; checks these package
+	<firstterm>dependencies</firstterm> each time you install or remove a
+	package. If one package requires another package that has not been
+	installed, unresolved dependencies exist.
+      </para>
+      <para>
+	One or more packages you've selected have unresolved dependencies.  You
+	can resolve this by selecting <guilabel>Install Packages to Satisfy
+	Dependencies</guilabel>.
+      </para>
+    </sect1>
+    
+    <sect1 id="s1-help-screens-monitor">
+      <title>X Configuration</title>
+      <para>
+	The installation program will now attempt to detect your
+	monitor to determine your machine's best display settings.  If
+	the monitor cannot be detected, choose the monitor that best
+	matches the model attached to this computer from the monitors
+	listed.
+      </para>
+      <para>
+        You may also enter the horizontal and vertical synchronization
+        ranges for your monitor.  These values can be found in the
+        documentation for your display.  Be careful when entering
+        these values; if you enter values that fall outside the
+        capabilities of your equipment, you can cause damage to your
+        display.  Only enter numbers in these fields if the values in
+        your manual don't match selections in the monitor list and
+        you're certain you have the correct values from your
+        documentation.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-xconf">
+      <title>X Configuration</title>
+      <para>
+	Although, the installation program probes to determine the best video card for
+	your system, you can choose another video card if needed.
+      </para>
+      <para>
+	Once you have selected your video card, choose the amount of video RAM
+	present on your card.
+      </para>
+      <para>
+	After your hardware configuration is set, you can test your settings.
+      </para>
+      <para>
+	You can also choose whether you want to boot your system into a
+	graphical environment once &RHL; is installed.
+      </para>
+      <para>
+	Select the <guibutton>Customize X Configuration</guibutton> button to
+	choose specific color and resolution settings.
+      </para>
+      <para>
+	You can also choose to <guibutton>Skip X Configuration</guibutton> if
+	you would rather configure X after the install or not at all.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-xcustom">
+      <title>
+        Custom Configuration
+      </title>
+      <para>
+        Now choose the correct resolution for your X configuration.
+        Click <guibutton>Test this configuration</guibutton> to try
+        out this configuration. If you do not like what you are
+        presented with while testing, click <guibutton>No</guibutton>
+        to choose another resolution.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-aboutinstall">
+      <title> About to Install</title>
+      <para>
+	<command>Caution:</command> Once you click <guibutton>Next</guibutton>,
+	&RHL; will be written to your hard drive. This process cannot be undone,
+	so if you've decided not to install &RHL;, this is the last point at
+	which you can abort the installation process.
+      </para>
+      <para>
+	To abort this installation, remove all &RHL; media, and press your
+	computer's <command>Reset</command> button or reset using <keycombo>
+	  <keycap>Control-</keycap> <keycap>Alt-</keycap>
+	  <keycap>Delete</keycap>
+	</keycombo>
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-installing">
+      <title>Installing Packages</title>
+      <para>
+	We've gathered all the information needed to install &RHL; on
+	your system.  It may take a while to install everything,
+	depending on how many packages need to be installed.  If you
+	have an Official &RHL; boxed set, this would be a good time to
+	get familiar with the <citetitle>&RHLGSG;</citetitle> or
+	<citetitle>&RHLRGS;</citetitle>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-bootdisk">
+      <title>Boot Disk Creation</title>
+      <para>
+	Insert a blank, formatted diskette into your floppy drive, and click
+	<guibutton>Next</guibutton> to continue.
+      </para>
+    </sect1>
+  </chapter>
+</book>
+
+
+
+
+  

@@ -1,0 +1,1555 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-sysconfig-control-panel.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>System Configuration with the Control Panel</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="System Configuration"
+HREF="ch-sysconfig.html"><LINK
+REL="PREVIOUS"
+TITLE="System Configuration"
+HREF="ch-sysconfig.html"><LINK
+REL="NEXT"
+TITLE="PowerTools"
+HREF="ch-powertools.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-sysconfig.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 3. System Configuration</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="ch-powertools.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-SYSCONFIG-CONTROL-PANEL"
+>System Configuration with the Control Panel</A
+></H1
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          Most of what can be done with the control panel applications can also
+          be done using <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>.  In addition,
+          <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> supports both character-cell
+          <I
+CLASS="EMPHASIS"
+>and</I
+> graphical user interfaces.  Please refer to
+          <A
+HREF="ch-sysconfig.html#S1-SYSCONFIG-LINUXCONF"
+>the section called <I
+>System Configuration with <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+></I
+></A
+> for an introduction to
+          <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>        The control panel is a launching pad for a number of different system
+        administration tools (see <A
+HREF="s1-sysconfig-control-panel.html#GR-SYSCONFIG-CONTROL-PANEL"
+>Figure 3-21</A
+>).  These tools make your life
+        easier by letting you configure things without remembering configuration
+        file formats and awkward command line options.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-CONTROL-PANEL"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/control-panel.gif"></P
+><P
+><B
+>Figure 3-21. The Control Panel</B
+></P
+></DIV
+><P
+>        To start the control-panel, start the X Window System as root with
+        <B
+CLASS="COMMAND"
+>startx</B
+> and type <B
+CLASS="COMMAND"
+>control-panel</B
+> in
+        an Xterm.  You will need to be root to run the control-panel tools
+        successfully.  You can do this as well if you already have X running as
+        a normal user.  Just type <B
+CLASS="COMMAND"
+>su -c control-panel</B
+> and
+        then type the root password when prompted. If you plan to do other tasks
+        as root, you could type <B
+CLASS="COMMAND"
+>su</B
+> followed by the root
+        password when prompted.
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          If you are not running X as root, you may need to give root access to
+          your system's X server.  To do this, enter the following command on a
+          <I
+CLASS="EMPHASIS"
+>non-root</I
+> terminal window:
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>xhost +localhost</B
+></PRE
+></TD
+></TR
+></TABLE
+><P
+>        After starting the control panel, simply clicking on an icon starts up a
+        tool.  Please note that you are not prevented from starting two
+        instances of any tool, but doing so is a very bad idea because you may
+        try to edit the same files in two places and end up overwriting your own
+        changes.
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          If you do accidentally start a second copy of a tool, you should quit
+          it immediately.  Also, do not manually edit any files managed by the
+          control-panel tools while the tools are running.  Similarly, do not
+          run any other programs (such as <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+>)
+          that may change those files while the tools are running.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSCONFIG-PRINTCONF"
+>Printer Configuration</A
+></H2
+><P
+>	  Please note that the <I
+CLASS="CITETITLE"
+>Official Red Hat Linux Getting Started Guide</I
+> contains more
+	  up-to-date documentation on <TT
+CLASS="APPLICATION"
+>printtool</TT
+>, so
+	  be sure to check that document before using
+	  <TT
+CLASS="APPLICATION"
+>printtool</TT
+>.
+	</P
+><P
+>          The printer configuration tool (<TT
+CLASS="APPLICATION"
+>printtool</TT
+>)
+          maintains the <TT
+CLASS="FILENAME"
+>/etc/printcap</TT
+> file, print spool
+          directories, and print filters.  The filters allow you to print many
+          different types of files, including:
+        </P
+><P
+></P
+><UL
+><LI
+><P
+>              plain text (ASCII) files
+            </P
+></LI
+><LI
+><P
+>              PostScript files
+            </P
+></LI
+><LI
+><P
+>              TeX <TT
+CLASS="FILENAME"
+>.dvi</TT
+> files
+            </P
+></LI
+><LI
+><P
+>              GIF, JPEG, TIFF, and other graphics formats
+            </P
+></LI
+><LI
+><P
+>              RPMs
+            </P
+></LI
+></UL
+><P
+>          In other words, simply printing a GIF or RPM file using the
+          <B
+CLASS="COMMAND"
+>lpr</B
+> command will result in the printer doing "the
+          right thing."
+        </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-PRINTOOL"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/printool.gif"></P
+><P
+><B
+>Figure 3-22. Print Tool</B
+></P
+></DIV
+><P
+>          In order to create a new <I
+CLASS="FIRSTTERM"
+>print queue</I
+>, choose
+          <B
+CLASS="COMMAND"
+>Add</B
+>.  Then, select what type of printer is being
+          added.  There are four types of print queues which can be configured
+          with <TT
+CLASS="APPLICATION"
+>printtool</TT
+>:
+        </P
+><P
+></P
+><UL
+><LI
+><P
+>              Local print queues are for printers attached to a printer or
+              serial port on your Red Hat Linux system
+            </P
+></LI
+><LI
+><P
+>              Remote print queues are attached to a different system which you
+              can access over a TCP/IP network
+            </P
+></LI
+><LI
+><P
+>              SMB print queues are attached to a different system which uses
+              LAN-Manager-type (SMB) networking
+            </P
+></LI
+><LI
+><P
+>              NCP print queues are attached to a different system which uses
+              Novell's NetWare network technology
+            </P
+></LI
+></UL
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-PRINTTOOL-TYPE"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/printtool-type.gif"></P
+><P
+><B
+>Figure 3-23. Selecting a Printer Type</B
+></P
+></DIV
+><P
+>          After choosing the printer type, a dialog box requests further
+          information about the print queue (see <A
+HREF="s1-sysconfig-control-panel.html#GR-SYSCONFIG-PRINTTOOL-ADDLOCAL"
+>Figure 3-24</A
+>).  All types of print
+          queues require the following information:
+        </P
+><P
+></P
+><UL
+><LI
+><P
+>              Queue Name -- What the queue will be called. Multiple names can be
+              specifed with the <B
+CLASS="COMMAND"
+>|</B
+> (pipe) character separating
+              entries.
+            </P
+></LI
+><LI
+><P
+>              Spool Directory -- This is the directory on the local machine where
+              files are stored before printing occurs. Be careful to not have
+              more than one printer queue use a given spool directory.
+            </P
+></LI
+><LI
+><P
+>              File Limit -- Maximum size print job accepted, in kilobytes (1 kb =
+              1024 bytes). A size of 0 indicates no limit should be imposed.
+            </P
+></LI
+><LI
+><P
+>              Input Filter -- Filters convert printed files into a format the
+              printer can handle. Press <B
+CLASS="COMMAND"
+>Select</B
+> to choose the
+              filter which best matches your printer (see <A
+HREF="s1-sysconfig-control-panel.html#GR-SYSCONFIG-PRINTTOOL-FILTER"
+>Figure 3-25</A
+>).
+            </P
+><P
+>              In addition to configuring print queues able to print graphical
+              and PostScript output, you can configure a
+              <I
+CLASS="FIRSTTERM"
+>text-only</I
+> printer, which will only print
+              plain ASCII text.  Most printer drivers are also able to print
+              ASCII text without converting it to PostScript first; simply
+              choose <B
+CLASS="COMMAND"
+>Fast text printing</B
+> when you configure
+              the filter.
+            </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="90%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>                This only works for non-PostScript printers.
+              </P
+></TD
+></TR
+></TABLE
+></DIV
+></LI
+><LI
+><P
+>              Suppress Headers -- Check this if you don't want a header page
+              printed at the beginning of each print job.
+            </P
+></LI
+></UL
+><P
+>          For <I
+CLASS="FIRSTTERM"
+>local</I
+> printers, the following information
+          is also required:
+        </P
+><P
+></P
+><UL
+><LI
+><P
+>              Printer Device -- Usually <TT
+CLASS="FILENAME"
+>/dev/lp1</TT
+>; the name
+              of the port which the printer is attached to. Serial printers are
+              usually on
+              <TT
+CLASS="FILENAME"
+>/dev/ttyS<TT
+CLASS="REPLACEABLE"
+><I
+>?</I
+></TT
+></TT
+>
+              ports. Note that you will need to manually configure serial
+              parameters.
+            </P
+></LI
+></UL
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-PRINTTOOL-ADDLOCAL"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/printtool-addlocal.gif"></P
+><P
+><B
+>Figure 3-24. Adding a Local Printer</B
+></P
+></DIV
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-PRINTTOOL-FILTER"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/printtool-filter.gif"></P
+><P
+><B
+>Figure 3-25. Configuring a Print Filter</B
+></P
+></DIV
+><P
+>          For <I
+CLASS="FIRSTTERM"
+>remote</I
+> printers, the dialog box contains
+          additional fields; fill in the following information:
+        </P
+><P
+></P
+><UL
+><LI
+><P
+>              Remote Host -- Hostname of the remote machine hosting the printer.
+            </P
+></LI
+><LI
+><P
+>              Remote Queue -- Name of the queue to print to on the remote machine.
+            </P
+></LI
+></UL
+><P
+>          The remote machine must be configured to allow the local machine to
+          print on the desired queue. Typically
+          <TT
+CLASS="FILENAME"
+>/etc/hosts.lpd</TT
+> controls this.
+        </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-PRINTTOOL-ADDREM"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/printtool-addremote.gif"></P
+><P
+><B
+>Figure 3-26. Adding a Remote Printer</B
+></P
+></DIV
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-PRINTTOOL-NCP"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/printtool-ncp.gif"></P
+><P
+><B
+>Figure 3-27. Adding an NCP Printer</B
+></P
+></DIV
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-PRINTTOOL-SMB"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/printtool-smb.gif"></P
+><P
+><B
+>Figure 3-28. Adding an SMB Printer</B
+></P
+></DIV
+><P
+>          For SMB and NCP printers, fill in the following information:
+        </P
+><P
+></P
+><UL
+><LI
+><P
+>              Hostname of Printer Server -- Name of the machine to which the
+              printer you want to use is attached.
+            </P
+></LI
+><LI
+><P
+>              IP number of Server -- The IP address of the machine to which the
+              printer you want to use is attached; this is optional and only
+              relevant for SMB printers.
+            </P
+></LI
+><LI
+><P
+>              Printer Name -- Name of the printer on which you want to print.
+            </P
+></LI
+><LI
+><P
+>              User -- Name of user you must login as to access the printer
+              (typically <TT
+CLASS="FILENAME"
+>guest</TT
+> for Windows servers, or
+              <TT
+CLASS="FILENAME"
+>nobody</TT
+> for <B
+CLASS="COMMAND"
+>samba</B
+> servers).
+            </P
+></LI
+><LI
+><P
+>              Password -- Password (if required) to use the printer (typically
+              blank). Someone should be able to tell you this if you do not
+              already know it.
+            </P
+></LI
+></UL
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>            If you require a username and password for an SMB (LAN Manager) or
+            NCP (NetWare) print queue, they are stored unencrypted in a local
+            script.  Thus, it is possible for another person to learn the
+            username and password.  It is therefore recommended that the
+            username and password for use of the printer to be different than
+            that for a user account on the local Red Hat Linux system, so that the only
+            possible security compromise would be unauthorized use of the
+            printer.  If there are file shares from the SMB server, it is
+            recommended that they also use a different password than the one for
+            the print queue.
+          </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>          After you have added your print queue, you may need to restart the
+          printer daemon (<B
+CLASS="COMMAND"
+>lpd</B
+>).  To do so, choose
+          <B
+CLASS="COMMAND"
+>Restart lpd</B
+> from the <B
+CLASS="COMMAND"
+>lpd</B
+> menu.
+        </P
+><P
+>          You may print a <I
+CLASS="FIRSTTERM"
+>test page</I
+> for any print queue
+          you have configured.  Select the type of test page you would like to
+          print from the <B
+CLASS="COMMAND"
+>Tests</B
+> menu.
+        </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-PRINTTOOL-TESTMENU"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/printtool-test-menu.gif"></P
+><P
+><B
+>Figure 3-29. Printing a Test Page</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSCONFIG-KERNEL"
+>Loading Kernel Modules</A
+></H2
+><P
+>          The Linux kernel has a modular design. At boot time, only a
+          minimal <I
+CLASS="FIRSTTERM"
+>resident</I
+> kernel is loaded into memory.
+          Thereafter, whenever a  user requests a feature that is not present
+          in the resident kernel, a kernel <I
+CLASS="FIRSTTERM"
+>module</I
+> is
+          dynamically loaded into memory. After a specified period of
+          inactivity, the module may be removed from memory. This design
+          promotes leanness and efficiency.
+         </P
+><P
+>          The mechanism that supports dynamic loading of modules is a kernel
+          thread called <B
+CLASS="COMMAND"
+>kmod</B
+>. When the kernel requests a
+          module, kmod wakes up and calls <B
+CLASS="COMMAND"
+>modprobe</B
+>(8) to
+          get it.
+         </P
+><P
+>   
+          When you install Red Hat Linux, the hardware on your system is probed and you
+          provide information about how the system will be typically used and
+          which programs should be loaded. Based on this probing and the
+          provided usage information, the installation program decides which
+          features to compile into the resident kernel and which to put in
+          loadable modules, and sets up the dynamic loading mechanism to work
+          transparently. But this is a highly configurable procedure. If you
+          build your own custom kernel, you can make all of these decisions for
+          yourself. 
+        </P
+><P
+>          If you add new hardware after installation requiring support provided
+          in a kernel module, you need to set up the dynamic loading
+          mechanism. You do this by editing the module configuration file,
+          <TT
+CLASS="FILENAME"
+>/etc/conf.modules</TT
+>.
+        </P
+><P
+>For example, if at the time you installed Red Hat Linux your system
+        included a model SMC EtherPower 10 PCI network adapter, the module
+        configuration file will contain this line: <TT
+CLASS="COMPUTEROUTPUT"
+>alias eth0
+        tulip</TT
+>. If, after installation, you install a second
+        identical network adapter to your system, add this line to
+        <TT
+CLASS="FILENAME"
+>/etc/conf.modules</TT
+>:<TT
+CLASS="COMPUTEROUTPUT"
+>alias eth1
+        tulip</TT
+>.
+        </P
+><P
+>	  See <A
+HREF="ch-modules.html"
+>Appendix A</A
+> for an alphabetical list of kernel
+	  modules and the hardware the modules support.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSCONFIG-NET-CONF"
+>Network Configuration</A
+></H2
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>            Documentation on network configuration using
+            <TT
+CLASS="APPLICATION"
+>linuxconf</TT
+> can be found in <A
+HREF="ch-sysconfig.html#S2-SYSCONFIG-GET-CONNECT"
+>the section called <I
+>Getting Connected with <TT
+CLASS="APPLICATION"
+>Linuxconf</TT
+> (Network Configuration)</I
+></A
+>.
+          </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>          The network configuration tool (<B
+CLASS="COMMAND"
+>netcfg</B
+>) shown in
+          <A
+HREF="s1-sysconfig-control-panel.html#GR-SYSCONFIG-CPNETCONFIG"
+>Figure 3-30</A
+> is designed to allow
+          easy manipulation of parameters such as IP address, gateway address,
+          and network address, as well as name servers and
+          <TT
+CLASS="FILENAME"
+>/etc/hosts</TT
+>.
+        </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-CPNETCONFIG"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/netcfg-names.gif"></P
+><P
+><B
+>Figure 3-30. Network Configuration Panel</B
+></P
+></DIV
+><P
+>          Network devices can be added, removed, configured, activated,
+          deactivated and aliased.
+
+          
+
+          Ethernet, arcnet, token ring, pocket (ATP), PPP, SLIP, PLIP and
+          loopback devices are supported. PPP/SLIP/PLIP support works well on
+          most hardware, but some hardware setups may exhibit unpredictable
+          behavior.  When using the Network Configuration Tool click
+          <B
+CLASS="COMMAND"
+>Save</B
+> to write your changes to disk, to quit without
+          making any changes select <B
+CLASS="COMMAND"
+>Quit</B
+>.
+        </P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSCONFIG-NAMES"
+>Managing Names</A
+></H3
+><P
+>            The <B
+CLASS="COMMAND"
+>Names</B
+> panel of the Network Configuration tool
+            serves two primary purposes: setting the hostname and domain of the
+            computer, and determining which name server will be used to look up
+            other hosts on the network.  The Network tool is not capable of
+            configuring a machine as a nameserver. To edit a field or add
+            information to a field, simply click on the field with the left mouse
+            button and type the new information.
+          </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-NETCFG-HOSTS"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/netcfg-hosts.gif"></P
+><P
+><B
+>Figure 3-31. Adding/Editing Hosts</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSCONFIG-HOSTS"
+>Managing Hosts</A
+></H3
+><P
+>            In the <B
+CLASS="COMMAND"
+>Hosts</B
+> management panel you have the
+            ability to add, edit, or remove hosts from the
+            <TT
+CLASS="FILENAME"
+>/etc/hosts</TT
+> file.  Adding or editing an entry
+            involves identical actions.  An edit dialog box will appear, simply
+            type the new information and click <B
+CLASS="COMMAND"
+>Done</B
+> when you
+            are finished.  See <A
+HREF="s1-sysconfig-control-panel.html#GR-SYSCONFIG-NETCFG-HOSTS"
+>Figure 3-31</A
+>
+            for an example.
+          </P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSCONFIG-ADD-NETWORK"
+>Adding a Networking Interface</A
+></H3
+><P
+>            If you have added a networking interface to your machine since
+            installing Red Hat Linux, or you didn't configure your Ethernet card at
+            install time, you can configure it with a few clicks of a mouse.
+          </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>              You may need to configure <B
+CLASS="COMMAND"
+>kerneld</B
+> to load a
+              driver for the network interface you are adding (e.g.,
+              <TT
+CLASS="FILENAME"
+>eth0</TT
+>); see <A
+HREF="s1-sysconfig-control-panel.html#S2-SYSCONFIG-KERNEL"
+>the section called <I
+>Loading Kernel Modules</I
+></A
+> for more information.
+            </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>            Begin adding an interface by clicking on
+            <B
+CLASS="COMMAND"
+>Interfaces</B
+> in the main panel.  This will bring up
+            a window of configured devices with a row of available options, see
+            <A
+HREF="s1-sysconfig-control-panel.html#GR-SYSCONFIG-NET-INTERFACES"
+>Figure 3-32</A
+>.
+          </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-NET-INTERFACES"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/netcfg-interfaces.gif"></P
+><P
+><B
+>Figure 3-32. Configured Interfaces</B
+></P
+></DIV
+><P
+>            To add a device, first click the <B
+CLASS="COMMAND"
+>Add</B
+> button then
+            select the type of interface you want to configure from the box that
+            appears (See <A
+HREF="s1-sysconfig-control-panel.html#GR-SYSCONFIG-NETCFG-CHOOSE-IFACE"
+>Figure 3-33</A
+>).
+          </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-NETCFG-CHOOSE-IFACE"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/netcfg-choose-interface.gif"></P
+><P
+><B
+>Figure 3-33. Choose Interface Type</B
+></P
+></DIV
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>              There is now a <B
+CLASS="COMMAND"
+>clone</B
+> button available in
+              <B
+CLASS="COMMAND"
+>netcfg</B
+>.  This button can be used to create a
+              "clone" of an already-existing interface.  By using clone
+              interfaces, it is possible for a laptop to have one Ethernet
+              interface defined for a work LAN, and a clone Ethernet device
+              defined for a home LAN.
+            </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSCONFIG-PPP"
+>PPP Interface</A
+></H4
+><P
+>              Adding a PPP interface can be as simple as supplying the phone
+              number, login name and password in the <TT
+CLASS="FILENAME"
+>Create PPP
+              Interface</TT
+> dialog shown in <A
+HREF="s1-sysconfig-control-panel.html#GR-SYSCONFIG-NETCFG-CREATE-PPP"
+>Figure 3-34</A
+>.  If you must use
+              PAP authentication for your PPP connection, choose <B
+CLASS="COMMAND"
+>Use
+              PAP authentication</B
+>.  In many cases some degree of
+              customization will be needed to establish a PPP connection.
+              Choosing the <B
+CLASS="COMMAND"
+>Customize</B
+> button will allow you to
+              make changes to the hardware, communication, and networking
+              settings for the PPP interface.
+            </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-NETCFG-CREATE-PPP"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/netcfg-create-ppp.gif"></P
+><P
+><B
+>Figure 3-34. Create PPP Interface</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSCONFIG-SLIP"
+>SLIP Interface</A
+></H4
+><P
+>              In order to configure a SLIP interface you must first supply a
+              phone number, login name, and password.  This will supply the
+              initial parameters for the chat script needed to establish a SLIP
+              connection.  When you choose <B
+CLASS="COMMAND"
+>Done</B
+>, a dialog
+              titled <TT
+CLASS="FILENAME"
+>Edit SLIP Interface</TT
+> appears that
+              enables you to further customize the hardware, communication and
+              networking parameters for your SLIP interface.
+            </P
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSCONFIG-PLIP"
+>PLIP Interface</A
+></H4
+><P
+>              To add a PLIP interface to your system you only have to supply the
+              IP address, the remote IP address, and the Netmask. You can also
+              select if you want to activate the interface at boot time.
+            </P
+></DIV
+><DIV
+CLASS="SECT4"
+><H4
+CLASS="SECT4"
+><A
+NAME="S4-SYSCONFIG-ETH-TOKEN"
+>Ethernet, Arcnet, Token Ring and Pocket Adaptor Interfaces</A
+></H4
+><P
+>              If you are adding an ethernet, arcnet, token ring or pocket
+              adapter to your computer you will need to supply the following
+              information:
+            </P
+><P
+></P
+><UL
+><LI
+><P
+>                  Device -- This is determined by netconfig based on the devices
+                  already configured.
+                </P
+></LI
+><LI
+><P
+>                  IP Address -- Enter an IP address for your network device.
+                </P
+></LI
+><LI
+><P
+>                  Netmask -- Enter the network mask for your network device.
+                </P
+><P
+>                  The network and broadcast addresses are calculated
+                  automatically based on the IP address and netmask you enter.
+                </P
+></LI
+><LI
+><P
+>                  Activate interface at boot time: 
+                </P
+><P
+>                  If you want the device to be configured automatically when
+                  your machine boots select this by clicking on the box.
+                </P
+></LI
+><LI
+><P
+>                  Allow any user to (de)activate interface: 
+                </P
+><P
+>                  Check this if you want any user to be able to activate or
+                  deactivate the interface.
+                </P
+></LI
+><LI
+><P
+>                  Interface configuration protocol:
+                </P
+><P
+>                  If you have a BOOTP or DHCP server on your network and would
+                  like to use it to configure the interface, choose the
+                  appropriate option; otherwise, choose <B
+CLASS="COMMAND"
+>none</B
+>.
+                </P
+></LI
+></UL
+><P
+>              After providing the configuration information for your new device,
+              click <B
+CLASS="COMMAND"
+>Done</B
+>.  The device should appear in your
+              <TT
+CLASS="FILENAME"
+>Interfaces</TT
+> list as an inactive device.  (The
+              active column should have a label of <B
+CLASS="COMMAND"
+>no</B
+>.)  To
+              activate the new device, first select it with a mouse click and
+              then choose on the <B
+CLASS="COMMAND"
+>Activate</B
+> button. If it does
+              not come up properly, you may need to reconfigure it by choosing
+              <B
+CLASS="COMMAND"
+>Edit</B
+>.
+            </P
+></DIV
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-SYSCONFIG-ROUTES"
+>Managing Routes</A
+></H3
+><P
+>            In the Routes management screen you have the ability to add, edit,
+            or remove static networking routes.  Adding or editing an entry
+            involves identical actions, just like the Hosts panel.  An edit
+            dialog box will appear; simply type the new information and click
+            <B
+CLASS="COMMAND"
+>Done</B
+> when you are finished.  See <A
+HREF="s1-sysconfig-control-panel.html#GR-SYSCONFIG-NETCFG-ROUTES"
+>Figure 3-35</A
+> for an example.
+          </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-SYSCONFIG-NETCFG-ROUTES"
+></A
+><P
+><IMG
+SRC="figs/sysconfig/netcfg-routes.gif"></P
+><P
+><B
+>Figure 3-35. Adding/Editing Routes</B
+></P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-SYSCONFIG-TIMEDATE"
+>Time and Date</A
+></H2
+><P
+>          The "time machine" allows you to change the time and date by clicking
+          on the appropriate part of the time and date display and clicking on
+          the arrows to change the value.
+        </P
+><P
+>          The system clock is not changed until you click on the <B
+CLASS="GUIBUTTON"
+>Set
+          System Clock</B
+> button.
+        </P
+><P
+>          Click on <B
+CLASS="GUIBUTTON"
+>Reset Time</B
+> to set the time machine
+          time back to that of the system.
+        </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>            Changing the time can seriously confuse programs that depend on the
+            normal progression of time, and could possibly cause problems.  Try
+            to quit as many applications and processes as possible before
+            changing the time or date.
+          </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-sysconfig.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="ch-powertools.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>System Configuration</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-sysconfig.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>PowerTools</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-sysconfig-control-panel.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:28 GMT -->
+</HTML
+>

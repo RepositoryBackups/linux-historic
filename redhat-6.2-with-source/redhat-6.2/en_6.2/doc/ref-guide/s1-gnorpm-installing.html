@@ -1,0 +1,507 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-gnorpm-installing.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:59:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Installing New Packages</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Gnome-RPM"
+HREF="ch-gnorpm.html"><LINK
+REL="PREVIOUS"
+TITLE="The Package Display"
+HREF="s1-gnorpm-package-display.html"><LINK
+REL="NEXT"
+TITLE="Configuration"
+HREF="s1-gnorpm-config.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-gnorpm-package-display.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 7. Gnome-RPM</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-gnorpm-config.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-GNORPM-INSTALLING"
+>Installing New Packages</A
+></H1
+><P
+>        To install new packages, choose <TT
+CLASS="GUILABEL"
+><B
+>Install</B
+></TT
+> from the
+        toolbar. The <TT
+CLASS="GUILABEL"
+><B
+>Install</B
+></TT
+> window will open, revealing
+        packages which are either already installed, newer packages or other
+        options, which can be selected from the <TT
+CLASS="GUILABEL"
+><B
+>Filter</B
+></TT
+>
+        drop-down bar at the top of the window. See <A
+HREF="s1-gnorpm-installing.html#GR-GNORPM-GNOADDPKG"
+>Figure 7-4</A
+> for an example of the
+        <TT
+CLASS="GUILABEL"
+><B
+>Install</B
+></TT
+> window, using the filter for "<TT
+CLASS="GUILABEL"
+><B
+>All
+        but installed packages</B
+></TT
+>."
+      </P
+><P
+>        Using the <TT
+CLASS="GUILABEL"
+><B
+>Filter</B
+></TT
+> feature allows you to winnow your
+        choices for viewing packages. Available filters for viewing include:
+      </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>            All packages
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            All but installed packages
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            Only uninstalled packages
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            Only newer packages
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            Uninstalled or newer packages
+          </P
+></LI
+></UL
+><P
+>        You can switch the display of packages by using the drop-down bar at the
+        top of the window.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-GNORPM-INSTALLFILTER"
+></A
+><P
+><IMG
+SRC="figs/gnorpm/installfilter.gif"></P
+><P
+><B
+>Figure 7-3. The Install Window </B
+></P
+></DIV
+><P
+>        Choose the <B
+CLASS="GUIBUTTON"
+>Add</B
+> button. By default, if your CD-ROM
+        is mounted with a Red Hat Linux CD-ROM, <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>
+        will search in <TT
+CLASS="FILENAME"
+>/mnt/cdrom/RedHat/RPMS</TT
+> for new
+        packages. (You can find this default option in the <B
+CLASS="GUIMENU"
+>Install
+        Window</B
+> tab of the <B
+CLASS="GUIMENU"
+>Preferences</B
+> dialog. See
+        <A
+HREF="s1-gnorpm-config.html"
+>the section called <I
+>Configuration</I
+></A
+> for more information on this feature.)
+      </P
+><P
+>        If no packages are available in the default path, you'll be presented
+        with an <B
+CLASS="GUIMENU"
+>Add Packages</B
+> window from which you can select
+        the appropriate location of your new package. In this view, you can
+        select the correct path by using the drop-down bar at the top of the
+        window to quickly navigate to pre-set locations; or you can double-click
+        in the left panel of the <B
+CLASS="GUIMENU"
+>Add Packages</B
+> window to
+        navigate to the correct path (as in <A
+HREF="s1-gnorpm-installing.html#GR-GNORPM-GNOADDPKG"
+>Figure 7-4</A
+>). You can also type the path in the text
+        window at the bottom of the <B
+CLASS="GUIMENU"
+>Add Packages</B
+> window.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-GNORPM-GNOADDPKG"
+></A
+><P
+><IMG
+SRC="figs/gnorpm/gnoaddpkg.gif"></P
+><P
+><B
+>Figure 7-4. The Add Packages Window</B
+></P
+></DIV
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          If you download RPMs, you'll likely find those downloaded packages in
+          a directory called <TT
+CLASS="FILENAME"
+>rpms</TT
+> within your home
+          directory. For example, if your home directory is
+          <TT
+CLASS="FILENAME"
+>/home/bill</TT
+>, your downloaded RPMs will be in
+          <TT
+CLASS="FILENAME"
+>/home/bill/rpms</TT
+>.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>        By clicking on the item, you'll find a brief description of the package
+        in the <TT
+CLASS="GUILABEL"
+><B
+>Package Info</B
+></TT
+> panel of the
+        <TT
+CLASS="GUILABEL"
+><B
+>Install</B
+></TT
+> window. To perform an installation or a
+        query on the package, click inside the <B
+CLASS="GUIBUTTON"
+>checkbox</B
+>
+        next to the package, then select the <B
+CLASS="GUIBUTTON"
+>Install</B
+>
+        button. You can also query the item once it's checked; from within the
+        <TT
+CLASS="GUILABEL"
+><B
+>Package Info</B
+></TT
+> window, you can also perform the
+        installation (see <A
+HREF="s1-gnorpm-manipulation.html#GR-GNORPM-GRPMQUERY"
+>Figure 7-10</A
+> in <A
+HREF="s1-gnorpm-manipulation.html#S2-GNORPM-QUERYING"
+>the section called <I
+>Querying Packages</I
+></A
+> for an example).
+      </P
+><P
+>        To choose an item, double-click on it with your left mouse button, or
+        click on the <B
+CLASS="GUIBUTTON"
+>Add</B
+> button. The selected package(s)
+        will be added to the <B
+CLASS="GUIMENU"
+>Install</B
+> window. You can also
+        install more than one package in the same manner; each selection will be
+        added to the <TT
+CLASS="GUILABEL"
+><B
+>Install</B
+></TT
+> window.
+      </P
+><P
+>        In addition to choosing to install the packages from within the
+        <B
+CLASS="GUIMENU"
+>Install</B
+> window, you can install after performing a
+        query on the selected package. Click on <B
+CLASS="GUIBUTTON"
+>Query</B
+>,
+        which will open the <B
+CLASS="GUIMENU"
+>Package Info</B
+> window. Here, you
+        can find a variety of details about the file(s) you've selected to
+        install. Information will include the origination of the package, the
+        date it was built, its size and more.
+      </P
+><P
+>        Within this <B
+CLASS="GUIMENU"
+>Package Info</B
+> window, you have the option
+        of installing or upgrading packages.
+      </P
+><P
+>        If the package already exists on your system and you're querying a newer
+        release, the <B
+CLASS="GUIMENU"
+>Package Info</B
+> window provides an
+        <B
+CLASS="GUIBUTTON"
+>Upgrade</B
+> button, which will perform an upgrade to
+        newer releases.
+      </P
+><P
+>        You can also "drag and drop" packages from <TT
+CLASS="APPLICATION"
+>GNOME File
+        Manager</TT
+>. Within the <TT
+CLASS="APPLICATION"
+>File
+        Manager</TT
+>, left-click on your selected RPM file then, while
+        still holding down the mouse button, "drag" the file to the
+        <TT
+CLASS="GUILABEL"
+><B
+>Install</B
+></TT
+> window and place it within the
+        <TT
+CLASS="GUILABEL"
+><B
+>Name</B
+></TT
+> panel.
+      </P
+><P
+>        When dragging files to the <TT
+CLASS="GUILABEL"
+><B
+>Install</B
+></TT
+> window from the
+        <TT
+CLASS="APPLICATION"
+>File Manager</TT
+>, you'll notice that the file
+        appears as an icon while it's being dragged toward
+        <TT
+CLASS="APPLICATION"
+>Gnome-RPM</TT
+>. Once inside the
+        <TT
+CLASS="GUILABEL"
+><B
+>Name</B
+></TT
+> panel, you'll see that the package is checked
+        for installation by default, and its information appears in the
+        <TT
+CLASS="GUILABEL"
+><B
+>Package Info</B
+></TT
+> panel to the right.
+      </P
+><P
+>        To install the package now, just select the
+        <B
+CLASS="GUIBUTTON"
+>Install</B
+> button.
+      </P
+><P
+>        You'll see a progress indicator when your package is being installed.
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-gnorpm-package-display.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-gnorpm-config.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>The Package Display</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-gnorpm.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Configuration</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-gnorpm-installing.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:59:32 GMT -->
+</HTML
+>

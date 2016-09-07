@@ -1,0 +1,994 @@
+<!DOCTYPE BOOK PUBLIC "-//Davenport//DTD DocBook V3.0//EN" [
+<!ENTITY RH "Red Hat">
+<!ENTITY RHL "Red Hat Linux">
+<!ENTITY RHLRGS "Red Hat Linux Reference Guide">
+<!ENTITY RHLIG "Red Hat Linux Installation Guide">
+<!ENTITY RHLGSG "Red Hat Linux Getting Started Guide">
+<!ENTITY RHI "Red Hat, Inc.">
+]>
+<book id="book">
+<title>Pomocné Obrazovky In¹talácie</title>
+  <chapter id="s1-help-screens-lang">
+    <title></title>
+    <sect1 id="lang">
+      <title>Výber Jazyka</title>
+      <para>
+Aký jazyk si prajete pou¾i» poèas in¹talácie a po in¹talácii
+&RHL; ako ¹tandartný?
+      </para>
+      <para>
+Vyberte zo zoznamu vpravo.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-kybd">
+      <title>Konfigurácia klávesnice</title>
+      <para>
+Aký druh klávesnice vlastníte?
+      </para>
+      <para>
+Ak nemô¾ete nájs» presne va¹u klávesnicu, vyberte najpodobnej¹iu z
+<guilabel>Generic</guilabel> (napríklad: Generic 101-key PC).
+      </para>
+      <para>
+Potom si zvoµte rozlo¾enie kláves na klávesnici 
+(napríklad: slovenské).
+      </para>
+      <para>
+Vkladanie ¹peciálnych znakov (ako napr.: &Ntilde;, &Ocirc;, a &Ccedil;) 
+je umo¾nené pou¾ívaním tzv. "màtvych kláves" (taktie¾ známych ako 
+sekvencie zlo¾ených kláves). Pokiaµ si budete pria» pou¾íva» ¹peciálne
+znaky, vy¾adujúce pou¾ívanie màtvych kláves, vyberte
+<guilabel>Enable dead keys</guilabel>. Ak nie, vyberte <guilabel>Disable
+dead keys</guilabel>.
+      </para>
+      <para>
+K otestovaniu konfigurácie klávesnice pou¾ite prázdne textové pole
+v dolnej èasti obrazovky.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-mouse">
+      <title>Konfigurácia my¹ky</title>
+      <para>
+Aký druh my¹ky máte?
+      </para>
+      <para>
+Máte my¹ku typu PS/2, Bus alebo sériovú?  (Rada: Ak konektor 
+my¹ky je okrúhly, potom máte my¹ku typu PS/2 alebo Bus; ak je pravouhlý, 
+my¹ka je sériová.)
+      </para>
+      <para>
+Skúste nájs» presný typ my¹ky v prvom rámèeku napravo.  Ak neviete nájs» 
+presný typ, vyberte taký, ktorý je kompaktibilný s va¹ou my¹kou. Inak 
+vyberte typ my¹ky <guilabel>Generic</guilabel>.
+      </para>
+      <para>
+Ak máte sériovú my¹ku, vyberte zariadenie a port na ktorý je pripojená
+v nasledujúcom rámèeku.
+      </para>
+      <para>
+Systém X Window je navrhnutý pre pou¾ívanie s trojtlaèítkovou my¹kou. 
+Ak máte dvojtlaèítkovú my¹ku, &RHL; doká¾e emulova» stredné tlaèítko my¹ky.
+      </para>
+      <para>
+Ak máte dvojtlaèítkovú my¹ku, vyberte <guilabel>Emulova» 3 tlaèítka</guilabel>. 
+Po ukonèení in¹talácie súèasným stlaèením oboch tlaèítok my¹i dosiahnete 
+efekt stlaèenia stredného tlaèítka.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-wel">
+      <title>Vitajte v Red Hat Linux</title>
+      <para>
+Vitajte! Popis tejto in¹talácie je detailne popísaný v 
+<citetitle>&RHLIG;</citetitle> dostupnom z &RHI;. Prosím, preèítajte 
+si celý manuál pred tým, ako zaènete s in¹taláciou. 
+      </para>
+      <para>
+Kópie manuálu vo formáte HTML a Postscript sú prístupné online na 
+http://www.redhat.com. Taktie¾ je kópia vo formáte HTML na CD s &RHL;.
+      </para>
+      <para>
+<command>Nová Funkcia:</command> &RHL; 6.2 má novú in¹talaènú metódu
+oznaèenú ako "bezpartíciová" in¹talácia. Ak vá¹ systém pou¾íva FAT
+(DOS/Windows) partíciu s dostatkom voµného priestoru, mô¾ete si in¹talova»
+&RHL; bez prerozdelenia vá¹ho pevného disku. Táto mo¾nos» je najlep¹í výber
+pre µudí, ktorí si chcú vyskú¹a» &RHL; s minimálnymi zásahmi do svojho
+aktuálneho systému.
+      </para>
+      <para>
+Ak máte zakúpenú oficiálne predávanú verziu &RHL;, mô¾ete si zaregistrova»
+vá¹ produkt na na¹ej stránke (www.redhat.com/now).
+      </para>
+      <para>
+Poèas tejto in¹talácie mô¾ete my¹ku pou¾i» k výberu rôznych volieb.
+In¹taláciu mô¾ete riadi» tie¾ pou¾itím kláves <keycap>Tab</keycap> a
+<keycap>Enter</keycap>.
+      </para>
+      <para>
+Pou¾ite tlaèítka <guibutton>Ïalej</guibutton> a <guibutton>Spä»</guibutton>
+k pohybu medzi obrazovkami. Kliknite na <guibutton>Ïalej</guibutton>
+k uchovaniu informácií a k prechodu na ïal¹iu stránku; kliknite na
+<guibutton>Spä»</guibutton> k presunu na predchádzajúcu stránku bez
+ulo¾enia informácií.
+      </para>
+      <para>
+Na zminimalizovanie tejto pomocnej stránky, kliknite na tlaèítko 
+<guibutton>Skry» pomôcky</guibutton>.
+      </para>
+      <para>
+In¹taláciu mô¾ete preru¹i» kedykoµvek a¾ do zobrazenia stránky <guimenu>
+Príprava in¹talácie</guimenu>. Po stlaèení <guibutton>Ïalej</guibutton>
+na stránke <guimenu>Príprava in¹talácie</guimenu> zaène in¹talácia
+kopírova» údaje na pevný disk. Pred touto stránkou mô¾ete bezpeène
+re¹tartova» systém (pou¾ite tlaèítko <keycap>Vráti»</keycap> alebo
+<keycombo>
+  <keycap>Ctrl</keycap> <keycap>Alt</keycap> <keycap>Del</keycap>
+</keycombo>).
+      </para>
+    </sect1>
+    <sect1 id="s1-help-screens-welreconfig">
+      <title>Vitajte v Red Hat Linuxe</title>
+      <para>
+        Vstúpili ste do rekonfiguraèného módu, ktorý vám umo¾ní nastavi»
+        vlastnosti poèítaèa. Na opustenie tohoto módu bez zmeny 
+        nastavenia vyberte 'Nie' a stlaète tlaèítko <guibutton>Ïalej</guibutton>.
+      </para>
+      <para>
+        Poèas tejto konfigurácie mô¾ete pou¾i» my¹ na výber rôznych
+        mô¾ností. Na navigáciu po obrazovke pri konfigurácii mô¾ete tie¾ 
+	pou¾i» klávesy <keycap>Tab</keycap> a <keycap>Enter</keycap>.
+      </para>
+      <para>
+        Pou¾ite tlaèítka <guibutton>Ïalej</guibutton> a
+        <guibutton>Spä»</guibutton> na prechod medzi obrazovkami. Stlaèenie
+        <guibutton>Ïalej</guibutton> vykoná ulo¾enie nastavení a prechod
+        na nasledujúcu obrazovku; Stlaèenie <guibutton>Spä»</guibutton>
+        vás presunie na predchádzajúcu obrazovku bez ulo¾enia zmien.
+      </para>
+      <para>
+        Na zminimalizovanie tejto pomocnej stránky pou¾ite tlaèítko
+        <guibutton>Skry» pomôcky</guibutton>.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-instpath">
+      <title>In¹talaèné mo¾nosti</title>
+      <para>
+Ako chcete in¹talova» &RHL;?
+      </para>
+      <para>
+Plná in¹talácia znièí v¹etky informácie ulo¾ené na vybraných oddieloch disku.
+      </para>
+      <para>
+Upgrade zachová existujúce systémové údaje &RHL;.
+      </para>
+      <para>
+Ak chcete urobi» plnú in¹taláciu, musíte si vybra» triedu (alebo typ)
+in¹talácie. Va¹e mo¾nosti sú: GNOME pracovná stanica, KDE pracovná stanica,
+Server, alebo Systém podµa vlastnej ¹pecifikácie.
+      </para>
+      <para>
+Ak ste oboznámený s programom na vytváranie diskových oddielov
+<application>fdisk</application>, mô¾ete ho pou¾i». Ak nechcete pou¾i»
+<application>fdisk</application>, in¹talátor pou¾ije ¹tandartne
+<application>Disk Druid</application>. <application>Disk Druid</application>
+je lep¹ia mo¾nos», pokiaµ nemáte predo¹lé skúsenosti s programom
+<application>fdisk</application>.
+      </para>
+      <para>
+Ak neviete, ktorú in¹talaènú triedu máte pou¾i», èítajte nasledujúci
+text veµmi pozorne.
+      </para>
+      <para>
+<command>Poznámka:</command> 
+Navy¹e k in¹talaèným metódam popísaným ïalej mô¾e by» &RHL; 
+in¹talovaný na u¾ existujúci FAT (DOS/Windows) oddiel. Táto
+"bezpartíciová" in¹talácia je vybraná vtedy, keï oznaèíte DOS
+oddiel ako <command>/</command> na obrazovke delenia oddielov
+s <application>Disk Druid</application>. To zru¹í automatické
+vymazanie diskových oddielov pri in¹talácii typu pracovná stanica.
+      </para>
+      <para>
+Trieda in¹talácie Pracovná stanica nain¹taluje X Window Systém a správcu
+okien podµa vá¹ho výberu. <emphasis>Trieda in¹talácie 'pracovná stanica'
+odstráni v¹etky Linuxu príbuzné diskové oddiely na v¹etkých pevných 
+diskoch (a pou¾ije v¹etok voµný nezadelený diskový priestor).</emphasis> 
+V¹etky nelinuxové oddiely zostanú nedotknuté a po in¹talácii bude mo¾né
+spusti» aj iné operaèné systémy nain¹talované na týchto oddieloch.
+      </para>
+      <para>
+Pokiaµ chcete systém pou¾íva» ako server zalo¾ený na Linuxe a
+pritom nechcete zlo¾ito nastavova» systémovú konfiguráciu alebo
+in¹talova» X Window System, pou¾ite in¹talaènú triedu server.
+<emphasis>Trieda server zru¹í V©ETKY existujúce partície na
+V©ETKÝCH in¹talovaných pevných diskoch. Preto si zvoµte túto
+in¹talaènú triedu len ak ste si úplne istý, ¾e na disku nemáte
+¾iadne dôle¾ité dáta!</emphasis> Toto zahròuje V©ETKY diskové oddiely
+pou¾ívané inými operaènými systémami. <emphasis>V©ETKY disky budú
+vymazané -- a naozaj ne¾artujeme!</emphasis>
+      </para>
+      <para>
+Plnú kontrolu nad in¹taláciou vám nechá jedine trieda custom.
+Poèas custom in¹talácie rozhodujete <emphasis>vy</emphasis>,
+ako bude disk rozdelený. Taktie¾ urèujete, ktoré balíèky budú
+nain¹talované na systém. Mô¾te sa rozhodnú», èi pre ¹tart
+systému pou¾ijete LILO alebo nie. Pokiaµ v¹ak nemáte 
+predo¹lé skúsenosti s Linuxom, túto triedu in¹talácie rad¹ej
+nepou¾ite.
+      </para>
+      <para>
+Ak chcete získa» viac informácií o rozdieloch medzi in¹talaènými triedami
+workstation, server a custom, pre¹tudujte si &RHLIG;.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-upgrade">
+      <title>Aktualizácia Vá¹ho Systému</title>
+      <para>
+Pokiaµ ste si zvolili aktualizáciu, mô¾ete sa rozhodnú», ktoré balíèky
+chcete aktualizova».
+      </para>
+      <para>
+Ak si nechcete vybra» prídavné balíèky pre aktualizáciu, stlaète
+<guibutton>Ïalej</guibutton>.
+      </para>
+      <para>
+Ak si chcete upravi» zoznam balíèkov, vyberte si tlaèítko
+<guilabel>Výber balíkov pre aktualizáciu</guilabel> a stlaète
+<guibutton>Ïalej</guibutton>.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-fdisk">
+      <title><application>fdisk</application></title>
+      <para>
+Vyberte disk, s ktorým chcete pracova». Keï kliknete na disk, objaví
+sa obrazovka <application>fdisk</application>-u s informáciami o
+oddieloch. Tu mô¾ete pou¾i» <application>fdisk</application> na
+vytvorenie, zmazanie alebo zmenu partícií na vybranom pevnom disku.
+      </para>
+      <para>
+Pokiaµ sa rozhodnete, ¾e nechcete pou¾i» <application>fdisk</application>,
+kliknite na <guibutton>Spä»</guibutton> a vrátite sa na predo¹lú
+obrazovku. Tam zru¹te výber <guimenuitem>Pou¾i» fdisk</guimenuitem>,
+a kliknite na <guibutton>Ïalej</guibutton>.
+      </para>
+      <para>
+Keï ste rozdelili pevný disk pomocou <application>fdisk</application>-u,
+vrátite sa k tejto obrazovke. Ak máte e¹te iný disk, ktorý by ste
+si ¾elali rozdeli» pomocou <application>fdisk</application>-u,
+vyberte ho. Inak kliknite na <guibutton>Ïalej</guibutton> a mô¾ete
+prideli» prípojné body (mount point) va¹im diskovým oddielom pomocou
+<application>Disk Druid</application>u.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-fdiskpart">
+      <title>Delenie Disku pomocou <application>fdisk</application>-u</title>
+      <para>
+Na tomto mieste mô¾te pracova» s oddielmi vá¹ho disku pomocou
+<application>fdisk</application>-u.
+      </para>
+      <para>
+Pre pomoc stlaète <command>m</command> pri výzve na zadanie príkazu. 
+      </para>
+      <para>
+Zoznam niektorých príkazov pre rýchly ¹tart:
+<itemizedlist>
+  <listitem>
+    <para>
+      <command>n</command> -- Vytvorí nový oddiel.
+    </para>
+  </listitem>
+  <listitem>
+    <para>
+      <command>d</command> -- Vyma¾e oddiel.
+    </para>
+  </listitem>
+  <listitem>
+    <para>
+      <command>p</command> -- Zobrazí tabuµku oddielov.
+    </para>
+  </listitem>
+  <listitem>
+    <para>
+      <command>l</command> -- Zobrazí známe typy oddielov.
+    </para>
+  </listitem>
+  <listitem>
+    <para>
+      <command>w</command> -- Zapí¹e tabuµku oddielov na disk a
+      ukonèí <application>fdisk</application>.
+    </para>
+  </listitem>
+  <listitem>
+    <para>
+      <command>q</command> -- Koniec bez ulo¾enia zmien.
+    </para>
+  </listitem>
+</itemizedlist>
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-wkst">
+      <title>Automatické Delenie Oddielov</title>
+      <para>
+Ste si istý?
+      </para>
+      <para>
+Pri in¹talácii triedy pracovná stanica stratíte v¹etky dáta.
+      </para>
+      <para>
+Táto trieda in¹talácie vyma¾e <emphasis>V©ETKY</emphasis> dáta na
+<emphasis>V©ETKÝCH</emphasis> existujúcich Linuxových oddieloch na
+<emphasis>V©ETKÝCH</emphasis> diskoch.
+      </para>
+      <para>
+Ak chcete uchova» dáta na existujúcich Linuxových oddieloch, mali
+by ste vytvori» partície manuálne, alebo si vybra» in¹taláciu
+triedy 'Podµa vlastného výberu'.
+      </para>
+      <para>
+Pou¾ite tlaèítko <guibutton>Spä»</guibutton> k výberu in¹talácie 
+podµa vlastného výberu alebo vyberte <guibutton>Ïalej</guibutton>, ak chcete
+pokraèova» s in¹taláciou triedy pracovná stanica.
+      </para>
+    </sect1>
+
+      <sect1 id="s1-help-screens-svr">
+      <title>Automatické Delenie Oddielov</title>
+      <para>
+Ste si istý?
+      </para>
+      <para>
+Pri in¹talácii triedy server stratíte v¹etky dáta.
+      </para>
+      <para>
+Táto trieda in¹talácie vyma¾e <emphasis>V©ETKY</emphasis> dáta na
+<emphasis>V©ETKÝCH</emphasis> existujúcich Linuxových partíciách na
+<emphasis>V©ETKÝCH</emphasis> diskoch.
+      </para>
+      <para>
+Ak máte iný OS, ktorý chcete zachova», nepou¾ívajte túto
+in¹talaènú triedu.
+      </para>
+      <para>
+Ak chcete uchova» dáta alebo iný OS, mali by ste vytvori»
+oddiely manuálne alebo zvoli» triedu in¹talácie custom.
+      </para>
+      <para>
+Pou¾ite tlaèítko <guibutton>Spä»</guibutton> k výberu in¹talácie 
+podµa vlastného výberu alebo vyberte <guibutton>Ïalej</guibutton>, ak chcete
+pokraèova» s in¹taláciou triedy server.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-partition">
+      <title>Partície</title>
+
+      <para>
+Kam chcete in¹talova» &RHL;?
+      </para>
+      <para>
+<command>Poznámka:</command> Ak vykonávate
+<command>Bezpartíciovú In¹taláciu</command> potrebujete nadefinova»
+existujúcu DOS/Windows oddiel ako vá¹ koreòový súborový systém (zobrazený ako
+<command>/</command>). Kliknite na FAT oddiel, ktorý chcete
+pou¾i» pre in¹taláciu. Ak je vysvietený, kliknite na 
+<guilabel>Úprava oddielu</guilabel> pre oznaèenie prípojného bodu ako
+<command>/</command> (root -- koreòový súborový systém). Kliknite na
+<guilabel>Ok</guilabel>, keï ste
+skonèili. Pokiaµ potvrdíte túto voµbu, musíte prideli» primeranú èas»
+z koreòového súborového systému a odkladacieho priestoru pre vá¹ systém.
+      </para>
+      <para>
+Pre podrobnej¹ie in¹trukcie nahliadnite do kapitoly 
+<emphasis>Installing Without Partitioning</emphasis>v 
+<citetitle>&RHLIG;</citetitle>.
+      </para>
+      <para>
+Ak neviete ako rozdeli» diskové oddiely pre systém, preèítajte si
+prosím sekciu o oddieloch v <citetitle>&RHLIG;</citetitle> alebo v
+<citetitle>&RHLRGS;</citetitle>.
+      </para>
+      <para>
+Ak ste práve ukonèili delenie oddielov s <application>fdisk</application>-om,
+musíte nadefinova» <firstterm>prípojné body</firstterm> pre va¹e
+oddiely. Pou¾ite tlaèítko <guilabel>Úprava oddielu</guilabel> pre definovanie
+prípojného bodu na vybraný oddiel.
+      </para>
+      <para>
+Pokiaµ pou¾ívate <application>Disk Druid</application>, mô¾ete definova»
+prípojné body pre jeden alebo viac diskových oddielov. Taktie¾ mô¾ete
+súèasne vytvori» a/alebo vymaza» oddiely.
+      </para>
+      <para>
+Horná obrazovka zobrazuje existujúce oddiely. Ka¾dý oddiel
+má pä» polí:
+      </para>
+
+      <itemizedlist>
+<listitem>
+  <para>
+    <command>Bod pripojenia:</command> Toto pole oznaèuje kam bude
+    oddiel pripojený, keï sa &RHL; nain¹taluje a bude be¾a». Ak 
+    oddiel existuje, ale je oznaèený ako "nenastavené", potrebujete
+    nadefinova» jeho prípojný bod. Mô¾te pou¾i» klávesu <keycap>Upravi» oddiely</keycap> 
+    alebo dvakrát kliknú» nad oddielom.
+  </para>
+</listitem>
+
+<listitem>
+  <para>
+    <command>Zariadenie:</command> Toto pole zobrazuje názov zariadenia
+    oddielu (napríklad hda2 reprezentuje druhý oddiel na 
+    primárnom pevnom disku).
+  </para>
+</listitem>
+
+<listitem>
+  <para>
+    <command>Veµkos»:</command> Pole <firstterm>Veµkos»</firstterm>
+    zobrazuje, koµko miesta je na oddieli. Pokiaµ chcete zmeni»
+    veµkos», musíte vymaza» danú partíciu a vytvori» ju znova
+    pomocou tlaèítka <keycap>Prida»</keycap>.
+  </para>
+</listitem>
+
+<listitem>
+  <para>
+    <command>Stav pridelenia:</command> Toto pole zobrazuje, koµko miesta
+    oddiel pou¾íva.
+  </para>
+</listitem>
+
+<listitem>
+  <para>
+    <command>Typ oddielu:</command> Toto pole zobrazuje typ oddielu (napr.
+    Linux Native alebo DOS).
+  </para>
+</listitem>
+      </itemizedlist>
+
+      <para>
+Pri rolovaní cez sekciu <firstterm>Oddiely</firstterm> ste mohli
+uvidie» správu <firstterm>Existujú nepridelené oddiely</firstterm>
+(èervenou farbou), nasledovanú jednou alebo viacerými oddielmi. Hlavným
+dôvodom pre vytvorenie takýchto nealokovaných oddielov je nedostatok
+voµného miesta pre oddiel.
+      </para>
+      <para>
+Pre opravenie takéhoto nealokovaného oddielu ho musíte buï presunú»
+na iný disk (ktorý má dostatok voµného priestoru), zmeni» veµkos» partície
+tak, aby sa zmestila na aktuálny disk, alebo ju úplne vymaza».
+Zmeny mô¾te vykona» tlaèítkom <keycap>Upravi»</keycap> alebo pomocou
+dvojkliku na oddieli.
+      </para>
+
+      <sect2 id="s2-help-screens-dd">
+<title>Nastavenie Oddielov Vá¹ho Systému</title>
+<para>
+  Stredný riadok tlaèítok riadi akcie nástrojov na prácu s oddielmi.
+  Pomocou nich mô¾ete oddiely vytvára», editova» alebo maza». Navy¹e
+  sú tu tlaèítka k potvrdeniu prevedených zmien alebo ich zru¹eniu
+  a ukonèeniu.
+</para>
+
+<itemizedlist>
+  <listitem>
+    <para>
+      <command>Prida»:</command> Toto tlaèítko sa pou¾íva na vytvorenie
+      nového oddielu. Keï ho pou¾ijete, zobrazí sa dialógové okno obsahujúce
+      polia, ktoré musia by» vyplnené (napr. prípojný bod, veµkos» a
+      typ).
+    </para>
+  </listitem>
+
+  <listitem>
+    <para>
+      <command>Upravi»:</command> Týmto tlaèítkom mô¾ete zmeni» prípojný bod
+      vybranej partície.
+    </para>
+  </listitem>
+
+  <listitem>
+    <para>
+      <command>Zmaza»:</command> Toto tlaèítko pou¾ite, ak chcete
+      vymaza» oddiel. Zobrazí sa dialógové okno, v ktorom potvrdíte
+      alebo zru¹íte vymazanie.
+    </para>
+  </listitem>
+
+  <listitem>
+    <para>
+      <command>Vráti»:</command> Týmto tlaèítkom zru¹íte v¹etky zmeny,
+      ktoré ste urobili.
+    </para>
+  </listitem>
+
+  <listitem>
+    <para>
+      <command>Vytvori» RAID zariadenie:</command> Tlaèítko <keycap>
+      Vytvori» RAID zariadenie
+</keycap> pou¾ite LEN v tom prípade, ak máte skúsenosti s pou¾ívaním
+      RAID. Ak chcete vedie» viac o RAID, pre¹tudujte si prosím
+      <citetitle>&RHLRGS;</citetitle>.
+    </para>
+  </listitem>
+</itemizedlist>
+      </sect2>
+
+      <sect2 id="s2-help-screens-drive">
+<title>Rekapitulácia Diskových Jednotiek</title>
+<para>
+  Táto sekcia zobrazuje konfiguráciu diskov v poèítaèi. Slú¾i
+  len na poskytnutie súhrnných informácií. Ka¾dý riadok obsahuje
+  nasledovné polia.
+</para>
+
+<itemizedlist>
+  <listitem>
+    <para>
+      <command>Drive:</command> Zobrazuje názov zariadenia
+      pevného disku (napr. hda alebo hdb).
+    </para>
+  </listitem>
+
+  <listitem>
+    <para>
+      <command>Geom [C/H/S]:</command> 
+      <firstterm>Geometria</firstterm> pevného disku zobrazuje poèet
+      cylindrov, hláv a sektorov.
+    </para>
+  </listitem>
+
+  <listitem>
+    <para>
+      <command>Spolu:</command> Toto pole zobrazuje celkovú veµkos»
+      priestoru na pevnom disku.
+    </para>
+  </listitem>
+
+  <listitem>
+    <para>
+      <command>Voµných:</command> Tu mô¾ete vidie» koµko miesta na pevnom
+      disku je e¹te voµného.
+    </para>
+  </listitem>
+
+  <listitem>
+    <para>
+      <command>Pou¾itých:</command> Tieto polia zobrazujú koµko diskového
+      priestoru je alokovaného partíciami v megabytoch
+      a percentách.
+    </para>
+  </listitem>
+</itemizedlist>
+      </sect2>
+    </sect1>
+
+    <sect1 id="s1-help-screens-loopback">
+      <title>Konfigurácia Súborového Systému</title>
+      <para>
+        Najprv urèite veµkos» súborového systému pre koreòový súborový systém (/).
+	Ak chcete, mô¾ete ponecha» prednastavenú hodnotu. ©tandartne je to
+        polovica voµného diskového priestoru.
+      </para>
+      <para>
+        Veµkos» odkladacieho priestoru je ¹tandartne 32 megabajtov. Pokiaµ
+        je to nevyhnutné, mô¾ete ho zväè¹i».
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-format">
+      <title>Výber Oddielov pre Formátovanie</title>
+      <para>
+Vyberte oddiely, ktoré budete chcie» formátova» pre &RHL;.
+      </para>
+      <para>
+Chcete previes» aj kontrolu na vadné bloky?
+      </para>
+      <para>
+Kontrola vadných blokov vás mô¾e uchráni» pred stratou dát v budúcnosti.
+Vadné bloky budú vyhµadané a bude vytvorený ich zoznam. Do týchto
+blokov potom v budúcnosti nebude niè zapisované.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-lilo">
+      <title>Konfigurácia LILO</title>
+      <para>
+LILO, skratka z LInux LOader, je program, ktorý sa pou¾íva k spusteniu &RHL;
+na va¹om poèítaèi. Taktie¾ mô¾e spú¹»a» iné operaèné systémy, ako napr.
+Windows 9<replaceable>x</replaceable>. Tu sa vás in¹talátor spýta, ako (alebo
+èi) chcete konfigurova» LILO.
+      </para>
+      <para>
+<guibutton>Vytvori» zavádzaciu disketu</guibutton>: Zavádzaciu disketu by ste mali vytvori»,
+pokiaµ nein¹talujete LILO na MBR alebo ak ho nein¹talujete vôbec.
+      </para>
+      <para>
+<guibutton>Nein¹talova» LILO</guibutton>: Mô¾ete preskoèi» konfiguráciu LILO,
+pokiaµ ho nechcete zapísa» na disk. Ak máte dva pevné disky s rôznymi
+OS na ka¾dom z nich, mô¾ete da» prednos» pou¾itiu zavádzacej diskety pred pou¾itím
+zavádzaèa LILO.
+      </para>
+      <para>
+Pre správne nain¹talovanie LILO musíte urèi», kam ho chcete nain¹talova».
+Ak pou¾ívate len &RHL;, mali by ste vybra» Hlavný zavádzaè (MBR). Pre
+systémy, na ktorých bude Win95/98 a &RHL; na jednom disku by mal by»
+LILO taktie¾ nain¹talovaný do MBR.  
+      </para>
+      <para>
+Ak máte Windows NT (a chcete nain¹talova» LILO), mali by ste in¹talova»
+LILO na prvý sektor zavádzacieho oddielu. Taktie¾ je potrebné vytvori» zavádzaciu
+disketu, preto¾e inak nespustíte Linux.
+      </para>
+      <para>
+Pokiaµ sa rozhodnete nein¹talova» LILO z <emphasis>µubovoµného</emphasis>
+dôvodu, prosím vytvorte zavádzaciu disketu, aby ste mohli spusti» &RHL;.
+      </para>
+      <para>
+Ak vá¹ poèítaè nepristupuje k pevnému disku v lineárnom móde, odznaète
+<guibutton>Pou¾i» lineárny re¾im</guibutton>.
+      </para>
+      <para>
+Ak si prajete prida» ¹tandartné voµby pre LILO pri zavádzaní systému, zadajte ich
+do poµa s parametrami pre jadro. V¹etky voµby, ktoré zadáte, budú
+odovzdané jadru pri ka¾dom ¹tarte systému.
+      </para>
+      <para>
+<guilabel>Zavádzací popis</guilabel>: Ka¾dý zavádzací oddiel je
+vypísaný a pomenovaný (pod zoznamom <guilabel>Zavádzací popis</guilabel>
+v dolnej èasti obrazovky), zahròujúc oddiely pou¾ívané inými OS.
+Ak si prajete prida» alebo zmeni» popisy zavádzacích oddielov,
+kliknite na daný oddiel. Keï je vybratý, mô¾ete zmeni» jeho popis
+v editovacom poli nad ním.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-silo">
+      <title>Konfigurácia SILO</title>
+      <para>
+        SILO, skratka zo Sparc Improved LOader, je program, ktorý mô¾e by»
+        pou¾itý k spusteniu Red Hat Linux-u na va¹om poèítaèi. Taktie¾ mô¾e
+        spú¹»a» iné OS, ako napr. SunOS a Solaris.
+        Tu sa vás opýta, ako (alebo èi) chcete konfigurova» SILO.
+      </para>
+      <para>
+        <guibutton>Vytvori» zavádzaciu disketu</guibutton>: Zavádzaciu disketu
+        by ste mali vytvori» pokiaµ vôbec nein¹talujete SILO alebo
+        ju potrebujete z bezpeènostných dôvodov. Pokiaµ nemáte disketovú
+        jednotku, táto mo¾nos» nebude zobrazená. Ak máte od SMCC jednotku
+        Ultra, ktorá zvyèajne nemá diskety z ktorých sa mô¾e bootova»,
+	táto mo¾nos» nebude aktívna.
+      </para>
+      <para>
+        <guibutton>Nein¹talova» SILO</guibutton>: Mô¾ete preskoèi»
+        in¹taláciu SILO, ak ho nechcete zapísa» na disk
+        (napr. ak u¾ máte SILO nain¹talované na inom oddieli alebo disku
+        odkiaµ budete bootova»).
+      </para>
+      <para>
+        Pre správne nain¹talovanie SILO musíte urèi», kam ho chcete 
+        nain¹talova». Pokiaµ budete pou¾íva» na va¹om systéme len
+        Red Hat Linux, mali by ste ho nain¹talova» do Master Boot Recordu
+        (bootovací blok na prvom oddieli disku). Pre systémy, na ktorých
+        sú na jednom disku SunOS/Solaris a Red Hat Linux, by ste nemali
+        SILO in¹talova» do MBR, obzvlá¹» ak SunOS/Solaris je na
+        prvej partícii disku.
+      </para>
+      <para>
+        Pokiaµ si neprajete nain¹talova» SILO z ¥UBOVO¥NÉHO dôvodu,
+        vytvorte zavádzaciu disketu pre Red Hat Linux.
+      </para>
+      <para>
+        <guibutton>Vytvori» PROM alias `linux'</guibutton>: In¹talátor mô¾e 
+        vytvori» PROM alias "linux", pokiaµ to PROM podporuje. Potom
+        mô¾ete bootova» do SILO loaderu z príkazového riadku PROM zadaním 
+        príkazu "boot linux".
+      </para>
+      <para>
+        <guibutton>Nastavi» predvolené PROM zavádzacie zariadenie</guibutton>:
+	In¹talátor mô¾e zaisti», ¾e PROM bude ¹tandartne bootova» do in¹talátora
+        Red Hat Linuxu nastavením PROM voµby "boot-device" alebo "boot-from".
+      </para>
+      <para>
+       Ak si prajete prida» ¹tandartné voµby pre SILO pri bootovaní, zadajte ich
+       do poµa s parametrami pre jadro. V¹etky voµby, ktoré zadáte, budú
+       odovzdané jadru Linuxu pri ka¾dom ¹tarte systému.
+      </para>
+      <para>
+       Bootovací Oddiel -- Ka¾dý bootovací oddiel je vypísaný a
+       pomenovaný, zahròujúc oddiely pou¾ívané inými OS. Ak si prajete
+       prida» (alebo zmeni» existujúce) popisy, kliknite na oddiely.
+       Keï je vybratý, mô¾ete zmeni» jeho bootovací popis.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-netconf">
+      <title>Konfigurácia Siete</title>
+      <para>
+Pokiaµ máte sie»ovú kartu mô¾te nastavi» informácie o sieti.
+Inak kliknite na <guibutton>Ïalej</guibutton> pre pokraèovanie.
+      </para>
+      <para>
+Vyberte sie»ovú kartu a urète, èi si ju prajete konfigurova» pomocou DHCP.
+Ak máte viac Ethernetových zariadení, ka¾dé z nich bude ma» vlastnú
+konfiguraènú obrazovku. Mô¾ete prepína» medzi obrazovkami s konfiguráciami
+(napr. eth0 a eth1). Zadané informácie budú ¹pecifické pre ka¾dú obrazovku.
+Ak oznaèíte <guilabel>Aktivova» pri ¹tarte systému</guilabel>, sie»ová karta 
+bude aktivovaná pri spustení poèítaèa.
+      </para>
+      <para>
+Pokiaµ nemáte prístup k DHCP alebo si nie ste istý, èo to je, prosím
+kontaktujte svojho sie»ového administrátora.
+      </para>
+      <para>
+Ïalej zadajte, pokiaµ to je mo¾né, IP adresu, sie»ovú masku, adresu siete
+a broadcast adresu. Ak si nie ste istý s niektorou z polo¾iek, prosím
+kontaktujte svojho sie»ového administrátora.
+      </para>
+      <para>
+
+Zadajte meno poèítaèa (hostname) pre vá¹ systém. Ak ho nezadáte, systém bude nazvaný
+"localhost."
+      </para>
+      <para>
+Nakoniec zadajte adresy brány, primárneho DNS, sekundárneho DNS a
+terciárneho DNS
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-timezone">
+      <title>Výber Èasovej Zóny</title>
+      <para>
+Èasovú zónu mô¾ete nastavi» výberom fyzického umiestnenia vá¹ho poèítaèa
+alebo posunutím èasovej zóny od Universal Coordinated Time (UTC).
+      </para>
+      <para>
+Upozoròujeme na dve zálo¾ky na vrchu obrazovky. Prvá zálo¾ka vám ponúka
+konfiguráciu podµa umiestnenia. Pri tejto mo¾nosti si mô¾ete vybra» pohµad.
+Výberom <guimenuitem>Prezrie»</guimenuitem> sú va¹e mo¾nosti nasledovné:
+Svet, Severná Amerika, Ju¾ná Amerika, Pacific Rim, Európa, Afrika,
+a Ázia.
+      </para>
+      <para>
+Na interaktívnej mape mô¾ete kliknú» na ¹pecifické mesto, indikované
+¾ltými bodkami. Po kliknutí bude èervené <guilabel>X</guilabel> oznaèova»
+výber.
+      </para>
+      <para>
+Taktie¾ mô¾te rolova» zoznamom miest a vybra» správnu èasovú zónu.
+      </para>
+      <para>
+Druhá zálo¾ka ponúka mo¾nos» pou¾i» posunutie Universal Coordinated 
+Time (UTC). Nájdete tu zoznam èasových posunutí, z ktorých si mô¾ete vybra»
+a tie¾ nastavi» daylight-saving time (letný a zimný èas).
+      </para>
+      <para>
+V oboch zálo¾kách je mo¾nos» výberu <guilabel>
+Systémové hodiny pou¾ívajú UTC</guilabel>. (UTC, taktie¾ známe ako GMT,
+umo¾ní systému správne riadi» daylight-saving time.) Vyberte túto mo¾nos», pokiaµ
+hardvérové hodiny poèítaèa sú nastavené na UTC (na rozdiel
+od vá¹ho lokálneho èasu).
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-accts">
+      <title>Konfigurácia Úètov</title>
+      <para>
+Zadajte heslo pre úèet root-a. Minimálna då¾ka hesla je ¹es» znakov.
+Potvrïte heslo jeho zadaním aj v druhom poli. Pokiaµ ste zadali
+heslo správne v oboch poliach, tlaèítko <guibutton>Ïalej</guibutton>
+bude aktivované.
+      </para>
+      <para>
+Potom vytvorte u¾ívateµský úèet.
+      </para>
+      <para>
+Zadajte meno u¾ívateµského úètu. Potom zadajte heslo pre úèet a
+potvrïte ho. Nakoniec zadajte plné meno u¾ívateµa úètu a stlaète
+<keycap>Enter</keycap>. Informácia o úète bude pridaná do zoznamu úètov.
+      </para>
+      <para>
+Ak chcete prida» ïal¹ích u¾ívateµov, vyberte <guibutton>Nový</guibutton>
+a zapí¹te informácie do prázdnych polí. Keï ste zadali v¹etky potrebné
+informácie pre u¾ívateµský úèet, kliknite na tlaèítko
+<guibutton>Prida»</guibutton> a u¾ívateµ bude pridaný do zoznamu úètov.
+      </para>
+      <para>
+Taktie¾ mô¾ete úèty meni» tlaèítkom <guibutton>Upravi»</guibutton>,
+alebo ich tlaèítkom <guibutton>Zru¹i»</guibutton> vymaza».
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-authconf">
+      <title>Konfigurácia Oprávnení</title>
+      <para>
+Túto èas» mô¾ete preskoèi», ak nechcete nastavova» va¹e sie»ové heslá.
+Ak si nie ste istý, po¾iadajte o pomoc vá¹ho sie»ového administrátora.
+      </para>
+      <para>
+Ak nenastavujete <firstterm>NIS</firstterm> heslo, budete upozornený,
+¾e sú vybrané <firstterm>MD5</firstterm> a <firstterm>shadow</firstterm> heslá.
+Doporuèujeme vám pou¾i» obe, aby poèítaè bol èo najlep¹ie zabezpeèený.
+      </para>
+      <para>
+<emphasis>Povoli» MD5 heslá</emphasis> - umo¾òuje pou¾itie dlhých hesiel
+(a¾ 256 znakov) na rozdiel od ¹tandartných ôsmich znakov.
+      </para>
+      <para>
+<emphasis>Povoli» shadow heslá</emphasis> - poskytuje veµmi bezpeènú
+metódu zabezpeèenia hesiel. V¹etky heslá sú ulo¾ené v súbore
+<filename>/etc/shadow</filename>, ktorý je prístupný len u¾ívateµovi root.
+      </para>
+      <para>
+Pokiaµ chcete konfigurova» NIS, musíte by» pripojený na sie» NIS. Ak si nie
+ste istý, èi ste k takejto sieti pripojený, prosím opýtajte sa vá¹ho 
+sie»ového administrátora.
+      </para>
+      <para>
+<emphasis>Povoli» NIS</emphasis> - umo¾òuje beh skupiny poèítaèov
+v tej istej doméne NIS (Network Information Service) so spoloèným
+súborom hesiel a skupín. Máte dve mo¾nosti, z ktorých si mô¾ete vybra»:
+      </para>
+      <para>
+<emphasis>NIS Doména</emphasis> - umo¾ní vám ¹pecifikova», do ktorej
+domény alebo skupiny poèítaèov bude systém prinále¾a».
+      </para>
+      <para>
+<emphasis>NIS server</emphasis> - umo¾ní poèítaèu pou¾íva»
+¹pecifický NIS server namiesto "vysielania" správ do lokálnej siete
+s po¾iadavkou na nájdenie servera, ktorému prinále¾í systém.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-sel-group">
+      <title>Výber Skupín Balíèkov</title>
+      <para>
+Vyberte skupiny balíèkov, ktoré chcete in¹talova». Skupinu vyberiete
+kliknutím na za¹krtávacie políèko vedµa názvu skupiny.
+      </para>
+
+      <para>
+Výber jednotlivých balíèkov je umo¾nený za¹krtnutím políèka <guilabel>
+  Vyberte jednotlivé balíky</guilabel> v spodnej èasti obrazovky.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-sel-indiv">
+      <title>Výber Jednotlivých Balíèkov</title>
+      <para>
+Na µavej strane obrazovky uvidíte zoznam skupín balíèkov. Keï tento
+zoznam rozbalíte a vyberiete jednu skupinu, na pravej strane sa 
+objaví zoznam balíèkov.
+      </para>
+      <para>
+Výber balíèka uskutoèníte dvojitým kliknutím na balíèku alebo kliknutím
+na balíèku a potom kliknutím na <guilabel>Vyberte balíky pre in¹taláciu
+</guilabel>. Pri v¹etkých vybratých balíèkoch sa objaví za¹krtávacia znaèka.
+      </para>
+      <para>
+Pokiaµ chcete viac informácií o konkrétnom balíèku, kliknite naò. 
+Informácia o balíèku sa objaví v spodnej èasti obrazovky spolu s 
+informáciou o názve balíèka a jeho veµkosti.
+      </para>
+    </sect1>
+
+      <sect1 id="s1-help-screens-depend">
+      <title>Nevyrie¹ené Závislosti</title>
+      <para>
+Mnoho balíèkov závisí na iných balíèkoch alebo kni¾niciach,
+bez ktorých nemô¾e správne pracova». Aby ste si boli istý, ¾e vá¹ systém
+má nain¹talované v¹etky potrebné balíèky, ktoré potrebuje, &RHL; kontroluje
+<firstterm>závislosti</firstterm> medzi balíèkami zaka¾dým, keï in¹talujete
+alebo odoberáte balíèek. Ak jeden balíèek potrebuje iný, ktorý nebol
+nain¹talovaný, vzniká nevyrie¹ená závislos».
+      </para>
+      <para>
+Jeden alebo viac balíèkov, ktoré ste vybrali, má nevyrie¹ené závislosti.
+Tento problém mô¾ete vyrie¹i» výberom <guilabel>
+In¹taluj balíky pre vyrie¹enie závislostí</guilabel>.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-monitor">
+      <title>Konfigurácia X Window Systému</title>
+      <para>
+In¹talaèný program teraz pristúpi k detekcii vá¹ho monitora,
+aby mohol urèi» èo najlep¹ie zobrazovacie nastavenia. Ak monitor
+nemô¾e by» detekovaný, vyberte zo zoznamu monitor, ktorý
+je najviac podobný pripojenému modelu.
+      </para>
+      <para>
+        Mô¾ete zada» rozsahy horizontálnych a vertikálnych synchronizaèných
+        frekvencií monitora. Tieto hodnoty nájdete v dokumentácii
+        k monitoru. Pri zadávaní týchto hodnôt buïte opatrný. Pokiaµ
+        zadáte hodnoty, ktoré sú mimo rozsahu hodnôt monitora, mô¾ete
+        ho vá¾ne po¹kodi». Hodnoty do týchto polí zadávajte len ak
+        hodnoty v dokumentácii k monitoru nesedia s hodnotami v zozname
+        a ste si úplne istý, ¾e zadávate správne hodnoty. 
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-xconf">
+      <title>Konfigurácia X Window Systému</title>
+      <para>
+In¹talaèný program skúsi urèi» pou¾ívanú grafickú kartu. Napriek 
+tomu si mô¾ete vybra» inú grafickú kartu, ak to potrebujete.
+      </para>
+      <para>
+Pokiaµ máte vybranú grafickú kartu, zadajte veµkos» video RAM na karte.
+      </para>
+      <para>
+Po nastavení konfigurácie ju mô¾ete otestova».
+      </para>
+      <para>
+Taktie¾ si mô¾ete vybra», èi po in¹talácii &RHL; chcete, aby bol
+systém spú¹»aný v grafickom prostredí.
+      </para>
+      <para>
+Vyberte tlaèítko <guibutton>Úprava X konfigurácie</guibutton>, pokiaµ
+chcete nastavi» ¹pecifické rozlí¹enie a farebnú håbku.
+      </para>
+      <para>
+Výberom <guibutton>Vynecha» konfiguráciu X</guibutton> preskoèíte in¹taláciu
+X, pokiaµ chcete rad¹ej konfigurova» X po in¹talácii alebo vôbec nie.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-xcustom">
+      <title>
+        U¾ívateµská Konfigurácia
+      </title>
+      <para>
+        Teraz vyberte správne rozlí¹enie pre konfiguráciu X.
+        Kliknite na <guibutton>Otestova» túto konfiguráciu</guibutton> pre
+        odskú¹anie tejto konfigurácie. Ak sa vám nepáèi èo ste videli
+        poèas testovania, kliknite na <guibutton>Nie</guibutton>
+        a vyberte iné rozlí¹enie.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-aboutinstall">
+      <title> O In¹talácii</title>
+      <para>
+<command>Výstraha:</command> Ak kliknete na <guibutton>Ïalej</guibutton>,
+&RHL; bude zapísaný na pevný disk. Tento proces je nevratný, tak¾e ak
+ste sa rozhodli nein¹talova» &RHL;, toto je posledný moment, v ktorom
+mô¾ete zru¹i» in¹taláciu.
+      </para>
+      <para>
+Pre zru¹enie in¹talácie vyberte v¹etky &RHL; médiá, a stlaète tlaèítko
+<command>Reset</command> na poèítaèi alebo pou¾ite klávesy <keycombo>
+  <keycap>Control-</keycap> <keycap>Alt-</keycap>
+  <keycap>Delete</keycap>
+</keycombo>
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-installing">
+      <title>In¹talácia Balíèkov</title>
+      <para>
+Zhroma¾dili sme v¹etky informácie potrebné k in¹talácii &RHL; na
+vá¹ systém. In¹talácia bude prebieha» urèitý èas v závislosti na tom,
+koµko balíèkov ste si dali nain¹talova».
+Pokiaµ máte zakúpenú oficiálnu krabicu s &RHL; je práve vhodná doba
+na oboznámenie sa s <citetitle>&RHLGSG;</citetitle> alebo
+<citetitle>&RHLRGS;</citetitle>.EV
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-bootdisk">
+      <title>Vytvorenie Zavádzacej Diskety</title>
+      <para>
+Vlo¾te èistú a naformátovanú disketu do disketovej mechaniky a kliknite
+na tlaèítko <guibutton>Ïalej</guibutton>.
+      </para>
+    </sect1>
+  </chapter>
+</book>
+

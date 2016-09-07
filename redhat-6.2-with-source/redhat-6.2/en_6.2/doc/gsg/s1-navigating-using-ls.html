@@ -1,0 +1,1140 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-navigating-using-ls.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Looking Around with ls</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="You Are Here"
+HREF="ch-navigating.html"><LINK
+REL="PREVIOUS"
+TITLE="Getting from Here to There: cd"
+HREF="s1-navigating-cd.html"><LINK
+REL="NEXT"
+TITLE="A Larger Picture of the Filesystem"
+HREF="s1-navigating-filesystem.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-navigating-cd.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 13. You Are Here</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-navigating-filesystem.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-NAVIGATING-USING-LS"
+>Looking Around with <B
+CLASS="COMMAND"
+>ls</B
+></A
+></H1
+><P
+>        Now that you know how to move around, it's time to take a look at what's
+        in the directories.
+      </P
+><P
+>        But first, let's make sure you've got something you can look for in your
+        login directory before we go any further.
+      </P
+><P
+>        You can start by creating an empty file. To do so, you can use a utility
+        called <B
+CLASS="COMMAND"
+>touch</B
+> at the shell prompt. Try it; type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>touch foo.bar</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Now, in your login directory, you've got an empty file called
+        <TT
+CLASS="FILENAME"
+>foo.bar</TT
+>. You'll see it in a couple minutes.
+      </P
+><P
+>        Let's also create a new directory, using the <B
+CLASS="COMMAND"
+>mkdir</B
+>
+        command.
+      </P
+><P
+>        At the prompt, type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>mkdir tigger</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Now, you've created a directory called <TT
+CLASS="FILENAME"
+>tigger</TT
+> in
+        your login directory. From root, your new directory's absolute pathname
+        would be
+        <TT
+CLASS="FILENAME"
+>/home/<TT
+CLASS="REPLACEABLE"
+><I
+>yourlogin</I
+></TT
+>/tigger</TT
+>,
+        and your directory is the parent of <TT
+CLASS="FILENAME"
+>tigger</TT
+>. (You
+        can learn more about creating -- and removing -- files and directories
+        in <A
+HREF="ch-shellmanage.html"
+>Chapter 14</A
+>.)
+      </P
+><P
+>        Now, you're ready to go.
+      </P
+><P
+>        In the DOS world, using the <B
+CLASS="COMMAND"
+>dir</B
+> command will display
+        the contents of a directory.
+      </P
+><P
+>        The same can be said of Linux -- with some notable exceptions.
+      </P
+><P
+>        In Linux, <B
+CLASS="COMMAND"
+>dir</B
+> won't fully display the contents of
+        directories, and doesn't have the power or flexibility of the list
+        command -- <B
+CLASS="COMMAND"
+>ls</B
+>.
+      </P
+><P
+>        In your login directory, for example, type: 
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>dir</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Now, in the same Xterm window, type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>ls</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Looks the same (see <A
+HREF="s1-navigating-using-ls.html#GR-NAVIGATING-LS1"
+>Figure 13-5</A
+>). You see, among
+        other contents, your new file, <TT
+CLASS="FILENAME"
+>foo.bar</TT
+> and the new
+        directory, <TT
+CLASS="FILENAME"
+>tigger</TT
+>.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-NAVIGATING-LS1"
+></A
+><P
+><IMG
+SRC="figs/navigating/ls1.gif"></P
+><P
+><B
+>Figure 13-5.           <B
+CLASS="COMMAND"
+>dir</B
+> and <B
+CLASS="COMMAND"
+>ls</B
+> Seem
+          Similar
+        </B
+></P
+></DIV
+><P
+>        But here the similarities end. Where <B
+CLASS="COMMAND"
+>dir</B
+> shows you
+        the contents of your directory, it doesn't actually show you
+        everything. Even using the <B
+CLASS="COMMAND"
+>ls</B
+> command, by itself,
+        won't show you all the files in your directory. To see everything,
+        you've got to call upon an option or two.
+      </P
+><P
+>        For example, in the same window that you'd used to type the
+        <B
+CLASS="COMMAND"
+>dir</B
+> and <B
+CLASS="COMMAND"
+>ls</B
+> commands, now type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>ls -a</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Quite a difference. When you added the <B
+CLASS="COMMAND"
+>-a</B
+> option, you
+        were specifying that you wanted to list <I
+CLASS="EMPHASIS"
+>all</I
+> the
+        files in the directory (see <A
+HREF="s1-navigating-using-ls.html#GR-NAVIGATING-LSA"
+>Figure 13-6</A
+>).
+      </P
+><P
+>        In fact, there are a multitude of options available with the
+        <B
+CLASS="COMMAND"
+>ls</B
+> command.
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Read the <B
+CLASS="COMMAND"
+>ls</B
+> man page</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          If you want to see all the options of the <B
+CLASS="COMMAND"
+>ls</B
+>
+          command, you can read the man page by typing <B
+CLASS="COMMAND"
+>man ls</B
+>
+          at a shell prompt. If you want to print the man page, type
+          <B
+CLASS="COMMAND"
+>man ls | col -b | lpr</B
+> at the prompt.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>        Why so many options? Because they can help you sort information
+        according to your needs. For example, you can specify how files are
+        displayed, see their <I
+CLASS="FIRSTTERM"
+>permissions</I
+> and much more.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-NAVIGATING-LSA"
+></A
+><P
+><IMG
+SRC="figs/navigating/lsa.gif"></P
+><P
+><B
+>Figure 13-6. <B
+CLASS="COMMAND"
+>ls</B
+> with <B
+CLASS="COMMAND"
+>-a</B
+> Option</B
+></P
+></DIV
+><P
+>        When you typed <B
+CLASS="COMMAND"
+>ls -a</B
+>, you probably noticed the files
+        that begin with dots. These are called <I
+CLASS="FIRSTTERM"
+>hidden
+        files</I
+> or, appropriately enough, <I
+CLASS="FIRSTTERM"
+>dot
+        files</I
+>.
+      </P
+><P
+>        Hidden files are mostly configuration files which set preferences in
+        programs, window managers, shells and more. The reason they're "hidden"
+        is to help prevent any accidental tampering by the user. Besides, when
+        you're searching for something in a directory, you're not often looking
+        for these configuration files, so keeping them hidden helps to avoid
+        some screen clutter..
+      </P
+><P
+>        Whenever a filename starts with a dot (.), it's a hidden file, and
+        <B
+CLASS="COMMAND"
+>ls</B
+> won't list it.
+      </P
+><P
+>        Viewing all the files can give you plenty of detail, but there's more
+        you can uncover, simply by adding more than one option.
+      </P
+><P
+>        If we want to see the size of a file or directory, when it was created
+        and more, we can just add the "long" option (<B
+CLASS="COMMAND"
+>-l</B
+>) to
+        our <B
+CLASS="COMMAND"
+>ls -a</B
+> command.
+      </P
+><P
+>        Try it. Type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>ls -al</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        There's quite a bit more detail now. You can see the file creation date,
+        its size, ownership, permissions and more.
+      </P
+><P
+>        You don't have to be in the directory whose contents you want to view,
+        either.
+      </P
+><P
+>        Let's see what's in the <TT
+CLASS="FILENAME"
+>/etc</TT
+> directory by typing:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>ls -al /etc</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Here, you'll get plenty of information about the contents of the
+        <TT
+CLASS="FILENAME"
+>/etc</TT
+> directory.
+      </P
+><P
+>        If you want to add color to your listing, just include the
+        <B
+CLASS="COMMAND"
+>--color</B
+> option.
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>ls -al --color /etc</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        To some, adding <B
+CLASS="COMMAND"
+>--color</B
+> does more than add a splash
+        of color; it gives a clue about the types of files in a directory.  For
+        example, directories might all be a royal blue, program files would be
+        green, and so on.
+      </P
+><P
+>        If you like what you see, here's how you can display the listing in
+        color all the time. Briefly, we'll be adding one line to the
+        <TT
+CLASS="FILENAME"
+>.bashrc</TT
+> file in our login directory.
+      </P
+><P
+>        The <TT
+CLASS="FILENAME"
+>.bashrc</TT
+> file is used by your shell when you
+        login (an example <TT
+CLASS="FILENAME"
+>.bashrc</TT
+> file is shown in <A
+HREF="s1-navigating-using-ls.html#GR-NAVIGATING-BASHRC"
+>Figure 13-7</A
+>).
+      </P
+><P
+>        Now before we go any further...
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-NAVIGATING-BASHRC"
+></A
+><P
+><IMG
+SRC="figs/navigating/bashrc.gif"></P
+><P
+><B
+>Figure 13-7. The <TT
+CLASS="FILENAME"
+>.bashrc</TT
+> File</B
+></P
+></DIV
+><P
+>        Remember that any changes you make to configuration files can cause you
+        a world of grief if you've made a mistake and you don't have a backup
+        copy of that file.
+      </P
+><P
+>        To make a backup copy, make sure you're in your login directory and in
+        an Xterm window, type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cd</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        to get to your login directory. Then copy the
+        <TT
+CLASS="FILENAME"
+>.bashrc</TT
+> file, keeping it in the same directory, but
+        with a name like <TT
+CLASS="FILENAME"
+>.bashrc2</TT
+>.
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cp .bashrc .bashrc2</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        When you type the above command, what you're saying is, "make a copy of
+        the <TT
+CLASS="FILENAME"
+>.bashrc</TT
+> file and name that copy
+        <TT
+CLASS="FILENAME"
+>.bashrc2</TT
+>."
+      </P
+><P
+>        Now, you have a backup copy of the unmodified
+        <TT
+CLASS="FILENAME"
+>.bashrc</TT
+> file in your login directory. If you make a
+        mistake or have trouble, you can replace your
+        <TT
+CLASS="FILENAME"
+>.bashrc</TT
+> file by typing:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>cp .bashrc2 .bashrc</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        at the shell prompt.
+      </P
+><P
+>        If you need to type this command, you'll be saying, "make a copy of the
+        file <TT
+CLASS="FILENAME"
+>.bashrc2</TT
+> and name that copy
+        <TT
+CLASS="FILENAME"
+>.bashrc</TT
+>." The copy command here will overwrite the
+        original <TT
+CLASS="FILENAME"
+>.bashrc</TT
+> file -- and you'll still keep a
+        copy of the original (and untouched) <TT
+CLASS="FILENAME"
+>.bashrc</TT
+> file
+        with the name of <TT
+CLASS="FILENAME"
+>.bashrc2</TT
+>.
+      </P
+><P
+>        Now that we're prepared, we'll open <TT
+CLASS="FILENAME"
+>.bashrc</TT
+> with
+        <TT
+CLASS="APPLICATION"
+>Pico</TT
+>, a simplified <I
+CLASS="FIRSTTERM"
+>text
+        editor</I
+>. (A text editor is a utility program that can create
+        or modify files.) From an Xterm window, type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>pico .bashrc</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        You should see something like this:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+># .bashrc
+
+# User specific aliases and functions
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+       . /etc/bashrc
+
+fi</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        It's a pretty short file. Those hash marks <B
+CLASS="COMMAND"
+>(#)</B
+> are
+        <I
+CLASS="FIRSTTERM"
+>comments</I
+>. Any text after them is ignored by the
+        shell, but they are put there to help guide anyone who's editing or
+        modifying files.
+      </P
+><P
+>        Bring your cursor under the line <TT
+CLASS="COMPUTEROUTPUT"
+>#User specific aliases and
+        functions</TT
+> and type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>alias ls="ls -al --color"</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        So the full file ought to look something like this:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+># .bashrc
+
+# User specific aliases and functions
+
+alias ls="ls -al --color"
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+       . /etc/bashrc
+
+fi</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        See <A
+HREF="s1-navigating-using-ls.html#GR-NAVIGATING-BASHRC2"
+>Figure 13-8</A
+> for an example in Pico.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-NAVIGATING-BASHRC2"
+></A
+><P
+><IMG
+SRC="figs/navigating/bashrc2.gif"></P
+><P
+><B
+>Figure 13-8.           Adding an Alias for <B
+CLASS="COMMAND"
+>ls</B
+> to <TT
+CLASS="FILENAME"
+>.bashrc</TT
+>
+        </B
+></P
+></DIV
+><P
+>        Double-check for any typos then, when you're satisfied with the changes,
+        exit by pressing the <B
+CLASS="KEYCAP"
+>Ctrl</B
+> and <B
+CLASS="KEYCAP"
+>X</B
+>
+        keys. You'll see, at the bottom of your editor screen, a message
+        reading:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>Save modified buffer (ANSWERING "No" WILL DESTROY CHANGES)?</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Press <B
+CLASS="KEYCAP"
+>Y</B
+> for "yes."  Now, another message will appear at
+        the bottom:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>File Name to write: .bashrc</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Simply pressing <B
+CLASS="KEYCAP"
+>Enter</B
+> will save your changes to your
+        <TT
+CLASS="FILENAME"
+>.bashrc</TT
+> file.
+      </P
+><P
+>        You won't be able to see your changes take effect until you close your
+        Xterm window and open a new Xterm. Once you do that, you'll see your
+        modifications take effect.
+      </P
+><P
+>        Here's a short list of some popular options with
+        <B
+CLASS="COMMAND"
+>ls</B
+>. Remember, you can view the full list by reading
+        the <B
+CLASS="COMMAND"
+>ls</B
+> man page (<B
+CLASS="COMMAND"
+>man ls</B
+>).
+      </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="COMMAND"
+>-a</B
+> -- all. Lists all the files in the directory,
+	      including the hidden files (<TT
+CLASS="FILENAME"
+>.filename</TT
+>). The
+	      <TT
+CLASS="FILENAME"
+>..</TT
+> and <TT
+CLASS="FILENAME"
+>.</TT
+> at the top of your
+	      list refer to the parent directory and the current directory,
+	      respectively.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="COMMAND"
+>-l</B
+> -- long. Lists details about contents,
+            including permissions (modes), owner, group, size, creation date,
+            whether the file is linked to somewhere else on the system and where
+            its link points.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="COMMAND"
+>-F</B
+> -- file type. Adds a symbol to the end of each
+            listing. These symbols include <TT
+CLASS="COMPUTEROUTPUT"
+>/</TT
+> to
+            indicate a directory; <TT
+CLASS="COMPUTEROUTPUT"
+>@</TT
+> to indicate
+            a symbolic link to another file; <TT
+CLASS="COMPUTEROUTPUT"
+>*</TT
+>
+            to indicate an executable file.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="COMMAND"
+>-r</B
+> -- reverse. Lists the contents of the
+            directory from back to front.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="COMMAND"
+>-R</B
+> -- recursive. This recursive option lists the
+            contents of all directories (below the current directory)
+            recursively.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            <B
+CLASS="COMMAND"
+>-S</B
+> -- size. Sorts files by their size.
+          </P
+></LI
+></UL
+><P
+>        A little later in this chapter, when we introduce you to
+        <I
+CLASS="FIRSTTERM"
+>pipes</I
+> and <I
+CLASS="FIRSTTERM"
+>I/O redirection</I
+>,
+        you'll discover that there are other ways to view the contents of a
+        directory.
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Summary</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>          To see the contents of a directory, type <B
+CLASS="COMMAND"
+>ls</B
+> at a
+          shell prompt; typing <B
+CLASS="COMMAND"
+>ls -a</B
+> will display all the
+          contents of a directory; typing <B
+CLASS="COMMAND"
+>ls -a --color</B
+> will
+          display all the contents categorized by color.
+        </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-navigating-cd.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-navigating-filesystem.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Getting from Here to There: <B
+CLASS="COMMAND"
+>cd</B
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-navigating.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>A Larger Picture of the Filesystem</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-navigating-using-ls.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:13 GMT -->
+</HTML
+>

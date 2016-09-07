@@ -1,0 +1,379 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-kickstart2-startinginstall.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Starting a Kickstart Installation</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Kickstart Installations"
+HREF="ch-kickstart2.html"><LINK
+REL="PREVIOUS"
+TITLE="How Do You Perform a Kickstart Installation?"
+HREF="s1-kickstart2-howuse.html"><LINK
+REL="NEXT"
+TITLE="The Kickstart File"
+HREF="s1-kickstart2-file.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-kickstart2-howuse.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Appendix F. Kickstart Installations</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-kickstart2-file.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-KICKSTART2-STARTINGINSTALL"
+>Starting a Kickstart Installation</A
+></H1
+><P
+>      To begin a kickstart installation, you must boot the system from a Red Hat Linux
+      boot disk, and enter a special boot command at the boot prompt.  If the
+      kickstart file resides on the boot disk, the proper boot command would be:
+    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>boot:</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>linux ks=floppy</B
+></TT
+>
+    </PRE
+></TD
+></TR
+></TABLE
+><P
+>      If, on the other hand, the kickstart file resides on a server, the
+      appropriate boot command would be:
+    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>boot:</TT
+> <TT
+CLASS="USERINPUT"
+><B
+>linux ks</B
+></TT
+>
+    </PRE
+></TD
+></TR
+></TABLE
+><P
+>      <TT
+CLASS="APPLICATION"
+>Anaconda</TT
+> looks for a kickstart file if the
+      <B
+CLASS="COMMAND"
+>ks</B
+> command line argument is passed to the kernel. It
+      can take a number of forms:
+    </P
+><P
+></P
+><DL
+><DT
+><B
+CLASS="COMMAND"
+>ks=floppy</B
+></DT
+><DD
+><P
+>	    The installation program looks for the file
+	    <TT
+CLASS="FILENAME"
+>ks.cfg</TT
+> on a VFAT filesystem on the floppy in
+	    drive /dev/fd0.
+	  </P
+></DD
+><DT
+><B
+CLASS="COMMAND"
+>ks=hd:<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;device&#62;</I
+></TT
+>/<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;file&#62;</I
+></TT
+></B
+></DT
+><DD
+><P
+>	    The installation program will mount the filesystem on
+	    <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;device&#62;</I
+></TT
+> (which must be VFAT or
+	    ext2), and look for the kickstart configuration file as
+	    <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;file&#62;</I
+></TT
+> in that filesystem (for
+	    example, <B
+CLASS="COMMAND"
+>ks=hd:sda3/mydir/ks.cfg</B
+>).
+	  </P
+></DD
+><DT
+><B
+CLASS="COMMAND"
+>ks=file:/<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;file&#62;</I
+></TT
+></B
+></DT
+><DD
+><P
+>	    The installation program will try to read the file
+	    <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;file&#62;</I
+></TT
+> from the filesystem; no
+	    mounts will be done. This is normally used if the kickstart file is
+	    already on the <TT
+CLASS="FILENAME"
+>initrd</TT
+> image.
+	  </P
+></DD
+><DT
+><B
+CLASS="COMMAND"
+>ks=nfs:<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;server:&#62;</I
+></TT
+>/<TT
+CLASS="REPLACEABLE"
+><I
+>&#60;path&#62;</I
+></TT
+></B
+></DT
+><DD
+><P
+>	    The installation program will look for the kickstart file on the NFS
+	    server <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;server&#62;</I
+></TT
+>, as file
+	    <TT
+CLASS="REPLACEABLE"
+><I
+>&#60;path&#62;</I
+></TT
+>. The installation program
+	    will use DHCP to configure the Ethernet card.
+	  </P
+></DD
+><DT
+><B
+CLASS="COMMAND"
+>ks</B
+></DT
+><DD
+><P
+>	    If <B
+CLASS="COMMAND"
+>ks</B
+> is used alone, the installation program will configure
+	    the Ethernet card in the system using DHCP. The system will use the
+	    "bootServer" from the DHCP response as an NFS server to read the
+	    kickstart file from (by default, this is the same as the DHCP
+	    server).  The name of the kickstart file is one of the following:
+	    <P
+></P
+><UL
+><LI
+><P
+>		  If DHCP is specified and the "bootfile" begins with a
+		 <TT
+CLASS="COMPUTEROUTPUT"
+>/</TT
+>, that file is looked for
+		  on the NFS server.
+		</P
+></LI
+><LI
+><P
+>		  If DHCP is specified and the "bootfile" begins with something
+		  other then a <TT
+CLASS="COMPUTEROUTPUT"
+>/</TT
+>, that file
+		  is looked for in the <TT
+CLASS="FILENAME"
+>/kickstart</TT
+> directory
+		  on the NFS server.
+		</P
+></LI
+><LI
+><P
+>		  If DCHP did not specify a "bootfile," then the installation
+		  program tries to read the file
+		  <TT
+CLASS="FILENAME"
+>/kickstart/1.2.3.4-kickstart</TT
+>, where
+		  <TT
+CLASS="REPLACEABLE"
+><I
+>1.2.3.4</I
+></TT
+> is the numeric IP address
+		  of the machine being installed.
+		</P
+></LI
+></UL
+>
+	  </P
+></DD
+></DL
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-kickstart2-howuse.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-kickstart2-file.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>How Do You Perform a Kickstart Installation?</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-kickstart2.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>The Kickstart File</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-kickstart2-startinginstall.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

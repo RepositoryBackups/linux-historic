@@ -1,0 +1,345 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/ch-navigating.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:44:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>You Are Here</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="The Shell Prompt"
+HREF="p5202.html"><LINK
+REL="PREVIOUS"
+TITLE='A Good "Man" Is Easy to Find'
+HREF="s1-basics-man-pages.html"><LINK
+REL="NEXT"
+TITLE="Getting from Here to There: cd"
+HREF="s1-navigating-cd.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-basics-man-pages.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-navigating-cd.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CH-NAVIGATING"
+>Chapter 13. You Are Here</A
+></H1
+><P
+>      Let's say you want to buy a pair of sneakers at a nearby shopping
+      mall. You may not be familiar with the mall, but that shouldn't be a
+      problem.
+    </P
+><P
+>      Why not? Because of the maps, which you can usually find near all the
+      major entrances to the mall.
+    </P
+><P
+>      The same can be said for your Red Hat Linux system: Navigation's easy once you
+      know where you're going.
+    </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Make sure you're in your user account</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>        Remember that unless you like to live on the wild - and dangerous -
+        side, using a root account for all your activities is toying with
+        disaster. If you didn't create your user account at the time of your
+        Red Hat Linux installation and haven't done so now, please do so now. Turn to
+        <A
+HREF="ch-starting.html#S2-STARTING-LOGIN-ROOT"
+>the section called <I
+>Create a User Account</I
+> in Chapter 1</A
+> if you require assistance on how
+        to create your user account.
+      </P
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-NAVIGATING-PWD"
+>Finding Yourself with <B
+CLASS="COMMAND"
+>pwd</B
+></A
+></H1
+><P
+>        Sooner or later (probably sooner), when you start looking through
+        directories, you're bound to ask, "Where the heck am I?" And you won't
+        be speaking philosophically.
+      </P
+><P
+>        DOS can answer that question just by showing you at the prompt like:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>C:\GAMES\Game\ID1&#62;</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        But <TT
+CLASS="APPLICATION"
+>Bash</TT
+>, the shell for your Linux system
+        shows, by default, just shows your current directory.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-NAVIGATING-PWD"
+></A
+><P
+><IMG
+SRC="figs/navigating/pwd.gif"></P
+><P
+><B
+>Figure 13-1. The Command <B
+CLASS="COMMAND"
+>pwd</B
+> Shows You Where You Are</B
+></P
+></DIV
+><P
+>        Try this: open an Xterm window. You'll see
+        something like:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+>[newuser@localhost newuser]$</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        Now type:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>pwd</B
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        What do you see? Something like
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>/home/newuser</TT
+>
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>        The command <B
+CLASS="COMMAND"
+>pwd</B
+> stands for <I
+CLASS="FIRSTTERM"
+>print working
+        directory</I
+>. When you typed <B
+CLASS="COMMAND"
+>pwd</B
+>, you were
+        asking your Linux system, "where am I?"  Your system responded by
+        "printing" the directory you're in to the monitor -- also known as the
+        <I
+CLASS="FIRSTTERM"
+>standard output</I
+>.
+      </P
+><P
+>        Seems easy, right? It ought to be; you'll be using
+        <B
+CLASS="COMMAND"
+>pwd</B
+> plenty as you look around. (Even Linux gurus can
+        depend on this little command.)
+      </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-basics-man-pages.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-navigating-cd.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>A Good "Man" Is Easy to Find</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="p5202.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Getting from Here to There: <B
+CLASS="COMMAND"
+>cd</B
+></TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/ch-navigating.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:45:00 GMT -->
+</HTML
+>

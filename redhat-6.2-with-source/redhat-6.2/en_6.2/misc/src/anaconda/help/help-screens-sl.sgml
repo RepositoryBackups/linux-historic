@@ -1,0 +1,1086 @@
+<!DOCTYPE BOOK PUBLIC "-//Davenport//DTD DocBook V3.0//EN" [
+<!ENTITY RH "Red Hat">
+<!ENTITY RHL "Red Hat Linux">
+<!ENTITY RHLRGS "Red Hat Linux Reference Guide">
+<!ENTITY RHLIG "Red Hat Linux Installation Guide">
+<!ENTITY RHLGSG "Red Hat Linux Getting Started Guide">
+<!ENTITY RHI "Red Hat, Inc.">
+]>
+<book id="book">
+<title>Zasloni s pomoèjo za namestitev</title>
+  <chapter id="s1-help-screens-lang">
+    <title></title>
+    <sect1 id="lang">
+      <title>Izbira jezika</title>
+      <para>
+        Kateri jezik bi radi uporabljali med namestitvijo in kot
+        privzeti jezik po namestitvi sistema &RHL;?
+      </para>
+      <para>
+	Izberite s seznama na desni.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-kybd">
+      <title>Nastavitev tipkovnice</title>
+      <para>
+	Kak¹no tipkovnico imate?
+      </para>
+      <para>
+	Èe ne najdete toènega modela, izberite najbli¾jo
+	<guilabel>Splo¹no</guilabel> tipkovnico (na primer,
+        Splo¹na tipkovnica za PC s 101 tipko).
+      </para>
+      <para>
+	Potem izberite razporeditev tipk va¹e tipkovnice (na primer,
+        angle¹ka, ZDA).
+      </para>
+      <para>
+	Posebne znake (kot so &Ntilde;, &Ocirc; in &Ccedil;) lahko
+        vna¹ate z uporabo "nemih tipk" (znanih tudi kot kompozitna
+        zaporedja).  Èe ¾elite uporabljati posebne znake, ki zahtevajo
+        uporabo nemih tipk, izberite
+        <guilabel>Omogoèimo neme tipke</guilabel>.
+        V nasprotnem primeru izberite <guilabel>Onemogoèimo
+	neme tipke</guilabel>.
+      </para>
+      <para>
+	Za preizkus nastavitev tipkovnice uporabljajte prazno besedilno
+        polje na dnu zaslona.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-mouse">
+      <title>Nastavitev mi¹ke</title>
+      <para>
+	Kak¹no mi¹ko imate?
+      </para>
+      <para>
+        Imate mi¹ko vrste PS/2, na vodilu ali obe¹eno na zaporedna vrata?
+        (Namig: Èe je vtiènica za va¹o mi¹ko okrogla, imate mi¹ko PS/2
+        ali mi¹ko, prikljuèeno na vodilo; èe je pravokotna, imate mi¹ko
+        na zaporednih vratih.)
+      </para>
+      <para>
+        Poskusite najti toèno oznako v prvem oknu na desni.  Èe je ne
+        morete najti, izberite mi¹ko, ki je zdru¾ljiva z va¹o.  Sicer
+        izberite primerno <guilabel>Splo¹no</guilabel> vrsto mi¹ke.
+      </para>
+      <para>
+        Èe imate mi¹ko na zaporednih vratih, v naslednjem oknu
+        izberite napravo in vrata, na katera je prikljuèena.
+      </para>
+      <para>
+        Okenski sistem X je zasnovan za uporabo mi¹ke s tremi gumbi.
+        Èe imate dvogumbno mi¹ko, lahko &RHL; opona¹a srednji gumb mi¹ke.
+      </para>
+      <para>
+        Èe imate dvogumbno mi¹ko, izberite <guilabel>Opona¹anje treh
+	  gumbov</guilabel>.  Po namestitvi boste lahko hkrati
+	kliknili oba gumba mi¹ke, kadar bi sicer ¾eleli uporabiti
+        srednji gumb.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-wel">
+      <title>Dobrodo¹li v Red Hat Linuxu</title>
+      <para>
+        Dobrodo¹li!  Ta namestitveni postopek je podrobno oèrtan v
+	knjigi <citetitle>&RHLIG;</citetitle>, dostopni pri podjetju
+	&RHI;.  Prosimo, preberite ves priroènik ¹e preden se ta
+	namestiveni postopek zaène.
+      </para>
+      <para>
+	Na zvezi sta dostopni razlièici priroènika v oblikah HTML in
+        Postscript, poglejte na http://www.redhat.com.  Izvod v obliki
+        HTML je tudi na enem od CD-jev sistema &RHL;.
+      </para>
+      <para>
+	<command>Nova lastnost:</command> &RHL; 6.2 premore novo
+	namestitveno metodo, znano kot namestitev "brez razdelitve
+	diska".  Èe ima va¹ sistem ¾e razdelitev FAT (DOS/Windows) z
+	dovolj prostega prostora, lahko namestite &RHL; ne da bi
+	morali razdeliti va¹ disk.  Ta izbira je najprimernej¹a za
+	ljudi, ki bi radi preizkusili &RHL; z minimalnimi vplivi na
+	njihov trenutni sistem.
+      </para>
+      <para>
+	Èe ste kupili izdelek Official &RHL; v ¹katli, ga zagotovo
+        registrirajte prek na¹e spletne strani (www.redhat.com/now).
+      </para>
+      <para>
+        Med to namestitvijo boste lahko uporabljali mi¹ko za izbiranje
+        med razliènimi mo¾nostmi.  Po postavkah namestitve se lahko
+        premikate tudi s pomoèjo tipk <keycap>Tab</keycap> in
+        <keycap>Enter</keycap>.
+      </para>
+      <para>
+	Za pomikanje med zasloni uporabljajte
+	<guibutton>Naprej</guibutton> in <guibutton>Nazaj</guibutton>.
+	Kliknite <guibutton>Naprej</guibutton> za shranitev informacij
+	in nadaljevanje na naslednjem zaslonu; kliknite
+	<guibutton>Nazaj</guibutton> za pomik na prej¹nji zaslon brez
+	shranjevanja informacij.
+      </para>
+      <para>
+	Ta zaslon s pomoèjo lahko pomanj¹ate s klikom na gumb
+        <guibutton>Skrijmo pomoè</guibutton>.
+      </para>
+      <para>
+        To namestitev lahko v vsakem trenutku tako pomaknete nazaj do
+        zaslona <guimenu>Priprava na namestitev</guimenu>.  Ko enkrat
+        kliknete gumb <guibutton>Naprej</guibutton> v menuju
+        <guimenu>Priprava na namestitev</guimenu>, se zaène namestitev
+        paketov in podatki se bodo zapisali v va¹ disk.  Èe ¾elite
+        namestitev varno prekiniti pred tem zaslonom, lahko ponovno
+        za¾enete raèunalnik (uporabite lahko gumb
+        <keycap>reset</keycap> ali
+	<keycombo>
+	  <keycap>Ctrl</keycap> <keycap>Alt</keycap> <keycap>Del</keycap>
+	</keycombo>).
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-welreconfig">
+      <title>Dobrodo¹li v Red Hat Linuxu</title>
+      <para>
+        Vstopili ste v naèin ponovne prikrojitve, ki vam omogoèa
+        prikrojitev posebnih lastnosti va¹ega raèunalnika.  Èe ¾elite
+        prikrojitev konèati brez sprememb va¹ih nastavitev, izberite
+        ,Ne` in pritisnite spodnji gumb <guibutton>Naprej</guibutton>.
+      </para>
+      <para>
+        Med to prikrojitvijo boste lahko izbirali razliène mo¾nosti s
+        pomoèjo mi¹ke.  Po postavkah nastavitve se boste lahko
+        premikali tudi z uporabo tipk <keycap>Tab</keycap> in
+        <keycap>Enter</keycap>.
+      </para>
+      <para>
+        Uporabite gumba <guibutton>Naprej</guibutton> in
+        <guibutton>Nazaj</guibutton> za pomikanje med temi zasloni.
+        Kliknite <guibutton>Naprej</guibutton> za shranitev informacij
+        in nadaljevanje na naslednjem zaslonu; kliknite
+        <guibutton>Nazaj</guibutton> za vrnitev na prej¹nji zaslon
+        brez shranitve novih informacij.
+      </para>
+      <para>
+        Za minimiziranje tega zaslona s pomoèjo kliknite gumb
+        <guibutton>Skrijmo pomoè</guibutton> button.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-instpath">
+      <title>Izbire nastavitve</title>
+      <para>
+	Kako ¾elite namestiti &RHL;?
+      </para>
+      <para>
+        Popolna namestitev bo unièila vse predhodno shranjene podatke
+        v izbranih diskovnih razdelitvah.
+      </para>
+      <para>
+	Nadgradnja bo ohranila sistemske podatke obstojeèega sistema
+	&RHL;.
+      </para>
+      <para>
+	Èe ¾elite izvesti polno namestitev, morate izbrati razred (ali
+	vrsto) namestitve.  Na izbiro imate: delovno postajo GNOME,
+	delovno postajo KDE, stre¾nik ali prilagojeno namestitev.
+      </para>
+      <para>
+	Èe se v orodju <application>fdisk</application>, za razdelitev
+	diska, poèutite kot doma, ga lahko tu izberete.  Èe se ne
+	boste odloèili uporabljati orodja
+	<application>fdisk</application>, bo namestitveni program
+	uporabil privzeto razdelitveno orodje, <application>Disk
+	Druid</application>. <application>Disk Druid</application> je
+	bolj¹a izbira, èe nimate predhodnih izku¹enj z orodjem
+	<application>fdisk</application>.
+      </para>
+      <para>
+        Èe ne veste, za kateri razred namestitve bi se odloèili, zelo
+        pozorno preberite naslednje vrstice.
+      </para>
+      <para>
+	<command>Prosimo, upo¹tevajte:</command> Poleg zgoraj
+	omenjenih namestitvenih metod lahko &RHL; namestite tudi
+	"znotraj" ¾e obstojeèe razdelitve FAT (za DOS/Windows).  Ta
+	namestitev "brez dodatnih razdelitev" se izbere, br¾ ko na
+	zaslonu za razdelitev diska v orodju <application>Disk
+	Druid</application> oznaèite dosovsko razdelitev kot
+	<command>/</command>.  To razveljavi samodejno brisanje
+	razdelitev, ki se sicer uporablja v razredu namestitev
+	delovnih postaj.
+      </para>
+      <para>
+        Namestitvi razreda delovnih postaj bosta namestili okenski
+        sistem X in upravljalnike namizja po va¹i izbiri.
+        <emphasis>Namestitev razreda delovnih postaj odstrani vse
+        razdelitve Linuxa v vseh name¹èenih diskih (in uporablja ves
+        prosti nerazdeljen diskovni prostor).</emphasis> Vse
+        razdelitve, ki niso prvotno mi¹ljene za Linux, bodo ostale
+        nedotaknjene, tako da boste po namestitvi sistema &RHL; lahko
+        zaganjali tudi druge name¹èene operacijske sisteme.
+      </para>
+      <para>
+        Èe ¾elite, da se va¹ sistem obna¹a kot stre¾nik z Linuxom, in
+        ne ¾elite preveè prikrojiti va¹ih sistemskih nastavitev ali
+        namestiti oken X, je za vas najprimernej¹a izbira namestitve
+        iz razreda stre¾nikov.  <emphasis>Namestitev iz razreda
+        stre¾nikov odstrani VSE obstojeèe razdelitve VSEH name¹èenih
+        diskov, zato uporabite ta namestitveni razred izkljuèno tedaj,
+        ko ste preprièani, da nimate nièesar, kar bi ¾eleli
+        shraniti!</emphasis> To vkljuèuje VSE razdelitve, ki jih
+        uporabljajo drugi operacijski sistemi. <emphasis>Res se ne
+        ¹alimo -- VSI pogoni bodo pobrisani!</emphasis>
+      </para>
+      <para>
+	Popolno pro¾nost vam daje le razred prilagojenih namestitev.
+	Med namestitvijo iz razreda prilagojenih namestitev je od
+	<emphasis>vas</emphasis> odvisno, koliko diskovnega prostora
+	bo razdeljenega.  Nad izbiro paketov, ki naj se namestijo,
+	imate popoln nadzor.  Doloèate lahko tudi, ali boste za
+	zaganjanje sistema uporabljali LILO.  Èe nimate prej¹njih
+	izku¹enj z Linuxom, ne izbirajte razreda prilagoje namestitve.
+      </para>
+      <para>
+        Veè informacij o razlikah med razredi namestitev delovnih
+        postaj, stre¾nikov ali prilagojenih namestitev, prosimo,
+        poi¹èite v priroèniku &RHLIG;.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-upgrade">
+      <title>Nadgraditev va¹ega sistema</title>
+      <para>
+	Ko se enkrat odloèite, da boste nadgradili svoj sistem, se
+	lahko tudi odloèite ali ¾elite prikrojiti svoje pakete.
+      </para>
+      <para>
+        Èe ne ¾elite izbirati dodatnih paketov za nadgradnjo, kliknite
+	<guibutton>Naprej</guibutton> za nadaljevanje.
+      </para>
+      <para>
+	Za prikrojitev va¹ih paketov izberite gumb
+	  <guilabel>Prilagoditev paketov za nadgradnjo</guilabel> ter
+	  nato kliknite gumb <guibutton>Naprej</guibutton>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-fdisk">
+      <title><application>fdisk</application></title>
+      <para>
+	Izberite disk, ki ga ¾elite razdeliti.  Ko kliknete na ime
+        diska, se bo prikazal zaslon razdelitvenega programa
+        <application>fdisk</application>.  Nato lahko uporabite orodje
+        <application>fdisk</application> za ustvarjanje, odstranjanje
+        ali spreminjanje razdelitev na izbranem trdem disku.
+      </para>
+      <para>
+	Èe se odloèite, da ne ¾elite uporabljati orodja
+	<application>fdisk</application>, kliknite
+	<guibutton>Nazaj</guibutton> za vrnitev na prej¹nji zaslon,
+	razveljavite kljukico pri <guimenuitem>Uporabimo
+	fdisk</guimenuitem> in kliknite <guibutton>Naprej</guibutton>
+	za nadaljevanje.
+      </para>
+      <para>
+	Ko konèate z razdeljevanjem diska z orodjem
+	<application>fdisk</application>, se boste vrnili na ta
+	zaslon.  Èe imate ¹e kak¹en disk, ki bi ga radi razdelili z
+	orodjem <application>fdisk</application>, ga izberite.  Sicer
+	kliknite <guibutton>Naprej</guibutton> za dodelitev toèk
+	priklopa va¹im razdelitvam z uporabo programa
+	<application>Disk Druid</application>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-fdiskpart">
+      <title>Razdeljevanje z orodjem <application>fdisk</application></title>
+      <para>
+	Tukaj lahko razdelite svoj disk z orodjem
+	<application>fdisk</application>.
+      </para>
+      <para>
+	Za pomoè v pozorniku vnesite ukaz <command>m</command>, ki
+	izpi¹e seznam ukazov.
+      </para>
+      <para>
+	Na hitro nekaj ukazov, ki vam bodo omogoèili zaèetek:
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>n</command> -- Dodamo novo razdelitev.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>d</command> -- Odstranimo razdelitev.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>p</command> -- Izpi¹emo razdelitveno tabelo.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>l</command> -- Na¹tejemo znane vrste razdelitev.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>	      
+	      <command>w</command> -- Zapi¹emo razdelitveno tabelo v disk in
+              zapustimo <application>fdisk</application>.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+	      <command>q</command> -- Konèamo brez shranjevanja sprememb.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-wkst">
+      <title>Samodejno razdeljevanje diska</title>
+      <para>
+	Ste preprièani?
+      </para>
+      <para>
+	Z izbiro namestitve delovne postaje boste izgubili vse
+	obstojeèe podatke.
+      </para>
+      <para>
+	Ta razred namestitve bo odstranil <emphasis>VSE</emphasis>
+	podatke v <emphasis>VSEH</emphasis> obstojeèih razdelitvah
+	Linuxa v <emphasis>VSEH</emphasis> diskovnih pogonih.
+      </para>
+      <para>
+	Èe ¾elite obdr¾ati podatke v obstojeèih razdelitvah Linuxa, bi
+	morali izbrati roèno razdeljevanje ali pa prilagojeno
+	namestitev.
+      </para>
+      <para>
+	Uporabite gumb <guibutton>Nazaj</guibutton> za izbiro razreda
+	prilagojene namestitve ali izberite gumb
+	<guibutton>Naprej</guibutton>, èe ¾elite nadaljevati z
+	namestitvijo razreda delovnih postaj.
+      </para>
+    </sect1>
+      
+      <sect1 id="s1-help-screens-svr">
+      <title>Samodejno razdeljevanje diska</title>
+      <para>
+	Ste preprièani?
+      </para>
+      <para>
+	Z izbiro namestitve stre¾nika boste izgubili prav vse
+	obstojeèe podatke.
+      </para>
+      <para>
+	Ta razred namestitve bo odstranil <emphasis>VSE</emphasis>
+	podatke v <emphasis>VSEH</emphasis> obstojeèih razdelitvah v
+	<emphasis>VSEH</emphasis> diskovnih pogonih.
+      </para>
+      <para>
+	Èe imate ¹e kak operacijski sistem, ki bi ga radi obdr¾ali, ne
+	izberite tega namestitvenega razreda.
+      </para>
+      <para>
+	Èe ¾elite obdr¾ati podatke ali drug operacijski sistem, bi
+	morali izbrati roèno razdeljevanje ali pa prilagojeno
+	namestitev.
+      </para>
+      <para>
+	Uporabite gumb <guibutton>Nazaj</guibutton> za izbiro razreda
+	prilagojene namestitve ali izberite gumb
+	<guibutton>Naprej</guibutton>, èe ¾elite nadaljevati z
+	namestitvijo razreda stre¾nikov.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-partition">
+      <title>Razdelitve</title>
+      
+      <para>
+	Kam ¾elite namestiti &RHL;?
+      </para>
+      <para>
+	<command>Prosimo, upo¹tevajte:</command> Èe opravljate
+	<command>Namestitev brez razdeljevanja</command>, boste morali
+	proglasiti obstojeèo razdelitev za DOS/Windows za korensko
+	razdelitev, prikazano kot existing DOS/Windows partition as
+	root, shown as <command>/</command>.  Kliknite na razdelitev
+	FAT, ki bi jo radi izbrali za to namestitev.  Ko postane
+	osvetljena, kliknite <guilabel>Uredimo</guilabel> in ji
+	dodelite toèko priklopa <command>/</command> (korensko).
+	Kliknite <guilabel>V redu</guilabel>, ko boste opravili.  Ko
+	boste potrdili to izbiro, boste morali doloèiti primerno
+	kolièino korenskega datoteènega sistema kot izmenjalno
+	podroèje za va¹ sistem.
+      </para>
+      <para>
+	Za podrobnej¹a navodila morate pogledati v poglavje
+	<emphasis>Installing Without Partitioning</emphasis> v knjigi
+	<citetitle>&RHLIG;</citetitle>.
+      </para>
+      <para>
+	Èe ne veste, kako razdeliti va¹ sistem, prosimo, preberite
+        razdelek o razdeljevanju v knjigah
+        <citetitle>&RHLIG;</citetitle> ali
+        <citetitle>&RHLRGS;</citetitle>.
+      </para>
+      <para>
+	Èe ste pravkar konèali razdeljevanje z orodjem
+        <application>fdisk</application>, morate doloèiti
+        <firstterm>toèke priklopa</firstterm> za va¹e razdelitve.
+        Uporabite gumb <guilabel>Uredimo</guilabel>, èe ste ¾e izbrali
+        razdelitev, da doloèite njeno toèko priklopa.
+      </para>
+      <para>
+	Èe uporabljate program <application>Disk Druid</application>,
+	boste morali doloèiti toèke priklopa za eno ali veè diskovnih
+	razdelitev.  Morda boste takrat morali tudi narediti in/ali
+	odstraniti razdelitve.
+      </para>
+      <para>
+	Vrhnji zaslon prikazuje obstojeèe razdelitve.  Vsaka
+	razdelitev ima pet polj:
+      </para>
+      
+      <itemizedlist>
+	<listitem>
+	  <para>
+	    <command>Toèka priklopa:</command> To polje ponazarja, kam
+	     bo razdelitev priklopljena, ko bo &RHL; name¹èen in
+	     pognan.  Èe razdelitev obstaja, a je oznaèena kot "ni
+	     nastavljena", boste morali doloèiti njeno toèko priklopa.
+	     Uporabite lahko gumb <keycap>Uredimo</keycap> ali dvojni
+	     klik na ime razdelitve.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Naprava:</command> To polje prikazuje ime naprave
+            razdelitve (na primer, hda2 ponazarja drugo razdelitev na
+            primarnem trdem disku).
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Zahtevano:</command> Polje
+	    <firstterm>Zahtevano</firstterm> prikazuje, koliko
+	    prostora ima na voljo razdelitev.  Èe ¾elite spremeniti
+	    njeno velikost, morate pobrisati trenutno razdelitev in jo
+	    ponovno narediti z gumbom <keycap>Dodajmo</keycap>.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Dejansko:</command> To polje ka¾e, koliko
+	    prostora uporablja razdelitev.
+	  </para>
+	</listitem>
+	
+	<listitem>
+	  <para>
+	    <command>Vrsta:</command> To polje prikazuje vrsto
+	    razdelitve (kot domorodna razdelitev Linuxa ali DOS).
+	  </para>
+	</listitem>
+      </itemizedlist>
+      
+      <para>
+	Ko se pomikate skozi razdelek
+	<firstterm>Razdelitve</firstterm>, lahko opazite sporoèilo v
+	rdeèem besedilu <firstterm>Unallocated Requested
+	Partition</firstterm> (nedodeljena zahtevana razdelitev), ki
+	mu sledi ena ali veè razdelitev.  Pogost razlog za nedodeljeno
+	razdelitev je pomanjkanje prostega prostora za razdelitev.
+      </para>
+      <para>
+	Nedodeljeno zahtevano razdelitev lahko odpravite tako, da
+	najprej premaknete vsebino razdelitve na drug pogon, ki ima
+	dovolj prostora, spremenite velikost razdelitve tako, da gre
+	na trenutni pogon, ali popolnoma pobri¹ete razdelitev.
+	Spremembe opravite z uporabo gumba <keycap>Uredimo</keycap>
+	ali z dvojnim klikom na razdelitev.
+      </para>
+	
+      <sect2 id="s2-help-screens-dd">
+	<title>Razdeljevanje diska va¹ega sistema</title>
+	<para>
+	  Srednja vrsta gumbov nadzoruje dejanja razdelitvenega
+          orodja.  Tu lahko dodajate, urejate in odstranjujete
+          razdelitve.  Poleg tega so tu gumbi, ki jih lahko uporabite
+          za sprejetje narejenih sprememb ali za povrnitev prvotnega
+          stanja in izhod iz razdelitvenega orodja.
+	</para>
+	
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>Dodajmo:</command> Ta gumb uporabite za
+	      dodajanje nove razdelitve.  Ko je ta izbrana, se bo
+	      prikazalo pogovorno okno s polji, ki jih je treba
+	      izpolniti (kot toèka priklopa, velikost in vrsta).
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Uredimo:</command> Ta gumb uporabite za
+	      spremembo toèke priklopa trenutno izbrane razdelitve.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Odstranimo:</command> Ta gumb uporabite za
+	      odstranitev razdelitve.  Prikazalo se bo pogovorno okno
+	      v katerem boste lahko potrdili ali preklicali
+	      odstranitev.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Povrnitev:</command> Ta gumb uporabite za
+	      preklic vseh sprememb, ki ste jih naredili.
+            </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Izdelajmo napravo RAID:</command> Gumb
+	      <keycap>Izdelajmo napravo RAID</keycap> uporabite LE, èe
+	      imate izku¹nje z uporabo diskovnih polj RAID.  Veè o tem
+	      lahko izveste v knjigi <citetitle>&RHLRGS;</citetitle>.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
+
+      <sect2 id="s2-help-screens-drive">
+	<title>Povzetki vsebine diskov</title>
+	<para>
+	  Ta razdelek prika¾e nastavitev diskov va¹ega raèunalnika.
+          Mi¹ljen je le kot povzetek.  Vsaka vrstica ima naslednja
+          polja:
+	</para>
+	
+	<itemizedlist>
+	  <listitem>
+	    <para>
+	      <command>Pogon:</command> To polje prikazuje ime naprave
+	      trdega diska (kot hda ali hdb).
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Geom [C/H/S]:</command>
+	      <firstterm>Geometrija</firstterm> trdega diska prikazuje
+	      ¹tevilo cilindrov, glav in sektorjev.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Skupno:</command> To polje prikazuje skupno
+	      vsoto dostopnega prostora na disku.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Prosto:</command> Tu lahko vidite, koliko
+	      prostora na disku je ¹e vedno na voljo.
+	    </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para>
+	      <command>Porabljeno:</command> Ta polja prikazujejo,
+	      koliko prostora na disku je trenutno dodeljenega
+	      razdelitvam, v megabajtih in odstotkovno.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </sect2>
+    </sect1>
+
+    <sect1 id="s1-help-screens-loopback">
+      <title>Prikrojitev datoteènega sistema</title>
+      <para>
+        Najprej izberite vrednost velikosti korenskega datoteènega
+        sistema, èe ne ¾elite sprejeti privzete vrednosti.  Privzeta
+        velikost korenskega datoteènega sistema je polovica vsega
+        prostora.
+      </para>
+      <para>
+        Izmenjalni prostor privzeto zaseda 32 megabajtov, a po potrebi
+        ga lahko poveèate.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-format">
+      <title>Izberite razdelitve za formatiranje</title>
+      <para>
+	Izberite razdelitve, ki bi jih radi formatirali za sistem
+	&RHL;.
+      </para>
+      <para>
+	®elite preveriti, da ni slabih blokov?
+      </para>
+      <para>
+	Zaznavanje slabih blokov lahko pomaga prepreèiti izgubo
+	podatkov tako, da najdemo in oznaèimo slabe bloke na disku, da
+	se jih lahko v prihodnje izogibamo pri pisanju podatkov.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-lilo">
+      <title>Prikrojitev nalagalnika LILO</title> 
+      <para>
+	LILO, nalagalnik Linuxa, je programje, ki ga lahko uporabljate
+	za zagon sistema &RHL;.  Za¾ene lahko tudi druge operacijske
+	sisteme, kot Windows 9<replaceable>x</replaceable>.  Tukaj
+	boste povpra¹ani po tem, kako (èe sploh) bi radi prikrojili
+	LILO.
+      </para>
+      <para>
+	<guibutton>Izdelajmo zagonsko disketo</guibutton>: Zagonsko
+	disketo bi morali narediti, èe ne name¹èate nalagalnika LILO v
+	glavni zagonski zapis diska (MBR), ali èe sploh ne name¹èate
+	LILA.
+      </para>
+      <para>
+	<guibutton>Ne name¹èajmo LILA</guibutton>: Èe ne ¾elite
+        zapisati LILA v va¹ disk, lahko izberete tudi to.  Èe imate
+        dva diska z razliènima OS na vsakem pogonu, boste morda
+        namesto LILA raje uporabljali zagonsko disketo.
+      </para>
+      <para>
+	Za namestitev LILA, izberite, kam bi ga radi namestili.  Èe bo
+	va¹ sistem uporabljal le &RHL;, bi morali izbrati glavni
+	zagonski zapis (ang. Master Boot Record, MBR).  Za raèunalnike
+	s sistemi Win95/98 in &RHL; bo LILO name¹èen na enem samem
+	disku in spet bi ga morali namestiti v MBR.
+      </para>
+      <para>
+	Èe imate Windows NT (in bi radi namestili LILO), bi morali
+	izbrati namestitev LILA v prvi sektor zagonske razdelitve.
+	Zagotovo tudi izdelajte zagonsko disketo, sicer ne boste mogli
+	zagnati Linuxa.
+      </para>
+      <para>
+	Èe se odloèite, da zaradi <emphasis>kateregakoli</emphasis>
+	razloga ne boste namestili nalagalnika LILO, prosimo,
+	izdelajte zagonsko disketo, s katero boste lahko zaganjali
+	&RHL;.
+      </para>
+      <para>
+	Èe va¹ raèunalnik do diska ne dostopa v linearnem naèinu,
+	preklièite izbiro <guibutton>Uporabimo linearni
+	naèin</guibutton>.
+      </para>
+      <para>
+	Èe ¾elite zagonskem ukazu za LILO dodati privzete izbire, jih
+        vnesite v polje s parametri jedra.  Vse izbire, ki jih boste
+        vnesli, bodo ob vsakem zagonu podane jedru Linuxa.
+      </para>
+      <para>
+	<guilabel>Zagonska oznaka</guilabel>: Vsaka zaganjalna
+        razdelitev je na¹teta in oznaèena (pod seznamom
+        <guilabel>Zagonska oznaka</guilabel> na dnu zaslona), vkljuèno
+        z razdelitvami, ki jih uporabljajo drugi operacijski sistemi.
+        Èe bi radi dodali zagonske oznake za druge razdelitve (ali
+        spremenili obstojeèe oznake), enkrat kliknite na razdelitev,
+        da jo izberete.  Ko jo izberete, lahko spremenite zagonsko
+        oznako v zgornjem polju.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-silo">
+      <title>Nastavitev zagonskega nalagalnika SILO</title>
+      <para>
+        SILO (izbolj¹ani nalagalnik za Sparc, ang. Sparc Improved
+        LOader), je programje, ki ga lahko uporabite za zagon Red Hat
+        Linuxa na va¹em raèunalniku.  Za¾ene lahko tudi druge
+        operacijske sisteme, kot sta SunOS in Solaris.  Tukaj boste
+        povpra¹ani kako (èe sploh) bi radi prikrojili SILO.
+      </para>
+      <para>
+        <guibutton>Izdelajmo zagonsko disketo</guibutton>: Zagonsko
+        disketo bi morali narediti, èe sploh ne name¹èate SILA, ali pa
+        iz varnostnih razlogov.  Èe nimate disketne enote, bo ta
+        mo¾nost skrita, èe pa imate raèunalnik SMCC Ultra, ki navadno
+        nima disketne enote, s katere bi se dalo zagnati sistem, bo ta
+        mo¾nost privzeto onemogoèena.
+      </para>
+      <para>
+        <guibutton>Ne namestimo SILA</guibutton>: Èe ne ¾elite, da se
+        SILO zapi¹e v va¹ disk, lahko preskoèite njegovo namestitev.
+        To je npr. uporabno, èe imate SILO ¾e name¹èen na neki drugi
+        razdelitvi ali disku in ga ¾elite poganjati od tam.
+      </para>
+      <para>
+        Èe bi radi namestili nalagalnik SILO, izberite mesto, kamor bi
+        ga radi namestili.  Èe bo va¹ sistem uporabljal le Red Hat
+        Linux, bi verjetno morali izbrati glavni zagonski zapis
+        (zagonski blok prve razdelitve na disku, ang. Master Boot
+        Record, MBR).  Na sistemih, kjer bosta v enem samem disku
+        shranjena SunOS/Solaris in Red Hat Linux, verjetno ne bi smeli
+        shraniti SILA v MBR, posebej, èe je SunOS/Solaris na prvi
+        razdelitvi diska.
+      </para>
+      <para>
+	Èe se odloèite, da zaradi <emphasis>kateregakoli</emphasis>
+	razloga ne boste namestili nalagalnika SILO, prosimo,
+	izdelajte zagonsko disketo, s katero boste lahko zaganjali Red
+	Hat Linux.
+      </para>
+      <para>
+        <guibutton>Izdelajmo vzdevek PROM</guibutton>: Namestitveni
+        program lahko izdela vzdevek PROM "linux", èe to PROM podpira,
+        tako da lahko za¾enete zagonski nalagalnik SILO z ukazom v
+        vrstici PROM-a "boot linux".
+      </para>
+      <para>
+        <guibutton>Nastavimo privzeto zagonsko napravo
+        PROM</guibutton>: Namestitveni program lahko zagotovi, da bo
+        PROM privzeto zaganjal Red Hat Linux, tako da namesti izbiro
+        "boot-device" ali "boot-from" v PROM-u.
+      </para>
+      <para>
+       Èe ¾elite dodati privzete izbire za zagonski ukaz SILA, jih
+       vnesite v polje s parametri jedra.  Vse izbire, ki jih boste
+       napisali v tem polju, bodo ob vsakem njegovem zagonu
+       posredovane jedru sistema Linux.
+      </para>
+      <para>
+       Zaganjalna razdelitev -- Vsaka zaganjalna razdelitev je na¹teta
+       in oznaèena, vkljuèno z razdelitvami, ki jih uporabljajo drugi
+       operacijski sistemi.  Èe bi radi dodali zagonske oznake za
+       druge razdelitve (ali spremenili obstojeèe zagonske oznake),
+       enkrat kliknite na razdelitev, da jo s tem izberete.  Ko je
+       razdelitev izbrana, lahko spremenite zagonsko oznako.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-netconf">
+      <title>Nastavitev omre¾ja</title>
+      <para>
+	Èe imate mre¾no kartico, lahko nastavite va¹e omre¾ne podatke.
+	V nasprotnem primeru kliknite <guibutton>Naprej</guibutton> za
+	nadaljevanje.
+      </para>
+      <para>
+	Izberite svojo mre¾no kartico in povejte ali bi jo radi
+	nastavili z DHCP.  Èe imate veè ethernetnih naprav, bo imela
+	vsaka naprava lasten nastavitveni zaslon.  Med zasloni
+	(npr. eth0 in eth1) lahko preklapljate, vsi vne¹eni podatki pa
+	bodo veljali le za posamezen zaslon.  Èe izberete
+	<guilabel>Aktivirajmo ob zagonu</guilabel>, bo va¹a mre¾na
+	kartica prièela z delom ob zagonu.
+      </para>
+      <para>
+	Èe nimate odjemni¹kega dostopa do DHCP ali niste preprièani,
+	kaj pomeni kak¹en podatek, prosimo, vpra¹ajte va¹ega
+	upravitelja omre¾ja.
+      </para>
+      <para>
+	Nato vnesite, kjer je to primerno, naslov IP, mre¾no masko,
+	omre¾je in naslov za raz¹irjanje.  Èe ste v dvomih glede
+	kateregakoli podatka, povpra¹ajte upravitelja va¹ega omre¾ja.
+      </para>
+      <para>
+	Vnesite gostiteljsko ime va¹ega raèunalnika.  Èe ga ne, bo va¹
+	sistem znan kot "localhost".
+      </para>
+      <para>
+	Na koncu vnesite ¹e prehod ter naslove primarnega,
+	sekundardnega in terciarnega DNS-ja.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-timezone">
+      <title>Izbira èasovnega pasu</title>
+      <para>
+	Va¹ èasovni pas lahko nastavite bodisi z izbiro va¹e fiziène
+	lokacije ali pa kot pasovni odmik od univerzalnega
+	koordinacijskega èasa (znanega tudi kot UTC).
+      </para>
+      <para>
+	Na vrhu zaslona boste opazili dva jezièka.  Prvi jezièek vam
+	omogoèa nastavitev lokacije.  Èe ga izberete, lahko izberete
+	tudi va¹ pogled.  Z izbiro <guimenuitem>Pogled</guimenuitem>
+	imate na voljo svet, Severno Ameriko, Ju¾no Ameriko, Pacifi¹ki
+	prstan, Evropo, Afriko in Azijo.
+      </para>
+      <para>
+	Z interaktivnega zemljevida lahko s klikom izberete doloèeno
+	mesto, kot je oznaèeno z rumenimi pikami, in na mestu va¹e
+	izbire se bo prikazal rdeè <guilabel>×</guilabel>.
+      </para>
+      <para>
+	Lahko se tudi pomikate po seznamu mest in izberete ¾eleni
+	èasovni pas.
+      </para>
+      <para>
+	Z drugim jezièkom lahko doloèite odmik od univerzalnega
+	koordinacijskega èasa (UTC).  Tu lahko najdete seznam odmikov
+	iz katerega lahko izbirate, kot tudi izbiro za vklop zimskega
+	èasa.
+      </para>
+      <para>
+	Pri obeh jezièkih lahko izberete <guilabel>Sistemska ura
+	uporablja UTC</guilabel> (UTC, znan tudi kot GMT ali GVÈ, bo
+	va¹emu sistemu omogoèil pravilno obravnavanje zimskega èasa).
+	Prosimo, uporabite to, èe je strojna ura va¹ega raèunalnika
+	nastavljena na UTC (namesto na va¹ lokalni èas).
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-accts">
+      <title>Prikrojitev raèunov</title>
+      <para>
+	Vnesite geslo za raèun naduporabnika root.  Geslo mora imeti
+	vsaj ¹est znakov.  Potrdite to geslo tako, da ga ¹e enkrat
+	vnesete v drugo vnosno polje.  Ko se bosta obe gesli ujemali,
+	bo gumb <guibutton>Naprej</guibutton> postal omogoèen.
+      </para>
+      <para>
+	Potem ustvarite uporabni¹ki raèun.
+      </para
+      <para>
+	Vnesite ime uporabni¹kega raèuna.  Potem izberite in potrdite
+	geslo za ta uporabni¹ki raèun.  Na koncu vnesite ¹e polno ime
+	uporabnika raèuna in pritisnite <keycap>Enter</keycap>.
+	Podatki o va¹em raèunu bodo nato dodani v spisek raèunov.
+      </para>
+      <para>
+	Za dodajanje novega uporabnika izberite
+	 <guibutton>Nov</guibutton> in v prazna polja vnesite
+	 zahtevane podatke.  Ko so podatki za ta raèun vne¹eni,
+	 izberite gumb <guibutton>Dodajmo</guibutton> in s tem dodajte
+	 uporabnika v spisek raèunov.
+      </para>
+      <para>
+	Uporabni¹ke raèune, ki ste jih ustvarili, lahko tudi urejate z
+	izbiro <guibutton>Urejajmo</guibutton> ali odstranite z izbiro
+	raèuna in pritiskom <guibutton>Odstranimo</guibutton>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-authconf">
+      <title>Prikrojitev identifikacije</title>
+      <para>
+	Èe ne boste nastavljali omre¾nih gesel, lahko preskoèite ta
+	razdelek.  Èe niste preprièani, poprosite za pomoè upravitelja
+	va¹ega omre¾ja.
+      </para>
+      <para>
+	Razen, èe vzpostavljate geslo za <firstterm>NIS</firstterm>,
+	boste opazili, da sta izbrani izbiri gesel
+	<firstterm>MD5</firstterm> in <firstterm>senènih</firstterm>
+	gesel.  Priporoèamo vam, da uporabite oboje in s tem napravite
+	va¹ stroj tako varen kot se le da.
+      </para>
+      <para>
+	<emphasis>Omogoèimo gesla MD5</emphasis> - dovoljuje uporabo
+	dolgih gesel (do 256 znakov) namesto standardnih osem ali manj
+	èrkovnih gesel.
+      </para>
+      <para>
+	<emphasis>Omogoèimo senèna gesla</emphasis> - ponuja zelo
+	varno metodo shranjevanja gesel.  Vsa gesla so shranjena v
+	datoteki <filename>/etc/shadow</filename>, ki jo lahko bere le
+	root.
+      </para>
+      <para>
+	Za nastavitev mo¾nosti NIS morate biti prikljuèeni na omre¾je
+	NIS.  Èe niste preprièani, da ste prikljuèeni na omre¾je NIS,
+	vpra¹ajte upravitelja va¹ega omre¾ja.
+      </para>
+      <para>
+	<emphasis>Omogoèimo NIS</emphasis> - dovoljuje poganjanje
+	skupine raèunalnikov v isti domeni Network Information Service
+	s skupnima datotekama za gesla in za skupine.  Tukaj lahko
+	izbiramo med dvema mo¾nostima:
+      </para>
+      <para>
+	<emphasis>Domena NIS</emphasis> - ta izbira vam dovoljuje, da
+	doloèite, kateri domeni ali skupini raèunalnikov bo pripadal
+	va¹ sistem.
+      </para>
+      <para>
+	<emphasis>Stre¾nik NIS</emphasis> - ta izbira povzroèi, da va¹
+	raèunalnik uporablja doloèen stre¾nik NIS, namesto, da bi
+	"oddajal" sporoèilo v lokalno omre¾je in povpra¹eval po
+	dostopnih stre¾nikih, ki bi ga hoteli gostiti.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-sel-group">
+      <title>Izbiranje skupin paketov</title>
+      <para>
+	Izberite skupine paketov, ki bi jih ¾eleli namestiti.  Za
+	izbiro skupine paketov kliknite na potrditveni kvadrat poleg
+	nje.
+      </para>
+      
+      <para>
+	Za izbiranje posameznih paketov morate obkljukati
+	<guilabel>Izbiranje posameznih pakeotv</guilabel> na dnu
+	zaslona.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-sel-indiv">
+      <title>Izbiranje posameznih paketov</title>
+      <para>
+	Na levi strani zaslona boste opazili seznam skupin paketov.
+	Ko raz¹irite ta seznam in izberete eno od skupin, se na plo¹èi
+	na desni pojavi seznam paketov iz te skupine.
+      </para>
+      <para>
+	Posamièen paket lahko izberete z dvojnim klikom nanj ali pa
+	kliknite nanj enkrat, da ga osvetlite, in nato kliknite
+	<guilabel>Izberimo paket za namestitev</guilabel>.  Poleg
+	paketov, ki ste jih izbrali, se bo pojavila kljukica.
+      </para>
+      <para>
+	Za veè informacij o posameznem paketu kliknite nanj.  Podatki
+	o paketu se bodo izpisali na dnu zaslona, skupaj z imenom in
+	velikostjo paketa.
+      </para>
+    </sect1>
+      
+      <sect1 id="s1-help-screens-depend">
+      <title>Nerazre¹ene odvisnosti</title>
+      <para>
+	Mnogi programski paketi so odvisni od drugih paketov ali
+	knji¾nic, ki zagotavljajo njihovo pravilno delovanje.  &RHL;
+	preveri <firstterm>odvisnosti</firstterm> med paketi vsakiè,
+	ko namestite ali odstranite paket.  Èe nek paket za svoje
+	delovanje potrebuje drugega, ki pa ni name¹èen, se pojavi
+	problem nerazre¹ene odvisnosti.
+      </para>
+      <para>
+        Eden ali veè paketov, ki ste jih izbrali, nima razre¹enih
+        odvisnosti.  To lahko razre¹ite z izbiro <guilabel>Namestimo
+        pakete, da zadostimo odvisnostim</guilabel>.
+      </para>
+    </sect1>
+    
+    <sect1 id="s1-help-screens-monitor">
+      <title>Nastavitev X</title>
+      <para>
+	Namestitveni program bo zdaj sku¹al zaznati monitor, da bi
+	ugotovil najbolj¹e nastavitve za prikaz na va¹em stroju.  Èe
+	monitor ne more biti zaznan, iz seznama monitorjev izberite
+	monitor, ki najbolj ustreza modelu, prikljuèenem na ta
+	raèunalnik.
+      </para>
+      <para>
+        Vnesete lahko tudi horizontalni in vertikalni sinhronizacijski
+        obseg va¹ega monitorja.  Te vrednosti lahko najdete v
+        dokumentaciji va¹ega monitorja.  Pri vna¹anju teh vrednosti
+        bodite previdni; èe vnesete vrednosti izven zmo¾nosti va¹e
+        opreme, lahko po¹kodujete va¹ zaslon.  V ta polja vnesite
+        vrednosti le, èe vrednosti v va¹em priroèniku ne ustrezajo
+        na¹tetim modelom monitorjev in èe ste preprièani, da ste iz
+        dokumentacije prepisali pravilne vrednosti.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-xconf">
+      <title>Prikrojitev X</title>
+      <para>
+        Èeprav posku¹a namestitveni program kar najbolje zaznati
+        grafièno kartico v va¹em sistemu, lahko po potrebi izberete
+        drugo grafièno kartico.
+      </para>
+      <para>
+	Ko enkrat izberete va¹o grafièno kartico, doloèite kolièino
+	grafiènega pomnilnika na va¹i kartici.
+      </para>
+      <para>
+	Ko je strojna oprema nastavljena, lahko preizkusite svoje
+	nastavitve.
+      </para>
+      <para>
+	Izberete lahko tudi, ali ¾elite, da se va¹ sistem po
+	namestitvi Red Hat Linuxa takoj za¾ene v grafièni naèin.
+      </para>
+      <para>
+	Izberite gumb <guibutton>Prikrojitev nastavitve X</guibutton>
+	za izbiro nastavitev posebnih barv ali loèljivosti.
+      </para>
+      <para>
+	Izberete lahko tudi <guibutton>Preskok prikrojitve
+	X</guibutton>, èe bi okna X raje prikrojevali po namestitvi
+	ali pa sploh ne.
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-xcustom">
+      <title>
+        Prilagojena prikrojitev
+      </title>
+      <para>
+        Zdaj izberite pravilno loèljivost za va¹o prikrojitev X.
+        Kliknite <guibutton>Preizkusimo to nastavitev</guibutton> za
+        preizkus te nastavitve.  Èe vam to, kar med preizku¹anjem
+        vidite, ni v¹eè, kliknite <guibutton>Ne</guibutton> in
+        izberite drugo loèljivost.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-aboutinstall">
+      <title>Zaèetek namestitve</title>
+      <para>
+	<command>Pozor:</command> Ko boste enkrat kliknili
+	<guibutton>Naprej</guibutton>, bo &RHL; trajno zapisan v va¹
+	disk.  Tega postopka ne bo mogoèe veè obrniti, zato je to va¹a
+	zadnja mo¾nost za prekinetev namestitvenega postopka, èe ste
+	se odloèili, da ne boste namestili Red Hat Linuxa.
+      </para>
+      <para>
+	Za prekinitev te namestitve odstranite vse nosilce z Red Hat
+	Linuxom in pritisnite gumb <command>Reset</command> na va¹em
+	raèunalniku ali ga resetirajte z uporabo <keycombo>
+	<keycap>Control-</keycap> <keycap>Alt-</keycap>
+	<keycap>Delete</keycap>
+	</keycombo>
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-installing">
+      <title>Name¹èamo pakete</title>
+      <para>
+	Zbrali smo dovolj podatkov za namestitev Red Hat Linuxa v va¹
+	sistem.  Namestitev vsega lahko traja kar nekaj èasa, odvisno
+	od tega, koliko paketov moramo namestiti.  Èe imate ¹katlo z
+	Official Red Hat Linuxom, je to pravi èas, da se seznanite s
+	knjigo <citetitle>&RHLGSG;</citetitle> ali
+	<citetitle>&RHLRGS;</citetitle>.
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-bootdisk">
+      <title>Izdelava zagonske diskete</title>
+      <para>
+	Vstavite prazno, formatirano disketo v va¹o disketno enoto in
+	kliknite <guibutton>Naprej</guibutton> za nadaljevanje.
+      </para>
+    </sect1>
+  </chapter>
+</book>

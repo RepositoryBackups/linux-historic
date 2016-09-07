@@ -1,0 +1,511 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-dualboot-choosing.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:59:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Setting Up a Dual-Boot Environment</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="How to Create a Dual-Boot System"
+HREF="ch-dualboot.html"><LINK
+REL="PREVIOUS"
+TITLE="How to Create a Dual-Boot System"
+HREF="ch-dualboot.html"><LINK
+REL="NEXT"
+TITLE="Partitioning with FIPS"
+HREF="s1-dualboot-fips.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-dualboot.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Appendix D. How to Create a Dual-Boot System</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-dualboot-fips.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-DUALBOOT-CHOOSING"
+>Setting Up a Dual-Boot Environment</A
+></H1
+><P
+>      Sharing a computer between two operating systems requires dual
+      booting. You can use either operating system on the computer but not both
+      at once. Each operating system boots from and uses its own hard drives or
+      disk partitions (a partition is a physical division on a hard drive).
+    </P
+><P
+>      For clarity, we will assume that the other operating system is
+      Windows. But the general procedures are similar for other operating
+      systems.
+    </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	If Red Hat Linux will coexist on your system with OS/2, you must create your
+	disk partitions with the OS/2 partitioning software -- otherwise, OS/2
+	may not recognize the disk partitions. During the installation, do not
+	create any new partitions, but do set the proper partition types for
+	your Linux partition using <TT
+CLASS="APPLICATION"
+>fdisk</TT
+>.
+      </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+> Before starting the installation program, you must first make room
+      for Red Hat Linux. Your choices are:
+    </P
+><P
+></P
+><UL
+><LI
+><P
+>Add a new hard drive</P
+></LI
+><LI
+><P
+>Use an existing hard drive or partition</P
+></LI
+><LI
+><P
+>Create a new partition</P
+></LI
+></UL
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-DUALBOOT-ADDDISK"
+>Add a New Hard Drive</A
+></H2
+><P
+>	The simplest way to make room for Red Hat Linux is to add a new hard drive to
+	the computer and then install Red Hat Linux on that drive. For example, if you
+	add a second IDE hard drive to the computer, the Red Hat Linux installation
+	program will recognize it as <TT
+CLASS="FILENAME"
+>hdb</TT
+> and the existing
+	drive (the one used by Windows) as <TT
+CLASS="FILENAME"
+>hda</TT
+>. (With SCSI
+	hard drives, the newly installed hard drive would be recognized as
+	<TT
+CLASS="FILENAME"
+>sdb</TT
+> and the other hard drive as
+	<TT
+CLASS="FILENAME"
+>sda</TT
+>.)
+      </P
+><P
+>	If you choose to install a new hard drive for Linux, you don't need to
+	read any further. After starting the Red Hat Linux installation program, just
+	make sure you tell it to install Linux on the newly installed hard drive
+	(<TT
+CLASS="FILENAME"
+>hdb</TT
+>, <TT
+CLASS="FILENAME"
+>sdb</TT
+>) rather than the one
+	Windows uses.
+      </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-DUALBOOT-EXISTING"
+>Use an Existing Hard Drive or Partition</A
+></H2
+><P
+>	The next simplest way to make room for Linux is to use a hard drive or
+	disk partition that is currently being used by Windows. For example,
+	suppose that <TT
+CLASS="APPLICATION"
+>Windows Explorer</TT
+> shows two hard
+	drives, <TT
+CLASS="FILENAME"
+>C:</TT
+> and <TT
+CLASS="FILENAME"
+>D:</TT
+>. This could
+	indicate either that the computer has two hard drives, or a single hard
+	drive with two partitions. In either case (assuming it is large enough),
+	you can install Red Hat Linux on the hard drive or disk partition that Windows
+	recognizes as <TT
+CLASS="FILENAME"
+>D:</TT
+>.
+      </P
+><P
+>	This choice  is available to you only if the computer has two or more
+	hard drives or disk partitions. 
+      </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  Windows uses letters to refer to removable drives (for example, a ZIP
+	  drive) and network storage (virtual drives) as well as for local hard
+	  drive space: you cannot install Linux on a removable or network drive.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	If a local Windows partition is available that you want to install Linux
+	in, you don't need to read any further. Just do the following:
+      </P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>	    Copy all data you want to save from the selected hard drive or
+            partition (<TT
+CLASS="FILENAME"
+>D:</TT
+> in this example) to another
+            location.
+	  </P
+></LI
+><LI
+><P
+>	    Start the Red Hat Linux installation program and tell it to install Linux in
+	    the designated drive or partition -- in this example, in the hard drive or partition
+	    that Windows designates as <TT
+CLASS="FILENAME"
+>D:</TT
+>. Note that Linux
+	    distinguishes between hard drives and disk partitions. Thus:
+	  </P
+><P
+></P
+><UL
+><LI
+><P
+>		If <TT
+CLASS="FILENAME"
+>C:</TT
+> and <TT
+CLASS="FILENAME"
+>D:</TT
+> on this
+		computer refer to two separate hard drives, the installation
+		program will recognize them as <TT
+CLASS="FILENAME"
+>hda</TT
+> and
+		<TT
+CLASS="FILENAME"
+>hdb</TT
+> (IDE) or <TT
+CLASS="FILENAME"
+>sda</TT
+> and
+		<TT
+CLASS="FILENAME"
+>sdb</TT
+> (SCSI). Tell the installation program
+		to use <TT
+CLASS="FILENAME"
+>hdb</TT
+> or <TT
+CLASS="FILENAME"
+>sdb</TT
+>.
+	      </P
+></LI
+><LI
+><P
+>		If <TT
+CLASS="FILENAME"
+>C:</TT
+> and <TT
+CLASS="FILENAME"
+>D:</TT
+> refer to
+		partitions on a single drive, the installation program will
+		recognize them as <TT
+CLASS="FILENAME"
+>hda1</TT
+> and
+		<TT
+CLASS="FILENAME"
+>hda2</TT
+> (or <TT
+CLASS="FILENAME"
+>sda1</TT
+> and
+		<TT
+CLASS="FILENAME"
+>sda2</TT
+>). During the partitioning phase of
+		Linux installation, you'll delete the second partition
+		(<TT
+CLASS="FILENAME"
+>hda2</TT
+> or <TT
+CLASS="FILENAME"
+>sda2</TT
+>), then
+		partition the unallocated free space for Linux. (You don't have
+		to delete the second partition prior to beginning Linux
+		partitioning. But if you don't, Windows will complain whenever
+		you boot that it cannot read <TT
+CLASS="FILENAME"
+>Drive D</TT
+>; and
+		should someone accidentally format <TT
+CLASS="FILENAME"
+>D</TT
+>, your
+		Linux system would be destroyed.)
+	      </P
+></LI
+></UL
+></LI
+></OL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-DUALBOOT-NEWPARTITION"
+>Create a New Partition</A
+></H2
+><P
+>	The third way to make room for Linux is to create a new partition for
+	Red Hat Linux on the hard drive being used by the other operating system. If
+	<TT
+CLASS="APPLICATION"
+>Windows Explorer</TT
+> shows only one hard drive
+	(<TT
+CLASS="FILENAME"
+>C:</TT
+>), and you don't want to add a new hard drive,
+	you must partition the drive. After partitioning, <TT
+CLASS="APPLICATION"
+>Windows
+	Explorer</TT
+> will reveal a smaller <TT
+CLASS="FILENAME"
+>C:</TT
+>
+	drive; and, when you run the Red Hat Linux installation program, it will
+	partition the remainder of the drive for Linux.
+      </P
+><P
+>	You can use a destructive partitioning program, such as
+	<TT
+CLASS="APPLICATION"
+>fdisk</TT
+>, to divide the hard drive, but doing so
+	will require you to re-install Windows. (This is probably not your best
+	option.)
+      </P
+><P
+>	A number of non-destructive third-party partitioning programs are
+	available for the Windows operating system. If you choose to use one of
+	these, consult their documentation.
+      </P
+><P
+>	For instructions on how to partition with
+	<TT
+CLASS="APPLICATION"
+>FIPS</TT
+>, a program that is on the Red Hat Linux CD-ROM,
+	turn to <A
+HREF="s1-dualboot-fips.html"
+>the section called <I
+>Partitioning with <TT
+CLASS="APPLICATION"
+>FIPS</TT
+></I
+></A
+>.
+      </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-dualboot.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-dualboot-fips.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>How to Create a Dual-Boot System</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-dualboot.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Partitioning with <TT
+CLASS="APPLICATION"
+>FIPS</TT
+></TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-dualboot-choosing.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:59:24 GMT -->
+</HTML
+>

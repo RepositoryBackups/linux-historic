@@ -1,0 +1,268 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-driverdisk.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:57:57 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Driver Disks</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Appendixes"
+HREF="p8268.html"><LINK
+REL="PREVIOUS"
+TITLE="An Introduction to Disk Partitions"
+HREF="ch-partitions.html"><LINK
+REL="NEXT"
+TITLE="How to Create a Dual-Boot System"
+HREF="ch-dualboot.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-partitions.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="ch-dualboot.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="APPENDIX"
+><H1
+><A
+NAME="CH-DRIVERDISK"
+>Appendix C. Driver Disks</A
+></H1
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-DRIVERDISK-WHY"
+>Why Do I Need a Driver Disk?</A
+></H1
+><P
+>      While the Red Hat Linux installation program is loading, you may see a screen that asks
+      you for a driver disk. The driver disk screen is most often seen in three
+      scenarios:
+    </P
+><P
+></P
+><UL
+><LI
+><P
+>	  if you are running the installation program in <B
+CLASS="COMMAND"
+>expert
+	    mode</B
+>
+	</P
+></LI
+><LI
+><P
+>	  if you run the installation program by entering <B
+CLASS="COMMAND"
+>linux
+	  dd</B
+> at the <TT
+CLASS="PROMPT"
+>boot:</TT
+> prompt
+	</P
+></LI
+><LI
+><P
+>	  if you run the installation program on a computer which does not have
+	  any PCI devices
+	</P
+></LI
+></UL
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-DRIVERDISK-WHAT"
+>So What Is a Driver Disk Anyway?</A
+></H2
+><P
+>	A driver disk adds support for hardware that is not otherwise supported
+	by the installation program.  The driver disk could be produced by Red Hat,
+	it could be a disk you make yourself, or it could be a disk that a
+	hardware vendor includes with a piece of hardware.
+      </P
+><P
+>	There is really no need to use a driver disk unless you need a
+	particular device in order to install Red Hat Linux.  You will most likely use a
+	driver disk for SCSI adapters and NICs, as those are really the only
+	devices which are used during the installation that might require driver
+	disk support. If an unsupported device is not needed to install Red Hat Linux
+	on your system, continue with a regular installation and then add
+	support for the new piece of hardware once the installation is complete.
+      </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-DRIVERDISK-WHERE"
+>How Do I Obtain a Driver Disk?</A
+></H2
+><P
+>	
+	
+	Your best option for finding driver disk information is on Red Hat's
+	website at <A
+HREF="http://www.redhat.com/support/errata/"
+TARGET="_top"
+>	  http://www.redhat.com/support/errata/</A
+> under the section called
+	<TT
+CLASS="GUILABEL"
+><B
+>Bug Fixes</B
+></TT
+>.
+      </P
+><P
+>	If you find a driver disk that is appropriate for your device support
+	needs, create a boot disk using that
+	<TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>filename</I
+></TT
+>.img</TT
+> file. For
+	instructions on how to make a boot disk, see the
+	<I
+CLASS="CITETITLE"
+>Official Red Hat Linux Installation Guide</I
+> section called <I
+CLASS="CITETITLE"
+>Making
+	Installation Diskettes</I
+>.
+      </P
+><P
+>	Once you have created your driver disk, boot your system using the
+	diskette as a boot disk and enter either <B
+CLASS="COMMAND"
+>linux expert</B
+>
+	or <B
+CLASS="COMMAND"
+>linux dd</B
+> at the <TT
+CLASS="PROMPT"
+>boot:</TT
+> prompt.
+      </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-partitions.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="ch-dualboot.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>An Introduction to Disk Partitions</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="p8268.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>How to Create a Dual-Boot System</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-driverdisk.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:57:57 GMT -->
+</HTML
+>

@@ -1,0 +1,912 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-raid.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:58:14 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>RAID (Redundant Array of Independent Disks)</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Appendixes"
+HREF="p8268.html"><LINK
+REL="PREVIOUS"
+TITLE="Partitioning with FIPS"
+HREF="s1-dualboot-fips.html"><LINK
+REL="NEXT"
+TITLE="Kickstart Installations"
+HREF="ch-kickstart2.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-dualboot-fips.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="ch-kickstart2.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="APPENDIX"
+><H1
+><A
+NAME="CH-RAID"
+>Appendix E. RAID (Redundant Array of Independent Disks)</A
+></H1
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-RAID-WHAT-IS"
+>What is RAID?</A
+></H1
+><P
+>      The basic idea behind RAID is to combine multiple small, inexpensive disk
+      drives into an array  which yields performance exceeding
+      that of one large and expensive drive. This array of drives will appear to
+      the computer as a single logical storage unit or drive.
+    </P
+><P
+>      RAID is a method in which information is spread across several disks, using
+      techniques such as <I
+CLASS="FIRSTTERM"
+>disk striping</I
+> (RAID Level 0) and
+      <I
+CLASS="FIRSTTERM"
+>disk mirroring</I
+> (RAID level 1) to achieve
+      redundancy, lower latency and/or higher bandwidth for reading and/or
+      writing to disks, and maximize recoverability from hard-disk crashes.
+    </P
+><P
+>      
+      
+	
+      The underlying concept in RAID is that data may be distributed across each
+      drive in the array in a consistent manner.  To do this, the data much
+      first be broken into consistently-sized "chunks" (often 32K or 64K in
+      size, although different sizes can be used).  Each chunk is then written
+      to each drive in turn.  When the data is to be read, the process is
+      reversed, giving the illusion that multiple drives are actually one large
+      drive.
+    </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-RAID-WHY-USE"
+>Who Should Use RAID?</A
+></H2
+><P
+>	Those of you who need to keep large quantities of data on hand (such as
+	an average administrator) would benefit by using RAID
+	technology. Primary reasons to use RAID include:
+      </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    enhanced speed
+	  </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    increased storage capacity
+	  </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    greater efficiency in recovering from a disk failure
+	  </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-RAID-APPROACHES"
+>RAID: Hardware vs. Software</A
+></H2
+><P
+>	There are two possible approaches to RAID: Hardware RAID and Software
+	RAID.
+      </P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-RAID-HARDWARE-RAID"
+>Hardware RAID</A
+></H3
+><P
+>	  The hardware-based system manages the RAID subsystem independently
+	  from the host and presents to the host only a single disk per RAID
+	  array.
+	</P
+><P
+>	  An example of a hardware RAID device would be one that connects to a
+	  SCSI controller and presents the RAID arrays as a single SCSI
+	  drive. An external RAID system moves all RAID handling "intelligence"
+	  into a controller located in the external disk subsystem. The whole
+	  subsystem is connected to the host via a normal SCSI controller and
+	  appears to the host as a single disk.
+	</P
+><P
+>	  RAID controllers also come in the form of cards that
+	  <I
+CLASS="EMPHASIS"
+>act</I
+> like a SCSI controller to the operating
+	  system, but handle all of the actual drive communications
+	  themselves. In these cases, you plug the drives into the RAID
+	  controller just like you would a SCSI controller, but then you add
+	  them to the RAID controller's configuration, and the operating system
+	  never knows the difference.
+	</P
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-RAID-SOFTWARE-RAID"
+>Software RAID</A
+></H3
+><P
+>	  Software RAID implements the various RAID levels in the kernel disk
+	  (block device) code. It also offers the cheapest possible solution:
+	  Expensive disk controller cards or hot-swap chassis
+	  <A
+NAME="AEN9980"
+HREF="#FTN.AEN9980"
+>[1]</A
+>
+	  are not required, and software RAID works with cheaper IDE disks as
+	  well as SCSI disks. With today's fast CPUs, software RAID performance
+	  can excel against hardware RAID.
+	</P
+><P
+>	  The MD driver in the Linux kernel is an example of a RAID solution
+	  that is completely hardware independent. The performance of a
+	  software-based array is dependent on the server CPU performance
+	  and load.
+	</P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-RAID-KERNEL"
+>Some Features of RAID</A
+></H2
+><P
+>	For those interested in learning more about what software RAID has to
+	offer, here is a brief list of few of those features:
+      </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    Threaded rebuild process
+	  </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    Fully kernel-based configuration
+	  </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    Portability of arrays between Linux machines without reconstruction
+	  </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    Backgrounded array reconstruction using idle system resources
+	  </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    Hot-swappable drive support
+	  </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	    Automatic CPU detection to take advantage of certain CPU optimizations
+	  </P
+></LI
+></UL
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-RAID-LEVELS"
+>Levels and linear support</A
+></H3
+><P
+>	  RAID also offers levels 0, 1, 4, 5, and linear support. These RAID
+	  types act as follows:
+	</P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>	      <I
+CLASS="EMPHASIS"
+>Level 0</I
+> -- RAID level 0, often called
+	      "striping," is a performance- oriented striped data mapping
+	      technique. That means the data being written to the array is
+	      broken down into strips and written across the member disks of the
+	      array. This allows high I/O performance at low inherent cost but
+	      provides no redundancy. Storage capacity of the array is equal to
+	      the total capacity of the member disks.
+	    </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	      <I
+CLASS="EMPHASIS"
+>Level 1</I
+> -- RAID level 1, or "mirroring," has
+	      been used longer than any other form of RAID. Level 1 provides
+	      redundancy by writing identical data to each member disk of the
+	      array, leaving a "mirrored" copy on each disk. Mirroring remains
+	      popular due to its simplicity and high level of data availability.
+	      Level 1 operates with two or more disks that may use parallel
+	      access for high data-transfer rates when reading, but more
+	      commonly operate independently to provide high I/O transaction
+	      rates. Level 1 provides very good data reliability and improves
+	      performance for read-intensive applications but at a relatively
+	      high cost<A
+NAME="AEN10027"
+HREF="#FTN.AEN10027"
+>[2]</A
+>. Array capacity is equal to the capacity of one member
+	      disk.
+	    </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	      <I
+CLASS="EMPHASIS"
+>Level 4</I
+> -- Level 4 uses parity<A
+NAME="AEN10032"
+HREF="#FTN.AEN10032"
+>[3]</A
+>
+	      concentrated on a single disk drive to protect data. It's better
+	      suited to transaction I/O rather than large file
+	      transfers. Because the dedicated parity disk represents an
+	      inherent bottleneck, level 4 is seldom used without accompanying
+	      technologies such as write-back caching. Although RAID level 4 is
+	      an option in some RAID partitioning schemes, it is not an option
+	      allowed in Red Hat Linux RAID installations<A
+NAME="AEN10034"
+HREF="#FTN.AEN10034"
+>[4]</A
+>. Array capacity is equal to the capacity of member disks,
+	      minus capacity of one member disk.
+	    </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	      <I
+CLASS="EMPHASIS"
+>Level 5</I
+> -- The most common type of RAID. By
+	      distributing parity across some or all of an array's member disk
+	      drives, RAID level 5 eliminates the write bottleneck inherent in
+	      level 4. The only bottleneck is the parity calculation
+	      process. With modern CPUs and software RAID, that isn't a very big
+	      bottleneck. As with level 4, the result is asymmetrical
+	      performance, with reads substantially outperforming writes. Level
+	      5 is often used with write-back caching to reduce the
+	      asymmetry. Array capacity is equal to the capacity of member
+	      disks, minus capacity of one member disk.
+	    </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>	      <I
+CLASS="EMPHASIS"
+>Linear RAID</I
+> -- Linear RAID is a simple
+	      grouping of drives to create a larger virtual drive.  In linear
+	      RAID, the chunks are allocated sequentially from one member drive,
+	      going to the next drive only when the first is completely filled.
+	      This grouping provides no performance benefit, as it is unlikely
+	      that any I/O operations will be split between member drives.
+	      Linear RAID also offers no redundancy, and in fact decreases
+	      reliability -- if any one member drive fails, the entire array
+	      cannot be used. The capacity is total of all member disks.
+	    </P
+></LI
+></UL
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-RAID-HOWTO"
+>Creating RAID Partitions</A
+></H2
+><P
+>	RAID is available in both the GUI and kickstart installation modes. You
+	can use <TT
+CLASS="APPLICATION"
+>fdisk</TT
+> or <TT
+CLASS="APPLICATION"
+>Disk
+	Druid</TT
+> to create your RAID configuration, but these
+	instructions will focus mainly on using <TT
+CLASS="APPLICATION"
+>Disk
+	Druid</TT
+> to complete this task.
+      </P
+><P
+>	Before you can create a RAID device, you must first create RAID
+	partitions, using the following step-by-step instructions.
+      </P
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Tip: If You Use <TT
+CLASS="APPLICATION"
+>fdisk</TT
+></B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  If you are using <TT
+CLASS="APPLICATION"
+>fdisk</TT
+> to create a RAID
+	  partition, bear in mind that instead of creating
+	  a partition as type <B
+CLASS="COMMAND"
+>83</B
+>, which is Linux native, you
+	  must create the partition as type <B
+CLASS="COMMAND"
+>fd</B
+> (Linux RAID).
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+></P
+><UL
+><LI
+><P
+>	    Create a partition. In <TT
+CLASS="APPLICATION"
+>Disk Druid</TT
+>, choose
+	    <B
+CLASS="GUIBUTTON"
+>Add</B
+> to create a new partition (see <A
+HREF="ch-raid.html#FIG-RAID-RAID-EDIT"
+>Figure E-1</A
+>).
+
+        <DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-RAID-RAID-EDIT"
+></A
+><P
+><IMG
+SRC="figs/raid/raid-edit.gif"></P
+><P
+><B
+>Figure E-1. Creating a New RAID Partition</B
+></P
+></DIV
+>
+
+	  </P
+></LI
+><LI
+><P
+>	    You will not be able to enter a mount point (you will be able to do
+	    that once you've created your RAID device).
+	  </P
+></LI
+><LI
+><P
+>	    Enter the size that you want the partition to be.
+	  </P
+></LI
+><LI
+><P
+>	    Select <TT
+CLASS="GUILABEL"
+><B
+>Grow to fill disk</B
+></TT
+> if you want the
+	    partition to grow to fill all available space on the hard disk. In this
+	    case, the partition's size will expand and contract as other partitions
+	    are modified. If you make more than one partition grow-able, the partitions
+	    will compete for the available free space on the disk.
+	  </P
+></LI
+><LI
+><P
+>	    Enter the partition type as RAID.
+	  </P
+></LI
+><LI
+><P
+>	    Finally, for <B
+CLASS="GUIMENUITEM"
+>Allowable Drives</B
+>, select the
+	    drive that RAID will be created on. If you have multiple drives, all
+	    drives will be selected here and you must deselect those drives
+	    which will <I
+CLASS="EMPHASIS"
+>not</I
+> have RAID array on it.
+	  </P
+></LI
+></UL
+><P
+>	Continue these steps to create as many partitions as needed for your
+	RAID setup.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-RAID-RAID-DD"
+></A
+><P
+><IMG
+SRC="figs/raid/raid-dd.gif"></P
+><P
+><B
+>Figure E-2. RAID Partitions</B
+></P
+></DIV
+><P
+>	Once you have all of your partitions created as RAID partitions, select
+	the <B
+CLASS="GUIBUTTON"
+>Make RAID Device</B
+> button on the
+	<TT
+CLASS="APPLICATION"
+>Disk Druid</TT
+> main partitioning screen (see
+	<A
+HREF="ch-raid.html#FIG-RAID-RAID-DD"
+>Figure E-2</A
+>).
+      </P
+><P
+>	Next, <A
+HREF="ch-raid.html#FIG-RAID-RAID-CONFIG"
+>Figure E-3</A
+> will appear which will allow you to
+	make a RAID device.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-RAID-RAID-CONFIG"
+></A
+><P
+><IMG
+SRC="figs/raid/raid-config.gif"></P
+><P
+><B
+>Figure E-3. Making a RAID Device</B
+></P
+></DIV
+><P
+></P
+><UL
+><LI
+><P
+>	    First, enter a mount point.
+	  </P
+></LI
+><LI
+><P
+>	    Next, make sure the partition type is set as <TT
+CLASS="GUILABEL"
+><B
+>Linux
+	    Native</B
+></TT
+> (which will be the default).  
+	  </P
+></LI
+><LI
+><P
+>	    Choose your RAID device. You should choose <B
+CLASS="COMMAND"
+>md0</B
+>
+	    for your first device, <B
+CLASS="COMMAND"
+>md1</B
+> for your second
+	    device, and so on, unless you have a specific reason to make it
+	    something else. Raid devices range from md0 to md7, and each may
+	    only be used once.
+	  </P
+></LI
+><LI
+><P
+>	    Choose your RAID type. You can choose from <TT
+CLASS="GUILABEL"
+><B
+>RAID
+	      0</B
+></TT
+>,<TT
+CLASS="GUILABEL"
+><B
+> RAID 1</B
+></TT
+>, and <TT
+CLASS="GUILABEL"
+><B
+>RAID
+	      5</B
+></TT
+>.
+	    <DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="90%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Please Note</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>		If you are making a RAID partition of
+		<TT
+CLASS="FILENAME"
+>/boot</TT
+>, you must choose RAID level 1. If you
+		are not creating a RAID partition of <TT
+CLASS="FILENAME"
+>/boot</TT
+>,
+		and are making a RAID partition of <TT
+CLASS="FILENAME"
+>/</TT
+>, it
+		must be RAID level 1.
+	      </P
+></TD
+></TR
+></TABLE
+></DIV
+>
+	  </P
+></LI
+><LI
+><P
+>	    Finally, select which partitions will go into this RAID array (as in
+	    <A
+HREF="ch-raid.html#FIG-RAID-RAID-DD2"
+>Figure E-4</A
+>) and then click
+	    <B
+CLASS="GUIBUTTON"
+>Next</B
+>.
+	  </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="FIG-RAID-RAID-DD2"
+></A
+><P
+><IMG
+SRC="figs/raid/raid-dd2.gif"></P
+><P
+><B
+>Figure E-4. Creating a RAID Array</B
+></P
+></DIV
+></LI
+><LI
+><P
+>	    From here, you can continue with your installation process. Refer back to
+	    the <I
+CLASS="CITETITLE"
+>Official Red Hat Linux Installation Guide</I
+> for further instructions.
+	  </P
+></LI
+></UL
+></DIV
+></DIV
+></DIV
+><H3
+>Notes</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9980"
+HREF="ch-raid.html#AEN9980"
+>[1]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>	      A hot-swap chassis allow you to remove a hard drive without having
+	      to power-down your system.
+	    </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN10027"
+HREF="ch-raid.html#AEN10027"
+>[2]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>		  RAID level 1 is at a high cost because you write the same
+		  information to all of the disks in the array, which wastes
+		  drive space. For example, you have RAID level 1 set up so that
+		  your "/" (root) partition spans across two 4G drives. You have
+		  8G total but are only able to access 4G of that 8G. The other
+		  4G acts like a mirror of the first 4G.
+		</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN10032"
+HREF="ch-raid.html#AEN10032"
+>[3]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>		  Parity information is calculated based on the contents of the
+		  rest of the member disks in the array.  This information can
+		  then be used to reconstruct data when a disk in the array
+		  fails.  The reconstructed data can then be used to satisfy I/O
+		  requests to the failed disk, and to repopulate the failed disk
+		  after it has been repaired or replaced.
+		</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN10034"
+HREF="ch-raid.html#AEN10034"
+>[4]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>		  RAID level 4 takes up the same amount of space as RAID level
+		  5, but level 5 has many advantages over level 4 which is why
+		  it is not supported.
+		</P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-dualboot-fips.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="ch-kickstart2.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Partitioning with <TT
+CLASS="APPLICATION"
+>FIPS</TT
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="p8268.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Kickstart Installations</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/ch-raid.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:58:24 GMT -->
+</HTML
+>

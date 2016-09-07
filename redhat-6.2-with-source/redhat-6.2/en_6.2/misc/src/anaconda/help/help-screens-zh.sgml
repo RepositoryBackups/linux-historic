@@ -1,0 +1,660 @@
+<!DOCTYPE BOOK PUBLIC "-//Davenport//DTD DocBook V3.0//EN" [
+<!ENTITY RHL "Red Hat Linux">
+<!ENTITY RHLRGS "Red Hat Linux Reference Guide">
+<!ENTITY RHLIG "Red Hat Linux Installation Guide">
+<!ENTITY RHI "Red Hat, Inc.">
+]>
+<book id="book">
+<title>安装帮助屏幕</title>
+<chapter id="s1-help-screens-lang">
+    <title></title>
+
+    <sect1 id="lang">
+      <title>选择语言</title>
+      <para>
+	您希望使用何种语言作为安装和系统缺省语言？
+      </para>      
+      <para>
+	请在右侧列表中选择。
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-kybd">
+      <title>选择键盘</title>
+      <para>
+	您的键盘属于何种类型？
+      </para>
+      <para>
+	请选择与系统最匹配的键盘型号。如果您无法找到完全匹配的键盘，请选择最<guilabel>通用</guilabel>
+的匹配项（例如“Generic 101-key PC”）。
+      </para>
+      <para>
+	然后选择键盘的布局类型（例如“U.S. English”）。
+      </para>
+      <para>
+	如果您选择的语言使用了必须多次按键才能输入的特殊字符，请选择<guilabel>“Eliminate Dead Keys”</guilabel>。在缺省设置下，并未选定
+<guilabel>“Eliminate Dead Keys”</guilabel>。如果无法确定是否需要此特性，也可以不选择此选项。
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-mouse">
+      <title>鼠标配置</title>
+      <para>
+	您的鼠标属于何种类型？
+      </para>
+      <para>
+	请尝试在右侧第一个方框中找到完全匹配项。如果找不到，则可以选择一种与您的鼠标兼容的类型。否则，请选择<guilabel>“Generic”
+</guilabel>。
+      </para>
+      <para>
+	您使用 PS/2 鼠标、总线鼠标还是串行鼠标？（提示：如果鼠标上的连接器是圆形，则属于 PS/2 鼠标或总线鼠标；如果是矩形，则属于串行鼠标。）
+      </para>
+
+      <para> 如果您使用串行鼠标，则必须选择其连接的设备和端口。
+      </para>
+      <para>
+	X Window 系统经设计，可以充分利用三键鼠标。如果您使用双键鼠标，则可以用 &RHL; 模仿中间的鼠标按钮。
+      </para>
+      <para>
+	如果您使用双键鼠标，请选择<guilabel>“Emulate 3 buttons”</guilabel>选项。一旦配置完成，同时敲击两个鼠标按钮即可模仿中间的鼠标按钮。
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-wel">
+      <title>欢迎使用 Red Hat Linux</title>
+      <para>
+	欢迎！&RHLIG;（可从 &RHI; 获得）中详细说明了整个安装过程。开始安装之前，请仔细阅读整本手册。 
+      </para>
+      <para>
+	http://www.redhat.com 中联机提供了此手册的 HTML 和 PostScript 副本。&RHL; CD 的 
+        <filename>doc</filename> 目录中也提供了此手册的 HTML 副本。
+      </para>
+      <para>
+	如果您已购买一份正式版 &RHL;，请务必通过我们的 Web 站点 (http://www.redhat.com/now) 注册您的产品。
+      </para>
+      <para>
+	整个安装过程中，您均可以使用鼠标选择不同的安装选项，也可以使用 <keycap>Tab</keycap> 键和 <keycap>Enter</keycap>
+ 键以控制安装过程。
+      </para>
+      <para>
+      您可以使用<guibutton>“下一步”</guibutton>和<guibutton>“上一步”</guibutton>
+按钮以浏览这些屏幕。单击
+	<guibutton>“下一步”</guibutton>按钮可以保存信息并进入下一屏幕；单击<guibutton>“上一步”</guibutton>按钮可以返回上一屏幕，并且不保存任何信息。
+      </para>
+      <para>
+	要最小化此帮助屏幕，请单击<guibutton>“隐藏帮助”</guibutton>
+按钮。
+      </para>
+      <para>
+	如果您由于某种原因而需要取消此安装，则可以使用<keycap>“重置”</keycap>按钮或 
+	<keycombo>
+	  <keycap>Ctrl</keycap> <keycap>Alt</keycap> <keycap>Del</keycap>
+	</keycombo> 组合键，以安全地重新引导系统。在显示 X 配置屏幕之前，您可以随时取消安装。一旦已配置 X，将开始安装软件包，并且安装程序会将数据写入您的硬盘驱动器。
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-instpath">
+      <title>安装路径</title>
+      <para>
+	您希望如何安装 &RHL;？
+      </para>
+      <para>
+	完全安装将破坏选择用于安装的分区上先前保存的任何信息。
+      </para>
+      <para>
+	升级安装将保留现有的 &RHL; 系统数据。
+      </para>
+      <para>
+	如果您要执行完全安装，则必须选择安装类型。类型选项如下：定制、GNOME 工作站、KDE 工作站或服务器。
+      </para>
+      <para>
+
+	如果您不知道选择何种安装类型，请仔细阅读以下内容。  
+      </para>
+      <para>
+	只有选择定制类型安装，才能获得完全的安装灵活性。定制类型安装过程中，<emphasis>您</emphasis>可以控制如何对磁盘空间进行分区，并且可以完全控制要安装在系统中的软件包，还可以确定是否用 LILO 引导系统。
+      </para>
+      <para>
+	工作站类型安装将安装 X Window 系统和您选择的桌面管理程序。 <emphasis>工作站类型安装会删除所有已安装硬盘驱动器上的任何 Linux 相关分区（并使用所有未分区的可用磁盘空间）。
+</emphasis>所有非 Linux 相关分区将保留不动。
+      </para>
+      <para>
+	如果要将系统用作基于 Linux 的服务器，但又不希望系统配置定制工作过于繁重，则最适合使用服务器类型安装。  <emphasis>服务器类型安装将删除所有已安装硬盘驱动器上的所有现有分区，因此只有在您确定硬盘上没有任何需要保存的数据时，才能选择此安装类型！
+</emphasis>包括由其它操作系统使用的所有分区。
+      </para>
+      <para>
+	有关定制类型、工作站类型和服务器类型安装差异的详情，请参阅 &RHLIG;。
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-wkst">
+      <title>自动分区</title>
+      <para>
+	是否确定？
+      </para>
+      <para>
+	如果执行工作站安装，您将会丢失数据。
+      </para>
+      <para>
+	此安装类型将删除所有现有 Linux 分区上的任何数据。
+      </para>
+      <para>
+	如果您要保留现有 Linux 分区上的数据，则应该选择手动分区或选择定制类型安装。
+      </para>
+      <para>
+	您可以使用<guibutton>“上一步”</guibutton>按钮以选择定制类型安装；如果您希望继续执行工作站类型安装，请选择<guibutton>“下一步”
+</guibutton>。
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-svr">
+      <title>自动分区</title>
+      <para>
+	是否确定？
+      </para>
+      <para>
+	如果执行服务器安装，您将会丢失数据。
+      </para>
+      <para>
+	此安装类型将删除系统<emphasis>所有</emphasis>分区上的
+	<emphasis>所有</emphasis>数据。
+      </para>
+      <para>
+	如果您要保留另一个操作系统，请勿选择此安装类型。
+      </para>
+      <para>
+	如果您要保留数据或另一个操作系统，则应该选择手动分区或选择定制类型安装。
+      </para>
+      <para>
+	您可以使用<guibutton>“上一步”</guibutton>按钮以选择定制类型安装；如果您希望继续执行服务器类型安装，请选择<guibutton>“下一步”
+</guibutton>。
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-partition">
+      <title>分区</title>
+
+      <para>
+	您要在何处安装 &RHL;？
+      </para>
+      <para>
+	首先，您必须为一个或多个磁盘分区定义<firstterm>安装点</firstterm>
+，可能还需要在此时创建和（或）删除分区。
+      </para>
+      <para>
+	如果您不知道如何对系统分区，请阅读 &RHLIG; 或 &RHLRGS; 中有关分区的章节。
+      </para>
+      <para>
+	顶端屏幕将显示现有分区，每个分区均具有以下五个字段：
+      </para>
+      
+      <variablelist>
+	<varlistentry>
+	  <term>
+	    安装点：
+	  </term>
+	  <listitem>
+	    <para>
+	      此字段表示在安装和运行 &RHL; 时，分区将安装在何处。如果分区已存在但标记为“not set”，则必须为其定义安装点。您可以使用
+	      <keycap>“编辑”</keycap>键或双击此分区。
+	      </para>
+
+	    <para>
+	      除非您有理由进行其它分区操作，否则我们建议您创建以下分区：
+	    </para>
+
+	    <itemizedlist mark="bullet">
+	      <listitem>
+		<para>
+		  交换分区（至少 16 MB）-- 交换分区用于支持虚拟内存。如果您的计算机 RAM 等于或小于 16 MB，则<emphasis>必须</emphasis>创建一个交换分区。 即使您的内存大于 16 MB，仍然建议您创建一个交换分区。交换分区大小至少应该等于计算机 RAM 的大小或 
+16 MB（取两者中的较大值）。  
+		</para>
+	      </listitem>
+
+	      <listitem>
+		<para>
+		  <filename>/boot</filename> 分区（最大为 16 MB）-- <filename>/boot</filename> 上安装的分区包含操作系统内核以及系统自举进程中使用的文件。由于大多数 PC BIOS 的限制，您最好创建一个较小的分区以保存这些文件。此分区大小不应超过 16 
+MB。
+		</para>
+	      </listitem>
+	      
+	      <listitem>
+		<para>
+		  <filename>根</filename>分区 (500 MB 至 1 GB) -- “<filename>/</filename>”（根目录）所驻留的分区。在此分区布局中，所有文件（存储在 
+		  <filename>/boot</filename> 分区中的文件除外）都驻留在根分区上。500 MB 的根分区仅允许相当于工作站类型的安装（可用空间<emphasis>极
+</emphasis>
+少），而 1 GB 的根分区则允许安装所有软件包。
+		</para>
+	      </listitem>
+	    </itemizedlist>
+	  </listitem>
+	</varlistentry>
+	
+	<varlistentry>
+	  <term>
+	    设备：
+	  </term>
+	  <listitem>
+	    <para>
+	      此字段显示分区的设备名称（例如，hda2 表示主硬盘驱动器上的第二个分区）。 
+	    </para>
+	  </listitem>
+	</varlistentry>
+      
+	<varlistentry>
+	  <term>
+	    要求：
+	  </term>
+	  <listitem>
+	    <para>
+	      <firstterm>“要求”</firstterm>字段显示分区的空间大小。如果您要重新定义分区大小，则必须删除当前分区，然后使用
+	       <keycap>“添加”</keycap>按钮重新创建分区。
+	    </para>
+	  </listitem>
+	</varlistentry>
+	
+	<varlistentry>
+	  <term>
+	    实际：
+	  </term>
+	  <listitem>
+	    <para>
+	      <firstterm>“实际”</firstterm>字段显示分区中当前占用的空间大小。
+	    </para>
+	  </listitem>
+	</varlistentry>
+	
+	<varlistentry>
+	  <term>
+	    类型：
+	  </term>
+	  <listitem>
+	    <para>
+	      此字段显示分区类型（如 Linux Native 或 DOS）。
+	    </para>
+	  </listitem>
+	</varlistentry>
+      </variablelist>
+      
+      <para>
+	在<firstterm>“分区”</firstterm>部分中滚动时，您可能会看到一个或多个分区后以红色文本显示一则<firstterm>“Unallocated Requested Partition”
+</firstterm>消息。 通常，未分配分区的原因是由于缺少可供分区使用的足够可用空间。  
+      </para>
+      <para>
+	要解决未分配所要求分区的问题，您必须将此分区移至另一个具有可用空间的驱动器，然后重新调整分区大小以适应当前驱动器，或者完全删除此分区。您可以使用
+<keycap>“编辑”</keycap>按钮或双击分区，以进行以上更改。
+      </para>
+      
+      <sect2 id="s2-help-screens-dd">
+        <title>对系统进行分区</title>
+	<para>
+	  中间一行按钮用于控制分区工具的操作。您可以在此处添加、编辑和删除分区。此外，还有一些按钮可用于确认您所作的更改、重置和退出分区工具。
+	</para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term>
+	      添加：
+	    </term>
+	    <listitem>
+	      <para>
+		您可以使用<keycap>“添加”</keycap>按钮，以请求创建新分区。一旦选定此按钮，屏幕将显示一个对话框，其中包含您必须填写的字段（例如安装点、大小和类型）。
+	      </para>
+	    </listitem>
+	  </varlistentry>
+	  
+	  <varlistentry>
+	    <term>
+	      编辑：
+	    </term>
+	    <listitem>
+	      <para>
+		您可以使用<keycap>“编辑”</keycap>按钮，以更改当前选定分区的安装点。
+	      </para>
+	    </listitem>
+	  </varlistentry>
+	  
+	  <varlistentry>
+	    <term>
+	      删除：
+	    </term>
+	    <listitem>
+	      <para>
+		您可以使用<keycap>“删除”</keycap>按钮，以删除分区。屏幕将显示一个对话框，请求您确认删除操作。
+	      </para>
+	    </listitem>
+	  </varlistentry>
+	  
+	  <varlistentry>
+	    <term>
+	      重置：
+	    </term>
+	    <listitem>
+	      <para>
+		您可以使用<keycap>“重置”</keycap>按钮，以取消所作的任何更改。
+	      </para>
+	    </listitem>
+	  </varlistentry>
+
+	  <varlistentry>
+	    <term>
+	      创建 RAID 设备：
+	    </term>
+	    <listitem>
+	      <para>
+		仅在您具有使用 RAID 的经验时，才可使用<keycap>“创建 RAID 设备”</keycap>按钮。要了解更多有关 RAID 的信息，请参阅 &RHLRGS;。
+	      </para>
+	    </listitem>
+	  </varlistentry>
+	</variablelist>
+      </sect2>
+
+      
+      <sect2 id="s2-help-screens-drive">
+	<title>驱动器摘要</title>
+	<para>
+	  此部分用于显示您的计算机磁盘配置。它仅可提供摘要信息，每行包含以下字段：
+	</para>
+    
+	<variablelist>
+	  <varlistentry>
+	    <term>
+	      驱动器：
+	    </term>
+	    <listitem>
+	      <para>
+		此字段显示硬盘驱动器的设备名称（例如 hda 或 hdb）。
+	      </para>
+	    </listitem>
+	  </varlistentry>
+	  
+	  <varlistentry>
+	    <term>
+	      Geom [C/H/S]：
+	    </term>
+	    <listitem>
+	      <para>
+		硬盘驱动器的<firstterm>几何结构</firstterm>显示了磁柱、磁头和扇区数。
+	      </para>
+	    </listitem>
+	  </varlistentry>
+	  
+	  <varlistentry>
+	    <term>
+	      合计：
+	    </term>
+	    <listitem>
+	      <para>
+		此字段显示硬盘驱动器的合计可用空间。
+	      </para>
+	    </listitem>
+	  </varlistentry>
+	  
+	  <varlistentry>
+	    <term>
+	      可用：
+	    </term>
+	    <listitem>
+	      <para>
+		您可以在此处查看硬盘驱动器的剩余可用空间。
+	      </para>
+	    </listitem>
+	  </varlistentry>
+	  
+	  <varlistentry>
+	    <term>
+	      已用：
+	    </term>
+	    <listitem>
+	      <para>
+		这些字段显示当前分配至分区的硬盘空间大小（以兆字节和百分比表示）。
+	      </para>
+	    </listitem>
+	  </varlistentry>
+	</variablelist>
+      </sect2>
+    </sect1>
+
+    <sect1 id="s1-help-screens-format">
+      <title>选择要格式化的分区</title>
+      <para>
+	选择要格式化以用于 &RHL; 的分区。
+      </para>
+      <para>
+	是否检查坏块？
+      </para>
+      <para>
+	坏块检查将在驱动器上查找坏块并生成坏块清单，以避免以后在其中写入数据，从而有助于防止数据丢失。
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-lilo">
+
+      <title>LILO 配置</title> 
+      <para>
+	LILO（Linux 装载程序）是可用于在计算机上启动 &RHL; 的软件。它还可用于启动其它操作系统，例如 Windows 98。系统将在此处询问您如何（或是否）配置 LILO。
+      </para>
+      <para>
+	<guibutton>创建引导盘</guibutton>：如果您并非在 MBR 上安装 LILO，或者根本不安装 LILO，则应该创建一张引导盘。
+      </para>
+      <para>
+	<guibutton>不安装 LILO</guibutton>：如果您不想将 LILO 写入驱动器，也可以选择跳过 LILO。如果您配备了两个硬盘驱动器，并且分别安装了不同的操作系统，则可能宁愿使用引导盘而不用 LILO。
+      </para>
+      <para>
+	要安装 LILO，请为其选择安装位置。如果系统仅使用 &RHL;，则应该选择主引导记录 (MBR)。对于 Win95/98 和 &RHL; 同时驻留在一个硬盘驱动器中的系统，则也应该在 MBR 中安装 LILO。
+      </para>
+      <para>
+	如果您使用 Windows NT（并且希望安装 LILO），则应该选择在引导分区的第一个扇区上安装 LILO。同时请务必创建一张引导盘，否则将无法引导至 Linux。有关如何从 Windows NT 的引导管理程序中引导 LILO 的信息，请参阅 &RHLIG;。
+      </para>
+      <para>
+	如果您出于某种原因而选择不安装 LILO，请创建一张引导盘以便引导 &RHL;。
+      </para>
+      <para>
+	如果您的计算机以 LBA 模式访问硬盘驱动器，请选取
+	<guibutton>“Use linear mode”</guibutton>。 
+      </para>
+      <para>
+	如果您希望在 LILO 引导命令中添加缺省选项，请在“kernel parameters”字段中输入这些选项。每次引导时，您输入的任何选项均将传递至 Linux 内核。
+      </para>
+      <para>
+	可引导分区 -- 列出并标记每个可引导分区，包括其它操作系统使用的分区。如果您要为其它分区添加引导标记（或更改现有的引导标记），请单击以选择此分区。一旦选定了分区，您就可以更改引导标记。
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-silo">
+      <title>SILO 配置</title>
+      <para>
+	SILO（Sparc 改进版装载程序）是可用于在计算机上启动 Red Hat Linux 的软件。它还可用于启动其它操作系统，例如 SunOS 和 Solaris。系统将在此处询问您如何（或是否）配置 SILO。
+      </para>
+      <para>
+        <guibutton>创建引导盘</guibutton>：如果您根本不安装 SILO，或者是出于安全考虑，则应该创建一张引导盘。如果您未使用软盘，系统将隐藏此选项；如果您使用 SMCC 生产的 Ultra 机型（通常不能使用可引导的软盘），则此选项将缺省设置为已禁用。
+      </para>
+      <para>
+        <guibutton>不安装 SILO</guibutton>：如果您不想将 SILO 写入驱动器，例如您已在其它分区或磁盘上安装 SILO 并希望通过它们引导系统，则可以选择跳过 SILO。
+      </para>
+      <para>
+	要安装 SILO，请为其选择安装位置。如果系统仅使用 Red Hat Linux，则应该选择主引导记录（磁盘第一个分区的引导块）。对于 SunOS/Solaris 和 Red Hat Linux 驻留在同一个硬盘驱动器中的系统（特别是 SunOS/Solaris 驻留在磁盘的第一个分区时），则不应在 
+MBR 上安装 SILO。
+      </para>
+      <para>
+	如果您出于某种原因而选择不安装 SILO，请创建一张引导盘以便引导 Red Hat Linux。
+      </para>
+      <para>
+        <guibutton>创建 PROM 别名</guibutton>：如果 PROM 支持，则安装程序可以创建 PROM 别名 &quot;linux&quot;，以便您键入 &quot;boot linux&quot; 命令即可通过 PROM 命令行引导至 SILO 引导装载程序。
+      </para>
+      <para>
+        <guibutton>设置缺省 PROM 引导设备</guibutton>：通过设置 PROM 选项 &quot;boot-device&quot; 或 &quot;boot-from&quot;，安装程序可以确保 PROM 在缺省情况下引导至 Red Hat Linux 安装程序。
+      </para>
+      <para>
+	如果您希望在 SILO 引导命令中添加缺省选项，请在 “kernel parameters” 字段中输入这些选项。每次引导时，您输入的任何选项均将传递至 Linux 内核。
+      </para>
+      <para>
+	可引导分区 -- 列出并标记每个可引导分区，包括其它操作系统使用的分区。如果您要为其它分区添加引导标记（或更改现有的引导标记），请单击以选择此分区。一旦选定了分区，您就可以更改引导标记。
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-netconf">
+      <title>网络配置</title>
+      <para>
+	如果您配备了网卡，则可以设置网络信息。否则，请单击<guibutton>“下一步”</guibutton>以继续。
+      </para>
+      <para>
+	选择设备类型以及是否使用 DHCP 配置。如果您使用多个以太网设备，则每个设备屏幕均将保留您所给定的信息。您可以在设备屏幕之间（例如 eth0 和 eth1）切换；您所给定的信息将指定至每个屏幕。如果您选择
+<guilabel>“引导时激活”</guilabel>，则在引导时将启动网络接口。如果您没有 DHCP 客户机访问权限，或者无法确定此信息的具体内容，请与您的网络管理员联系。
+      </para>
+      <para>
+	如果有，请输入 IP 地址、网络掩码、网络和广播编号。如果您无法确定这些信息，请与您的网络管理员联系。 
+      </para>
+      <para>
+	输入系统的主机名。如果未输入，系统将被识别为“localhost”。
+
+      </para>
+      <para>
+	最后，请输入网关、主 DNS、第二 DNS和第三 DNS 编号。 
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-timezone">
+      <title>选择时区</title>
+      <para>
+	您可以通过选择计算机所处的实际位置以设置时区，也可以按照与通用协调时间（也称为 UTC）的时区时差以设置时区。
+      </para>
+      <para>
+	请注意屏幕顶端的两个标签。第一个标签使您可以按位置配置，通过此选项，您可以选择视图。选择视图时，可用的选项如下： 世界、北美洲、南美洲、太平洋沿岸地区、欧洲、非洲和亚洲。 
+      </para>
+      <para>
+	您可以在交互式地图上单击特定的城市（以黄点表示），所选城市旁边会显示一个红色的 <guilabel>X</guilabel>。您也可以滚动列表并选择所需的时区。
+      </para>
+      <para>
+	第二个标签使您可以使用通用协调时间 (UTC) 时差来设置时区。您可以在此找到一个供您选择的时差列表以及一个用于设置夏令时的选项。 
+      </para>
+      <para>
+	两个标签均提供了一个<guilabel>“系统时钟使用 UTC”</guilabel>的选项。如果您确定系统使用 UTC，请选择此选项。
+      </para>
+    </sect1>
+   
+    <sect1 id="s1-help-screens-accts">
+      <title>帐号配置</title>
+      <para>
+	输入根口令，口令长度至少应为 6 个字符。然后确认此口令。一旦两次输入的口令相符，即可使用“下一步”按钮。
+      </para>
+      <para>
+	现在，创建一个用户帐号。
+      </para
+      <para>
+	输入用户帐号名称。然后为该用户帐号创建一个口令并予以确认。最后，输入该帐号用户的全名并按 
+	<keycap>Enter</keycap> 键。此时，您的帐号信息将添加至帐号列表。
+      </para>
+      <para>
+	要添加另一个用户，请选择<guibutton>“新建”</guibutton>，然后在空白字段中输入信息。输入该用户帐号的信息之后，选择<guibutton>“添加”
+</guibutton>按钮以将该用户添加至帐号列表。
+      </para>
+      <para>
+	通过选定帐号并使用<guibutton>“编辑”</guibutton>按钮或<guibutton>“删除”</guibutton>按钮，您也可以<guibutton>编辑</guibutton>已创建的用户帐号或
+	<guibutton>删除</guibutton>不再需要的帐号。
+      </para>
+    </sect1>
+  
+    <sect1 id="s1-help-screens-authconf">
+      <title>验证配置</title>
+      <para>
+	如果您不准备设置网络口令，则可以跳过此部分。如果您无法确定，请向系统管理员寻求帮助。
+      </para>
+      <para>
+	除非您正在设置 <firstterm>NIS</firstterm> 口令，否则就会注意到已选定 <firstterm>MD5</firstterm> 口令和
+	<firstterm>影像</firstterm>选项。建议您同时使用这两个选项，以尽可能确保计算机安全。
+      </para>
+      <para>
+	<emphasis>MD5 口令</emphasis> - 允许使用长口令（最长可达 256 个字符），以代替标准的八字母（或更短）口令。
+      </para>
+      <para>
+	<emphasis>影像口令</emphasis> - 提供了一种非常安全的口令保留方法。<filename>/etc/passwd</filename> 文件将替换为仅可由根用户读取的 
+<filename>/etc/shadow</filename>。
+      </para>
+      <para>
+	要配置 NIS 选项，您必须连接至 NIS 网络。如果无法确定是否已连接至 NIS 网络，请向您的系统管理员查询。
+      </para>
+      <para>
+	<emphasis>启用 NIS</emphasis> - 允许您使用公用口令和组文件，以运行同一网络信息服务域中的一组计算机。系统提供了两个选项供您选择：
+      </para>
+      <para>
+	<emphasis>NIS 域</emphasis> - 此选项允许您指定系统所属的计算机域或组。
+      </para>
+      <para>
+	<emphasis>NIS 服务器</emphasis> - 此选项使您的计算机使用特定的 NIS 服务器，而不是通过向局域网“广播”消息以请求可为您的系统提供服务的服务器。
+      </para>
+    </sect1>
+    
+    <sect1 id="s1-help-screens-sel-group">
+      <title>选择软件包分组</title>
+      <para>
+	选择您要安装的软件包分组。要选择分组软件包，请单击软件包旁边的复选框。
+      </para>
+
+      <para>
+	要单独选择软件包，您必须选取屏幕底部的
+	<guilabel>“选择单独软件包”</guilabel>框。
+      </para>
+    </sect1>
+      
+    <sect1 id="s1-help-screens-sel-indiv">
+      <title>选择单独软件包</title>
+      <para>
+	如果您要选择单个软件包，现在即可进行选择。
+      </para>
+      <para>
+	屏幕左侧显示了软件包分组的目录列表。展开此列表并选择一个目录后，右侧面板将显示可供安装的软件包列表。
+      </para>
+      <para>
+	要选择一个单独的软件包，请双击此软件包，或者单击以高亮度显示此软件包并单击<guilabel>“选择要安装的软件包”</guilabel>。系统将在您选择的软件包旁边显示一个复选标记。
+      </para>
+      <para>
+	要在安装之前阅读有关软件包的信息，请高亮度显示此软件包，屏幕底部将显示软件包信息以及软件包名称和大小。
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-depend">
+      <title>未分辨相关性</title>
+      <para>
+	许多软件包均依赖于其它软件包或程序库才能正确运行。为确保系统已安装所有运行所需的软件包，&RHL; 将在每次安装或删除软件包时检查这些软件包的
+	<firstterm>相关性</firstterm>。
+      </para>
+      <para>
+	如果显示<guilabel>“未分辨相关性”</guilabel>屏幕，您可以在此选择<guilabel>“安装软件包以满足相关性”</guilabel>，以解决任何相关性问题。
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-xconf">
+      <title>X 配置</title>
+      <para>
+	此时，安装程序将探测视频卡和监视器，以确定计算机的最佳显示设置。如果探测成功，屏幕将列出您的硬件。如果程序无法确定您的视频硬件，将会提供一个视频卡和监视器列表以供您选择。
+      </para>
+      <para>
+	在设置硬件之后，您可以测试配置设置。在测试配置以确保设置适当的分辨率和颜色时，您还可以选择是否引导至图形环境。
+      </para>
+      <para>
+	选择<guibutton>“定制 X 配置”</guibutton>按钮，以选择特定的颜色和分辨率设置。
+      </para>
+      <para>
+	如果您希望在安装完成后再配置 X 或根本不打算配置，也可以选择<guibutton>“跳过 X 配置”</guibutton>。
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-installing">
+      <title>正在安装软件包</title>
+      <para>
+	请稍候，安装程序正在编译完整信息并准备安装软件包。
+      </para>
+    </sect1>
+
+    <sect1 id="s1-help-screens-bootdisk">
+      <title>创建引导盘</title>
+      <para>
+	如果您选择创建引导盘，请现在在软盘驱动器中插入一张空白磁盘。
+      </para>
+    </sect1>
+  </chapter>
+</book>
+
+
+

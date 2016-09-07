@@ -1,0 +1,1478 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/ch-printing.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:45:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Setting Up Your Printer</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="The Basics"
+HREF="p169.html"><LINK
+REL="PREVIOUS"
+TITLE="Shutting Down at the Shell Prompt"
+HREF="s1-quitting-prompt.html"><LINK
+REL="NEXT"
+TITLE="Printing Utilities in KDE and GNOME"
+HREF="s1-printing-utilities.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-quitting-prompt.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-printing-utilities.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="CHAPTER"
+><H1
+><A
+NAME="CH-PRINTING"
+>Chapter 5. Setting Up Your Printer</A
+></H1
+><P
+>      Most new Red Hat Linux users want to immediately set up their printer. 
+    </P
+><P
+>      Here, we'll cover some basic steps to configure a parallel printer on your
+      system. For the most part, the process isn't too complicated, regardless
+      of whether you're using GNOME or KDE.
+    </P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Is it compatible?</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	Although many printers work well with Linux, not all printers are
+	compatible. To make certain your printer is compatible with Linux, refer
+	to <I
+CLASS="CITETITLE"
+>The Hardware Compatibility List</I
+> at <A
+HREF="http://www.redhat.com/corp/support/hardware/index.html"
+TARGET="_top"
+>http://www.redhat.com/corp/support/hardware/</A
+>.
+      </P
+><P
+>	Another useful site which features printer compatibility lists as well
+	as useful hints and instructions is <I
+CLASS="CITETITLE"
+>The Linux Printing
+	HOWTO</I
+>, at <A
+HREF="http://www.picante.com/~gtaylor/pht/"
+TARGET="_top"
+>http://www.picante.com/~gtaylor/pht</A
+>.
+      </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>      Because Linux is a multi-user, multi-tasking operating system, it can
+      handle a variety of printing jobs at once. You could have multiple users
+      on the system, all of whom want to send their work to a printer. Linux
+      dutifully handles these requests by <I
+CLASS="FIRSTTERM"
+>spooling</I
+> them
+      -- storing and printing the files in the order in which they were
+      received.
+    </P
+><P
+>      Even if you're the only user on your system, you're still going to
+      send your work to the <I
+CLASS="FIRSTTERM"
+>print spool</I
+>, where the files
+      wait until it's their turn to be printed.
+    </P
+><P
+>      There are some terms and conditions you should know:
+    </P
+><P
+></P
+><UL
+><LI
+><P
+><I
+CLASS="FIRSTTERM"
+>lpd</I
+> -- The <I
+CLASS="FIRSTTERM"
+>line printer spooler
+	daemon</I
+>. Normally starts when the system starts. Manages the
+	  print jobs.</P
+></LI
+><LI
+><P
+><I
+CLASS="FIRSTTERM"
+>lpr</I
+> -- Takes each print job and submits it
+	  to <TT
+CLASS="APPLICATION"
+>lpd</TT
+>.</P
+></LI
+><LI
+><P
+><I
+CLASS="FIRSTTERM"
+>Input filters</I
+> -- Manage printer-specific
+	formatting.</P
+></LI
+><LI
+><P
+><TT
+CLASS="FILENAME"
+>/etc/printcap</TT
+> -- This is the configuration
+	file which defines your printer and other specifics.</P
+></LI
+><LI
+><P
+><TT
+CLASS="FILENAME"
+>/var/spool/lpd/</TT
+> -- This is the location of
+	the print spool, which is where files await printing.
+	</P
+></LI
+><LI
+><P
+><TT
+CLASS="APPLICATION"
+>Printtool</TT
+> -- A graphical utility you
+	  will use to configure and modify <TT
+CLASS="FILENAME"
+>/etc/printcap</TT
+>.
+	</P
+></LI
+></UL
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Read the "man page"</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>You can learn more about <TT
+CLASS="APPLICATION"
+>lpd</TT
+> and related
+	commands and daemons by typing <B
+CLASS="COMMAND"
+>man lpd</B
+> at a shell
+	prompt. To move forward through the man page, use the
+	<B
+CLASS="KEYCAP"
+>Space</B
+>; to move back, press the <B
+CLASS="KEYCAP"
+>B</B
+>
+	key, and to quit, press the <B
+CLASS="KEYCAP"
+>Q</B
+> key.</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>      Regardless of whether you're using GNOME or KDE, you can configure your
+      printer with
+      <TT
+CLASS="APPLICATION"
+>Printtool</TT
+>. <TT
+CLASS="APPLICATION"
+>Printtool</TT
+>
+      provides a graphical means for setting up and managing your printer.
+    </P
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-PRINTING-PRINTTOOL"
+>Using <TT
+CLASS="APPLICATION"
+>Printtool</TT
+></A
+></H1
+><P
+>	The file <TT
+CLASS="FILENAME"
+>/etc/printcap</TT
+> defines how
+	<TT
+CLASS="APPLICATION"
+>lpr</TT
+> should process the print jobs. If you
+	were to take a peek at the file, you'd find it looks something like
+	the following excerpt:
+      </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>##PRINTTOOL3## REMOTE POSTSCRIPT 600x600 letter {} PostScript Default 1
+acct|xerox-ac:\
+        :sd=/var/spool/lpd/acct:\
+        :mx#0:\
+        :rm=xerox-ac.redhat.com:\
+        :rp=lp:\
+        :if=/var/spool/lpd/filter.d/filter:
+	  </PRE
+></TD
+></TR
+></TABLE
+><P
+>	It's not pretty, and unless you know exactly what you're doing, you
+	shouldn't edit the file. Instead, use the utility
+	<TT
+CLASS="APPLICATION"
+>Printtool</TT
+> to set up the printer (and
+	<TT
+CLASS="FILENAME"
+>/etc/printcap</TT
+>)for you.
+      </P
+><P
+>	To use <TT
+CLASS="APPLICATION"
+>Printtool</TT
+>, you'll have to "be root."
+      </P
+><P
+>	Whenever you make changes to your system configuration -- such as adding
+	or modifying hardware settings, installing or uninstalling software --
+	you must be <I
+CLASS="FIRSTTERM"
+>superuser</I
+>, or root.
+      </P
+><P
+>	To become root from your user account:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	    Open an Xterm window;
+	  </P
+></LI
+><LI
+><P
+>	    Type <B
+CLASS="COMMAND"
+>su</B
+> at the prompt;
+	  </P
+></LI
+><LI
+><P
+>	    Type your root password. (You won't see it "echoed" on the screen
+	    when you type it.)
+	  </P
+></LI
+></UL
+><P
+>	See <A
+HREF="ch-printing.html#GR-PRINTING-GSUSCREEN"
+>Figure 5-1</A
+> for an example of how to
+	become root.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PRINTING-GSUSCREEN"
+></A
+><P
+><IMG
+SRC="figs/print/gsuscreen.gif"></P
+><P
+><B
+>Figure 5-1. Switching to Root</B
+></P
+></DIV
+><P
+>	As you can see in the previous figure, when you're root your prompt
+	changes from a <TT
+CLASS="PROMPT"
+>$</TT
+> to a <TT
+CLASS="PROMPT"
+>#</TT
+>. Type
+	<B
+CLASS="COMMAND"
+>printtool</B
+> -- one word, without capitalization.
+      </P
+><P
+>	When the utility starts, you'll see a window similar to <A
+HREF="ch-printing.html#GR-PRINTING-GPRINTOOL"
+>Figure 5-2</A
+>. At first, you won't find any printers
+	listed, because you haven't added a printer to
+	<TT
+CLASS="FILENAME"
+>/etc/printcap</TT
+>.
+      </P
+><P
+>	Click on the <B
+CLASS="GUIBUTTON"
+>Add</B
+> button to add your printer.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PRINTING-GPRINTOOL"
+></A
+><P
+><IMG
+SRC="figs/print/gprintool.gif"></P
+><P
+><B
+>Figure 5-2. The <TT
+CLASS="APPLICATION"
+>Printtool</TT
+> Window</B
+></P
+></DIV
+><P
+>	Next, you'll be asked what kind of printer you want to add (see <A
+HREF="ch-printing.html#GR-PRINTING-GPRINTLOCAL"
+>Figure 5-3</A
+>).
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PRINTING-GPRINTLOCAL"
+></A
+><P
+><IMG
+SRC="figs/print/gprintlocal.gif"></P
+><P
+><B
+>Figure 5-3. Selecting the Type of Printer to Add</B
+></P
+></DIV
+><P
+>	Choose from the following:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	    <TT
+CLASS="GUILABEL"
+><B
+>Local Printer</B
+></TT
+>: Choose this if your printer is
+	    directly connected to the machine on which you're working (called
+	    the <I
+CLASS="FIRSTTERM"
+>local machine</I
+>).
+	  </P
+></LI
+><LI
+><P
+>	    <TT
+CLASS="GUILABEL"
+><B
+>Remote Unix (lpd) Queue</B
+></TT
+>: A printer attached to
+	    another machine on which an <TT
+CLASS="APPLICATION"
+>lpd</TT
+> daemon is
+	    running. Choose this if you want to print to a network printer on a
+	    LAN.
+	  </P
+></LI
+><LI
+><P
+>	    <TT
+CLASS="GUILABEL"
+><B
+>SMB/Windows 95/NT Printer</B
+></TT
+>: A printer which is
+	    attached to a machine running Windows or
+	    <TT
+CLASS="APPLICATION"
+>Samba</TT
+>. (<TT
+CLASS="APPLICATION"
+>Samba</TT
+>
+	    is a suite of programs which allows Windows machines to share files
+	    and services with UNIX and Linux machines on a network.)
+	  </P
+></LI
+><LI
+><P
+>	    <TT
+CLASS="GUILABEL"
+><B
+>NetWare Printer (NCP)</B
+></TT
+>: A printer on a machine
+	    running Novell <TT
+CLASS="APPLICATION"
+>NetWare</TT
+> or compatible
+	    server software -- two networking applications for interacting with
+	    machines running Novell <TT
+CLASS="APPLICATION"
+>NetWare</TT
+>.
+	  </P
+></LI
+></UL
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>What is a daemon?</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  You may have seen that <TT
+CLASS="APPLICATION"
+>lpd</TT
+> is called the
+	  line printer spooler <I
+CLASS="WORDASWORD"
+>daemon</I
+>. A
+	  <I
+CLASS="WORDASWORD"
+>daemon</I
+> is a small program that runs in the
+	  background. Daemons usually perform critical system tasks, and usually
+	  start when the system starts. (Most daemons, also, have names that end
+	  in a <I
+CLASS="WORDASWORD"
+>d</I
+>, such as
+	  <TT
+CLASS="APPLICATION"
+>crond</TT
+>, <TT
+CLASS="APPLICATION"
+>httpd</TT
+>,
+	  <TT
+CLASS="APPLICATION"
+>lpd</TT
+>, and so on.)
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	For this example, we'll add a local printer. Highlight the entry
+	<TT
+CLASS="GUILABEL"
+><B
+>Local Printer</B
+></TT
+> and select the
+	<B
+CLASS="GUIBUTTON"
+>OK</B
+> button.
+      </P
+><P
+>	When you select your printer type, <TT
+CLASS="APPLICATION"
+>Printtool</TT
+>
+	will attempt to detect any printers which are attached to your parallel
+	port; you'll then see the results (see <A
+HREF="ch-printing.html#GR-PRINTING-GPRINTDETECT"
+>Figure 5-4</A
+>). Click on the
+	<B
+CLASS="GUIBUTTON"
+>OK</B
+> button to continue to the main
+	<TT
+CLASS="APPLICATION"
+>Printtool</TT
+> window.
+
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PRINTING-GPRINTDETECT"
+></A
+><P
+><IMG
+SRC="figs/print/gprintdetect.gif"></P
+><P
+><B
+>Figure 5-4. Detecting a Printer Port</B
+></P
+></DIV
+><DIV
+CLASS="TIP"
+><P
+></P
+><TABLE
+CLASS="TIP"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/tip.gif"
+HSPACE="5"
+ALT="Tip"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>The <TT
+CLASS="FILENAME"
+>/dev/lp<TT
+CLASS="REPLACEABLE"
+><I
+>x</I
+></TT
+></TT
+>
+	  Device Files</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	  Linux refers to parallel ports differently than DOS. In DOS, a printer
+	  located at <TT
+CLASS="FILENAME"
+>LPT1</TT
+> is known in Linux as
+	  <TT
+CLASS="FILENAME"
+>/dev/lp0</TT
+>; <TT
+CLASS="FILENAME"
+>LPT2</TT
+> in DOS is
+	  <TT
+CLASS="FILENAME"
+>/dev/lp1</TT
+> in Linux, and so on.
+	</P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>	In our example, a parallel port printer was detected at
+	<TT
+CLASS="FILENAME"
+>/dev/lp0</TT
+>. Click on the <B
+CLASS="GUIBUTTON"
+>OK</B
+>
+	button to continue.
+      </P
+><P
+>	In the next dialog (see <A
+HREF="ch-printing.html#GR-PRINTING-GPRINTEDIT"
+>Figure 5-5</A
+>), you
+	can specify details about your printer, such as a name of the printer
+	and its related spool directory, the location of the printer device and
+	other options.
+      </P
+><P
+> In the <TT
+CLASS="GUILABEL"
+><B
+>Names</B
+></TT
+> field, you can specify a name for
+	your print queue (where print jobs are sent), and the default directory
+	to which you want the jobs sent (the <TT
+CLASS="GUILABEL"
+><B
+>Spool
+	Directory</B
+></TT
+> entry). You can probably leave these settings
+	unchanged; note that giving a printer entry the name
+	<TT
+CLASS="FILENAME"
+>lp</TT
+> makes it the default printer.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PRINTING-GPRINTEDIT"
+></A
+><P
+><IMG
+SRC="figs/print/gprintedit.gif"></P
+><P
+><B
+>Figure 5-5. Editing a Local Printer</B
+></P
+></DIV
+><P
+>	The <TT
+CLASS="GUILABEL"
+><B
+>Input Filter</B
+></TT
+> contains information about
+	your specific printer and its formatting requirements. To add your
+	printer's information, click on the <B
+CLASS="GUIBUTTON"
+>Select</B
+>
+	button. The <TT
+CLASS="GUILABEL"
+><B
+>Configure Filter</B
+></TT
+> dialog will open.
+      </P
+><P
+>	Once the <TT
+CLASS="GUILABEL"
+><B
+>Configure Filter</B
+></TT
+> dialog opens, your tasks
+	are to perform the following:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>	    Pick an exact match for your make and model printer in the
+	    <TT
+CLASS="GUILABEL"
+><B
+>Configure Filter</B
+></TT
+> dialog. If you can't find an
+	    exact match, see if you can find a match that's close (such as the
+	    same manufacturer, but a different model). Select other options,
+	    such as paper size and resolution. Click on
+	    <B
+CLASS="GUIBUTTON"
+>OK</B
+> to accept your selections.
+ 	  </P
+></LI
+><LI
+><P
+>	    Click on <B
+CLASS="GUIBUTTON"
+>OK</B
+> in the <TT
+CLASS="GUILABEL"
+><B
+>Edit Local
+	      Printer Entry</B
+></TT
+> dialog; you'll return to the
+	      <TT
+CLASS="GUILABEL"
+><B
+>Print System Manager</B
+></TT
+>.
+ 	  </P
+></LI
+><LI
+><P
+>	    Highlight your new printer entry in the <TT
+CLASS="GUILABEL"
+><B
+>Print System
+	      Manager</B
+></TT
+> dialog, then restart
+	      <TT
+CLASS="APPLICATION"
+>lpd</TT
+> from the menu.
+	  </P
+></LI
+><LI
+><P
+>	    Finally, with your printer highlighted in the <TT
+CLASS="GUILABEL"
+><B
+>Print System
+	    Manager</B
+></TT
+>, print a test page by selecting the option from
+	    the menu.
+	  </P
+></LI
+></UL
+><P
+>	If you're unsuccessful at printing the test page -- or you've got to
+	modify the way it printed -- return to the <TT
+CLASS="GUILABEL"
+><B
+>Configure
+	Filter</B
+></TT
+> dialog to select a different filter or change settings
+	for your current filter.
+      </P
+><P
+>	If you're experiencing trouble, remember to check <I
+CLASS="CITETITLE"
+>The
+	Hardware Compatibility List</I
+> and the <I
+CLASS="CITETITLE"
+>The Linux
+	Printing HOWTO</I
+>, cited in the beginning of this chapter.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PRINTING-FILTERS"
+>Selecting Input Filters</A
+></H2
+><P
+>&#13;	  The <TT
+CLASS="GUILABEL"
+><B
+>Configure Filter</B
+></TT
+> dialog will look similar to
+	<A
+HREF="ch-printing.html#GR-PRINTING-GPRINTCONFIG"
+>Figure 5-6</A
+>. Select the appropriate filter
+	for your printer. When you select a filter, you're selecting the correct
+	way to convert file formats so that your printer can use them.
+      </P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PRINTING-GPRINTCONFIG"
+></A
+><P
+><IMG
+SRC="figs/print/gprintconfig.gif"></P
+><P
+><B
+>Figure 5-6. Selecting a Filter</B
+></P
+></DIV
+><P
+>	  The filter dialog is divided into several sections:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Printer Type</B
+></TT
+>: Lists the available printer
+		models for which you have drivers.
+	    </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Driver Description</B
+></TT
+>: Describes basic
+		information about the driver, as well as the types of models for
+		which the driver is appropriate.
+	    </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Resolution</B
+></TT
+> and <TT
+CLASS="GUILABEL"
+><B
+>Paper
+		Size</B
+></TT
+>: Allow you to specify the quality of output to
+		the printer, as well as the default paper size in the paper
+		tray.
+	    </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Color Depth/Uniprint Mode</B
+></TT
+>: Allows you to
+		specify additional resolution options for a color printer.
+	    </P
+></LI
+><LI
+><P
+>		<TT
+CLASS="GUILABEL"
+><B
+>Printing Options</B
+></TT
+>: Allows you to modify how
+		jobs are printed.
+	    </P
+></LI
+></UL
+><P
+>	  In the <TT
+CLASS="GUILABEL"
+><B
+>Printer Type</B
+></TT
+> pane, at left, choose
+	  the exact make and model listed for your printer. If you can't find an
+	  exact match, try to find the closest match to your printer's make and
+	  model.
+	</P
+><P
+>	  If you have questions about which filter may be appropriate for your
+	  printer, you'll find information about the driver in the box called
+	  <TT
+CLASS="GUILABEL"
+><B
+>Driver Description</B
+></TT
+>, at the right of the dialog.
+	</P
+><P
+>	Quite a few makes and models of printers are supported, but not all
+	printers are fully supported -- or supported at all. In some cases,
+	printers may require additional drivers; in other cases, the printer may
+	be unsupported by Red Hat Linux. Again, refer to the Hardware
+	Compatibility List at <A
+HREF="http://www.redhat.com/corp/support/hardware/index.html"
+TARGET="_top"
+>http://www.redhat.com/corp/support/hardware/</A
+>
+	to verify that your printer is supported under Red Hat Linux.
+      </P
+><P
+>	If you find the manufacturer of your printer, but not your model number,
+	you can check your printer's documentation to find out whether your
+	printer can <I
+CLASS="FIRSTTERM"
+>emulate</I
+> any of the listed
+	printers. You may also be able to find out whether a filter is suitable
+	for your unlisted model by highlighting the filter in the left window
+	and reading its description in the <TT
+CLASS="GUILABEL"
+><B
+>Driver
+	Description</B
+></TT
+> window, at the right of the dialog.
+	</P
+><P
+>	  Choose the resolution and default paper size for your
+	  printer. (Not all printer types will offer optional paper sizes.)
+	</P
+><P
+>	  In the <TT
+CLASS="GUILABEL"
+><B
+>Color Depth / Uniprint Mode</B
+></TT
+> section,
+	  select the options you desire.
+	</P
+><DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>A little about Floyd-Steinberg</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>Floyd-Steinberg
+	  refers to a process of <I
+CLASS="FIRSTTERM"
+>dithering</I
+>, which is used
+	  to create shades or to smooth jagged lines.</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PRINTING-OPTIONS"
+>Other Printing Options</A
+></H2
+><P
+>	  The remainder of the <TT
+CLASS="GUILABEL"
+><B
+>Configure Filter</B
+></TT
+> dialog
+	  allows you to specify other printing options:
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Send EOF after job to eject page</B
+></TT
+> -- This
+	      option forces the printer to eject the page when the print job is
+	      finished. Uncheck this option if you receive an extra blank page
+	      after your print job.
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Fix stair-stepping of text</B
+></TT
+> -- Choose this
+	      option if your test page shows uneven lines of text, referred to
+	      as <I
+CLASS="FIRSTTERM"
+>stair-stepped</I
+>, which looks like:
+	    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+>This, for example,
+                   is what stair-stepped
+                                          text might look like
+	  </PRE
+></TD
+></TR
+></TABLE
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Fast text printing (non-PS printers only)</B
+></TT
+> --
+	      If you don't have a PostScript printer, you can select this
+	      option, which will send text files directly to the printer, rather
+	      than send them to a program for conversion to
+	      <TT
+CLASS="APPLICATION"
+>PostScript</TT
+>, and then to
+	      <TT
+CLASS="APPLICATION"
+>Ghostscript</TT
+> to be printed. This option
+	      bypasses such a route for your text files, and speeds the process.
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>8, 4, 2, 1 pages per output page</B
+></TT
+> -- This
+	      option refers to the command <B
+CLASS="COMMAND"
+>mpage</B
+>, which
+	      allows you print multiple pages of plain text files on one page
+	      (either 2, 4, or 8). This can be useful for squeezing large
+	      printouts onto a single sheet of paper. Note, however, that this
+	      option is not available if you choose the "fast text printing"
+	      option.
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Margins</B
+></TT
+> -- This option specifically applies
+	      to the selection of multiple page printing. If you choose to print
+	      multiple pages (see the option above), you can specify the width
+	      of the margin on the page. If you choose to print single pages,
+	      this option will be unavailable to you.
+	    </P
+></LI
+><LI
+><P
+>	      <TT
+CLASS="GUILABEL"
+><B
+>Extra GS options</B
+></TT
+> -- Refers to additional
+	      <TT
+CLASS="APPLICATION"
+>Ghostscript</TT
+> options which may be
+	      available for your printer. In general, you can leave this
+	      blank. Check in the <TT
+CLASS="GUILABEL"
+><B
+>Driver Description</B
+></TT
+> box
+	      for any options you might be required to add here.
+	    </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-PRINTING-TESTING"
+>Testing Your Printer Configuration</A
+></H2
+><P
+>	  Once you've made your selections in the <TT
+CLASS="GUILABEL"
+><B
+>Configure
+	    Filter</B
+></TT
+> dialog, click on the <B
+CLASS="GUIBUTTON"
+>OK</B
+>
+	    button. You'll return to the <TT
+CLASS="GUILABEL"
+><B
+>Edit Local Printer</B
+></TT
+>
+	    dialog. Now, the <TT
+CLASS="GUILABEL"
+><B
+>Input Filter</B
+></TT
+> field will
+	    contain the information you'd chosen about your printer (see <A
+HREF="ch-printing.html#GR-PRINTING-GPRINTEDIT2"
+>Figure 5-7</A
+>).
+	</P
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PRINTING-GPRINTEDIT2"
+></A
+><P
+><IMG
+SRC="figs/print/gprintedit2.gif"></P
+><P
+><B
+>Figure 5-7. Local Printer Entry with Filter</B
+></P
+></DIV
+><P
+>	  Leave the item <TT
+CLASS="GUILABEL"
+><B
+>Suppress Headers</B
+></TT
+> checked by
+	  default if you don't want extra data printed with your documents (such
+	  as the date and origination of the print job).
+	</P
+><P
+>	  Click the <B
+CLASS="GUIBUTTON"
+>OK</B
+> button to continue; you'll return
+	  to the opening dialog of <TT
+CLASS="APPLICATION"
+>Printtool</TT
+>; this
+	  time, with your printer entry, as in <A
+HREF="ch-printing.html#GR-PRINTING-GPRINTOOL2"
+>Figure 5-8</A
+>.
+	</P
+><P
+>	  Now, it's time to test your setup.
+	</P
+><P
+></P
+><UL
+><LI
+><P
+>	      Restart <TT
+CLASS="APPLICATION"
+>lpd</TT
+> -- Restart the printer
+	      spooler daemon by selecting <B
+CLASS="GUIMENU"
+>lpd</B
+> =&#62;
+	      <B
+CLASS="GUIMENUITEM"
+>Restart lpd</B
+> from the menu. 
+	    </P
+></LI
+><LI
+><P
+>	      Print a test page by highlighting your printer entry, then
+	      selecting <B
+CLASS="GUIMENU"
+>Tests</B
+> =&#62; <B
+CLASS="GUIMENUITEM"
+>Print ASCII test
+	      page</B
+> (you can perform a test print on a PostScript
+	      test page, as well).
+	    </P
+></LI
+></UL
+><DIV
+CLASS="FIGURE"
+><A
+NAME="GR-PRINTING-GPRINTOOL2"
+></A
+><P
+><IMG
+SRC="figs/print/gprintool2.gif"></P
+><P
+><B
+>Figure 5-8. Your New Printer Entry</B
+></P
+></DIV
+><P
+>	  If you want to make modifications to your printer selection, highlight
+	  the printer and select <B
+CLASS="GUIBUTTON"
+>Edit</B
+> at the bottom of
+	  the <TT
+CLASS="APPLICATION"
+>Printtool</TT
+> window.
+	</P
+><P
+>	  When you're satisfied with your configuration, you can exit by
+	  selecting <B
+CLASS="GUIMENUITEM"
+>Quit</B
+> from the
+	  <B
+CLASS="GUIMENU"
+>PrintTool</B
+> menu, or by clicking on the
+	  <B
+CLASS="GUIBUTTON"
+>x</B
+> in the upper right of the application's
+	  window.
+	</P
+><P
+>Once you return to your prompt, you can exit from the root login
+	  by clicking on the <B
+CLASS="GUIBUTTON"
+>x</B
+> in the upper right of the
+	  Xterm window, or by typing <B
+CLASS="COMMAND"
+>exit</B
+> at the
+	  prompt. Then, type <B
+CLASS="COMMAND"
+>exit</B
+> again to close the
+	  Xterm.</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-quitting-prompt.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-printing-utilities.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Shutting Down at the Shell Prompt</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="p169.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Printing Utilities in KDE and GNOME</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/ch-printing.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:45:24 GMT -->
+</HTML
+>

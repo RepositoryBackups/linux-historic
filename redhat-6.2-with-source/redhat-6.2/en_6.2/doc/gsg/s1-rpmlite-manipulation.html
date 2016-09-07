@@ -1,0 +1,447 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-rpmlite-manipulation.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Package Manipulation</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.40"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Using Gnome-RPM and RPM"
+HREF="ch-rpmlite.html"><LINK
+REL="PREVIOUS"
+TITLE="Basic Configuration"
+HREF="s1-gnorpm-config.html"><LINK
+REL="NEXT"
+TITLE="RPM from the Shell Prompt"
+HREF="s1-rpmlite-console.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Getting Started Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-gnorpm-config.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 10. Using Gnome-RPM and RPM</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-rpmlite-console.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-RPMLITE-MANIPULATION"
+>Package Manipulation</A
+></H1
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-GNORPM-QUERYING"
+>Querying Packages</A
+></H2
+><P
+>	  The easiest way to query packages is to use the
+	  <B
+CLASS="GUIICON"
+>Query</B
+> option from the menu at the top. If you want
+	  to query more than one package, make all your selections then press
+	  the <B
+CLASS="GUIICON"
+>Query</B
+> button on the menu.
+	</P
+><P
+>	  You'll be presented with a window like the one shown in <A
+HREF="s1-rpmlite-manipulation.html#GR-GNORPM-GRPMQUERY"
+>Figure 10-7</A
+>. The more packages you've queried, the more
+	    "tabs" you'll find within the <TT
+CLASS="GUILABEL"
+><B
+>Package Info</B
+></TT
+> box, each tab
+	    representing a query response for the related package.
+	</P
+><P
+>	  <DIV
+CLASS="FIGURE"
+><A
+NAME="GR-GNORPM-GRPMQUERY"
+></A
+><P
+><IMG
+SRC="figs/rpmlite/grpmquery.gif"></P
+><P
+><B
+>Figure 10-7. Query Window</B
+></P
+></DIV
+>
+	</P
+><P
+>	  The name of the package is centered at the top of the box. Below, the
+	  box is divided into two columns of listed information; below this
+	  information, you'll see a display area showing package files.
+	</P
+><P
+>	  In the left column of the information list, you'll find the size of
+	  the file, the machine on which the file is found, the name of the
+	  package distribution and the group to which its function belongs.
+	</P
+><P
+>	  In the right column, you'll find the date of the package's
+	  installation on your machine, the date the package was built, the name
+	  of the vendor and the name of the group who packaged the software. If
+	  the package has not been installed on your machine, that space will
+	  simply read, "not installed."
+	</P
+><P
+>	  Below the description is a list of the files contained in the
+	  package. If a <B
+CLASS="COMMAND"
+>D</B
+> appears in its related column to
+	  the left of the path, that file is a documentation file and would be a
+	  good thing to read for help on using the application. If a
+	  <B
+CLASS="COMMAND"
+>C</B
+> appears in its respective column, the file is a
+	  configuration file. Under the <B
+CLASS="COMMAND"
+>S</B
+> column, you can
+	  view the "state" of the package; here, you'll receive information if
+	  any files are reported as "missing" from the package (which probably
+	  means there's a problem with the package).
+	</P
+><P
+>	  If you're querying a package that's already installed, you'll also
+	  find two additional buttons beneath at the bottom of this window:
+	  <B
+CLASS="GUIBUTTON"
+>Verify</B
+> and <B
+CLASS="GUIBUTTON"
+>Uninstall</B
+>. If
+	  you're performing a query on a package that hasn't been installed yet,
+	  the buttons on the bottom will be labeled <B
+CLASS="GUIBUTTON"
+>Install</B
+>,
+	  <B
+CLASS="GUIBUTTON"
+>Upgrade</B
+> and <B
+CLASS="GUIBUTTON"
+>Check Sig</B
+>.
+	</P
+><P
+>	  To close the query window without performing any action, left-click on
+	  the <B
+CLASS="GUIICON"
+>X</B
+> at the top right of the window bar.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-GNORPM-VERIFYING"
+>Verifying Packages</A
+></H2
+><P
+>	  Verifying a package checks all of the files in the package to ensure
+	  they match the ones present on your system. This check can be used
+	  when you suspect that one of the program's files has become corrupted
+	  for some reason.
+	</P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-GNORPM-UNINSTALLING"
+>Uninstalling Packages</A
+></H2
+><P
+>	  Uninstalling a package removes the application and associated files from
+	  your machine. When a package is uninstalled, any files it uses that are
+	  not needed by other packages on your system are also removed. Changed
+	  configuration files are copied to
+	  <TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>&#60;filename&#62;</I
+></TT
+>.rpmsave</TT
+>
+	  so you can reuse them later.
+	</P
+><P
+>	  <DIV
+CLASS="NOTE"
+><P
+></P
+><TABLE
+CLASS="NOTE"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="stylesheet-images/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TH
+ALIGN="LEFT"
+VALIGN="CENTER"
+><B
+>Make sure you're root</B
+></TH
+></TR
+><TR
+><TD
+>&nbsp;</TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>	      Remember that you must be root to uninstall packages.
+	    </P
+></TD
+></TR
+></TABLE
+></DIV
+>
+	</P
+><P
+>	  If uninstalling a package would break "dependencies," a dialog will
+	  appear, asking you to confirm the deletion. This will occur if you
+	  haven't selected the <B
+CLASS="GUIBUTTON"
+>"No dependency checks"</B
+> box
+	  from the <B
+CLASS="GUIMENU"
+>Preferences</B
+> menu (as shown in <A
+HREF="s1-rpmlite-manipulation.html#GR-RPMLITE-GNODEPS"
+>Figure 10-8</A
+>).
+	</P
+><P
+>	  <DIV
+CLASS="FIGURE"
+><A
+NAME="GR-RPMLITE-GNODEPS"
+></A
+><P
+><IMG
+SRC="figs/rpmlite/gnobehavior.gif"></P
+><P
+><B
+>Figure 10-8. The Behavior Tab in Preferences</B
+></P
+></DIV
+>
+	</P
+><P
+>	  There are a variety of methods through which you can remove a selected
+	  package: from the menu, under <B
+CLASS="GUIMENU"
+>Packages</B
+>; from the
+	  toolbar and from the <B
+CLASS="GUIBUTTON"
+>Query</B
+> function.
+	</P
+><P
+>	  <DIV
+CLASS="FIGURE"
+><A
+NAME="GR-GNORPM-GNOREMOVE"
+></A
+><P
+><IMG
+SRC="figs/rpmlite/gnoremove.gif"></P
+><P
+><B
+>Figure 10-9. Uninstall Window</B
+></P
+></DIV
+>
+	</P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-GNORPM-UPGRADING"
+>Upgrading Packages</A
+></H3
+><P
+>	    When a new version of a package has been released, it's easy to
+	    install it on your system; simply upgrade what you already have to
+	    the version that you want to install. The procedure is similar to
+	    installation of packages with the exception that you should select
+	    <B
+CLASS="GUIBUTTON"
+>Upgrade</B
+> rather than
+	    <B
+CLASS="GUIBUTTON"
+>Install</B
+>.
+	  </P
+><P
+>	    During the upgrade, you'll see a progress indicator similar to that
+	    for package installations. When the upgrade is finished, any old
+	    versions of the packages will be removed, unless you specify
+	    otherwise (refer to <A
+HREF="s1-gnorpm-config.html"
+>the section called <I
+>Basic Configuration</I
+></A
+> for more
+	    information).
+	  </P
+><P
+>	    It is much better to use the upgrade option than to uninstall the
+	    old versions of a package and then install the new one. (In fact,
+	    the <TT
+CLASS="APPLICATION"
+>RPM</TT
+> upgrade process will handle
+	    uninstallation and replacement of files. Refer to <A
+HREF="s1-rpmlite-console.html#S2-RPMLITE-UNINSTALLING"
+>the section called <I
+>Uninstalling</I
+></A
+> to learn more about this
+	    process.)
+	  </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-gnorpm-config.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-rpmlite-console.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Basic Configuration</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-rpmlite.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><TT
+CLASS="APPLICATION"
+>RPM</TT
+> from the Shell Prompt</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/gsg/s1-rpmlite-manipulation.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 20:47:44 GMT -->
+</HTML
+>

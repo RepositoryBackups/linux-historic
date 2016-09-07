@@ -1,0 +1,428 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-rpm-impressing.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Impressing Your Friends with RPM</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Package Management with RPM"
+HREF="ch-rpm.html"><LINK
+REL="PREVIOUS"
+TITLE="Using RPM"
+HREF="s1-rpm-using.html"><LINK
+REL="NEXT"
+TITLE="Other RPM Resources"
+HREF="s1-rpm-other-resources.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="s1-rpm-using.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 6. Package Management with RPM</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-rpm-other-resources.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-RPM-IMPRESSING"
+>Impressing Your Friends with RPM</A
+></H1
+><P
+>        RPM is a very useful tool for both managing your system and diagnosing
+        and fixing problems. The best way to make sense of all the options is to
+        look at some examples.
+      </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>            Let's say you delete some files by accident, but you aren't sure
+            what you deleted. If you want to verify your entire system and see
+            what might be missing, you would enter:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>rpm -Va</B
+>
+          </PRE
+></TD
+></TR
+></TABLE
+><P
+>            If some files are missing, or appear to have been corrupted, you
+            should probably either re-install the package or uninstall, then
+            re-install the package.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            Let's say you run across a file that you don't recognize.  To find
+            out which package owns it, you would enter:
+	    </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>rpm -qf /usr/X11R6/bin/xjewel</B
+>
+          </PRE
+></TD
+></TR
+></TABLE
+><P
+>            The output would look like:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>xjewel-1.6-1</TT
+>
+          </PRE
+></TD
+></TR
+></TABLE
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            We can combine the above two examples in the following scenario.
+            Say you are having problems with
+            <TT
+CLASS="FILENAME"
+>/usr/bin/paste</TT
+>. You would like to verify the
+            package that owns that program but you don't know which package that
+            is.  Simply enter:
+
+            <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>rpm -Vf /usr/bin/paste</B
+>
+            </PRE
+></TD
+></TR
+></TABLE
+>
+
+            and the appropriate package will be verified.
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            Want to find more about a particular program? You can find out by
+            entering the following to locate the documentation which came with
+            the package that "owns" that program (in this case
+            <TT
+CLASS="APPLICATION"
+>ispell</TT
+>):
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>rpm -qdf /usr/bin/ispell</B
+>
+            </PRE
+></TD
+></TR
+></TABLE
+><P
+>            The output would be:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>/usr/man/man4/ispell.4
+/usr/man/man4/english.4
+/usr/man/man1/unsq.1
+/usr/man/man1/tryaffix.1
+/usr/man/man1/sq.1
+/usr/man/man1/munchlist.1
+/usr/man/man1/ispell.1
+/usr/man/man1/findaffix.1
+/usr/man/man1/buildhash.1
+/usr/info/ispell.info.gz
+/usr/doc/ispell-3.1.18-1/README</TT
+>
+          </PRE
+></TD
+></TR
+></TABLE
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            Let's say you find a new <TT
+CLASS="APPLICATION"
+>koules</TT
+> RPM, but
+            you don't know what it is. To find out some information on it,
+            enter:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>rpm -qip koules-1.2-2.i386.rpm</B
+>
+            </PRE
+></TD
+></TR
+></TABLE
+><P
+>            The output would be:
+            <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>Name        : koules Distribution: Red Hat Linux Colgate
+Version     : 1.2          Vendor: Red Hat Software
+Release     : 2        Build Date: Mon Sep 02 11:59:12 1996
+Install date: (none)   Build Host: porky.redhat.com
+Group       : Games    Source RPM: koules-1.2-2.src.rpm
+Size        : 614939
+Summary     : SVGAlib action game; multiplayer, network
+Description :
+This arcade-style game is novel in conception and
+excellent in execution.  No shooting, no blood, no guts,
+no gore.  The play is simple, but you still must develop
+skill to play.  This version uses SVGAlib to run on a
+graphics console.</TT
+>
+            </PRE
+></TD
+></TR
+></TABLE
+>
+          </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>            Now you want to see what files the <TT
+CLASS="APPLICATION"
+>koules</TT
+>
+            RPM installs.  You would enter:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>rpm -qlp koules-1.2-2.i386.rpm</B
+>
+          </PRE
+></TD
+></TR
+></TABLE
+><P
+>            The output is:
+
+            <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>/usr/man/man6/koules.6
+/usr/lib/games/kouleslib/start.raw
+/usr/lib/games/kouleslib/end.raw
+/usr/lib/games/kouleslib/destroy2.raw
+/usr/lib/games/kouleslib/destroy1.raw
+/usr/lib/games/kouleslib/creator2.raw
+/usr/lib/games/kouleslib/creator1.raw
+/usr/lib/games/kouleslib/colize.raw
+/usr/lib/games/kouleslib
+/usr/games/koules</TT
+>
+            </PRE
+></TD
+></TR
+></TABLE
+>
+          </P
+></LI
+></UL
+><P
+>        These are just several examples.  As you use the system you will find
+        many more uses for RPM.
+      </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="s1-rpm-using.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-rpm-other-resources.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Using RPM</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-rpm.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Other RPM Resources</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-rpm-impressing.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>

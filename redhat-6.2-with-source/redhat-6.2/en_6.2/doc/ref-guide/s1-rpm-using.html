@@ -1,0 +1,1178 @@
+<HTML
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-rpm-using.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<HEAD
+><TITLE
+>Using RPM</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.44"><LINK
+REL="HOME"
+TITLE="Red Hat Linux 6.2"
+HREF="index-2.html"><LINK
+REL="UP"
+TITLE="Package Management with RPM"
+HREF="ch-rpm.html"><LINK
+REL="PREVIOUS"
+TITLE="Package Management with RPM"
+HREF="ch-rpm.html"><LINK
+REL="NEXT"
+TITLE="Impressing Your Friends with RPM"
+HREF="s1-rpm-impressing.html"></HEAD
+><BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Red Hat Linux 6.2: The Official Red Hat Linux Reference Guide</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="ch-rpm.html"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 6. Package Management with RPM</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="s1-rpm-impressing.html"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="SECT1"
+><H1
+CLASS="SECT1"
+><A
+NAME="S1-RPM-USING"
+>Using RPM</A
+></H1
+><P
+>        RPM has five basic modes of operation (not counting package building):
+        installing, uninstalling, upgrading, querying, and verifying.  This
+        section contains an overview of each mode.  For complete details and
+        options try <B
+CLASS="COMMAND"
+>rpm --help</B
+>, or turn to <A
+HREF="s1-rpm-other-resources.html"
+>the section called <I
+>Other RPM Resources</I
+></A
+> for more information on RPM.
+      </P
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-RPM-INSTALLING"
+>Installing</A
+></H2
+><P
+>          RPM packages typically have file names like
+          <TT
+CLASS="FILENAME"
+>foo-1.0-1.i386.rpm</TT
+>, which includes the package
+          name (<TT
+CLASS="FILENAME"
+>foo</TT
+>), version (<TT
+CLASS="FILENAME"
+>1.0</TT
+>),
+          release (<TT
+CLASS="FILENAME"
+>1</TT
+>), and architecture
+          (<TT
+CLASS="FILENAME"
+>i386</TT
+>). Installing a package is as simple as:
+	</P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+># </TT
+><TT
+CLASS="USERINPUT"
+><B
+>rpm -ivh foo-1.0-1.i386.rpm</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>foo                       ####################################</TT
+>
+<TT
+CLASS="PROMPT"
+>#</TT
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>          As you can see, RPM prints out the name of the package (which is not
+          necessarily the same as the file name, which could have been
+          <TT
+CLASS="FILENAME"
+>1.rpm</TT
+>), and then prints a succession of hash
+          marks as the package is installed, as a progress meter.
+        </P
+><P
+>          Installing packages is designed to be simple, but you can get a few
+          errors:
+        </P
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-RPM-ERRORS"
+>Package Already Installed</A
+></H3
+><P
+>            If the package is already installed, you will see:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+># </TT
+><TT
+CLASS="USERINPUT"
+><B
+>rpm -ivh foo-1.0-1.i386.rpm</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>foo                     package foo-1.0-1 is already installed
+error: foo-1.0-1.i386.rpm cannot be installed</TT
+>
+<TT
+CLASS="PROMPT"
+>#</TT
+>
+          </PRE
+></TD
+></TR
+></TABLE
+><P
+>            If you really want to install the package anyway, you can use
+            <B
+CLASS="COMMAND"
+>--replacepkgs</B
+> on the command line, which tells
+            RPM to ignore the error:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+># </TT
+><TT
+CLASS="USERINPUT"
+><B
+>rpm -ivh --replacepkgs foo-1.0-1.i386.rpm</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>foo                       ####################################</TT
+>
+<TT
+CLASS="PROMPT"
+>#</TT
+>
+            </PRE
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-RPM-CONFLICTING-FILES"
+>Conflicting Files</A
+></H3
+><P
+>            If you attempt to install a package that contains a file which has
+            already been installed by another package, you'll see:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+># </TT
+><TT
+CLASS="USERINPUT"
+><B
+>rpm -ivh foo-1.0-1.i386.rpm</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>foo           /usr/bin/foo conflicts with file from bar-1.0-1
+error: foo-1.0-1.i386.rpm cannot be installed</TT
+>
+<TT
+CLASS="PROMPT"
+>#</TT
+>
+	      </PRE
+></TD
+></TR
+></TABLE
+><P
+>            To cause RPM to ignore that error, use
+            <B
+CLASS="COMMAND"
+>--replacefiles</B
+> on the command line:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+># </TT
+><TT
+CLASS="USERINPUT"
+><B
+>rpm -ivh --replacefiles foo-1.0-1.i386.rpm</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>foo                       ####################################</TT
+>
+<TT
+CLASS="PROMPT"
+>#</TT
+>
+	      </PRE
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT3"
+><H3
+CLASS="SECT3"
+><A
+NAME="S3-RPM-UNRESOLVED-DEPENDENCY"
+>Unresolved Dependency</A
+></H3
+><P
+>            RPM packages can "depend" on other packages, which means that they
+            require other packages to be installed in order to run properly.  If
+            you try to install a package for which there is such an unresolved
+            dependency, you'll see:
+          </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+># </TT
+><TT
+CLASS="USERINPUT"
+><B
+>rpm -ivh bar-1.0-1.i386.rpm</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>failed dependencies:
+        foo is needed by bar-1.0-1</TT
+>
+<TT
+CLASS="PROMPT"
+>#</TT
+>
+          </PRE
+></TD
+></TR
+></TABLE
+><P
+>            To handle this error you should install the requested packages.  If
+            you want to force the installation anyway (a bad idea since the
+            package probably will not run correctly), use
+            <B
+CLASS="COMMAND"
+>--nodeps</B
+> on the command line.
+          </P
+></DIV
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-RPM-UNINSTALLING"
+>Uninstalling</A
+></H2
+><P
+>          Uninstalling a package is just as simple as installing:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+># </TT
+><TT
+CLASS="USERINPUT"
+><B
+>rpm -e foo</B
+></TT
+>
+<TT
+CLASS="PROMPT"
+>#</TT
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>          Notice that we used the package <I
+CLASS="EMPHASIS"
+>name</I
+>
+          "<TT
+CLASS="FILENAME"
+>foo</TT
+>," not the name of the original package
+          <I
+CLASS="EMPHASIS"
+>file</I
+> "<TT
+CLASS="FILENAME"
+>foo-1.0-1.i386.rpm</TT
+>".
+        </P
+><P
+>          You can encounter a dependency error when uninstalling a package if
+          some other installed package depends on the one you are trying to
+          remove.  For example:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+># </TT
+><TT
+CLASS="USERINPUT"
+><B
+>rpm -e foo</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>removing these packages would break dependencies:
+        foo is needed by bar-1.0-1</TT
+>
+<TT
+CLASS="PROMPT"
+>#</TT
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>          To cause RPM to ignore that error and uninstall the package anyway
+          (which is also a bad idea since the package that depends on it will
+          probably fail to work properly), use <B
+CLASS="COMMAND"
+>--nodeps</B
+> on
+          the command line.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-RPM-UPGRADING"
+>Upgrading</A
+></H2
+><P
+>          Upgrading a package is similar to installing.
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+># </TT
+><TT
+CLASS="USERINPUT"
+><B
+>rpm -Uvh foo-2.0-1.i386.rpm</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>foo                       ####################################</TT
+>
+<TT
+CLASS="PROMPT"
+>#</TT
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>          What you don't see above is that RPM automatically uninstalled any old
+          versions of the <TT
+CLASS="FILENAME"
+>foo</TT
+> package.  In fact you may
+          want to always use <B
+CLASS="COMMAND"
+>-U</B
+> to install packages, since it
+          works fine even when there are no previous versions of the package
+          installed.
+        </P
+><P
+>          Since RPM performs intelligent upgrading of packages with
+          configuration files, you may see a message like:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="COMPUTEROUTPUT"
+>saving /etc/foo.conf as /etc/foo.conf.rpmsave</TT
+>
+          </PRE
+></TD
+></TR
+></TABLE
+><P
+>          This means that your changes to the configuration file may not be
+          "forward compatible" with the new configuration file in the package,
+          so RPM saved your original file, and installed a new one.  You should
+          investigate and resolve the differences between the two files as soon
+          as possible to ensure that your system continues to function properly.
+        </P
+><P
+>          Since upgrading is really a combination of uninstalling and
+          installing, you can encounter any errors from those modes, plus one
+          more: If RPM thinks you are trying to upgrade to a package with an
+          <I
+CLASS="EMPHASIS"
+>older</I
+> version number, you will see:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+># </TT
+><TT
+CLASS="USERINPUT"
+><B
+>rpm -Uvh foo-1.0-1.i386.rpm</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>foo    package foo-2.0-1 (which is newer) is already installed
+error: foo-1.0-1.i386.rpm cannot be installed</TT
+>
+<TT
+CLASS="PROMPT"
+>#</TT
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>          To cause RPM to "upgrade" anyway, use <B
+CLASS="COMMAND"
+>--oldpackage</B
+>
+          on the command line:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+># </TT
+><TT
+CLASS="USERINPUT"
+><B
+>rpm -Uvh --oldpackage foo-1.0-1.i386.rpm</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>foo                       ####################################</TT
+>
+<TT
+CLASS="PROMPT"
+>#</TT
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-RPM-FRESHENING"
+>Freshening</A
+></H2
+><P
+>          Freshening a package is similar to upgrading:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+># </TT
+><TT
+CLASS="USERINPUT"
+><B
+>rpm -Fvh foo-1.2-1.i386.rpm</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>foo                       ####################################</TT
+>
+<TT
+CLASS="PROMPT"
+>#</TT
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>          RPM's freshen option checks the versions of the packages specified on
+          the command line against the versions of packages that have already
+          been installed on your system.  When a newer version of an
+          already-installed package is processed by RPM's freshen option, it
+          will be upgraded to the newer version.  However, RPM's freshen option
+          will not install a package if no previously-installed package of the
+          same name exists.  This differs from RPM's upgrade option, as an
+          upgrade <I
+CLASS="EMPHASIS"
+>will</I
+> install packages, whether or not an
+          older version of the package was already installed.
+        </P
+><P
+>          RPM's freshen option works well with single packages or with a group
+          of packages. It's especially handy if you've just downloaded a large
+          number of different packages, and you only want to upgrade those
+          packages that are already installed on your system.  Using the freshen
+          option means that you won't have to pick through the downloaded
+          packages, deleting any unwanted ones before using RPM.
+        </P
+><P
+>          In this case, you can simply issue the following command:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+># </TT
+><TT
+CLASS="USERINPUT"
+><B
+>rpm -Fvh *.rpm</B
+></TT
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>          RPM will automatically upgrade only those packages that have already
+          been installed.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-RPM-QUERYING"
+>Querying</A
+></H2
+><P
+>          Querying the database of installed packages is accomplished with
+          <B
+CLASS="COMMAND"
+>rpm -q</B
+>.  A simple use is <B
+CLASS="COMMAND"
+>rpm -q
+          foo</B
+> which will print the package name, version, and release
+          number of the installed package foo:
+        </P
+><TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="100%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><TT
+CLASS="PROMPT"
+># </TT
+><TT
+CLASS="USERINPUT"
+><B
+>rpm -q foo</B
+></TT
+>
+<TT
+CLASS="COMPUTEROUTPUT"
+>foo-2.0-1</TT
+>
+<TT
+CLASS="PROMPT"
+>#</TT
+>
+	    </PRE
+></TD
+></TR
+></TABLE
+><P
+>          Instead of specifying the package name, you can use the following
+          options with <B
+CLASS="COMMAND"
+>-q</B
+> to specify the package(s) you want
+          to query.  These are called <I
+CLASS="EMPHASIS"
+>Package Specification
+          Options</I
+>.
+        </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <B
+CLASS="COMMAND"
+>-a</B
+> queries all currently installed packages.
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <B
+CLASS="COMMAND"
+>-f
+              <TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>&#60;file&#62;</I
+></TT
+></TT
+></B
+>
+              will query the package owning
+              <TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>&#60;file&#62;</I
+></TT
+></TT
+>.
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <B
+CLASS="COMMAND"
+>-p
+              <TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>&#60;packagefile&#62;</I
+></TT
+></TT
+></B
+>
+              queries the package
+              <TT
+CLASS="FILENAME"
+><TT
+CLASS="REPLACEABLE"
+><I
+>&#60;packagefile&#62;</I
+></TT
+></TT
+>.
+            </P
+></LI
+></UL
+><P
+>          There are a number of ways to specify what information to display
+          about queried packages.  The following options are used to select the
+          type of information for which you are searching.  These are called
+          <I
+CLASS="EMPHASIS"
+>Information Selection Options</I
+>.
+        </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <B
+CLASS="COMMAND"
+>-i</B
+> displays package information such as name,
+              description, release, size, build date, install date, vendor, and
+              other miscellaneous information.
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <B
+CLASS="COMMAND"
+>-l</B
+> displays the list of files that the package
+              "owns".
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <B
+CLASS="COMMAND"
+>-s</B
+> displays the state of all the files in the
+              package.
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <B
+CLASS="COMMAND"
+>-d</B
+> displays a list of files marked as
+              documentation (man pages, info pages, README's, etc).
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              <B
+CLASS="COMMAND"
+>-c</B
+> displays a list of files marked as
+              configuration files.  These are the files you change after
+              installation to adapt the package to your system
+              (<TT
+CLASS="FILENAME"
+>sendmail.cf</TT
+>, <TT
+CLASS="FILENAME"
+>passwd</TT
+>,
+              <TT
+CLASS="FILENAME"
+>inittab</TT
+>, etc).
+            </P
+></LI
+></UL
+><P
+>          For those options that display file lists, you can add
+          <B
+CLASS="COMMAND"
+>-v</B
+> to your command line to get the lists in a
+          familiar <B
+CLASS="COMMAND"
+>ls -l</B
+> format.
+        </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="S2-RPM-VERIFYING"
+>Verifying</A
+></H2
+><P
+>          Verifying a package compares information about files installed from a
+          package with the same information from the original package.  Among
+          other things, verifying compares the size, MD5 sum, permissions, type,
+          owner and group of each file.
+        </P
+><P
+>          The command <B
+CLASS="COMMAND"
+>rpm -V</B
+> verifies a package. You can use
+          any of the <I
+CLASS="EMPHASIS"
+>Package Selection Options</I
+> listed for
+          querying to specify the packages you wish to verify.  A simple use is
+          <B
+CLASS="COMMAND"
+>rpm -V foo</B
+> which verifies that all the files in the
+          foo package are as they were when they were originally installed.  For
+          example:
+        </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>              To verify a package containing particular file:
+
+              <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>rpm -Vf /bin/vi</B
+>
+              </PRE
+></TD
+></TR
+></TABLE
+>
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              To verify ALL installed packages:
+
+              <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>rpm -Va</B
+>
+              </PRE
+></TD
+></TR
+></TABLE
+>
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              To verify an installed package against an RPM package file:
+
+              <TABLE
+BORDER="0"
+BGCOLOR="#E0E0E0"
+WIDTH="90%"
+><TR
+><TD
+><PRE
+CLASS="SCREEN"
+><B
+CLASS="COMMAND"
+>rpm -Vp foo-1.0-1.i386.rpm</B
+>
+              </PRE
+></TD
+></TR
+></TABLE
+>
+
+              This can be useful if you suspect that your RPM databases are
+              corrupt.
+            </P
+></LI
+></UL
+><P
+>          If everything verified properly there will be no output.  If there are
+          any discrepancies they will be displayed.  The format of the output is
+          a string of 8 characters, a possible "c" denoting a configuration
+          file, and then the file name.  Each of the 8 characters denotes the
+          result of a comparison of one attribute of the file to the value of
+          that attribute recorded in the RPM database.  A single "."  (period)
+          means the test passed.  The following characters denote failure of
+          certain tests:
+        </P
+><P
+></P
+><UL
+><LI
+STYLE="list-style-type: disc"
+><P
+>              5 -- MD5 checksum
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              S -- File size
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              L -- Symbolic link
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              T -- File modification time
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              D -- Device
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              U -- User
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              G -- Group
+            </P
+></LI
+><LI
+STYLE="list-style-type: disc"
+><P
+>              M -- Mode (includes permissions and file type)
+            </P
+></LI
+></UL
+><P
+>          If you see any output, use your best judgment to determine if you
+          should remove or reinstall the package, or otherwise fix the problem.
+        </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="ch-rpm.html"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index-2.html"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="s1-rpm-impressing.html"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Package Management with RPM</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="ch-rpm.html"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Impressing Your Friends with RPM</TD
+></TR
+></TABLE
+></DIV
+></BODY
+>
+<!-- Mirrored from ftp.kh.edu.tw/Linux/Redhat/en_6.2/doc/ref-guide/s1-rpm-using.htm by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 06 Sep 2016 21:05:10 GMT -->
+</HTML
+>
